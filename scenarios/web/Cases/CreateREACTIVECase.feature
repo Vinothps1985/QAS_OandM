@@ -1,0 +1,97 @@
+Feature: Cases
+
+@author:Rodrigo Montemayor
+@description:Verify whether user is able to create a case of record type REACTIVE
+@case @positive
+@dataFile:resources/testdata/data.csv
+
+Scenario: Create REACTIVE case
+	
+   Given get "https://bssi--fullcopy.lightning.force.com/"
+   And maximizeWindow 
+   When wait until "login.username" to be enable
+   And clear "login.username"
+   And wait until "login.username" to be enable
+   And sendKeys "rmontemayor@borregosolar.com.fullcopy" into "login.username"
+   And wait until "login.password" to be enable
+   And clear "login.password"
+   And wait until "login.password" to be enable
+   And sendEncryptedKeys "RkNoYWhhaGFjb29sMg==" into "login.password"
+   And wait until "login.submit" to be enable
+   And click on "login.submit"
+   And wait until "applauncher.div" to be enable
+   And click on "applauncher.div"
+   Then wait until "applauncher.input.text" to be present
+   When wait until "applauncher.input.text" to be enable
+   And clear "applauncher.input.text"
+   And wait until "applauncher.input.text" to be enable
+   And sendKeys "projects" into "applauncher.input.text"
+   Then wait until "applauncher.link.projects" to be visible
+   When wait until "applauncher.link.projects" to be enable
+   And click on "applauncher.link.projects"
+   Then switch to frame "accountinghome.iframe"
+   And wait until "accountinghome.projects.link" to be present
+   When wait until "accountinghome.projects.link" to be enable
+   And click on "accountinghome.projects.link"
+   And wait until "projects.search.button" to be enable
+   And click on "projects.search.button"
+   And wait until "projects.search.input" to be enable
+   And sendKeys "${projectName}" into "projects.search.input"
+   Then wait until "projects.search.firstResult" to be visible
+   When wait until "projects.search.firstResult" to be enable
+   And click on "projects.search.firstResult"
+   Then switch to default window 
+   And wait until "projects.quicklink.contracts" to be present
+   When wait until "projects.quicklink.contracts" to be enable
+   And click on "projects.quicklink.contracts"
+   Then wait until "projects.contracts.firstContract.status" to be present
+   And verify "projects.contracts.firstContract.status" text is "Active"
+   When wait until "breadcrumbs.second" to be enable
+   And click on "breadcrumbs.second"
+   And wait until "projects.createCase.button" to be enable
+   And click on "projects.createCase.button"
+   Then verify "projects.createCase.popup.OnM.first" is present
+   When wait until "projects.createCase.popup.OnM.first.createCase.button" to be enable
+   And click on "projects.createCase.popup.OnM.first.createCase.button"
+   Then wait until "case.createCase.recordType.select" to be present
+   When wait until "case.createCase.recordType.select" to be enable
+   And click on "case.createCase.recordType.select"
+   And wait until "case.createCase.recordType.select.reactive.option" to be enable
+   And click on "case.createCase.recordType.select.reactive.option"
+   And wait until "case.createCase.recordType.next.button" to be enable
+   And click on "case.createCase.recordType.next.button"
+   And wait until "case.createCase.popup.priority.select" to be enable
+   And click on "case.createCase.popup.priority.select"
+   And wait until "case.createCase.popup.priority.low.option" to be enable
+   And click on "case.createCase.popup.priority.low.option"
+   And wait until "case.createCase.popup.caseOrigin.select" to be enable
+   And click on "case.createCase.popup.caseOrigin.select"
+   And wait until "case.createCase.popup.caseOrigin.managerCreated.option" to be enable
+   And click on "case.createCase.popup.caseOrigin.managerCreated.option"
+   And wait until "case.createCase.popup.reportedIssue.select" to be enable
+   And click on "case.createCase.popup.reportedIssue.select"
+   And wait until "case.createCase.popup.reportedIssue.systemDown.option" to be enable
+   And click on "case.createCase.popup.reportedIssue.systemDown.option"
+   And wait until "case.createCase.popup.caseCause.select" to be enable
+   And click on "case.createCase.popup.caseCause.select"
+   And wait until "case.createCase.popup.caseCause.other.option" to be enable
+   And click on "case.createCase.popup.caseCause.other.option"
+   And wait until "case.createCase.popup.subject.input" to be enable
+   And sendKeys "Sample subject from QAS" into "case.createCase.popup.subject.input"
+   And wait until "case.createCase.popup.description.textarea" to be enable
+   And sendKeys "Sample description from QAS" into "case.createCase.popup.description.textarea"
+   Then verify "case.createCase.popup.recordType" text is "Reactive"
+   When wait until "case.createCase.popup.save.button" to be enable
+   And click on "case.createCase.popup.save.button"
+   Then verify "case.entityName" text is "Case"
+   And wait until "case.priority" to be present
+   And verify "case.priority" text is "Low"
+   And verify "case.caseOrigin" text is "Manager Created"
+   And verify "case.reportedIssue" text is "System Down"
+   And verify "case.caseCause" text is "Other"
+   And verify "case.subject" text is "Sample subject from QAS"
+   And verify "case.description" text is "Sample description from QAS"
+   
+
+
+

@@ -1,0 +1,3 @@
+applauncher.div={"desc":"","eArray":[{"name":"xpath=//one-app-launcher-header/button/div","key":"xpath"}],"locator":"xpath=//one-app-launcher-header/button/div"}
+applauncher.link.projects={"locator":"xpath=(.//*[normalize-space(text()) and normalize-space(.)='Projects'])[1]/following::a[1]","desc":"","eArray":[{"name":"xpath=(.//*[normalize-space(text()) and normalize-space(.)='Projects'])[1]/following::a[1]","key":"xpath"},{"name":"//div[@aria-label='Apps']//a","key":"//div[@aria-label"},{"name":"xpath=//div[@aria-label='Apps']//a","key":"xpath"}]}
+applauncher.input.text={"locator":"xpath=//one-app-launcher-search-bar/lightning-input/div/input","desc":"","eArray":[{"name":"xpath=//one-app-launcher-search-bar/lightning-input/div/input","key":"xpath"}]}

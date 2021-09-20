@@ -1,0 +1,20 @@
+{
+    "additionalFields": {
+        "web": {
+            "baseurl": "https://bssi--fullcopy.lightning.force.com/"
+        }
+    },
+    "buildtools": "maven",
+    "drivenDevelopmentType": "BDD",
+    "framework": "cucumber",
+    "language": "java",
+    "projectSettings": {
+        "projectName": "BorregoSolar",
+        "projectPath": "c:\\Eneva\\Borrego\\Code"
+    },
+    "projectTypes": [
+        "web"
+    ],
+    "key": "qKDjB6SMpb62N3Zm7uwVgFQqRS27KyBB+pSAKBXK5HEq4pWNRwvSC6HHlF7B685PtLpf7ndS8c2Ez3ZCZi0wSJK420hW1khF+iK9ucy8mi0=",
+    "shareable": "sharedFunction"
+}

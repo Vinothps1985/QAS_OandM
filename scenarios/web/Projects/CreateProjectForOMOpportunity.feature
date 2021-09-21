@@ -18,18 +18,22 @@ Scenario: Create project for OM Opportunity
    And sendEncryptedKeys "RkNwYXNzd29yZDEyMyE=" into "login.password"
    And wait until "login.submit" to be enable
    And click on "login.submit"
-   And wait until "applauncher.div" to be enable
+   Then wait until "applauncher.div" to be present
+   When wait until "applauncher.div" to be enable
    And click on "applauncher.div"
    Then wait until "applauncher.input.text" to be present
    When wait until "applauncher.input.text" to be enable
    And clear "applauncher.input.text"
    And wait until "applauncher.input.text" to be enable
    And sendKeys "opportunities" into "applauncher.input.text"
-   And wait until "applauncher.link.opportunities" to be enable
+   Then wait until "applauncher.link.opportunities" to be present
+   When wait until "applauncher.link.opportunities" to be enable
    And click on "applauncher.link.opportunities"
-   And wait until "opportunities.selectListView" to be enable
+   Then wait until "opportunities.selectListView" to be present
+   When wait until "opportunities.selectListView" to be enable
    And click on "opportunities.selectListView"
-   And wait until "opportunities.selectListView.allOpportunities" to be enable
+   Then wait until "opportunities.selectListView.allOpportunities" to be present
+   When wait until "opportunities.selectListView.allOpportunities" to be enable
    And click on "opportunities.selectListView.allOpportunities"
    And wait until "opportunities.search.input" to be enable
    And clear "opportunities.search.input"
@@ -63,7 +67,8 @@ Scenario: Create project for OM Opportunity
    And sendKeys "Silveira Ranch Rd - Site 1" into "projects.editProject.popup.epcSite.input"
    And wait until "projects.editProject.popup.epcSite.input" to be enable
    And click on "projects.editProject.popup.epcSite.input"
-   And wait until "projects.editProject.popup.epcSite.results.first" to be enable
+   Then wait until "projects.editProject.popup.epcSite.results.first" to be present
+   When wait until "projects.editProject.popup.epcSite.results.first" to be enable
    And click on "projects.editProject.popup.epcSite.results.first"
    And wait until "projects.editProject.popup.watts.input" to be enable
    And clear "projects.editProject.popup.watts.input"

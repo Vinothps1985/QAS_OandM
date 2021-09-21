@@ -157,7 +157,7 @@
                     "key"
                 ]
             ],
-            "input": "rmontemayor@borregosolar.com.fullcopy",
+            "input": "${username}",
             "status": "NotRun",
             "elementKey": "email.username",
             "elementDesc": "username email",
@@ -291,12 +291,12 @@
                     "key"
                 ]
             ],
-            "input": "RkNoYWhhaGFjb29sMg==",
+            "input": "${password}",
             "status": "NotRun",
             "elementKey": "password.password",
             "elementDesc": "password password",
-            "isEncrypted": true,
-            "isDisplay": true,
+            "isEncrypted": false,
+            "isDisplay": false,
             "indexColumn": "",
             "tcId": "3",
             "tsId": 2,

@@ -1,0 +1,7 @@
+
+common.var.the-url={"locator":"id=the-url","desc":"","eArray":[{"name":"id=the-url","key":"id"}]}
+common.var.the-time={"locator":"id=the-time","desc":"","eArray":[{"name":"id=the-time","key":"id"}]}
+common.var.testing-name={"locator":"id=testing-name","desc":"","eArray":[{"name":"id=testing-name","key":"id"}]}
+common.var.testing-last-name={"locator":"id=testing-last-name","desc":"","eArray":[{"name":"id=testing-last-name","key":"id"}]}
+common.var.testing-full-name={"locator":"id=testing-full-name","desc":"","eArray":[{"name":"id=testing-full-name","key":"id"}]}
+common.var.input-url={"locator":"id=input-url","desc":"","eArray":[{"name":"id=input-url","key":"id"}]}

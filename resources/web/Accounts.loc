@@ -1,0 +1,1 @@
+accounts.contacts.all.link={"locator":"xpath=//span[text()='Contacts']//parent::a[contains(@href, '/related/Contacts')]","desc":"","eArray":[{"name":"xpath=//span[text()='Contacts']//parent::a[contains(@href, '/related/Contacts')]","key":"xpath"}]}

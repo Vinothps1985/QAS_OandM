@@ -147,7 +147,7 @@
                     "xpath:neighbor"
                 ]
             ],
-            "input": "rmontemayor@borregosolar.com.fullcopy",
+            "input": "${username}",
             "status": "NotRun",
             "elementKey": "email.username",
             "elementDesc": "username email",
@@ -271,12 +271,12 @@
                     "xpath:neighbor"
                 ]
             ],
-            "input": "RkNwYXNzd29yZDEyMyE=",
+            "input": "${password}",
             "status": "NotRun",
             "elementKey": "password.password",
             "elementDesc": "password password",
-            "isEncrypted": true,
-            "isDisplay": true,
+            "isEncrypted": false,
+            "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
             "tcId": 28,
@@ -356,6 +356,7 @@
     "testDataExample": [],
     "isTCValid": true,
     "externalTestData": false,
+    "dbDetails": {},
     "recordSessionType": "multiple",
     "tags": [],
     "description": "",

@@ -3,13 +3,15 @@
         {
             "indexColumn": "",
             "command": "ShrdLoginToFullCopy",
-            "input": "",
+            "input": "${username},${password}",
             "status": "NotRun",
             "eArray": [],
             "elementKey": "",
             "elementDesc": "",
             "shared": true,
-            "@@mycolor": null
+            "@@mycolor": null,
+            "isEncrypted": false,
+            "isDisplay": false
         },
         {
             "command": "Wait For Present",
@@ -37,7 +39,7 @@
                 ]
             ],
             "input": "",
-            "status": "Passed",
+            "status": "NotRun",
             "elementKey": "div.applauncherasprojectspressspacebartoreorder.accountinghomereportsreportsmenueditnavitems",
             "elementDesc": "Text applauncheras:projectspressspacebartoreorder.accountinghomereportsreportsmenueditnavitems",
             "isEncrypted": false,
@@ -2046,6 +2048,7 @@
             }
         }
     },
+    "testData": "resources/testdata/Projects/Create project for OM Opportunity.csv",
     "testDataExample": [],
     "isTCValid": true,
     "externalTestData": false,

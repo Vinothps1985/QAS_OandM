@@ -18,15 +18,15 @@ import steps.common.*;
 */
 public class ShrdLoginToFullCopy extends WebDriverTestCase {
 
-	@QAFTestStep(description = "ShrdLoginToFullCopy")
-	public void customShrdLoginToFullCopy() {
+	@QAFTestStep(description = "ShrdLoginToFullCopy {0} {1}")
+	public void customShrdLoginToFullCopy(Object username,Object password) {
 		
 		getDriver().get("https://bssi--fullcopy.lightning.force.com/");
 		StepsLibrary.maximizeWindow();
 		CommonStep.clear("login.username");
-		CommonStep.sendKeys("rmontemayor@borregosolar.com.fullcopy","login.username");
+		CommonStep.sendKeys(""+String.valueOf(username)+"","login.username");
 		CommonStep.clear("login.password");
-		StepsLibrary.sendEncryptedKeys("RkNwYXNzd29yZDEyMyE=","login.password");
+		CommonStep.sendKeys(""+String.valueOf(password)+"","login.password");
 		$("login.submit").waitForEnabled();
 		CommonStep.click("login.submit");
 	}

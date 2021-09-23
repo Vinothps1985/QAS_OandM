@@ -3,10 +3,11 @@ Feature: Projects
 @author:Rodrigo Montemayor
 @description:Verify whether user is able to create a new Contact and add contact into Project.
 @project @contact @positive
+@dataFile:resources/testdata/Projects/Create contact and add to project.csv
 
 Scenario: Create contact and add to project
 	
-   Given ShrdLoginToFullCopy 
+   Given ShrdLoginToFullCopy "${username}" "${password}"
    Then wait until "applauncher.div" to be present
    When wait until "applauncher.div" to be enable
    And click on "applauncher.div"

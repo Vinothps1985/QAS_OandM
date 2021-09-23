@@ -3,8 +3,8 @@
         {
             "command": "ShrdLoginToFullCopy",
             "eArray": [],
-            "input": "",
-            "status": "Passed",
+            "input": "${username},${password}",
+            "status": "NotRun",
             "elementKey": "",
             "elementDesc": "",
             "isEncrypted": false,
@@ -411,7 +411,7 @@
                 ]
             ],
             "input": "",
-            "status": "Passed",
+            "status": "NotRun",
             "elementKey": "div.applauncherasprojectspressspacebartoreorder.accountinghomereportsreportsmenueditnavitems",
             "elementDesc": "Text applauncheras:projectspressspacebartoreorder.accountinghomereportsreportsmenueditnavitems",
             "isEncrypted": false,
@@ -3128,6 +3128,7 @@
             }
         }
     },
+    "testData": "resources/testdata/Projects/Create contact and add to project.csv",
     "testDataExample": [],
     "isTCValid": true,
     "externalTestData": false,
@@ -3146,5 +3147,5 @@
     ],
     "description": "Verify whether user is able to create a new Contact and add contact into Project.",
     "shared": true,
-    "executionStatus": "Passed"
+    "executionStatus": "NotRun"
 }

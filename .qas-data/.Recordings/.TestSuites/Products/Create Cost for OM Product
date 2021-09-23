@@ -1,18 +1,18 @@
 {
     "steps": [
         {
-            "indexColumn": "",
             "command": "ShrdLoginToFullCopy",
-            "element": "",
+            "eArray": [],
             "input": "${username},${password}",
             "status": "NotRun",
-            "eArray": [],
             "elementKey": "",
             "elementDesc": "",
-            "shared": true,
-            "length": 7,
+            "isEncrypted": false,
+            "isDisplay": false,
+            "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "8",
+            "shared": true,
+            "tcId": "30",
             "tsId": 7,
             "testData": false,
             "lastExecutionDetail": [
@@ -28,11 +28,11 @@
                     "isDisplay": false,
                     "indexColumn": "",
                     "@@mycolor": null,
-                    "tcId": "8",
+                    "tcId": "30",
                     "tsId": 7,
                     "testData": false,
-                    "duration": 3980000000,
-                    "executedOn": "2021-09-23T17:28:32.405Z",
+                    "duration": 3592000000,
+                    "executedOn": "2021-09-23T19:21:13.341Z",
                     "errMessage": "",
                     "isRowExpanded": false,
                     "isSharable": true,
@@ -48,11 +48,11 @@
                     "elementKey": "",
                     "elementDesc": "",
                     "@@mycolor": null,
-                    "tcId": "8",
+                    "tcId": "30",
                     "tsId": 7,
                     "testData": false,
-                    "duration": 653000000,
-                    "executedOn": "2021-09-23T17:28:33.059Z",
+                    "duration": 688000000,
+                    "executedOn": "2021-09-23T19:21:14.030Z",
                     "errMessage": "",
                     "isRowExpanded": false,
                     "isSharable": true,
@@ -111,11 +111,11 @@
                     "isDisplay": false,
                     "indexColumn": "",
                     "@@mycolor": null,
-                    "tcId": "8",
+                    "tcId": "30",
                     "tsId": 7,
                     "testData": false,
-                    "duration": 577000000,
-                    "executedOn": "2021-09-23T17:28:33.636Z",
+                    "duration": 592000000,
+                    "executedOn": "2021-09-23T19:21:14.622Z",
                     "errMessage": "",
                     "isRowExpanded": false,
                     "isSharable": true,
@@ -166,7 +166,7 @@
                             "xpath:neighbor"
                         ]
                     ],
-                    "input": "rmontemayor@borregosolar.com.fullcopy",
+                    "input": "${username}",
                     "status": "Passed",
                     "elementKey": "email.username",
                     "elementDesc": "username email",
@@ -174,11 +174,11 @@
                     "isDisplay": false,
                     "indexColumn": "",
                     "@@mycolor": null,
-                    "tcId": "8",
+                    "tcId": "30",
                     "tsId": 7,
                     "testData": false,
-                    "duration": 567000000,
-                    "executedOn": "2021-09-23T17:28:34.203Z",
+                    "duration": 628000000,
+                    "executedOn": "2021-09-23T19:21:15.250Z",
                     "errMessage": "",
                     "isRowExpanded": false,
                     "isSharable": true,
@@ -237,11 +237,11 @@
                     "isDisplay": false,
                     "indexColumn": "",
                     "@@mycolor": null,
-                    "tcId": "8",
+                    "tcId": "30",
                     "tsId": 7,
                     "testData": false,
-                    "duration": 590000000,
-                    "executedOn": "2021-09-23T17:28:34.793Z",
+                    "duration": 591000000,
+                    "executedOn": "2021-09-23T19:21:15.841Z",
                     "errMessage": "",
                     "isRowExpanded": false,
                     "isSharable": true,
@@ -292,19 +292,19 @@
                             "xpath:neighbor"
                         ]
                     ],
-                    "input": "RkNwYXNzd29yZDEyMyE=",
+                    "input": "${password}",
                     "status": "Passed",
                     "elementKey": "password.password",
                     "elementDesc": "password password",
-                    "isEncrypted": true,
-                    "isDisplay": true,
+                    "isEncrypted": false,
+                    "isDisplay": false,
                     "indexColumn": "",
                     "@@mycolor": null,
-                    "tcId": "8",
+                    "tcId": "30",
                     "tsId": 7,
                     "testData": false,
-                    "duration": 577000000,
-                    "executedOn": "2021-09-23T17:28:35.370Z",
+                    "duration": 664000000,
+                    "executedOn": "2021-09-23T19:21:16.505Z",
                     "errMessage": "",
                     "isRowExpanded": false,
                     "isSharable": true,
@@ -363,19 +363,17 @@
                     "isDisplay": false,
                     "indexColumn": "",
                     "@@mycolor": null,
-                    "tcId": "8",
+                    "tcId": "30",
                     "tsId": 7,
                     "testData": false,
-                    "duration": 2651000000,
-                    "executedOn": "2021-09-23T17:28:38.021Z",
+                    "duration": 882000000,
+                    "executedOn": "2021-09-23T19:21:17.387Z",
                     "errMessage": "",
                     "isRowExpanded": false,
                     "isSharable": true,
                     "length": 7
                 }
-            ],
-            "isEncrypted": false,
-            "isDisplay": false
+            ]
         },
         {
             "command": "Wait For Present",
@@ -410,11 +408,11 @@
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "8",
+            "tcId": "30",
             "tsId": 7,
             "testData": false,
-            "duration": 5501000000,
-            "executedOn": "2021-09-23T17:28:43.522Z",
+            "duration": 4175000000,
+            "executedOn": "2021-09-23T19:14:37.617Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -423,7 +421,7 @@
             "command": "Click",
             "element": "applauncher.div",
             "input": "",
-            "status": "Passed",
+            "status": "NotRun",
             "eArray": [
                 [
                     "applauncher.div",
@@ -433,11 +431,11 @@
             "elementKey": "",
             "elementDesc": "",
             "@@mycolor": null,
-            "tcId": "8",
+            "tcId": "30",
             "tsId": 7,
             "testData": false,
-            "duration": 734000000,
-            "executedOn": "2021-09-23T17:28:44.256Z",
+            "duration": 746000000,
+            "executedOn": "2021-09-23T19:14:38.363Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -475,18 +473,18 @@
                 ]
             ],
             "input": "",
-            "status": "Passed",
+            "status": "NotRun",
             "elementKey": "div.sldsr5",
             "elementDesc": "Text slds-r5",
             "isEncrypted": false,
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "8",
+            "tcId": "30",
             "tsId": 7,
             "testData": false,
-            "duration": 708000000,
-            "executedOn": "2021-09-23T17:28:44.964Z",
+            "duration": 715000000,
+            "executedOn": "2021-09-23T19:14:39.078Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -532,18 +530,18 @@
                 ]
             ],
             "input": "",
-            "status": "Passed",
+            "status": "NotRun",
             "elementKey": "search.input34",
             "elementDesc": "input-34 search",
             "isEncrypted": false,
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "8",
+            "tcId": "30",
             "tsId": 7,
             "testData": false,
-            "duration": 587000000,
-            "executedOn": "2021-09-23T17:28:45.551Z",
+            "duration": 596000000,
+            "executedOn": "2021-09-23T19:14:39.674Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -589,18 +587,18 @@
                 ]
             ],
             "input": "products",
-            "status": "Passed",
+            "status": "NotRun",
             "elementKey": "search.input34",
             "elementDesc": "input-34 search",
             "isEncrypted": false,
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "8",
+            "tcId": "30",
             "tsId": 7,
             "testData": false,
-            "duration": 633000000,
-            "executedOn": "2021-09-23T17:28:46.184Z",
+            "duration": 665000000,
+            "executedOn": "2021-09-23T19:14:40.339Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -646,18 +644,18 @@
                 ]
             ],
             "input": "",
-            "status": "Passed",
+            "status": "NotRun",
             "elementKey": "b.opportunities",
             "elementDesc": "B opportunities",
             "isEncrypted": false,
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "8",
+            "tcId": "30",
             "tsId": 7,
             "testData": false,
-            "duration": 591000000,
-            "executedOn": "2021-09-23T17:28:46.775Z",
+            "duration": 586000000,
+            "executedOn": "2021-09-23T19:14:40.925Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -666,7 +664,7 @@
             "command": "Click",
             "element": "applauncher.link.products",
             "input": "",
-            "status": "Passed",
+            "status": "NotRun",
             "eArray": [
                 [
                     "applauncher.link.products",
@@ -680,28 +678,108 @@
             "elementKey": "",
             "elementDesc": "",
             "@@mycolor": null,
-            "tcId": "8",
+            "tcId": "30",
             "tsId": 7,
             "testData": false,
-            "duration": 963000000,
-            "executedOn": "2021-09-23T17:28:47.738Z",
+            "duration": 1006000000,
+            "executedOn": "2021-09-23T19:14:41.931Z",
             "errMessage": "",
             "isRowExpanded": false
         },
         {
             "command": "Wait For Present",
-            "element": "products.create.new.button",
+            "element": "products.selectListView",
             "eArray": [
                 [
-                    "products.create.new.button",
+                    "products.selectListView",
+                    "key"
+                ],
+                [
+                    "opportunities.selectListView",
+                    "key"
+                ],
+                [
+                    "xpath=//button[@title='Select List View']",
+                    "xpath"
+                ],
+                [
+                    "xpath=//div[@id='brandBand_2']/div/div/div[2]/div/div/div/div/div/div/div/div/div/div/div[2]/div/button",
+                    "xpath:idRelative"
+                ],
+                [
+                    "xpath=//div/div/div[2]/div/button",
+                    "xpath:position"
+                ],
+                [
+                    "css=button.slds-button.slds-button--reset.downIcon.slds-m-top_xxx-small.slds-p-right_xxx-small",
+                    "css"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Recently Viewed'])[1]/following::button[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Opportunities'])[2]/following::button[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='This list is pinned'])[1]/preceding::button[1]",
+                    "xpath:neighbor"
+                ]
+            ],
+            "input": "",
+            "status": "NotRun",
+            "elementKey": "button.selectlistview",
+            "elementDesc": "Button Select List View",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "indexColumn": "",
+            "@@mycolor": null,
+            "tcId": "30",
+            "tsId": 7,
+            "testData": false,
+            "duration": 590000000,
+            "executedOn": "2021-09-23T19:14:42.521Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "products.selectListView",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "products.selectListView",
+                    "key"
+                ],
+                [
+                    "opportunities.selectListView",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "tcId": "30",
+            "tsId": 7,
+            "testData": false,
+            "duration": 638000000,
+            "executedOn": "2021-09-23T19:14:43.159Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Wait For Present",
+            "element": "products.selectListView.OMProducts",
+            "eArray": [
+                [
+                    "products.selectListView.OMProducts",
                     "key"
                 ],
                 [
                     "products.selectListView.allProducts",
-                    "key"
-                ],
-                [
-                    "products.selectListView.allOpportunities",
                     "key"
                 ],
                 [
@@ -738,454 +816,453 @@
                 ]
             ],
             "input": "",
-            "status": "Passed",
+            "status": "NotRun",
             "elementKey": "span.1.allopportunities",
             "elementDesc": "Text 1.allopportunities",
             "isEncrypted": false,
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "8",
+            "tcId": "30",
             "tsId": 7,
             "testData": false,
-            "duration": 565000000,
-            "executedOn": "2021-09-23T17:28:48.303Z",
+            "duration": 538000000,
+            "executedOn": "2021-09-23T19:14:43.697Z",
             "errMessage": "",
             "isRowExpanded": false
         },
         {
             "indexColumn": "",
             "command": "Click",
-            "element": "products.create.new.button",
+            "element": "products.selectListView.OMProducts",
             "input": "",
-            "status": "Passed",
+            "status": "NotRun",
             "eArray": [
                 [
-                    "products.create.new.button",
+                    "products.selectListView.OMProducts",
+                    "key"
+                ],
+                [
+                    "products.selectListView.allProducts",
+                    "key"
+                ],
+                [
+                    "opportunities.selectListView.allOpportunities",
                     "key"
                 ]
             ],
             "elementKey": "",
             "elementDesc": "",
             "@@mycolor": null,
-            "tcId": "8",
+            "tcId": "30",
             "tsId": 7,
             "testData": false,
-            "duration": 674000000,
-            "executedOn": "2021-09-23T17:28:48.977Z",
-            "errMessage": "",
-            "isRowExpanded": false
-        },
-        {
-            "indexColumn": "",
-            "command": "Wait For Visible",
-            "element": "products.createProduct.popup.recordType.OM.input",
-            "input": "",
-            "status": "Passed",
-            "eArray": [
-                [
-                    "products.createProduct.popup.recordType.OM.input",
-                    "key"
-                ]
-            ],
-            "elementKey": "",
-            "elementDesc": "",
-            "@@mycolor": null,
-            "tcId": "8",
-            "tsId": 7,
-            "testData": false,
-            "duration": 540000000,
-            "executedOn": "2021-09-23T17:28:49.517Z",
+            "duration": 763000000,
+            "executedOn": "2021-09-23T19:14:44.460Z",
             "errMessage": "",
             "isRowExpanded": false
         },
         {
             "indexColumn": "",
             "command": "Implicit Wait",
-            "input": "3000",
-            "status": "Passed",
-            "eArray": [],
+            "input": "2000",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "xpath=//table//a[text()='-RE-Volv-California-Roof-2534']",
+                    "xpath"
+                ],
+                [
+                    "//table//a[text()='-RE-Volv-California-Roof-2534']",
+                    "//table//a[text()"
+                ]
+            ],
             "elementKey": "",
             "elementDesc": "",
-            "tcId": "8",
+            "@@mycolor": null,
+            "tcId": "30",
             "tsId": 7,
             "testData": false,
-            "duration": 3515000000,
-            "executedOn": "2021-09-23T17:28:53.032Z",
+            "duration": 2502000000,
+            "executedOn": "2021-09-23T19:14:46.962Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Wait For Present",
+            "element": "products.search.results.first",
+            "eArray": [
+                [
+                    "products.search.results.first",
+                    "key"
+                ],
+                [
+                    "opportunities.search.results.first",
+                    "key"
+                ],
+                [
+                    "xpath=(//a[@data-refid='recordId'])[1]",
+                    "xpath"
+                ],
+                [
+                    "(//a[@data-refid='recordId'])[1]",
+                    "(//a[@data-refid"
+                ],
+                [
+                    "xpath=((//div[contains(@class, 'windowViewMode-normal')]//table//tbody)[1]//th//a)[1]",
+                    "xpath"
+                ],
+                [
+                    "xpath=//a[contains(text(),'-RE-Volv-California-Roof-2534')]",
+                    "xpath:link"
+                ],
+                [
+                    "xpath=//div[@id='brandBand_2']/div/div/div[2]/div/div/div[2]/div/div/div[2]/div[2]/div/div/div/table/tbody/tr/th/span/a",
+                    "xpath:idRelative"
+                ],
+                [
+                    "xpath=//a[contains(@href, '/lightning/r/0062H00001GDQUOQA5/view')]",
+                    "xpath:href"
+                ],
+                [
+                    "xpath=//th/span/a",
+                    "xpath:position"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Select item 1'])[1]/following::a[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Action'])[1]/following::a[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Teresa'])[1]/preceding::a[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Engage'])[1]/preceding::a[1]",
+                    "xpath:neighbor"
+                ]
+            ],
+            "input": "",
+            "status": "NotRun",
+            "elementKey": "link.revolvcaliforniaroof2534",
+            "elementDesc": "Link for -RE-Volv-California-Roof-2534",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "indexColumn": "",
+            "@@mycolor": null,
+            "tcId": "30",
+            "tsId": 7,
+            "testData": false,
+            "duration": 583000000,
+            "executedOn": "2021-09-23T19:14:47.545Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "products.search.results.first",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "products.search.results.first",
+                    "key"
+                ],
+                [
+                    "opportunities.search.results.first",
+                    "key"
+                ],
+                [
+                    "xpath=(//a[@data-refid='recordId'])[1]",
+                    "xpath"
+                ],
+                [
+                    "(//a[@data-refid='recordId'])[1]",
+                    "(//a[@data-refid"
+                ],
+                [
+                    "xpath=((//div[contains(@class, 'windowViewMode-normal')]//table//tbody)[1]//th//a)[1]",
+                    "xpath"
+                ],
+                [
+                    "((//div[contains(@class, 'windowViewMode-normal')]//table//tbody)[1]//th//a)[1]",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "tcId": "30",
+            "tsId": 7,
+            "testData": false,
+            "duration": 680000000,
+            "executedOn": "2021-09-23T19:14:48.225Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null
         },
         {
             "indexColumn": "",
-            "command": "Click",
-            "element": "products.createProduct.popup.recordType.OM.input",
+            "command": "Wait For Present",
+            "element": "products.costs.dropDownMenu",
             "input": "",
-            "status": "Passed",
+            "status": "NotRun",
             "eArray": [
                 [
-                    "products.createProduct.popup.recordType.OM.input",
+                    "products.costs.dropDownMenu",
                     "key"
                 ]
             ],
             "elementKey": "",
             "elementDesc": "",
             "@@mycolor": null,
-            "tcId": "8",
+            "tcId": "30",
             "tsId": 7,
             "testData": false,
-            "duration": 571000000,
-            "executedOn": "2021-09-23T17:28:53.603Z",
-            "errMessage": "",
-            "isRowExpanded": false
+            "isRowExpanded": false,
+            "duration": 1171000000,
+            "executedOn": "2021-09-23T19:14:49.396Z",
+            "errMessage": ""
         },
         {
             "indexColumn": "",
             "command": "Click",
-            "element": "products.createProduct.popup.next.button",
+            "element": "products.costs.dropDownMenu",
             "input": "",
-            "status": "Passed",
+            "status": "NotRun",
             "eArray": [
                 [
-                    "products.createProduct.popup.next.button",
+                    "products.costs.dropDownMenu",
                     "key"
                 ]
             ],
             "elementKey": "",
             "elementDesc": "",
-            "tcId": "8",
+            "@@mycolor": null,
+            "tcId": "30",
             "tsId": 7,
             "testData": false,
-            "@@mycolor": null,
-            "duration": 691000000,
-            "executedOn": "2021-09-23T17:28:54.294Z",
+            "duration": 617000000,
+            "executedOn": "2021-09-23T19:14:50.013Z",
             "errMessage": "",
             "isRowExpanded": false
         },
         {
             "indexColumn": "",
-            "command": "ShrdGetVarCurrentTime",
+            "command": "Implicit Wait",
             "element": "",
-            "input": "",
-            "status": "Passed",
+            "input": "1000",
+            "status": "NotRun",
             "eArray": [],
             "elementKey": "",
             "elementDesc": "",
-            "shared": true,
             "@@mycolor": null,
-            "tcId": "8",
+            "tcId": "30",
             "tsId": 7,
             "testData": false,
-            "lastExecutionDetail": [
-                {
-                    "indexColumn": "",
-                    "command": "Execute Java Script",
-                    "element": "",
-                    "input": "var value = new Date().getTime();var elem = document.createElement('div');elem.id='the-time';elem.innerHTML=value;document.body.insertAdjacentElement('beforeend', elem);/*fix shrd export*/;var elem = document.createElement('div');elem.id=value;elem.innerHTML=value;document.body.insertAdjacentElement('beforeend', elem);",
-                    "status": "Passed",
-                    "eArray": [],
-                    "elementKey": "",
-                    "elementDesc": "",
-                    "tcId": "8",
-                    "tsId": 7,
-                    "testData": false,
-                    "duration": 527000000,
-                    "executedOn": "2021-09-23T17:28:54.821Z",
-                    "errMessage": "",
-                    "isRowExpanded": false,
-                    "@@mycolor": null,
-                    "isSharable": true,
-                    "length": 2
-                },
-                {
-                    "indexColumn": "",
-                    "command": "Store Text",
-                    "element": "common.var.the-time",
-                    "input": "currentTime",
-                    "status": "Passed",
-                    "eArray": [
-                        [
-                            "common.var.the-time",
-                            "key"
-                        ],
-                        [
-                            "id=the-time",
-                            "id"
-                        ]
-                    ],
-                    "elementKey": "",
-                    "elementDesc": "",
-                    "tcId": "8",
-                    "tsId": 7,
-                    "testData": false,
-                    "duration": 801000000,
-                    "executedOn": "2021-09-23T17:28:55.622Z",
-                    "errMessage": "",
-                    "isRowExpanded": false,
-                    "@@mycolor": null,
-                    "isSharable": true,
-                    "length": 2
-                }
-            ]
-        },
-        {
-            "indexColumn": "",
-            "command": "Type",
-            "element": "products.createProduct.popup.name.input",
-            "input": "${currentTime}",
-            "status": "Passed",
-            "eArray": [
-                [
-                    "products.createProduct.popup.name.input",
-                    "key"
-                ]
-            ],
-            "elementKey": "",
-            "elementDesc": "",
-            "isEncrypted": false,
-            "isDisplay": false,
-            "@@mycolor": null,
-            "tcId": "8",
-            "tsId": 7,
-            "testData": false,
-            "duration": 732000000,
-            "executedOn": "2021-09-23T17:28:56.354Z",
+            "duration": 1515000000,
+            "executedOn": "2021-09-23T19:14:51.529Z",
             "errMessage": "",
             "isRowExpanded": false
         },
         {
             "indexColumn": "",
             "command": "Click",
-            "element": "products.createProduct.popup.family.input",
+            "element": "products.costs.dropDownMenu.option.new",
             "input": "",
-            "status": "Passed",
+            "status": "NotRun",
             "eArray": [
                 [
-                    "products.createProduct.popup.family.input",
+                    "products.costs.dropDownMenu.option.new",
                     "key"
                 ]
             ],
             "elementKey": "",
             "elementDesc": "",
-            "tcId": "8",
+            "tcId": "30",
             "tsId": 7,
             "testData": false,
-            "duration": 671000000,
-            "executedOn": "2021-09-23T17:28:57.026Z",
+            "@@mycolor": null,
+            "duration": 744000000,
+            "executedOn": "2021-09-23T19:14:52.273Z",
             "errMessage": "",
-            "isRowExpanded": false,
-            "@@mycolor": null
+            "isRowExpanded": false
         },
         {
             "indexColumn": "",
-            "command": "Click",
-            "element": "products.createProduct.popup.family.input.option.Tools",
+            "command": "Wait For Visible",
+            "element": "cost.createCost.popup.unitCost",
             "input": "",
-            "status": "Passed",
+            "status": "NotRun",
             "eArray": [
                 [
-                    "products.createProduct.popup.family.input.option.Tools",
-                    "key"
-                ]
-            ],
-            "elementKey": "",
-            "elementDesc": "",
-            "tcId": "8",
-            "tsId": 7,
-            "testData": false,
-            "duration": 660000000,
-            "executedOn": "2021-09-23T17:28:57.686Z",
-            "errMessage": "",
-            "isRowExpanded": false,
-            "@@mycolor": null
-        },
-        {
-            "indexColumn": "",
-            "command": "Type",
-            "element": "products.createProduct.popup.productDescription.input",
-            "input": "Product description",
-            "status": "Passed",
-            "eArray": [
-                [
-                    "products.createProduct.popup.productDescription.input",
+                    "cost.createCost.popup.unitCost",
                     "key"
                 ]
             ],
             "elementKey": "",
             "elementDesc": "",
             "@@mycolor": null,
-            "tcId": "8",
+            "tcId": "30",
             "tsId": 7,
             "testData": false,
-            "duration": 757000000,
-            "executedOn": "2021-09-23T17:28:58.443Z",
+            "duration": 960000000,
+            "executedOn": "2021-09-23T19:14:53.233Z",
             "errMessage": "",
             "isRowExpanded": false
         },
         {
             "indexColumn": "",
             "command": "Type",
-            "element": "products.createProduct.popup.oemManufacturer.input",
-            "input": "OEM Manufacturer",
-            "status": "Passed",
-            "eArray": [
-                [
-                    "products.createProduct.popup.oemManufacturer.input",
-                    "key"
-                ]
-            ],
-            "elementKey": "",
-            "elementDesc": "",
-            "@@mycolor": null,
-            "tcId": "8",
-            "tsId": 7,
-            "testData": false,
-            "duration": 775000000,
-            "executedOn": "2021-09-23T17:28:59.218Z",
-            "errMessage": "",
-            "isRowExpanded": false
-        },
-        {
-            "indexColumn": "",
-            "command": "Type",
-            "element": "products.createProduct.popup.productCode.input",
-            "input": "${currentTime}",
-            "status": "Passed",
-            "eArray": [
-                [
-                    "products.createProduct.popup.productCode.input",
-                    "key"
-                ]
-            ],
-            "elementKey": "",
-            "elementDesc": "",
-            "@@mycolor": null,
-            "isEncrypted": false,
-            "isDisplay": false,
-            "tcId": "8",
-            "tsId": 7,
-            "testData": false,
-            "duration": 725000000,
-            "executedOn": "2021-09-23T17:28:59.943Z",
-            "errMessage": "",
-            "isRowExpanded": false
-        },
-        {
-            "indexColumn": "",
-            "command": "Type",
-            "element": "products.createProduct.popup.watts.input",
+            "element": "cost.createCost.popup.unitCost",
             "input": "123",
-            "status": "Passed",
+            "status": "NotRun",
             "eArray": [
                 [
-                    "products.createProduct.popup.watts.input",
+                    "cost.createCost.popup.unitCost",
                     "key"
                 ]
             ],
             "elementKey": "",
             "elementDesc": "",
             "@@mycolor": null,
-            "tcId": "8",
+            "tcId": "30",
             "tsId": 7,
             "testData": false,
-            "duration": 704000000,
-            "executedOn": "2021-09-23T17:29:00.647Z",
-            "errMessage": "",
-            "isRowExpanded": false
-        },
-        {
-            "indexColumn": "",
-            "command": "Type",
-            "element": "products.createProduct.popup.activeDataSheet.input",
-            "input": "Active Data Sheet",
-            "status": "Passed",
-            "eArray": [
-                [
-                    "products.createProduct.popup.activeDataSheet.input",
-                    "key"
-                ]
-            ],
-            "elementKey": "",
-            "elementDesc": "",
-            "@@mycolor": null,
-            "tcId": "8",
-            "tsId": 7,
-            "testData": false,
-            "duration": 751000000,
-            "executedOn": "2021-09-23T17:29:01.398Z",
+            "duration": 606000000,
+            "executedOn": "2021-09-23T19:14:53.839Z",
             "errMessage": "",
             "isRowExpanded": false
         },
         {
             "indexColumn": "",
             "command": "Click",
-            "element": "products.createProduct.popup.save.button",
+            "element": "cost.createCost.popup.save.button",
             "input": "",
-            "status": "Passed",
+            "status": "NotRun",
             "eArray": [
                 [
-                    "products.createProduct.popup.save.button",
+                    "cost.createCost.popup.save.button",
                     "key"
                 ]
             ],
             "elementKey": "",
             "elementDesc": "",
             "@@mycolor": null,
-            "tcId": "8",
+            "tcId": "30",
             "tsId": 7,
             "testData": false,
-            "duration": 661000000,
-            "executedOn": "2021-09-23T17:29:02.059Z",
+            "duration": 610000000,
+            "executedOn": "2021-09-23T19:14:54.449Z",
             "errMessage": "",
             "isRowExpanded": false
         },
         {
             "indexColumn": "",
             "command": "Wait For Present",
-            "element": "common.toastContainer",
+            "element": "common.toastContainer.link",
             "input": "",
-            "status": "Passed",
+            "status": "NotRun",
             "eArray": [
                 [
-                    "common.toastContainer",
+                    "common.toastContainer.link",
                     "key"
+                ],
+                [
+                    "xpath=//div[contains(@class, 'toastContainer')]//a",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "tcId": "30",
+            "tsId": 7,
+            "testData": false,
+            "duration": 570000000,
+            "executedOn": "2021-09-23T19:14:55.019Z",
+            "errMessage": "",
+            "isRowExpanded": false,
+            "@@mycolor": null
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "common.toastContainer.link",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "common.toastContainer.link",
+                    "key"
+                ],
+                [
+                    "xpath=//div[contains(@class, 'toastContainer')]//a",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "tcId": "30",
+            "tsId": 7,
+            "testData": false,
+            "duration": 631000000,
+            "executedOn": "2021-09-23T19:14:55.650Z",
+            "errMessage": "",
+            "isRowExpanded": false,
+            "@@mycolor": null
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Present",
+            "element": "cost.details.unitCost",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "cost.details.unitCost",
+                    "key"
+                ],
+                [
+                    "//div[contains(@class, 'windowViewMode-normal')]//span[text()='Unit Cost']//parent::div//parent::div//lightning-formatted-text",
+                    "//div[contains(@class, 'windowViewMode-normal')]//span[text()"
                 ]
             ],
             "elementKey": "",
             "elementDesc": "",
             "@@mycolor": null,
-            "tcId": "8",
+            "tcId": "30",
             "tsId": 7,
             "testData": false,
-            "duration": 1394000000,
-            "executedOn": "2021-09-23T17:29:03.453Z",
+            "duration": 1418000000,
+            "executedOn": "2021-09-23T19:14:57.068Z",
             "errMessage": "",
             "isRowExpanded": false
         },
         {
             "indexColumn": "",
             "command": "Assert Text",
-            "element": "products.details.name",
-            "input": "${currentTime}",
-            "status": "Passed",
+            "element": "cost.details.unitCost",
+            "input": "$123.00",
+            "status": "NotRun",
             "eArray": [
                 [
-                    "products.details.name",
+                    "cost.details.unitCost",
                     "key"
                 ]
             ],
             "elementKey": "",
             "elementDesc": "",
             "@@mycolor": null,
-            "isEncrypted": false,
-            "isDisplay": false,
-            "tcId": "8",
+            "tcId": "30",
             "tsId": 7,
             "testData": false,
-            "duration": 999000000,
-            "executedOn": "2021-09-23T17:29:04.452Z",
-            "expected": "1632418134818",
-            "actual": "1632418134818",
+            "duration": 582000000,
+            "executedOn": "2021-09-23T19:14:57.650Z",
+            "expected": "$123.00",
+            "actual": "$123.00",
             "errMessage": "",
             "isRowExpanded": false
         }
@@ -1209,6 +1286,7 @@
             }
         }
     },
+    "testData": "resources/testdata/Products/Create Cost For OM Product.csv",
     "testDataExample": [],
     "isTCValid": true,
     "externalTestData": false,
@@ -1220,9 +1298,12 @@
         },
         {
             "name": "positive"
+        },
+        {
+            "name": "cost"
         }
     ],
-    "description": "Verify whether user is able to create a product of record type O&M Product",
+    "description": "Verify whether user is able to create a Cost using an O&M Product",
     "shared": true,
     "executionStatus": "NotRun"
 }

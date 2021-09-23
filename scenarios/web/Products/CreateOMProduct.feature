@@ -6,7 +6,7 @@ Feature: Products
 
 Scenario: Create OM Product
 	
-   Given ShrdLoginToFullCopy 
+   Given ShrdLoginToFullCopy "${username}" "${password}"
    Then wait until "applauncher.div" to be present
    When wait until "applauncher.div" to be enable
    And click on "applauncher.div"

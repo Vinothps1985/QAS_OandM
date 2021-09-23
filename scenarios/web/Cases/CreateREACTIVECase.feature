@@ -3,11 +3,11 @@ Feature: Cases
 @author:Rodrigo Montemayor
 @description:Verify whether user is able to create a case of record type REACTIVE
 @case @positive
-@dataFile:resources/testdata/data.csv
+@dataFile:resources/testdata/Cases/Create REACTIVE case.csv
 
 Scenario: Create REACTIVE case
 	
-   Given ShrdLoginToFullCopy 
+   Given ShrdLoginToFullCopy "${username}" "${password}"
    When wait until "applauncher.div" to be enable
    And click on "applauncher.div"
    Then wait until "applauncher.input.text" to be present

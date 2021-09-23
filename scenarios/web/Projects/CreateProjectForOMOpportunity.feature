@@ -3,10 +3,11 @@ Feature: Projects
 @author:Rodrigo Montemayor
 @description:Verify whether user is able to create a project for the opportunity with record type O&M Opportunity
 @project @positive
+@dataFile:resources/testdata/Projects/Create project for OM Opportunity.csv
 
 Scenario: Create project for OM Opportunity
 	
-   Given ShrdLoginToFullCopy 
+   Given ShrdLoginToFullCopy "${username}" "${password}"
    Then wait until "applauncher.div" to be present
    When wait until "applauncher.div" to be enable
    And click on "applauncher.div"

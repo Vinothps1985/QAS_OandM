@@ -7,19 +7,8 @@ Feature: Cases
 
 Scenario: Create REACTIVE case
 	
-   Given get "https://bssi--fullcopy.lightning.force.com/"
-   And maximizeWindow 
-   When wait until "login.username" to be enable
-   And clear "login.username"
-   And wait until "login.username" to be enable
-   And sendKeys "rmontemayor@borregosolar.com.fullcopy" into "login.username"
-   And wait until "login.password" to be enable
-   And clear "login.password"
-   And wait until "login.password" to be enable
-   And sendEncryptedKeys "RkNoYWhhaGFjb29sMg==" into "login.password"
-   And wait until "login.submit" to be enable
-   And click on "login.submit"
-   And wait until "applauncher.div" to be enable
+   Given ShrdLoginToFullCopy 
+   When wait until "applauncher.div" to be enable
    And click on "applauncher.div"
    Then wait until "applauncher.input.text" to be present
    When wait until "applauncher.input.text" to be enable

@@ -1,10 +1,9 @@
 {
     "steps": [
         {
-            "command": "Open",
-            "element": "",
+            "command": "ShrdLoginToFullCopy",
             "eArray": [],
-            "input": "https://bssi--fullcopy.lightning.force.com/",
+            "input": "",
             "status": "Passed",
             "elementKey": "",
             "elementDesc": "",
@@ -12,336 +11,379 @@
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
             "duration": 4113000000,
             "executedOn": "2021-09-22T05:23:35.576Z",
             "errMessage": "",
-            "isRowExpanded": false
-        },
-        {
-            "indexColumn": "",
-            "command": "Maximize",
-            "element": "",
-            "input": "",
-            "status": "Passed",
-            "eArray": [],
-            "elementKey": "",
-            "elementDesc": "",
-            "@@mycolor": null,
-            "tcId": "6",
-            "tsId": 4,
-            "testData": false,
-            "duration": 659000000,
-            "executedOn": "2021-09-22T05:23:36.236Z",
-            "errMessage": "",
-            "isRowExpanded": false
-        },
-        {
-            "command": "Clear",
-            "element": "login.username",
-            "eArray": [
-                [
-                    "login.username",
-                    "key"
-                ],
-                [
-                    "id=username",
-                    "id"
-                ],
-                [
-                    "name=username",
-                    "name"
-                ],
-                [
-                    "xpath=//div[@id='username_container']/input",
-                    "xpath:idRelative"
-                ],
-                [
-                    "xpath=//div/input",
-                    "xpath:position"
-                ],
-                [
-                    "css=#username",
-                    "css"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Nombre de usuario'])[1]/following::input[1]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Cancelar'])[1]/following::input[19]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Contraseña'])[1]/preceding::input[2]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Recordarme'])[1]/preceding::input[5]",
-                    "xpath:neighbor"
-                ]
-            ],
-            "input": "",
-            "status": "Passed",
-            "elementKey": "email.username",
-            "elementDesc": "username email",
-            "isEncrypted": false,
-            "isDisplay": false,
-            "indexColumn": "",
-            "@@mycolor": null,
-            "tcId": "6",
-            "tsId": 4,
-            "testData": false,
-            "duration": 599000000,
-            "executedOn": "2021-09-22T05:23:36.836Z",
-            "errMessage": "",
-            "isRowExpanded": false
-        },
-        {
-            "command": "Type",
-            "element": "login.username",
-            "eArray": [
-                [
-                    "login.username",
-                    "key"
-                ],
-                [
-                    "id=username",
-                    "id"
-                ],
-                [
-                    "name=username",
-                    "name"
-                ],
-                [
-                    "xpath=//div[@id='username_container']/input",
-                    "xpath:idRelative"
-                ],
-                [
-                    "xpath=//div/input",
-                    "xpath:position"
-                ],
-                [
-                    "css=#username",
-                    "css"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Nombre de usuario'])[1]/following::input[1]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Cancelar'])[1]/following::input[19]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Contraseña'])[1]/preceding::input[2]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Recordarme'])[1]/preceding::input[5]",
-                    "xpath:neighbor"
-                ]
-            ],
-            "input": "rmontemayor@borregosolar.com.fullcopy",
-            "status": "Passed",
-            "elementKey": "email.username",
-            "elementDesc": "username email",
-            "isEncrypted": false,
-            "isDisplay": false,
-            "indexColumn": "",
-            "@@mycolor": null,
-            "tcId": "6",
-            "tsId": 4,
-            "testData": false,
-            "duration": 574000000,
-            "executedOn": "2021-09-22T05:23:37.410Z",
-            "errMessage": "",
-            "isRowExpanded": false
-        },
-        {
-            "command": "Clear",
-            "element": "login.password",
-            "eArray": [
-                [
-                    "login.password",
-                    "key"
-                ],
-                [
-                    "id=password",
-                    "id"
-                ],
-                [
-                    "name=pw",
-                    "name"
-                ],
-                [
-                    "xpath=//form[@id='login_form']/input",
-                    "xpath:idRelative"
-                ],
-                [
-                    "xpath=//form/input",
-                    "xpath:position"
-                ],
-                [
-                    "css=#password",
-                    "css"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Contraseña'])[1]/following::input[1]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Nombre de usuario'])[1]/following::input[3]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Recordarme'])[1]/preceding::input[3]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='¿Olvidó la contraseña?'])[1]/preceding::input[3]",
-                    "xpath:neighbor"
-                ]
-            ],
-            "input": "",
-            "status": "Passed",
-            "elementKey": "password.password",
-            "elementDesc": "password password",
-            "isEncrypted": false,
-            "isDisplay": false,
-            "indexColumn": "",
-            "@@mycolor": null,
-            "tcId": "6",
-            "tsId": 4,
-            "testData": false,
-            "duration": 585000000,
-            "executedOn": "2021-09-22T05:23:37.995Z",
-            "errMessage": "",
-            "isRowExpanded": false
-        },
-        {
-            "command": "Type",
-            "element": "login.password",
-            "eArray": [
-                [
-                    "login.password",
-                    "key"
-                ],
-                [
-                    "id=password",
-                    "id"
-                ],
-                [
-                    "name=pw",
-                    "name"
-                ],
-                [
-                    "xpath=//form[@id='login_form']/input",
-                    "xpath:idRelative"
-                ],
-                [
-                    "xpath=//form/input",
-                    "xpath:position"
-                ],
-                [
-                    "css=#password",
-                    "css"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Contraseña'])[1]/following::input[1]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Nombre de usuario'])[1]/following::input[3]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Recordarme'])[1]/preceding::input[3]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='¿Olvidó la contraseña?'])[1]/preceding::input[3]",
-                    "xpath:neighbor"
-                ]
-            ],
-            "input": "RkNwYXNzd29yZDEyMyE=",
-            "status": "Passed",
-            "elementKey": "password.password",
-            "elementDesc": "password password",
-            "isEncrypted": true,
-            "isDisplay": true,
-            "indexColumn": "",
-            "@@mycolor": null,
-            "tcId": "6",
-            "tsId": 4,
-            "testData": false,
-            "duration": 575000000,
-            "executedOn": "2021-09-22T05:23:38.570Z",
-            "errMessage": "",
-            "isRowExpanded": false
-        },
-        {
-            "command": "Click",
-            "element": "login.submit",
-            "eArray": [
-                [
-                    "login.submit",
-                    "key"
-                ],
-                [
-                    "id=Login",
-                    "id"
-                ],
-                [
-                    "name=Login",
-                    "name"
-                ],
-                [
-                    "xpath=//form[@id='login_form']/input[2]",
-                    "xpath:idRelative"
-                ],
-                [
-                    "xpath=//input[2]",
-                    "xpath:position"
-                ],
-                [
-                    "css=#Login",
-                    "css"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Contraseña'])[1]/following::input[2]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Nombre de usuario'])[1]/following::input[4]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Recordarme'])[1]/preceding::input[2]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='¿Olvidó la contraseña?'])[1]/preceding::input[2]",
-                    "xpath:neighbor"
-                ]
-            ],
-            "input": "",
-            "status": "Passed",
-            "elementKey": "submit.login",
-            "elementDesc": "Login submit",
-            "isEncrypted": false,
-            "isDisplay": false,
-            "indexColumn": "",
-            "@@mycolor": null,
-            "tcId": "6",
-            "tsId": 4,
-            "testData": false,
-            "duration": 2662000000,
-            "executedOn": "2021-09-22T05:23:41.232Z",
-            "errMessage": "",
-            "isRowExpanded": false
+            "isRowExpanded": false,
+            "shared": true,
+            "lastExecutionDetail": [
+                {
+                    "command": "Open",
+                    "element": "",
+                    "eArray": [],
+                    "input": "https://bssi--fullcopy.lightning.force.com/",
+                    "status": "Passed",
+                    "elementKey": "",
+                    "elementDesc": "",
+                    "isEncrypted": false,
+                    "isDisplay": false,
+                    "indexColumn": "",
+                    "@@mycolor": null,
+                    "tcId": "5",
+                    "tsId": 4,
+                    "testData": false,
+                    "duration": 3414000000,
+                    "executedOn": "2021-09-23T16:03:42.519Z",
+                    "errMessage": "",
+                    "isRowExpanded": false,
+                    "isSharable": true,
+                    "length": 7
+                },
+                {
+                    "indexColumn": "",
+                    "command": "Maximize",
+                    "element": "",
+                    "input": "",
+                    "status": "Passed",
+                    "eArray": [],
+                    "elementKey": "",
+                    "elementDesc": "",
+                    "@@mycolor": null,
+                    "tcId": "5",
+                    "tsId": 4,
+                    "testData": false,
+                    "duration": 635000000,
+                    "executedOn": "2021-09-23T16:03:43.154Z",
+                    "errMessage": "",
+                    "isRowExpanded": false,
+                    "qasnumbers": false,
+                    "isSharable": true,
+                    "length": 7
+                },
+                {
+                    "command": "Clear",
+                    "element": "login.username",
+                    "eArray": [
+                        [
+                            "login.username",
+                            "key"
+                        ],
+                        [
+                            "id=username",
+                            "id"
+                        ],
+                        [
+                            "name=username",
+                            "name"
+                        ],
+                        [
+                            "xpath=//div[@id='username_container']/input",
+                            "xpath:idRelative"
+                        ],
+                        [
+                            "xpath=//div/input",
+                            "xpath:position"
+                        ],
+                        [
+                            "css=#username",
+                            "css"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Nombre de usuario'])[1]/following::input[1]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Cancelar'])[1]/following::input[19]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Contraseña'])[1]/preceding::input[2]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Recordarme'])[1]/preceding::input[5]",
+                            "xpath:neighbor"
+                        ]
+                    ],
+                    "input": "",
+                    "status": "Passed",
+                    "elementKey": "email.username",
+                    "elementDesc": "username email",
+                    "isEncrypted": false,
+                    "isDisplay": false,
+                    "indexColumn": "",
+                    "@@mycolor": null,
+                    "tcId": "5",
+                    "tsId": 4,
+                    "testData": false,
+                    "duration": 581000000,
+                    "executedOn": "2021-09-23T16:03:43.735Z",
+                    "errMessage": "",
+                    "isRowExpanded": false,
+                    "qasnumbers": false,
+                    "isSharable": true,
+                    "length": 7
+                },
+                {
+                    "command": "Type",
+                    "element": "login.username",
+                    "eArray": [
+                        [
+                            "login.username",
+                            "key"
+                        ],
+                        [
+                            "id=username",
+                            "id"
+                        ],
+                        [
+                            "name=username",
+                            "name"
+                        ],
+                        [
+                            "xpath=//div[@id='username_container']/input",
+                            "xpath:idRelative"
+                        ],
+                        [
+                            "xpath=//div/input",
+                            "xpath:position"
+                        ],
+                        [
+                            "css=#username",
+                            "css"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Nombre de usuario'])[1]/following::input[1]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Cancelar'])[1]/following::input[19]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Contraseña'])[1]/preceding::input[2]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Recordarme'])[1]/preceding::input[5]",
+                            "xpath:neighbor"
+                        ]
+                    ],
+                    "input": "rmontemayor@borregosolar.com.fullcopy",
+                    "status": "Passed",
+                    "elementKey": "email.username",
+                    "elementDesc": "username email",
+                    "isEncrypted": false,
+                    "isDisplay": false,
+                    "indexColumn": "",
+                    "@@mycolor": null,
+                    "tcId": "5",
+                    "tsId": 4,
+                    "testData": false,
+                    "duration": 619000000,
+                    "executedOn": "2021-09-23T16:03:44.354Z",
+                    "errMessage": "",
+                    "isRowExpanded": false,
+                    "qasnumbers": false,
+                    "isSharable": true,
+                    "length": 7
+                },
+                {
+                    "command": "Clear",
+                    "element": "login.password",
+                    "eArray": [
+                        [
+                            "login.password",
+                            "key"
+                        ],
+                        [
+                            "id=password",
+                            "id"
+                        ],
+                        [
+                            "name=pw",
+                            "name"
+                        ],
+                        [
+                            "xpath=//form[@id='login_form']/input",
+                            "xpath:idRelative"
+                        ],
+                        [
+                            "xpath=//form/input",
+                            "xpath:position"
+                        ],
+                        [
+                            "css=#password",
+                            "css"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Contraseña'])[1]/following::input[1]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Nombre de usuario'])[1]/following::input[3]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Recordarme'])[1]/preceding::input[3]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='¿Olvidó la contraseña?'])[1]/preceding::input[3]",
+                            "xpath:neighbor"
+                        ]
+                    ],
+                    "input": "",
+                    "status": "Passed",
+                    "elementKey": "password.password",
+                    "elementDesc": "password password",
+                    "isEncrypted": false,
+                    "isDisplay": false,
+                    "indexColumn": "",
+                    "@@mycolor": null,
+                    "tcId": "5",
+                    "tsId": 4,
+                    "testData": false,
+                    "duration": 586000000,
+                    "executedOn": "2021-09-23T16:03:44.940Z",
+                    "errMessage": "",
+                    "isRowExpanded": false,
+                    "qasnumbers": false,
+                    "isSharable": true,
+                    "length": 7
+                },
+                {
+                    "command": "Type",
+                    "element": "login.password",
+                    "eArray": [
+                        [
+                            "login.password",
+                            "key"
+                        ],
+                        [
+                            "id=password",
+                            "id"
+                        ],
+                        [
+                            "name=pw",
+                            "name"
+                        ],
+                        [
+                            "xpath=//form[@id='login_form']/input",
+                            "xpath:idRelative"
+                        ],
+                        [
+                            "xpath=//form/input",
+                            "xpath:position"
+                        ],
+                        [
+                            "css=#password",
+                            "css"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Contraseña'])[1]/following::input[1]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Nombre de usuario'])[1]/following::input[3]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Recordarme'])[1]/preceding::input[3]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='¿Olvidó la contraseña?'])[1]/preceding::input[3]",
+                            "xpath:neighbor"
+                        ]
+                    ],
+                    "input": "RkNwYXNzd29yZDEyMyE=",
+                    "status": "Passed",
+                    "elementKey": "password.password",
+                    "elementDesc": "password password",
+                    "isEncrypted": true,
+                    "isDisplay": true,
+                    "indexColumn": "",
+                    "@@mycolor": null,
+                    "tcId": "5",
+                    "tsId": 4,
+                    "testData": false,
+                    "duration": 580000000,
+                    "executedOn": "2021-09-23T16:03:45.520Z",
+                    "errMessage": "",
+                    "isRowExpanded": false,
+                    "qasnumbers": false,
+                    "isSharable": true,
+                    "length": 7
+                },
+                {
+                    "command": "Click",
+                    "element": "login.submit",
+                    "eArray": [
+                        [
+                            "login.submit",
+                            "key"
+                        ],
+                        [
+                            "id=Login",
+                            "id"
+                        ],
+                        [
+                            "name=Login",
+                            "name"
+                        ],
+                        [
+                            "xpath=//form[@id='login_form']/input[2]",
+                            "xpath:idRelative"
+                        ],
+                        [
+                            "xpath=//input[2]",
+                            "xpath:position"
+                        ],
+                        [
+                            "css=#Login",
+                            "css"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Contraseña'])[1]/following::input[2]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Nombre de usuario'])[1]/following::input[4]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Recordarme'])[1]/preceding::input[2]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='¿Olvidó la contraseña?'])[1]/preceding::input[2]",
+                            "xpath:neighbor"
+                        ]
+                    ],
+                    "input": "",
+                    "status": "Passed",
+                    "elementKey": "submit.login",
+                    "elementDesc": "Login submit",
+                    "isEncrypted": false,
+                    "isDisplay": false,
+                    "indexColumn": "",
+                    "@@mycolor": null,
+                    "tcId": "5",
+                    "tsId": 4,
+                    "testData": false,
+                    "duration": 2777000000,
+                    "executedOn": "2021-09-23T16:03:48.297Z",
+                    "errMessage": "",
+                    "isRowExpanded": false,
+                    "qasnumbers": false,
+                    "isSharable": true,
+                    "length": 7
+                }
+            ]
         },
         {
             "command": "Wait For Present",
@@ -376,11 +418,11 @@
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 4294000000,
-            "executedOn": "2021-09-22T05:23:45.526Z",
+            "duration": 4538000000,
+            "executedOn": "2021-09-23T16:03:52.835Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -399,11 +441,11 @@
             "elementKey": "",
             "elementDesc": "",
             "@@mycolor": null,
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 642000000,
-            "executedOn": "2021-09-22T05:23:46.168Z",
+            "duration": 639000000,
+            "executedOn": "2021-09-23T16:03:53.475Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -448,11 +490,11 @@
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 748000000,
-            "executedOn": "2021-09-22T05:23:46.916Z",
+            "duration": 691000000,
+            "executedOn": "2021-09-23T16:03:54.166Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -505,11 +547,11 @@
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 576000000,
-            "executedOn": "2021-09-22T05:23:47.492Z",
+            "duration": 642000000,
+            "executedOn": "2021-09-23T16:03:54.808Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -562,11 +604,11 @@
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 623000000,
-            "executedOn": "2021-09-22T05:23:48.115Z",
+            "duration": 683000000,
+            "executedOn": "2021-09-23T16:03:55.491Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -615,11 +657,11 @@
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 691000000,
-            "executedOn": "2021-09-22T05:23:48.806Z",
+            "duration": 556000000,
+            "executedOn": "2021-09-23T16:03:56.047Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -638,11 +680,11 @@
             "elementKey": "",
             "elementDesc": "",
             "@@mycolor": null,
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 639000000,
-            "executedOn": "2021-09-22T05:23:49.445Z",
+            "duration": 645000000,
+            "executedOn": "2021-09-23T16:03:56.692Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -691,11 +733,11 @@
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 825000000,
-            "executedOn": "2021-09-22T05:23:50.270Z",
+            "duration": 897000000,
+            "executedOn": "2021-09-23T16:03:57.589Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -714,11 +756,11 @@
             "elementKey": "",
             "elementDesc": "",
             "@@mycolor": null,
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 675000000,
-            "executedOn": "2021-09-22T05:23:50.945Z",
+            "duration": 667000000,
+            "executedOn": "2021-09-23T16:03:58.256Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -767,11 +809,11 @@
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 538000000,
-            "executedOn": "2021-09-22T05:23:51.483Z",
+            "duration": 627000000,
+            "executedOn": "2021-09-23T16:03:58.883Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -780,7 +822,7 @@
             "command": "Click",
             "element": "opportunities.selectListView.allOpportunities",
             "input": "",
-            "status": "NotRun",
+            "status": "Passed",
             "eArray": [
                 [
                     "opportunities.selectListView.allOpportunities",
@@ -790,11 +832,11 @@
             "elementKey": "",
             "elementDesc": "",
             "@@mycolor": null,
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 691000000,
-            "executedOn": "2021-09-22T05:23:52.174Z",
+            "duration": 710000000,
+            "executedOn": "2021-09-23T16:03:59.593Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -803,11 +845,18 @@
             "command": "Implicit Wait",
             "element": "",
             "input": "3000",
-            "status": "NotRun",
+            "status": "Passed",
             "eArray": [],
             "elementKey": "",
             "elementDesc": "",
-            "@@mycolor": null
+            "@@mycolor": null,
+            "tcId": "5",
+            "tsId": 4,
+            "testData": false,
+            "duration": 3530000000,
+            "executedOn": "2021-09-23T16:04:03.123Z",
+            "errMessage": "",
+            "isRowExpanded": false
         },
         {
             "command": "Clear",
@@ -866,11 +915,11 @@
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 575000000,
-            "executedOn": "2021-09-22T05:23:52.749Z",
+            "duration": 630000000,
+            "executedOn": "2021-09-23T16:04:03.753Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -931,11 +980,11 @@
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 745000000,
-            "executedOn": "2021-09-22T05:23:53.494Z",
+            "duration": 618000000,
+            "executedOn": "2021-09-23T16:04:04.371Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -989,18 +1038,18 @@
                 ]
             ],
             "input": "",
-            "status": "NotRun",
+            "status": "Passed",
             "elementKey": "search.input119",
             "elementDesc": "input-119 search",
             "isEncrypted": false,
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 627000000,
-            "executedOn": "2021-09-22T05:23:54.121Z",
+            "duration": 573000000,
+            "executedOn": "2021-09-23T16:04:04.944Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -1008,7 +1057,7 @@
             "indexColumn": "",
             "command": "Implicit Wait",
             "input": "2000",
-            "status": "NotRun",
+            "status": "Passed",
             "eArray": [
                 [
                     "xpath=//table//a[text()='-RE-Volv-California-Roof-2534']",
@@ -1022,11 +1071,11 @@
             "elementKey": "",
             "elementDesc": "",
             "@@mycolor": null,
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
             "duration": 2522000000,
-            "executedOn": "2021-09-22T05:23:57.203Z",
+            "executedOn": "2021-09-23T16:04:07.466Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -1084,18 +1133,18 @@
                 ]
             ],
             "input": "",
-            "status": "NotRun",
+            "status": "Passed",
             "elementKey": "link.revolvcaliforniaroof2534",
             "elementDesc": "Link for -RE-Volv-California-Roof-2534",
             "isEncrypted": false,
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 560000000,
-            "executedOn": "2021-09-22T05:23:54.681Z",
+            "duration": 552000000,
+            "executedOn": "2021-09-23T16:04:08.018Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -1104,7 +1153,7 @@
             "command": "Click",
             "element": "opportunities.search.results.first",
             "input": "",
-            "status": "NotRun",
+            "status": "Passed",
             "eArray": [
                 [
                     "opportunities.search.results.first",
@@ -1129,11 +1178,11 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 647000000,
-            "executedOn": "2021-09-22T05:23:57.851Z",
+            "duration": 653000000,
+            "executedOn": "2021-09-23T16:04:08.671Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null
@@ -1187,11 +1236,11 @@
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 1386000000,
-            "executedOn": "2021-09-22T05:23:59.238Z",
+            "duration": 1583000000,
+            "executedOn": "2021-09-23T16:04:10.254Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -1213,11 +1262,11 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 696000000,
-            "executedOn": "2021-09-22T05:23:59.935Z",
+            "duration": 745000000,
+            "executedOn": "2021-09-23T16:04:10.999Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null
@@ -1244,11 +1293,11 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 566000000,
-            "executedOn": "2021-09-22T05:24:00.501Z",
+            "duration": 586000000,
+            "executedOn": "2021-09-23T16:04:11.585Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null
@@ -1271,11 +1320,11 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 1019000000,
-            "executedOn": "2021-09-22T05:24:01.520Z",
+            "duration": 916000000,
+            "executedOn": "2021-09-23T16:04:12.501Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null
@@ -1306,11 +1355,11 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 571000000,
-            "executedOn": "2021-09-22T05:24:02.091Z",
+            "duration": 560000000,
+            "executedOn": "2021-09-23T16:04:13.061Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null
@@ -1356,11 +1405,11 @@
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 633000000,
-            "executedOn": "2021-09-22T05:24:02.724Z",
+            "duration": 641000000,
+            "executedOn": "2021-09-23T16:04:13.702Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -1372,11 +1421,11 @@
             "eArray": [],
             "elementKey": "",
             "elementDesc": "",
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 512000000,
-            "executedOn": "2021-09-22T05:24:03.237Z",
+            "duration": 520000000,
+            "executedOn": "2021-09-23T16:04:14.222Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null
@@ -1403,11 +1452,11 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 6931000000,
-            "executedOn": "2021-09-22T05:24:10.169Z",
+            "duration": 8247000000,
+            "executedOn": "2021-09-23T16:04:22.469Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null
@@ -1465,11 +1514,11 @@
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 904000000,
-            "executedOn": "2021-09-22T05:24:11.073Z",
+            "duration": 793000000,
+            "executedOn": "2021-09-23T16:04:23.262Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -1526,11 +1575,11 @@
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 610000000,
-            "executedOn": "2021-09-22T05:24:11.683Z",
+            "duration": 713000000,
+            "executedOn": "2021-09-23T16:04:23.975Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -1587,11 +1636,11 @@
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 928000000,
-            "executedOn": "2021-09-22T05:24:12.611Z",
+            "duration": 938000000,
+            "executedOn": "2021-09-23T16:04:24.913Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -1648,11 +1697,11 @@
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 676000000,
-            "executedOn": "2021-09-22T05:24:13.287Z",
+            "duration": 715000000,
+            "executedOn": "2021-09-23T16:04:25.628Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -1674,11 +1723,11 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 1968000000,
-            "executedOn": "2021-09-22T05:24:15.255Z",
+            "duration": 3776000000,
+            "executedOn": "2021-09-23T16:04:29.404Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null
@@ -1736,11 +1785,11 @@
             "isDisplay": false,
             "@@mycolor": null,
             "indexColumn": "",
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 579000000,
-            "executedOn": "2021-09-22T05:24:15.834Z",
+            "duration": 618000000,
+            "executedOn": "2021-09-23T16:04:30.023Z",
             "errMessage": "",
             "isRowExpanded": false,
             "expected": "Project Name - Creating Contact",
@@ -1751,7 +1800,7 @@
             "indexColumn": "",
             "command": "Execute Java Script",
             "input": "var elem = document.createElement(\"div\");elem.id=\"the-url\";elem.innerHTML=window.location.href;document.body.insertAdjacentElement(\"beforeend\", elem);",
-            "status": "NotRun",
+            "status": "Passed",
             "eArray": [
                 [
                     "document.body.insertAdjacentHTML(\"beforeend\", \"<div id='the-url'>\" + window.location.href + \"</div>\")",
@@ -1760,11 +1809,11 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 513000000,
-            "executedOn": "2021-09-22T05:24:16.347Z",
+            "duration": 539000000,
+            "executedOn": "2021-09-23T16:04:30.562Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null
@@ -1787,59 +1836,81 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 563000000,
-            "executedOn": "2021-09-22T05:24:16.910Z",
+            "duration": 564000000,
+            "executedOn": "2021-09-23T16:04:31.126Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null
         },
         {
             "indexColumn": "",
-            "command": "Execute Java Script",
+            "command": "ShrdGetVarCurrentTime",
             "element": "",
-            "input": "var elem = document.createElement(\"div\");elem.id=\"the-time\";elem.innerHTML=new Date().getTime();document.body.insertAdjacentElement(\"beforeend\", elem);",
-            "status": "NotRun",
+            "input": "",
+            "status": "Passed",
             "eArray": [],
             "elementKey": "",
             "elementDesc": "",
-            "tcId": "6",
+            "shared": true,
+            "length": 2,
+            "@@mycolor": null,
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 536000000,
-            "executedOn": "2021-09-22T05:24:17.446Z",
-            "errMessage": "",
-            "isRowExpanded": false,
-            "@@mycolor": null
-        },
-        {
-            "indexColumn": "",
-            "command": "Store Text",
-            "element": "common.var.the-time",
-            "input": "currentTime",
-            "status": "Passed",
-            "eArray": [
-                [
-                    "id=the-time",
-                    "id"
-                ],
-                [
-                    "common.var.the-time",
-                    "key"
-                ]
-            ],
-            "elementKey": "",
-            "elementDesc": "",
-            "tcId": "6",
-            "tsId": 4,
-            "testData": false,
-            "duration": 546000000,
-            "executedOn": "2021-09-22T05:24:17.992Z",
-            "errMessage": "",
-            "isRowExpanded": false,
-            "@@mycolor": null
+            "lastExecutionDetail": [
+                {
+                    "indexColumn": "",
+                    "command": "Execute Java Script",
+                    "element": "",
+                    "input": "var elem = document.createElement(\"div\");elem.id=\"the-time\";elem.innerHTML=new Date().getTime();document.body.insertAdjacentElement(\"beforeend\", elem);",
+                    "status": "Passed",
+                    "eArray": [],
+                    "elementKey": "",
+                    "elementDesc": "",
+                    "tcId": "5",
+                    "tsId": 4,
+                    "testData": false,
+                    "duration": 512000000,
+                    "executedOn": "2021-09-23T16:04:31.638Z",
+                    "errMessage": "",
+                    "isRowExpanded": false,
+                    "@@mycolor": null,
+                    "isSharable": true,
+                    "length": 2
+                },
+                {
+                    "indexColumn": "",
+                    "command": "Store Text",
+                    "element": "common.var.the-time",
+                    "input": "currentTime",
+                    "status": "Passed",
+                    "eArray": [
+                        [
+                            "id=the-time",
+                            "id"
+                        ],
+                        [
+                            "common.var.the-time",
+                            "key"
+                        ]
+                    ],
+                    "elementKey": "",
+                    "elementDesc": "",
+                    "tcId": "5",
+                    "tsId": 4,
+                    "testData": false,
+                    "duration": 561000000,
+                    "executedOn": "2021-09-23T16:04:32.199Z",
+                    "errMessage": "",
+                    "isRowExpanded": false,
+                    "@@mycolor": null,
+                    "isSharable": true,
+                    "length": 2
+                }
+            ]
         },
         {
             "command": "Click",
@@ -1902,11 +1973,11 @@
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 633000000,
-            "executedOn": "2021-09-22T05:24:18.625Z",
+            "duration": 653000000,
+            "executedOn": "2021-09-23T16:04:32.852Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -1945,11 +2016,11 @@
             "elementKey": "",
             "elementDesc": "",
             "@@mycolor": null,
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 1124000000,
-            "executedOn": "2021-09-22T05:24:19.749Z",
+            "duration": 1878000000,
+            "executedOn": "2021-09-23T16:04:34.730Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -2026,11 +2097,11 @@
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 771000000,
-            "executedOn": "2021-09-22T05:24:20.520Z",
+            "duration": 813000000,
+            "executedOn": "2021-09-23T16:04:35.543Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -2083,11 +2154,11 @@
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 796000000,
-            "executedOn": "2021-09-22T05:24:21.316Z",
+            "duration": 839000000,
+            "executedOn": "2021-09-23T16:04:36.382Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -2144,11 +2215,11 @@
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 1135000000,
-            "executedOn": "2021-09-22T05:24:22.452Z",
+            "duration": 1495000000,
+            "executedOn": "2021-09-23T16:04:37.877Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -2178,12 +2249,12 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
             "@@mycolor": null,
-            "duration": 558000000,
-            "executedOn": "2021-09-22T05:24:23.010Z",
+            "duration": 572000000,
+            "executedOn": "2021-09-23T16:04:38.450Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -2205,11 +2276,11 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 696000000,
-            "executedOn": "2021-09-22T05:24:23.706Z",
+            "duration": 706000000,
+            "executedOn": "2021-09-23T16:04:39.156Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null
@@ -2263,11 +2334,11 @@
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 748000000,
-            "executedOn": "2021-09-22T05:24:24.454Z",
+            "duration": 769000000,
+            "executedOn": "2021-09-23T16:04:39.925Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -2328,11 +2399,11 @@
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 622000000,
-            "executedOn": "2021-09-22T05:24:25.076Z",
+            "duration": 629000000,
+            "executedOn": "2021-09-23T16:04:40.554Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -2354,11 +2425,11 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 1787000000,
-            "executedOn": "2021-09-22T05:24:26.863Z",
+            "duration": 556000000,
+            "executedOn": "2021-09-23T16:04:41.110Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null
@@ -2381,11 +2452,11 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 958000000,
-            "executedOn": "2021-09-22T05:24:27.822Z",
+            "duration": 820000000,
+            "executedOn": "2021-09-23T16:04:41.930Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null
@@ -2416,11 +2487,11 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 798000000,
-            "executedOn": "2021-09-22T05:24:28.620Z",
+            "duration": 23823000000,
+            "executedOn": "2021-09-23T16:05:05.753Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null
@@ -2429,7 +2500,7 @@
             "indexColumn": "",
             "command": "Execute Java Script",
             "input": "var input = document.createElement(\"input\");input.id=\"testing-name\";document.body.insertAdjacentElement(\"beforeend\", input);var input = document.createElement(\"input\");input.id=\"testing-last-name\";document.body.insertAdjacentElement(\"beforeend\", input);var input = document.createElement(\"input\");input.id=\"testing-full-name\";document.body.insertAdjacentElement(\"beforeend\", input);",
-            "status": "NotRun",
+            "status": "Passed",
             "eArray": [
                 [
                     "a",
@@ -2438,11 +2509,11 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 536000000,
-            "executedOn": "2021-09-22T05:24:29.156Z",
+            "duration": 532000000,
+            "executedOn": "2021-09-23T16:05:06.285Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null
@@ -2465,11 +2536,11 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 601000000,
-            "executedOn": "2021-09-22T05:24:29.757Z",
+            "duration": 616000000,
+            "executedOn": "2021-09-23T16:05:06.901Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null
@@ -2494,11 +2565,11 @@
             "elementDesc": "",
             "isEncrypted": false,
             "isDisplay": false,
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 615000000,
-            "executedOn": "2021-09-22T05:24:30.372Z",
+            "duration": 652000000,
+            "executedOn": "2021-09-23T16:05:07.553Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null
@@ -2508,15 +2579,15 @@
             "command": "Execute Java Script",
             "element": "",
             "input": "document.getElementById(\"testing-full-name\").value = document.getElementById(\"testing-name\").value + \" \" + document.getElementById(\"testing-last-name\").value;",
-            "status": "NotRun",
+            "status": "Passed",
             "eArray": [],
             "elementKey": "",
             "elementDesc": "",
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 534000000,
-            "executedOn": "2021-09-22T05:24:30.906Z",
+            "duration": 539000000,
+            "executedOn": "2021-09-23T16:05:08.092Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null
@@ -2539,11 +2610,11 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 574000000,
-            "executedOn": "2021-09-22T05:24:31.480Z",
+            "duration": 547000000,
+            "executedOn": "2021-09-23T16:05:08.640Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null
@@ -2568,13 +2639,13 @@
             "elementDesc": "",
             "isEncrypted": false,
             "isDisplay": false,
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 602000000,
-            "executedOn": "2021-09-22T05:24:32.082Z",
-            "expected": "Auto First Name 1632288257438",
-            "actual": "Auto First Name 1632288257438",
+            "duration": 577000000,
+            "executedOn": "2021-09-23T16:05:09.217Z",
+            "expected": "Auto First Name 1632413071634",
+            "actual": "Auto First Name 1632413071634",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null
@@ -2604,18 +2675,18 @@
                 ]
             ],
             "input": "var input = document.createElement(\"input\");input.id=\"input-url\";document.body.insertAdjacentElement(\"beforeend\", input);",
-            "status": "NotRun",
+            "status": "Passed",
             "elementKey": "path.path",
             "elementDesc": "path path",
             "isEncrypted": false,
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 525000000,
-            "executedOn": "2021-09-22T05:24:32.607Z",
+            "duration": 540000000,
+            "executedOn": "2021-09-23T16:05:09.757Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -2639,12 +2710,12 @@
             "elementDesc": "",
             "isEncrypted": false,
             "isDisplay": false,
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
             "isRowExpanded": false,
-            "duration": 665000000,
-            "executedOn": "2021-09-22T05:24:33.272Z",
+            "duration": 653000000,
+            "executedOn": "2021-09-23T16:05:10.410Z",
             "errMessage": "",
             "@@mycolor": null
         },
@@ -2657,11 +2728,11 @@
             "eArray": [],
             "elementKey": "",
             "elementDesc": "",
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 2187000000,
-            "executedOn": "2021-09-22T05:24:35.459Z",
+            "duration": 2071000000,
+            "executedOn": "2021-09-23T16:05:12.481Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null
@@ -2704,18 +2775,18 @@
                 ]
             ],
             "input": "",
-            "status": "NotRun",
+            "status": "Passed",
             "elementKey": "lightningprimitiveicon.lightningprimitiveicon731113",
             "elementDesc": "LIGHTNING-PRIMITIVE-ICON LIGHTNING-PRIMITIVE-ICON731113",
             "isEncrypted": false,
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 2815000000,
-            "executedOn": "2021-09-22T05:24:38.274Z",
+            "duration": 3454000000,
+            "executedOn": "2021-09-23T16:05:15.936Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -2724,11 +2795,18 @@
             "command": "Implicit Wait",
             "element": "",
             "input": "3000",
-            "status": "NotRun",
+            "status": "Passed",
             "eArray": [],
             "elementKey": "",
             "elementDesc": "",
-            "@@mycolor": null
+            "@@mycolor": null,
+            "tcId": "5",
+            "tsId": 4,
+            "testData": false,
+            "duration": 3516000000,
+            "executedOn": "2021-09-23T16:05:19.452Z",
+            "errMessage": "",
+            "isRowExpanded": false
         },
         {
             "command": "Wait For Visible",
@@ -2776,18 +2854,18 @@
                 ]
             ],
             "input": "",
-            "status": "NotRun",
+            "status": "Passed",
             "elementKey": "span.window",
             "elementDesc": "Text window",
             "isEncrypted": false,
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 598000000,
-            "executedOn": "2021-09-22T05:24:38.872Z",
+            "duration": 567000000,
+            "executedOn": "2021-09-23T16:05:20.019Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -2796,11 +2874,18 @@
             "command": "Implicit Wait",
             "element": "",
             "input": "3000",
-            "status": "NotRun",
+            "status": "Passed",
             "eArray": [],
             "elementKey": "",
             "elementDesc": "",
-            "@@mycolor": null
+            "@@mycolor": null,
+            "tcId": "5",
+            "tsId": 4,
+            "testData": false,
+            "duration": 3510000000,
+            "executedOn": "2021-09-23T16:05:23.529Z",
+            "errMessage": "",
+            "isRowExpanded": false
         },
         {
             "command": "Type",
@@ -2844,18 +2929,18 @@
                 ]
             ],
             "input": "${fullName}",
-            "status": "NotRun",
+            "status": "Passed",
             "elementKey": "span.viewall",
             "elementDesc": "Text viewall",
             "isEncrypted": false,
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 741000000,
-            "executedOn": "2021-09-22T05:24:39.613Z",
+            "duration": 756000000,
+            "executedOn": "2021-09-23T16:05:24.285Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -2908,11 +2993,11 @@
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 3153000000,
-            "executedOn": "2021-09-22T05:24:42.766Z",
+            "duration": 2951000000,
+            "executedOn": "2021-09-23T16:05:27.236Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -2958,18 +3043,18 @@
                 ]
             ],
             "input": "",
-            "status": "NotRun",
+            "status": "Passed",
             "elementKey": "span.sldscheckboxfaux",
             "elementDesc": "Text slds-checkbox_faux",
             "isEncrypted": false,
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "6",
+            "tcId": "5",
             "tsId": 4,
             "testData": false,
-            "duration": 689000000,
-            "executedOn": "2021-09-22T05:24:43.455Z",
+            "duration": 647000000,
+            "executedOn": "2021-09-23T16:05:27.883Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -2978,7 +3063,7 @@
             "command": "Wait For Present",
             "element": "projects.siteInformation.onSiteContact.link.span",
             "input": "",
-            "status": "NotRun",
+            "status": "Passed",
             "eArray": [
                 [
                     "projects.siteInformation.onSiteContact.link.span",
@@ -2986,14 +3071,22 @@
                 ]
             ],
             "elementKey": "",
-            "elementDesc": ""
+            "elementDesc": "",
+            "@@mycolor": null,
+            "tcId": "5",
+            "tsId": 4,
+            "testData": false,
+            "duration": 2131000000,
+            "executedOn": "2021-09-23T16:05:30.014Z",
+            "errMessage": "",
+            "isRowExpanded": false
         },
         {
             "indexColumn": "",
             "command": "Assert Text",
             "element": "projects.siteInformation.onSiteContact.link.span",
             "input": "${fullName}",
-            "status": "NotRun",
+            "status": "Passed",
             "eArray": [
                 [
                     "projects.siteInformation.onSiteContact.link.span",
@@ -3003,7 +3096,17 @@
             "elementKey": "",
             "elementDesc": "",
             "isEncrypted": false,
-            "isDisplay": false
+            "isDisplay": false,
+            "@@mycolor": null,
+            "tcId": "5",
+            "tsId": 4,
+            "testData": false,
+            "duration": 574000000,
+            "executedOn": "2021-09-23T16:05:30.588Z",
+            "expected": "Auto First Name 1632413071634",
+            "actual": "Auto First Name 1632413071634",
+            "errMessage": "",
+            "isRowExpanded": false
         }
     ],
     "type": "web",
@@ -3042,6 +3145,6 @@
         }
     ],
     "description": "Verify whether user is able to create a new Contact and add contact into Project.",
-    "shared": false,
-    "executionStatus": "NotRun"
+    "shared": true,
+    "executionStatus": "Passed"
 }

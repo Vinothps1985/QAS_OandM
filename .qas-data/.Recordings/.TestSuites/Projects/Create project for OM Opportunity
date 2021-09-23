@@ -1,347 +1,15 @@
 {
     "steps": [
         {
-            "command": "Open",
-            "element": "",
-            "eArray": [],
-            "input": "https://bssi--fullcopy.lightning.force.com/",
-            "status": "Passed",
-            "elementKey": "",
-            "elementDesc": "",
-            "isEncrypted": false,
-            "isDisplay": false,
             "indexColumn": "",
-            "@@mycolor": null,
-            "tcId": "5",
-            "tsId": 4,
-            "testData": false,
-            "duration": 3505000000,
-            "executedOn": "2021-09-21T14:33:08.573Z",
-            "errMessage": "",
-            "isRowExpanded": false
-        },
-        {
-            "indexColumn": "",
-            "command": "Maximize",
-            "element": "",
+            "command": "ShrdLoginToFullCopy",
             "input": "",
-            "status": "Passed",
+            "status": "NotRun",
             "eArray": [],
             "elementKey": "",
             "elementDesc": "",
-            "@@mycolor": null,
-            "tcId": "5",
-            "tsId": 4,
-            "testData": false,
-            "duration": 638000000,
-            "executedOn": "2021-09-21T14:33:09.211Z",
-            "errMessage": "",
-            "isRowExpanded": false
-        },
-        {
-            "command": "Clear",
-            "element": "login.username",
-            "eArray": [
-                [
-                    "login.username",
-                    "key"
-                ],
-                [
-                    "id=username",
-                    "id"
-                ],
-                [
-                    "name=username",
-                    "name"
-                ],
-                [
-                    "xpath=//div[@id='username_container']/input",
-                    "xpath:idRelative"
-                ],
-                [
-                    "xpath=//div/input",
-                    "xpath:position"
-                ],
-                [
-                    "css=#username",
-                    "css"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Nombre de usuario'])[1]/following::input[1]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Cancelar'])[1]/following::input[19]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Contraseña'])[1]/preceding::input[2]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Recordarme'])[1]/preceding::input[5]",
-                    "xpath:neighbor"
-                ]
-            ],
-            "input": "",
-            "status": "Passed",
-            "elementKey": "email.username",
-            "elementDesc": "username email",
-            "isEncrypted": false,
-            "isDisplay": false,
-            "indexColumn": "",
-            "@@mycolor": null,
-            "tcId": "5",
-            "tsId": 4,
-            "testData": false,
-            "duration": 585000000,
-            "executedOn": "2021-09-21T14:33:09.797Z",
-            "errMessage": "",
-            "isRowExpanded": false
-        },
-        {
-            "command": "Type",
-            "element": "login.username",
-            "eArray": [
-                [
-                    "login.username",
-                    "key"
-                ],
-                [
-                    "id=username",
-                    "id"
-                ],
-                [
-                    "name=username",
-                    "name"
-                ],
-                [
-                    "xpath=//div[@id='username_container']/input",
-                    "xpath:idRelative"
-                ],
-                [
-                    "xpath=//div/input",
-                    "xpath:position"
-                ],
-                [
-                    "css=#username",
-                    "css"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Nombre de usuario'])[1]/following::input[1]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Cancelar'])[1]/following::input[19]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Contraseña'])[1]/preceding::input[2]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Recordarme'])[1]/preceding::input[5]",
-                    "xpath:neighbor"
-                ]
-            ],
-            "input": "rmontemayor@borregosolar.com.fullcopy",
-            "status": "Passed",
-            "elementKey": "email.username",
-            "elementDesc": "username email",
-            "isEncrypted": false,
-            "isDisplay": false,
-            "indexColumn": "",
-            "@@mycolor": null,
-            "tcId": "5",
-            "tsId": 4,
-            "testData": false,
-            "duration": 587000000,
-            "executedOn": "2021-09-21T14:33:10.384Z",
-            "errMessage": "",
-            "isRowExpanded": false
-        },
-        {
-            "command": "Clear",
-            "element": "login.password",
-            "eArray": [
-                [
-                    "login.password",
-                    "key"
-                ],
-                [
-                    "id=password",
-                    "id"
-                ],
-                [
-                    "name=pw",
-                    "name"
-                ],
-                [
-                    "xpath=//form[@id='login_form']/input",
-                    "xpath:idRelative"
-                ],
-                [
-                    "xpath=//form/input",
-                    "xpath:position"
-                ],
-                [
-                    "css=#password",
-                    "css"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Contraseña'])[1]/following::input[1]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Nombre de usuario'])[1]/following::input[3]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Recordarme'])[1]/preceding::input[3]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='¿Olvidó la contraseña?'])[1]/preceding::input[3]",
-                    "xpath:neighbor"
-                ]
-            ],
-            "input": "",
-            "status": "Passed",
-            "elementKey": "password.password",
-            "elementDesc": "password password",
-            "isEncrypted": false,
-            "isDisplay": false,
-            "indexColumn": "",
-            "@@mycolor": null,
-            "tcId": "5",
-            "tsId": 4,
-            "testData": false,
-            "duration": 584000000,
-            "executedOn": "2021-09-21T14:33:10.968Z",
-            "errMessage": "",
-            "isRowExpanded": false
-        },
-        {
-            "command": "Type",
-            "element": "login.password",
-            "eArray": [
-                [
-                    "login.password",
-                    "key"
-                ],
-                [
-                    "id=password",
-                    "id"
-                ],
-                [
-                    "name=pw",
-                    "name"
-                ],
-                [
-                    "xpath=//form[@id='login_form']/input",
-                    "xpath:idRelative"
-                ],
-                [
-                    "xpath=//form/input",
-                    "xpath:position"
-                ],
-                [
-                    "css=#password",
-                    "css"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Contraseña'])[1]/following::input[1]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Nombre de usuario'])[1]/following::input[3]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Recordarme'])[1]/preceding::input[3]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='¿Olvidó la contraseña?'])[1]/preceding::input[3]",
-                    "xpath:neighbor"
-                ]
-            ],
-            "input": "RkNwYXNzd29yZDEyMyE=",
-            "status": "Passed",
-            "elementKey": "password.password",
-            "elementDesc": "password password",
-            "isEncrypted": true,
-            "isDisplay": true,
-            "indexColumn": "",
-            "@@mycolor": null,
-            "tcId": "5",
-            "tsId": 4,
-            "testData": false,
-            "duration": 592000000,
-            "executedOn": "2021-09-21T14:33:11.560Z",
-            "errMessage": "",
-            "isRowExpanded": false
-        },
-        {
-            "command": "Click",
-            "element": "login.submit",
-            "eArray": [
-                [
-                    "login.submit",
-                    "key"
-                ],
-                [
-                    "id=Login",
-                    "id"
-                ],
-                [
-                    "name=Login",
-                    "name"
-                ],
-                [
-                    "xpath=//form[@id='login_form']/input[2]",
-                    "xpath:idRelative"
-                ],
-                [
-                    "xpath=//input[2]",
-                    "xpath:position"
-                ],
-                [
-                    "css=#Login",
-                    "css"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Contraseña'])[1]/following::input[2]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Nombre de usuario'])[1]/following::input[4]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Recordarme'])[1]/preceding::input[2]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='¿Olvidó la contraseña?'])[1]/preceding::input[2]",
-                    "xpath:neighbor"
-                ]
-            ],
-            "input": "",
-            "status": "Passed",
-            "elementKey": "submit.login",
-            "elementDesc": "Login submit",
-            "isEncrypted": false,
-            "isDisplay": false,
-            "indexColumn": "",
-            "@@mycolor": null,
-            "tcId": "5",
-            "tsId": 4,
-            "testData": false,
-            "duration": 3147000000,
-            "executedOn": "2021-09-21T14:33:14.707Z",
-            "errMessage": "",
-            "isRowExpanded": false
+            "shared": true,
+            "@@mycolor": null
         },
         {
             "command": "Wait For Present",
@@ -369,18 +37,18 @@
                 ]
             ],
             "input": "",
-            "status": "NotRun",
+            "status": "Passed",
             "elementKey": "div.applauncherasprojectspressspacebartoreorder.accountinghomereportsreportsmenueditnavitems",
             "elementDesc": "Text applauncheras:projectspressspacebartoreorder.accountinghomereportsreportsmenueditnavitems",
             "isEncrypted": false,
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "5",
+            "tcId": "6",
             "tsId": 4,
             "testData": false,
-            "duration": 4438000000,
-            "executedOn": "2021-09-21T14:33:19.145Z",
+            "duration": 4162000000,
+            "executedOn": "2021-09-23T15:39:48.962Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -389,7 +57,7 @@
             "command": "Click",
             "element": "applauncher.div",
             "input": "",
-            "status": "NotRun",
+            "status": "Passed",
             "eArray": [
                 [
                     "applauncher.div",
@@ -397,7 +65,15 @@
                 ]
             ],
             "elementKey": "",
-            "elementDesc": ""
+            "elementDesc": "",
+            "@@mycolor": null,
+            "tcId": "6",
+            "tsId": 4,
+            "testData": false,
+            "duration": 671000000,
+            "executedOn": "2021-09-23T15:39:49.633Z",
+            "errMessage": "",
+            "isRowExpanded": false
         },
         {
             "command": "Wait For Present",
@@ -440,11 +116,11 @@
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "5",
+            "tcId": "6",
             "tsId": 4,
             "testData": false,
-            "duration": 1220000000,
-            "executedOn": "2021-09-21T14:33:20.365Z",
+            "duration": 712000000,
+            "executedOn": "2021-09-23T15:39:50.345Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -497,11 +173,11 @@
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "5",
+            "tcId": "6",
             "tsId": 4,
             "testData": false,
-            "duration": 820000000,
-            "executedOn": "2021-09-21T14:33:21.185Z",
+            "duration": 625000000,
+            "executedOn": "2021-09-23T15:39:50.970Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -554,11 +230,11 @@
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "5",
+            "tcId": "6",
             "tsId": 4,
             "testData": false,
-            "duration": 670000000,
-            "executedOn": "2021-09-21T14:33:21.855Z",
+            "duration": 685000000,
+            "executedOn": "2021-09-23T15:39:51.655Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -600,18 +276,18 @@
                 ]
             ],
             "input": "",
-            "status": "NotRun",
+            "status": "Passed",
             "elementKey": "b.opportunities",
             "elementDesc": "B opportunities",
             "isEncrypted": false,
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "5",
+            "tcId": "6",
             "tsId": 4,
             "testData": false,
-            "duration": 844000000,
-            "executedOn": "2021-09-21T14:33:22.699Z",
+            "duration": 543000000,
+            "executedOn": "2021-09-23T15:39:52.198Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -620,7 +296,7 @@
             "command": "Click",
             "element": "applauncher.link.opportunities",
             "input": "",
-            "status": "NotRun",
+            "status": "Passed",
             "eArray": [
                 [
                     "applauncher.link.opportunities",
@@ -628,7 +304,15 @@
                 ]
             ],
             "elementKey": "",
-            "elementDesc": ""
+            "elementDesc": "",
+            "@@mycolor": null,
+            "tcId": "6",
+            "tsId": 4,
+            "testData": false,
+            "duration": 657000000,
+            "executedOn": "2021-09-23T15:39:52.855Z",
+            "errMessage": "",
+            "isRowExpanded": false
         },
         {
             "command": "Wait For Present",
@@ -668,18 +352,18 @@
                 ]
             ],
             "input": "",
-            "status": "NotRun",
+            "status": "Passed",
             "elementKey": "button.selectlistview",
             "elementDesc": "Button Select List View",
             "isEncrypted": false,
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "5",
+            "tcId": "6",
             "tsId": 4,
             "testData": false,
-            "duration": 1025000000,
-            "executedOn": "2021-09-21T14:33:23.724Z",
+            "duration": 880000000,
+            "executedOn": "2021-09-23T15:39:53.735Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -688,7 +372,7 @@
             "command": "Click",
             "element": "opportunities.selectListView",
             "input": "",
-            "status": "NotRun",
+            "status": "Passed",
             "eArray": [
                 [
                     "opportunities.selectListView",
@@ -696,7 +380,15 @@
                 ]
             ],
             "elementKey": "",
-            "elementDesc": ""
+            "elementDesc": "",
+            "@@mycolor": null,
+            "tcId": "6",
+            "tsId": 4,
+            "testData": false,
+            "duration": 677000000,
+            "executedOn": "2021-09-23T15:39:54.412Z",
+            "errMessage": "",
+            "isRowExpanded": false
         },
         {
             "command": "Wait For Present",
@@ -736,18 +428,18 @@
                 ]
             ],
             "input": "",
-            "status": "NotRun",
+            "status": "Passed",
             "elementKey": "span.1.allopportunities",
             "elementDesc": "Text 1.allopportunities",
             "isEncrypted": false,
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "5",
+            "tcId": "6",
             "tsId": 4,
             "testData": false,
-            "duration": 1038000000,
-            "executedOn": "2021-09-21T14:33:24.762Z",
+            "duration": 612000000,
+            "executedOn": "2021-09-23T15:39:55.024Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -756,7 +448,7 @@
             "command": "Click",
             "element": "opportunities.selectListView.allOpportunities",
             "input": "",
-            "status": "NotRun",
+            "status": "Passed",
             "eArray": [
                 [
                     "opportunities.selectListView.allOpportunities",
@@ -764,7 +456,15 @@
                 ]
             ],
             "elementKey": "",
-            "elementDesc": ""
+            "elementDesc": "",
+            "@@mycolor": null,
+            "tcId": "6",
+            "tsId": 4,
+            "testData": false,
+            "duration": 727000000,
+            "executedOn": "2021-09-23T15:39:55.751Z",
+            "errMessage": "",
+            "isRowExpanded": false
         },
         {
             "command": "Clear",
@@ -816,18 +516,18 @@
                 ]
             ],
             "input": "",
-            "status": "NotRun",
+            "status": "Passed",
             "elementKey": "search.input119",
             "elementDesc": "input-119 search",
             "isEncrypted": false,
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "5",
+            "tcId": "6",
             "tsId": 4,
             "testData": false,
-            "duration": 614000000,
-            "executedOn": "2021-09-21T14:33:25.376Z",
+            "duration": 579000000,
+            "executedOn": "2021-09-23T15:39:56.330Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -888,11 +588,11 @@
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "5",
+            "tcId": "6",
             "tsId": 4,
             "testData": false,
-            "duration": 802000000,
-            "executedOn": "2021-09-21T14:33:26.179Z",
+            "duration": 933000000,
+            "executedOn": "2021-09-23T15:39:57.263Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -953,11 +653,11 @@
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "5",
+            "tcId": "6",
             "tsId": 4,
             "testData": false,
-            "duration": 626000000,
-            "executedOn": "2021-09-21T14:33:26.805Z",
+            "duration": 577000000,
+            "executedOn": "2021-09-23T15:39:57.840Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -1022,11 +722,11 @@
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "5",
+            "tcId": "6",
             "tsId": 4,
             "testData": false,
-            "duration": 552000000,
-            "executedOn": "2021-09-21T14:33:27.357Z",
+            "duration": 548000000,
+            "executedOn": "2021-09-23T15:39:58.388Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -1060,11 +760,11 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "tcId": "5",
+            "tcId": "6",
             "tsId": 4,
             "testData": false,
-            "duration": 1011000000,
-            "executedOn": "2021-09-21T14:33:28.368Z",
+            "duration": 1051000000,
+            "executedOn": "2021-09-23T15:39:59.439Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null
@@ -1111,19 +811,19 @@
                 ]
             ],
             "input": "",
-            "status": "Failed",
+            "status": "Passed",
             "elementKey": "button.createproject",
             "elementDesc": "Button createproject",
             "isEncrypted": false,
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "5",
+            "tcId": "6",
             "tsId": 4,
             "testData": false,
-            "duration": 918000000,
-            "executedOn": "2021-09-21T14:33:29.287Z",
-            "errMessage": "{\"name\":\"NoSuchWindowError\",\"remoteStacktrace\":\"Backtrace:\\n\\tOrdinal0 [0x00542A33+2501171]\\n\\tOrdinal0 [0x004DD1C1+2085313]\\n\\tOrdinal0 [0x003E1FA8+1056680]\\n\\tOrdinal0 [0x003CBB46+965446]\\n\\tOrdinal0 [0x00427959+1341785]\\n\\tOrdinal0 [0x00434052+1392722]\\n\\tOrdinal0 [0x0042551B+1332507]\\n\\tOrdinal0 [0x00401D74+1187188]\\n\\tOrdinal0 [0x00402BD9+1190873]\\n\\tGetHandleVerifier [0x006BEFE6+1504438]\\n\\tGetHandleVerifier [0x0076DDA5+2220661]\\n\\tGetHandleVerifier [0x005C5589+481881]\\n\\tGetHandleVerifier [0x005C4639+477961]\\n\\tOrdinal0 [0x004E28BD+2107581]\\n\\tOrdinal0 [0x004E6728+2123560]\\n\\tOrdinal0 [0x004E6862+2123874]\\n\\tOrdinal0 [0x004EFA81+2161281]\\n\\tBaseThreadInitThunk [0x7777FA29+25]\\n\\tRtlGetAppContainerNamedObjectPath [0x77997A9E+286]\\n\\tRtlGetAppContainerNamedObjectPath [0x77997A6E+238]\\n\"}",
+            "duration": 1326000000,
+            "executedOn": "2021-09-23T15:40:00.765Z",
+            "errMessage": "",
             "isRowExpanded": false
         },
         {
@@ -1131,7 +831,7 @@
             "command": "Click",
             "element": "opportunities.createProject.button",
             "input": "",
-            "status": "Failed",
+            "status": "Passed",
             "eArray": [
                 [
                     "opportunities.createProject.button",
@@ -1144,12 +844,12 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "tcId": "5",
+            "tcId": "6",
             "tsId": 4,
             "testData": false,
-            "duration": 540000000,
-            "executedOn": "2021-09-21T14:33:29.827Z",
-            "errMessage": "Name: NoSuchWindowError\r\nMessage: no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=93.0.4577.82)\r\nStacktrace: NoSuchWindowError: no such window: target window already closed\nfrom unknown error: web view not found\n  (Session info: chrome=93.0.4577.82)\n\tat Object.throwDecodedError (c:\\Program Files\\QMetry Automation Studio\\resources\\app\\extensions\\node_modules\\selenium-webdriver\\lib\\error.js:550:15)\n\tat parseHttpResponse (c:\\Program Files\\QMetry Automation Studio\\resources\\app\\extensions\\node_modules\\selenium-webdriver\\lib\\http.js:565:13)\n\tat Executor.execute (c:\\Program Files\\QMetry Automation Studio\\resources\\app\\extensions\\node_modules\\selenium-webdriver\\lib\\http.js:491:26)\n\tat processTicksAndRejections (internal/process/task_queues.js:85:5)\n\tat async thenableWebDriverProxy.execute (c:\\Program Files\\QMetry Automation Studio\\resources\\app\\extensions\\node_modules\\selenium-webdriver\\lib\\webdriver.js:700:17)",
+            "duration": 760000000,
+            "executedOn": "2021-09-23T15:40:01.525Z",
+            "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null
         },
@@ -1158,7 +858,7 @@
             "command": "Switch To Frame",
             "element": "opportunities.createProject.iframe",
             "input": "",
-            "status": "NotRun",
+            "status": "Passed",
             "eArray": [
                 [
                     "opportunities.createProject.iframe",
@@ -1175,11 +875,11 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "tcId": "5",
+            "tcId": "6",
             "tsId": 4,
             "testData": false,
-            "duration": 573000000,
-            "executedOn": "2021-09-21T06:01:03.892Z",
+            "duration": 690000000,
+            "executedOn": "2021-09-23T15:40:02.215Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null
@@ -1189,7 +889,7 @@
             "command": "Wait For Present",
             "element": "opportunities.createProject.template.select",
             "input": "",
-            "status": "NotRun",
+            "status": "Passed",
             "eArray": [
                 [
                     "opportunities.createProject.template.select",
@@ -1202,11 +902,11 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "tcId": "5",
+            "tcId": "6",
             "tsId": 4,
             "testData": false,
-            "duration": 681000000,
-            "executedOn": "2021-09-21T06:01:04.573Z",
+            "duration": 1086000000,
+            "executedOn": "2021-09-23T15:40:03.301Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null
@@ -1216,7 +916,7 @@
             "command": "Click",
             "element": "opportunities.createProject.template.select.option.OM",
             "input": "",
-            "status": "NotRun",
+            "status": "Passed",
             "eArray": [
                 [
                     "opportunities.createProject.template.select.option.OM",
@@ -1237,11 +937,11 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "tcId": "5",
+            "tcId": "6",
             "tsId": 4,
             "testData": false,
-            "duration": 622000000,
-            "executedOn": "2021-09-21T06:01:05.195Z",
+            "duration": 558000000,
+            "executedOn": "2021-09-23T15:40:03.859Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null
@@ -1280,18 +980,18 @@
                 ]
             ],
             "input": "",
-            "status": "NotRun",
+            "status": "Passed",
             "elementKey": "div.projecttemplatenoneanzamodulesaleprojecttemplatedevelopmentprojecttemplateepcprojecttemplateomprojecttemplateomutilityprojecttemplate",
             "elementDesc": "Text projecttemplate--none--anza/modulesaleprojecttemplatedevelopmentprojecttemplateepcprojecttemplateo&mprojecttemplate-o&mutilityprojecttemplate",
             "isEncrypted": false,
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "5",
+            "tcId": "6",
             "tsId": 4,
             "testData": false,
-            "duration": 641000000,
-            "executedOn": "2021-09-21T06:01:05.836Z",
+            "duration": 711000000,
+            "executedOn": "2021-09-23T15:40:04.570Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -1299,15 +999,15 @@
             "indexColumn": "",
             "command": "Switch To Default Content",
             "input": "",
-            "status": "NotRun",
+            "status": "Passed",
             "eArray": [],
             "elementKey": "",
             "elementDesc": "",
-            "tcId": "5",
+            "tcId": "6",
             "tsId": 4,
             "testData": false,
-            "duration": 511000000,
-            "executedOn": "2021-09-21T06:01:06.347Z",
+            "duration": 515000000,
+            "executedOn": "2021-09-23T15:40:05.085Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null
@@ -1317,7 +1017,7 @@
             "command": "Wait For Visible",
             "element": "projects.editProject.button",
             "input": "",
-            "status": "NotRun",
+            "status": "Passed",
             "eArray": [
                 [
                     "projects.editProject.button",
@@ -1334,11 +1034,11 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "tcId": "5",
+            "tcId": "6",
             "tsId": 4,
             "testData": false,
-            "duration": 7578000000,
-            "executedOn": "2021-09-21T06:01:13.925Z",
+            "duration": 15101000000,
+            "executedOn": "2021-09-23T15:40:20.186Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null
@@ -1389,18 +1089,18 @@
                 ]
             ],
             "input": "",
-            "status": "NotRun",
+            "status": "Passed",
             "elementKey": "button.thepagetheformthepageblockjid38bottomjid39",
             "elementDesc": "thePage:theForm:thePageBlock:j_id38:bottom:j_id39 button",
             "isEncrypted": false,
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "5",
+            "tcId": "6",
             "tsId": 4,
             "testData": false,
-            "duration": 847000000,
-            "executedOn": "2021-09-21T06:01:14.772Z",
+            "duration": 842000000,
+            "executedOn": "2021-09-23T15:40:21.028Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -1450,18 +1150,18 @@
                 ]
             ],
             "input": "",
-            "status": "NotRun",
+            "status": "Passed",
             "elementKey": "text.input1482",
             "elementDesc": "Input for input-1482",
             "isEncrypted": false,
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "5",
+            "tcId": "6",
             "tsId": 4,
             "testData": false,
-            "duration": 679000000,
-            "executedOn": "2021-09-21T06:01:15.451Z",
+            "duration": 848000000,
+            "executedOn": "2021-09-23T15:40:21.876Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -1511,18 +1211,18 @@
                 ]
             ],
             "input": "Project Name - Recording",
-            "status": "NotRun",
+            "status": "Passed",
             "elementKey": "text.input1482",
             "elementDesc": "Input for input-1482",
             "isEncrypted": false,
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "5",
+            "tcId": "6",
             "tsId": 4,
             "testData": false,
-            "duration": 809000000,
-            "executedOn": "2021-09-21T06:01:16.260Z",
+            "duration": 877000000,
+            "executedOn": "2021-09-23T15:40:22.753Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -1572,18 +1272,18 @@
                 ]
             ],
             "input": "",
-            "status": "NotRun",
+            "status": "Passed",
             "elementKey": "text.input1892",
             "elementDesc": "Input for input-1892",
             "isEncrypted": false,
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "5",
+            "tcId": "6",
             "tsId": 4,
             "testData": false,
-            "duration": 663000000,
-            "executedOn": "2021-09-21T06:01:16.923Z",
+            "duration": 671000000,
+            "executedOn": "2021-09-23T15:40:23.424Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -1633,18 +1333,18 @@
                 ]
             ],
             "input": "Silveira Ranch Rd - Site 1",
-            "status": "NotRun",
+            "status": "Passed",
             "elementKey": "text.input1892",
             "elementDesc": "Input for input-1892",
             "isEncrypted": false,
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "5",
+            "tcId": "6",
             "tsId": 4,
             "testData": false,
-            "duration": 911000000,
-            "executedOn": "2021-09-21T06:01:17.834Z",
+            "duration": 909000000,
+            "executedOn": "2021-09-23T15:40:24.333Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -1653,7 +1353,7 @@
             "command": "Click",
             "element": "projects.editProject.popup.epcSite.input",
             "input": "",
-            "status": "NotRun",
+            "status": "Passed",
             "eArray": [
                 [
                     "projects.editProject.popup.epcSite.input",
@@ -1670,11 +1370,11 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "tcId": "5",
+            "tcId": "6",
             "tsId": 4,
             "testData": false,
-            "duration": 711000000,
-            "executedOn": "2021-09-21T06:01:18.545Z",
+            "duration": 704000000,
+            "executedOn": "2021-09-23T15:40:25.037Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null
@@ -1684,7 +1384,7 @@
             "command": "Wait For Present",
             "element": "projects.editProject.popup.epcSite.results.first",
             "input": "",
-            "status": "NotRun",
+            "status": "Passed",
             "eArray": [
                 [
                     "projects.editProject.popup.epcSite.results.first",
@@ -1697,11 +1397,11 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "tcId": "5",
+            "tcId": "6",
             "tsId": 4,
             "testData": false,
-            "duration": 1532000000,
-            "executedOn": "2021-09-21T06:01:20.077Z",
+            "duration": 2147000000,
+            "executedOn": "2021-09-23T15:40:27.184Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null
@@ -1711,7 +1411,7 @@
             "command": "Click",
             "element": "projects.editProject.popup.epcSite.results.first",
             "input": "",
-            "status": "NotRun",
+            "status": "Passed",
             "eArray": [
                 [
                     "projects.editProject.popup.epcSite.results.first",
@@ -1719,7 +1419,15 @@
                 ]
             ],
             "elementKey": "",
-            "elementDesc": ""
+            "elementDesc": "",
+            "@@mycolor": null,
+            "tcId": "6",
+            "tsId": 4,
+            "testData": false,
+            "duration": 659000000,
+            "executedOn": "2021-09-23T15:40:27.843Z",
+            "errMessage": "",
+            "isRowExpanded": false
         },
         {
             "command": "Clear",
@@ -1771,18 +1479,18 @@
                 ]
             ],
             "input": "",
-            "status": "NotRun",
+            "status": "Passed",
             "elementKey": "text.input1584",
             "elementDesc": "Input for input-1584",
             "isEncrypted": false,
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "5",
+            "tcId": "6",
             "tsId": 4,
             "testData": false,
-            "duration": 621000000,
-            "executedOn": "2021-09-21T06:01:20.698Z",
+            "duration": 633000000,
+            "executedOn": "2021-09-23T15:40:28.476Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -1836,18 +1544,18 @@
                 ]
             ],
             "input": "100",
-            "status": "NotRun",
+            "status": "Passed",
             "elementKey": "text.input1584",
             "elementDesc": "Input for input-1584",
             "isEncrypted": false,
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "5",
+            "tcId": "6",
             "tsId": 4,
             "testData": false,
-            "duration": 615000000,
-            "executedOn": "2021-09-21T06:01:21.313Z",
+            "duration": 647000000,
+            "executedOn": "2021-09-23T15:40:29.123Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -1889,18 +1597,18 @@
                 ]
             ],
             "input": "",
-            "status": "NotRun",
+            "status": "Passed",
             "elementKey": "div.carport",
             "elementDesc": "Text carport",
             "isEncrypted": false,
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "5",
+            "tcId": "6",
             "tsId": 4,
             "testData": false,
-            "duration": 644000000,
-            "executedOn": "2021-09-21T06:01:21.957Z",
+            "duration": 637000000,
+            "executedOn": "2021-09-23T15:40:29.760Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -1950,18 +1658,18 @@
                 ]
             ],
             "input": "",
-            "status": "NotRun",
+            "status": "Passed",
             "elementKey": "lightningprimitiveicon.lightningprimitiveicon3111311113",
             "elementDesc": "LIGHTNING-PRIMITIVE-ICON LIGHTNING-PRIMITIVE-ICON3111311113",
             "isEncrypted": false,
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "5",
+            "tcId": "6",
             "tsId": 4,
             "testData": false,
-            "duration": 661000000,
-            "executedOn": "2021-09-21T06:01:22.618Z",
+            "duration": 669000000,
+            "executedOn": "2021-09-23T15:40:30.429Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -2007,18 +1715,18 @@
                 ]
             ],
             "input": "",
-            "status": "NotRun",
+            "status": "Passed",
             "elementKey": "span.carporttracker",
             "elementDesc": "Text Carport-Tracker",
             "isEncrypted": false,
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "5",
+            "tcId": "6",
             "tsId": 4,
             "testData": false,
-            "duration": 606000000,
-            "executedOn": "2021-09-21T06:01:23.224Z",
+            "duration": 602000000,
+            "executedOn": "2021-09-23T15:40:31.031Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -2027,7 +1735,7 @@
             "command": "Click",
             "element": "projects.editProject.popup.available.moveToChosen.button",
             "input": "",
-            "status": "NotRun",
+            "status": "Passed",
             "eArray": [
                 [
                     "projects.editProject.popup.available.moveToChosen.button",
@@ -2040,11 +1748,11 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "tcId": "5",
+            "tcId": "6",
             "tsId": 4,
             "testData": false,
-            "duration": 629000000,
-            "executedOn": "2021-09-21T06:01:23.853Z",
+            "duration": 631000000,
+            "executedOn": "2021-09-23T15:40:31.662Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null
@@ -2095,18 +1803,18 @@
                 ]
             ],
             "input": "",
-            "status": "NotRun",
+            "status": "Passed",
             "elementKey": "button.saveedit",
             "elementDesc": "Button SaveEdit",
             "isEncrypted": false,
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "5",
+            "tcId": "6",
             "tsId": 4,
             "testData": false,
-            "duration": 648000000,
-            "executedOn": "2021-09-21T06:01:24.501Z",
+            "duration": 647000000,
+            "executedOn": "2021-09-23T15:40:32.309Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -2115,7 +1823,7 @@
             "command": "Wait For Present",
             "element": "common.toastContainer",
             "input": "",
-            "status": "NotRun",
+            "status": "Passed",
             "eArray": [
                 [
                     "common.toastContainer",
@@ -2128,11 +1836,11 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "tcId": "5",
+            "tcId": "6",
             "tsId": 4,
             "testData": false,
-            "duration": 5247000000,
-            "executedOn": "2021-09-21T06:01:29.748Z",
+            "duration": 7866000000,
+            "executedOn": "2021-09-23T15:40:40.175Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null
@@ -2183,18 +1891,18 @@
                 ]
             ],
             "input": "Project Name - Recording",
-            "status": "NotRun",
+            "status": "Passed",
             "elementKey": "lightningformattedtext.projectnamerecording",
             "elementDesc": "LIGHTNING-FORMATTED-TEXT projectname-recording",
             "isEncrypted": false,
             "isDisplay": false,
             "@@mycolor": null,
             "indexColumn": "",
-            "tcId": "5",
+            "tcId": "6",
             "tsId": 4,
             "testData": false,
-            "duration": 573000000,
-            "executedOn": "2021-09-21T06:01:30.321Z",
+            "duration": 610000000,
+            "executedOn": "2021-09-23T15:40:40.785Z",
             "errMessage": "",
             "isRowExpanded": false,
             "expected": "Project Name - Recording",
@@ -2246,18 +1954,18 @@
                 ]
             ],
             "input": "Silveira Ranch Rd - Site 1",
-            "status": "NotRun",
+            "status": "Passed",
             "elementKey": "span.window",
             "elementDesc": "Text window",
             "isEncrypted": false,
             "isDisplay": false,
             "@@mycolor": null,
             "indexColumn": "",
-            "tcId": "5",
+            "tcId": "6",
             "tsId": 4,
             "testData": false,
-            "duration": 563000000,
-            "executedOn": "2021-09-21T06:01:30.884Z",
+            "duration": 634000000,
+            "executedOn": "2021-09-23T15:40:41.419Z",
             "expected": "Silveira Ranch Rd - Site 1",
             "actual": "Silveira Ranch Rd - Site 1",
             "errMessage": "",
@@ -2301,18 +2009,18 @@
                 ]
             ],
             "input": "California",
-            "status": "NotRun",
+            "status": "Passed",
             "elementKey": "lightningformattedtext.california",
             "elementDesc": "LIGHTNING-FORMATTED-TEXT california",
             "isEncrypted": false,
             "isDisplay": false,
             "@@mycolor": null,
             "indexColumn": "",
-            "tcId": "5",
+            "tcId": "6",
             "tsId": 4,
             "testData": false,
-            "duration": 565000000,
-            "executedOn": "2021-09-21T06:01:31.449Z",
+            "duration": 579000000,
+            "executedOn": "2021-09-23T15:40:41.998Z",
             "expected": "California",
             "actual": "California",
             "errMessage": "",
@@ -2352,6 +2060,6 @@
         }
     ],
     "description": "Verify whether user is able to create a project for the opportunity with record type O&M Opportunity",
-    "shared": false,
-    "executionStatus": "Failed"
+    "shared": true,
+    "executionStatus": "NotRun"
 }

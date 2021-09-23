@@ -6,18 +6,7 @@ Feature: Projects
 
 Scenario: Create project for OM Opportunity
 	
-   Given get "https://bssi--fullcopy.lightning.force.com/"
-   And maximizeWindow 
-   When wait until "login.username" to be enable
-   And clear "login.username"
-   And wait until "login.username" to be enable
-   And sendKeys "rmontemayor@borregosolar.com.fullcopy" into "login.username"
-   And wait until "login.password" to be enable
-   And clear "login.password"
-   And wait until "login.password" to be enable
-   And sendEncryptedKeys "RkNwYXNzd29yZDEyMyE=" into "login.password"
-   And wait until "login.submit" to be enable
-   And click on "login.submit"
+   Given ShrdLoginToFullCopy 
    Then wait until "applauncher.div" to be present
    When wait until "applauncher.div" to be enable
    And click on "applauncher.div"

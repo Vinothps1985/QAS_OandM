@@ -1,0 +1,61 @@
+{
+    "steps": [
+        {
+            "indexColumn": "",
+            "command": "Execute Java Script",
+            "element": "",
+            "input": "var elem = document.createElement(\"div\");elem.id=\"the-time\";elem.innerHTML=new Date().getTime();document.body.insertAdjacentElement(\"beforeend\", elem);",
+            "status": "NotRun",
+            "eArray": [],
+            "elementKey": "",
+            "elementDesc": "",
+            "tcId": 29,
+            "tsId": 4,
+            "testData": false,
+            "duration": 536000000,
+            "executedOn": "2021-09-22T05:24:17.446Z",
+            "errMessage": "",
+            "isRowExpanded": false,
+            "@@mycolor": null,
+            "isSharable": true
+        },
+        {
+            "indexColumn": "",
+            "command": "Store Text",
+            "element": "common.var.the-time",
+            "input": "currentTime",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "id=the-time",
+                    "id"
+                ],
+                [
+                    "common.var.the-time",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "tcId": 29,
+            "tsId": 4,
+            "testData": false,
+            "duration": 546000000,
+            "executedOn": "2021-09-22T05:24:17.992Z",
+            "errMessage": "",
+            "isRowExpanded": false,
+            "@@mycolor": null,
+            "isSharable": true
+        }
+    ],
+    "type": "",
+    "capabilities": {},
+    "testDataExample": [],
+    "isTCValid": true,
+    "externalTestData": false,
+    "recordSessionType": "multiple",
+    "tags": [],
+    "description": "",
+    "shared": false,
+    "executionStatus": "NotRun"
+}

@@ -1,0 +1,1097 @@
+{
+    "steps": [
+        {
+            "indexColumn": "",
+            "command": "ShrdLoginToFullCopy",
+            "element": "",
+            "input": "",
+            "status": "Passed",
+            "eArray": [],
+            "elementKey": "",
+            "elementDesc": "",
+            "shared": true,
+            "length": 7,
+            "@@mycolor": null,
+            "tcId": "25",
+            "tsId": 24,
+            "testData": false,
+            "lastExecutionDetail": [
+                {
+                    "command": "Open",
+                    "element": "",
+                    "eArray": [],
+                    "input": "https://bssi--fullcopy.lightning.force.com/",
+                    "status": "Passed",
+                    "elementKey": "",
+                    "elementDesc": "",
+                    "isEncrypted": false,
+                    "isDisplay": false,
+                    "indexColumn": "",
+                    "@@mycolor": null,
+                    "tcId": "25",
+                    "tsId": 24,
+                    "testData": false,
+                    "duration": 3693000000,
+                    "executedOn": "2021-09-23T16:02:17.788Z",
+                    "errMessage": "",
+                    "isRowExpanded": false,
+                    "isSharable": true,
+                    "length": 7
+                },
+                {
+                    "indexColumn": "",
+                    "command": "Maximize",
+                    "element": "",
+                    "input": "",
+                    "status": "Passed",
+                    "eArray": [],
+                    "elementKey": "",
+                    "elementDesc": "",
+                    "@@mycolor": null,
+                    "tcId": "25",
+                    "tsId": 24,
+                    "testData": false,
+                    "duration": 640000000,
+                    "executedOn": "2021-09-23T16:02:18.428Z",
+                    "errMessage": "",
+                    "isRowExpanded": false,
+                    "qasnumbers": false,
+                    "isSharable": true,
+                    "length": 7
+                },
+                {
+                    "command": "Clear",
+                    "element": "login.username",
+                    "eArray": [
+                        [
+                            "login.username",
+                            "key"
+                        ],
+                        [
+                            "id=username",
+                            "id"
+                        ],
+                        [
+                            "name=username",
+                            "name"
+                        ],
+                        [
+                            "xpath=//div[@id='username_container']/input",
+                            "xpath:idRelative"
+                        ],
+                        [
+                            "xpath=//div/input",
+                            "xpath:position"
+                        ],
+                        [
+                            "css=#username",
+                            "css"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Nombre de usuario'])[1]/following::input[1]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Cancelar'])[1]/following::input[19]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Contraseña'])[1]/preceding::input[2]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Recordarme'])[1]/preceding::input[5]",
+                            "xpath:neighbor"
+                        ]
+                    ],
+                    "input": "",
+                    "status": "Passed",
+                    "elementKey": "email.username",
+                    "elementDesc": "username email",
+                    "isEncrypted": false,
+                    "isDisplay": false,
+                    "indexColumn": "",
+                    "@@mycolor": null,
+                    "tcId": "25",
+                    "tsId": 24,
+                    "testData": false,
+                    "duration": 581000000,
+                    "executedOn": "2021-09-23T16:02:19.009Z",
+                    "errMessage": "",
+                    "isRowExpanded": false,
+                    "qasnumbers": false,
+                    "isSharable": true,
+                    "length": 7
+                },
+                {
+                    "command": "Type",
+                    "element": "login.username",
+                    "eArray": [
+                        [
+                            "login.username",
+                            "key"
+                        ],
+                        [
+                            "id=username",
+                            "id"
+                        ],
+                        [
+                            "name=username",
+                            "name"
+                        ],
+                        [
+                            "xpath=//div[@id='username_container']/input",
+                            "xpath:idRelative"
+                        ],
+                        [
+                            "xpath=//div/input",
+                            "xpath:position"
+                        ],
+                        [
+                            "css=#username",
+                            "css"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Nombre de usuario'])[1]/following::input[1]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Cancelar'])[1]/following::input[19]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Contraseña'])[1]/preceding::input[2]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Recordarme'])[1]/preceding::input[5]",
+                            "xpath:neighbor"
+                        ]
+                    ],
+                    "input": "rmontemayor@borregosolar.com.fullcopy",
+                    "status": "Passed",
+                    "elementKey": "email.username",
+                    "elementDesc": "username email",
+                    "isEncrypted": false,
+                    "isDisplay": false,
+                    "indexColumn": "",
+                    "@@mycolor": null,
+                    "tcId": "25",
+                    "tsId": 24,
+                    "testData": false,
+                    "duration": 578000000,
+                    "executedOn": "2021-09-23T16:02:19.587Z",
+                    "errMessage": "",
+                    "isRowExpanded": false,
+                    "qasnumbers": false,
+                    "isSharable": true,
+                    "length": 7
+                },
+                {
+                    "command": "Clear",
+                    "element": "login.password",
+                    "eArray": [
+                        [
+                            "login.password",
+                            "key"
+                        ],
+                        [
+                            "id=password",
+                            "id"
+                        ],
+                        [
+                            "name=pw",
+                            "name"
+                        ],
+                        [
+                            "xpath=//form[@id='login_form']/input",
+                            "xpath:idRelative"
+                        ],
+                        [
+                            "xpath=//form/input",
+                            "xpath:position"
+                        ],
+                        [
+                            "css=#password",
+                            "css"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Contraseña'])[1]/following::input[1]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Nombre de usuario'])[1]/following::input[3]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Recordarme'])[1]/preceding::input[3]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='¿Olvidó la contraseña?'])[1]/preceding::input[3]",
+                            "xpath:neighbor"
+                        ]
+                    ],
+                    "input": "",
+                    "status": "Passed",
+                    "elementKey": "password.password",
+                    "elementDesc": "password password",
+                    "isEncrypted": false,
+                    "isDisplay": false,
+                    "indexColumn": "",
+                    "@@mycolor": null,
+                    "tcId": "25",
+                    "tsId": 24,
+                    "testData": false,
+                    "duration": 581000000,
+                    "executedOn": "2021-09-23T16:02:20.168Z",
+                    "errMessage": "",
+                    "isRowExpanded": false,
+                    "qasnumbers": false,
+                    "isSharable": true,
+                    "length": 7
+                },
+                {
+                    "command": "Type",
+                    "element": "login.password",
+                    "eArray": [
+                        [
+                            "login.password",
+                            "key"
+                        ],
+                        [
+                            "id=password",
+                            "id"
+                        ],
+                        [
+                            "name=pw",
+                            "name"
+                        ],
+                        [
+                            "xpath=//form[@id='login_form']/input",
+                            "xpath:idRelative"
+                        ],
+                        [
+                            "xpath=//form/input",
+                            "xpath:position"
+                        ],
+                        [
+                            "css=#password",
+                            "css"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Contraseña'])[1]/following::input[1]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Nombre de usuario'])[1]/following::input[3]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Recordarme'])[1]/preceding::input[3]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='¿Olvidó la contraseña?'])[1]/preceding::input[3]",
+                            "xpath:neighbor"
+                        ]
+                    ],
+                    "input": "RkNwYXNzd29yZDEyMyE=",
+                    "status": "Passed",
+                    "elementKey": "password.password",
+                    "elementDesc": "password password",
+                    "isEncrypted": true,
+                    "isDisplay": true,
+                    "indexColumn": "",
+                    "@@mycolor": null,
+                    "tcId": "25",
+                    "tsId": 24,
+                    "testData": false,
+                    "duration": 574000000,
+                    "executedOn": "2021-09-23T16:02:20.742Z",
+                    "errMessage": "",
+                    "isRowExpanded": false,
+                    "qasnumbers": false,
+                    "isSharable": true,
+                    "length": 7
+                },
+                {
+                    "command": "Click",
+                    "element": "login.submit",
+                    "eArray": [
+                        [
+                            "login.submit",
+                            "key"
+                        ],
+                        [
+                            "id=Login",
+                            "id"
+                        ],
+                        [
+                            "name=Login",
+                            "name"
+                        ],
+                        [
+                            "xpath=//form[@id='login_form']/input[2]",
+                            "xpath:idRelative"
+                        ],
+                        [
+                            "xpath=//input[2]",
+                            "xpath:position"
+                        ],
+                        [
+                            "css=#Login",
+                            "css"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Contraseña'])[1]/following::input[2]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Nombre de usuario'])[1]/following::input[4]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Recordarme'])[1]/preceding::input[2]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='¿Olvidó la contraseña?'])[1]/preceding::input[2]",
+                            "xpath:neighbor"
+                        ]
+                    ],
+                    "input": "",
+                    "status": "Passed",
+                    "elementKey": "submit.login",
+                    "elementDesc": "Login submit",
+                    "isEncrypted": false,
+                    "isDisplay": false,
+                    "indexColumn": "",
+                    "@@mycolor": null,
+                    "tcId": "25",
+                    "tsId": 24,
+                    "testData": false,
+                    "duration": 2692000000,
+                    "executedOn": "2021-09-23T16:02:23.434Z",
+                    "errMessage": "",
+                    "isRowExpanded": false,
+                    "qasnumbers": false,
+                    "isSharable": true,
+                    "length": 7
+                }
+            ]
+        },
+        {
+            "command": "Wait For Present",
+            "element": "applauncher.div",
+            "eArray": [
+                [
+                    "applauncher.div",
+                    "key"
+                ],
+                [
+                    "xpath=//one-appnav/div",
+                    "xpath:position"
+                ],
+                [
+                    "css=div.slds-context-bar",
+                    "css"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='View profile'])[1]/following::div[4]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Notifications'])[1]/following::div[7]",
+                    "xpath:neighbor"
+                ]
+            ],
+            "input": "",
+            "status": "Passed",
+            "elementKey": "div.applauncherasprojectspressspacebartoreorder.accountinghomereportsreportsmenueditnavitems",
+            "elementDesc": "Text applauncheras:projectspressspacebartoreorder.accountinghomereportsreportsmenueditnavitems",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "indexColumn": "",
+            "@@mycolor": null,
+            "tcId": "25",
+            "tsId": 24,
+            "testData": false,
+            "duration": 4979000000,
+            "executedOn": "2021-09-23T16:02:28.413Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "applauncher.div",
+            "input": "",
+            "status": "Passed",
+            "eArray": [
+                [
+                    "applauncher.div",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "tcId": "25",
+            "tsId": 24,
+            "testData": false,
+            "duration": 637000000,
+            "executedOn": "2021-09-23T16:02:29.050Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Wait For Present",
+            "element": "applauncher.input.text",
+            "eArray": [
+                [
+                    "applauncher.input.text",
+                    "key"
+                ],
+                [
+                    "xpath=//button/div/div[5]",
+                    "xpath:position"
+                ],
+                [
+                    "css=div.slds-r5",
+                    "css"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='View profile'])[1]/following::div[13]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Notifications'])[1]/following::div[16]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='App Launcher'])[1]/preceding::div[5]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='AS: Projects'])[3]/preceding::div[5]",
+                    "xpath:neighbor"
+                ]
+            ],
+            "input": "",
+            "status": "Passed",
+            "elementKey": "div.sldsr5",
+            "elementDesc": "Text slds-r5",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "indexColumn": "",
+            "@@mycolor": null,
+            "tcId": "25",
+            "tsId": 24,
+            "testData": false,
+            "duration": 804000000,
+            "executedOn": "2021-09-23T16:02:29.854Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Clear",
+            "element": "applauncher.input.text",
+            "eArray": [
+                [
+                    "applauncher.input.text",
+                    "key"
+                ],
+                [
+                    "id=input-34",
+                    "id"
+                ],
+                [
+                    "xpath=//div[@id='content_427:0']/one-app-launcher-menu/div/one-app-launcher-search-bar/lightning-input/div/input",
+                    "xpath:idRelative"
+                ],
+                [
+                    "xpath=//lightning-input/div/input",
+                    "xpath:position"
+                ],
+                [
+                    "css=#input-34",
+                    "css"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Search apps and items...'])[1]/following::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='No record selected'])[1]/following::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Clear'])[1]/preceding::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Apps'])[1]/preceding::input[1]",
+                    "xpath:neighbor"
+                ]
+            ],
+            "input": "",
+            "status": "Passed",
+            "elementKey": "search.input34",
+            "elementDesc": "input-34 search",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "indexColumn": "",
+            "@@mycolor": null,
+            "tcId": "25",
+            "tsId": 24,
+            "testData": false,
+            "duration": 569000000,
+            "executedOn": "2021-09-23T16:02:30.423Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Type",
+            "element": "applauncher.input.text",
+            "eArray": [
+                [
+                    "applauncher.input.text",
+                    "key"
+                ],
+                [
+                    "id=input-34",
+                    "id"
+                ],
+                [
+                    "xpath=//div[@id='content_427:0']/one-app-launcher-menu/div/one-app-launcher-search-bar/lightning-input/div/input",
+                    "xpath:idRelative"
+                ],
+                [
+                    "xpath=//lightning-input/div/input",
+                    "xpath:position"
+                ],
+                [
+                    "css=#input-34",
+                    "css"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Search apps and items...'])[1]/following::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='No record selected'])[1]/following::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Clear'])[1]/preceding::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Apps'])[1]/preceding::input[1]",
+                    "xpath:neighbor"
+                ]
+            ],
+            "input": "products",
+            "status": "Passed",
+            "elementKey": "search.input34",
+            "elementDesc": "input-34 search",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "indexColumn": "",
+            "@@mycolor": null,
+            "tcId": "25",
+            "tsId": 24,
+            "testData": false,
+            "duration": 652000000,
+            "executedOn": "2021-09-23T16:02:31.075Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Wait For Present",
+            "element": "applauncher.link.products",
+            "eArray": [
+                [
+                    "applauncher.link.products",
+                    "key"
+                ],
+                [
+                    "applauncher.link.opportunities",
+                    "key"
+                ],
+                [
+                    "xpath=//a[@id='Opportunity']/div/lightning-formatted-rich-text/span/p/b",
+                    "xpath:idRelative"
+                ],
+                [
+                    "xpath=//b",
+                    "xpath:position"
+                ],
+                [
+                    "css=b",
+                    "css"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Items'])[1]/following::b[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Apps'])[1]/following::b[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='View All'])[1]/preceding::b[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Loading...'])[1]/preceding::b[1]",
+                    "xpath:neighbor"
+                ]
+            ],
+            "input": "",
+            "status": "Passed",
+            "elementKey": "b.opportunities",
+            "elementDesc": "B opportunities",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "indexColumn": "",
+            "@@mycolor": null,
+            "tcId": "25",
+            "tsId": 24,
+            "testData": false,
+            "duration": 544000000,
+            "executedOn": "2021-09-23T16:02:31.619Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "applauncher.link.products",
+            "input": "",
+            "status": "Passed",
+            "eArray": [
+                [
+                    "applauncher.link.products",
+                    "key"
+                ],
+                [
+                    "applauncher.link.opportunities",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "tcId": "25",
+            "tsId": 24,
+            "testData": false,
+            "duration": 933000000,
+            "executedOn": "2021-09-23T16:02:32.552Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Wait For Present",
+            "element": "products.create.new.button",
+            "eArray": [
+                [
+                    "products.create.new.button",
+                    "key"
+                ],
+                [
+                    "products.selectListView.allProducts",
+                    "key"
+                ],
+                [
+                    "products.selectListView.allOpportunities",
+                    "key"
+                ],
+                [
+                    "opportunities.selectListView.allOpportunities",
+                    "key"
+                ],
+                [
+                    "xpath=(//span[text()='1. All Opportunities'])[1]",
+                    "xpath"
+                ],
+                [
+                    "xpath=//a[@id='virtualAutoCompleteMenuOption_b97b9e58eb8e8']/span",
+                    "xpath:idRelative"
+                ],
+                [
+                    "xpath=//li[2]/a/span",
+                    "xpath:position"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Selected'])[1]/following::span[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Recent List Views'])[1]/following::span[2]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Selected'])[2]/preceding::span[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Recently Viewed'])[2]/preceding::span[2]",
+                    "xpath:neighbor"
+                ]
+            ],
+            "input": "",
+            "status": "Passed",
+            "elementKey": "span.1.allopportunities",
+            "elementDesc": "Text 1.allopportunities",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "indexColumn": "",
+            "@@mycolor": null,
+            "tcId": "25",
+            "tsId": 24,
+            "testData": false,
+            "duration": 605000000,
+            "executedOn": "2021-09-23T16:02:33.157Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "products.create.new.button",
+            "input": "",
+            "status": "Passed",
+            "eArray": [
+                [
+                    "products.create.new.button",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "tcId": "25",
+            "tsId": 24,
+            "testData": false,
+            "duration": 654000000,
+            "executedOn": "2021-09-23T16:02:33.811Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Visible",
+            "element": "products.createProduct.popup.recordType.OM.input",
+            "input": "",
+            "status": "Passed",
+            "eArray": [
+                [
+                    "products.createProduct.popup.recordType.OM.input",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "tcId": "25",
+            "tsId": 24,
+            "testData": false,
+            "duration": 573000000,
+            "executedOn": "2021-09-23T16:02:34.384Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "products.createProduct.popup.recordType.OM.input",
+            "input": "",
+            "status": "Passed",
+            "eArray": [
+                [
+                    "products.createProduct.popup.recordType.OM.input",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "tcId": "25",
+            "tsId": 24,
+            "testData": false,
+            "duration": 567000000,
+            "executedOn": "2021-09-23T16:02:34.951Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "products.createProduct.popup.next.button",
+            "input": "",
+            "status": "Passed",
+            "eArray": [
+                [
+                    "products.createProduct.popup.next.button",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "tcId": "25",
+            "tsId": 24,
+            "testData": false,
+            "@@mycolor": null,
+            "duration": 662000000,
+            "executedOn": "2021-09-23T16:02:35.613Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "ShrdGetVarCurrentTime",
+            "element": "",
+            "input": "",
+            "status": "Passed",
+            "eArray": [],
+            "elementKey": "",
+            "elementDesc": "",
+            "shared": true,
+            "@@mycolor": null,
+            "tcId": "25",
+            "tsId": 24,
+            "testData": false,
+            "lastExecutionDetail": [
+                {
+                    "indexColumn": "",
+                    "command": "Execute Java Script",
+                    "element": "",
+                    "input": "var elem = document.createElement(\"div\");elem.id=\"the-time\";elem.innerHTML=new Date().getTime();document.body.insertAdjacentElement(\"beforeend\", elem);",
+                    "status": "Passed",
+                    "eArray": [],
+                    "elementKey": "",
+                    "elementDesc": "",
+                    "tcId": "25",
+                    "tsId": 24,
+                    "testData": false,
+                    "duration": 531000000,
+                    "executedOn": "2021-09-23T16:02:36.145Z",
+                    "errMessage": "",
+                    "isRowExpanded": false,
+                    "@@mycolor": null,
+                    "isSharable": true,
+                    "length": 2
+                },
+                {
+                    "indexColumn": "",
+                    "command": "Store Text",
+                    "element": "common.var.the-time",
+                    "input": "currentTime",
+                    "status": "Passed",
+                    "eArray": [
+                        [
+                            "id=the-time",
+                            "id"
+                        ],
+                        [
+                            "common.var.the-time",
+                            "key"
+                        ]
+                    ],
+                    "elementKey": "",
+                    "elementDesc": "",
+                    "tcId": "25",
+                    "tsId": 24,
+                    "testData": false,
+                    "duration": 819000000,
+                    "executedOn": "2021-09-23T16:02:36.964Z",
+                    "errMessage": "",
+                    "isRowExpanded": false,
+                    "@@mycolor": null,
+                    "isSharable": true,
+                    "length": 2
+                }
+            ]
+        },
+        {
+            "indexColumn": "",
+            "command": "Type",
+            "element": "products.createProduct.popup.name.input",
+            "input": "${currentTime}",
+            "status": "Passed",
+            "eArray": [
+                [
+                    "products.createProduct.popup.name.input",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "@@mycolor": null,
+            "tcId": "25",
+            "tsId": 24,
+            "testData": false,
+            "duration": 758000000,
+            "executedOn": "2021-09-23T16:02:37.722Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "products.createProduct.popup.family.input",
+            "input": "",
+            "status": "Passed",
+            "eArray": [
+                [
+                    "products.createProduct.popup.family.input",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "tcId": "25",
+            "tsId": 24,
+            "testData": false,
+            "duration": 674000000,
+            "executedOn": "2021-09-23T16:02:38.396Z",
+            "errMessage": "",
+            "isRowExpanded": false,
+            "@@mycolor": null
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "products.createProduct.popup.family.input.option.Tools",
+            "input": "",
+            "status": "Passed",
+            "eArray": [
+                [
+                    "products.createProduct.popup.family.input.option.Tools",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "tcId": "25",
+            "tsId": 24,
+            "testData": false,
+            "duration": 656000000,
+            "executedOn": "2021-09-23T16:02:39.052Z",
+            "errMessage": "",
+            "isRowExpanded": false,
+            "@@mycolor": null
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "products.createProduct.popup.save.button",
+            "input": "",
+            "status": "Passed",
+            "eArray": [
+                [
+                    "products.createProduct.popup.save.button",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "tcId": "25",
+            "tsId": 24,
+            "testData": false,
+            "duration": 632000000,
+            "executedOn": "2021-09-23T16:02:39.685Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Present",
+            "element": "common.toastContainer",
+            "input": "",
+            "status": "Passed",
+            "eArray": [
+                [
+                    "common.toastContainer",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "tcId": "25",
+            "tsId": 24,
+            "testData": false,
+            "duration": 1261000000,
+            "executedOn": "2021-09-23T16:02:40.946Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Assert Text",
+            "element": "products.details.name",
+            "input": "${currentTime}",
+            "status": "Passed",
+            "eArray": [
+                [
+                    "products.details.name",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "isEncrypted": false,
+            "isDisplay": false,
+            "tcId": "25",
+            "tsId": 24,
+            "testData": false,
+            "duration": 1047000000,
+            "executedOn": "2021-09-23T16:02:41.993Z",
+            "expected": "1632412956137",
+            "actual": "1632412956137",
+            "errMessage": "",
+            "isRowExpanded": false
+        }
+    ],
+    "type": "web",
+    "capabilities": {
+        "remoteUrl": "https://bssi--fullcopy.lightning.force.com/",
+        "type": "web",
+        "selectBrowser": "chrome",
+        "selectDevice": "",
+        "isRemote": false,
+        "remoteHubUrl": "http://127.0.0.1:4444/wd/hub/",
+        "isDebugMode": false,
+        "details": {
+            "deviceMetrics": {
+                "name": "",
+                "width": "",
+                "height": "",
+                "pixelRatio": "",
+                "userAgent": ""
+            }
+        }
+    },
+    "testDataExample": [],
+    "isTCValid": true,
+    "externalTestData": false,
+    "recordSessionType": "multiple",
+    "tags": [
+        {
+            "name": "product"
+        },
+        {
+            "name": "positive"
+        }
+    ],
+    "description": "Verify whether user is able to create a product of record type O&M Product",
+    "shared": true,
+    "executionStatus": "Passed"
+}

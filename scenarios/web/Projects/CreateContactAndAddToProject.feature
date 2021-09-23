@@ -6,18 +6,7 @@ Feature: Projects
 
 Scenario: Create contact and add to project
 	
-   Given get "https://bssi--fullcopy.lightning.force.com/"
-   And maximizeWindow 
-   When wait until "login.username" to be enable
-   And clear "login.username"
-   And wait until "login.username" to be enable
-   And sendKeys "rmontemayor@borregosolar.com.fullcopy" into "login.username"
-   And wait until "login.password" to be enable
-   And clear "login.password"
-   And wait until "login.password" to be enable
-   And sendEncryptedKeys "RkNwYXNzd29yZDEyMyE=" into "login.password"
-   And wait until "login.submit" to be enable
-   And click on "login.submit"
+   Given ShrdLoginToFullCopy 
    Then wait until "applauncher.div" to be present
    When wait until "applauncher.div" to be enable
    And click on "applauncher.div"
@@ -69,8 +58,7 @@ Scenario: Create contact and add to project
    And assert "projects.details.projectName" text is "Project Name - Creating Contact"
    And Execute Java Script with data "var elem = document.createElement(\"div\");elem.id=\"the-url\";elem.innerHTML=window.location.href;document.body.insertAdjacentElement(\"beforeend\", elem);"
    And store text from "common.var.the-url" into "projectsURL"
-   And Execute Java Script with data "var elem = document.createElement(\"div\");elem.id=\"the-time\";elem.innerHTML=new Date().getTime();document.body.insertAdjacentElement(\"beforeend\", elem);"
-   And store text from "common.var.the-time" into "currentTime"
+   And ShrdGetVarCurrentTime 
    When wait until "projects.details.account.link" to be enable
    And click on "projects.details.account.link"
    Then wait until "accounts.contacts.all.link" to be present

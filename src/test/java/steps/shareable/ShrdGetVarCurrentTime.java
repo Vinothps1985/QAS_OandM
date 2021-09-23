@@ -22,7 +22,7 @@ public class ShrdGetVarCurrentTime extends WebDriverTestCase {
 	public void customShrdGetVarCurrentTime() {
 		
 		StepsLibrary.executeJavaScript("var value = new Date().getTime();var elem = document.createElement('div');elem.id='the-time';elem.innerHTML=value;document.body.insertAdjacentElement('beforeend', elem);/*fix shrd export*/;var elem = document.createElement('div');elem.id=value;elem.innerHTML=value;document.body.insertAdjacentElement('beforeend', elem);");
-		CommonStep.store(CommonStep.getText($("common.var.the-time").getText()), "currentTime");
+		CommonStep.store(CommonStep.getText($("common.var.the-time").getText()),"currentTime");
 	}
 }
 

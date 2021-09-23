@@ -34,6 +34,16 @@ Scenario: Create OM Product
    And click on "products.createProduct.popup.family.input"
    And wait until "products.createProduct.popup.family.input.option.Tools" to be enable
    And click on "products.createProduct.popup.family.input.option.Tools"
+   And wait until "products.createProduct.popup.productDescription.input" to be enable
+   And sendKeys "Product description" into "products.createProduct.popup.productDescription.input"
+   And wait until "products.createProduct.popup.oemManufacturer.input" to be enable
+   And sendKeys "OEM Manufacturer" into "products.createProduct.popup.oemManufacturer.input"
+   And wait until "products.createProduct.popup.productCode.input" to be enable
+   And sendKeys "${currentTime}" into "products.createProduct.popup.productCode.input"
+   And wait until "products.createProduct.popup.watts.input" to be enable
+   And sendKeys "123" into "products.createProduct.popup.watts.input"
+   And wait until "products.createProduct.popup.activeDataSheet.input" to be enable
+   And sendKeys "Active Data Sheet" into "products.createProduct.popup.activeDataSheet.input"
    And wait until "products.createProduct.popup.save.button" to be enable
    And click on "products.createProduct.popup.save.button"
    Then wait until "common.toastContainer" to be present

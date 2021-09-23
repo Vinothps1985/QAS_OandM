@@ -1,4 +1,3 @@
-
 common.var.the-url={"locator":"id=the-url","desc":"","eArray":[{"name":"id=the-url","key":"id"}]}
 common.var.the-time={"locator":"id=the-time","desc":"","eArray":[{"name":"id=the-time","key":"id"}]}
 common.var.testing-name={"locator":"id=testing-name","desc":"","eArray":[{"name":"id=testing-name","key":"id"}]}

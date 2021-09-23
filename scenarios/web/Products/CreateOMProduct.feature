@@ -22,6 +22,7 @@ Scenario: Create OM Product
    When wait until "products.create.new.button" to be enable
    And click on "products.create.new.button"
    Then wait until "products.createProduct.popup.recordType.OM.input" to be visible
+   Then wait for 3000 milisec
    When wait until "products.createProduct.popup.recordType.OM.input" to be enable
    And click on "products.createProduct.popup.recordType.OM.input"
    And wait until "products.createProduct.popup.next.button" to be enable

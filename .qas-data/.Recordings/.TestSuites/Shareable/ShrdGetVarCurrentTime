@@ -4,7 +4,7 @@
             "indexColumn": "",
             "command": "Execute Java Script",
             "element": "",
-            "input": "var elem = document.createElement(\"div\");elem.id=\"the-time\";elem.innerHTML=new Date().getTime();document.body.insertAdjacentElement(\"beforeend\", elem);",
+            "input": "var value = new Date().getTime();var elem = document.createElement('div');elem.id='the-time';elem.innerHTML=value;document.body.insertAdjacentElement('beforeend', elem);/*fix shrd export*/;var elem = document.createElement('div');elem.id=value;elem.innerHTML=value;document.body.insertAdjacentElement('beforeend', elem);",
             "status": "NotRun",
             "eArray": [],
             "elementKey": "",
@@ -27,12 +27,12 @@
             "status": "NotRun",
             "eArray": [
                 [
-                    "id=the-time",
-                    "id"
-                ],
-                [
                     "common.var.the-time",
                     "key"
+                ],
+                [
+                    "id=the-time",
+                    "id"
                 ]
             ],
             "elementKey": "",
@@ -53,6 +53,7 @@
     "testDataExample": [],
     "isTCValid": true,
     "externalTestData": false,
+    "dbDetails": {},
     "recordSessionType": "multiple",
     "tags": [],
     "description": "",

@@ -21,8 +21,8 @@ public class ShrdGetVarCurrentTime extends WebDriverTestCase {
 	@QAFTestStep(description = "ShrdGetVarCurrentTime")
 	public void customShrdGetVarCurrentTime() {
 		
-		StepsLibrary.executeJavaScript("var elem = document.createElement(\"div\");elem.id=\"the-time\";elem.innerHTML=new Date().getTime();document.body.insertAdjacentElement(\"beforeend\", elem);");
-		CommonStep.store(CommonStep.getText($("common.var.the-time").getText()),"currentTime");
+		StepsLibrary.executeJavaScript("var value = new Date().getTime();var elem = document.createElement('div');elem.id='the-time';elem.innerHTML=value;document.body.insertAdjacentElement('beforeend', elem);/*fix shrd export*/;var elem = document.createElement('div');elem.id=value;elem.innerHTML=value;document.body.insertAdjacentElement('beforeend', elem);");
+		CommonStep.store(CommonStep.getText($("common.var.the-time").getText()), "currentTime");
 	}
 }
 

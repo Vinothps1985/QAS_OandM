@@ -18,10 +18,6 @@ Scenario: Create REACTIVE case
    Then wait until "applauncher.link.projects" to be visible
    When wait until "applauncher.link.projects" to be enable
    And click on "applauncher.link.projects"
-   Then switch to frame "accountinghome.iframe"
-   And wait until "accountinghome.projects.link" to be present
-   When wait until "accountinghome.projects.link" to be enable
-   And click on "accountinghome.projects.link"
    And wait until "projects.search.button" to be enable
    And click on "projects.search.button"
    And wait until "projects.search.input" to be enable
@@ -34,7 +30,7 @@ Scenario: Create REACTIVE case
    When wait until "projects.quicklink.contracts" to be enable
    And click on "projects.quicklink.contracts"
    Then wait until "projects.contracts.firstContract.status" to be present
-   And verify "projects.contracts.firstContract.status" text is "Active"
+   And assert "projects.contracts.firstContract.status" is present
    When wait until "breadcrumbs.second" to be enable
    And click on "breadcrumbs.second"
    And wait until "projects.createCase.button" to be enable
@@ -74,12 +70,12 @@ Scenario: Create REACTIVE case
    And click on "case.createCase.popup.save.button"
    Then verify "case.entityName" text is "Case"
    And wait until "case.priority" to be present
-   And verify "case.priority" text is "Low"
-   And verify "case.caseOrigin" text is "Manager Created"
-   And verify "case.reportedIssue" text is "System Down"
-   And verify "case.caseCause" text is "Other"
-   And verify "case.subject" text is "Sample subject from QAS"
-   And verify "case.description" text is "Sample description from QAS"
+   And assert "case.priority" text is "Low"
+   And assert "case.caseOrigin" text is "Manager Created"
+   And assert "case.reportedIssue" text is "System Down"
+   And assert "case.caseCause" text is "Other"
+   And assert "case.subject" text is "Sample subject from QAS"
+   And assert "case.description" text is "Sample description from QAS"
    
 
 

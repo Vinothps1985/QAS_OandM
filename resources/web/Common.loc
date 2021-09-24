@@ -1,2 +1,4 @@
 common.toastContainer={"locator":"xpath=//div[contains(@class, 'toastContainer')]","desc":"","eArray":[{"name":"xpath=//div[contains(@class, 'toastContainer')]","key":"xpath"}]}
 common.toastContainer.link={"desc":"","eArray":[{"name":"xpath=//div[contains(@class, 'toastContainer')]//a","key":"xpath"}],"locator":"xpath=//div[contains(@class, 'toastContainer')]//a"}
+common.searchAssistant.button={"locator":"xpath=//div[contains(@class, 'forceSearchAssistant')]//button","desc":"","eArray":[{"name":"xpath=//div[contains(@class, 'forceSearchAssistant')]//button","key":"xpath"}]}
+common.searchAssistant.input={"locator":"xpath=//div[contains(@class, 'assistantPanel')]//div[contains(@class, 'container')]//input[@type='search']","desc":"","eArray":[{"name":"xpath=//div[contains(@class, 'container')]//input[@type='search']","key":"xpath"},{"name":"xpath=//div[contains(@class, 'assistantPanel')]//div[contains(@class, 'container')]//input[@type='search']","key":"xpath"}]}

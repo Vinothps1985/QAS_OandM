@@ -1,0 +1,1 @@
+profile.settings.icon={"locator":"xpath=//android.widget.ImageView[@resource-id='com.salesforce.fieldservice.app:id/settings_control']","desc":"Cog icon","eArray":[{"name":"xpath=//android.widget.ImageView[@resource-id='com.salesforce.fieldservice.app:id/settings_control']","key":"xpath"}]}

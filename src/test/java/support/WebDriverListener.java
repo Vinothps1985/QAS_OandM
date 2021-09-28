@@ -15,6 +15,14 @@ import com.qmetry.qaf.automation.ui.webdriver.CommandTracker;
 import com.qmetry.qaf.automation.ui.webdriver.QAFExtendedWebDriver;
 import com.qmetry.qaf.automation.ui.webdriver.QAFWebDriverCommandAdapter;
 
+import com.qmetry.qaf.automation.step.QAFTestStep;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import com.qmetry.qaf.automation.ui.WebDriverTestBase;
+
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.AppiumDriver;
+
 /**
  * com.basis.listener.ErrorOverrideListener.java
  *
@@ -30,6 +38,7 @@ public class WebDriverListener extends QAFWebDriverCommandAdapter {
 			CommandTracker commandTracker) {
 
 		super.beforeCommand(driver, commandTracker);
+		//logger.info("BEFORE COMMAND!");
 
 		String command = commandTracker.getCommand();
 		if (command.equalsIgnoreCase(DriverCommand.GET_CURRENT_WINDOW_HANDLE)
@@ -40,6 +49,12 @@ public class WebDriverListener extends QAFWebDriverCommandAdapter {
 						|| ConfigurationManager.getBundle().getString("platform")
 								.equalsIgnoreCase("windows"))) {
 			commandTracker.setResponce(new Response());
+		}
+
+		if (Util.DEBUG) {
+			String source = getDriver().getPageSource();
+			System.out.println("SOURCEX");
+			System.out.println(source);
 		}
 	}
 
@@ -70,5 +85,10 @@ public class WebDriverListener extends QAFWebDriverCommandAdapter {
 		// }
 		super.beforeInitialize(desiredCapabilities);
 
+	}
+
+	@SuppressWarnings({"rawtypes"})
+	private static AppiumDriver getDriver() {
+		return (AppiumDriver) new WebDriverTestBase().getDriver().getUnderLayingDriver();
 	}
 }

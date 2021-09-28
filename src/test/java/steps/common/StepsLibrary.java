@@ -4,22 +4,23 @@ import static com.qmetry.qaf.automation.ui.webdriver.ElementFactory.$;
 
 import com.qmetry.qaf.automation.core.ConfigurationManager;
 import com.qmetry.qaf.automation.step.QAFTestStep;
-import com.qmetry.qaf.automation.step.CommonStep;
 import com.qmetry.qaf.automation.ui.WebDriverTestBase;
 import com.qmetry.qaf.automation.ui.webdriver.QAFWebElement;
+import com.qmetry.qaf.automation.step.CommonStep;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.Keys;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import com.qmetry.qaf.automation.util.PropertyUtil;
+import com.qmetry.qaf.automation.util.Validator;
 import com.qmetry.qaf.automation.ui.webdriver.QAFExtendedWebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.JavascriptExecutor;
-import com.qmetry.qaf.automation.util.Validator;
 import org.openqa.selenium.Alert;
 import java.util.NoSuchElementException;
 import org.openqa.selenium.NoAlertPresentException;
@@ -27,7 +28,6 @@ import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.Base64;
-
 // define common steps among all the platforms.
 // You can create sub packages to organize the steps within different modules
 public class StepsLibrary {
@@ -107,15 +107,16 @@ public class StepsLibrary {
 	public static void switchToPlatform(String platform) {
 		ConfigurationManager.getBundle().setProperty("env.resources", "resources/testdata;resources/" + platform);
 	}
-
-
 	@QAFTestStep(description="select {0} in {1}")
 	public static void selectIn(String value,String loc) {
 		WebElement sel = new WebDriverTestBase().getDriver().findElement(loc);
 		Select selectDropDown = new Select(sel);
-		selectDropDown.selectByVisibleText(value.contains("=")?value.split("=")[1]:value);
+		try {
+			selectDropDown.selectByValue(value.contains("=")?value.split("=")[1]:value);
+		} catch (Exception e) {
+			selectDropDown.selectByVisibleText(value.contains("=")?value.split("=")[1]:value);
+		}
 	}
-
 	@QAFTestStep(description = "type Enter {loc}")
 		public static void typeEnter(String loc) {
 			$(loc).sendKeys(Keys.ENTER);
@@ -135,13 +136,13 @@ public class StepsLibrary {
 	}
 
 	@QAFTestStep(description = "wait for {0} milisec")
-		public static void waitForMilliseconds(int time) {
-		 try {
-			 Thread.sleep(time);
-			 System.out.println("Execution waited for "+time+" ms");
-		} catch (Exception e) {
-			System.out.println(" Exection occured on implicit wait : "+e);
-	    }
+	public static void waitForMilliseconds(int time) {
+		try {
+			Thread.sleep(time);
+			System.out.println("Execution waited for "+time+" ms");
+	    } catch (Exception e) {
+		System.out.println(" Exection occured on implicit wait : "+e);
+        }
     }
 	@QAFTestStep(description = "setBeforeLambdaTestCapabilities {data}")
 	public static void setBeforeLambdaTestCapabilities(String data) {
@@ -190,8 +191,8 @@ public class StepsLibrary {
 			((JavascriptExecutor) new WebDriverTestBase().getDriver()).executeScript(executScriptValue, $(source));
 	}
 
-	@QAFTestStep(description = "maximizeWindow")
-	public static void maximizeWindow() {
+	@QAFTestStep(description = "maximise window")
+	public static void maximiseWindow() {
 		new WebDriverTestBase().getDriver().manage().window().maximize();
 	}
 
@@ -203,6 +204,11 @@ public class StepsLibrary {
 	@QAFTestStep(description = "assertTitle {0}")
 	public static void assertTitle(String input) {
 		Validator.assertTrue(new WebDriverTestBase().getDriver().getTitle().equalsIgnoreCase(input),"Actual Title: \""+ new WebDriverTestBase().getDriver().getTitle() +"\" does not match with Expected: \"" +input+"\"" , "Actual Title: \""+ new WebDriverTestBase().getDriver().getTitle()+"\" matches with Expected: \"" +input+"\"");
+	}
+
+	@QAFTestStep(description = "maximizeWindow")
+	public static void maximizeWindow() {
+		new WebDriverTestBase().getDriver().manage().window().maximize();
 	}
 
 	@QAFTestStep(description = "Execute Java Script with data {0}")
@@ -300,10 +306,11 @@ public class StepsLibrary {
 		}
 		return returnvalue;
 	}
-
-    @QAFTestStep(description = "sendEncryptedKeys {text} into {loc}")
+	
+	@QAFTestStep(description = "sendEncryptedKeys {text} into {loc}")
 	public static void sendEncryptedKeys(String text, String loc) {
 		byte[] decoded = Base64.getDecoder().decode(text);
 		CommonStep.sendKeys(new String(decoded), loc);
 	}
+
 }

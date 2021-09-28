@@ -1,0 +1,3 @@
+common.actions.button={"locator":"xpath=//android.view.View[@content-desc='Actions' and @clickable='true']","desc":"Actions button","eArray":[{"name":"xpath=//android.view.View[@content-desc='Actions' and @clickable='true']","key":"xpath"}]}
+common.date.popup.ok={"locator":"id=android:id/button1","desc":"Popup Ok Button (Button 1)","eArray":[{"name":"id=android:id/button1","key":"id"}]}
+common.accept.eula={"locator":"accessibility id=Accept Eula","desc":"accepteula","eArray":[{"name":"accessibility id=Accept Eula","key":"accessibility id"},{"name":"id=com.salesforce.fieldservice.app:id/accept_button","key":"id"},{"name":"xpath=//android.widget.Button[@content-desc='Accept Eula']","key":"xpath"}]}

@@ -1,5 +1,10 @@
 {
     "additionalFields": {
+		"android": {
+            "app": "/",
+            "appactivity": "com.salesforce.fieldservice.ui.launcher.FieldServicePrerequisiteActivity",
+            "apppackage": "com.salesforce.fieldservice.app"
+        },
         "web": {
             "baseurl": "https://bssi--fullcopy.lightning.force.com/"
         }
@@ -13,7 +18,8 @@
         "projectPath": "c:\\Eneva\\Borrego\\Code"
     },
     "projectTypes": [
-        "web"
+        "web",
+        "android"
     ],
     "key": "qKDjB6SMpb62N3Zm7uwVgFQqRS27KyBB+pSAKBXK5HEq4pWNRwvSC6HHlF7B685PtLpf7ndS8c2Ez3ZCZi0wSJK420hW1khF+iK9ucy8mi0=",
     "shareable": "sharedFunction"

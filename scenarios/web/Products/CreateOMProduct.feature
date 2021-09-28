@@ -3,6 +3,7 @@ Feature: Products
 @author:Rodrigo Montemayor
 @description:Verify whether user is able to create a product of record type O&M Product
 @product @positive
+@dataFile:resources/testdata/Products/Create OM Product.csv
 
 Scenario: Create OM Product
 	

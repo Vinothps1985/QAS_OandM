@@ -18,10 +18,10 @@ Scenario: Create REACTIVE case
    Then wait until "applauncher.link.projects" to be visible
    When wait until "applauncher.link.projects" to be enable
    And click on "applauncher.link.projects"
-   And wait until "projects.search.button" to be enable
-   And click on "projects.search.button"
-   And wait until "projects.search.input" to be enable
-   And sendKeys "${projectName}" into "projects.search.input"
+   And wait until "common.searchAssistant.button" to be enable
+   And click on "common.searchAssistant.button"
+   And wait until "common.searchAssistant.input" to be enable
+   And sendKeys "${projectName}" into "common.searchAssistant.input"
    Then wait until "projects.search.firstResult" to be visible
    When wait until "projects.search.firstResult" to be enable
    And click on "projects.search.firstResult"

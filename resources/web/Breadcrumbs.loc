@@ -1,1 +1,1 @@
-breadcrumbs.second={"locator":"xpath=//nav[@aria-label='Breadcrumbs']//li[2]//a","desc":"","eArray":[{"name":"xpath=//nav[@aria-label='Breadcrumbs']//li[2]//a","key":"xpath"}]}
+breadcrumbs.second={"locator":"xpath=//div[contains(@class, 'windowViewMode-normal')]//nav[@aria-label='Breadcrumbs']//li[2]//a","desc":"","eArray":[{"name":"xpath=//nav[@aria-label='Breadcrumbs']//li[2]//a","key":"xpath"},{"name":"xpath=//div[contains(@class, 'windowViewMode-normal')]//nav[@aria-label='Breadcrumbs']//li[2]//a","key":"xpath"}]}

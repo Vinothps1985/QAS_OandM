@@ -83,6 +83,15 @@ public class WebDriverListener extends QAFWebDriverCommandAdapter {
 		// 	chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
 		// 	capabilities.setCapability("chromeOptions", chromeOptions);
 		// }
+
+		/*DesiredCapabilities capabilities = (DesiredCapabilities) desiredCapabilities;
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--no-sandbox");//setExperimentalOption("mobileEmulation", mobileEmulation);
+        chromeOptions.addArguments("--disable-dev-shm-usage");
+        chromeOptions.addArguments("--headless");
+        chromeOptions.addArguments("--window-size=1920x1080");
+        capabilities.setCapability("chromeOptions", chromeOptions);*/
+
 		super.beforeInitialize(desiredCapabilities);
 
 	}

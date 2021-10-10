@@ -1,0 +1,11 @@
+conga.outputOptions.action.input={"locator":"xpath=//label[text()='Action:']//ancestor::tr//td//input","desc":"","eArray":[{"name":"xpath=//label[text()='Action:']//ancestor::tr//td//input","key":"xpath"}]}
+conga.outputOptions.fileType.pdfFile.input.selected={"locator":"xpath=//table[contains(@class, 'x-form-cb-checked')]//label[text()='PDF File']//ancestor::tr//td//input","desc":"","eArray":[{"name":"xpath=//label[text()='PDF File']//ancestor::tr//td//input","key":"xpath"},{"name":"xpath=//table[contains(@class, 'x-form-cb-checked')]//label[text()='PDF File']//ancestor::tr//td//input","key":"xpath"}]}
+conga.mergeAndEmail.button={"locator":"xpath=//b[text()='Merge & Email']//ancestor::a","desc":"","eArray":[{"name":"xpath=//b[text()='Merge & Email']//ancestor::a","key":"xpath"}]}
+conga.templates.correctiveReport.selected={"locator":"xpath=//tr[contains(@class, 'x-grid-row-selected')]//span[contains(text(), 'Corrective Report')]","desc":"","eArray":[{"name":"xpath=//tr[contains(@class, 'x-grid-row-selected')]//span[contains(text(), 'Corrective Report')]","key":"xpath"}]}
+conga.email.to.input={"locator":"xpath=//input[@name='ToDisplayName']","desc":"","eArray":[{"name":"xpath=//input[@name='ToDisplayName']","key":"xpath"}]}
+conga.email.cc.input={"locator":"xpath=//input[@name='Cc']","desc":"","eArray":[{"name":"xpath=//input[@name='Cc']","key":"xpath"}]}
+conga.email.subject.input={"locator":"xpath=//input[@name='Subject']","desc":"","eArray":[{"name":"xpath=//input[@name='Subject']","key":"xpath"}]}
+conga.email.attachment.img={"locator":"xpath=//img[contains(@src, 'apxt-document-pdf')]","desc":"","eArray":[{"name":"xpath=//img[contains(@src, 'apxt-document-pdf')]","key":"xpath"}]}
+conga.email.contents.iframe={"locator":"xpath=//iframe[contains(@title, 'Rich Text Editor')]","desc":"","eArray":[{"name":"xpath=//iframe[contains(@title, 'Rich Text Editor')]","key":"xpath"}]}
+conga.email.body={"locator":"xpath=//body[@contenteditable='true']","desc":"","eArray":[{"name":"xpath=//body[@contenteditable='true']","key":"xpath"}]}
+conga.email.body.logo={"locator":"xpath=(//body[@contenteditable='true']//img)[1]","desc":"","eArray":[{"name":"xpath=(//body[@contenteditable='true']//img)[1]","key":"xpath"}]}

@@ -13,11 +13,11 @@ import java.io.IOException;
 import java.util.Map;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import steps.common.*;
+
 /**
 * @author Rodrigo Montemayor
 */
-public class ShrdLoginToFullCopy extends WebDriverTestCase {
-
+public class ShrdLoginToFullCopy extends WebDriverTestCase{
 	@QAFTestStep(description = "ShrdLoginToFullCopy {0} {1}")
 	public void customShrdLoginToFullCopy(Object username,Object password) {
 		

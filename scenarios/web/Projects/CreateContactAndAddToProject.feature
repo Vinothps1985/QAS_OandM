@@ -25,14 +25,15 @@ Scenario: Create contact and add to project
    Then wait until "opportunities.selectListView.allOpportunities" to be present
    When wait until "opportunities.selectListView.allOpportunities" to be enable
    And click on "opportunities.selectListView.allOpportunities"
-   And wait for 3000 milisec
-   And wait until "opportunities.search.input" to be enable
+   Then wait until "opportunities.search.input" to be present
+   When wait until "opportunities.search.input" to be enable
    And clear "opportunities.search.input"
+   And wait for 3000 milisec
    And wait until "opportunities.search.input" to be enable
    And sendKeys "O&M" into "opportunities.search.input"
    And wait until "opportunities.search.input" to be enable
    And type Enter "opportunities.search.input"
-   And wait for 2000 milisec
+   And wait for 3000 milisec
    Then wait until "opportunities.search.results.first" to be present
    When wait until "opportunities.search.results.first" to be enable
    And click on "opportunities.search.results.first"
@@ -56,6 +57,8 @@ Scenario: Create contact and add to project
    And wait until "projects.editProject.popup.save.button" to be enable
    And click on "projects.editProject.popup.save.button"
    Then wait until "common.toastContainer" to be present
+   And wait until "projects.details.projectName" to be present
+   And wait for 2000 milisec
    And assert "projects.details.projectName" text is "Project Name - Creating Contact"
    And Execute Java Script with data "var elem = document.createElement(\"div\");elem.id=\"the-url\";elem.innerHTML=window.location.href;document.body.insertAdjacentElement(\"beforeend\", elem);"
    And store text from "common.var.the-url" into "projectsURL"
@@ -87,6 +90,8 @@ Scenario: Create contact and add to project
    And sendKeys "${currentTime}" into "common.var.testing-last-name"
    Then Execute Java Script with data "document.getElementById(\"testing-full-name\").value = document.getElementById(\"testing-name\").value + \" \" + document.getElementById(\"testing-last-name\").value;"
    And store value from "common.var.testing-full-name" into "fullName"
+   And wait until "contacts.details.name" to be present
+   And wait for 2000 milisec
    And assert "contacts.details.name" text is "${fullName}"
    And Execute Java Script with data "var input = document.createElement(\"input\");input.id=\"input-url\";document.body.insertAdjacentElement(\"beforeend\", input);"
    When wait until "common.var.input-url" to be enable
@@ -101,7 +106,8 @@ Scenario: Create contact and add to project
    And sendKeys "${fullName}" into "projects.siteInformation.onSiteContact.edit.input"
    And wait until "projects.siteInformation.onSiteContact.edit.input.li.firstOption" to be enable
    And click on "projects.siteInformation.onSiteContact.edit.input.li.firstOption"
-   And wait until "projects.save.button" to be enable
+   Then assert "projects.save.button" is present
+   When wait until "projects.save.button" to be enable
    And click on "projects.save.button"
    Then wait until "projects.siteInformation.onSiteContact.link.span" to be present
    And assert "projects.siteInformation.onSiteContact.link.span" text is "${fullName}"

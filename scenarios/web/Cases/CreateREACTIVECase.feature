@@ -20,7 +20,8 @@ Scenario: Create REACTIVE case
    And click on "applauncher.link.projects"
    And wait until "common.searchAssistant.button" to be enable
    And click on "common.searchAssistant.button"
-   And wait until "common.searchAssistant.input" to be enable
+   Then wait until "common.activeTab.firstIframe" to be present
+   When wait until "common.searchAssistant.input" to be enable
    And sendKeys "${projectName}" into "common.searchAssistant.input"
    Then wait until "projects.search.firstResult" to be visible
    When wait until "projects.search.firstResult" to be enable

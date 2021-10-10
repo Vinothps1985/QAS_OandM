@@ -13,11 +13,11 @@ import java.io.IOException;
 import java.util.Map;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import steps.common.*;
+
 /**
 * @author Rodrigo Montemayor
 */
-public class ShrdGetVarCurrentTime extends WebDriverTestCase {
-
+public class ShrdGetVarCurrentTime extends WebDriverTestCase{
 	@QAFTestStep(description = "ShrdGetVarCurrentTime")
 	public void customShrdGetVarCurrentTime() {
 		

@@ -25,13 +25,16 @@ Scenario: Create project for OM Opportunity
    Then wait until "opportunities.selectListView.allOpportunities" to be present
    When wait until "opportunities.selectListView.allOpportunities" to be enable
    And click on "opportunities.selectListView.allOpportunities"
-   And wait until "opportunities.search.input" to be enable
+   Then wait until "opportunities.search.input" to be present
+   When wait until "opportunities.search.input" to be enable
    And clear "opportunities.search.input"
+   And wait for 3000 milisec
    And wait until "opportunities.search.input" to be enable
    And sendKeys "O&M" into "opportunities.search.input"
    And wait until "opportunities.search.input" to be enable
    And type Enter "opportunities.search.input"
-   Then wait until "opportunities.search.results.first" to be visible
+   And wait for 3000 milisec
+   Then wait until "opportunities.search.results.first" to be present
    When wait until "opportunities.search.results.first" to be enable
    And click on "opportunities.search.results.first"
    Then wait until "opportunities.createProject.button" to be visible
@@ -44,6 +47,7 @@ Scenario: Create project for OM Opportunity
    And wait until "opportunities.createProject.template.createProject.button" to be enable
    And click on "opportunities.createProject.template.createProject.button"
    Then switch to default window 
+   Then wait for 3000 milisec
    And wait until "projects.editProject.button" to be visible
    When wait until "projects.editProject.button" to be enable
    And click on "projects.editProject.button"
@@ -75,9 +79,17 @@ Scenario: Create project for OM Opportunity
    And wait until "projects.editProject.popup.save.button" to be enable
    And click on "projects.editProject.popup.save.button"
    Then wait until "common.toastContainer" to be present
-   And verify "projects.details.projectName" text is "Project Name - Recording"
-   And verify "projects.details.epcSite" text is "Silveira Ranch Rd - Site 1"
-   And verify "projects.details.projectState" text is "California"
+   And wait until "projects.details.projectName" to be present
+   And wait for 1500 milisec
+   And assert "projects.details.projectName" text is "Project Name - Recording"
+   And assert "projects.details.epcSite" text is "Silveira Ranch Rd - Site 1"
+   And assert "projects.siteInformation.overallProjectSizeWatts" text is "100"
+   And assert "projects.siteInformation.siteAddress" text is "8900 Redwood Hwy"
+   And assert "projects.siteInformation.siteCity" text is "Novato"
+   And assert "projects.details.projectState" text is "California"
+   And assert "projects.siteInformation.siteZip" text is "94945"
+   And assert "projects.siteInformation.sitePTODate.notEmpty" is present
+   And assert "projects.siteInformation.siteSubstantialDate.notEmpty" is present
    
 
 

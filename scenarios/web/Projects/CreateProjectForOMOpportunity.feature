@@ -4,6 +4,7 @@ Feature: Projects
 @description:Verify whether user is able to create a project for the opportunity with record type O&M Opportunity
 @project @positive
 @dataFile:resources/testdata/Projects/Create project for OM Opportunity.csv
+@requirementKey=QTM-RQ-23
 
 Scenario: Create project for OM Opportunity
 	

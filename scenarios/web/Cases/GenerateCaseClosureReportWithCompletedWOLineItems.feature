@@ -4,6 +4,7 @@ Feature: Cases
 
 @case
 @dataFile:resources/testdata/Cases/Generate case closure report with completed WO Line Items.csv
+@requirementKey=QTM-RQ-23
 
 Scenario: Generate case closure report with completed WO Line Items
 	

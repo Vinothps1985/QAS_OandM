@@ -4,6 +4,7 @@ Feature: Products
 @description:Verify whether user is able to create a product of record type O&M Product
 @product @positive
 @dataFile:resources/testdata/Products/Create OM Product.csv
+@requirementKey=QTM-RQ-23
 
 Scenario: Create OM Product
 	

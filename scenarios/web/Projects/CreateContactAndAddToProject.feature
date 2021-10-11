@@ -4,6 +4,7 @@ Feature: Projects
 @description:Verify whether user is able to create a new Contact and add contact into Project.
 @project @contact @positive
 @dataFile:resources/testdata/Projects/Create contact and add to project.csv
+@requirementKey=QTM-RQ-23
 
 Scenario: Create contact and add to project
 	

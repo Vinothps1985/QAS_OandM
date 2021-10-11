@@ -4,6 +4,7 @@ Feature: Cases
 @description:Verify whether user is able to create a case of record type REACTIVE
 @case @positive
 @dataFile:resources/testdata/Cases/Create REACTIVE case.csv
+@requirementKey=QTM-RQ-23
 
 Scenario: Create REACTIVE case
 	

@@ -156,7 +156,7 @@
 					<url>https://testmanagement.qmetry.com</url>
 					<filepath>test-results/</filepath>
 					<format>qas/json</format>
-					<apikey>fXtFmWf1X0ixRgrtzg635P42XEOJzPr0yqcUZ1Tu</apikey>
+					<apikey>REPLACEME</apikey>
 					<qtmProject>QMetry</qtmProject>
 				<alias>QTMIntegration1</alias><release>Sample Release</release><cycle>Sample Cycle</cycle><platform>No Platform</platform><testsuite>QTM-TS-3</testsuite><testsuiteFields>{}</testsuiteFields><testcaseFields>{}</testcaseFields></configuration>
 			<executions><execution><phase>test</phase><goals><goal>uploadresults</goal></goals></execution></executions></plugin>

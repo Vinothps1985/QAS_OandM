@@ -376,324 +376,28 @@
             ]
         },
         {
-            "command": "Click",
-            "element": "applauncher.div",
-            "eArray": [
-                [
-                    "applauncher.div",
-                    "key"
-                ],
-                [
-                    "xpath=//one-app-launcher-header/button/div",
-                    "xpath:position"
-                ],
-                [
-                    "css=div.slds-icon-waffle",
-                    "css"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='View profile'])[1]/following::div[8]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Notifications'])[1]/following::div[11]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Agile Accelerator'])[3]/preceding::div[10]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "div.applauncher",
-                    "key"
-                ]
-            ],
-            "input": "",
-            "status": "NotRun",
-            "elementKey": "div.applauncher",
-            "elementDesc": "Text applauncher",
-            "isEncrypted": false,
-            "isDisplay": false,
             "indexColumn": "",
-            "tcId": "4",
-            "tsId": 2,
-            "testData": true,
-            "duration": 7946000000,
-            "executedOn": "2021-10-10T04:20:23.424Z",
-            "errMessage": "",
-            "isRowExpanded": false,
-            "@@mycolor": null,
-            "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"reactiveCaseNumber\":\"00290316\"}",
-            "tdId": 1
-        },
-        {
-            "indexColumn": "",
-            "command": "Wait For Present",
-            "element": "applauncher.input.text",
-            "input": "",
+            "command": "ShrdChangeLoggedInUser",
+            "element": "",
+            "input": "test_ops_center_operator",
             "status": "NotRun",
-            "eArray": [
-                [
-                    "applauncher.input.text",
-                    "key"
-                ],
-                [
-                    "input.applauncher",
-                    "key"
-                ],
-                [
-                    "input.applauncher.text",
-                    "key"
-                ],
-                [
-                    "xpath=//one-app-launcher-search-bar/lightning-input/div/input",
-                    "xpath"
-                ],
-                [
-                    "xpath...one-app-launcher-search-bar.lightning-input.div.input",
-                    "key"
-                ]
-            ],
+            "eArray": [],
             "elementKey": "",
             "elementDesc": "",
-            "tcId": "4",
-            "tsId": 2,
-            "testData": true,
-            "duration": 930000000,
-            "executedOn": "2021-10-10T04:20:24.354Z",
-            "errMessage": "",
-            "isRowExpanded": false,
-            "@@mycolor": null,
-            "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"reactiveCaseNumber\":\"00290316\"}",
-            "tdId": 1
+            "shared": true,
+            "@@mycolor": null
         },
         {
-            "command": "Clear",
-            "element": "applauncher.input.text",
-            "eArray": [
-                [
-                    "applauncher.input.text",
-                    "key"
-                ],
-                [
-                    "input.applauncher",
-                    "key"
-                ],
-                [
-                    "input.applauncher.text",
-                    "key"
-                ],
-                [
-                    "xpath=//one-app-launcher-search-bar/lightning-input/div/input",
-                    "xpath:position"
-                ],
-                [
-                    "xpath=//div[@id='content_795:0']/one-app-launcher-menu/div/one-app-launcher-search-bar/lightning-input/div/input",
-                    "xpath:idRelative"
-                ],
-                [
-                    "id=input-109",
-                    "id"
-                ],
-                [
-                    "css=#input-109",
-                    "css"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Search apps and items...'])[1]/following::input[1]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='No record selected'])[1]/following::input[1]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Clear'])[1]/preceding::input[1]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Apps'])[1]/preceding::input[1]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath...one-app-launcher-search-bar.lightning-input.div.input",
-                    "key"
-                ]
-            ],
-            "input": "",
-            "status": "NotRun",
-            "elementKey": "search.input109",
-            "elementDesc": "input-109 search",
-            "isEncrypted": false,
-            "isDisplay": false,
             "indexColumn": "",
-            "tcId": "4",
-            "tsId": 2,
-            "testData": true,
-            "duration": 629000000,
-            "executedOn": "2021-10-10T04:20:24.983Z",
-            "errMessage": "",
-            "isRowExpanded": false,
-            "@@mycolor": null,
-            "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"reactiveCaseNumber\":\"00290316\"}",
-            "tdId": 1
-        },
-        {
-            "command": "Type",
-            "element": "applauncher.input.text",
-            "eArray": [
-                [
-                    "applauncher.input.text",
-                    "key"
-                ],
-                [
-                    "input.applauncher",
-                    "key"
-                ],
-                [
-                    "input.applauncher.text",
-                    "key"
-                ],
-                [
-                    "xpath=//one-app-launcher-search-bar/lightning-input/div/input",
-                    "xpath:position"
-                ],
-                [
-                    "xpath=//div[@id='content_795:0']/one-app-launcher-menu/div/one-app-launcher-search-bar/lightning-input/div/input",
-                    "xpath:idRelative"
-                ],
-                [
-                    "id=input-109",
-                    "id"
-                ],
-                [
-                    "css=#input-109",
-                    "css"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Search apps and items...'])[1]/following::input[1]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='No record selected'])[1]/following::input[1]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Clear'])[1]/preceding::input[1]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Apps'])[1]/preceding::input[1]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath...one-app-launcher-search-bar.lightning-input.div.input",
-                    "key"
-                ]
-            ],
+            "command": "ShrdLaunchApp",
+            "element": "",
             "input": "cases",
             "status": "NotRun",
-            "elementKey": "search.input109",
-            "elementDesc": "input-109 search",
-            "isEncrypted": false,
-            "isDisplay": false,
-            "indexColumn": "",
-            "tcId": "4",
-            "tsId": 2,
-            "testData": true,
-            "duration": 694000000,
-            "executedOn": "2021-10-10T04:20:25.677Z",
-            "errMessage": "",
-            "isRowExpanded": false,
-            "@@mycolor": null,
-            "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"reactiveCaseNumber\":\"00290316\"}",
-            "tdId": 1
-        },
-        {
-            "indexColumn": "",
-            "command": "Wait For Visible",
-            "element": "applauncher.link.cases",
-            "input": "",
-            "status": "NotRun",
-            "eArray": [
-                [
-                    "applauncher.link.cases",
-                    "key"
-                ],
-                [
-                    "applauncher.link.projects",
-                    "key"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Projects'])[1]/following::a[1]",
-                    "xpath"
-                ],
-                [
-                    "xpath=(//div[@class='container']//a[contains(@data-label, 'Projects')])[1]",
-                    "xpath"
-                ],
-                [
-                    "xpath=//div[@aria-label='Apps']//a",
-                    "xpath"
-                ]
-            ],
+            "eArray": [],
             "elementKey": "",
             "elementDesc": "",
             "@@mycolor": null,
-            "tcId": "4",
-            "tsId": 2,
-            "testData": true,
-            "duration": 565000000,
-            "executedOn": "2021-10-10T04:20:26.242Z",
-            "errMessage": "",
-            "isRowExpanded": false,
-            "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"reactiveCaseNumber\":\"00290316\"}",
-            "tdId": 1
-        },
-        {
-            "indexColumn": "",
-            "command": "Click",
-            "element": "applauncher.link.cases",
-            "input": "",
-            "status": "NotRun",
-            "eArray": [
-                [
-                    "applauncher.link.cases",
-                    "key"
-                ],
-                [
-                    "applauncher.link.projects",
-                    "key"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Projects'])[1]/following::a[1]",
-                    "xpath"
-                ],
-                [
-                    "xpath=(//div[@class='container']//a[contains(@data-label, 'Projects')])[1]",
-                    "xpath"
-                ],
-                [
-                    "(.//*[normalize-space(text()) and normalize-space(.)='Projects'])[1]/following::a[1]",
-                    "(.//*[normalize-space(text()) and normalize-space(.)"
-                ],
-                [
-                    "xpath=//div[@aria-label='Apps']//a",
-                    "xpath"
-                ]
-            ],
-            "elementKey": "",
-            "elementDesc": "",
-            "tcId": "4",
-            "tsId": 2,
-            "testData": true,
-            "duration": 7132000000,
-            "executedOn": "2021-10-10T04:20:33.375Z",
-            "errMessage": "",
-            "isRowExpanded": false,
-            "@@mycolor": null,
-            "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"reactiveCaseNumber\":\"00290316\"}",
-            "tdId": 1
+            "shared": true
         },
         {
             "indexColumn": "",
@@ -718,13 +422,13 @@
             "elementKey": "",
             "elementDesc": "",
             "@@mycolor": null,
-            "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"reactiveCaseNumber\":\"00290316\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290316\",\"assetType1\":\"BOP\",\"assetType2\":\"Module\"}",
             "tcId": "4",
             "tsId": 2,
             "testData": true,
             "tdId": 1,
-            "duration": 6784000000,
-            "executedOn": "2021-10-10T04:20:40.160Z",
+            "duration": 6752000000,
+            "executedOn": "2021-10-15T07:33:47.287Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -753,13 +457,13 @@
             "isEncrypted": false,
             "isDisplay": false,
             "@@mycolor": null,
-            "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"reactiveCaseNumber\":\"00290316\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290316\",\"assetType1\":\"BOP\",\"assetType2\":\"Module\"}",
             "tcId": "4",
             "tsId": 2,
             "testData": true,
             "tdId": 1,
-            "duration": 773000000,
-            "executedOn": "2021-10-10T04:20:40.933Z",
+            "duration": 738000000,
+            "executedOn": "2021-10-15T07:33:48.025Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -789,13 +493,13 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"reactiveCaseNumber\":\"00290316\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290316\",\"assetType1\":\"BOP\",\"assetType2\":\"Module\"}",
             "tcId": "4",
             "tsId": 2,
             "testData": true,
             "tdId": 1,
-            "duration": 547000000,
-            "executedOn": "2021-10-10T04:20:41.480Z",
+            "duration": 557000000,
+            "executedOn": "2021-10-15T07:33:48.582Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null
@@ -826,13 +530,13 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"reactiveCaseNumber\":\"00290316\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290316\",\"assetType1\":\"BOP\",\"assetType2\":\"Module\"}",
             "tcId": "4",
             "tsId": 2,
             "testData": true,
             "tdId": 1,
-            "duration": 6687000000,
-            "executedOn": "2021-10-10T04:20:48.167Z",
+            "duration": 6671000000,
+            "executedOn": "2021-10-15T07:33:55.253Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null
@@ -851,13 +555,13 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"reactiveCaseNumber\":\"00290316\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290316\",\"assetType1\":\"BOP\",\"assetType2\":\"Module\"}",
             "tcId": "4",
             "tsId": 2,
             "testData": true,
             "tdId": 1,
-            "duration": 5683000000,
-            "executedOn": "2021-10-10T04:20:56.363Z",
+            "duration": 2574000000,
+            "executedOn": "2021-10-15T07:33:57.827Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null
@@ -871,34 +575,16 @@
             "eArray": [],
             "elementKey": "",
             "elementDesc": "",
-            "@@mycolor": null
-        },
-        {
-            "indexColumn": "",
-            "command": "Assert Text",
-            "element": "cases.caseNumber",
-            "input": "${reactiveCaseNumber}",
-            "status": "NotRun",
-            "eArray": [
-                [
-                    "cases.caseNumber",
-                    "key"
-                ]
-            ],
-            "elementKey": "",
-            "elementDesc": "",
-            "isEncrypted": false,
-            "isDisplay": false,
             "@@mycolor": null,
-            "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"reactiveCaseNumber\":\"00290316\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290316\",\"assetType1\":\"BOP\",\"assetType2\":\"Module\"}",
             "tcId": "4",
             "tsId": 2,
             "testData": true,
             "tdId": 1,
-            "duration": 583000000,
-            "executedOn": "2021-10-10T04:20:56.946Z",
-            "errMessage": "\"Text '' is not match with '00290316'\"",
-            "isRowExpanded": true
+            "duration": 2519000000,
+            "executedOn": "2021-10-15T07:34:00.346Z",
+            "errMessage": "",
+            "isRowExpanded": false
         },
         {
             "indexColumn": "",
@@ -915,33 +601,528 @@
             "elementKey": "",
             "elementDesc": "",
             "@@mycolor": null,
-            "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"reactiveCaseNumber\":\"00290316\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290316\",\"assetType1\":\"BOP\",\"assetType2\":\"Module\"}",
             "tcId": "4",
             "tsId": 2,
             "testData": true,
             "tdId": 1,
-            "duration": 6704000000,
-            "executedOn": "2021-10-10T04:21:09.582Z",
+            "duration": 6636000000,
+            "executedOn": "2021-10-15T07:34:06.982Z",
             "errMessage": "",
             "isRowExpanded": false
         },
         {
             "indexColumn": "",
-            "command": "Implicit Wait",
+            "command": "Wait For Present",
+            "element": "workOrders.iframe",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "workOrders.iframe",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290316\",\"assetType1\":\"BOP\",\"assetType2\":\"Module\"}",
+            "tcId": "4",
+            "tsId": 2,
+            "testData": true,
+            "tdId": 1,
+            "duration": 1200000000,
+            "executedOn": "2021-10-15T07:34:08.182Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Switch To Frame",
+            "element": "workOrders.iframe",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "workOrders.iframe",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290316\",\"assetType1\":\"BOP\",\"assetType2\":\"Module\"}",
+            "tcId": "4",
+            "tsId": 2,
+            "testData": true,
+            "tdId": 1,
+            "duration": 614000000,
+            "executedOn": "2021-10-15T07:34:08.796Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Present",
+            "element": "workOrders.create.next.button",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "workOrders.create.next.button",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290316\",\"assetType1\":\"BOP\",\"assetType2\":\"Module\"}",
+            "tcId": "4",
+            "tsId": 2,
+            "testData": true,
+            "tdId": 1,
+            "duration": 9941000000,
+            "executedOn": "2021-10-15T07:34:18.737Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "workOrders.create.next.button",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "workOrders.create.next.button",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290316\",\"assetType1\":\"BOP\",\"assetType2\":\"Module\"}",
+            "tcId": "4",
+            "tsId": 2,
+            "testData": true,
+            "tdId": 1,
+            "duration": 6632000000,
+            "executedOn": "2021-10-15T07:34:25.369Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Present",
+            "element": "workOrders.create.assetType.select",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "workOrders.create.assetType.select",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290316\",\"assetType1\":\"BOP\",\"assetType2\":\"Module\"}",
+            "tcId": "4",
+            "tsId": 2,
+            "testData": true,
+            "tdId": 1,
+            "duration": 660000000,
+            "executedOn": "2021-10-15T07:34:26.029Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Select",
+            "element": "workOrders.create.assetType.select",
+            "input": "label=${assetType1}",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "workOrders.create.assetType.select",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290316\",\"assetType1\":\"BOP\",\"assetType2\":\"Module\"}",
+            "tcId": "4",
+            "tsId": 2,
+            "testData": true,
+            "tdId": 1,
+            "duration": 841000000,
+            "executedOn": "2021-10-15T07:34:26.870Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "workOrders.create.next.button",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "workOrders.create.next.button",
+                    "key"
+                ],
+                [
+                    "create",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290316\",\"assetType1\":\"BOP\",\"assetType2\":\"Module\"}",
+            "tcId": "4",
+            "tsId": 2,
+            "testData": true,
+            "tdId": 1,
+            "duration": 6645000000,
+            "executedOn": "2021-10-15T07:34:33.515Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Present",
+            "element": "workOrders.create.assetTable.checkbox.first",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "workOrders.create.assetTable.checkbox.first",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290316\",\"assetType1\":\"BOP\",\"assetType2\":\"Module\"}",
+            "tcId": "4",
+            "tsId": 2,
+            "testData": true,
+            "tdId": 1,
+            "duration": 929000000,
+            "executedOn": "2021-10-15T07:34:34.444Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "workOrders.create.assetTable.checkbox.first",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "workOrders.create.assetTable.checkbox.first",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290316\",\"assetType1\":\"BOP\",\"assetType2\":\"Module\"}",
+            "tcId": "4",
+            "tsId": 2,
+            "testData": true,
+            "tdId": 1,
+            "duration": 6643000000,
+            "executedOn": "2021-10-15T07:34:41.087Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "workOrders.create.next.button",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "workOrders.create.next.button",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290316\",\"assetType1\":\"BOP\",\"assetType2\":\"Module\"}",
+            "tcId": "4",
+            "tsId": 2,
+            "testData": true,
+            "tdId": 1,
+            "duration": 6626000000,
+            "executedOn": "2021-10-15T07:34:47.713Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "workOrders.create.addAdditionalAssets.no.option",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "workOrders.create.addAdditionalAssets.no.option",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290316\",\"assetType1\":\"BOP\",\"assetType2\":\"Module\"}",
+            "tcId": "4",
+            "tsId": 2,
+            "testData": true,
+            "tdId": 1,
+            "duration": 6664000000,
+            "executedOn": "2021-10-15T07:34:54.377Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "workOrders.create.next.button",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "workOrders.create.next.button",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290316\",\"assetType1\":\"BOP\",\"assetType2\":\"Module\"}",
+            "tcId": "4",
+            "tsId": 2,
+            "testData": true,
+            "tdId": 1,
+            "duration": 6614000000,
+            "executedOn": "2021-10-15T07:35:00.991Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Present",
+            "element": "workOrders.create.selectAssets.label",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "workOrders.create.selectAssets.label",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290316\",\"assetType1\":\"BOP\",\"assetType2\":\"Module\"}",
+            "tcId": "4",
+            "tsId": 2,
+            "testData": true,
+            "tdId": 1,
+            "duration": 7201000000,
+            "executedOn": "2021-10-15T07:35:08.192Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "workOrders.create.next.button",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "workOrders.create.next.button",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290316\",\"assetType1\":\"BOP\",\"assetType2\":\"Module\"}",
+            "tcId": "4",
+            "tsId": 2,
+            "testData": true,
+            "tdId": 1,
+            "duration": 6683000000,
+            "executedOn": "2021-10-15T07:35:14.875Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Present",
+            "element": "workOrders.create.updateDuration.label",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "workOrders.create.updateDuration.label",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290316\",\"assetType1\":\"BOP\",\"assetType2\":\"Module\"}",
+            "tcId": "4",
+            "tsId": 2,
+            "testData": true,
+            "tdId": 1,
+            "duration": 692000000,
+            "executedOn": "2021-10-15T07:35:15.568Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "workOrders.create.next.button",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "workOrders.create.next.button",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290316\",\"assetType1\":\"BOP\",\"assetType2\":\"Module\"}",
+            "tcId": "4",
+            "tsId": 2,
+            "testData": true,
+            "tdId": 1,
+            "duration": 6629000000,
+            "executedOn": "2021-10-15T07:35:22.197Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Present",
+            "element": "workOrders.create.multipleTechsNeeded.label",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "workOrders.create.multipleTechsNeeded.label",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290316\",\"assetType1\":\"BOP\",\"assetType2\":\"Module\"}",
+            "tcId": "4",
+            "tsId": 2,
+            "testData": true,
+            "tdId": 1,
+            "duration": 614000000,
+            "executedOn": "2021-10-15T07:35:22.811Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "workOrders.create.next.button",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "workOrders.create.next.button",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290316\",\"assetType1\":\"BOP\",\"assetType2\":\"Module\"}",
+            "tcId": "4",
+            "tsId": 2,
+            "testData": true,
+            "tdId": 1,
+            "duration": 6629000000,
+            "executedOn": "2021-10-15T07:35:29.440Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Switch To Default Content",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [],
+            "elementKey": "",
+            "elementDesc": "",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290316\",\"assetType1\":\"BOP\",\"assetType2\":\"Module\"}",
+            "tcId": "4",
+            "tsId": 2,
+            "testData": true,
+            "tdId": 1,
+            "duration": 515000000,
+            "executedOn": "2021-10-15T07:35:29.956Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Visible",
+            "element": "cases.caseNumber",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "cases.caseNumber",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290316\",\"assetType1\":\"BOP\",\"assetType2\":\"Module\"}",
+            "tcId": "4",
+            "tsId": 2,
+            "testData": true,
+            "tdId": 1,
+            "duration": 1450000000,
+            "executedOn": "2021-10-15T07:35:31.406Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Execute Java Script",
             "element": "",
-            "input": "5000",
+            "input": "window.location.reload();",
             "status": "NotRun",
             "eArray": [],
             "elementKey": "",
             "elementDesc": "",
             "@@mycolor": null,
-            "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"reactiveCaseNumber\":\"00290316\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290316\",\"assetType1\":\"BOP\",\"assetType2\":\"Module\"}",
             "tcId": "4",
             "tsId": 2,
             "testData": true,
             "tdId": 1,
-            "duration": 5508000000,
-            "executedOn": "2021-10-10T04:21:15.090Z",
+            "duration": 2750000000,
+            "executedOn": "2021-10-15T07:35:34.156Z",
             "errMessage": "",
             "isRowExpanded": false
         }

@@ -103,7 +103,8 @@
                 ]
             ],
             "elementKey": "",
-            "elementDesc": ""
+            "elementDesc": "",
+            "@@mycolor": null
         },
         {
             "indexColumn": "",

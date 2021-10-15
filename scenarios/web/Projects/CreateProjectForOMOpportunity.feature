@@ -2,24 +2,16 @@ Feature: Projects
 
 @author:Rodrigo Montemayor
 @description:Verify whether user is able to create a project for the opportunity with record type O&M Opportunity
-@project @positive
+@project @positive @smoke
 @dataFile:resources/testdata/Projects/Create project for OM Opportunity.csv
 @requirementKey=QTM-RQ-23
-
 Scenario: Create project for OM Opportunity
 	
    Given ShrdLoginToFullCopy "${username}" "${password}"
-   Then wait until "applauncher.div" to be present
-   When wait until "applauncher.div" to be enable
-   And click on "applauncher.div"
-   Then wait until "applauncher.input.text" to be present
-   When wait until "applauncher.input.text" to be enable
-   And clear "applauncher.input.text"
-   And wait until "applauncher.input.text" to be enable
-   And sendKeys "opportunities" into "applauncher.input.text"
-   Then wait until "applauncher.link.opportunities" to be present
-   When wait until "applauncher.link.opportunities" to be enable
-   And click on "applauncher.link.opportunities"
+   And ShrdChangeLoggedInUser "test_ops_center_operator"
+   And  wait for 2000 milisec
+   And ShrdLaunchApp "opportunities"
+   And  wait for 2000 milisec
    Then wait until "opportunities.selectListView" to be present
    When wait until "opportunities.selectListView" to be enable
    And click on "opportunities.selectListView"
@@ -41,7 +33,8 @@ Scenario: Create project for OM Opportunity
    Then wait until "opportunities.createProject.button" to be visible
    When wait until "opportunities.createProject.button" to be enable
    And click on "opportunities.createProject.button"
-   Then switch to frame "opportunities.createProject.iframe"
+   Then wait until "opportunities.createProject.iframe" to be visible
+   And switch to frame "opportunities.createProject.iframe"
    And wait until "opportunities.createProject.template.select" to be present
    When wait until "opportunities.createProject.template.select.option.OM" to be enable
    And click on "opportunities.createProject.template.select.option.OM"
@@ -55,11 +48,11 @@ Scenario: Create project for OM Opportunity
    And wait until "projects.editProject.popup.name.input" to be enable
    And clear "projects.editProject.popup.name.input"
    And wait until "projects.editProject.popup.name.input" to be enable
-   And sendKeys "Project Name - Recording" into "projects.editProject.popup.name.input"
+   And sendKeys "${projectName}" into "projects.editProject.popup.name.input"
    And wait until "projects.editProject.popup.epcSite.input" to be enable
    And clear "projects.editProject.popup.epcSite.input"
    And wait until "projects.editProject.popup.epcSite.input" to be enable
-   And sendKeys "Silveira Ranch Rd - Site 1" into "projects.editProject.popup.epcSite.input"
+   And sendKeys "${epcSite}" into "projects.editProject.popup.epcSite.input"
    And wait until "projects.editProject.popup.epcSite.input" to be enable
    And click on "projects.editProject.popup.epcSite.input"
    Then wait until "projects.editProject.popup.epcSite.results.first" to be present
@@ -68,7 +61,7 @@ Scenario: Create project for OM Opportunity
    And wait until "projects.editProject.popup.watts.input" to be enable
    And clear "projects.editProject.popup.watts.input"
    And wait until "projects.editProject.popup.watts.input" to be enable
-   And sendKeys "100" into "projects.editProject.popup.watts.input"
+   And sendKeys "${watts}" into "projects.editProject.popup.watts.input"
    And wait until "projects.editProject.popup.available.firstOption.li" to be enable
    And click on "projects.editProject.popup.available.firstOption.li"
    And wait until "projects.editProject.popup.available.moveToChosen.button" to be enable
@@ -82,15 +75,17 @@ Scenario: Create project for OM Opportunity
    Then wait until "common.toastContainer" to be present
    And wait until "projects.details.projectName" to be present
    And wait for 1500 milisec
-   And assert "projects.details.projectName" text is "Project Name - Recording"
-   And assert "projects.details.epcSite" text is "Silveira Ranch Rd - Site 1"
-   And assert "projects.siteInformation.overallProjectSizeWatts" text is "100"
-   And assert "projects.siteInformation.siteAddress" text is "8900 Redwood Hwy"
-   And assert "projects.siteInformation.siteCity" text is "Novato"
-   And assert "projects.details.projectState" text is "California"
-   And assert "projects.siteInformation.siteZip" text is "94945"
-   And assert "projects.siteInformation.sitePTODate.notEmpty" is present
-   And assert "projects.siteInformation.siteSubstantialDate.notEmpty" is present
+   And assert "projects.details.projectName" text is "${projectName}"
+   When wait until "projects.siteInformation.siteSubstantialDate.notEmpty" to be enable
+   And click on "projects.siteInformation.siteSubstantialDate.notEmpty"
+   Then assert "projects.details.epcSite" text is "${epcSite}"
+   And verify "projects.siteInformation.overallProjectSizeWatts" text is "${watts}"
+   And verify "projects.siteInformation.siteAddress" text is "${siteAddress}"
+   And verify "projects.siteInformation.siteCity" text is "${siteCity}"
+   And verify "projects.details.projectState" text is "${projectState}"
+   And verify "projects.siteInformation.siteZip" text is "${siteZip}"
+   And verify "projects.siteInformation.sitePTODate.notEmpty" is present
+   And verify "projects.siteInformation.siteSubstantialDate.notEmpty" is present
    
 
 

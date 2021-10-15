@@ -1,2 +1,2 @@
-username,password
-rmontemayor@borregosolar.com.fullcopy,FCpassword123!
+username,password,projectName,epcSite,watts,siteAddress,siteCity,projectState,siteZip
+rmontemayor@borregosolar.com.fullcopy,FCpassword123!,Project Name - Recording,Silveira Ranch Rd - Site 1,100,8900 Redwood Hwy,Novato,California,94945

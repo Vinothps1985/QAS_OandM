@@ -143,6 +143,11 @@ public class StepsLibrary {
 	    } catch (Exception e) {
 		System.out.println(" Exection occured on implicit wait : "+e);
         }
+	}
+	
+	@QAFTestStep(description = " wait for {0} milisec")
+	public static void waitForMillisecondsSpace(int time) {
+		waitForMilliseconds(time);
     }
 	@QAFTestStep(description = "setBeforeLambdaTestCapabilities {data}")
 	public static void setBeforeLambdaTestCapabilities(String data) {

@@ -14,321 +14,50 @@
             "isDisplay": false
         },
         {
-            "command": "Wait For Present",
-            "element": "applauncher.div",
-            "eArray": [
-                [
-                    "applauncher.div",
-                    "key"
-                ],
-                [
-                    "xpath=//one-appnav/div",
-                    "xpath:position"
-                ],
-                [
-                    "css=div.slds-context-bar",
-                    "css"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='View profile'])[1]/following::div[4]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Notifications'])[1]/following::div[7]",
-                    "xpath:neighbor"
-                ]
-            ],
-            "input": "",
-            "status": "NotRun",
-            "elementKey": "div.applauncherasprojectspressspacebartoreorder.accountinghomereportsreportsmenueditnavitems",
-            "elementDesc": "Text applauncheras:projectspressspacebartoreorder.accountinghomereportsreportsmenueditnavitems",
-            "isEncrypted": false,
-            "isDisplay": false,
             "indexColumn": "",
-            "@@mycolor": null,
-            "tcId": "10",
-            "tsId": 8,
-            "testData": true,
-            "duration": 5578000000,
-            "executedOn": "2021-10-10T04:32:35.861Z",
-            "errMessage": "",
-            "isRowExpanded": false,
-            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
-            "tdId": 1
-        },
-        {
-            "indexColumn": "",
-            "command": "Click",
-            "element": "applauncher.div",
-            "input": "",
+            "command": "ShrdChangeLoggedInUser",
+            "element": "",
+            "input": "test_ops_center_operator",
             "status": "NotRun",
-            "eArray": [
-                [
-                    "applauncher.div",
-                    "key"
-                ]
-            ],
+            "eArray": [],
             "elementKey": "",
             "elementDesc": "",
-            "@@mycolor": null,
-            "tcId": "10",
-            "tsId": 8,
-            "testData": true,
-            "duration": 6624000000,
-            "executedOn": "2021-10-10T04:32:42.485Z",
-            "errMessage": "",
-            "isRowExpanded": false,
-            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
-            "tdId": 1
+            "shared": true,
+            "@@mycolor": null
         },
         {
-            "command": "Wait For Present",
-            "element": "applauncher.input.text",
-            "eArray": [
-                [
-                    "applauncher.input.text",
-                    "key"
-                ],
-                [
-                    "xpath=//button/div/div[5]",
-                    "xpath:position"
-                ],
-                [
-                    "css=div.slds-r5",
-                    "css"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='View profile'])[1]/following::div[13]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Notifications'])[1]/following::div[16]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='App Launcher'])[1]/preceding::div[5]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='AS: Projects'])[3]/preceding::div[5]",
-                    "xpath:neighbor"
-                ]
-            ],
-            "input": "",
-            "status": "NotRun",
-            "elementKey": "div.sldsr5",
-            "elementDesc": "Text slds-r5",
-            "isEncrypted": false,
-            "isDisplay": false,
             "indexColumn": "",
-            "@@mycolor": null,
-            "tcId": "10",
-            "tsId": 8,
-            "testData": true,
-            "duration": 897000000,
-            "executedOn": "2021-10-10T04:32:43.383Z",
-            "errMessage": "",
-            "isRowExpanded": false,
-            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
-            "tdId": 1
-        },
-        {
-            "command": "Clear",
-            "element": "applauncher.input.text",
-            "eArray": [
-                [
-                    "applauncher.input.text",
-                    "key"
-                ],
-                [
-                    "id=input-34",
-                    "id"
-                ],
-                [
-                    "xpath=//div[@id='content_427:0']/one-app-launcher-menu/div/one-app-launcher-search-bar/lightning-input/div/input",
-                    "xpath:idRelative"
-                ],
-                [
-                    "xpath=//lightning-input/div/input",
-                    "xpath:position"
-                ],
-                [
-                    "css=#input-34",
-                    "css"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Search apps and items...'])[1]/following::input[1]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='No record selected'])[1]/following::input[1]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Clear'])[1]/preceding::input[1]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Apps'])[1]/preceding::input[1]",
-                    "xpath:neighbor"
-                ]
-            ],
-            "input": "",
+            "command": "Implicit Wait",
+            "element": "",
+            "input": "2000",
             "status": "NotRun",
-            "elementKey": "search.input34",
-            "elementDesc": "input-34 search",
-            "isEncrypted": false,
-            "isDisplay": false,
-            "indexColumn": "",
-            "@@mycolor": null,
-            "tcId": "10",
-            "tsId": 8,
-            "testData": true,
-            "duration": 584000000,
-            "executedOn": "2021-10-10T04:32:43.967Z",
-            "errMessage": "",
-            "isRowExpanded": false,
-            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
-            "tdId": 1
+            "eArray": [],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null
         },
         {
-            "command": "Type",
-            "element": "applauncher.input.text",
-            "eArray": [
-                [
-                    "applauncher.input.text",
-                    "key"
-                ],
-                [
-                    "id=input-34",
-                    "id"
-                ],
-                [
-                    "xpath=//div[@id='content_427:0']/one-app-launcher-menu/div/one-app-launcher-search-bar/lightning-input/div/input",
-                    "xpath:idRelative"
-                ],
-                [
-                    "xpath=//lightning-input/div/input",
-                    "xpath:position"
-                ],
-                [
-                    "css=#input-34",
-                    "css"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Search apps and items...'])[1]/following::input[1]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='No record selected'])[1]/following::input[1]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Clear'])[1]/preceding::input[1]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Apps'])[1]/preceding::input[1]",
-                    "xpath:neighbor"
-                ]
-            ],
+            "indexColumn": "",
+            "command": "ShrdLaunchApp",
+            "element": "",
             "input": "opportunities",
             "status": "NotRun",
-            "elementKey": "search.input34",
-            "elementDesc": "input-34 search",
-            "isEncrypted": false,
-            "isDisplay": false,
-            "indexColumn": "",
-            "@@mycolor": null,
-            "tcId": "10",
-            "tsId": 8,
-            "testData": true,
-            "duration": 658000000,
-            "executedOn": "2021-10-10T04:32:44.625Z",
-            "errMessage": "",
-            "isRowExpanded": false,
-            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
-            "tdId": 1
-        },
-        {
-            "command": "Wait For Present",
-            "element": "applauncher.link.opportunities",
-            "eArray": [
-                [
-                    "applauncher.link.opportunities",
-                    "key"
-                ],
-                [
-                    "xpath=//a[@id='Opportunity']/div/lightning-formatted-rich-text/span/p/b",
-                    "xpath:idRelative"
-                ],
-                [
-                    "xpath=//b",
-                    "xpath:position"
-                ],
-                [
-                    "css=b",
-                    "css"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Items'])[1]/following::b[1]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Apps'])[1]/following::b[1]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='View All'])[1]/preceding::b[1]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Loading...'])[1]/preceding::b[1]",
-                    "xpath:neighbor"
-                ]
-            ],
-            "input": "",
-            "status": "NotRun",
-            "elementKey": "b.opportunities",
-            "elementDesc": "B opportunities",
-            "isEncrypted": false,
-            "isDisplay": false,
-            "indexColumn": "",
-            "@@mycolor": null,
-            "tcId": "10",
-            "tsId": 8,
-            "testData": true,
-            "duration": 555000000,
-            "executedOn": "2021-10-10T04:32:45.180Z",
-            "errMessage": "",
-            "isRowExpanded": false,
-            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
-            "tdId": 1
-        },
-        {
-            "indexColumn": "",
-            "command": "Click",
-            "element": "applauncher.link.opportunities",
-            "input": "",
-            "status": "NotRun",
-            "eArray": [
-                [
-                    "applauncher.link.opportunities",
-                    "key"
-                ]
-            ],
+            "eArray": [],
             "elementKey": "",
             "elementDesc": "",
-            "@@mycolor": null,
-            "tcId": "10",
-            "tsId": 8,
-            "testData": true,
-            "duration": 6749000000,
-            "executedOn": "2021-10-10T04:32:51.929Z",
-            "errMessage": "",
-            "isRowExpanded": false,
-            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
-            "tdId": 1
+            "shared": true,
+            "@@mycolor": null
+        },
+        {
+            "indexColumn": "",
+            "command": "Implicit Wait",
+            "element": "",
+            "input": "2000",
+            "status": "NotRun",
+            "eArray": [],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null
         },
         {
             "command": "Wait For Present",
@@ -375,14 +104,14 @@
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "10",
-            "tsId": 8,
+            "tcId": "9",
+            "tsId": 7,
             "testData": true,
-            "duration": 1095000000,
-            "executedOn": "2021-10-10T04:32:53.024Z",
+            "duration": 699000000,
+            "executedOn": "2021-10-15T15:34:40.267Z",
             "errMessage": "",
             "isRowExpanded": false,
-            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Project Name - Recording\",\"epcSite\":\"Silveira Ranch Rd - Site 1\",\"watts\":\"100\",\"siteAddress\":\"8900 Redwood Hwy\",\"siteCity\":\"Novato\",\"projectState\":\"California\",\"siteZip\":\"94945\"}",
             "tdId": 1
         },
         {
@@ -400,14 +129,14 @@
             "elementKey": "",
             "elementDesc": "",
             "@@mycolor": null,
-            "tcId": "10",
-            "tsId": 8,
+            "tcId": "9",
+            "tsId": 7,
             "testData": true,
-            "duration": 6719000000,
-            "executedOn": "2021-10-10T04:32:59.743Z",
+            "duration": 6649000000,
+            "executedOn": "2021-10-15T15:34:46.917Z",
             "errMessage": "",
             "isRowExpanded": false,
-            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Project Name - Recording\",\"epcSite\":\"Silveira Ranch Rd - Site 1\",\"watts\":\"100\",\"siteAddress\":\"8900 Redwood Hwy\",\"siteCity\":\"Novato\",\"projectState\":\"California\",\"siteZip\":\"94945\"}",
             "tdId": 1
         },
         {
@@ -455,14 +184,14 @@
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "10",
-            "tsId": 8,
+            "tcId": "9",
+            "tsId": 7,
             "testData": true,
-            "duration": 553000000,
-            "executedOn": "2021-10-10T04:33:00.296Z",
+            "duration": 555000000,
+            "executedOn": "2021-10-15T15:34:47.472Z",
             "errMessage": "",
             "isRowExpanded": false,
-            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Project Name - Recording\",\"epcSite\":\"Silveira Ranch Rd - Site 1\",\"watts\":\"100\",\"siteAddress\":\"8900 Redwood Hwy\",\"siteCity\":\"Novato\",\"projectState\":\"California\",\"siteZip\":\"94945\"}",
             "tdId": 1
         },
         {
@@ -480,14 +209,14 @@
             "elementKey": "",
             "elementDesc": "",
             "@@mycolor": null,
-            "tcId": "10",
-            "tsId": 8,
+            "tcId": "9",
+            "tsId": 7,
             "testData": true,
-            "duration": 6693000000,
-            "executedOn": "2021-10-10T04:33:06.989Z",
+            "duration": 6729000000,
+            "executedOn": "2021-10-15T15:34:54.201Z",
             "errMessage": "",
             "isRowExpanded": false,
-            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Project Name - Recording\",\"epcSite\":\"Silveira Ranch Rd - Site 1\",\"watts\":\"100\",\"siteAddress\":\"8900 Redwood Hwy\",\"siteCity\":\"Novato\",\"projectState\":\"California\",\"siteZip\":\"94945\"}",
             "tdId": 1
         },
         {
@@ -504,7 +233,16 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "@@mycolor": null
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Project Name - Recording\",\"epcSite\":\"Silveira Ranch Rd - Site 1\",\"watts\":\"100\",\"siteAddress\":\"8900 Redwood Hwy\",\"siteCity\":\"Novato\",\"projectState\":\"California\",\"siteZip\":\"94945\"}",
+            "tcId": "9",
+            "tsId": 7,
+            "testData": true,
+            "tdId": 1,
+            "duration": 551000000,
+            "executedOn": "2021-10-15T15:34:54.752Z",
+            "errMessage": "",
+            "isRowExpanded": false
         },
         {
             "command": "Clear",
@@ -563,14 +301,14 @@
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "10",
-            "tsId": 8,
+            "tcId": "9",
+            "tsId": 7,
             "testData": true,
-            "duration": 588000000,
-            "executedOn": "2021-10-10T04:33:07.577Z",
+            "duration": 589000000,
+            "executedOn": "2021-10-15T15:34:55.341Z",
             "errMessage": "",
             "isRowExpanded": false,
-            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Project Name - Recording\",\"epcSite\":\"Silveira Ranch Rd - Site 1\",\"watts\":\"100\",\"siteAddress\":\"8900 Redwood Hwy\",\"siteCity\":\"Novato\",\"projectState\":\"California\",\"siteZip\":\"94945\"}",
             "tdId": 1
         },
         {
@@ -582,7 +320,16 @@
             "eArray": [],
             "elementKey": "",
             "elementDesc": "",
-            "@@mycolor": null
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Project Name - Recording\",\"epcSite\":\"Silveira Ranch Rd - Site 1\",\"watts\":\"100\",\"siteAddress\":\"8900 Redwood Hwy\",\"siteCity\":\"Novato\",\"projectState\":\"California\",\"siteZip\":\"94945\"}",
+            "tcId": "9",
+            "tsId": 7,
+            "testData": true,
+            "tdId": 1,
+            "duration": 3523000000,
+            "executedOn": "2021-10-15T15:34:58.864Z",
+            "errMessage": "",
+            "isRowExpanded": false
         },
         {
             "command": "Type",
@@ -641,14 +388,14 @@
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "10",
-            "tsId": 8,
+            "tcId": "9",
+            "tsId": 7,
             "testData": true,
-            "duration": 736000000,
-            "executedOn": "2021-10-10T04:33:08.313Z",
+            "duration": 667000000,
+            "executedOn": "2021-10-15T15:34:59.531Z",
             "errMessage": "",
             "isRowExpanded": false,
-            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Project Name - Recording\",\"epcSite\":\"Silveira Ranch Rd - Site 1\",\"watts\":\"100\",\"siteAddress\":\"8900 Redwood Hwy\",\"siteCity\":\"Novato\",\"projectState\":\"California\",\"siteZip\":\"94945\"}",
             "tdId": 1
         },
         {
@@ -708,14 +455,14 @@
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "10",
-            "tsId": 8,
+            "tcId": "9",
+            "tsId": 7,
             "testData": true,
-            "duration": 586000000,
-            "executedOn": "2021-10-10T04:33:08.899Z",
+            "duration": 576000000,
+            "executedOn": "2021-10-15T15:35:00.107Z",
             "errMessage": "",
             "isRowExpanded": false,
-            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Project Name - Recording\",\"epcSite\":\"Silveira Ranch Rd - Site 1\",\"watts\":\"100\",\"siteAddress\":\"8900 Redwood Hwy\",\"siteCity\":\"Novato\",\"projectState\":\"California\",\"siteZip\":\"94945\"}",
             "tdId": 1
         },
         {
@@ -727,13 +474,13 @@
             "elementKey": "",
             "elementDesc": "",
             "@@mycolor": null,
-            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
-            "tcId": "10",
-            "tsId": 8,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Project Name - Recording\",\"epcSite\":\"Silveira Ranch Rd - Site 1\",\"watts\":\"100\",\"siteAddress\":\"8900 Redwood Hwy\",\"siteCity\":\"Novato\",\"projectState\":\"California\",\"siteZip\":\"94945\"}",
+            "tcId": "9",
+            "tsId": 7,
             "testData": true,
             "tdId": 1,
-            "duration": 2518000000,
-            "executedOn": "2021-10-10T04:33:11.417Z",
+            "duration": 3503000000,
+            "executedOn": "2021-10-15T15:35:03.611Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -798,14 +545,14 @@
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "10",
-            "tsId": 8,
+            "tcId": "9",
+            "tsId": 7,
             "testData": true,
-            "duration": 551000000,
-            "executedOn": "2021-10-10T04:33:11.968Z",
+            "duration": 570000000,
+            "executedOn": "2021-10-15T15:35:04.181Z",
             "errMessage": "",
             "isRowExpanded": false,
-            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Project Name - Recording\",\"epcSite\":\"Silveira Ranch Rd - Site 1\",\"watts\":\"100\",\"siteAddress\":\"8900 Redwood Hwy\",\"siteCity\":\"Novato\",\"projectState\":\"California\",\"siteZip\":\"94945\"}",
             "tdId": 1
         },
         {
@@ -838,15 +585,15 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "tcId": "10",
-            "tsId": 8,
+            "tcId": "9",
+            "tsId": 7,
             "testData": true,
-            "duration": 6691000000,
-            "executedOn": "2021-10-10T04:33:18.659Z",
+            "duration": 21575000000,
+            "executedOn": "2021-10-15T15:35:25.756Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null,
-            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Project Name - Recording\",\"epcSite\":\"Silveira Ranch Rd - Site 1\",\"watts\":\"100\",\"siteAddress\":\"8900 Redwood Hwy\",\"siteCity\":\"Novato\",\"projectState\":\"California\",\"siteZip\":\"94945\"}",
             "tdId": 1
         },
         {
@@ -898,14 +645,14 @@
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "10",
-            "tsId": 8,
+            "tcId": "9",
+            "tsId": 7,
             "testData": true,
-            "duration": 2148000000,
-            "executedOn": "2021-10-10T04:33:20.807Z",
+            "duration": 12838000000,
+            "executedOn": "2021-10-15T15:35:38.595Z",
             "errMessage": "",
             "isRowExpanded": false,
-            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Project Name - Recording\",\"epcSite\":\"Silveira Ranch Rd - Site 1\",\"watts\":\"100\",\"siteAddress\":\"8900 Redwood Hwy\",\"siteCity\":\"Novato\",\"projectState\":\"California\",\"siteZip\":\"94945\"}",
             "tdId": 1
         },
         {
@@ -926,16 +673,32 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "tcId": "10",
-            "tsId": 8,
+            "tcId": "9",
+            "tsId": 7,
             "testData": true,
-            "duration": 6737000000,
-            "executedOn": "2021-10-10T04:33:27.544Z",
+            "duration": 6701000000,
+            "executedOn": "2021-10-15T15:35:45.296Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null,
-            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Project Name - Recording\",\"epcSite\":\"Silveira Ranch Rd - Site 1\",\"watts\":\"100\",\"siteAddress\":\"8900 Redwood Hwy\",\"siteCity\":\"Novato\",\"projectState\":\"California\",\"siteZip\":\"94945\"}",
             "tdId": 1
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Visible",
+            "element": "opportunities.createProject.iframe",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "opportunities.createProject.iframe",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null
         },
         {
             "indexColumn": "",
@@ -959,15 +722,15 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "tcId": "10",
-            "tsId": 8,
+            "tcId": "9",
+            "tsId": 7,
             "testData": true,
-            "duration": 612000000,
-            "executedOn": "2021-10-10T04:33:28.156Z",
+            "duration": 4962000000,
+            "executedOn": "2021-10-15T15:35:50.258Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null,
-            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Project Name - Recording\",\"epcSite\":\"Silveira Ranch Rd - Site 1\",\"watts\":\"100\",\"siteAddress\":\"8900 Redwood Hwy\",\"siteCity\":\"Novato\",\"projectState\":\"California\",\"siteZip\":\"94945\"}",
             "tdId": 1
         },
         {
@@ -988,15 +751,15 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "tcId": "10",
-            "tsId": 8,
+            "tcId": "9",
+            "tsId": 7,
             "testData": true,
-            "duration": 1547000000,
-            "executedOn": "2021-10-10T04:33:29.703Z",
+            "duration": 2074000000,
+            "executedOn": "2021-10-15T15:35:52.332Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null,
-            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Project Name - Recording\",\"epcSite\":\"Silveira Ranch Rd - Site 1\",\"watts\":\"100\",\"siteAddress\":\"8900 Redwood Hwy\",\"siteCity\":\"Novato\",\"projectState\":\"California\",\"siteZip\":\"94945\"}",
             "tdId": 1
         },
         {
@@ -1025,15 +788,15 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "tcId": "10",
-            "tsId": 8,
+            "tcId": "9",
+            "tsId": 7,
             "testData": true,
-            "duration": 6590000000,
-            "executedOn": "2021-10-10T04:33:36.293Z",
+            "duration": 6581000000,
+            "executedOn": "2021-10-15T15:35:58.913Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null,
-            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Project Name - Recording\",\"epcSite\":\"Silveira Ranch Rd - Site 1\",\"watts\":\"100\",\"siteAddress\":\"8900 Redwood Hwy\",\"siteCity\":\"Novato\",\"projectState\":\"California\",\"siteZip\":\"94945\"}",
             "tdId": 1
         },
         {
@@ -1077,14 +840,14 @@
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "10",
-            "tsId": 8,
+            "tcId": "9",
+            "tsId": 7,
             "testData": true,
-            "duration": 6635000000,
-            "executedOn": "2021-10-10T04:33:42.928Z",
+            "duration": 6632000000,
+            "executedOn": "2021-10-15T15:36:05.545Z",
             "errMessage": "",
             "isRowExpanded": false,
-            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Project Name - Recording\",\"epcSite\":\"Silveira Ranch Rd - Site 1\",\"watts\":\"100\",\"siteAddress\":\"8900 Redwood Hwy\",\"siteCity\":\"Novato\",\"projectState\":\"California\",\"siteZip\":\"94945\"}",
             "tdId": 1
         },
         {
@@ -1095,15 +858,15 @@
             "eArray": [],
             "elementKey": "",
             "elementDesc": "",
-            "tcId": "10",
-            "tsId": 8,
+            "tcId": "9",
+            "tsId": 7,
             "testData": true,
-            "duration": 514000000,
-            "executedOn": "2021-10-10T04:33:43.442Z",
+            "duration": 513000000,
+            "executedOn": "2021-10-15T15:36:06.058Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null,
-            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Project Name - Recording\",\"epcSite\":\"Silveira Ranch Rd - Site 1\",\"watts\":\"100\",\"siteAddress\":\"8900 Redwood Hwy\",\"siteCity\":\"Novato\",\"projectState\":\"California\",\"siteZip\":\"94945\"}",
             "tdId": 1
         },
         {
@@ -1114,7 +877,16 @@
             "eArray": [],
             "elementKey": "",
             "elementDesc": "",
-            "@@mycolor": null
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Project Name - Recording\",\"epcSite\":\"Silveira Ranch Rd - Site 1\",\"watts\":\"100\",\"siteAddress\":\"8900 Redwood Hwy\",\"siteCity\":\"Novato\",\"projectState\":\"California\",\"siteZip\":\"94945\"}",
+            "tcId": "9",
+            "tsId": 7,
+            "testData": true,
+            "tdId": 1,
+            "duration": 3509000000,
+            "executedOn": "2021-10-15T15:36:09.567Z",
+            "errMessage": "",
+            "isRowExpanded": false
         },
         {
             "indexColumn": "",
@@ -1138,15 +910,15 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "tcId": "10",
-            "tsId": 8,
+            "tcId": "9",
+            "tsId": 7,
             "testData": true,
-            "duration": 30614000000,
-            "executedOn": "2021-10-10T04:34:14.056Z",
-            "errMessage": "{\"name\":\"TimeoutError\",\"remoteStacktrace\":\"\"}",
+            "duration": 17642000000,
+            "executedOn": "2021-10-15T15:36:27.209Z",
+            "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null,
-            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Project Name - Recording\",\"epcSite\":\"Silveira Ranch Rd - Site 1\",\"watts\":\"100\",\"siteAddress\":\"8900 Redwood Hwy\",\"siteCity\":\"Novato\",\"projectState\":\"California\",\"siteZip\":\"94945\"}",
             "tdId": 1
         },
         {
@@ -1202,14 +974,14 @@
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "10",
-            "tsId": 8,
+            "tcId": "9",
+            "tsId": 7,
             "testData": true,
-            "duration": 6820000000,
-            "executedOn": "2021-10-10T04:34:20.876Z",
+            "duration": 6800000000,
+            "executedOn": "2021-10-15T15:36:34.009Z",
             "errMessage": "",
             "isRowExpanded": false,
-            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Project Name - Recording\",\"epcSite\":\"Silveira Ranch Rd - Site 1\",\"watts\":\"100\",\"siteAddress\":\"8900 Redwood Hwy\",\"siteCity\":\"Novato\",\"projectState\":\"California\",\"siteZip\":\"94945\"}",
             "tdId": 1
         },
         {
@@ -1265,14 +1037,14 @@
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "10",
-            "tsId": 8,
+            "tcId": "9",
+            "tsId": 7,
             "testData": true,
-            "duration": 1004000000,
-            "executedOn": "2021-10-10T04:34:21.880Z",
+            "duration": 871000000,
+            "executedOn": "2021-10-15T15:36:34.880Z",
             "errMessage": "",
             "isRowExpanded": false,
-            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Project Name - Recording\",\"epcSite\":\"Silveira Ranch Rd - Site 1\",\"watts\":\"100\",\"siteAddress\":\"8900 Redwood Hwy\",\"siteCity\":\"Novato\",\"projectState\":\"California\",\"siteZip\":\"94945\"}",
             "tdId": 1
         },
         {
@@ -1320,7 +1092,7 @@
                     "xpath:neighbor"
                 ]
             ],
-            "input": "Project Name - Recording",
+            "input": "${projectName}",
             "status": "NotRun",
             "elementKey": "text.input1482",
             "elementDesc": "Input for input-1482",
@@ -1328,14 +1100,14 @@
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "10",
-            "tsId": 8,
+            "tcId": "9",
+            "tsId": 7,
             "testData": true,
-            "duration": 1046000000,
-            "executedOn": "2021-10-10T04:34:22.927Z",
+            "duration": 981000000,
+            "executedOn": "2021-10-15T15:36:35.861Z",
             "errMessage": "",
             "isRowExpanded": false,
-            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Project Name - Recording\",\"epcSite\":\"Silveira Ranch Rd - Site 1\",\"watts\":\"100\",\"siteAddress\":\"8900 Redwood Hwy\",\"siteCity\":\"Novato\",\"projectState\":\"California\",\"siteZip\":\"94945\"}",
             "tdId": 1
         },
         {
@@ -1391,14 +1163,14 @@
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "10",
-            "tsId": 8,
+            "tcId": "9",
+            "tsId": 7,
             "testData": true,
-            "duration": 732000000,
-            "executedOn": "2021-10-10T04:34:23.659Z",
+            "duration": 698000000,
+            "executedOn": "2021-10-15T15:36:36.559Z",
             "errMessage": "",
             "isRowExpanded": false,
-            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Project Name - Recording\",\"epcSite\":\"Silveira Ranch Rd - Site 1\",\"watts\":\"100\",\"siteAddress\":\"8900 Redwood Hwy\",\"siteCity\":\"Novato\",\"projectState\":\"California\",\"siteZip\":\"94945\"}",
             "tdId": 1
         },
         {
@@ -1446,7 +1218,7 @@
                     "xpath:neighbor"
                 ]
             ],
-            "input": "Silveira Ranch Rd - Site 1",
+            "input": "${epcSite}",
             "status": "NotRun",
             "elementKey": "text.input1892",
             "elementDesc": "Input for input-1892",
@@ -1454,14 +1226,14 @@
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "10",
-            "tsId": 8,
+            "tcId": "9",
+            "tsId": 7,
             "testData": true,
-            "duration": 945000000,
-            "executedOn": "2021-10-10T04:34:24.604Z",
+            "duration": 1010000000,
+            "executedOn": "2021-10-15T15:36:37.569Z",
             "errMessage": "",
             "isRowExpanded": false,
-            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Project Name - Recording\",\"epcSite\":\"Silveira Ranch Rd - Site 1\",\"watts\":\"100\",\"siteAddress\":\"8900 Redwood Hwy\",\"siteCity\":\"Novato\",\"projectState\":\"California\",\"siteZip\":\"94945\"}",
             "tdId": 1
         },
         {
@@ -1486,15 +1258,15 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "tcId": "10",
-            "tsId": 8,
+            "tcId": "9",
+            "tsId": 7,
             "testData": true,
-            "duration": 6724000000,
-            "executedOn": "2021-10-10T04:34:31.328Z",
+            "duration": 6753000000,
+            "executedOn": "2021-10-15T15:36:44.322Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null,
-            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Project Name - Recording\",\"epcSite\":\"Silveira Ranch Rd - Site 1\",\"watts\":\"100\",\"siteAddress\":\"8900 Redwood Hwy\",\"siteCity\":\"Novato\",\"projectState\":\"California\",\"siteZip\":\"94945\"}",
             "tdId": 1
         },
         {
@@ -1515,15 +1287,15 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "tcId": "10",
-            "tsId": 8,
+            "tcId": "9",
+            "tsId": 7,
             "testData": true,
-            "duration": 545000000,
-            "executedOn": "2021-10-10T04:34:31.873Z",
+            "duration": 560000000,
+            "executedOn": "2021-10-15T15:36:44.882Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null,
-            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Project Name - Recording\",\"epcSite\":\"Silveira Ranch Rd - Site 1\",\"watts\":\"100\",\"siteAddress\":\"8900 Redwood Hwy\",\"siteCity\":\"Novato\",\"projectState\":\"California\",\"siteZip\":\"94945\"}",
             "tdId": 1
         },
         {
@@ -1541,14 +1313,14 @@
             "elementKey": "",
             "elementDesc": "",
             "@@mycolor": null,
-            "tcId": "10",
-            "tsId": 8,
+            "tcId": "9",
+            "tsId": 7,
             "testData": true,
-            "duration": 6635000000,
-            "executedOn": "2021-10-10T04:34:38.509Z",
+            "duration": 6684000000,
+            "executedOn": "2021-10-15T15:36:51.566Z",
             "errMessage": "",
             "isRowExpanded": false,
-            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Project Name - Recording\",\"epcSite\":\"Silveira Ranch Rd - Site 1\",\"watts\":\"100\",\"siteAddress\":\"8900 Redwood Hwy\",\"siteCity\":\"Novato\",\"projectState\":\"California\",\"siteZip\":\"94945\"}",
             "tdId": 1
         },
         {
@@ -1608,14 +1380,14 @@
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "10",
-            "tsId": 8,
+            "tcId": "9",
+            "tsId": 7,
             "testData": true,
-            "duration": 638000000,
-            "executedOn": "2021-10-10T04:34:39.148Z",
+            "duration": 695000000,
+            "executedOn": "2021-10-15T15:36:52.261Z",
             "errMessage": "",
             "isRowExpanded": false,
-            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Project Name - Recording\",\"epcSite\":\"Silveira Ranch Rd - Site 1\",\"watts\":\"100\",\"siteAddress\":\"8900 Redwood Hwy\",\"siteCity\":\"Novato\",\"projectState\":\"California\",\"siteZip\":\"94945\"}",
             "tdId": 1
         },
         {
@@ -1667,7 +1439,7 @@
                     "xpath:neighbor"
                 ]
             ],
-            "input": "100",
+            "input": "${watts}",
             "status": "NotRun",
             "elementKey": "text.input1584",
             "elementDesc": "Input for input-1584",
@@ -1675,14 +1447,14 @@
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "10",
-            "tsId": 8,
+            "tcId": "9",
+            "tsId": 7,
             "testData": true,
-            "duration": 645000000,
-            "executedOn": "2021-10-10T04:34:39.793Z",
+            "duration": 664000000,
+            "executedOn": "2021-10-15T15:36:52.925Z",
             "errMessage": "",
             "isRowExpanded": false,
-            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Project Name - Recording\",\"epcSite\":\"Silveira Ranch Rd - Site 1\",\"watts\":\"100\",\"siteAddress\":\"8900 Redwood Hwy\",\"siteCity\":\"Novato\",\"projectState\":\"California\",\"siteZip\":\"94945\"}",
             "tdId": 1
         },
         {
@@ -1730,14 +1502,14 @@
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "10",
-            "tsId": 8,
+            "tcId": "9",
+            "tsId": 7,
             "testData": true,
-            "duration": 6669000000,
-            "executedOn": "2021-10-10T04:34:46.462Z",
+            "duration": 6684000000,
+            "executedOn": "2021-10-15T15:36:59.609Z",
             "errMessage": "",
             "isRowExpanded": false,
-            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Project Name - Recording\",\"epcSite\":\"Silveira Ranch Rd - Site 1\",\"watts\":\"100\",\"siteAddress\":\"8900 Redwood Hwy\",\"siteCity\":\"Novato\",\"projectState\":\"California\",\"siteZip\":\"94945\"}",
             "tdId": 1
         },
         {
@@ -1793,14 +1565,14 @@
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "10",
-            "tsId": 8,
+            "tcId": "9",
+            "tsId": 7,
             "testData": true,
-            "duration": 6656000000,
-            "executedOn": "2021-10-10T04:34:53.118Z",
+            "duration": 6669000000,
+            "executedOn": "2021-10-15T15:37:06.278Z",
             "errMessage": "",
             "isRowExpanded": false,
-            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Project Name - Recording\",\"epcSite\":\"Silveira Ranch Rd - Site 1\",\"watts\":\"100\",\"siteAddress\":\"8900 Redwood Hwy\",\"siteCity\":\"Novato\",\"projectState\":\"California\",\"siteZip\":\"94945\"}",
             "tdId": 1
         },
         {
@@ -1852,14 +1624,14 @@
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "10",
-            "tsId": 8,
+            "tcId": "9",
+            "tsId": 7,
             "testData": true,
-            "duration": 6612000000,
-            "executedOn": "2021-10-10T04:34:59.730Z",
+            "duration": 6642000000,
+            "executedOn": "2021-10-15T15:37:12.920Z",
             "errMessage": "",
             "isRowExpanded": false,
-            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Project Name - Recording\",\"epcSite\":\"Silveira Ranch Rd - Site 1\",\"watts\":\"100\",\"siteAddress\":\"8900 Redwood Hwy\",\"siteCity\":\"Novato\",\"projectState\":\"California\",\"siteZip\":\"94945\"}",
             "tdId": 1
         },
         {
@@ -1880,15 +1652,15 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "tcId": "10",
-            "tsId": 8,
+            "tcId": "9",
+            "tsId": 7,
             "testData": true,
-            "duration": 6629000000,
-            "executedOn": "2021-10-10T04:35:06.359Z",
+            "duration": 6693000000,
+            "executedOn": "2021-10-15T15:37:19.613Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null,
-            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Project Name - Recording\",\"epcSite\":\"Silveira Ranch Rd - Site 1\",\"watts\":\"100\",\"siteAddress\":\"8900 Redwood Hwy\",\"siteCity\":\"Novato\",\"projectState\":\"California\",\"siteZip\":\"94945\"}",
             "tdId": 1
         },
         {
@@ -1944,14 +1716,14 @@
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "10",
-            "tsId": 8,
+            "tcId": "9",
+            "tsId": 7,
             "testData": true,
-            "duration": 6663000000,
-            "executedOn": "2021-10-10T04:35:13.022Z",
+            "duration": 6674000000,
+            "executedOn": "2021-10-15T15:37:26.287Z",
             "errMessage": "",
             "isRowExpanded": false,
-            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Project Name - Recording\",\"epcSite\":\"Silveira Ranch Rd - Site 1\",\"watts\":\"100\",\"siteAddress\":\"8900 Redwood Hwy\",\"siteCity\":\"Novato\",\"projectState\":\"California\",\"siteZip\":\"94945\"}",
             "tdId": 1
         },
         {
@@ -1972,15 +1744,15 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "tcId": "10",
-            "tsId": 8,
+            "tcId": "9",
+            "tsId": 7,
             "testData": true,
-            "duration": 17491000000,
-            "executedOn": "2021-10-10T04:35:30.513Z",
+            "duration": 8880000000,
+            "executedOn": "2021-10-15T15:37:35.167Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null,
-            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Project Name - Recording\",\"epcSite\":\"Silveira Ranch Rd - Site 1\",\"watts\":\"100\",\"siteAddress\":\"8900 Redwood Hwy\",\"siteCity\":\"Novato\",\"projectState\":\"California\",\"siteZip\":\"94945\"}",
             "tdId": 1
         },
         {
@@ -1997,7 +1769,16 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "@@mycolor": null
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Project Name - Recording\",\"epcSite\":\"Silveira Ranch Rd - Site 1\",\"watts\":\"100\",\"siteAddress\":\"8900 Redwood Hwy\",\"siteCity\":\"Novato\",\"projectState\":\"California\",\"siteZip\":\"94945\"}",
+            "tcId": "9",
+            "tsId": 7,
+            "testData": true,
+            "tdId": 1,
+            "duration": 568000000,
+            "executedOn": "2021-10-15T15:37:35.735Z",
+            "errMessage": "",
+            "isRowExpanded": false
         },
         {
             "indexColumn": "",
@@ -2007,7 +1788,16 @@
             "eArray": [],
             "elementKey": "",
             "elementDesc": "",
-            "@@mycolor": null
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Project Name - Recording\",\"epcSite\":\"Silveira Ranch Rd - Site 1\",\"watts\":\"100\",\"siteAddress\":\"8900 Redwood Hwy\",\"siteCity\":\"Novato\",\"projectState\":\"California\",\"siteZip\":\"94945\"}",
+            "tcId": "9",
+            "tsId": 7,
+            "testData": true,
+            "tdId": 1,
+            "duration": 2014000000,
+            "executedOn": "2021-10-15T15:37:37.749Z",
+            "errMessage": "",
+            "isRowExpanded": false
         },
         {
             "command": "Assert Text",
@@ -2054,7 +1844,7 @@
                     "xpath:neighbor"
                 ]
             ],
-            "input": "Project Name - Recording",
+            "input": "${projectName}",
             "status": "NotRun",
             "elementKey": "lightningformattedtext.projectnamerecording",
             "elementDesc": "LIGHTNING-FORMATTED-TEXT projectname-recording",
@@ -2062,17 +1852,37 @@
             "isDisplay": false,
             "@@mycolor": null,
             "indexColumn": "",
-            "tcId": "10",
-            "tsId": 8,
+            "tcId": "9",
+            "tsId": 7,
             "testData": true,
-            "duration": 635000000,
-            "executedOn": "2021-10-10T04:35:31.148Z",
+            "duration": 563000000,
+            "executedOn": "2021-10-15T15:37:38.312Z",
             "errMessage": "\"Text '' is not match with 'Project Name - Recording'\"",
             "isRowExpanded": false,
             "expected": "Project Name - Recording",
             "actual": "Project Name - Recording",
-            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Project Name - Recording\",\"epcSite\":\"Silveira Ranch Rd - Site 1\",\"watts\":\"100\",\"siteAddress\":\"8900 Redwood Hwy\",\"siteCity\":\"Novato\",\"projectState\":\"California\",\"siteZip\":\"94945\"}",
             "tdId": 1
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "projects.siteInformation.siteSubstantialDate.notEmpty",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "projects.siteInformation.siteSubstantialDate.notEmpty",
+                    "key"
+                ],
+                [
+                    "projects.siteInformation.siteZip",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null
         },
         {
             "command": "Assert Text",
@@ -2119,7 +1929,7 @@
                     "xpath:neighbor"
                 ]
             ],
-            "input": "Silveira Ranch Rd - Site 1",
+            "input": "${epcSite}",
             "status": "NotRun",
             "elementKey": "span.window",
             "elementDesc": "Text window",
@@ -2127,23 +1937,23 @@
             "isDisplay": false,
             "@@mycolor": null,
             "indexColumn": "",
-            "tcId": "10",
-            "tsId": 8,
+            "tcId": "9",
+            "tsId": 7,
             "testData": true,
-            "duration": 582000000,
-            "executedOn": "2021-10-10T04:35:40.733Z",
+            "duration": 575000000,
+            "executedOn": "2021-10-15T15:37:44.335Z",
             "expected": "Silveira Ranch Rd - Site 1",
             "actual": "Silveira Ranch Rd - Site 1",
             "errMessage": "",
             "isRowExpanded": false,
-            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Project Name - Recording\",\"epcSite\":\"Silveira Ranch Rd - Site 1\",\"watts\":\"100\",\"siteAddress\":\"8900 Redwood Hwy\",\"siteCity\":\"Novato\",\"projectState\":\"California\",\"siteZip\":\"94945\"}",
             "tdId": 1
         },
         {
             "indexColumn": "",
-            "command": "Assert Text",
+            "command": "Verify Text",
             "element": "projects.siteInformation.overallProjectSizeWatts",
-            "input": "100",
+            "input": "${watts}",
             "status": "NotRun",
             "eArray": [
                 [
@@ -2153,13 +1963,24 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "@@mycolor": null
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Project Name - Recording\",\"epcSite\":\"Silveira Ranch Rd - Site 1\",\"watts\":\"100\",\"siteAddress\":\"8900 Redwood Hwy\",\"siteCity\":\"Novato\",\"projectState\":\"California\",\"siteZip\":\"94945\"}",
+            "tcId": "9",
+            "tsId": 7,
+            "testData": true,
+            "tdId": 1,
+            "duration": 552000000,
+            "executedOn": "2021-10-15T15:37:44.887Z",
+            "errMessage": "\"Text '' is not match with '100'\"",
+            "isRowExpanded": false,
+            "isEncrypted": false,
+            "isDisplay": false
         },
         {
             "indexColumn": "",
-            "command": "Assert Text",
+            "command": "Verify Text",
             "element": "projects.siteInformation.siteAddress",
-            "input": "8900 Redwood Hwy",
+            "input": "${siteAddress}",
             "status": "NotRun",
             "eArray": [
                 [
@@ -2169,13 +1990,24 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "@@mycolor": null
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Project Name - Recording\",\"epcSite\":\"Silveira Ranch Rd - Site 1\",\"watts\":\"100\",\"siteAddress\":\"8900 Redwood Hwy\",\"siteCity\":\"Novato\",\"projectState\":\"California\",\"siteZip\":\"94945\"}",
+            "tcId": "9",
+            "tsId": 7,
+            "testData": true,
+            "tdId": 1,
+            "duration": 576000000,
+            "executedOn": "2021-10-15T15:37:45.463Z",
+            "errMessage": "\"Text '' is not match with '8900 Redwood Hwy'\"",
+            "isRowExpanded": false,
+            "isEncrypted": false,
+            "isDisplay": false
         },
         {
             "indexColumn": "",
-            "command": "Assert Text",
+            "command": "Verify Text",
             "element": "projects.siteInformation.siteCity",
-            "input": "Novato",
+            "input": "${siteCity}",
             "status": "NotRun",
             "eArray": [
                 [
@@ -2185,10 +2017,21 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "@@mycolor": null
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Project Name - Recording\",\"epcSite\":\"Silveira Ranch Rd - Site 1\",\"watts\":\"100\",\"siteAddress\":\"8900 Redwood Hwy\",\"siteCity\":\"Novato\",\"projectState\":\"California\",\"siteZip\":\"94945\"}",
+            "tcId": "9",
+            "tsId": 7,
+            "testData": true,
+            "tdId": 1,
+            "duration": 582000000,
+            "executedOn": "2021-10-15T15:37:46.046Z",
+            "errMessage": "\"Text '' is not match with 'Novato'\"",
+            "isRowExpanded": false,
+            "isEncrypted": false,
+            "isDisplay": false
         },
         {
-            "command": "Assert Text",
+            "command": "Verify Text",
             "element": "projects.details.projectState",
             "eArray": [
                 [
@@ -2224,7 +2067,7 @@
                     "xpath:neighbor"
                 ]
             ],
-            "input": "California",
+            "input": "${projectState}",
             "status": "NotRun",
             "elementKey": "lightningformattedtext.california",
             "elementDesc": "LIGHTNING-FORMATTED-TEXT california",
@@ -2232,23 +2075,23 @@
             "isDisplay": false,
             "@@mycolor": null,
             "indexColumn": "",
-            "tcId": "10",
-            "tsId": 8,
+            "tcId": "9",
+            "tsId": 7,
             "testData": true,
-            "duration": 571000000,
-            "executedOn": "2021-10-10T04:35:41.304Z",
+            "duration": 567000000,
+            "executedOn": "2021-10-15T15:37:46.613Z",
             "expected": "California",
             "actual": "California",
             "errMessage": "\"Text '' is not match with 'California'\"",
             "isRowExpanded": false,
-            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Project Name - Recording\",\"epcSite\":\"Silveira Ranch Rd - Site 1\",\"watts\":\"100\",\"siteAddress\":\"8900 Redwood Hwy\",\"siteCity\":\"Novato\",\"projectState\":\"California\",\"siteZip\":\"94945\"}",
             "tdId": 1
         },
         {
             "indexColumn": "",
-            "command": "Assert Text",
+            "command": "Verify Text",
             "element": "projects.siteInformation.siteZip",
-            "input": "94945",
+            "input": "${siteZip}",
             "status": "NotRun",
             "eArray": [
                 [
@@ -2262,11 +2105,22 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "@@mycolor": null
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Project Name - Recording\",\"epcSite\":\"Silveira Ranch Rd - Site 1\",\"watts\":\"100\",\"siteAddress\":\"8900 Redwood Hwy\",\"siteCity\":\"Novato\",\"projectState\":\"California\",\"siteZip\":\"94945\"}",
+            "tcId": "9",
+            "tsId": 7,
+            "testData": true,
+            "tdId": 1,
+            "duration": 559000000,
+            "executedOn": "2021-10-15T15:37:47.172Z",
+            "errMessage": "\"Text '' is not match with '94945'\"",
+            "isRowExpanded": false,
+            "isEncrypted": false,
+            "isDisplay": false
         },
         {
             "indexColumn": "",
-            "command": "Assert Present",
+            "command": "Verify Present",
             "element": "projects.siteInformation.sitePTODate.notEmpty",
             "input": "",
             "status": "NotRun",
@@ -2278,11 +2132,20 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "@@mycolor": null
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Project Name - Recording\",\"epcSite\":\"Silveira Ranch Rd - Site 1\",\"watts\":\"100\",\"siteAddress\":\"8900 Redwood Hwy\",\"siteCity\":\"Novato\",\"projectState\":\"California\",\"siteZip\":\"94945\"}",
+            "tcId": "9",
+            "tsId": 7,
+            "testData": true,
+            "tdId": 1,
+            "duration": 545000000,
+            "executedOn": "2021-10-15T15:37:56.559Z",
+            "errMessage": "",
+            "isRowExpanded": false
         },
         {
             "indexColumn": "",
-            "command": "Assert Present",
+            "command": "Verify Present",
             "element": "projects.siteInformation.siteSubstantialDate.notEmpty",
             "input": "",
             "status": "NotRun",
@@ -2294,7 +2157,16 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "@@mycolor": null
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Project Name - Recording\",\"epcSite\":\"Silveira Ranch Rd - Site 1\",\"watts\":\"100\",\"siteAddress\":\"8900 Redwood Hwy\",\"siteCity\":\"Novato\",\"projectState\":\"California\",\"siteZip\":\"94945\"}",
+            "tcId": "9",
+            "tsId": 7,
+            "testData": true,
+            "tdId": 1,
+            "duration": 560000000,
+            "executedOn": "2021-10-15T15:37:57.119Z",
+            "errMessage": "",
+            "isRowExpanded": false
         }
     ],
     "type": "web",
@@ -2328,6 +2200,9 @@
         },
         {
             "name": "positive"
+        },
+        {
+            "name": "smoke"
         }
     ],
     "description": "Verify whether user is able to create a project for the opportunity with record type O&M Opportunity",

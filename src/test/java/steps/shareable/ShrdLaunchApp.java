@@ -16,19 +16,22 @@ import steps.common.*;
 /**
 * @author Rodrigo Montemayor
 */
-public class ShrdLoginToFullCopy extends WebDriverTestCase {
+public class ShrdLaunchApp extends WebDriverTestCase {
 
-	@QAFTestStep(description = "ShrdLoginToFullCopy {0} {1}")
-	public void customShrdLoginToFullCopy(Object username,Object password) {
+	@QAFTestStep(description = "ShrdLaunchApp {0}")
+	public void customShrdLaunchApp(Object appName) {
 		
-		getDriver().get("https://bssi--fullcopy.lightning.force.com/");
-		StepsLibrary.maximizeWindow();
-		CommonStep.clear("login.username");
-		CommonStep.sendKeys(""+String.valueOf(username)+"","login.username");
-		CommonStep.clear("login.password");
-		CommonStep.sendKeys(""+String.valueOf(password)+"","login.password");
-		$("login.submit").waitForEnabled();
-		CommonStep.click("login.submit");
+		$("common.activeTab").waitForPresent();
+		$("applauncher.div").waitForPresent();
+		$("applauncher.div").waitForEnabled();
+		CommonStep.click("applauncher.div");
+		$("applauncher.input.text").waitForPresent();
+		CommonStep.clear("applauncher.input.text");
+		CommonStep.sendKeys(""+String.valueOf(appName)+"","applauncher.input.text");
+		$("applauncher.link.main").waitForPresent();
+		$("applauncher.link.main").waitForEnabled();
+		CommonStep.click("applauncher.link.main");
+		$("common.activeTab").waitForPresent();
 	}
 }
 

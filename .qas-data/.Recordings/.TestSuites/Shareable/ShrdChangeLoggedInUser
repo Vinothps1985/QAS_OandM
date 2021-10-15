@@ -1,0 +1,441 @@
+{
+    "steps": [
+        {
+            "indexColumn": "",
+            "command": "Wait For Present",
+            "element": "common.activeTab",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "common.activeTab",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "tcId": 63,
+            "tsId": 59,
+            "testData": false,
+            "isSharable": true,
+            "shared": false
+        },
+        {
+            "command": "Click",
+            "element": "common.searchAssistant.button",
+            "eArray": [
+                [
+                    "common.searchAssistant.button",
+                    "key"
+                ],
+                [
+                    "xpath=//button[text()='Search...']",
+                    "xpath:innerText"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='AS: Projects'])[1]/following::button[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Skip to Main Content'])[1]/following::button[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='AS: Projects'])[2]/preceding::button[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Add favorite'])[1]/preceding::button[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=//header[@id='oneHeader']/div[2]/div[2]/div/button",
+                    "xpath:idRelative"
+                ],
+                [
+                    "xpath=//button",
+                    "xpath:position"
+                ],
+                [
+                    "css=button.slds-button.slds-button_neutral.search-button.slds-truncate",
+                    "css"
+                ]
+            ],
+            "input": "",
+            "status": "NotRun",
+            "elementKey": "button.search",
+            "elementDesc": "Button search...",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "indexColumn": "",
+            "@@mycolor": null,
+            "tcId": 63,
+            "tsId": 59,
+            "testData": false,
+            "isSharable": true
+        },
+        {
+            "command": "Clear",
+            "element": "common.searchAssistant.input",
+            "eArray": [
+                [
+                    "common.searchAssistant.input",
+                    "key"
+                ],
+                [
+                    "xpath=//*[@placeholder='Search...']",
+                    "xpath:placeholder"
+                ],
+                [
+                    "xpath=//label[text()='Search...']//following::input",
+                    "xpath:nearLabel"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Search...'])[3]/following::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Search by object type'])[1]/following::input[2]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Clear'])[1]/preceding::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "id=input-35",
+                    "id"
+                ],
+                [
+                    "xpath=//div[@id='content_402:0']/div/div/lightning-input/div/input",
+                    "xpath:idRelative"
+                ],
+                [
+                    "xpath=//lightning-input/div/input",
+                    "xpath:position"
+                ],
+                [
+                    "css=#input-35",
+                    "css"
+                ]
+            ],
+            "input": "",
+            "status": "NotRun",
+            "elementKey": "search.input-35",
+            "elementDesc": "input-35 search",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "indexColumn": "",
+            "@@mycolor": null,
+            "tcId": 63,
+            "tsId": 59,
+            "testData": false,
+            "isSharable": true
+        },
+        {
+            "command": "Type",
+            "element": "common.searchAssistant.input",
+            "eArray": [
+                [
+                    "common.searchAssistant.input",
+                    "key"
+                ],
+                [
+                    "xpath=//*[@placeholder='Search...']",
+                    "xpath:placeholder"
+                ],
+                [
+                    "xpath=//label[text()='Search...']//following::input",
+                    "xpath:nearLabel"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Search...'])[3]/following::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Search by object type'])[1]/following::input[2]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Clear'])[1]/preceding::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "id=input-35",
+                    "id"
+                ],
+                [
+                    "xpath=//div[@id='content_402:0']/div/div/lightning-input/div/input",
+                    "xpath:idRelative"
+                ],
+                [
+                    "xpath=//lightning-input/div/input",
+                    "xpath:position"
+                ],
+                [
+                    "css=#input-35",
+                    "css"
+                ]
+            ],
+            "input": "${userToSet}",
+            "status": "NotRun",
+            "elementKey": "search.input-35",
+            "elementDesc": "input-35 search",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "indexColumn": "",
+            "@@mycolor": null,
+            "tcId": 63,
+            "tsId": 59,
+            "testData": false,
+            "isSharable": true,
+            "shared": false
+        },
+        {
+            "command": "Wait For Present",
+            "element": "users.search.firstResult",
+            "eArray": [
+                [
+                    "users.search.firstResult",
+                    "key"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='test_o&m_manager'])[1]/following::div[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='cases'])[1]/following::div[6]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='test_o&m_manager'])[2]/preceding::div[2]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=//div[@id='suggestionsList-36']/search_lightning-instant-result-item[4]/div/div[2]/div",
+                    "xpath:idRelative"
+                ],
+                [
+                    "xpath=//search_lightning-instant-result-item[4]/div/div[2]/div",
+                    "xpath:position"
+                ],
+                [
+                    "css=div.slds-text-link--reset.slds-grid.slds-grid--vertical-align-center.slds-truncate.instant-result-item.slds-p-left_small.two-fields.instant-result-item-record-suggestion.focused > div.slds-truncate.instant-result-item__content > div.slds-clearfix.slds-text-heading--label-normal.slds-show.slds-truncate",
+                    "css"
+                ]
+            ],
+            "input": "",
+            "status": "NotRun",
+            "elementKey": "div.user",
+            "elementDesc": "Text user",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "indexColumn": "",
+            "@@mycolor": null,
+            "tcId": 63,
+            "tsId": 59,
+            "testData": false,
+            "isSharable": true
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "users.search.firstResult",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "users.search.firstResult",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "tcId": 63,
+            "isSharable": true
+        },
+        {
+            "command": "Click",
+            "element": "users.userDetails.button",
+            "eArray": [
+                [
+                    "users.userDetails.button",
+                    "key"
+                ],
+                [
+                    "xpath=//div[text()='User Detail']/ancestor::a",
+                    "xpath:innerText"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Edit'])[1]/following::div[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Follow'])[1]/following::div[3]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Tabs'])[1]/preceding::div[6]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Details'])[1]/preceding::div[6]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=//div[@id='brandBand_2']/div[2]/div/div/div/div/div/div/div/header/div[2]/div/div/div[3]/div[2]/ul/li[2]/a/div",
+                    "xpath:idRelative"
+                ],
+                [
+                    "xpath=//li[2]/a/div",
+                    "xpath:position"
+                ],
+                [
+                    "css=div[title=\"User Detail\"]",
+                    "css"
+                ]
+            ],
+            "input": "",
+            "status": "NotRun",
+            "elementKey": "div.user detail",
+            "elementDesc": "Text User Detail",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "indexColumn": "",
+            "@@mycolor": null,
+            "tcId": 63,
+            "tsId": 59,
+            "testData": false,
+            "isSharable": true
+        },
+        {
+            "indexColumn": "",
+            "command": "Switch To Frame",
+            "element": "users.details.iframe",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "users.details.iframe",
+                    "key"
+                ],
+                [
+                    "xpath=//iframe[contains(@title, 'User:')]",
+                    "xpath"
+                ],
+                [
+                    "xpath=//iframe",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "tcId": 63,
+            "isSharable": true
+        },
+        {
+            "command": "Click",
+            "element": "users.userDetails.login.button",
+            "eArray": [
+                [
+                    "users.userDetails.login.button",
+                    "key"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='User Detail'])[1]/following::input[4]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='[0]'])[11]/following::input[4]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Name'])[1]/preceding::input[2]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "name=login",
+                    "name"
+                ],
+                [
+                    "xpath=//td[@id='topButtonRow']/input[4]",
+                    "xpath:idRelative"
+                ],
+                [
+                    "xpath=//input[4]",
+                    "xpath:position"
+                ],
+                [
+                    "css=input[name=\"login\"]",
+                    "css"
+                ]
+            ],
+            "input": "",
+            "status": "NotRun",
+            "elementKey": "button.login",
+            "elementDesc": "Login button",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "indexColumn": "",
+            "@@mycolor": null,
+            "tcId": 63,
+            "tsId": 59,
+            "testData": false,
+            "isSharable": true
+        },
+        {
+            "indexColumn": "",
+            "command": "Switch To Default Content",
+            "element": "",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "tcId": 63,
+            "isSharable": true
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Present",
+            "element": "common.logOutAs.link",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "common.logOutAs.link",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "tcId": 63,
+            "tsId": 59,
+            "testData": false,
+            "isSharable": true,
+            "shared": false
+        }
+    ],
+    "type": "",
+    "capabilities": {},
+    "testDataExample": [],
+    "isTCValid": true,
+    "externalTestData": false,
+    "dbDetails": {},
+    "recordSessionType": "multiple",
+    "tags": [],
+    "description": "",
+    "shared": false,
+    "executionStatus": "NotRun"
+}

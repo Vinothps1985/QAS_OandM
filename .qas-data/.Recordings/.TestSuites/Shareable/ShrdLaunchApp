@@ -1,0 +1,351 @@
+{
+    "steps": [
+        {
+            "indexColumn": "",
+            "command": "Wait For Present",
+            "element": "common.activeTab",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "common.activeTab",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "tcId": 73,
+            "isSharable": true
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Present",
+            "element": "applauncher.div",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "applauncher.div",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "tcId": 73,
+            "isSharable": true
+        },
+        {
+            "command": "Click",
+            "element": "applauncher.div",
+            "eArray": [
+                [
+                    "applauncher.div",
+                    "key"
+                ],
+                [
+                    "xpath=//one-app-launcher-header/button/div",
+                    "xpath:position"
+                ],
+                [
+                    "css=div.slds-icon-waffle",
+                    "css"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='View profile'])[1]/following::div[8]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Notifications'])[1]/following::div[11]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Agile Accelerator'])[3]/preceding::div[10]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "div.applauncher",
+                    "key"
+                ]
+            ],
+            "input": "",
+            "status": "NotRun",
+            "elementKey": "div.applauncher",
+            "elementDesc": "Text applauncher",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "indexColumn": "",
+            "tcId": 73,
+            "tsId": 21,
+            "testData": true,
+            "duration": 6676000000,
+            "executedOn": "2021-10-15T00:59:11.788Z",
+            "errMessage": "",
+            "isRowExpanded": false,
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"caseNumber\":\"00290316\",\"vendor\":\"Borrego Solar Systems Inc. (O&M)\",\"vendorContact\":\"Mike Halloran\",\"lineItem\":\"Parts - CM\",\"taxCategory\":\"Data Storage\",\"qtyOrdered\":\"1\",\"unitCost\":\"2\",\"notToExceed\":\"Yes\"}",
+            "tdId": 1,
+            "isSharable": true
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Present",
+            "element": "applauncher.input.text",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "applauncher.input.text",
+                    "key"
+                ],
+                [
+                    "input.applauncher",
+                    "key"
+                ],
+                [
+                    "input.applauncher.text",
+                    "key"
+                ],
+                [
+                    "xpath=//one-app-launcher-search-bar/lightning-input/div/input",
+                    "xpath"
+                ],
+                [
+                    "xpath...one-app-launcher-search-bar.lightning-input.div.input",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "tcId": 73,
+            "tsId": 21,
+            "testData": true,
+            "duration": 1617000000,
+            "executedOn": "2021-10-15T00:59:13.406Z",
+            "errMessage": "",
+            "isRowExpanded": false,
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"caseNumber\":\"00290316\",\"vendor\":\"Borrego Solar Systems Inc. (O&M)\",\"vendorContact\":\"Mike Halloran\",\"lineItem\":\"Parts - CM\",\"taxCategory\":\"Data Storage\",\"qtyOrdered\":\"1\",\"unitCost\":\"2\",\"notToExceed\":\"Yes\"}",
+            "tdId": 1,
+            "isSharable": true
+        },
+        {
+            "command": "Clear",
+            "element": "applauncher.input.text",
+            "eArray": [
+                [
+                    "applauncher.input.text",
+                    "key"
+                ],
+                [
+                    "input.applauncher",
+                    "key"
+                ],
+                [
+                    "input.applauncher.text",
+                    "key"
+                ],
+                [
+                    "xpath=//one-app-launcher-search-bar/lightning-input/div/input",
+                    "xpath:position"
+                ],
+                [
+                    "xpath=//div[@id='content_795:0']/one-app-launcher-menu/div/one-app-launcher-search-bar/lightning-input/div/input",
+                    "xpath:idRelative"
+                ],
+                [
+                    "id=input-109",
+                    "id"
+                ],
+                [
+                    "css=#input-109",
+                    "css"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Search apps and items...'])[1]/following::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='No record selected'])[1]/following::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Clear'])[1]/preceding::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Apps'])[1]/preceding::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath...one-app-launcher-search-bar.lightning-input.div.input",
+                    "key"
+                ]
+            ],
+            "input": "",
+            "status": "NotRun",
+            "elementKey": "search.input109",
+            "elementDesc": "input-109 search",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "indexColumn": "",
+            "tcId": 73,
+            "tsId": 21,
+            "testData": true,
+            "duration": 30660000000,
+            "executedOn": "2021-10-15T00:59:44.066Z",
+            "errMessage": "Name: NoSuchElementError\r\nMessage: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//one-app-launcher-search-bar/lightning-input/div/input\"}\n  (Session info: chrome=94.0.4606.81)\r\nStacktrace: NoSuchElementError: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//one-app-launcher-search-bar/lightning-input/div/input\"}\n  (Session info: chrome=94.0.4606.81)\n\tat Object.throwDecodedError (c:\\Program Files\\QMetry Automation Studio\\resources\\app\\extensions\\node_modules\\selenium-webdriver\\lib\\error.js:550:15)\n\tat parseHttpResponse (c:\\Program Files\\QMetry Automation Studio\\resources\\app\\extensions\\node_modules\\selenium-webdriver\\lib\\http.js:565:13)\n\tat Executor.execute (c:\\Program Files\\QMetry Automation Studio\\resources\\app\\extensions\\node_modules\\selenium-webdriver\\lib\\http.js:491:26)\n\tat runMicrotasks (<anonymous>)\n\tat processTicksAndRejections (internal/process/task_queues.js:85:5)\n\tat async thenableWebDriverProxy.execute (c:\\Program Files\\QMetry Automation Studio\\resources\\app\\extensions\\node_modules\\selenium-webdriver\\lib\\webdriver.js:700:17)",
+            "isRowExpanded": false,
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"caseNumber\":\"00290316\",\"vendor\":\"Borrego Solar Systems Inc. (O&M)\",\"vendorContact\":\"Mike Halloran\",\"lineItem\":\"Parts - CM\",\"taxCategory\":\"Data Storage\",\"qtyOrdered\":\"1\",\"unitCost\":\"2\",\"notToExceed\":\"Yes\"}",
+            "tdId": 1,
+            "isSharable": true
+        },
+        {
+            "command": "Type",
+            "element": "applauncher.input.text",
+            "eArray": [
+                [
+                    "applauncher.input.text",
+                    "key"
+                ],
+                [
+                    "input.applauncher",
+                    "key"
+                ],
+                [
+                    "input.applauncher.text",
+                    "key"
+                ],
+                [
+                    "xpath=//one-app-launcher-search-bar/lightning-input/div/input",
+                    "xpath:position"
+                ],
+                [
+                    "xpath=//div[@id='content_795:0']/one-app-launcher-menu/div/one-app-launcher-search-bar/lightning-input/div/input",
+                    "xpath:idRelative"
+                ],
+                [
+                    "id=input-109",
+                    "id"
+                ],
+                [
+                    "css=#input-109",
+                    "css"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Search apps and items...'])[1]/following::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='No record selected'])[1]/following::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Clear'])[1]/preceding::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Apps'])[1]/preceding::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath...one-app-launcher-search-bar.lightning-input.div.input",
+                    "key"
+                ]
+            ],
+            "input": "${appName}",
+            "status": "NotRun",
+            "elementKey": "search.input109",
+            "elementDesc": "input-109 search",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "indexColumn": "",
+            "tcId": 73,
+            "tsId": 21,
+            "testData": true,
+            "duration": 627000000,
+            "executedOn": "2021-10-15T00:59:52.614Z",
+            "errMessage": "",
+            "isRowExpanded": false,
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"caseNumber\":\"00290316\",\"vendor\":\"Borrego Solar Systems Inc. (O&M)\",\"vendorContact\":\"Mike Halloran\",\"lineItem\":\"Parts - CM\",\"taxCategory\":\"Data Storage\",\"qtyOrdered\":\"1\",\"unitCost\":\"2\",\"notToExceed\":\"Yes\"}",
+            "tdId": 1,
+            "isSharable": true
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Present",
+            "element": "applauncher.link.main",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "applauncher.link.main",
+                    "key"
+                ],
+                [
+                    "xpath=//one-app-launcher-menu//p[string-length(text()) = 0]//b",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "tcId": 73,
+            "isSharable": true
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "applauncher.link.main",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "applauncher.link.main",
+                    "key"
+                ],
+                [
+                    "xpath=//one-app-launcher-menu//p[string-length(text()) = 0]//b",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "tcId": 73,
+            "isSharable": true
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Present",
+            "element": "common.activeTab",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "common.activeTab",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "tcId": 73,
+            "isSharable": true
+        }
+    ],
+    "type": "",
+    "capabilities": {},
+    "testDataExample": [],
+    "isTCValid": true,
+    "externalTestData": false,
+    "dbDetails": {},
+    "recordSessionType": "multiple",
+    "tags": [],
+    "description": "",
+    "shared": false,
+    "executionStatus": "NotRun"
+}

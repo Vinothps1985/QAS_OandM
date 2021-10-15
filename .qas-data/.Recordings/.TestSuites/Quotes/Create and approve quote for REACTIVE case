@@ -1,0 +1,4656 @@
+{
+    "steps": [
+        {
+            "command": "ShrdLoginToFullCopy",
+            "element": "",
+            "eArray": [],
+            "input": "${username},${password}",
+            "status": "NotRun",
+            "elementKey": "",
+            "elementDesc": "",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "indexColumn": "",
+            "@@mycolor": null,
+            "shared": true,
+            "tcId": "60",
+            "tsId": 59,
+            "testData": false,
+            "lastExecutionDetail": [
+                {
+                    "command": "Open",
+                    "element": "",
+                    "eArray": [],
+                    "input": "https://bssi--fullcopy.lightning.force.com/",
+                    "status": "Passed",
+                    "elementKey": "",
+                    "elementDesc": "",
+                    "isEncrypted": false,
+                    "isDisplay": false,
+                    "indexColumn": "",
+                    "@@mycolor": null,
+                    "tcId": "60",
+                    "tsId": 59,
+                    "testData": false,
+                    "duration": 4927000000,
+                    "executedOn": "2021-10-12T19:40:43.084Z",
+                    "errMessage": "",
+                    "isRowExpanded": false,
+                    "isSharable": true,
+                    "length": 7
+                },
+                {
+                    "indexColumn": "",
+                    "command": "Maximize",
+                    "element": "",
+                    "input": "",
+                    "status": "Passed",
+                    "eArray": [],
+                    "elementKey": "",
+                    "elementDesc": "",
+                    "@@mycolor": null,
+                    "tcId": "60",
+                    "tsId": 59,
+                    "testData": false,
+                    "duration": 510000000,
+                    "executedOn": "2021-10-12T19:40:43.594Z",
+                    "errMessage": "",
+                    "isRowExpanded": false,
+                    "isSharable": true,
+                    "length": 7
+                },
+                {
+                    "command": "Clear",
+                    "element": "login.username",
+                    "eArray": [
+                        [
+                            "login.username",
+                            "key"
+                        ],
+                        [
+                            "id=username",
+                            "id"
+                        ],
+                        [
+                            "name=username",
+                            "name"
+                        ],
+                        [
+                            "xpath=//div[@id='username_container']/input",
+                            "xpath:idRelative"
+                        ],
+                        [
+                            "xpath=//div/input",
+                            "xpath:position"
+                        ],
+                        [
+                            "css=#username",
+                            "css"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Nombre de usuario'])[1]/following::input[1]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Cancelar'])[1]/following::input[19]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Contraseña'])[1]/preceding::input[2]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Recordarme'])[1]/preceding::input[5]",
+                            "xpath:neighbor"
+                        ]
+                    ],
+                    "input": "",
+                    "status": "Passed",
+                    "elementKey": "email.username",
+                    "elementDesc": "username email",
+                    "isEncrypted": false,
+                    "isDisplay": false,
+                    "indexColumn": "",
+                    "@@mycolor": null,
+                    "tcId": "60",
+                    "tsId": 59,
+                    "testData": false,
+                    "duration": 1142000000,
+                    "executedOn": "2021-10-12T19:40:44.736Z",
+                    "errMessage": "",
+                    "isRowExpanded": false,
+                    "isSharable": true,
+                    "length": 7
+                },
+                {
+                    "command": "Type",
+                    "element": "login.username",
+                    "eArray": [
+                        [
+                            "login.username",
+                            "key"
+                        ],
+                        [
+                            "id=username",
+                            "id"
+                        ],
+                        [
+                            "name=username",
+                            "name"
+                        ],
+                        [
+                            "xpath=//div[@id='username_container']/input",
+                            "xpath:idRelative"
+                        ],
+                        [
+                            "xpath=//div/input",
+                            "xpath:position"
+                        ],
+                        [
+                            "css=#username",
+                            "css"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Nombre de usuario'])[1]/following::input[1]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Cancelar'])[1]/following::input[19]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Contraseña'])[1]/preceding::input[2]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Recordarme'])[1]/preceding::input[5]",
+                            "xpath:neighbor"
+                        ]
+                    ],
+                    "input": "${username}",
+                    "status": "Passed",
+                    "elementKey": "email.username",
+                    "elementDesc": "username email",
+                    "isEncrypted": false,
+                    "isDisplay": false,
+                    "indexColumn": "",
+                    "@@mycolor": null,
+                    "tcId": "60",
+                    "tsId": 59,
+                    "testData": false,
+                    "duration": 607000000,
+                    "executedOn": "2021-10-12T19:40:45.343Z",
+                    "errMessage": "",
+                    "isRowExpanded": false,
+                    "isSharable": true,
+                    "length": 7
+                },
+                {
+                    "command": "Clear",
+                    "element": "login.password",
+                    "eArray": [
+                        [
+                            "login.password",
+                            "key"
+                        ],
+                        [
+                            "id=password",
+                            "id"
+                        ],
+                        [
+                            "name=pw",
+                            "name"
+                        ],
+                        [
+                            "xpath=//form[@id='login_form']/input",
+                            "xpath:idRelative"
+                        ],
+                        [
+                            "xpath=//form/input",
+                            "xpath:position"
+                        ],
+                        [
+                            "css=#password",
+                            "css"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Contraseña'])[1]/following::input[1]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Nombre de usuario'])[1]/following::input[3]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Recordarme'])[1]/preceding::input[3]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='¿Olvidó la contraseña?'])[1]/preceding::input[3]",
+                            "xpath:neighbor"
+                        ]
+                    ],
+                    "input": "",
+                    "status": "Passed",
+                    "elementKey": "password.password",
+                    "elementDesc": "password password",
+                    "isEncrypted": false,
+                    "isDisplay": false,
+                    "indexColumn": "",
+                    "@@mycolor": null,
+                    "tcId": "60",
+                    "tsId": 59,
+                    "testData": false,
+                    "duration": 596000000,
+                    "executedOn": "2021-10-12T19:40:45.940Z",
+                    "errMessage": "",
+                    "isRowExpanded": false,
+                    "isSharable": true,
+                    "length": 7
+                },
+                {
+                    "command": "Type",
+                    "element": "login.password",
+                    "eArray": [
+                        [
+                            "login.password",
+                            "key"
+                        ],
+                        [
+                            "id=password",
+                            "id"
+                        ],
+                        [
+                            "name=pw",
+                            "name"
+                        ],
+                        [
+                            "xpath=//form[@id='login_form']/input",
+                            "xpath:idRelative"
+                        ],
+                        [
+                            "xpath=//form/input",
+                            "xpath:position"
+                        ],
+                        [
+                            "css=#password",
+                            "css"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Contraseña'])[1]/following::input[1]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Nombre de usuario'])[1]/following::input[3]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Recordarme'])[1]/preceding::input[3]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='¿Olvidó la contraseña?'])[1]/preceding::input[3]",
+                            "xpath:neighbor"
+                        ]
+                    ],
+                    "input": "${password}",
+                    "status": "Passed",
+                    "elementKey": "password.password",
+                    "elementDesc": "password password",
+                    "isEncrypted": false,
+                    "isDisplay": false,
+                    "indexColumn": "",
+                    "@@mycolor": null,
+                    "tcId": "60",
+                    "tsId": 59,
+                    "testData": false,
+                    "duration": 601000000,
+                    "executedOn": "2021-10-12T19:40:46.541Z",
+                    "errMessage": "",
+                    "isRowExpanded": false,
+                    "isSharable": true,
+                    "length": 7
+                },
+                {
+                    "command": "Click",
+                    "element": "login.submit",
+                    "eArray": [
+                        [
+                            "login.submit",
+                            "key"
+                        ],
+                        [
+                            "id=Login",
+                            "id"
+                        ],
+                        [
+                            "name=Login",
+                            "name"
+                        ],
+                        [
+                            "xpath=//form[@id='login_form']/input[2]",
+                            "xpath:idRelative"
+                        ],
+                        [
+                            "xpath=//input[2]",
+                            "xpath:position"
+                        ],
+                        [
+                            "css=#Login",
+                            "css"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Contraseña'])[1]/following::input[2]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Nombre de usuario'])[1]/following::input[4]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Recordarme'])[1]/preceding::input[2]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='¿Olvidó la contraseña?'])[1]/preceding::input[2]",
+                            "xpath:neighbor"
+                        ]
+                    ],
+                    "input": "",
+                    "status": "NotRun",
+                    "elementKey": "submit.login",
+                    "elementDesc": "Login submit",
+                    "isEncrypted": false,
+                    "isDisplay": false,
+                    "indexColumn": "",
+                    "@@mycolor": null,
+                    "tcId": "60",
+                    "tsId": 59,
+                    "testData": false,
+                    "duration": 2872000000,
+                    "executedOn": "2021-09-23T15:35:52.960Z",
+                    "errMessage": "",
+                    "isRowExpanded": false,
+                    "isSharable": true,
+                    "length": 7
+                }
+            ]
+        },
+        {
+            "command": "ShrdChangeLoggedInUser",
+            "element": "common.searchAssistant.button",
+            "eArray": [
+                [
+                    "common.searchAssistant.button",
+                    "key"
+                ],
+                [
+                    "xpath=//button[text()='Search...']",
+                    "xpath:innerText"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='AS: Projects'])[1]/following::button[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Skip to Main Content'])[1]/following::button[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='AS: Projects'])[2]/preceding::button[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Add favorite'])[1]/preceding::button[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=//header[@id='oneHeader']/div[2]/div[2]/div/button",
+                    "xpath:idRelative"
+                ],
+                [
+                    "xpath=//button",
+                    "xpath:position"
+                ],
+                [
+                    "css=button.slds-button.slds-button_neutral.search-button.slds-truncate",
+                    "css"
+                ]
+            ],
+            "input": "test_o&M_manager",
+            "status": "NotRun",
+            "elementKey": "button.search",
+            "elementDesc": "Button search...",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "indexColumn": "",
+            "@@mycolor": null,
+            "tcId": "60",
+            "tsId": 59,
+            "testData": false,
+            "shared": true
+        },
+        {
+            "command": "Click",
+            "element": "common.searchAssistant.button",
+            "eArray": [
+                [
+                    "common.searchAssistant.button",
+                    "key"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Skip to Main Content'])[1]/following::div[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Skip to Navigation'])[1]/following::div[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=//header[@id='oneHeader']/div[2]",
+                    "xpath:idRelative"
+                ],
+                [
+                    "xpath=//section/header/div[2]",
+                    "xpath:position"
+                ],
+                [
+                    "css=div.slds-global-header.slds-grid.slds-grid--align-spread",
+                    "css"
+                ]
+            ],
+            "input": "",
+            "status": "NotRun",
+            "elementKey": "div.serviceconsolesearch.addfavoritefavoriteslistsalesforcehelpsetupnotificationsviewprofile",
+            "elementDesc": "Text serviceconsolesearch...addfavoritefavoriteslistsalesforcehelpsetupnotificationsviewprofile",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "indexColumn": "",
+            "@@mycolor": null,
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 6720000000,
+            "executedOn": "2021-10-13T04:18:41.348Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Clear",
+            "element": "common.searchAssistant.input",
+            "eArray": [
+                [
+                    "common.searchAssistant.input",
+                    "key"
+                ],
+                [
+                    "xpath=//*[@placeholder='Search...']",
+                    "xpath:placeholder"
+                ],
+                [
+                    "xpath=//label[text()='Search...']//following::input",
+                    "xpath:nearLabel"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Search...'])[3]/following::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Search by object type'])[1]/following::input[2]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Clear'])[1]/preceding::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Case • Sample subject from QAS'])[1]/preceding::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "id=input-765",
+                    "id"
+                ],
+                [
+                    "xpath=//div[@id='content_2893:0']/div/div/lightning-input/div/input",
+                    "xpath:idRelative"
+                ],
+                [
+                    "xpath=//lightning-input/div/input",
+                    "xpath:position"
+                ],
+                [
+                    "css=#input-765",
+                    "css"
+                ]
+            ],
+            "input": "",
+            "status": "NotRun",
+            "elementKey": "search.input-765",
+            "elementDesc": "input-765 search",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "indexColumn": "",
+            "@@mycolor": null,
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 580000000,
+            "executedOn": "2021-10-13T04:18:41.928Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Type",
+            "element": "common.searchAssistant.input",
+            "eArray": [
+                [
+                    "common.searchAssistant.input",
+                    "key"
+                ],
+                [
+                    "xpath=//*[@placeholder='Search...']",
+                    "xpath:placeholder"
+                ],
+                [
+                    "xpath=//label[text()='Search...']//following::input",
+                    "xpath:nearLabel"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Search...'])[3]/following::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Search by object type'])[1]/following::input[2]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Clear'])[1]/preceding::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Case • Sample subject from QAS'])[1]/preceding::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "id=input-765",
+                    "id"
+                ],
+                [
+                    "xpath=//div[@id='content_2893:0']/div/div/lightning-input/div/input",
+                    "xpath:idRelative"
+                ],
+                [
+                    "xpath=//lightning-input/div/input",
+                    "xpath:position"
+                ],
+                [
+                    "css=#input-765",
+                    "css"
+                ]
+            ],
+            "input": "00290316",
+            "status": "NotRun",
+            "elementKey": "search.input-765",
+            "elementDesc": "input-765 search",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "indexColumn": "",
+            "@@mycolor": null,
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 1210000000,
+            "executedOn": "2021-10-13T04:18:43.138Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Present",
+            "element": "cases.search.firstResult",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "cases.search.firstResult",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "tdId": 1,
+            "duration": 569000000,
+            "executedOn": "2021-10-13T04:18:43.707Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Click",
+            "element": "cases.search.firstResult",
+            "eArray": [
+                [
+                    "cases.search.firstResult",
+                    "key"
+                ],
+                [
+                    "xpath=//span[text()='Case • Sample subject from QAS']",
+                    "xpath:innerText"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Clear'])[1]/following::span[4]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Search...'])[3]/following::span[5]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)=concat('Show more results for ', '\"', '00290316', '\"', '')])[1]/preceding::span[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=//div[@id='suggestionsList-766']/search_lightning-instant-result-item/div/div[2]/div/lightning-formatted-rich-text/span",
+                    "xpath:idRelative"
+                ],
+                [
+                    "xpath=//div/lightning-formatted-rich-text/span",
+                    "xpath:position"
+                ],
+                [
+                    "css=lightning-formatted-rich-text.secondary.slds-float--left.slds-truncate.slds-rich-text-editor__output > span",
+                    "css"
+                ]
+            ],
+            "input": "",
+            "status": "NotRun",
+            "elementKey": "span.case•samplesubjectfromqas",
+            "elementDesc": "Text case•samplesubjectfromqas",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "indexColumn": "",
+            "@@mycolor": null,
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 6592000000,
+            "executedOn": "2021-10-13T04:18:50.299Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Click",
+            "element": "cases.createNewQuote.button",
+            "eArray": [
+                [
+                    "cases.createNewQuote.button",
+                    "key"
+                ],
+                [
+                    "xpath=//span[text()='Create New Quote']/ancestor::a",
+                    "xpath:innerText"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='New O&M Task'])[1]/following::span[2]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='New Case'])[1]/following::span[4]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Create Con Req Group On Case'])[1]/preceding::span[2]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Post'])[1]/preceding::span[4]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=//div[@id='brandBand_12']/div/div/one-record-home-flexipage2/forcegenerated-adg-rollup_component___force-generated__flexipage_-record-page___-corrective_-case_-lightning_-layout___-case___-v-i-e-w/forcegenerated-flexipage_corrective_case_lightning_layout_case__view_js/record_flexipage-record-page-decorator/div/records-record-layout-event-broker/slot/slot/flexipage-record-home-left-sidebar-template-desktop2/div/div/slot/slot/flexipage-component2[2]/slot/flexipage-aura-wrapper/div/div/div/div/ul/li[2]/a/span[2]",
+                    "xpath:idRelative"
+                ],
+                [
+                    "xpath=//flexipage-aura-wrapper/div/div/div/div/ul/li[2]/a/span[2]",
+                    "xpath:position"
+                ]
+            ],
+            "input": "",
+            "status": "NotRun",
+            "elementKey": "span.createnewquote",
+            "elementDesc": "Text createnewquote",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "indexColumn": "",
+            "@@mycolor": null,
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 7725000000,
+            "executedOn": "2021-10-13T04:18:58.024Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Click",
+            "element": "quotes.createQuote.popup.salesRep.input",
+            "eArray": [
+                [
+                    "quotes.createQuote.popup.salesRep.input",
+                    "key"
+                ],
+                [
+                    "xpath=//*[@placeholder='Search People...']",
+                    "xpath:placeholder"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Help'])[10]/following::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='*'])[4]/following::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Start Date'])[1]/preceding::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Help'])[11]/preceding::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "id=input-2607",
+                    "id"
+                ],
+                [
+                    "xpath=//div[@id='sectionContent-2049']/div/slot/force-record-layout-row[7]/slot/force-record-layout-item/div/span/slot/slot/force-record-layout-lookup/lightning-lookup/lightning-lookup-desktop/lightning-grouped-combobox/div/div/lightning-base-combobox/div/div/input",
+                    "xpath:idRelative"
+                ],
+                [
+                    "xpath=//div/div/lightning-base-combobox/div/div/input",
+                    "xpath:position"
+                ],
+                [
+                    "css=#input-2607",
+                    "css"
+                ]
+            ],
+            "input": "",
+            "status": "NotRun",
+            "elementKey": "text.input-2607",
+            "elementDesc": "Input for input-2607",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "indexColumn": "",
+            "@@mycolor": null,
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 6802000000,
+            "executedOn": "2021-10-13T04:19:04.826Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Clear",
+            "element": "quotes.createQuote.popup.salesRep.input",
+            "eArray": [
+                [
+                    "quotes.createQuote.popup.salesRep.input",
+                    "key"
+                ],
+                [
+                    "xpath=//*[@placeholder='Search People...']",
+                    "xpath:placeholder"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Help'])[10]/following::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='*'])[4]/following::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Search'])[1]/preceding::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)=concat('Show All Results for ', '\"', 'test_o&m_manager', '\"', '')])[1]/preceding::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "id=input-2607",
+                    "id"
+                ],
+                [
+                    "xpath=//div[@id='sectionContent-2049']/div/slot/force-record-layout-row[7]/slot/force-record-layout-item/div/span/slot/slot/force-record-layout-lookup/lightning-lookup/lightning-lookup-desktop/lightning-grouped-combobox/div/div/lightning-base-combobox/div/div/input",
+                    "xpath:idRelative"
+                ],
+                [
+                    "xpath=//div/div/lightning-base-combobox/div/div/input",
+                    "xpath:position"
+                ],
+                [
+                    "css=#input-2607",
+                    "css"
+                ]
+            ],
+            "input": "",
+            "status": "NotRun",
+            "elementKey": "text.input-2607",
+            "elementDesc": "Input for input-2607",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "indexColumn": "",
+            "@@mycolor": null,
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 584000000,
+            "executedOn": "2021-10-13T04:19:05.410Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Type",
+            "element": "quotes.createQuote.popup.salesRep.input",
+            "eArray": [
+                [
+                    "quotes.createQuote.popup.salesRep.input",
+                    "key"
+                ],
+                [
+                    "xpath=//*[@placeholder='Search People...']",
+                    "xpath:placeholder"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Help'])[10]/following::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='*'])[4]/following::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Search'])[1]/preceding::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)=concat('Show All Results for ', '\"', 'test_o&m_manager', '\"', '')])[1]/preceding::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "id=input-2607",
+                    "id"
+                ],
+                [
+                    "xpath=//div[@id='sectionContent-2049']/div/slot/force-record-layout-row[7]/slot/force-record-layout-item/div/span/slot/slot/force-record-layout-lookup/lightning-lookup/lightning-lookup-desktop/lightning-grouped-combobox/div/div/lightning-base-combobox/div/div/input",
+                    "xpath:idRelative"
+                ],
+                [
+                    "xpath=//div/div/lightning-base-combobox/div/div/input",
+                    "xpath:position"
+                ],
+                [
+                    "css=#input-2607",
+                    "css"
+                ]
+            ],
+            "input": "test_o&m_manager",
+            "status": "NotRun",
+            "elementKey": "text.input-2607",
+            "elementDesc": "Input for input-2607",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "indexColumn": "",
+            "@@mycolor": null,
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 946000000,
+            "executedOn": "2021-10-13T04:19:06.356Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Click",
+            "element": "quotes.createQuote.popup.salesRep.firstOption",
+            "eArray": [
+                [
+                    "quotes.createQuote.popup.salesRep.firstOption",
+                    "key"
+                ],
+                [
+                    "quotes.createQuote.popup.openSelectBox.firstOption",
+                    "key"
+                ],
+                [
+                    "xpath=//strong[text()='test_o&m_manager']",
+                    "xpath:innerText"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='User'])[1]/following::strong[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)=concat('Show All Results for ', '\"', 'test_o&m_manager', '\"', '')])[1]/following::strong[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Start Date'])[1]/preceding::strong[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Help'])[11]/preceding::strong[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=//lightning-base-combobox-item[@id='input-2607-1-2607']/span[2]/span/lightning-base-combobox-formatted-text/strong",
+                    "xpath:idRelative"
+                ],
+                [
+                    "xpath=//strong",
+                    "xpath:position"
+                ],
+                [
+                    "css=strong",
+                    "css"
+                ]
+            ],
+            "input": "",
+            "status": "NotRun",
+            "elementKey": "strong.test_om_manager",
+            "elementDesc": "STRONG test_o&m_manager",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "indexColumn": "",
+            "@@mycolor": null,
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 6736000000,
+            "executedOn": "2021-10-13T04:19:13.092Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Click",
+            "element": "quotes.createQuote.popup.primaryContact.input",
+            "eArray": [
+                [
+                    "quotes.createQuote.popup.primaryContact.input",
+                    "key"
+                ],
+                [
+                    "xpath=//*[@placeholder='Search Contacts...']",
+                    "xpath:placeholder"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Help'])[12]/following::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='*'])[7]/following::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Expires On'])[1]/preceding::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Help'])[13]/preceding::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "id=input-2615",
+                    "id"
+                ],
+                [
+                    "xpath=//div[@id='sectionContent-2049']/div/slot/force-record-layout-row[8]/slot/force-record-layout-item/div/span/slot/slot/force-record-layout-lookup/lightning-lookup/lightning-lookup-desktop/lightning-grouped-combobox/div/div/lightning-base-combobox/div/div/input",
+                    "xpath:idRelative"
+                ],
+                [
+                    "xpath=//force-record-layout-row[8]/slot/force-record-layout-item/div/span/slot/slot/force-record-layout-lookup/lightning-lookup/lightning-lookup-desktop/lightning-grouped-combobox/div/div/lightning-base-combobox/div/div/input",
+                    "xpath:position"
+                ],
+                [
+                    "css=#input-2615",
+                    "css"
+                ]
+            ],
+            "input": "",
+            "status": "NotRun",
+            "elementKey": "text.input-2615",
+            "elementDesc": "Input for input-2615",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "indexColumn": "",
+            "@@mycolor": null,
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 7849000000,
+            "executedOn": "2021-10-13T04:19:20.941Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Type",
+            "element": "quotes.createQuote.popup.primaryContact.input",
+            "input": "test_o&m_manager",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "quotes.createQuote.popup.primaryContact.input",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "tdId": 1,
+            "duration": 1023000000,
+            "executedOn": "2021-10-13T04:19:21.964Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Click",
+            "element": "quotes.createQuote.popup.primaryContact.firstOption",
+            "eArray": [
+                [
+                    "quotes.createQuote.popup.primaryContact.firstOption",
+                    "key"
+                ],
+                [
+                    "quotes.createQuote.popup.openSelectBox.firstOption",
+                    "key"
+                ],
+                [
+                    "xpath=//span[text()='test_o&m_manager']/ancestor::a",
+                    "xpath:innerText"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Contact'])[1]/following::span[3]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Recent Contacts'])[1]/following::span[5]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Add'])[3]/preceding::span[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='New Contact'])[1]/preceding::span[3]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=//lightning-base-combobox-item[@id='input-2615-0-2615']/span[2]/span/span",
+                    "xpath:idRelative"
+                ],
+                [
+                    "xpath=//li[2]/lightning-base-combobox-item/span[2]/span/span",
+                    "xpath:position"
+                ],
+                [
+                    "css=#input-2615-0-2615 > span.slds-media__body > span.slds-listbox__option-text.slds-listbox__option-text_entity > span.slds-truncate",
+                    "css"
+                ]
+            ],
+            "input": "",
+            "status": "NotRun",
+            "elementKey": "span.test_om_manager",
+            "elementDesc": "Text test_o&m_manager",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "indexColumn": "",
+            "@@mycolor": null,
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 6688000000,
+            "executedOn": "2021-10-13T04:19:28.652Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Click",
+            "element": "quotes.createQuote.popup.estimatedWorkStartDate.calendar.icon",
+            "eArray": [
+                [
+                    "quotes.createQuote.popup.estimatedWorkStartDate.calendar.icon",
+                    "key"
+                ],
+                [
+                    "xpath=//label[text()='Estimated Work Start Date']//following::input",
+                    "xpath:nearLabel"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='*'])[8]/following::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Select a date'])[3]/preceding::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "id=input-2142",
+                    "id"
+                ],
+                [
+                    "name=Estimated_Start_Date__c",
+                    "name"
+                ],
+                [
+                    "xpath=//div[@id='sectionContent-2049']/div/slot/force-record-layout-row[9]/slot/force-record-layout-item/div/span/slot/slot/lightning-input/lightning-datepicker/div/div/input",
+                    "xpath:idRelative"
+                ],
+                [
+                    "xpath=//force-record-layout-row[9]/slot/force-record-layout-item/div/span/slot/slot/lightning-input/lightning-datepicker/div/div/input",
+                    "xpath:position"
+                ],
+                [
+                    "css=#input-2142",
+                    "css"
+                ]
+            ],
+            "input": "",
+            "status": "NotRun",
+            "elementKey": "text.input-2142",
+            "elementDesc": "Input for input-2142",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "indexColumn": "",
+            "@@mycolor": null,
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 7711000000,
+            "executedOn": "2021-10-13T04:19:36.363Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Click",
+            "element": "common.openLightningCalendar.today",
+            "eArray": [
+                [
+                    "common.openLightningCalendar.today",
+                    "key"
+                ],
+                [
+                    "xpath=//span[text()='15']",
+                    "xpath:innerText"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Sat'])[1]/following::span[20]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Fri'])[1]/following::span[20]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Today'])[1]/preceding::span[23]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=//div[@id='sectionContent-2049']/div/slot/force-record-layout-row[9]/slot/force-record-layout-item/div/span/slot/slot/lightning-input/lightning-datepicker/div/div/lightning-calendar/div/lightning-focus-trap/slot/table/tbody/tr[3]/td[6]/span",
+                    "xpath:idRelative"
+                ],
+                [
+                    "xpath=//tr[3]/td[6]/span",
+                    "xpath:position"
+                ]
+            ],
+            "input": "",
+            "status": "NotRun",
+            "elementKey": "span.15",
+            "elementDesc": "Text 15",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "indexColumn": "",
+            "@@mycolor": null,
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 6703000000,
+            "executedOn": "2021-10-13T04:19:43.066Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Click",
+            "element": "quotes.createQuote.popup.siteWorkState.select",
+            "eArray": [
+                [
+                    "quotes.createQuote.popup.siteWorkState.select",
+                    "key"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Help'])[14]/following::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='*'])[9]/following::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Not to Exceed'])[1]/preceding::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Quote Write-up'])[1]/preceding::input[2]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "id=input-2154",
+                    "id"
+                ],
+                [
+                    "xpath=//div[@id='sectionContent-2049']/div/slot/force-record-layout-row[10]/slot/force-record-layout-item/div/span/slot/slot/force-record-picklist/force-form-picklist/lightning-picklist/lightning-combobox/div/lightning-base-combobox/div/div/input",
+                    "xpath:idRelative"
+                ],
+                [
+                    "xpath=//force-record-layout-row[10]/slot/force-record-layout-item/div/span/slot/slot/force-record-picklist/force-form-picklist/lightning-picklist/lightning-combobox/div/lightning-base-combobox/div/div/input",
+                    "xpath:position"
+                ],
+                [
+                    "css=#input-2154",
+                    "css"
+                ]
+            ],
+            "input": "",
+            "status": "NotRun",
+            "elementKey": "text.input-2154",
+            "elementDesc": "Input for input-2154",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "indexColumn": "",
+            "@@mycolor": null,
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 6691000000,
+            "executedOn": "2021-10-13T04:19:49.757Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Click",
+            "element": "quotes.createQuote.popup.siteWorkState.option.second",
+            "eArray": [
+                [
+                    "quotes.createQuote.popup.siteWorkState.option.second",
+                    "key"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='--None--'])[1]/following::lightning-base-combobox-item[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Help'])[14]/following::lightning-base-combobox-item[2]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='AL'])[1]/preceding::lightning-base-combobox-item[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "id=input-2154-1-2154",
+                    "id"
+                ],
+                [
+                    "xpath=//div[@id='dropdown-element-2154']/lightning-base-combobox-item[2]",
+                    "xpath:idRelative"
+                ],
+                [
+                    "xpath=//lightning-base-combobox-item[2]",
+                    "xpath:position"
+                ],
+                [
+                    "css=#input-2154-1-2154",
+                    "css"
+                ]
+            ],
+            "input": "",
+            "status": "NotRun",
+            "elementKey": "lightning-base-combobox-item.input-2154-1-2154",
+            "elementDesc": "LIGHTNING-BASE-COMBOBOX-ITEM input-2154-1-2154",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "indexColumn": "",
+            "@@mycolor": null,
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 6697000000,
+            "executedOn": "2021-10-13T04:19:56.454Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Click",
+            "element": "quotes.createQuote.popup.typeOfWork.select",
+            "eArray": [
+                [
+                    "quotes.createQuote.popup.typeOfWork.select",
+                    "key"
+                ],
+                [
+                    "xpath=//label[text()='Type of Work']//following::input",
+                    "xpath:nearLabel"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='*'])[5]/following::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Undo Sales Rep'])[1]/preceding::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "id=input-2116",
+                    "id"
+                ],
+                [
+                    "xpath=//div[@id='sectionContent-2049']/div/slot/force-record-layout-row[6]/slot/force-record-layout-item[2]/div/span/slot/slot/force-record-picklist/force-form-picklist/lightning-picklist/lightning-combobox/div/lightning-base-combobox/div/div/input",
+                    "xpath:idRelative"
+                ],
+                [
+                    "xpath=//force-record-layout-row[6]/slot/force-record-layout-item[2]/div/span/slot/slot/force-record-picklist/force-form-picklist/lightning-picklist/lightning-combobox/div/lightning-base-combobox/div/div/input",
+                    "xpath:position"
+                ],
+                [
+                    "css=#input-2116",
+                    "css"
+                ]
+            ],
+            "input": "",
+            "status": "NotRun",
+            "elementKey": "text.input-2116",
+            "elementDesc": "Input for input-2116",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "indexColumn": "",
+            "@@mycolor": null,
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 6684000000,
+            "executedOn": "2021-10-13T04:20:03.138Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Click",
+            "element": "quotes.createQuote.popup.typeOfWork.option.initialVisit",
+            "eArray": [
+                [
+                    "quotes.createQuote.popup.typeOfWork.option.initialVisit",
+                    "key"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='--None--'])[1]/following::span[2]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='*'])[5]/following::span[5]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Corrective Repairs'])[1]/preceding::span[3]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=//lightning-base-combobox-item[@id='input-2116-1-2116']/span[2]",
+                    "xpath:idRelative"
+                ],
+                [
+                    "xpath=//lightning-base-combobox-item[2]/span[2]",
+                    "xpath:position"
+                ],
+                [
+                    "css=#input-2116-1-2116 > span.slds-media__body",
+                    "css"
+                ]
+            ],
+            "input": "",
+            "status": "NotRun",
+            "elementKey": "span.initialvisit",
+            "elementDesc": "Text initialvisit",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "indexColumn": "",
+            "@@mycolor": null,
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 6707000000,
+            "executedOn": "2021-10-13T04:20:09.846Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Clear",
+            "element": "quotes.createQuote.popup.specialNotes.textarea",
+            "eArray": [
+                [
+                    "quotes.createQuote.popup.specialNotes.textarea",
+                    "key"
+                ],
+                [
+                    "xpath=//label[text()='Special Notes & Instructions']//following::textarea",
+                    "xpath:nearLabel"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Special Notes & Instructions'])[1]/following::textarea[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Quote Write-up'])[1]/following::textarea[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Lost Reason'])[1]/preceding::textarea[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Project & Case Details'])[1]/preceding::textarea[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "id=input-2164",
+                    "id"
+                ],
+                [
+                    "xpath=//div[@id='sectionContent-2160']/div/slot/force-record-layout-row/slot/force-record-layout-item/div/span/slot/slot/force-record-layout-text-area/lightning-textarea/div/textarea",
+                    "xpath:idRelative"
+                ],
+                [
+                    "xpath=//force-record-layout-section[2]/div/div/div/slot/force-record-layout-row/slot/force-record-layout-item/div/span/slot/slot/force-record-layout-text-area/lightning-textarea/div/textarea",
+                    "xpath:position"
+                ],
+                [
+                    "css=#input-2164",
+                    "css"
+                ]
+            ],
+            "input": "",
+            "status": "NotRun",
+            "elementKey": "textarea.input-2164",
+            "elementDesc": "TEXTAREA input-2164",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "indexColumn": "",
+            "@@mycolor": null,
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 671000000,
+            "executedOn": "2021-10-13T04:20:10.517Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Type",
+            "element": "quotes.createQuote.popup.specialNotes.textarea",
+            "eArray": [
+                [
+                    "quotes.createQuote.popup.specialNotes.textarea",
+                    "key"
+                ],
+                [
+                    "xpath=//label[text()='Special Notes & Instructions']//following::textarea",
+                    "xpath:nearLabel"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Special Notes & Instructions'])[1]/following::textarea[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Quote Write-up'])[1]/following::textarea[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Lost Reason'])[1]/preceding::textarea[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Project & Case Details'])[1]/preceding::textarea[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "id=input-2164",
+                    "id"
+                ],
+                [
+                    "xpath=//div[@id='sectionContent-2160']/div/slot/force-record-layout-row/slot/force-record-layout-item/div/span/slot/slot/force-record-layout-text-area/lightning-textarea/div/textarea",
+                    "xpath:idRelative"
+                ],
+                [
+                    "xpath=//force-record-layout-section[2]/div/div/div/slot/force-record-layout-row/slot/force-record-layout-item/div/span/slot/slot/force-record-layout-text-area/lightning-textarea/div/textarea",
+                    "xpath:position"
+                ],
+                [
+                    "css=#input-2164",
+                    "css"
+                ]
+            ],
+            "input": "Special notes for the quotes",
+            "status": "NotRun",
+            "elementKey": "textarea.input-2164",
+            "elementDesc": "TEXTAREA input-2164",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "indexColumn": "",
+            "@@mycolor": null,
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 924000000,
+            "executedOn": "2021-10-13T04:20:11.441Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Click",
+            "element": "quotes.createQuote.popup.useDefaultShippingLocation.checkbox",
+            "eArray": [
+                [
+                    "quotes.createQuote.popup.useDefaultShippingLocation.checkbox",
+                    "key"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Help'])[19]/following::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Use Default Shipping Location'])[1]/following::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Bill To City'])[1]/preceding::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Help'])[20]/preceding::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "id=checkbox-2287",
+                    "id"
+                ],
+                [
+                    "name=Use_Default_Shipping_Location__c",
+                    "name"
+                ],
+                [
+                    "xpath=//div[@id='sectionContent-2270']/div/slot/force-record-layout-row[2]/slot/force-record-layout-item[2]/div/span/slot/slot/force-record-layout-checkbox/lightning-input/div/span/input",
+                    "xpath:idRelative"
+                ],
+                [
+                    "xpath=//force-record-layout-item[2]/div/span/slot/slot/force-record-layout-checkbox/lightning-input/div/span/input",
+                    "xpath:position"
+                ],
+                [
+                    "css=#checkbox-2287",
+                    "css"
+                ]
+            ],
+            "input": "",
+            "status": "NotRun",
+            "elementKey": "checkbox.checkbox-2287",
+            "elementDesc": "checkbox-2287 checkbox",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "indexColumn": "",
+            "@@mycolor": null,
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 21627000000,
+            "executedOn": "2021-10-13T04:20:33.068Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Click",
+            "element": "quotes.createQuote.popup.save.button",
+            "eArray": [
+                [
+                    "quotes.createQuote.popup.save.button",
+                    "key"
+                ],
+                [
+                    "xpath=//button[text()='Save']",
+                    "xpath:innerText"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Save & New'])[1]/following::button[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Cancel'])[2]/following::button[2]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='LogACall'])[1]/preceding::button[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Recent Items'])[1]/preceding::button[2]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "name=SaveEdit",
+                    "name"
+                ],
+                [
+                    "xpath=//div[@id='brandBand_13']/div/div/div/records-modal-lwc-detail-panel-wrapper/records-record-layout-event-broker/slot/records-lwc-detail-panel/records-base-record-form/div/div/div/force-form-footer/div/div/div/runtime_platform_actions-actions-ribbon/ul/li[3]/runtime_platform_actions-action-renderer/runtime_platform_actions-executor-lwc-headless/slot/slot/lightning-button/button",
+                    "xpath:idRelative"
+                ],
+                [
+                    "xpath=//li[3]/runtime_platform_actions-action-renderer/runtime_platform_actions-executor-lwc-headless/slot/slot/lightning-button/button",
+                    "xpath:position"
+                ],
+                [
+                    "css=button[name=\"SaveEdit\"]",
+                    "css"
+                ]
+            ],
+            "input": "",
+            "status": "NotRun",
+            "elementKey": "button.saveedit",
+            "elementDesc": "Button SaveEdit",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "indexColumn": "",
+            "@@mycolor": null,
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 6734000000,
+            "executedOn": "2021-10-13T04:20:39.802Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Present",
+            "element": "common.toastContainer",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "common.toastContainer",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "tdId": 1,
+            "duration": 8979000000,
+            "executedOn": "2021-10-13T04:20:48.781Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Present",
+            "element": "quotes.details.salesRep.text",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "quotes.details.salesRep.text",
+                    "key"
+                ],
+                [
+                    "xpath=//span[text()='test_o&m_manager']/ancestor::a",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "tdId": 1,
+            "duration": 778000000,
+            "executedOn": "2021-10-13T04:20:49.559Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Assert Text",
+            "element": "quotes.details.salesRep.text",
+            "eArray": [
+                [
+                    "quotes.details.salesRep.text",
+                    "key"
+                ],
+                [
+                    "xpath=//span[text()='test_o&m_manager']/ancestor::a",
+                    "xpath:innerText"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Help Sales Rep'])[1]/following::span[3]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Sales Rep'])[1]/following::span[4]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Open test_o&m_manager Preview'])[3]/preceding::span[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Edit Sales Rep'])[1]/preceding::span[3]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "id=window",
+                    "id"
+                ],
+                [
+                    "xpath=//div[@id='sectionContent-2966']/div/slot/force-record-layout-row[7]/slot/force-record-layout-item/div/div/div[2]/span/slot/slot/force-lookup/div/force-hoverable-link/div/a/slot/slot/span",
+                    "xpath:idRelative"
+                ],
+                [
+                    "xpath=//force-record-layout-row[7]/slot/force-record-layout-item/div/div/div[2]/span/slot/slot/force-lookup/div/force-hoverable-link/div/a/slot/slot/span",
+                    "xpath:position"
+                ],
+                [
+                    "css=#window",
+                    "css"
+                ]
+            ],
+            "input": "test_o&m_manager",
+            "status": "NotRun",
+            "elementKey": "span.window",
+            "elementDesc": "Text window",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "indexColumn": "",
+            "@@mycolor": null,
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 715000000,
+            "executedOn": "2021-10-13T04:20:50.274Z",
+            "expected": "test_o&m_manager",
+            "actual": "test_o&m_manager",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Assert Text",
+            "element": "quotes.details.account",
+            "eArray": [
+                [
+                    "quotes.details.account",
+                    "key"
+                ],
+                [
+                    "quotes.details.accountName",
+                    "key"
+                ],
+                [
+                    "xpath=//lightning-formatted-text[text()='CleanCapital']",
+                    "xpath:innerText"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Help Bill To Name'])[1]/following::lightning-formatted-text[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Bill To Name'])[1]/following::lightning-formatted-text[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Edit Bill To Name'])[1]/preceding::lightning-formatted-text[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Recipient'])[1]/preceding::lightning-formatted-text[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=//div[@id='sectionContent-3186']/div/slot/force-record-layout-row/slot/force-record-layout-item/div/div/div[2]/span/slot/slot/lightning-formatted-text",
+                    "xpath:idRelative"
+                ],
+                [
+                    "xpath=//forcegenerated-detailpanel_sbqq__quote__c___012340000007nu9aaa___full___view___recordlayout2/force-record-layout-block/slot/force-record-layout-section[6]/div/div/div/slot/force-record-layout-row/slot/force-record-layout-item/div/div/div[2]/span/slot/slot/lightning-formatted-text",
+                    "xpath:position"
+                ],
+                [
+                    "css=#sectionContent-3186 > div.slds-form > slot > force-record-layout-row.slds-form__row > slot.slds-grid.slds-size_1-of-1 > force-record-layout-item.slds-form__item.slds-no-space > div.slds-grid.slds-size_1-of-1.label-stacked > div.slds-form-element.slds-hint-parent.test-id__output-root.slds-form-element_edit.slds-form-element_readonly.slds-form-element_stacked > div.slds-form-element__control > span.test-id__field-value.slds-form-element__static.slds-grow.word-break-ie11 > slot[name=\"outputField\"] > slot > lightning-formatted-text",
+                    "css"
+                ]
+            ],
+            "input": "CleanCapital",
+            "status": "NotRun",
+            "elementKey": "lightning-formatted-text.cleancapital",
+            "elementDesc": "LIGHTNING-FORMATTED-TEXT cleancapital",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "indexColumn": "",
+            "@@mycolor": null,
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 697000000,
+            "executedOn": "2021-10-13T04:20:50.971Z",
+            "expected": "CleanCapital",
+            "actual": "CleanCapital",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Present",
+            "element": "quotes.editLines.button",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "quotes.editLines.button",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "tdId": 1,
+            "duration": 544000000,
+            "executedOn": "2021-10-13T04:20:51.515Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Click",
+            "element": "quotes.editLines.button",
+            "eArray": [
+                [
+                    "quotes.editLines.button",
+                    "key"
+                ],
+                [
+                    "xpath=//button[text()='Edit Lines']",
+                    "xpath:innerText"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Edit'])[4]/following::button[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Q-03740'])[2]/following::button[2]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Preview Document'])[1]/preceding::button[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Submit for Approval'])[1]/preceding::button[2]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=//div[@id='brandBand_14']/div/div/one-record-home-flexipage2/forcegenerated-adg-rollup_component___force-generated__flexipage_-record-page___-quote_-record_-page___-s-b-q-q__-quote__c___-v-i-e-w/forcegenerated-flexipage_quote_record_page_sbqq__quote__c__view_js/record_flexipage-record-page-decorator/div/records-record-layout-event-broker/slot/slot/flexipage-record-home-two-col-equal-header-template-desktop2/div/div/slot/slot/flexipage-component2/slot/records-lwc-highlights-panel/records-lwc-record-layout/forcegenerated-highlightspanel_sbqq__quote__c___012340000007nu9aaa___compact___view___recordlayout2/force-highlights2/div/div/div[3]/div/runtime_platform_actions-actions-ribbon/ul/li[2]/runtime_platform_actions-action-renderer/runtime_platform_actions-executor-page-reference/slot/slot/lightning-button/button",
+                    "xpath:idRelative"
+                ],
+                [
+                    "xpath=//forcegenerated-highlightspanel_sbqq__quote__c___012340000007nu9aaa___compact___view___recordlayout2/force-highlights2/div/div/div[3]/div/runtime_platform_actions-actions-ribbon/ul/li[2]/runtime_platform_actions-action-renderer/runtime_platform_actions-executor-page-reference/slot/slot/lightning-button/button",
+                    "xpath:position"
+                ],
+                [
+                    "css=runtime_platform_actions-action-renderer[title=\"Edit Lines\"] > runtime_platform_actions-executor-page-reference > slot > slot > lightning-button > button.slds-button.slds-button_neutral",
+                    "css"
+                ]
+            ],
+            "input": "",
+            "status": "NotRun",
+            "elementKey": "button.editlines",
+            "elementDesc": "Button editlines",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "indexColumn": "",
+            "@@mycolor": null,
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 6656000000,
+            "executedOn": "2021-10-13T04:20:58.171Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Switch To Frame",
+            "element": "quotes.edit.iframe",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "quotes.edit.iframe",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "tdId": 1,
+            "duration": 1063000000,
+            "executedOn": "2021-10-13T04:20:59.234Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Present",
+            "element": "quotes.edit.laborBilling.select",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "quotes.edit.laborBilling.select",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "tdId": 1,
+            "duration": 4341000000,
+            "executedOn": "2021-10-13T04:21:03.575Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Select",
+            "element": "quotes.edit.laborBilling.select",
+            "eArray": [
+                [
+                    "quotes.edit.laborBilling.select",
+                    "key"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Labor Billing'])[1]/following::select[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Save'])[5]/following::select[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Markup (%)'])[1]/preceding::select[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='P&M Billing'])[1]/preceding::select[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=//sb-select[@id='picklist']/select",
+                    "xpath:idRelative"
+                ],
+                [
+                    "xpath=//span/div/sb-select/select",
+                    "xpath:position"
+                ],
+                [
+                    "css=#picklist > select.myselect.style-scope.sb-select.--desktop",
+                    "css"
+                ]
+            ],
+            "input": "label=Billable",
+            "status": "NotRun",
+            "elementKey": "select.billable",
+            "elementDesc": "Selection for Billable",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "indexColumn": "",
+            "@@mycolor": null,
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 659000000,
+            "executedOn": "2021-10-13T04:21:04.234Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Select",
+            "element": "quotes.edit.pmBilling.select",
+            "eArray": [
+                [
+                    "quotes.edit.pmBilling.select",
+                    "key"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='P&M Billing'])[1]/following::select[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Markup (%)'])[1]/following::select[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Travel Billing Cap (Hours)'])[1]/preceding::select[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Not to Exceed'])[1]/preceding::select[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=//div[2]/sb-group/div/div/sb-field-set-table-item/div/div[2]/sb-field/span/div/sb-select/select",
+                    "xpath:position"
+                ],
+                [
+                    "css=#secondColumn > #g > div.style-scope.sb-group > sb-field-set-table-item.--desktop.style-scope.sb-group.x-scope.sb-field-set-table-item-0 > div.td.style-scope.sb-field-set-table-item.--desktop > #divField > #field > span.style-scope.sb-field.--desktop > #f > #picklist > select.myselect.style-scope.sb-select.--desktop",
+                    "css"
+                ]
+            ],
+            "input": "label=Billable",
+            "status": "NotRun",
+            "elementKey": "select.billable",
+            "elementDesc": "Selection for Billable",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "indexColumn": "",
+            "@@mycolor": null,
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 636000000,
+            "executedOn": "2021-10-13T04:21:04.870Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Click",
+            "element": "quotes.edit.addProducts.button",
+            "eArray": [
+                [
+                    "quotes.edit.addProducts.button",
+                    "key"
+                ],
+                [
+                    "xpath=//paper-button[text()='Add Products']",
+                    "xpath:innerText"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Edit Quote'])[1]/following::paper-button[2]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Q-03740'])[1]/following::paper-button[2]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Add Favorites'])[1]/preceding::paper-button[2]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "id=mainButton",
+                    "id"
+                ],
+                [
+                    "xpath=//div[@id='actions']/sb-custom-action/paper-button",
+                    "xpath:idRelative"
+                ],
+                [
+                    "xpath=//sb-custom-action/paper-button",
+                    "xpath:position"
+                ],
+                [
+                    "css=#mainButton",
+                    "css"
+                ]
+            ],
+            "input": "",
+            "status": "NotRun",
+            "elementKey": "paper-button.mainbutton",
+            "elementDesc": "PAPER-BUTTON mainButton",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "indexColumn": "",
+            "@@mycolor": null,
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 6649000000,
+            "executedOn": "2021-10-13T04:21:11.519Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Present",
+            "element": "quotes.addProducts.paperDrawerPanel",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "quotes.addProducts.paperDrawerPanel",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "tdId": 1,
+            "duration": 560000000,
+            "executedOn": "2021-10-13T04:21:12.080Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Click",
+            "element": "quotes.addProducts.categoryRows.first",
+            "eArray": [
+                [
+                    "quotes.addProducts.categoryRows.first",
+                    "key"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='List Price'])[1]/following::sb-group[2]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Product Description'])[1]/following::sb-group[2]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Parts/Materials, General HArdware'])[1]/preceding::sb-group[2]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "id=row",
+                    "id"
+                ],
+                [
+                    "xpath=//div[@id='rowDiv']/sb-group",
+                    "xpath:idRelative"
+                ],
+                [
+                    "xpath=//div[2]/sb-group",
+                    "xpath:position"
+                ],
+                [
+                    "css=#row",
+                    "css"
+                ]
+            ],
+            "input": "",
+            "status": "NotRun",
+            "elementKey": "sb-group.row",
+            "elementDesc": "SB-GROUP row",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "indexColumn": "",
+            "@@mycolor": null,
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 6692000000,
+            "executedOn": "2021-10-13T04:21:18.772Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Click",
+            "element": "quotes.addProducts.rows.second.checkbox",
+            "eArray": [
+                [
+                    "quotes.addProducts.rows.second.checkbox",
+                    "key"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Consumables, General'])[1]/following::div[18]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='List Price'])[1]/following::div[36]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)=concat('Aluminum Compression Sleeve, Wire Size: 350 MCM, Wire Diameter: .682', '\"', '')])[1]/preceding::div[11]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Consumables'])[1]/preceding::div[14]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=//sb-table-row[2]/sb-swipe-container/div/div/sb-group/div/div/sb-table-cell-select/div/paper-checkbox/div",
+                    "xpath:position"
+                ]
+            ],
+            "input": "",
+            "status": "NotRun",
+            "elementKey": "div.checkboxcontainer",
+            "elementDesc": "Text checkboxContainer",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "indexColumn": "",
+            "@@mycolor": null,
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 7755000000,
+            "executedOn": "2021-10-13T04:21:26.527Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Click",
+            "element": "quotes.addProducts.rows.third.checkbox",
+            "eArray": [
+                [
+                    "quotes.addProducts.rows.third.checkbox",
+                    "key"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='$15.40'])[1]/following::div[6]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Consumables'])[1]/following::div[12]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Heat Shrink, Heavy Wall, Cross-Linked Polyolefin Tubing, 1 kV'])[1]/preceding::div[11]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Consumables'])[2]/preceding::div[14]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=//sb-table-row[3]/sb-swipe-container/div/div/sb-group/div/div/sb-table-cell-select/div/paper-checkbox/div",
+                    "xpath:position"
+                ]
+            ],
+            "input": "",
+            "status": "NotRun",
+            "elementKey": "div.checkboxcontainer",
+            "elementDesc": "Text checkboxContainer",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "indexColumn": "",
+            "@@mycolor": null,
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 7600000000,
+            "executedOn": "2021-10-13T04:21:34.127Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Click",
+            "element": "quotes.addProducts.select.button",
+            "eArray": [
+                [
+                    "quotes.addProducts.select.button",
+                    "key"
+                ],
+                [
+                    "xpath=//sb-i18n[text()='Select']",
+                    "xpath:innerText"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Favorites'])[1]/following::sb-i18n[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Filter'])[1]/following::sb-i18n[2]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Select & Add More'])[1]/preceding::sb-i18n[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Cancel'])[3]/preceding::sb-i18n[2]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=//paper-button[@id='plSelect']/sb-i18n",
+                    "xpath:idRelative"
+                ],
+                [
+                    "xpath=//div/paper-button/sb-i18n",
+                    "xpath:position"
+                ],
+                [
+                    "css=#plSelect > sb-i18n.style-scope.sb-product-lookup",
+                    "css"
+                ]
+            ],
+            "input": "",
+            "status": "NotRun",
+            "elementKey": "sb-i18n.select",
+            "elementDesc": "SB-I18N select",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "indexColumn": "",
+            "@@mycolor": null,
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 6615000000,
+            "executedOn": "2021-10-13T04:21:40.742Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Assert Present",
+            "element": "quotes.edit.save.button",
+            "eArray": [
+                [
+                    "quotes.edit.save.button",
+                    "key"
+                ],
+                [
+                    "xpath=//paper-button[text()='Save']",
+                    "xpath"
+                ],
+                [
+                    "xpath=//div[text()='0048128']",
+                    "xpath:innerText"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Net Total'])[1]/following::div[7]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Net Unit Price'])[1]/following::div[8]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)=concat('Aluminum Compression Sleeve, Wire Size: 350 MCM, Wire Diameter: .682', '\"', '')])[1]/preceding::div[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='$15.40'])[1]/preceding::div[15]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=//sf-le-table-row/div/div/div[2]/div",
+                    "xpath:position"
+                ],
+                [
+                    "css=div.r.style-scope.sf-le-table-row",
+                    "css"
+                ]
+            ],
+            "input": "",
+            "status": "NotRun",
+            "elementKey": "div.0048128",
+            "elementDesc": "Text 0048128",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "indexColumn": "",
+            "@@mycolor": null,
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 1910000000,
+            "executedOn": "2021-10-13T04:21:42.652Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "quotes.edit.products.row.1",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "quotes.edit.products.row.1",
+                    "key"
+                ],
+                [
+                    "xpath=(//sf-standard-table//sf-le-table-row)[1]//div[@id='content']",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "tdId": 1,
+            "duration": 6632000000,
+            "executedOn": "2021-10-13T04:21:49.285Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Click",
+            "element": "quotes.edit.products.row.1.costCode.edit.button",
+            "eArray": [
+                [
+                    "quotes.edit.products.row.1.costCode.edit.button",
+                    "key"
+                ],
+                [
+                    "xpath=(//sf-standard-table//sf-le-table-row)[1]//div[contains(@field, 'Cost_Code')]//span[contains(@class, 'pencil')]",
+                    "xpath"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)=concat('Aluminum Compression Sleeve, Wire Size: 350 MCM, Wire Diameter: .682', '\"', '')])[1]/following::span[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Net Total'])[1]/following::span[3]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='$15.40'])[1]/preceding::span[6]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='$15.40'])[2]/preceding::span[6]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=//div[@id='content']/div/div[4]/div/span",
+                    "xpath:idRelative"
+                ],
+                [
+                    "xpath=//div[4]/div/span",
+                    "xpath:position"
+                ],
+                [
+                    "css=span.pencil.style-scope.sf-le-table-row",
+                    "css"
+                ]
+            ],
+            "input": "",
+            "status": "NotRun",
+            "elementKey": "span.pencilstyle-scopesf-le-table-row",
+            "elementDesc": "Text pencilstyle-scopesf-le-table-row",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "@@mycolor": null,
+            "indexColumn": "",
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 6649000000,
+            "executedOn": "2021-10-13T04:21:55.934Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Select",
+            "element": "quotes.edit.products.row.1.costCode.select",
+            "eArray": [
+                [
+                    "quotes.edit.products.row.1.costCode.select",
+                    "key"
+                ],
+                [
+                    "xpath=(//sf-standard-table//sf-le-table-row)[1]//div[contains(@field, 'Cost_Code')]//select",
+                    "xpath"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)=concat('Aluminum Compression Sleeve, Wire Size: 350 MCM, Wire Diameter: .682', '\"', '')])[1]/following::select[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Net Total'])[1]/following::select[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='$15.40'])[1]/preceding::select[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='$15.40'])[2]/preceding::select[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=//div[2]/div/sb-select/select",
+                    "xpath:position"
+                ],
+                [
+                    "css=select.myselect.style-scope.sb-select.--desktop.style-scope.sf-le-table-row",
+                    "css"
+                ]
+            ],
+            "input": "label=Parts - CM",
+            "status": "NotRun",
+            "elementKey": "select.parts - cm",
+            "elementDesc": "Selection for Parts - CM",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "@@mycolor": null,
+            "indexColumn": "",
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 748000000,
+            "executedOn": "2021-10-13T04:21:56.682Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "quotes.edit.products.row.2",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "quotes.edit.products.row.2",
+                    "key"
+                ],
+                [
+                    "xpath=(//sf-standard-table//sf-le-table-row)[2]//div[@id='content']",
+                    "xpath"
+                ],
+                [
+                    "xpath=(//sf-standard-table//sf-le-table-row)[1]//div[@id='content']",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "tdId": 1,
+            "duration": 6614000000,
+            "executedOn": "2021-10-13T04:22:03.296Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Click",
+            "element": "quotes.edit.products.row.2.costCode.edit.button",
+            "eArray": [
+                [
+                    "quotes.edit.products.row.2.costCode.edit.button",
+                    "key"
+                ],
+                [
+                    "xpath=(//sf-standard-table//sf-le-table-row)[2]//div[contains(@field, 'Cost_Code')]//span[contains(@class, 'pencil')]",
+                    "xpath"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Heat Shrink, Heavy Wall, Cross-Linked Polyolefin Tubing, 1 kV'])[1]/following::span[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='$15.40'])[4]/following::span[3]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='$52.14'])[1]/preceding::span[6]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='$52.14'])[2]/preceding::span[6]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=//sf-le-table-row[2]/div/div/div[4]/div/span",
+                    "xpath:position"
+                ]
+            ],
+            "input": "",
+            "status": "NotRun",
+            "elementKey": "span.pencilstyle-scopesf-le-table-row",
+            "elementDesc": "Text pencilstyle-scopesf-le-table-row",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "@@mycolor": null,
+            "indexColumn": "",
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 6623000000,
+            "executedOn": "2021-10-13T04:22:09.919Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Select",
+            "element": "quotes.edit.products.row.2.costCode.select",
+            "eArray": [
+                [
+                    "quotes.edit.products.row.2.costCode.select",
+                    "key"
+                ],
+                [
+                    "xpath=(//sf-standard-table//sf-le-table-row)[2]//div[contains(@field, 'Cost_Code')]//select",
+                    "xpath"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Heat Shrink, Heavy Wall, Cross-Linked Polyolefin Tubing, 1 kV'])[1]/following::select[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='$15.40'])[4]/following::select[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='$52.14'])[1]/preceding::select[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='$52.14'])[2]/preceding::select[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=//div[2]/div/sb-select/select",
+                    "xpath:position"
+                ],
+                [
+                    "css=select.myselect.style-scope.sb-select.--desktop.style-scope.sf-le-table-row",
+                    "css"
+                ]
+            ],
+            "input": "label=Parts - CM",
+            "status": "NotRun",
+            "elementKey": "select.parts - cm",
+            "elementDesc": "Selection for Parts - CM",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "@@mycolor": null,
+            "indexColumn": "",
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 725000000,
+            "executedOn": "2021-10-13T04:22:10.644Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "quotes.edit.products.row.1",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "quotes.edit.products.row.1",
+                    "key"
+                ],
+                [
+                    "xpath=(//sf-standard-table//sf-le-table-row)[1]//div[@id='content']",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "tdId": 1,
+            "duration": 6601000000,
+            "executedOn": "2021-10-13T04:22:17.245Z",
+            "errMessage": "",
+            "isRowExpanded": false,
+            "@@mycolor": null
+        },
+        {
+            "command": "Click",
+            "element": "quotes.edit.products.row.1.notes.edit.button",
+            "eArray": [
+                [
+                    "quotes.edit.products.row.1.notes.edit.button",
+                    "key"
+                ],
+                [
+                    "xpath=(//sf-standard-table//sf-le-table-row)[1]//div[contains(@field, 'Item_Notes')]//span[contains(@class, 'pencil')]",
+                    "xpath"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Parts - CM'])[1]/following::span[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)=concat('Aluminum Compression Sleeve, Wire Size: 350 MCM, Wire Diameter: .682', '\"', '')])[1]/following::span[2]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='$15.40'])[1]/preceding::span[5]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='$15.40'])[2]/preceding::span[5]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=//div[@id='content']/div/div[5]/div/span",
+                    "xpath:idRelative"
+                ],
+                [
+                    "xpath=//div[5]/div/span",
+                    "xpath:position"
+                ]
+            ],
+            "input": "",
+            "status": "NotRun",
+            "elementKey": "span.pencilstyle-scopesf-le-table-row",
+            "elementDesc": "Text pencilstyle-scopesf-le-table-row",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "@@mycolor": null,
+            "indexColumn": "",
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 6627000000,
+            "executedOn": "2021-10-13T04:22:23.872Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Clear",
+            "element": "quotes.edit.products.row.1.notes.textarea",
+            "eArray": [
+                [
+                    "quotes.edit.products.row.1.notes.textarea",
+                    "key"
+                ],
+                [
+                    "xpath=(//sf-standard-table//sf-le-table-row)[1]//div[contains(@field, 'Item_Notes')]//textarea",
+                    "xpath"
+                ],
+                [
+                    "xpath=(//sf-standard-table//sf-le-table-row)[1]//div[contains(@field, 'Item_Notes')]//span[contains(@class, 'pencil')]",
+                    "xpath"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Parts - CM'])[1]/following::textarea[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)=concat('Aluminum Compression Sleeve, Wire Size: 350 MCM, Wire Diameter: .682', '\"', '')])[1]/following::textarea[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='$15.40'])[1]/preceding::textarea[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='$15.40'])[2]/preceding::textarea[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "id=textarea",
+                    "id"
+                ],
+                [
+                    "xpath=//div[@id='content']/div/div[5]/div[2]/div/sb-textarea/textarea",
+                    "xpath:idRelative"
+                ],
+                [
+                    "xpath=//textarea",
+                    "xpath:position"
+                ],
+                [
+                    "css=#textarea",
+                    "css"
+                ]
+            ],
+            "input": "",
+            "status": "NotRun",
+            "elementKey": "textarea.textarea",
+            "elementDesc": "TEXTAREA textarea",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "@@mycolor": null,
+            "indexColumn": "",
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 590000000,
+            "executedOn": "2021-10-13T04:22:24.462Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Type",
+            "element": "quotes.edit.products.row.1.notes.textarea",
+            "eArray": [
+                [
+                    "quotes.edit.products.row.1.notes.textarea",
+                    "key"
+                ],
+                [
+                    "xpath=(//sf-standard-table//sf-le-table-row)[1]//div[contains(@field, 'Item_Notes')]//textarea",
+                    "xpath"
+                ],
+                [
+                    "xpath=(//sf-standard-table//sf-le-table-row)[1]//div[contains(@field, 'Item_Notes')]//span[contains(@class, 'pencil')]",
+                    "xpath"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Parts - CM'])[1]/following::textarea[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)=concat('Aluminum Compression Sleeve, Wire Size: 350 MCM, Wire Diameter: .682', '\"', '')])[1]/following::textarea[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='$15.40'])[1]/preceding::textarea[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='$15.40'])[2]/preceding::textarea[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "id=textarea",
+                    "id"
+                ],
+                [
+                    "xpath=//div[@id='content']/div/div[5]/div[2]/div/sb-textarea/textarea",
+                    "xpath:idRelative"
+                ],
+                [
+                    "xpath=//textarea",
+                    "xpath:position"
+                ],
+                [
+                    "css=#textarea",
+                    "css"
+                ]
+            ],
+            "input": "Notes 1",
+            "status": "NotRun",
+            "elementKey": "textarea.textarea",
+            "elementDesc": "TEXTAREA textarea",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "@@mycolor": null,
+            "indexColumn": "",
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 585000000,
+            "executedOn": "2021-10-13T04:22:25.047Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "quotes.edit.products.row.2",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "quotes.edit.products.row.2",
+                    "key"
+                ],
+                [
+                    "xpath=(//sf-standard-table//sf-le-table-row)[2]//div[@id='content']",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "tdId": 1,
+            "duration": 6621000000,
+            "executedOn": "2021-10-13T04:22:31.668Z",
+            "errMessage": "",
+            "isRowExpanded": false,
+            "@@mycolor": null
+        },
+        {
+            "command": "Click",
+            "element": "quotes.edit.products.row.2.notes.edit.button",
+            "eArray": [
+                [
+                    "quotes.edit.products.row.2.notes.edit.button",
+                    "key"
+                ],
+                [
+                    "xpath=(//sf-standard-table//sf-le-table-row)[2]//div[contains(@field, 'Item_Notes')]//span[contains(@class, 'pencil')]",
+                    "xpath"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Parts - CM'])[2]/following::span[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Heat Shrink, Heavy Wall, Cross-Linked Polyolefin Tubing, 1 kV'])[1]/following::span[2]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='$52.14'])[1]/preceding::span[5]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='$52.14'])[2]/preceding::span[5]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=//sf-le-table-row[2]/div/div/div[5]/div/span",
+                    "xpath:position"
+                ]
+            ],
+            "input": "",
+            "status": "NotRun",
+            "elementKey": "span.pencilstyle-scopesf-le-table-row",
+            "elementDesc": "Text pencilstyle-scopesf-le-table-row",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "@@mycolor": null,
+            "indexColumn": "",
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 6608000000,
+            "executedOn": "2021-10-13T04:22:38.277Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Clear",
+            "element": "quotes.edit.products.row.2.notes.textarea",
+            "eArray": [
+                [
+                    "quotes.edit.products.row.2.notes.textarea",
+                    "key"
+                ],
+                [
+                    "xpath=(//sf-standard-table//sf-le-table-row)[2]//div[contains(@field, 'Item_Notes')]//textarea",
+                    "xpath"
+                ],
+                [
+                    "xpath=(//sf-standard-table//sf-le-table-row)[2]//div[contains(@field, 'Item_Notes')]//span[contains(@class, 'pencil')]",
+                    "xpath"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Parts - CM'])[2]/following::textarea[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Heat Shrink, Heavy Wall, Cross-Linked Polyolefin Tubing, 1 kV'])[1]/following::textarea[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='$52.14'])[1]/preceding::textarea[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='$52.14'])[2]/preceding::textarea[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "id=textarea",
+                    "id"
+                ],
+                [
+                    "xpath=//div[@id='content']/div/div[5]/div[2]/div/sb-textarea/textarea",
+                    "xpath:idRelative"
+                ],
+                [
+                    "xpath=//textarea",
+                    "xpath:position"
+                ],
+                [
+                    "css=#textarea",
+                    "css"
+                ]
+            ],
+            "input": "",
+            "status": "NotRun",
+            "elementKey": "textarea.textarea",
+            "elementDesc": "TEXTAREA textarea",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "@@mycolor": null,
+            "indexColumn": "",
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 564000000,
+            "executedOn": "2021-10-13T04:22:38.841Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Type",
+            "element": "quotes.edit.products.row.2.notes.textarea",
+            "eArray": [
+                [
+                    "quotes.edit.products.row.2.notes.textarea",
+                    "key"
+                ],
+                [
+                    "xpath=(//sf-standard-table//sf-le-table-row)[2]//div[contains(@field, 'Item_Notes')]//textarea",
+                    "xpath"
+                ],
+                [
+                    "xpath=(//sf-standard-table//sf-le-table-row)[2]//div[contains(@field, 'Item_Notes')]//span[contains(@class, 'pencil')]",
+                    "xpath"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Parts - CM'])[2]/following::textarea[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Heat Shrink, Heavy Wall, Cross-Linked Polyolefin Tubing, 1 kV'])[1]/following::textarea[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='$52.14'])[1]/preceding::textarea[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='$52.14'])[2]/preceding::textarea[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "id=textarea",
+                    "id"
+                ],
+                [
+                    "xpath=//div[@id='content']/div/div[5]/div[2]/div/sb-textarea/textarea",
+                    "xpath:idRelative"
+                ],
+                [
+                    "xpath=//textarea",
+                    "xpath:position"
+                ],
+                [
+                    "css=#textarea",
+                    "css"
+                ]
+            ],
+            "input": "Notes 2",
+            "status": "NotRun",
+            "elementKey": "textarea.textarea",
+            "elementDesc": "TEXTAREA textarea",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "@@mycolor": null,
+            "indexColumn": "",
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 556000000,
+            "executedOn": "2021-10-13T04:22:39.397Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Click",
+            "element": "quotes.edit.products.row.1.vendor.edit.button",
+            "eArray": [
+                [
+                    "quotes.edit.products.row.1.vendor.edit.button",
+                    "key"
+                ],
+                [
+                    "xpath=(//sf-standard-table//sf-le-table-row)[1]//div[contains(@field, 'Vendor__c')]//span[contains(@class, 'pencil')]",
+                    "xpath"
+                ],
+                [
+                    "(//sf-standard-table//sf-le-table-row)[1]//div[contains(@field, 'Vendor__c')]//span[contains(@class, 'pencil')]",
+                    "key"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Notes 1'])[1]/following::span[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Parts - CM'])[1]/following::span[2]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='$15.40'])[1]/preceding::span[4]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='$15.40'])[2]/preceding::span[4]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=//div[@id='content']/div/div[6]/div/span",
+                    "xpath:idRelative"
+                ],
+                [
+                    "xpath=//div[6]/div/span",
+                    "xpath:position"
+                ]
+            ],
+            "input": "",
+            "status": "NotRun",
+            "elementKey": "span.pencilstyle-scopesf-le-table-row",
+            "elementDesc": "Text pencilstyle-scopesf-le-table-row",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "@@mycolor": null,
+            "indexColumn": "",
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 6647000000,
+            "executedOn": "2021-10-13T04:22:46.044Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Clear",
+            "element": "quotes.edit.products.row.1.vendor.input",
+            "eArray": [
+                [
+                    "quotes.edit.products.row.1.vendor.input",
+                    "key"
+                ],
+                [
+                    "xpath=(//sf-standard-table//sf-le-table-row)[1]//div[contains(@field, 'Vendor__c')]//input[@type='text']",
+                    "xpath"
+                ],
+                [
+                    "xpath=//*[@placeholder='Search Accounts']",
+                    "xpath:placeholder"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Notes 1'])[1]/following::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Parts - CM'])[1]/following::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)=concat('', '\"', 'Amazon.com for pu', '\"', ' in Accounts')])[1]/preceding::input[2]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Amazon.com for Purchasing'])[1]/preceding::input[2]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=//sb-lookup/sb-typeahead/span/input",
+                    "xpath:position"
+                ],
+                [
+                    "css=span.style-scope.sb-typeahead.--desktop.style-scope.sf-le-table-row > #itemLabel",
+                    "css"
+                ]
+            ],
+            "input": "",
+            "status": "NotRun",
+            "elementKey": "text.itemlabel",
+            "elementDesc": "Input for itemLabel",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "@@mycolor": null,
+            "indexColumn": "",
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 589000000,
+            "executedOn": "2021-10-13T04:22:46.633Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Type",
+            "element": "quotes.edit.products.row.1.vendor.input",
+            "eArray": [
+                [
+                    "quotes.edit.products.row.1.vendor.input",
+                    "key"
+                ],
+                [
+                    "xpath=(//sf-standard-table//sf-le-table-row)[1]//div[contains(@field, 'Vendor__c')]//input[@type='text']",
+                    "xpath"
+                ],
+                [
+                    "xpath=//*[@placeholder='Search Accounts']",
+                    "xpath:placeholder"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Notes 1'])[1]/following::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Parts - CM'])[1]/following::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)=concat('', '\"', 'Amazon.com for pu', '\"', ' in Accounts')])[1]/preceding::input[2]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Amazon.com for Purchasing'])[1]/preceding::input[2]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=//sb-lookup/sb-typeahead/span/input",
+                    "xpath:position"
+                ],
+                [
+                    "css=span.style-scope.sb-typeahead.--desktop.style-scope.sf-le-table-row > #itemLabel",
+                    "css"
+                ]
+            ],
+            "input": "Amazon.com for purchasing",
+            "status": "NotRun",
+            "elementKey": "text.itemlabel",
+            "elementDesc": "Input for itemLabel",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "@@mycolor": null,
+            "indexColumn": "",
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 580000000,
+            "executedOn": "2021-10-13T04:22:47.213Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Present",
+            "element": "quotes.edit.products.row.1.vendor.option.2",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "quotes.edit.products.row.1.vendor.option.2",
+                    "key"
+                ],
+                [
+                    "xpath=((//sf-standard-table//sf-le-table-row)[1]//div[contains(@field, 'Vendor__c')]//div[contains(@class,'option')])[2]",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "tdId": 1,
+            "duration": 544000000,
+            "executedOn": "2021-10-13T04:22:47.757Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Click",
+            "element": "quotes.edit.products.row.1.vendor.option.2",
+            "eArray": [
+                [
+                    "quotes.edit.products.row.1.vendor.option.2",
+                    "key"
+                ],
+                [
+                    "xpath=((//sf-standard-table//sf-le-table-row)[1]//div[contains(@field, 'Vendor__c')]//div[contains(@class,'option')])[2]",
+                    "xpath"
+                ],
+                [
+                    "xpath=//div[text()='Amazon.com for Purchasing']",
+                    "xpath:innerText"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)=concat('', '\"', 'Amazon.com for pu', '\"', ' in Accounts')])[1]/following::div[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Notes 1'])[1]/following::div[7]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Amazon.com for pu'])[1]/preceding::div[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=//div[@id='selector']/div[2]",
+                    "xpath:idRelative"
+                ],
+                [
+                    "xpath=//span/div/div[2]",
+                    "xpath:position"
+                ]
+            ],
+            "input": "",
+            "status": "NotRun",
+            "elementKey": "div.amazon.comforpurchasing",
+            "elementDesc": "Text amazon.comforpurchasing",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "@@mycolor": null,
+            "indexColumn": "",
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 6618000000,
+            "executedOn": "2021-10-13T04:22:54.375Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Click",
+            "element": "quotes.edit.products.row.2.vendor.edit.button",
+            "eArray": [
+                [
+                    "quotes.edit.products.row.2.vendor.edit.button",
+                    "key"
+                ],
+                [
+                    "xpath=(//sf-standard-table//sf-le-table-row)[2]//div[contains(@field, 'Vendor__c')]//span[contains(@class, 'pencil')]",
+                    "xpath"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Notes 2'])[1]/following::span[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Parts - CM'])[2]/following::span[2]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='$52.14'])[1]/preceding::span[4]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='$52.14'])[2]/preceding::span[4]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=//sf-le-table-row[2]/div/div/div[6]/div/span",
+                    "xpath:position"
+                ]
+            ],
+            "input": "",
+            "status": "NotRun",
+            "elementKey": "span.pencilstyle-scopesf-le-table-row",
+            "elementDesc": "Text pencilstyle-scopesf-le-table-row",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "@@mycolor": null,
+            "indexColumn": "",
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 6625000000,
+            "executedOn": "2021-10-13T04:23:01.000Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Clear",
+            "element": "quotes.edit.products.row.2.vendor.input",
+            "eArray": [
+                [
+                    "quotes.edit.products.row.2.vendor.input",
+                    "key"
+                ],
+                [
+                    "xpath=(//sf-standard-table//sf-le-table-row)[2]//div[contains(@field, 'Vendor__c')]//input[@type='text']",
+                    "xpath"
+                ],
+                [
+                    "xpath=//*[@placeholder='Search Accounts']",
+                    "xpath:placeholder"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Notes 2'])[1]/following::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Parts - CM'])[2]/following::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)=concat('', '\"', 'Amazon.com for purchasing', '\"', ' in Accounts')])[1]/preceding::input[2]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Amazon.com for Purchasing'])[2]/preceding::input[2]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=//sb-lookup/sb-typeahead/span/input",
+                    "xpath:position"
+                ],
+                [
+                    "css=span.style-scope.sb-typeahead.--desktop.style-scope.sf-le-table-row > #itemLabel",
+                    "css"
+                ]
+            ],
+            "input": "",
+            "status": "NotRun",
+            "elementKey": "text.itemlabel",
+            "elementDesc": "Input for itemLabel",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "@@mycolor": null,
+            "indexColumn": "",
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 575000000,
+            "executedOn": "2021-10-13T04:23:01.575Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Type",
+            "element": "quotes.edit.products.row.2.vendor.input",
+            "eArray": [
+                [
+                    "quotes.edit.products.row.2.vendor.input",
+                    "key"
+                ],
+                [
+                    "xpath=(//sf-standard-table//sf-le-table-row)[2]//div[contains(@field, 'Vendor__c')]//input[@type='text']",
+                    "xpath"
+                ],
+                [
+                    "xpath=//*[@placeholder='Search Accounts']",
+                    "xpath:placeholder"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Notes 2'])[1]/following::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Parts - CM'])[2]/following::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)=concat('', '\"', 'Amazon.com for purchasing', '\"', ' in Accounts')])[1]/preceding::input[2]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Amazon.com for Purchasing'])[2]/preceding::input[2]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=//sb-lookup/sb-typeahead/span/input",
+                    "xpath:position"
+                ],
+                [
+                    "css=span.style-scope.sb-typeahead.--desktop.style-scope.sf-le-table-row > #itemLabel",
+                    "css"
+                ]
+            ],
+            "input": "Amazon.com for purchasing",
+            "status": "NotRun",
+            "elementKey": "text.itemlabel",
+            "elementDesc": "Input for itemLabel",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "@@mycolor": null,
+            "indexColumn": "",
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 587000000,
+            "executedOn": "2021-10-13T04:23:02.162Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Present",
+            "element": "quotes.edit.products.row.2.vendor.option.2",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "quotes.edit.products.row.2.vendor.option.2",
+                    "key"
+                ],
+                [
+                    "xpath=((//sf-standard-table//sf-le-table-row)[2]//div[contains(@field, 'Vendor__c')]//div[contains(@class,'option')])[2]",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "tdId": 1,
+            "duration": 552000000,
+            "executedOn": "2021-10-13T04:23:02.714Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "quotes.edit.products.row.2.vendor.option.2",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "quotes.edit.products.row.2.vendor.option.2",
+                    "key"
+                ],
+                [
+                    "xpath=((//sf-standard-table//sf-le-table-row)[2]//div[contains(@field, 'Vendor__c')]//div[contains(@class,'option')])[2]",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "tdId": 1,
+            "duration": 6644000000,
+            "executedOn": "2021-10-13T04:23:09.358Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Click",
+            "element": "quotes.edit.products.row.1.vendorContact.edit.button",
+            "eArray": [
+                [
+                    "quotes.edit.products.row.1.vendorContact.edit.button",
+                    "key"
+                ],
+                [
+                    "xpath=(//sf-standard-table//sf-le-table-row)[1]//div[contains(@field, 'Vendor_Contact')]//span[contains(@class, 'pencil')]",
+                    "xpath"
+                ],
+                [
+                    "xpath=//*[@placeholder='Search Contacts']",
+                    "xpath:placeholder"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Amazon.com for Purchasing'])[1]/following::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Notes 1'])[1]/following::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)=concat('', '\"', 'null null', '\"', ' in Contacts')])[1]/preceding::input[2]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Null Null'])[1]/preceding::input[2]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=//sb-lookup/sb-typeahead/span/input",
+                    "xpath:position"
+                ],
+                [
+                    "css=span.style-scope.sb-typeahead.--desktop.style-scope.sf-le-table-row > #itemLabel",
+                    "css"
+                ]
+            ],
+            "input": "",
+            "status": "NotRun",
+            "elementKey": "text.itemlabel",
+            "elementDesc": "Input for itemLabel",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "@@mycolor": null,
+            "indexColumn": "",
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 21607000000,
+            "executedOn": "2021-10-13T04:23:30.965Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Clear",
+            "element": "quotes.edit.products.row.1.vendorContact.input",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "quotes.edit.products.row.1.vendorContact.input",
+                    "key"
+                ],
+                [
+                    "xpath=(//sf-standard-table//sf-le-table-row)[1]//div[contains(@field, 'Vendor_Contact')]//input[@type='text']",
+                    "xpath"
+                ],
+                [
+                    "xpath=",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "tdId": 1,
+            "duration": 571000000,
+            "executedOn": "2021-10-13T04:23:31.536Z",
+            "errMessage": "",
+            "isRowExpanded": false,
+            "@@mycolor": null
+        },
+        {
+            "command": "Type",
+            "element": "quotes.edit.products.row.1.vendorContact.input",
+            "eArray": [
+                [
+                    "quotes.edit.products.row.1.vendorContact.input",
+                    "key"
+                ],
+                [
+                    "xpath=(//sf-standard-table//sf-le-table-row)[1]//div[contains(@field, 'Vendor_Contact')]//input[@type='text']",
+                    "xpath"
+                ],
+                [
+                    "xpath=//*[@placeholder='Search Contacts']",
+                    "xpath:placeholder"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Amazon.com for Purchasing'])[1]/following::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Notes 1'])[1]/following::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)=concat('', '\"', 'null null', '\"', ' in Contacts')])[1]/preceding::input[2]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Null Null'])[1]/preceding::input[2]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=//sb-lookup/sb-typeahead/span/input",
+                    "xpath:position"
+                ],
+                [
+                    "css=span.style-scope.sb-typeahead.--desktop.style-scope.sf-le-table-row > #itemLabel",
+                    "css"
+                ]
+            ],
+            "input": "null null",
+            "status": "NotRun",
+            "elementKey": "text.itemlabel",
+            "elementDesc": "Input for itemLabel",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "@@mycolor": null,
+            "indexColumn": "",
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 591000000,
+            "executedOn": "2021-10-13T04:23:32.127Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Present",
+            "element": "quotes.edit.products.row.1.vendorContact.option.2",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "quotes.edit.products.row.1.vendorContact.option.2",
+                    "key"
+                ],
+                [
+                    "xpath=((//sf-standard-table//sf-le-table-row)[1]//div[contains(@field, 'Vendor_Contact')]//div[contains(@class,'option')])[2]",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "tdId": 1,
+            "duration": 797000000,
+            "executedOn": "2021-10-13T04:23:32.924Z",
+            "errMessage": "",
+            "isRowExpanded": false,
+            "@@mycolor": null
+        },
+        {
+            "command": "Click",
+            "element": "quotes.edit.products.row.1.vendorContact.option.2",
+            "eArray": [
+                [
+                    "quotes.edit.products.row.1.vendorContact.option.2",
+                    "key"
+                ],
+                [
+                    "xpath=((//sf-standard-table//sf-le-table-row)[1]//div[contains(@field, 'Vendor_Contact')]//div[contains(@class,'option')])[2]",
+                    "xpath"
+                ],
+                [
+                    "xpath=//div[text()='Null Null']",
+                    "xpath:innerText"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)=concat('', '\"', 'null null', '\"', ' in Contacts')])[1]/following::div[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Amazon.com for Purchasing'])[1]/following::div[7]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='null null'])[1]/preceding::div[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=//div[@id='selector']/div[2]",
+                    "xpath:idRelative"
+                ],
+                [
+                    "xpath=//span/div/div[2]",
+                    "xpath:position"
+                ],
+                [
+                    "css=div.option.style-scope.sb-typeahead.style-scope.sf-le-table-row",
+                    "css"
+                ]
+            ],
+            "input": "",
+            "status": "NotRun",
+            "elementKey": "div.nullnull",
+            "elementDesc": "Text nullnull",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "@@mycolor": null,
+            "indexColumn": "",
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 6614000000,
+            "executedOn": "2021-10-13T04:23:39.538Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Click",
+            "element": "quotes.edit.products.row.2.vendorContact.edit.button",
+            "eArray": [
+                [
+                    "quotes.edit.products.row.2.vendorContact.edit.button",
+                    "key"
+                ],
+                [
+                    "xpath=(//sf-standard-table//sf-le-table-row)[2]//div[contains(@field, 'Vendor_Contact')]//span[contains(@class, 'pencil')]",
+                    "xpath"
+                ],
+                [
+                    "xpath=(//sf-standard-table//sf-le-table-row)[1]//div[contains(@field, 'Vendor_Contact')]//span[contains(@class, 'pencil')]",
+                    "xpath"
+                ],
+                [
+                    "xpath=//*[@placeholder='Search Contacts']",
+                    "xpath:placeholder"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Amazon.com for Purchasing'])[1]/following::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Notes 1'])[1]/following::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)=concat('', '\"', 'null null', '\"', ' in Contacts')])[1]/preceding::input[2]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Null Null'])[1]/preceding::input[2]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=//sb-lookup/sb-typeahead/span/input",
+                    "xpath:position"
+                ],
+                [
+                    "css=span.style-scope.sb-typeahead.--desktop.style-scope.sf-le-table-row > #itemLabel",
+                    "css"
+                ]
+            ],
+            "input": "",
+            "status": "NotRun",
+            "elementKey": "text.itemlabel",
+            "elementDesc": "Input for itemLabel",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "@@mycolor": null,
+            "indexColumn": "",
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 6624000000,
+            "executedOn": "2021-10-13T04:23:46.162Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Clear",
+            "element": "quotes.edit.products.row.2.vendorContact.input",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "quotes.edit.products.row.2.vendorContact.input",
+                    "key"
+                ],
+                [
+                    "xpath=(//sf-standard-table//sf-le-table-row)[2]//div[contains(@field, 'Vendor_Contact')]//input[@type='text']",
+                    "xpath"
+                ],
+                [
+                    "xpath=(//sf-standard-table//sf-le-table-row)[1]//div[contains(@field, 'Vendor_Contact')]//input[@type='text']",
+                    "xpath"
+                ],
+                [
+                    "xpath=",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "tdId": 1,
+            "duration": 568000000,
+            "executedOn": "2021-10-13T04:23:46.730Z",
+            "errMessage": "",
+            "isRowExpanded": false,
+            "@@mycolor": null
+        },
+        {
+            "command": "Type",
+            "element": "quotes.edit.products.row.2.vendorContact.input",
+            "eArray": [
+                [
+                    "quotes.edit.products.row.2.vendorContact.input",
+                    "key"
+                ],
+                [
+                    "xpath=(//sf-standard-table//sf-le-table-row)[2]//div[contains(@field, 'Vendor_Contact')]//input[@type='text']",
+                    "xpath"
+                ],
+                [
+                    "xpath=(//sf-standard-table//sf-le-table-row)[1]//div[contains(@field, 'Vendor_Contact')]//input[@type='text']",
+                    "xpath"
+                ],
+                [
+                    "xpath=//*[@placeholder='Search Contacts']",
+                    "xpath:placeholder"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Amazon.com for Purchasing'])[1]/following::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Notes 1'])[1]/following::input[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)=concat('', '\"', 'null null', '\"', ' in Contacts')])[1]/preceding::input[2]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Null Null'])[1]/preceding::input[2]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=//sb-lookup/sb-typeahead/span/input",
+                    "xpath:position"
+                ],
+                [
+                    "css=span.style-scope.sb-typeahead.--desktop.style-scope.sf-le-table-row > #itemLabel",
+                    "css"
+                ]
+            ],
+            "input": "null null",
+            "status": "NotRun",
+            "elementKey": "text.itemlabel",
+            "elementDesc": "Input for itemLabel",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "@@mycolor": null,
+            "indexColumn": "",
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 579000000,
+            "executedOn": "2021-10-13T04:23:47.309Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Present",
+            "element": "quotes.edit.products.row.2.vendorContact.option.2",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "quotes.edit.products.row.2.vendorContact.option.2",
+                    "key"
+                ],
+                [
+                    "xpath=((//sf-standard-table//sf-le-table-row)[2]//div[contains(@field, 'Vendor_Contact')]//div[contains(@class,'option')])[2]",
+                    "xpath"
+                ],
+                [
+                    "xpath=((//sf-standard-table//sf-le-table-row)[1]//div[contains(@field, 'Vendor_Contact')]//div[contains(@class,'option')])[2]",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "tdId": 1,
+            "duration": 784000000,
+            "executedOn": "2021-10-13T04:23:48.093Z",
+            "errMessage": "",
+            "isRowExpanded": false,
+            "@@mycolor": null
+        },
+        {
+            "command": "Click",
+            "element": "quotes.edit.products.row.2.vendorContact.option.2",
+            "eArray": [
+                [
+                    "quotes.edit.products.row.2.vendorContact.option.2",
+                    "key"
+                ],
+                [
+                    "xpath=((//sf-standard-table//sf-le-table-row)[2]//div[contains(@field, 'Vendor_Contact')]//div[contains(@class,'option')])[2]",
+                    "xpath"
+                ],
+                [
+                    "xpath=((//sf-standard-table//sf-le-table-row)[1]//div[contains(@field, 'Vendor_Contact')]//div[contains(@class,'option')])[2]",
+                    "xpath"
+                ],
+                [
+                    "xpath=//div[text()='Null Null']",
+                    "xpath:innerText"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)=concat('', '\"', 'null null', '\"', ' in Contacts')])[1]/following::div[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Amazon.com for Purchasing'])[1]/following::div[7]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='null null'])[1]/preceding::div[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=//div[@id='selector']/div[2]",
+                    "xpath:idRelative"
+                ],
+                [
+                    "xpath=//span/div/div[2]",
+                    "xpath:position"
+                ],
+                [
+                    "css=div.option.style-scope.sb-typeahead.style-scope.sf-le-table-row",
+                    "css"
+                ]
+            ],
+            "input": "",
+            "status": "NotRun",
+            "elementKey": "div.nullnull",
+            "elementDesc": "Text nullnull",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "@@mycolor": null,
+            "indexColumn": "",
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 6637000000,
+            "executedOn": "2021-10-13T04:23:54.730Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Assert Present",
+            "element": "quotes.edit.save.button",
+            "eArray": [
+                [
+                    "quotes.edit.save.button",
+                    "key"
+                ],
+                [
+                    "xpath=//paper-button[text()='Save']",
+                    "xpath"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)=concat('', '\"', 'null null', '\"', ' in Contacts')])[1]/following::div[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Amazon.com for Purchasing'])[2]/following::div[7]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='null null'])[1]/preceding::div[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=//div[@id='selector']/div[2]",
+                    "xpath:idRelative"
+                ],
+                [
+                    "xpath=//span/div/div[2]",
+                    "xpath:position"
+                ],
+                [
+                    "css=div.option.style-scope.sb-typeahead.style-scope.sf-le-table-row",
+                    "css"
+                ]
+            ],
+            "input": "",
+            "status": "NotRun",
+            "elementKey": "div.nullnull",
+            "elementDesc": "Text nullnull",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "@@mycolor": null,
+            "indexColumn": "",
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 539000000,
+            "executedOn": "2021-10-13T04:23:55.269Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Click",
+            "element": "quotes.edit.save.button",
+            "eArray": [
+                [
+                    "quotes.edit.save.button",
+                    "key"
+                ],
+                [
+                    "xpath=//paper-button[text()='Save']",
+                    "xpath"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='$67.54'])[1]/following::h3[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Subtotal'])[1]/following::h3[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=//div[@id='container']/h3",
+                    "xpath:idRelative"
+                ],
+                [
+                    "xpath=//h3",
+                    "xpath:position"
+                ],
+                [
+                    "css=h3.quoteTotal.style-scope.sb-le-footer",
+                    "css"
+                ]
+            ],
+            "input": "",
+            "status": "NotRun",
+            "elementKey": "h3.quotetotal67.54",
+            "elementDesc": "H3 quotetotal:$67.54",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "@@mycolor": null,
+            "indexColumn": "",
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 6621000000,
+            "executedOn": "2021-10-13T04:24:01.890Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Present",
+            "element": "quotes.details.recordType",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "quotes.details.recordType",
+                    "key"
+                ],
+                [
+                    "xpath=//div[contains(@class, 'windowViewMode-maximized')]//span[text()='Record Type']//ancestor::force-record-layout-item//div[contains(@class, 'recordTypeName')]//span",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "tdId": 1,
+            "duration": 10056000000,
+            "executedOn": "2021-10-13T04:24:11.946Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "command": "Assert Text",
+            "element": "quotes.details.recordType",
+            "eArray": [
+                [
+                    "quotes.details.recordType",
+                    "key"
+                ],
+                [
+                    "xpath=//div[contains(@class, 'windowViewMode-maximized')]//span[text()='Record Type']//ancestor::force-record-layout-item//div[contains(@class, 'recordTypeName')]//span",
+                    "xpath"
+                ],
+                [
+                    "xpath=//div[contains(@class, 'windowViewMode-maximized')]//span[text()='Record Type']//ancestor::force-record-layout-item",
+                    "xpath"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Help Status'])[2]/following::lightning-formatted-text[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Status'])[5]/following::lightning-formatted-text[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Edit Status'])[2]/preceding::lightning-formatted-text[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Vendor Reference #'])[1]/preceding::lightning-formatted-text[1]",
+                    "xpath:neighbor"
+                ],
+                [
+                    "xpath=//div[@id='sectionContent-2966']/div/slot/force-record-layout-row[4]/slot/force-record-layout-item[2]/div/div/div[2]/span/slot/slot/lightning-formatted-text",
+                    "xpath:idRelative"
+                ],
+                [
+                    "xpath=//forcegenerated-detailpanel_sbqq__quote__c___012340000007nu9aaa___full___view___recordlayout2/force-record-layout-block/slot/force-record-layout-section[2]/div/div/div/slot/force-record-layout-row[4]/slot/force-record-layout-item[2]/div/div/div[2]/span/slot/slot/lightning-formatted-text",
+                    "xpath:position"
+                ]
+            ],
+            "input": "Draft",
+            "status": "NotRun",
+            "elementKey": "lightning-formatted-text.draft",
+            "elementDesc": "LIGHTNING-FORMATTED-TEXT draft",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "@@mycolor": null,
+            "indexColumn": "",
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tdId": 1,
+            "duration": 570000000,
+            "executedOn": "2021-10-13T04:24:12.516Z",
+            "errMessage": "",
+            "isRowExpanded": false,
+            "expected": "Draft",
+            "actual": "Draft"
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "quotes.submitForApproval.button",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "quotes.submitForApproval.button",
+                    "key"
+                ],
+                [
+                    "xpath=//button[text()='Submit for Approval']",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "tdId": 1,
+            "duration": 6742000000,
+            "executedOn": "2021-10-13T04:24:19.258Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "quotes.submitForApproval.popup.submit.button",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "quotes.submitForApproval.popup.submit.button",
+                    "key"
+                ],
+                [
+                    "xpath=//div[contains(@class,'modal-footer')]//span[text()='Submit']",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "tdId": 1,
+            "duration": 6637000000,
+            "executedOn": "2021-10-13T04:24:25.895Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Present",
+            "element": "quotes.details.recordType",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "quotes.details.recordType",
+                    "key"
+                ],
+                [
+                    "xpath=//div[contains(@class, 'windowViewMode-maximized')]//span[text()='Record Type']//ancestor::force-record-layout-item//div[contains(@class, 'recordTypeName')]//span",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "tdId": 1,
+            "duration": 560000000,
+            "executedOn": "2021-10-13T04:24:26.455Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Present",
+            "element": "quotes.details.recordType.approved",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "quotes.details.recordType.approved",
+                    "key"
+                ],
+                [
+                    "xpath=//div[contains(@class, 'windowViewMode-maximized')]//span[text()='Record Type']//ancestor::force-record-layout-item//div[contains(@class, 'recordTypeName')]//span[text()='Approved']",
+                    "xpath"
+                ],
+                [
+                    "xpath=//div[contains(@class, 'windowViewMode-maximized')]//span[text()='Record Type']//ancestor::force-record-layout-item//div[contains(@class, 'recordTypeName')]//span",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "tdId": 1,
+            "duration": 2242000000,
+            "executedOn": "2021-10-13T04:24:28.697Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Assert Text",
+            "element": "quotes.details.recordType.approved",
+            "input": "Approved",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "quotes.details.recordType.approved",
+                    "key"
+                ],
+                [
+                    "xpath=//div[contains(@class, 'windowViewMode-maximized')]//span[text()='Record Type']//ancestor::force-record-layout-item//div[contains(@class, 'recordTypeName')]//span",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\"}",
+            "tcId": "20",
+            "tsId": 19,
+            "testData": true,
+            "tdId": 1,
+            "duration": 570000000,
+            "executedOn": "2021-10-13T04:24:29.267Z",
+            "errMessage": "",
+            "isRowExpanded": false,
+            "expected": "Approved",
+            "actual": "Approved"
+        }
+    ],
+    "type": "web",
+    "capabilities": {
+        "remoteUrl": "https://bssi--fullcopy.lightning.force.com/",
+        "type": "web",
+        "selectBrowser": "chrome",
+        "selectDevice": "",
+        "isRemote": false,
+        "remoteHubUrl": "http://127.0.0.1:4444/wd/hub/",
+        "isDebugMode": false,
+        "details": {
+            "deviceMetrics": {
+                "name": "",
+                "width": "",
+                "height": "",
+                "pixelRatio": "",
+                "userAgent": ""
+            }
+        }
+    },
+    "testData": "resources/testdata/Quotes/Create and approve quote for REACTIVE case.csv",
+    "testDataExample": [],
+    "isTCValid": true,
+    "externalTestData": false,
+    "dbDetails": {},
+    "recordSessionType": "multiple",
+    "tags": [
+        {
+            "name": "quote"
+        },
+        {
+            "name": "positive"
+        },
+        {
+            "name": "smoke"
+        }
+    ],
+    "description": "Verify that user is able to CREATE and APPROVE the Quote for a REACTIVE case.",
+    "shared": true,
+    "executionStatus": "NotRun"
+}

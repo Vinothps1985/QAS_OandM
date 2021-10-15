@@ -19,5 +19,17 @@
     },
     {
         "name": "workorder"
+    },
+    {
+        "name": "quote"
+    },
+    {
+        "name": "smoke"
+    },
+    {
+        "name": "conreqgroup"
+    },
+    {
+        "name": "regression"
     }
 ]

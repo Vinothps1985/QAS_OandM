@@ -2,27 +2,18 @@ Feature: Cases
 
 @author:Rodrigo Montemayor
 @description:Verify whether user is able to create a case of record type REACTIVE
-@case @positive
+@case @positive @smoke
 @dataFile:resources/testdata/Cases/Create REACTIVE case.csv
 @requirementKey=QTM-RQ-23
-
 Scenario: Create REACTIVE case
 	
    Given ShrdLoginToFullCopy "${username}" "${password}"
-   When wait until "applauncher.div" to be enable
-   And click on "applauncher.div"
-   Then wait until "applauncher.input.text" to be present
-   When wait until "applauncher.input.text" to be enable
-   And clear "applauncher.input.text"
-   And wait until "applauncher.input.text" to be enable
-   And sendKeys "projects" into "applauncher.input.text"
-   Then wait until "applauncher.link.projects" to be visible
-   When wait until "applauncher.link.projects" to be enable
-   And click on "applauncher.link.projects"
-   And wait until "common.searchAssistant.button" to be enable
+   And ShrdChangeLoggedInUser "test_ops_center_operator"
+   And ShrdLaunchApp "projects"
+   Then wait until "common.activeTab" to be visible
+   When wait until "common.searchAssistant.button" to be enable
    And click on "common.searchAssistant.button"
-   Then wait until "common.activeTab.firstIframe" to be present
-   When wait until "common.searchAssistant.input" to be enable
+   And wait until "common.searchAssistant.input" to be enable
    And sendKeys "${projectName}" into "common.searchAssistant.input"
    Then wait until "projects.search.firstResult" to be visible
    When wait until "projects.search.firstResult" to be enable
@@ -64,20 +55,20 @@ Scenario: Create REACTIVE case
    And wait until "case.createCase.popup.caseCause.other.option" to be enable
    And click on "case.createCase.popup.caseCause.other.option"
    And wait until "case.createCase.popup.subject.input" to be enable
-   And sendKeys "Sample subject from QAS" into "case.createCase.popup.subject.input"
+   And sendKeys "${subject}" into "case.createCase.popup.subject.input"
    And wait until "case.createCase.popup.description.textarea" to be enable
-   And sendKeys "Sample description from QAS" into "case.createCase.popup.description.textarea"
-   Then verify "case.createCase.popup.recordType" text is "Reactive"
+   And sendKeys "${caseDescription}" into "case.createCase.popup.description.textarea"
+   Then verify "case.createCase.popup.recordType" text is "${recordType}"
    When wait until "case.createCase.popup.save.button" to be enable
    And click on "case.createCase.popup.save.button"
    Then verify "case.entityName" text is "Case"
    And wait until "case.priority" to be present
-   And assert "case.priority" text is "Low"
-   And assert "case.caseOrigin" text is "Manager Created"
-   And assert "case.reportedIssue" text is "System Down"
-   And assert "case.caseCause" text is "Other"
-   And assert "case.subject" text is "Sample subject from QAS"
-   And assert "case.description" text is "Sample description from QAS"
+   And assert "case.priority" text is "${casePriority}"
+   And assert "case.caseOrigin" text is "${caseOrigin}"
+   And assert "case.reportedIssue" text is "${reportedIssue}"
+   And assert "case.caseCause" text is "${caseCause}"
+   And assert "case.subject" text is "${subject}"
+   And assert "case.description" text is "${caseDescription}"
    
 
 

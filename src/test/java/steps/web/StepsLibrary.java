@@ -30,6 +30,7 @@ import org.apache.commons.io.comparator.LastModifiedFileComparator;
 import org.apache.pdfbox.Loader;
 import org.apache.pdfbox.pdmodel.PDDocument;
 
+import com.qmetry.qaf.automation.step.CommonStep;
 import com.qmetry.qaf.automation.step.QAFTestStep;
 
 public class StepsLibrary {
@@ -188,4 +189,10 @@ public class StepsLibrary {
 			x.printStackTrace();
 		}
 	}
+
+	/*@QAFTestStep(description = "click on {loc}")
+	public static void click(String loc) {
+		System.out.println("CLICKING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+		CommonStep.click(loc);
+	}*/
 }

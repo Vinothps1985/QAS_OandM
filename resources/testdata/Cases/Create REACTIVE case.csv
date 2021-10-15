@@ -1,2 +1,2 @@
-username,password,projectName
-vpanneerselvam@borregosolar.com.fullcopy,Test@1234,Acushnet - ADM Makepeace - O&M
+username,password,projectName,subject,caseDescription,recordType,casePriority,caseOrigin,reportedIssue,caseCause
+rmontemayor@borregosolar.com.fullcopy,FCpassword123!,Acushnet - ADM Makepeace - O&M,Sample subject from QAS,Sample description from QAS,Reactive,Low,Manager Created,System Down,Other

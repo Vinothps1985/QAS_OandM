@@ -28,8 +28,19 @@
             "shared": true
         },
         {
-            "command": "Click",
-            "element": "applauncher.div",
+            "indexColumn": "",
+            "command": "ShrdChangeLoggedInUser",
+            "element": "",
+            "input": "test_ops_center_operator",
+            "status": "NotRun",
+            "eArray": [],
+            "elementKey": "",
+            "elementDesc": "",
+            "shared": true,
+            "@@mycolor": null
+        },
+        {
+            "command": "ShrdLaunchApp",
             "eArray": [
                 [
                     "applauncher.div",
@@ -60,7 +71,7 @@
                     "key"
                 ]
             ],
-            "input": "",
+            "input": "projects",
             "status": "NotRun",
             "elementKey": "div.applauncher",
             "elementDesc": "Text applauncher",
@@ -70,274 +81,29 @@
             "tcId": "3",
             "tsId": 2,
             "testData": true,
-            "duration": 7628000000,
-            "executedOn": "2021-10-01T15:29:01.947Z",
+            "duration": 9171000000,
+            "executedOn": "2021-10-15T05:55:12.927Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null,
             "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\"}",
-            "tdId": 1
-        },
-        {
-            "indexColumn": "",
-            "command": "Wait For Present",
-            "element": "applauncher.input.text",
-            "input": "",
-            "status": "NotRun",
-            "eArray": [
-                [
-                    "applauncher.input.text",
-                    "key"
-                ],
-                [
-                    "input.applauncher",
-                    "key"
-                ],
-                [
-                    "input.applauncher.text",
-                    "key"
-                ],
-                [
-                    "xpath=//one-app-launcher-search-bar/lightning-input/div/input",
-                    "xpath"
-                ],
-                [
-                    "xpath...one-app-launcher-search-bar.lightning-input.div.input",
-                    "key"
-                ]
-            ],
-            "elementKey": "",
-            "elementDesc": "",
-            "tcId": "3",
-            "tsId": 2,
-            "testData": true,
-            "duration": 2199000000,
-            "executedOn": "2021-10-01T15:29:04.146Z",
-            "errMessage": "",
-            "isRowExpanded": false,
-            "@@mycolor": null,
-            "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\"}",
-            "tdId": 1
-        },
-        {
-            "command": "Clear",
-            "element": "applauncher.input.text",
-            "eArray": [
-                [
-                    "applauncher.input.text",
-                    "key"
-                ],
-                [
-                    "input.applauncher",
-                    "key"
-                ],
-                [
-                    "input.applauncher.text",
-                    "key"
-                ],
-                [
-                    "xpath=//one-app-launcher-search-bar/lightning-input/div/input",
-                    "xpath:position"
-                ],
-                [
-                    "xpath=//div[@id='content_795:0']/one-app-launcher-menu/div/one-app-launcher-search-bar/lightning-input/div/input",
-                    "xpath:idRelative"
-                ],
-                [
-                    "id=input-109",
-                    "id"
-                ],
-                [
-                    "css=#input-109",
-                    "css"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Search apps and items...'])[1]/following::input[1]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='No record selected'])[1]/following::input[1]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Clear'])[1]/preceding::input[1]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Apps'])[1]/preceding::input[1]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath...one-app-launcher-search-bar.lightning-input.div.input",
-                    "key"
-                ]
-            ],
-            "input": "",
-            "status": "NotRun",
-            "elementKey": "search.input109",
-            "elementDesc": "input-109 search",
-            "isEncrypted": false,
-            "isDisplay": false,
-            "indexColumn": "",
-            "tcId": "3",
-            "tsId": 2,
-            "testData": true,
-            "duration": 869000000,
-            "executedOn": "2021-10-01T15:29:05.016Z",
-            "errMessage": "",
-            "isRowExpanded": false,
-            "@@mycolor": null,
-            "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\"}",
-            "tdId": 1
-        },
-        {
-            "command": "Type",
-            "element": "applauncher.input.text",
-            "eArray": [
-                [
-                    "applauncher.input.text",
-                    "key"
-                ],
-                [
-                    "input.applauncher",
-                    "key"
-                ],
-                [
-                    "input.applauncher.text",
-                    "key"
-                ],
-                [
-                    "xpath=//one-app-launcher-search-bar/lightning-input/div/input",
-                    "xpath:position"
-                ],
-                [
-                    "xpath=//div[@id='content_795:0']/one-app-launcher-menu/div/one-app-launcher-search-bar/lightning-input/div/input",
-                    "xpath:idRelative"
-                ],
-                [
-                    "id=input-109",
-                    "id"
-                ],
-                [
-                    "css=#input-109",
-                    "css"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Search apps and items...'])[1]/following::input[1]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='No record selected'])[1]/following::input[1]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Clear'])[1]/preceding::input[1]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Apps'])[1]/preceding::input[1]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath...one-app-launcher-search-bar.lightning-input.div.input",
-                    "key"
-                ]
-            ],
-            "input": "projects",
-            "status": "NotRun",
-            "elementKey": "search.input109",
-            "elementDesc": "input-109 search",
-            "isEncrypted": false,
-            "isDisplay": false,
-            "indexColumn": "",
-            "tcId": "3",
-            "tsId": 2,
-            "testData": true,
-            "duration": 1224000000,
-            "executedOn": "2021-10-01T15:29:06.240Z",
-            "errMessage": "",
-            "isRowExpanded": false,
-            "@@mycolor": null,
-            "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\"}",
-            "tdId": 1
+            "tdId": 1,
+            "shared": true
         },
         {
             "indexColumn": "",
             "command": "Wait For Visible",
-            "element": "applauncher.link.projects",
+            "element": "common.activeTab",
             "input": "",
             "status": "NotRun",
             "eArray": [
                 [
-                    "applauncher.link.projects",
+                    "common.activeTab",
                     "key"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Projects'])[1]/following::a[1]",
-                    "xpath"
-                ],
-                [
-                    "xpath=(//div[@class='container']//a[contains(@data-label, 'Projects')])[1]",
-                    "xpath"
-                ],
-                [
-                    "xpath=//div[@aria-label='Apps']//a",
-                    "xpath"
                 ]
             ],
             "elementKey": "",
-            "elementDesc": "",
-            "@@mycolor": null,
-            "tcId": "3",
-            "tsId": 2,
-            "testData": true,
-            "duration": 661000000,
-            "executedOn": "2021-10-01T15:29:06.902Z",
-            "errMessage": "",
-            "isRowExpanded": false,
-            "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\"}",
-            "tdId": 1
-        },
-        {
-            "indexColumn": "",
-            "command": "Click",
-            "element": "applauncher.link.projects",
-            "input": "",
-            "status": "NotRun",
-            "eArray": [
-                [
-                    "applauncher.link.projects",
-                    "key"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Projects'])[1]/following::a[1]",
-                    "xpath"
-                ],
-                [
-                    "xpath=(//div[@class='container']//a[contains(@data-label, 'Projects')])[1]",
-                    "xpath"
-                ],
-                [
-                    "(.//*[normalize-space(text()) and normalize-space(.)='Projects'])[1]/following::a[1]",
-                    "(.//*[normalize-space(text()) and normalize-space(.)"
-                ],
-                [
-                    "xpath=//div[@aria-label='Apps']//a",
-                    "xpath"
-                ]
-            ],
-            "elementKey": "",
-            "elementDesc": "",
-            "tcId": "3",
-            "tsId": 2,
-            "testData": true,
-            "duration": 7064000000,
-            "executedOn": "2021-10-01T15:29:13.966Z",
-            "errMessage": "",
-            "isRowExpanded": false,
-            "@@mycolor": null,
-            "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\"}",
-            "tdId": 1
+            "elementDesc": ""
         },
         {
             "indexColumn": "",
@@ -362,31 +128,15 @@
             "elementKey": "",
             "elementDesc": "",
             "@@mycolor": null,
-            "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\",\"subject\":\"Sample subject from QAS\",\"caseDescription\":\"Sample description from QAS\",\"recordType\":\"Reactive\",\"casePriority\":\"Low\",\"caseOrigin\":\"Manager Created\",\"reportedIssue\":\"System Down\",\"caseCause\":\"Other\"}",
             "tcId": "3",
             "tsId": 2,
             "testData": true,
             "tdId": 1,
-            "duration": 7073000000,
-            "executedOn": "2021-10-01T15:29:21.039Z",
+            "duration": 6732000000,
+            "executedOn": "2021-10-15T06:05:00.173Z",
             "errMessage": "",
             "isRowExpanded": false
-        },
-        {
-            "indexColumn": "",
-            "command": "Wait For Present",
-            "element": "common.activeTab.firstIframe",
-            "input": "",
-            "status": "NotRun",
-            "eArray": [
-                [
-                    "common.activeTab.firstIframe",
-                    "key"
-                ]
-            ],
-            "elementKey": "",
-            "elementDesc": "",
-            "@@mycolor": null
         },
         {
             "indexColumn": "",
@@ -413,13 +163,13 @@
             "isEncrypted": false,
             "isDisplay": false,
             "@@mycolor": null,
-            "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\",\"subject\":\"Sample subject from QAS\",\"caseDescription\":\"Sample description from QAS\",\"recordType\":\"Reactive\",\"casePriority\":\"Low\",\"caseOrigin\":\"Manager Created\",\"reportedIssue\":\"System Down\",\"caseCause\":\"Other\"}",
             "tcId": "3",
             "tsId": 2,
             "testData": true,
             "tdId": 1,
-            "duration": 2276000000,
-            "executedOn": "2021-10-01T15:29:23.315Z",
+            "duration": 1113000000,
+            "executedOn": "2021-10-15T06:05:01.843Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -445,13 +195,13 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\",\"subject\":\"Sample subject from QAS\",\"caseDescription\":\"Sample description from QAS\",\"recordType\":\"Reactive\",\"casePriority\":\"Low\",\"caseOrigin\":\"Manager Created\",\"reportedIssue\":\"System Down\",\"caseCause\":\"Other\"}",
             "tcId": "3",
             "tsId": 2,
             "testData": true,
             "tdId": 1,
-            "duration": 2441000000,
-            "executedOn": "2021-10-01T15:29:25.756Z",
+            "duration": 572000000,
+            "executedOn": "2021-10-15T06:05:02.415Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null
@@ -478,13 +228,13 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\",\"subject\":\"Sample subject from QAS\",\"caseDescription\":\"Sample description from QAS\",\"recordType\":\"Reactive\",\"casePriority\":\"Low\",\"caseOrigin\":\"Manager Created\",\"reportedIssue\":\"System Down\",\"caseCause\":\"Other\"}",
             "tcId": "3",
             "tsId": 2,
             "testData": true,
             "tdId": 1,
-            "duration": 6993000000,
-            "executedOn": "2021-10-01T15:29:32.749Z",
+            "duration": 6603000000,
+            "executedOn": "2021-10-15T06:05:09.018Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null
@@ -505,12 +255,12 @@
             "tcId": "3",
             "tsId": 2,
             "testData": true,
-            "duration": 866000000,
-            "executedOn": "2021-10-01T15:29:33.615Z",
+            "duration": 689000000,
+            "executedOn": "2021-10-15T06:05:09.707Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null,
-            "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\",\"subject\":\"Sample subject from QAS\",\"caseDescription\":\"Sample description from QAS\",\"recordType\":\"Reactive\",\"casePriority\":\"Low\",\"caseOrigin\":\"Manager Created\",\"reportedIssue\":\"System Down\",\"caseCause\":\"Other\"}",
             "tdId": 1
         },
         {
@@ -562,12 +312,12 @@
             "tcId": "3",
             "tsId": 2,
             "testData": true,
-            "duration": 1219000000,
-            "executedOn": "2021-10-01T15:29:34.834Z",
+            "duration": 668000000,
+            "executedOn": "2021-10-15T06:05:10.375Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null,
-            "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\",\"subject\":\"Sample subject from QAS\",\"caseDescription\":\"Sample description from QAS\",\"recordType\":\"Reactive\",\"casePriority\":\"Low\",\"caseOrigin\":\"Manager Created\",\"reportedIssue\":\"System Down\",\"caseCause\":\"Other\"}",
             "tdId": 1
         },
         {
@@ -621,12 +371,12 @@
             "tcId": "3",
             "tsId": 2,
             "testData": true,
-            "duration": 7269000000,
-            "executedOn": "2021-10-01T15:29:42.103Z",
+            "duration": 6981000000,
+            "executedOn": "2021-10-15T06:05:17.356Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null,
-            "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\",\"subject\":\"Sample subject from QAS\",\"caseDescription\":\"Sample description from QAS\",\"recordType\":\"Reactive\",\"casePriority\":\"Low\",\"caseOrigin\":\"Manager Created\",\"reportedIssue\":\"System Down\",\"caseCause\":\"Other\"}",
             "tdId": 1
         },
         {
@@ -696,12 +446,12 @@
             "tcId": "3",
             "tsId": 2,
             "testData": true,
-            "duration": 1424000000,
-            "executedOn": "2021-10-01T15:29:43.528Z",
+            "duration": 825000000,
+            "executedOn": "2021-10-15T06:05:18.182Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null,
-            "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\",\"subject\":\"Sample subject from QAS\",\"caseDescription\":\"Sample description from QAS\",\"recordType\":\"Reactive\",\"casePriority\":\"Low\",\"caseOrigin\":\"Manager Created\",\"reportedIssue\":\"System Down\",\"caseCause\":\"Other\"}",
             "tdId": 1
         },
         {
@@ -737,13 +487,13 @@
             "tcId": "3",
             "tsId": 2,
             "testData": true,
-            "duration": 674000000,
-            "executedOn": "2021-10-01T15:29:44.202Z",
+            "duration": 552000000,
+            "executedOn": "2021-10-15T06:05:18.735Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null,
             "color": "#ffffff",
-            "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\",\"subject\":\"Sample subject from QAS\",\"caseDescription\":\"Sample description from QAS\",\"recordType\":\"Reactive\",\"casePriority\":\"Low\",\"caseOrigin\":\"Manager Created\",\"reportedIssue\":\"System Down\",\"caseCause\":\"Other\"}",
             "tdId": 1
         },
         {
@@ -771,12 +521,12 @@
             "tcId": "3",
             "tsId": 2,
             "testData": true,
-            "duration": 7960000000,
-            "executedOn": "2021-10-01T15:29:52.162Z",
+            "duration": 7206000000,
+            "executedOn": "2021-10-15T06:05:25.941Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null,
-            "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\",\"subject\":\"Sample subject from QAS\",\"caseDescription\":\"Sample description from QAS\",\"recordType\":\"Reactive\",\"casePriority\":\"Low\",\"caseOrigin\":\"Manager Created\",\"reportedIssue\":\"System Down\",\"caseCause\":\"Other\"}",
             "tdId": 1
         },
         {
@@ -800,12 +550,12 @@
             "tcId": "3",
             "tsId": 2,
             "testData": true,
-            "duration": 7061000000,
-            "executedOn": "2021-10-01T15:29:59.224Z",
+            "duration": 6720000000,
+            "executedOn": "2021-10-15T06:05:32.661Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null,
-            "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\",\"subject\":\"Sample subject from QAS\",\"caseDescription\":\"Sample description from QAS\",\"recordType\":\"Reactive\",\"casePriority\":\"Low\",\"caseOrigin\":\"Manager Created\",\"reportedIssue\":\"System Down\",\"caseCause\":\"Other\"}",
             "tdId": 1
         },
         {
@@ -826,13 +576,13 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\",\"subject\":\"Sample subject from QAS\",\"caseDescription\":\"Sample description from QAS\",\"recordType\":\"Reactive\",\"casePriority\":\"Low\",\"caseOrigin\":\"Manager Created\",\"reportedIssue\":\"System Down\",\"caseCause\":\"Other\"}",
             "tcId": "3",
             "tsId": 2,
             "testData": true,
             "tdId": 1,
-            "duration": 2225000000,
-            "executedOn": "2021-10-01T15:30:01.449Z",
+            "duration": 1701000000,
+            "executedOn": "2021-10-15T06:05:34.362Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null
@@ -870,12 +620,12 @@
             "tcId": "3",
             "tsId": 2,
             "testData": true,
-            "duration": 7281000000,
-            "executedOn": "2021-10-01T15:30:08.731Z",
+            "duration": 6739000000,
+            "executedOn": "2021-10-15T06:05:41.101Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null,
-            "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\",\"subject\":\"Sample subject from QAS\",\"caseDescription\":\"Sample description from QAS\",\"recordType\":\"Reactive\",\"casePriority\":\"Low\",\"caseOrigin\":\"Manager Created\",\"reportedIssue\":\"System Down\",\"caseCause\":\"Other\"}",
             "tdId": 1
         },
         {
@@ -899,12 +649,12 @@
             "tcId": "3",
             "tsId": 2,
             "testData": true,
-            "duration": 720000000,
-            "executedOn": "2021-10-01T15:30:09.451Z",
+            "duration": 575000000,
+            "executedOn": "2021-10-15T06:05:41.677Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null,
-            "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\",\"subject\":\"Sample subject from QAS\",\"caseDescription\":\"Sample description from QAS\",\"recordType\":\"Reactive\",\"casePriority\":\"Low\",\"caseOrigin\":\"Manager Created\",\"reportedIssue\":\"System Down\",\"caseCause\":\"Other\"}",
             "tdId": 1
         },
         {
@@ -940,12 +690,12 @@
             "tcId": "3",
             "tsId": 2,
             "testData": true,
-            "duration": 6856000000,
-            "executedOn": "2021-10-01T15:30:16.307Z",
+            "duration": 6645000000,
+            "executedOn": "2021-10-15T06:05:48.322Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null,
-            "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\",\"subject\":\"Sample subject from QAS\",\"caseDescription\":\"Sample description from QAS\",\"recordType\":\"Reactive\",\"casePriority\":\"Low\",\"caseOrigin\":\"Manager Created\",\"reportedIssue\":\"System Down\",\"caseCause\":\"Other\"}",
             "tdId": 1
         },
         {
@@ -969,12 +719,12 @@
             "tcId": "3",
             "tsId": 2,
             "testData": true,
-            "duration": 6877000000,
-            "executedOn": "2021-10-01T15:30:23.184Z",
+            "duration": 6573000000,
+            "executedOn": "2021-10-15T06:05:54.895Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null,
-            "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\",\"subject\":\"Sample subject from QAS\",\"caseDescription\":\"Sample description from QAS\",\"recordType\":\"Reactive\",\"casePriority\":\"Low\",\"caseOrigin\":\"Manager Created\",\"reportedIssue\":\"System Down\",\"caseCause\":\"Other\"}",
             "tdId": 1
         },
         {
@@ -1002,12 +752,12 @@
             "tcId": "3",
             "tsId": 2,
             "testData": true,
-            "duration": 6866000000,
-            "executedOn": "2021-10-01T15:30:30.050Z",
+            "duration": 6611000000,
+            "executedOn": "2021-10-15T06:06:01.506Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null,
-            "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\",\"subject\":\"Sample subject from QAS\",\"caseDescription\":\"Sample description from QAS\",\"recordType\":\"Reactive\",\"casePriority\":\"Low\",\"caseOrigin\":\"Manager Created\",\"reportedIssue\":\"System Down\",\"caseCause\":\"Other\"}",
             "tdId": 1
         },
         {
@@ -1032,13 +782,13 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\",\"subject\":\"Sample subject from QAS\",\"caseDescription\":\"Sample description from QAS\",\"recordType\":\"Reactive\",\"casePriority\":\"Low\",\"caseOrigin\":\"Manager Created\",\"reportedIssue\":\"System Down\",\"caseCause\":\"Other\"}",
             "tcId": "3",
             "tsId": 2,
             "testData": true,
             "tdId": 1,
-            "duration": 7196000000,
-            "executedOn": "2021-10-01T15:30:37.246Z",
+            "duration": 6752000000,
+            "executedOn": "2021-10-15T06:06:08.258Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null
@@ -1061,13 +811,13 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\",\"subject\":\"Sample subject from QAS\",\"caseDescription\":\"Sample description from QAS\",\"recordType\":\"Reactive\",\"casePriority\":\"Low\",\"caseOrigin\":\"Manager Created\",\"reportedIssue\":\"System Down\",\"caseCause\":\"Other\"}",
             "tcId": "3",
             "tsId": 2,
             "testData": true,
             "tdId": 1,
-            "duration": 7000000000,
-            "executedOn": "2021-10-01T15:30:44.246Z",
+            "duration": 6730000000,
+            "executedOn": "2021-10-15T06:06:14.988Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null
@@ -1095,13 +845,13 @@
             "elementKey": "",
             "elementDesc": "",
             "@@mycolor": null,
-            "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\",\"subject\":\"Sample subject from QAS\",\"caseDescription\":\"Sample description from QAS\",\"recordType\":\"Reactive\",\"casePriority\":\"Low\",\"caseOrigin\":\"Manager Created\",\"reportedIssue\":\"System Down\",\"caseCause\":\"Other\"}",
             "tcId": "3",
             "tsId": 2,
             "testData": true,
             "tdId": 1,
-            "duration": 7104000000,
-            "executedOn": "2021-10-01T15:30:51.350Z",
+            "duration": 6667000000,
+            "executedOn": "2021-10-15T06:06:21.656Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -1124,13 +874,13 @@
             "elementKey": "",
             "elementDesc": "",
             "@@mycolor": null,
-            "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\",\"subject\":\"Sample subject from QAS\",\"caseDescription\":\"Sample description from QAS\",\"recordType\":\"Reactive\",\"casePriority\":\"Low\",\"caseOrigin\":\"Manager Created\",\"reportedIssue\":\"System Down\",\"caseCause\":\"Other\"}",
             "tcId": "3",
             "tsId": 2,
             "testData": true,
             "tdId": 1,
-            "duration": 7005000000,
-            "executedOn": "2021-10-01T15:30:58.355Z",
+            "duration": 6773000000,
+            "executedOn": "2021-10-15T06:06:28.429Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -1149,13 +899,13 @@
             "elementKey": "",
             "elementDesc": "",
             "@@mycolor": null,
-            "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\",\"subject\":\"Sample subject from QAS\",\"caseDescription\":\"Sample description from QAS\",\"recordType\":\"Reactive\",\"casePriority\":\"Low\",\"caseOrigin\":\"Manager Created\",\"reportedIssue\":\"System Down\",\"caseCause\":\"Other\"}",
             "tcId": "3",
             "tsId": 2,
             "testData": true,
             "tdId": 1,
-            "duration": 6956000000,
-            "executedOn": "2021-10-01T15:31:05.311Z",
+            "duration": 6709000000,
+            "executedOn": "2021-10-15T06:06:35.138Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -1178,13 +928,13 @@
             "elementKey": "",
             "elementDesc": "",
             "@@mycolor": null,
-            "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\",\"subject\":\"Sample subject from QAS\",\"caseDescription\":\"Sample description from QAS\",\"recordType\":\"Reactive\",\"casePriority\":\"Low\",\"caseOrigin\":\"Manager Created\",\"reportedIssue\":\"System Down\",\"caseCause\":\"Other\"}",
             "tcId": "3",
             "tsId": 2,
             "testData": true,
             "tdId": 1,
-            "duration": 7099000000,
-            "executedOn": "2021-10-01T15:31:12.410Z",
+            "duration": 6657000000,
+            "executedOn": "2021-10-15T06:06:41.795Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -1203,13 +953,13 @@
             "elementKey": "",
             "elementDesc": "",
             "@@mycolor": null,
-            "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\",\"subject\":\"Sample subject from QAS\",\"caseDescription\":\"Sample description from QAS\",\"recordType\":\"Reactive\",\"casePriority\":\"Low\",\"caseOrigin\":\"Manager Created\",\"reportedIssue\":\"System Down\",\"caseCause\":\"Other\"}",
             "tcId": "3",
             "tsId": 2,
             "testData": true,
             "tdId": 1,
-            "duration": 7042000000,
-            "executedOn": "2021-10-01T15:31:19.452Z",
+            "duration": 6727000000,
+            "executedOn": "2021-10-15T06:06:48.522Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -1228,13 +978,13 @@
             "elementKey": "",
             "elementDesc": "",
             "@@mycolor": null,
-            "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\",\"subject\":\"Sample subject from QAS\",\"caseDescription\":\"Sample description from QAS\",\"recordType\":\"Reactive\",\"casePriority\":\"Low\",\"caseOrigin\":\"Manager Created\",\"reportedIssue\":\"System Down\",\"caseCause\":\"Other\"}",
             "tcId": "3",
             "tsId": 2,
             "testData": true,
             "tdId": 1,
-            "duration": 6967000000,
-            "executedOn": "2021-10-01T15:31:26.419Z",
+            "duration": 6698000000,
+            "executedOn": "2021-10-15T06:06:55.220Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -1242,7 +992,7 @@
             "indexColumn": "",
             "command": "Type",
             "element": "case.createCase.popup.subject.input",
-            "input": "Sample subject from QAS",
+            "input": "${subject}",
             "status": "NotRun",
             "eArray": [
                 [
@@ -1253,21 +1003,23 @@
             "elementKey": "",
             "elementDesc": "",
             "@@mycolor": null,
-            "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\",\"subject\":\"Sample subject from QAS\",\"caseDescription\":\"Sample description from QAS\",\"recordType\":\"Reactive\",\"casePriority\":\"Low\",\"caseOrigin\":\"Manager Created\",\"reportedIssue\":\"System Down\",\"caseCause\":\"Other\"}",
             "tcId": "3",
             "tsId": 2,
             "testData": true,
             "tdId": 1,
-            "duration": 1412000000,
-            "executedOn": "2021-10-01T15:31:27.831Z",
+            "duration": 949000000,
+            "executedOn": "2021-10-15T06:06:56.169Z",
             "errMessage": "",
-            "isRowExpanded": false
+            "isRowExpanded": false,
+            "isEncrypted": false,
+            "isDisplay": false
         },
         {
             "indexColumn": "",
             "command": "Type",
             "element": "case.createCase.popup.description.textarea",
-            "input": "Sample description from QAS",
+            "input": "${caseDescription}",
             "status": "NotRun",
             "eArray": [
                 [
@@ -1278,15 +1030,17 @@
             "elementKey": "",
             "elementDesc": "",
             "@@mycolor": null,
-            "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\",\"subject\":\"Sample subject from QAS\",\"caseDescription\":\"Sample description from QAS\",\"recordType\":\"Reactive\",\"casePriority\":\"Low\",\"caseOrigin\":\"Manager Created\",\"reportedIssue\":\"System Down\",\"caseCause\":\"Other\"}",
             "tcId": "3",
             "tsId": 2,
             "testData": true,
             "tdId": 1,
-            "duration": 1987000000,
-            "executedOn": "2021-10-01T15:31:29.818Z",
+            "duration": 827000000,
+            "executedOn": "2021-10-15T06:06:56.997Z",
             "errMessage": "",
-            "isRowExpanded": false
+            "isRowExpanded": false,
+            "isEncrypted": false,
+            "isDisplay": false
         },
         {
             "command": "Verify Text",
@@ -1321,7 +1075,7 @@
                     "xpath:neighbor"
                 ]
             ],
-            "input": "Reactive",
+            "input": "${recordType}",
             "status": "NotRun",
             "elementKey": "span.reactive",
             "elementDesc": "Text reactive",
@@ -1332,13 +1086,13 @@
             "tsId": 2,
             "testData": true,
             "@@mycolor": null,
-            "duration": 1590000000,
-            "executedOn": "2021-10-01T15:31:31.408Z",
+            "duration": 683000000,
+            "executedOn": "2021-10-15T06:06:57.680Z",
             "errMessage": "",
             "isRowExpanded": false,
             "expected": "Reactive",
             "actual": "Reactive",
-            "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\",\"subject\":\"Sample subject from QAS\",\"caseDescription\":\"Sample description from QAS\",\"recordType\":\"Reactive\",\"casePriority\":\"Low\",\"caseOrigin\":\"Manager Created\",\"reportedIssue\":\"System Down\",\"caseCause\":\"Other\"}",
             "tdId": 1
         },
         {
@@ -1364,13 +1118,13 @@
             "elementKey": "",
             "elementDesc": "",
             "@@mycolor": null,
-            "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\",\"subject\":\"Sample subject from QAS\",\"caseDescription\":\"Sample description from QAS\",\"recordType\":\"Reactive\",\"casePriority\":\"Low\",\"caseOrigin\":\"Manager Created\",\"reportedIssue\":\"System Down\",\"caseCause\":\"Other\"}",
             "tcId": "3",
             "tsId": 2,
             "testData": true,
             "tdId": 1,
-            "duration": 6906000000,
-            "executedOn": "2021-10-01T15:31:38.315Z",
+            "duration": 6746000000,
+            "executedOn": "2021-10-15T06:07:04.426Z",
             "errMessage": "",
             "isRowExpanded": false
         },
@@ -1401,13 +1155,13 @@
             "elementKey": "",
             "elementDesc": "",
             "@@mycolor": null,
-            "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\",\"subject\":\"Sample subject from QAS\",\"caseDescription\":\"Sample description from QAS\",\"recordType\":\"Reactive\",\"casePriority\":\"Low\",\"caseOrigin\":\"Manager Created\",\"reportedIssue\":\"System Down\",\"caseCause\":\"Other\"}",
             "tcId": "3",
             "tsId": 2,
             "testData": true,
             "tdId": 1,
-            "duration": 11035000000,
-            "executedOn": "2021-10-01T15:31:49.350Z",
+            "duration": 6415000000,
+            "executedOn": "2021-10-15T06:07:10.841Z",
             "expected": "Case",
             "actual": "Case",
             "errMessage": "",
@@ -1435,13 +1189,13 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\",\"subject\":\"Sample subject from QAS\",\"caseDescription\":\"Sample description from QAS\",\"recordType\":\"Reactive\",\"casePriority\":\"Low\",\"caseOrigin\":\"Manager Created\",\"reportedIssue\":\"System Down\",\"caseCause\":\"Other\"}",
             "tcId": "3",
             "tsId": 2,
             "testData": true,
             "tdId": 1,
-            "duration": 713000000,
-            "executedOn": "2021-10-01T15:31:50.063Z",
+            "duration": 1376000000,
+            "executedOn": "2021-10-15T06:07:12.217Z",
             "errMessage": "",
             "isRowExpanded": false,
             "@@mycolor": null
@@ -1450,7 +1204,7 @@
             "indexColumn": "",
             "command": "Assert Text",
             "element": "case.priority",
-            "input": "Low",
+            "input": "${casePriority}",
             "status": "NotRun",
             "eArray": [
                 [
@@ -1468,24 +1222,26 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\",\"subject\":\"Sample subject from QAS\",\"caseDescription\":\"Sample description from QAS\",\"recordType\":\"Reactive\",\"casePriority\":\"Low\",\"caseOrigin\":\"Manager Created\",\"reportedIssue\":\"System Down\",\"caseCause\":\"Other\"}",
             "tcId": "3",
             "tsId": 2,
             "testData": true,
             "tdId": 1,
-            "duration": 1491000000,
-            "executedOn": "2021-10-01T15:31:51.554Z",
+            "duration": 574000000,
+            "executedOn": "2021-10-15T06:07:12.791Z",
             "errMessage": "\"Text '' is not match with 'Low'\"",
             "isRowExpanded": false,
             "expected": "Low",
             "actual": "Low",
-            "@@mycolor": null
+            "@@mycolor": null,
+            "isEncrypted": false,
+            "isDisplay": false
         },
         {
             "indexColumn": "",
             "command": "Assert Text",
             "element": "case.caseOrigin",
-            "input": "Manager Created",
+            "input": "${caseOrigin}",
             "status": "NotRun",
             "eArray": [
                 [
@@ -1503,24 +1259,26 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\",\"subject\":\"Sample subject from QAS\",\"caseDescription\":\"Sample description from QAS\",\"recordType\":\"Reactive\",\"casePriority\":\"Low\",\"caseOrigin\":\"Manager Created\",\"reportedIssue\":\"System Down\",\"caseCause\":\"Other\"}",
             "tcId": "3",
             "tsId": 2,
             "testData": true,
             "tdId": 1,
-            "duration": 1530000000,
-            "executedOn": "2021-10-01T15:32:16.582Z",
+            "duration": 565000000,
+            "executedOn": "2021-10-15T06:07:25.382Z",
             "errMessage": "\"Text '' is not match with 'Manager Created'\"",
             "isRowExpanded": false,
             "expected": "Manager Created",
             "actual": "Manager Created",
-            "@@mycolor": null
+            "@@mycolor": null,
+            "isEncrypted": false,
+            "isDisplay": false
         },
         {
             "indexColumn": "",
             "command": "Assert Text",
             "element": "case.reportedIssue",
-            "input": "System Down",
+            "input": "${reportedIssue}",
             "status": "NotRun",
             "eArray": [
                 [
@@ -1538,24 +1296,26 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\",\"subject\":\"Sample subject from QAS\",\"caseDescription\":\"Sample description from QAS\",\"recordType\":\"Reactive\",\"casePriority\":\"Low\",\"caseOrigin\":\"Manager Created\",\"reportedIssue\":\"System Down\",\"caseCause\":\"Other\"}",
             "tcId": "3",
             "tsId": 2,
             "testData": true,
             "tdId": 1,
-            "duration": 1512000000,
-            "executedOn": "2021-10-01T15:32:20.697Z",
+            "duration": 583000000,
+            "executedOn": "2021-10-15T06:07:26.913Z",
             "errMessage": "\"Text '' is not match with 'System Down'\"",
             "isRowExpanded": false,
             "expected": "System Down",
             "actual": "System Down",
-            "@@mycolor": null
+            "@@mycolor": null,
+            "isEncrypted": false,
+            "isDisplay": false
         },
         {
             "indexColumn": "",
             "command": "Assert Text",
             "element": "case.caseCause",
-            "input": "Other",
+            "input": "${caseCause}",
             "status": "NotRun",
             "eArray": [
                 [
@@ -1573,24 +1333,26 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\",\"subject\":\"Sample subject from QAS\",\"caseDescription\":\"Sample description from QAS\",\"recordType\":\"Reactive\",\"casePriority\":\"Low\",\"caseOrigin\":\"Manager Created\",\"reportedIssue\":\"System Down\",\"caseCause\":\"Other\"}",
             "tcId": "3",
             "tsId": 2,
             "testData": true,
             "tdId": 1,
-            "duration": 1362000000,
-            "executedOn": "2021-10-01T15:32:23.714Z",
+            "duration": 586000000,
+            "executedOn": "2021-10-15T06:07:28.157Z",
             "errMessage": "\"Text '' is not match with 'Other'\"",
             "isRowExpanded": false,
             "expected": "Other",
             "actual": "Other",
-            "@@mycolor": null
+            "@@mycolor": null,
+            "isEncrypted": false,
+            "isDisplay": false
         },
         {
             "indexColumn": "",
             "command": "Assert Text",
             "element": "case.subject",
-            "input": "Sample subject from QAS",
+            "input": "${subject}",
             "status": "NotRun",
             "eArray": [
                 [
@@ -1608,24 +1370,26 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\",\"subject\":\"Sample subject from QAS\",\"caseDescription\":\"Sample description from QAS\",\"recordType\":\"Reactive\",\"casePriority\":\"Low\",\"caseOrigin\":\"Manager Created\",\"reportedIssue\":\"System Down\",\"caseCause\":\"Other\"}",
             "tcId": "3",
             "tsId": 2,
             "testData": true,
             "tdId": 1,
-            "duration": 1499000000,
-            "executedOn": "2021-10-01T15:32:25.933Z",
+            "duration": 613000000,
+            "executedOn": "2021-10-15T06:07:29.374Z",
             "errMessage": "\"Text '' is not match with 'Sample subject from QAS'\"",
             "isRowExpanded": false,
             "expected": "Sample subject from QAS",
             "actual": "Sample subject from QAS",
-            "@@mycolor": null
+            "@@mycolor": null,
+            "isEncrypted": false,
+            "isDisplay": false
         },
         {
             "indexColumn": "",
             "command": "Assert Text",
             "element": "case.description",
-            "input": "Sample description from QAS",
+            "input": "${caseDescription}",
             "status": "NotRun",
             "eArray": [
                 [
@@ -1647,18 +1411,20 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "arg": "{\"__index\":1,\"username\":\"vpanneerselvam@borregosolar.com.fullcopy\",\"password\":\"Test@1234\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\"}",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"Acushnet - ADM Makepeace - O&M\",\"subject\":\"Sample subject from QAS\",\"caseDescription\":\"Sample description from QAS\",\"recordType\":\"Reactive\",\"casePriority\":\"Low\",\"caseOrigin\":\"Manager Created\",\"reportedIssue\":\"System Down\",\"caseCause\":\"Other\"}",
             "tcId": "3",
             "tsId": 2,
             "testData": true,
             "tdId": 1,
-            "duration": 939000000,
-            "executedOn": "2021-10-01T15:32:27.527Z",
+            "duration": 618000000,
+            "executedOn": "2021-10-15T06:07:30.581Z",
             "errMessage": "\"Text '' is not match with 'Sample description from QAS'\"",
             "isRowExpanded": false,
             "expected": "Sample description from QAS",
             "actual": "Sample description from QAS",
-            "@@mycolor": null
+            "@@mycolor": null,
+            "isEncrypted": false,
+            "isDisplay": false
         }
     ],
     "type": "web",
@@ -1667,7 +1433,7 @@
         "type": "web",
         "selectBrowser": "chrome",
         "selectDevice": "",
-        "isRemote": true,
+        "isRemote": false,
         "remoteHubUrl": "http://34.121.33.186/wd/hub/",
         "isDebugMode": "",
         "details": {
@@ -1692,6 +1458,9 @@
         },
         {
             "name": "positive"
+        },
+        {
+            "name": "smoke"
         }
     ],
     "description": "Verify whether user is able to create a case of record type REACTIVE",

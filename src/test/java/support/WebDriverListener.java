@@ -4,6 +4,7 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.Map;
+import org.openqa.selenium.JavascriptExecutor;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -14,8 +15,10 @@ import org.openqa.selenium.remote.DriverCommand;
 import org.openqa.selenium.remote.Response;
 
 import com.qmetry.qaf.automation.core.ConfigurationManager;
+import com.qmetry.qaf.automation.core.QAFListenerAdapter;
 import com.qmetry.qaf.automation.ui.webdriver.CommandTracker;
 import com.qmetry.qaf.automation.ui.webdriver.QAFExtendedWebDriver;
+import com.qmetry.qaf.automation.ui.webdriver.QAFExtendedWebElement;
 import com.qmetry.qaf.automation.ui.webdriver.QAFWebDriverCommandAdapter;
 import com.qmetry.qaf.automation.util.PropertyUtil;
 import com.qmetry.qaf.automation.step.QAFTestStep;
@@ -32,14 +35,15 @@ import io.appium.java_client.AppiumDriver;
  * @author shalin.s
  */
 
-public class WebDriverListener extends QAFWebDriverCommandAdapter {
+//public class WebDriverListener extends QAFWebDriverCommandAdapter {
+  public class WebDriverListener extends QAFListenerAdapter {
 	Log logger = LogFactory.getLog(getClass());
 
 	@Override
 	public void beforeCommand(QAFExtendedWebDriver driver, CommandTracker commandTracker) {
 
 		super.beforeCommand(driver, commandTracker);
-		//logger.info("BEFORE COMMAND!");
+		//logger.info("BEFORE COMMAND! " + commandTracker.getCommand());
 
 		String command = commandTracker.getCommand();
 		if (command.equalsIgnoreCase(DriverCommand.GET_CURRENT_WINDOW_HANDLE)
@@ -49,10 +53,71 @@ public class WebDriverListener extends QAFWebDriverCommandAdapter {
 			commandTracker.setResponce(new Response());
 		}
 
+		if (command.equalsIgnoreCase(DriverCommand.CLICK_ELEMENT)) {
+			System.out.println("BEFORE CLICK!");
+			// NO CLICK
+			commandTracker.setResponce(new Response());
+		}
+
 		if (Util.DEBUG) {
 			String source = getDriver().getPageSource();
 			System.out.println("SOURCEX");
 			System.out.println(source);
+		}
+	}
+
+	private String lastClick = "";
+
+	@Override
+	public void beforeCommand(QAFExtendedWebElement element, CommandTracker commandTracker) {
+
+		if (commandTracker.getCommand().equalsIgnoreCase(DriverCommand.CLICK_ELEMENT)) {
+			/*System.out.println("BEFORE CLICK!");
+			try {
+				//element.getWrappedDriver().
+				Map<String, Object> params = commandTracker.getParameters();
+				for (Map.Entry<String,Object> entry : params.entrySet()) {
+					System.out.println("Key = " + entry.getKey() +
+									", Value = " + entry.getValue());
+					}
+			} catch (Exception ex) {
+
+			}*/
+			
+			// NO CLICK
+			boolean success = false;
+			for (int i=0; i < 3; i++) {
+				try {
+					success = true;
+					if (!element.getId().equals(lastClick)) {
+						lastClick = element.getId();
+						commandTracker.setResponce(new Response());
+						System.out.println("Click intercepted (" + i + ")");
+						element.click();
+					}
+					break;
+				} catch (Exception ex) {
+					success = false;
+					System.out.println("Oops " + i + ": " + ex.getMessage());
+					//Wait 2 seconds and try again
+					String alignToTop = i%2==0 ? "false" : "true";
+					((JavascriptExecutor)element.getWrappedDriver()).executeScript("arguments[0].scrollIntoView(" + alignToTop + ");", element);
+					//element.getWrappedDriver().executeScript("document.querySelector('div[data-message-id=\"loginAsSystemMessage\"]').style.display='none'");
+					try {Thread.sleep(3000);} catch (Exception x) {}
+					lastClick = "";
+				}
+			}
+			
+			//Could not find. Attempt one last time with Javascript
+			if (!success) {
+				try {
+					System.out.println("Oops final: Javascript");
+					((JavascriptExecutor)element.getWrappedDriver()).executeScript("arguments[0].click();", element);
+					Thread.sleep(2000);
+				} catch (Exception ex) {
+					System.out.println("Oops en catch final: " + ex.getMessage());
+				}
+			}
 		}
 	}
 
@@ -106,6 +171,8 @@ public class WebDriverListener extends QAFWebDriverCommandAdapter {
 		chromeOptions.addArguments("--disable-web-security");
 		chromeOptions.addArguments("--user-data-dir=" + userDataDir);
 		chromeOptions.addArguments("--disable-site-isolation-trials");
+		chromeOptions.addArguments("--disable-notifications");
+		//chromeOptions.addArguments("--incognito");
 		// chromeOptions.addArguments("--allow-running-insecure-content");
 		// chromeOptions.addArguments("--allow-file-access-from-files");
 
@@ -116,6 +183,7 @@ public class WebDriverListener extends QAFWebDriverCommandAdapter {
 		chromePrefs.put("download.prompt_for_download", false);
 		chromePrefs.put("download.directory_upgrade", true);
 		chromePrefs.put("plugins.always_open_pdf_externally", true);
+
 		chromeOptions.setExperimentalOption("prefs", chromePrefs);
 
 		/*

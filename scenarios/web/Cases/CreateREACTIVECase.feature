@@ -64,11 +64,11 @@ Scenario: Create REACTIVE case
    Then verify "case.entityName" text is "Case"
    And wait until "case.priority" to be present
    And assert "case.priority" text is "${casePriority}"
-   And assert "case.caseOrigin" text is "${caseOrigin}"
-   And assert "case.reportedIssue" text is "${reportedIssue}"
-   And assert "case.caseCause" text is "${caseCause}"
+   And verify "case.caseOrigin" text is "${caseOrigin}"
+   And verify "case.reportedIssue" text is "${reportedIssue}"
+   And verify "case.caseCause" text is "${caseCause}"
    And assert "case.subject" text is "${subject}"
-   And assert "case.description" text is "${caseDescription}"
+   And verify "case.description" text is "${caseDescription}"
    
 
 

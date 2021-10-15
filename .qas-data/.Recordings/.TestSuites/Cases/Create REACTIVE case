@@ -1239,7 +1239,7 @@
         },
         {
             "indexColumn": "",
-            "command": "Assert Text",
+            "command": "Verify Text",
             "element": "case.caseOrigin",
             "input": "${caseOrigin}",
             "status": "NotRun",
@@ -1276,7 +1276,7 @@
         },
         {
             "indexColumn": "",
-            "command": "Assert Text",
+            "command": "Verify Text",
             "element": "case.reportedIssue",
             "input": "${reportedIssue}",
             "status": "NotRun",
@@ -1313,7 +1313,7 @@
         },
         {
             "indexColumn": "",
-            "command": "Assert Text",
+            "command": "Verify Text",
             "element": "case.caseCause",
             "input": "${caseCause}",
             "status": "NotRun",
@@ -1387,7 +1387,7 @@
         },
         {
             "indexColumn": "",
-            "command": "Assert Text",
+            "command": "Verify Text",
             "element": "case.description",
             "input": "${caseDescription}",
             "status": "NotRun",

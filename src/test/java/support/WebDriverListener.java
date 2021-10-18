@@ -5,7 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.Map;
 import org.openqa.selenium.JavascriptExecutor;
-
+import org.openqa.selenium.WebDriver;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.openqa.selenium.Capabilities;
@@ -13,6 +13,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.DriverCommand;
 import org.openqa.selenium.remote.Response;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.qmetry.qaf.automation.core.ConfigurationManager;
 import com.qmetry.qaf.automation.core.QAFListenerAdapter;
@@ -68,9 +70,79 @@ import io.appium.java_client.AppiumDriver;
 
 	private String lastClick = "";
 
+	public void waitForPageToLoad(WebDriver driver, String command) {
+        try {
+
+			if (command.equalsIgnoreCase(DriverCommand.SEND_KEYS_TO_ACTIVE_ELEMENT) ||
+			command.equalsIgnoreCase(DriverCommand.SEND_KEYS_TO_ELEMENT) ||
+			command.equalsIgnoreCase(DriverCommand.CLICK_ELEMENT)) {
+
+				WebDriverWait wait1 = new WebDriverWait(driver, 30);
+			
+				//Page should have finished loading
+				ExpectedCondition<Boolean> jsLoad = new ExpectedCondition<Boolean>() {
+					@Override
+					public Boolean apply(WebDriver driver) {
+						return ((JavascriptExecutor) driver).executeScript("return document.readyState").toString()
+								.equals("complete");
+					}
+				};
+				
+				//Salesforce objects should finish loading (in case $A is defined)
+				ExpectedCondition<Boolean> aurascriptLoad = new ExpectedCondition<Boolean>() {
+					@Override
+					public Boolean apply(WebDriver driver) {
+						String A_IS_UNDEFINED = "return typeof $A === 'undefined' || !$A";
+						Boolean aIsUndefined = (Boolean) ((JavascriptExecutor) driver).executeScript((A_IS_UNDEFINED));
+
+						//If $A is undefined (e.g. login screen) just continue
+						if (aIsUndefined) {
+							return true;
+						}
+
+						//$A object is defined. This must be a salesforce page so we should wait
+						//until the metricsService returns a number (only done when page finished loading)
+						//all sections and tabs open
+						//This prevents things like clicking the search assistant to type, only to have
+						//it be closed automatically when some tabs continue loading...
+						String WAIT_FOR_AURA_SCRIPT = "return (typeof $A !== 'undefined' && $A && $A.metricsService.getCurrentPageTransaction().config.context.ept > 0)";
+						//String EPT_COUNTER_SCRIPT = "return ($A.metricsService.getCurrentPageTransaction().config.context.ept)";
+						Boolean result = (Boolean) ((JavascriptExecutor) driver).executeScript((WAIT_FOR_AURA_SCRIPT));
+
+						return result;
+						/*if (result) {
+							logger.info("EPT on the current page is : " + ((JavascriptExecutor) driver).executeScript(EPT_COUNTER_SCRIPT));
+							return true;
+						} else {
+							return false;
+						}*/
+
+					}
+				};
+				
+				//logger.info("Will wait...");
+				if (wait1.until(jsLoad) && wait1.until(aurascriptLoad)) {
+					//logger.info("Page load complete");
+				} else {
+					Thread.sleep(1000);
+				}
+				
+			}
+
+			
+        }
+
+        catch (Exception e) {
+            logger.error("Exception happened in waiting for page to load");
+			logger.error("Exception is " + e.getMessage(), e);
+            //Thread.sleep(1000);
+        }
+    }
+
 	@Override
 	public void beforeCommand(QAFExtendedWebElement element, CommandTracker commandTracker) {
 
+		waitForPageToLoad(element.getWrappedDriver(), commandTracker.getCommand());
 		if (commandTracker.getCommand().equalsIgnoreCase(DriverCommand.CLICK_ELEMENT)) {
 			/*System.out.println("BEFORE CLICK!");
 			try {

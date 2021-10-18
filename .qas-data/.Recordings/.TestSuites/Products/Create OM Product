@@ -378,52 +378,22 @@
             "isDisplay": false
         },
         {
-            "command": "Wait For Present",
-            "element": "applauncher.div",
-            "eArray": [
-                [
-                    "applauncher.div",
-                    "key"
-                ],
-                [
-                    "xpath=//one-appnav/div",
-                    "xpath:position"
-                ],
-                [
-                    "css=div.slds-context-bar",
-                    "css"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='View profile'])[1]/following::div[4]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Notifications'])[1]/following::div[7]",
-                    "xpath:neighbor"
-                ]
-            ],
-            "input": "",
-            "status": "NotRun",
-            "elementKey": "div.applauncherasprojectspressspacebartoreorder.accountinghomereportsreportsmenueditnavitems",
-            "elementDesc": "Text applauncheras:projectspressspacebartoreorder.accountinghomereportsreportsmenueditnavitems",
-            "isEncrypted": false,
-            "isDisplay": false,
             "indexColumn": "",
-            "@@mycolor": null,
-            "tcId": "8",
-            "tsId": 7,
-            "testData": false,
-            "duration": 5501000000,
-            "executedOn": "2021-09-23T17:28:43.522Z",
-            "errMessage": "",
-            "isRowExpanded": false
+            "command": "ShrdChangeLoggedInUser",
+            "element": "",
+            "input": "test_ops_center_operator",
+            "status": "NotRun",
+            "eArray": [],
+            "elementKey": "",
+            "elementDesc": "",
+            "shared": true,
+            "@@mycolor": null
         },
         {
             "indexColumn": "",
-            "command": "Click",
-            "element": "applauncher.div",
-            "input": "",
-            "status": "Passed",
+            "command": "ShrdLaunchApp",
+            "input": "products",
+            "status": "NotRun",
             "eArray": [
                 [
                     "applauncher.div",
@@ -439,254 +409,8 @@
             "duration": 734000000,
             "executedOn": "2021-09-23T17:28:44.256Z",
             "errMessage": "",
-            "isRowExpanded": false
-        },
-        {
-            "command": "Wait For Present",
-            "element": "applauncher.input.text",
-            "eArray": [
-                [
-                    "applauncher.input.text",
-                    "key"
-                ],
-                [
-                    "xpath=//button/div/div[5]",
-                    "xpath:position"
-                ],
-                [
-                    "css=div.slds-r5",
-                    "css"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='View profile'])[1]/following::div[13]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Notifications'])[1]/following::div[16]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='App Launcher'])[1]/preceding::div[5]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='AS: Projects'])[3]/preceding::div[5]",
-                    "xpath:neighbor"
-                ]
-            ],
-            "input": "",
-            "status": "Passed",
-            "elementKey": "div.sldsr5",
-            "elementDesc": "Text slds-r5",
-            "isEncrypted": false,
-            "isDisplay": false,
-            "indexColumn": "",
-            "@@mycolor": null,
-            "tcId": "8",
-            "tsId": 7,
-            "testData": false,
-            "duration": 708000000,
-            "executedOn": "2021-09-23T17:28:44.964Z",
-            "errMessage": "",
-            "isRowExpanded": false
-        },
-        {
-            "command": "Clear",
-            "element": "applauncher.input.text",
-            "eArray": [
-                [
-                    "applauncher.input.text",
-                    "key"
-                ],
-                [
-                    "id=input-34",
-                    "id"
-                ],
-                [
-                    "xpath=//div[@id='content_427:0']/one-app-launcher-menu/div/one-app-launcher-search-bar/lightning-input/div/input",
-                    "xpath:idRelative"
-                ],
-                [
-                    "xpath=//lightning-input/div/input",
-                    "xpath:position"
-                ],
-                [
-                    "css=#input-34",
-                    "css"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Search apps and items...'])[1]/following::input[1]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='No record selected'])[1]/following::input[1]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Clear'])[1]/preceding::input[1]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Apps'])[1]/preceding::input[1]",
-                    "xpath:neighbor"
-                ]
-            ],
-            "input": "",
-            "status": "Passed",
-            "elementKey": "search.input34",
-            "elementDesc": "input-34 search",
-            "isEncrypted": false,
-            "isDisplay": false,
-            "indexColumn": "",
-            "@@mycolor": null,
-            "tcId": "8",
-            "tsId": 7,
-            "testData": false,
-            "duration": 587000000,
-            "executedOn": "2021-09-23T17:28:45.551Z",
-            "errMessage": "",
-            "isRowExpanded": false
-        },
-        {
-            "command": "Type",
-            "element": "applauncher.input.text",
-            "eArray": [
-                [
-                    "applauncher.input.text",
-                    "key"
-                ],
-                [
-                    "id=input-34",
-                    "id"
-                ],
-                [
-                    "xpath=//div[@id='content_427:0']/one-app-launcher-menu/div/one-app-launcher-search-bar/lightning-input/div/input",
-                    "xpath:idRelative"
-                ],
-                [
-                    "xpath=//lightning-input/div/input",
-                    "xpath:position"
-                ],
-                [
-                    "css=#input-34",
-                    "css"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Search apps and items...'])[1]/following::input[1]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='No record selected'])[1]/following::input[1]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Clear'])[1]/preceding::input[1]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Apps'])[1]/preceding::input[1]",
-                    "xpath:neighbor"
-                ]
-            ],
-            "input": "products",
-            "status": "Passed",
-            "elementKey": "search.input34",
-            "elementDesc": "input-34 search",
-            "isEncrypted": false,
-            "isDisplay": false,
-            "indexColumn": "",
-            "@@mycolor": null,
-            "tcId": "8",
-            "tsId": 7,
-            "testData": false,
-            "duration": 633000000,
-            "executedOn": "2021-09-23T17:28:46.184Z",
-            "errMessage": "",
-            "isRowExpanded": false
-        },
-        {
-            "command": "Wait For Present",
-            "element": "applauncher.link.products",
-            "eArray": [
-                [
-                    "applauncher.link.products",
-                    "key"
-                ],
-                [
-                    "applauncher.link.opportunities",
-                    "key"
-                ],
-                [
-                    "xpath=//a[@id='Opportunity']/div/lightning-formatted-rich-text/span/p/b",
-                    "xpath:idRelative"
-                ],
-                [
-                    "xpath=//b",
-                    "xpath:position"
-                ],
-                [
-                    "css=b",
-                    "css"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Items'])[1]/following::b[1]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Apps'])[1]/following::b[1]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='View All'])[1]/preceding::b[1]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Loading...'])[1]/preceding::b[1]",
-                    "xpath:neighbor"
-                ]
-            ],
-            "input": "",
-            "status": "Passed",
-            "elementKey": "b.opportunities",
-            "elementDesc": "B opportunities",
-            "isEncrypted": false,
-            "isDisplay": false,
-            "indexColumn": "",
-            "@@mycolor": null,
-            "tcId": "8",
-            "tsId": 7,
-            "testData": false,
-            "duration": 591000000,
-            "executedOn": "2021-09-23T17:28:46.775Z",
-            "errMessage": "",
-            "isRowExpanded": false
-        },
-        {
-            "indexColumn": "",
-            "command": "Click",
-            "element": "applauncher.link.products",
-            "input": "",
-            "status": "Passed",
-            "eArray": [
-                [
-                    "applauncher.link.products",
-                    "key"
-                ],
-                [
-                    "applauncher.link.opportunities",
-                    "key"
-                ]
-            ],
-            "elementKey": "",
-            "elementDesc": "",
-            "@@mycolor": null,
-            "tcId": "8",
-            "tsId": 7,
-            "testData": false,
-            "duration": 963000000,
-            "executedOn": "2021-09-23T17:28:47.738Z",
-            "errMessage": "",
-            "isRowExpanded": false
+            "isRowExpanded": false,
+            "shared": true
         },
         {
             "command": "Wait For Present",
@@ -738,27 +462,29 @@
                 ]
             ],
             "input": "",
-            "status": "Passed",
+            "status": "NotRun",
             "elementKey": "span.1.allopportunities",
             "elementDesc": "Text 1.allopportunities",
             "isEncrypted": false,
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "8",
-            "tsId": 7,
-            "testData": false,
-            "duration": 565000000,
-            "executedOn": "2021-09-23T17:28:48.303Z",
+            "tcId": "11",
+            "tsId": 10,
+            "testData": true,
+            "duration": 577000000,
+            "executedOn": "2021-10-18T02:30:34.854Z",
             "errMessage": "",
-            "isRowExpanded": false
+            "isRowExpanded": false,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"productDescription\":\"Product description\",\"oemManufacturer\":\"OEM Manufacturer\",\"watts\":\"123\",\"activeDataSheet\":\"Active Data Sheet\"}",
+            "tdId": 1
         },
         {
             "indexColumn": "",
             "command": "Click",
             "element": "products.create.new.button",
             "input": "",
-            "status": "Passed",
+            "status": "NotRun",
             "eArray": [
                 [
                     "products.create.new.button",
@@ -768,20 +494,22 @@
             "elementKey": "",
             "elementDesc": "",
             "@@mycolor": null,
-            "tcId": "8",
-            "tsId": 7,
-            "testData": false,
-            "duration": 674000000,
-            "executedOn": "2021-09-23T17:28:48.977Z",
+            "tcId": "11",
+            "tsId": 10,
+            "testData": true,
+            "duration": 6685000000,
+            "executedOn": "2021-10-18T02:30:41.539Z",
             "errMessage": "",
-            "isRowExpanded": false
+            "isRowExpanded": false,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"productDescription\":\"Product description\",\"oemManufacturer\":\"OEM Manufacturer\",\"watts\":\"123\",\"activeDataSheet\":\"Active Data Sheet\"}",
+            "tdId": 1
         },
         {
             "indexColumn": "",
             "command": "Wait For Visible",
             "element": "products.createProduct.popup.recordType.OM.input",
             "input": "",
-            "status": "Passed",
+            "status": "NotRun",
             "eArray": [
                 [
                     "products.createProduct.popup.recordType.OM.input",
@@ -791,37 +519,41 @@
             "elementKey": "",
             "elementDesc": "",
             "@@mycolor": null,
-            "tcId": "8",
-            "tsId": 7,
-            "testData": false,
-            "duration": 540000000,
-            "executedOn": "2021-09-23T17:28:49.517Z",
+            "tcId": "11",
+            "tsId": 10,
+            "testData": true,
+            "duration": 576000000,
+            "executedOn": "2021-10-18T02:30:42.115Z",
             "errMessage": "",
-            "isRowExpanded": false
+            "isRowExpanded": false,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"productDescription\":\"Product description\",\"oemManufacturer\":\"OEM Manufacturer\",\"watts\":\"123\",\"activeDataSheet\":\"Active Data Sheet\"}",
+            "tdId": 1
         },
         {
             "indexColumn": "",
             "command": "Implicit Wait",
             "input": "3000",
-            "status": "Passed",
+            "status": "NotRun",
             "eArray": [],
             "elementKey": "",
             "elementDesc": "",
-            "tcId": "8",
-            "tsId": 7,
-            "testData": false,
-            "duration": 3515000000,
-            "executedOn": "2021-09-23T17:28:53.032Z",
+            "tcId": "11",
+            "tsId": 10,
+            "testData": true,
+            "duration": 3518000000,
+            "executedOn": "2021-10-18T02:30:45.633Z",
             "errMessage": "",
             "isRowExpanded": false,
-            "@@mycolor": null
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"productDescription\":\"Product description\",\"oemManufacturer\":\"OEM Manufacturer\",\"watts\":\"123\",\"activeDataSheet\":\"Active Data Sheet\"}",
+            "tdId": 1
         },
         {
             "indexColumn": "",
             "command": "Click",
             "element": "products.createProduct.popup.recordType.OM.input",
             "input": "",
-            "status": "Passed",
+            "status": "NotRun",
             "eArray": [
                 [
                     "products.createProduct.popup.recordType.OM.input",
@@ -831,20 +563,22 @@
             "elementKey": "",
             "elementDesc": "",
             "@@mycolor": null,
-            "tcId": "8",
-            "tsId": 7,
-            "testData": false,
-            "duration": 571000000,
-            "executedOn": "2021-09-23T17:28:53.603Z",
+            "tcId": "11",
+            "tsId": 10,
+            "testData": true,
+            "duration": 6618000000,
+            "executedOn": "2021-10-18T02:30:52.251Z",
             "errMessage": "",
-            "isRowExpanded": false
+            "isRowExpanded": false,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"productDescription\":\"Product description\",\"oemManufacturer\":\"OEM Manufacturer\",\"watts\":\"123\",\"activeDataSheet\":\"Active Data Sheet\"}",
+            "tdId": 1
         },
         {
             "indexColumn": "",
             "command": "Click",
             "element": "products.createProduct.popup.next.button",
             "input": "",
-            "status": "Passed",
+            "status": "NotRun",
             "eArray": [
                 [
                     "products.createProduct.popup.next.button",
@@ -853,21 +587,23 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "tcId": "8",
-            "tsId": 7,
-            "testData": false,
+            "tcId": "11",
+            "tsId": 10,
+            "testData": true,
             "@@mycolor": null,
-            "duration": 691000000,
-            "executedOn": "2021-09-23T17:28:54.294Z",
+            "duration": 6666000000,
+            "executedOn": "2021-10-18T02:30:58.917Z",
             "errMessage": "",
-            "isRowExpanded": false
+            "isRowExpanded": false,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"productDescription\":\"Product description\",\"oemManufacturer\":\"OEM Manufacturer\",\"watts\":\"123\",\"activeDataSheet\":\"Active Data Sheet\"}",
+            "tdId": 1
         },
         {
             "indexColumn": "",
             "command": "ShrdGetVarCurrentTime",
             "element": "",
             "input": "",
-            "status": "Passed",
+            "status": "NotRun",
             "eArray": [],
             "elementKey": "",
             "elementDesc": "",
@@ -933,7 +669,7 @@
             "command": "Type",
             "element": "products.createProduct.popup.name.input",
             "input": "${currentTime}",
-            "status": "Passed",
+            "status": "NotRun",
             "eArray": [
                 [
                     "products.createProduct.popup.name.input",
@@ -945,20 +681,22 @@
             "isEncrypted": false,
             "isDisplay": false,
             "@@mycolor": null,
-            "tcId": "8",
-            "tsId": 7,
-            "testData": false,
-            "duration": 732000000,
-            "executedOn": "2021-09-23T17:28:56.354Z",
+            "tcId": "11",
+            "tsId": 10,
+            "testData": true,
+            "duration": 721000000,
+            "executedOn": "2021-10-18T02:31:00.920Z",
             "errMessage": "",
-            "isRowExpanded": false
+            "isRowExpanded": false,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"productDescription\":\"Product description\",\"oemManufacturer\":\"OEM Manufacturer\",\"watts\":\"123\",\"activeDataSheet\":\"Active Data Sheet\"}",
+            "tdId": 1
         },
         {
             "indexColumn": "",
             "command": "Click",
             "element": "products.createProduct.popup.family.input",
             "input": "",
-            "status": "Passed",
+            "status": "NotRun",
             "eArray": [
                 [
                     "products.createProduct.popup.family.input",
@@ -967,21 +705,23 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "tcId": "8",
-            "tsId": 7,
-            "testData": false,
-            "duration": 671000000,
-            "executedOn": "2021-09-23T17:28:57.026Z",
+            "tcId": "11",
+            "tsId": 10,
+            "testData": true,
+            "duration": 6680000000,
+            "executedOn": "2021-10-18T02:31:07.600Z",
             "errMessage": "",
             "isRowExpanded": false,
-            "@@mycolor": null
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"productDescription\":\"Product description\",\"oemManufacturer\":\"OEM Manufacturer\",\"watts\":\"123\",\"activeDataSheet\":\"Active Data Sheet\"}",
+            "tdId": 1
         },
         {
             "indexColumn": "",
             "command": "Click",
             "element": "products.createProduct.popup.family.input.option.Tools",
             "input": "",
-            "status": "Passed",
+            "status": "NotRun",
             "eArray": [
                 [
                     "products.createProduct.popup.family.input.option.Tools",
@@ -990,21 +730,23 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "tcId": "8",
-            "tsId": 7,
-            "testData": false,
-            "duration": 660000000,
-            "executedOn": "2021-09-23T17:28:57.686Z",
+            "tcId": "11",
+            "tsId": 10,
+            "testData": true,
+            "duration": 6652000000,
+            "executedOn": "2021-10-18T02:31:14.252Z",
             "errMessage": "",
             "isRowExpanded": false,
-            "@@mycolor": null
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"productDescription\":\"Product description\",\"oemManufacturer\":\"OEM Manufacturer\",\"watts\":\"123\",\"activeDataSheet\":\"Active Data Sheet\"}",
+            "tdId": 1
         },
         {
             "indexColumn": "",
             "command": "Type",
             "element": "products.createProduct.popup.productDescription.input",
-            "input": "Product description",
-            "status": "Passed",
+            "input": "${productDescription}",
+            "status": "NotRun",
             "eArray": [
                 [
                     "products.createProduct.popup.productDescription.input",
@@ -1014,20 +756,24 @@
             "elementKey": "",
             "elementDesc": "",
             "@@mycolor": null,
-            "tcId": "8",
-            "tsId": 7,
-            "testData": false,
-            "duration": 757000000,
-            "executedOn": "2021-09-23T17:28:58.443Z",
+            "tcId": "11",
+            "tsId": 10,
+            "testData": true,
+            "duration": 724000000,
+            "executedOn": "2021-10-18T02:31:14.976Z",
             "errMessage": "",
-            "isRowExpanded": false
+            "isRowExpanded": false,
+            "isEncrypted": false,
+            "isDisplay": false,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"productDescription\":\"Product description\",\"oemManufacturer\":\"OEM Manufacturer\",\"watts\":\"123\",\"activeDataSheet\":\"Active Data Sheet\"}",
+            "tdId": 1
         },
         {
             "indexColumn": "",
             "command": "Type",
             "element": "products.createProduct.popup.oemManufacturer.input",
-            "input": "OEM Manufacturer",
-            "status": "Passed",
+            "input": "${oemManufacturer}",
+            "status": "NotRun",
             "eArray": [
                 [
                     "products.createProduct.popup.oemManufacturer.input",
@@ -1037,68 +783,24 @@
             "elementKey": "",
             "elementDesc": "",
             "@@mycolor": null,
-            "tcId": "8",
-            "tsId": 7,
-            "testData": false,
-            "duration": 775000000,
-            "executedOn": "2021-09-23T17:28:59.218Z",
+            "tcId": "11",
+            "tsId": 10,
+            "testData": true,
+            "duration": 754000000,
+            "executedOn": "2021-10-18T02:31:15.730Z",
             "errMessage": "",
-            "isRowExpanded": false
-        },
-        {
-            "indexColumn": "",
-            "command": "Type",
-            "element": "products.createProduct.popup.productCode.input",
-            "input": "${currentTime}",
-            "status": "Passed",
-            "eArray": [
-                [
-                    "products.createProduct.popup.productCode.input",
-                    "key"
-                ]
-            ],
-            "elementKey": "",
-            "elementDesc": "",
-            "@@mycolor": null,
+            "isRowExpanded": false,
             "isEncrypted": false,
             "isDisplay": false,
-            "tcId": "8",
-            "tsId": 7,
-            "testData": false,
-            "duration": 725000000,
-            "executedOn": "2021-09-23T17:28:59.943Z",
-            "errMessage": "",
-            "isRowExpanded": false
-        },
-        {
-            "indexColumn": "",
-            "command": "Type",
-            "element": "products.createProduct.popup.watts.input",
-            "input": "123",
-            "status": "Passed",
-            "eArray": [
-                [
-                    "products.createProduct.popup.watts.input",
-                    "key"
-                ]
-            ],
-            "elementKey": "",
-            "elementDesc": "",
-            "@@mycolor": null,
-            "tcId": "8",
-            "tsId": 7,
-            "testData": false,
-            "duration": 704000000,
-            "executedOn": "2021-09-23T17:29:00.647Z",
-            "errMessage": "",
-            "isRowExpanded": false
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"productDescription\":\"Product description\",\"oemManufacturer\":\"OEM Manufacturer\",\"watts\":\"123\",\"activeDataSheet\":\"Active Data Sheet\"}",
+            "tdId": 1
         },
         {
             "indexColumn": "",
             "command": "Type",
             "element": "products.createProduct.popup.activeDataSheet.input",
-            "input": "Active Data Sheet",
-            "status": "Passed",
+            "input": "${activeDataSheet}",
+            "status": "NotRun",
             "eArray": [
                 [
                     "products.createProduct.popup.activeDataSheet.input",
@@ -1108,20 +810,24 @@
             "elementKey": "",
             "elementDesc": "",
             "@@mycolor": null,
-            "tcId": "8",
-            "tsId": 7,
-            "testData": false,
-            "duration": 751000000,
-            "executedOn": "2021-09-23T17:29:01.398Z",
+            "tcId": "11",
+            "tsId": 10,
+            "testData": true,
+            "duration": 785000000,
+            "executedOn": "2021-10-18T02:32:25.129Z",
             "errMessage": "",
-            "isRowExpanded": false
+            "isRowExpanded": false,
+            "isEncrypted": false,
+            "isDisplay": false,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"productDescription\":\"Product description\",\"oemManufacturer\":\"OEM Manufacturer\",\"watts\":\"123\",\"activeDataSheet\":\"Active Data Sheet\"}",
+            "tdId": 1
         },
         {
             "indexColumn": "",
             "command": "Click",
             "element": "products.createProduct.popup.save.button",
             "input": "",
-            "status": "Passed",
+            "status": "NotRun",
             "eArray": [
                 [
                     "products.createProduct.popup.save.button",
@@ -1131,20 +837,22 @@
             "elementKey": "",
             "elementDesc": "",
             "@@mycolor": null,
-            "tcId": "8",
-            "tsId": 7,
-            "testData": false,
-            "duration": 661000000,
-            "executedOn": "2021-09-23T17:29:02.059Z",
+            "tcId": "11",
+            "tsId": 10,
+            "testData": true,
+            "duration": 6676000000,
+            "executedOn": "2021-10-18T02:32:31.805Z",
             "errMessage": "",
-            "isRowExpanded": false
+            "isRowExpanded": false,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"productDescription\":\"Product description\",\"oemManufacturer\":\"OEM Manufacturer\",\"watts\":\"123\",\"activeDataSheet\":\"Active Data Sheet\"}",
+            "tdId": 1
         },
         {
             "indexColumn": "",
             "command": "Wait For Present",
             "element": "common.toastContainer",
             "input": "",
-            "status": "Passed",
+            "status": "NotRun",
             "eArray": [
                 [
                     "common.toastContainer",
@@ -1154,20 +862,22 @@
             "elementKey": "",
             "elementDesc": "",
             "@@mycolor": null,
-            "tcId": "8",
-            "tsId": 7,
-            "testData": false,
-            "duration": 1394000000,
-            "executedOn": "2021-09-23T17:29:03.453Z",
+            "tcId": "11",
+            "tsId": 10,
+            "testData": true,
+            "duration": 9835000000,
+            "executedOn": "2021-10-18T02:32:41.640Z",
             "errMessage": "",
-            "isRowExpanded": false
+            "isRowExpanded": false,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"productDescription\":\"Product description\",\"oemManufacturer\":\"OEM Manufacturer\",\"watts\":\"123\",\"activeDataSheet\":\"Active Data Sheet\"}",
+            "tdId": 1
         },
         {
             "indexColumn": "",
             "command": "Assert Text",
             "element": "products.details.name",
             "input": "${currentTime}",
-            "status": "Passed",
+            "status": "NotRun",
             "eArray": [
                 [
                     "products.details.name",
@@ -1179,15 +889,17 @@
             "@@mycolor": null,
             "isEncrypted": false,
             "isDisplay": false,
-            "tcId": "8",
-            "tsId": 7,
-            "testData": false,
-            "duration": 999000000,
-            "executedOn": "2021-09-23T17:29:04.452Z",
-            "expected": "1632418134818",
-            "actual": "1632418134818",
+            "tcId": "11",
+            "tsId": 10,
+            "testData": true,
+            "duration": 855000000,
+            "executedOn": "2021-10-18T02:32:42.495Z",
+            "expected": "1634524259443",
+            "actual": "1634524259443",
             "errMessage": "",
-            "isRowExpanded": false
+            "isRowExpanded": false,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"productDescription\":\"Product description\",\"oemManufacturer\":\"OEM Manufacturer\",\"watts\":\"123\",\"activeDataSheet\":\"Active Data Sheet\"}",
+            "tdId": 1
         }
     ],
     "type": "web",
@@ -1221,6 +933,9 @@
         },
         {
             "name": "positive"
+        },
+        {
+            "name": "smoke"
         }
     ],
     "description": "Verify whether user is able to create a product of record type O&M Product",

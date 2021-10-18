@@ -27,17 +27,6 @@
         },
         {
             "indexColumn": "",
-            "command": "Implicit Wait",
-            "element": "",
-            "input": "2000",
-            "status": "NotRun",
-            "eArray": [],
-            "elementKey": "",
-            "elementDesc": "",
-            "@@mycolor": null
-        },
-        {
-            "indexColumn": "",
             "command": "ShrdLaunchApp",
             "element": "",
             "input": "opportunities",
@@ -46,17 +35,6 @@
             "elementKey": "",
             "elementDesc": "",
             "shared": true,
-            "@@mycolor": null
-        },
-        {
-            "indexColumn": "",
-            "command": "Implicit Wait",
-            "element": "",
-            "input": "2000",
-            "status": "NotRun",
-            "eArray": [],
-            "elementKey": "",
-            "elementDesc": "",
             "@@mycolor": null
         },
         {

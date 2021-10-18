@@ -14,7 +14,7 @@ Scenario: Create and approve quote for REACTIVE case
    And wait until "common.searchAssistant.input" to be enable
    And clear "common.searchAssistant.input"
    And wait until "common.searchAssistant.input" to be enable
-   And sendKeys "${number}" into "common.searchAssistant.input"
+   And sendKeys "00290316" into "common.searchAssistant.input"
    Then wait until "cases.search.firstResult" to be present
    When wait until "cases.search.firstResult" to be enable
    And click on "cases.search.firstResult"
@@ -151,3 +151,7 @@ Scenario: Create and approve quote for REACTIVE case
    Then wait until "quotes.details.recordType" to be present
    And wait until "quotes.details.recordType.approved" to be present
    And assert "quotes.details.recordType.approved" text is "Approved"
+   
+
+
+

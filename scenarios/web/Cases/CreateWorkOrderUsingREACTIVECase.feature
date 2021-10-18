@@ -9,9 +9,7 @@ Scenario: Create Work Order using REACTIVE case
 	
    Given ShrdLoginToFullCopy "${username}" "${password}"
    And ShrdChangeLoggedInUser "test_ops_center_operator"
-   And wait for 2000 milisec
    And ShrdLaunchApp "cases"
-   And wait for 2000 milisec
    When wait until "common.searchAssistant.button" to be enable
    And click on "common.searchAssistant.button"
    And wait until "common.searchAssistant.input" to be enable

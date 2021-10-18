@@ -2,24 +2,14 @@ Feature: Projects
 
 @author:Rodrigo Montemayor
 @description:Verify whether user is able to create a new Contact and add contact into Project.
-@project @contact @positive
+@project @contact @positive @smoke
 @dataFile:resources/testdata/Projects/Create contact and add to project.csv
 @requirementKey=QTM-RQ-23
-
 Scenario: Create contact and add to project
 	
    Given ShrdLoginToFullCopy "${username}" "${password}"
-   Then wait until "applauncher.div" to be present
-   When wait until "applauncher.div" to be enable
-   And click on "applauncher.div"
-   Then wait until "applauncher.input.text" to be present
-   When wait until "applauncher.input.text" to be enable
-   And clear "applauncher.input.text"
-   And wait until "applauncher.input.text" to be enable
-   And sendKeys "opportunities" into "applauncher.input.text"
-   Then wait until "applauncher.link.opportunities" to be present
-   When wait until "applauncher.link.opportunities" to be enable
-   And click on "applauncher.link.opportunities"
+   And ShrdChangeLoggedInUser "test_ops_center_operator"
+   And ShrdLaunchApp "opportunities"
    Then wait until "opportunities.selectListView" to be present
    When wait until "opportunities.selectListView" to be enable
    And click on "opportunities.selectListView"
@@ -71,8 +61,6 @@ Scenario: Create contact and add to project
    And click on "accounts.contacts.all.link"
    And wait until "contacts.create.new.button" to be enable
    And click on "contacts.create.new.button"
-   And wait until "contacts.createContact.popup.salutation.input" to be enable
-   And click on "contacts.createContact.popup.salutation.input"
    Then wait until "contacts.createContact.popup.firstName.input" to be visible
    When wait until "contacts.createContact.popup.firstName.input" to be enable
    And sendKeys "Auto First Name" into "contacts.createContact.popup.firstName.input"
@@ -98,15 +86,23 @@ Scenario: Create contact and add to project
    When wait until "common.var.input-url" to be enable
    And sendKeys "${projectsURL}" into "common.var.input-url"
    Then Execute Java Script with data "window.location.href=document.getElementById(\"input-url\").value"
+   And wait until "projects.siteInformation.onSiteContact.edit.button" to be present
    When wait until "projects.siteInformation.onSiteContact.edit.button" to be enable
    And click on "projects.siteInformation.onSiteContact.edit.button"
    And wait for 3000 milisec
-   Then wait until "projects.siteInformation.onSiteContact.edit.input" to be visible
-   Then wait for 3000 milisec
+   Then wait until "projects.siteInformation.onSiteContact.edit.input" to be present
    When wait until "projects.siteInformation.onSiteContact.edit.input" to be enable
    And sendKeys "${fullName}" into "projects.siteInformation.onSiteContact.edit.input"
-   And wait until "projects.siteInformation.onSiteContact.edit.input.li.firstOption" to be enable
+   And wait for 3000 milisec
+   Then wait until "projects.siteInformation.onSiteContact.edit.input.li.firstOption" to be present
+   When wait until "projects.siteInformation.onSiteContact.edit.input.li.firstOption" to be enable
    And click on "projects.siteInformation.onSiteContact.edit.input.li.firstOption"
+   And wait until "projects.siteInformation.primaryOMContact.edit.input" to be enable
+   And sendKeys "${fullName}" into "projects.siteInformation.primaryOMContact.edit.input"
+   And wait for 3000 milisec
+   Then wait until "projects.siteInformation.primaryOMContact.edit.input.li.firstOption" to be present
+   When wait until "projects.siteInformation.primaryOMContact.edit.input.li.firstOption" to be enable
+   And click on "projects.siteInformation.primaryOMContact.edit.input.li.firstOption"
    Then assert "projects.save.button" is present
    When wait until "projects.save.button" to be enable
    And click on "projects.save.button"

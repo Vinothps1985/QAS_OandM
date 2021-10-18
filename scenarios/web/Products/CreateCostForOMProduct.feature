@@ -5,7 +5,6 @@ Feature: Products
 @product @positive @cost
 @dataFile:resources/testdata/Products/Create Cost For OM Product.csv
 @requirementKey=QTM-RQ-23
-
 Scenario: Create Cost for OM Product
 	
    Given ShrdLoginToFullCopy "${username}" "${password}"

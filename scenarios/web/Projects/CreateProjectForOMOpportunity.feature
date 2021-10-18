@@ -9,9 +9,7 @@ Scenario: Create project for OM Opportunity
 	
    Given ShrdLoginToFullCopy "${username}" "${password}"
    And ShrdChangeLoggedInUser "test_ops_center_operator"
-   And  wait for 2000 milisec
    And ShrdLaunchApp "opportunities"
-   And  wait for 2000 milisec
    Then wait until "opportunities.selectListView" to be present
    When wait until "opportunities.selectListView" to be enable
    And click on "opportunities.selectListView"

@@ -105,7 +105,11 @@ import io.appium.java_client.AppiumDriver;
 						//all sections and tabs open
 						//This prevents things like clicking the search assistant to type, only to have
 						//it be closed automatically when some tabs continue loading...
-						String WAIT_FOR_AURA_SCRIPT = "return (typeof $A !== 'undefined' && $A && $A.metricsService.getCurrentPageTransaction().config.context.ept > 0)";
+						String WAIT_FOR_AURA_SCRIPT = "return (typeof $A !== 'undefined' && $A && " +
+						" typeof $A.metricsService !== 'undefined' && typeof $A.metricsService.getCurrentPageTransaction !== 'undefined' && " +
+						" $A.metricsService.getCurrentPageTransaction() != null && typeof $A.metricsService.getCurrentPageTransaction().config !== 'undefined' && " +
+						" typeof $A.metricsService.getCurrentPageTransaction().config.context !== 'undefined' && " +
+						" $A.metricsService.getCurrentPageTransaction().config.context.ept > 0)";
 						//String EPT_COUNTER_SCRIPT = "return ($A.metricsService.getCurrentPageTransaction().config.context.ept)";
 						Boolean result = (Boolean) ((JavascriptExecutor) driver).executeScript((WAIT_FOR_AURA_SCRIPT));
 

@@ -376,51 +376,21 @@
             ]
         },
         {
-            "command": "Wait For Present",
-            "element": "applauncher.div",
-            "eArray": [
-                [
-                    "applauncher.div",
-                    "key"
-                ],
-                [
-                    "xpath=//one-appnav/div",
-                    "xpath:position"
-                ],
-                [
-                    "css=div.slds-context-bar",
-                    "css"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='View profile'])[1]/following::div[4]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Notifications'])[1]/following::div[7]",
-                    "xpath:neighbor"
-                ]
-            ],
-            "input": "",
-            "status": "NotRun",
-            "elementKey": "div.applauncherasprojectspressspacebartoreorder.accountinghomereportsreportsmenueditnavitems",
-            "elementDesc": "Text applauncheras:projectspressspacebartoreorder.accountinghomereportsreportsmenueditnavitems",
-            "isEncrypted": false,
-            "isDisplay": false,
             "indexColumn": "",
-            "@@mycolor": null,
-            "tcId": "30",
-            "tsId": 7,
-            "testData": false,
-            "duration": 4175000000,
-            "executedOn": "2021-09-23T19:14:37.617Z",
-            "errMessage": "",
-            "isRowExpanded": false
+            "command": "ShrdChangeLoggedInUser",
+            "element": "",
+            "input": "test_ops_center_operator",
+            "status": "NotRun",
+            "eArray": [],
+            "elementKey": "",
+            "elementDesc": "",
+            "shared": true,
+            "@@mycolor": null
         },
         {
             "indexColumn": "",
-            "command": "Click",
-            "element": "applauncher.div",
-            "input": "",
+            "command": "ShrdLaunchApp",
+            "input": "products",
             "status": "NotRun",
             "eArray": [
                 [
@@ -437,254 +407,8 @@
             "duration": 746000000,
             "executedOn": "2021-09-23T19:14:38.363Z",
             "errMessage": "",
-            "isRowExpanded": false
-        },
-        {
-            "command": "Wait For Present",
-            "element": "applauncher.input.text",
-            "eArray": [
-                [
-                    "applauncher.input.text",
-                    "key"
-                ],
-                [
-                    "xpath=//button/div/div[5]",
-                    "xpath:position"
-                ],
-                [
-                    "css=div.slds-r5",
-                    "css"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='View profile'])[1]/following::div[13]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Notifications'])[1]/following::div[16]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='App Launcher'])[1]/preceding::div[5]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='AS: Projects'])[3]/preceding::div[5]",
-                    "xpath:neighbor"
-                ]
-            ],
-            "input": "",
-            "status": "NotRun",
-            "elementKey": "div.sldsr5",
-            "elementDesc": "Text slds-r5",
-            "isEncrypted": false,
-            "isDisplay": false,
-            "indexColumn": "",
-            "@@mycolor": null,
-            "tcId": "30",
-            "tsId": 7,
-            "testData": false,
-            "duration": 715000000,
-            "executedOn": "2021-09-23T19:14:39.078Z",
-            "errMessage": "",
-            "isRowExpanded": false
-        },
-        {
-            "command": "Clear",
-            "element": "applauncher.input.text",
-            "eArray": [
-                [
-                    "applauncher.input.text",
-                    "key"
-                ],
-                [
-                    "id=input-34",
-                    "id"
-                ],
-                [
-                    "xpath=//div[@id='content_427:0']/one-app-launcher-menu/div/one-app-launcher-search-bar/lightning-input/div/input",
-                    "xpath:idRelative"
-                ],
-                [
-                    "xpath=//lightning-input/div/input",
-                    "xpath:position"
-                ],
-                [
-                    "css=#input-34",
-                    "css"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Search apps and items...'])[1]/following::input[1]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='No record selected'])[1]/following::input[1]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Clear'])[1]/preceding::input[1]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Apps'])[1]/preceding::input[1]",
-                    "xpath:neighbor"
-                ]
-            ],
-            "input": "",
-            "status": "NotRun",
-            "elementKey": "search.input34",
-            "elementDesc": "input-34 search",
-            "isEncrypted": false,
-            "isDisplay": false,
-            "indexColumn": "",
-            "@@mycolor": null,
-            "tcId": "30",
-            "tsId": 7,
-            "testData": false,
-            "duration": 596000000,
-            "executedOn": "2021-09-23T19:14:39.674Z",
-            "errMessage": "",
-            "isRowExpanded": false
-        },
-        {
-            "command": "Type",
-            "element": "applauncher.input.text",
-            "eArray": [
-                [
-                    "applauncher.input.text",
-                    "key"
-                ],
-                [
-                    "id=input-34",
-                    "id"
-                ],
-                [
-                    "xpath=//div[@id='content_427:0']/one-app-launcher-menu/div/one-app-launcher-search-bar/lightning-input/div/input",
-                    "xpath:idRelative"
-                ],
-                [
-                    "xpath=//lightning-input/div/input",
-                    "xpath:position"
-                ],
-                [
-                    "css=#input-34",
-                    "css"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Search apps and items...'])[1]/following::input[1]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='No record selected'])[1]/following::input[1]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Clear'])[1]/preceding::input[1]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Apps'])[1]/preceding::input[1]",
-                    "xpath:neighbor"
-                ]
-            ],
-            "input": "products",
-            "status": "NotRun",
-            "elementKey": "search.input34",
-            "elementDesc": "input-34 search",
-            "isEncrypted": false,
-            "isDisplay": false,
-            "indexColumn": "",
-            "@@mycolor": null,
-            "tcId": "30",
-            "tsId": 7,
-            "testData": false,
-            "duration": 665000000,
-            "executedOn": "2021-09-23T19:14:40.339Z",
-            "errMessage": "",
-            "isRowExpanded": false
-        },
-        {
-            "command": "Wait For Present",
-            "element": "applauncher.link.products",
-            "eArray": [
-                [
-                    "applauncher.link.products",
-                    "key"
-                ],
-                [
-                    "applauncher.link.opportunities",
-                    "key"
-                ],
-                [
-                    "xpath=//a[@id='Opportunity']/div/lightning-formatted-rich-text/span/p/b",
-                    "xpath:idRelative"
-                ],
-                [
-                    "xpath=//b",
-                    "xpath:position"
-                ],
-                [
-                    "css=b",
-                    "css"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Items'])[1]/following::b[1]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Apps'])[1]/following::b[1]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='View All'])[1]/preceding::b[1]",
-                    "xpath:neighbor"
-                ],
-                [
-                    "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Loading...'])[1]/preceding::b[1]",
-                    "xpath:neighbor"
-                ]
-            ],
-            "input": "",
-            "status": "NotRun",
-            "elementKey": "b.opportunities",
-            "elementDesc": "B opportunities",
-            "isEncrypted": false,
-            "isDisplay": false,
-            "indexColumn": "",
-            "@@mycolor": null,
-            "tcId": "30",
-            "tsId": 7,
-            "testData": false,
-            "duration": 586000000,
-            "executedOn": "2021-09-23T19:14:40.925Z",
-            "errMessage": "",
-            "isRowExpanded": false
-        },
-        {
-            "indexColumn": "",
-            "command": "Click",
-            "element": "applauncher.link.products",
-            "input": "",
-            "status": "NotRun",
-            "eArray": [
-                [
-                    "applauncher.link.products",
-                    "key"
-                ],
-                [
-                    "applauncher.link.opportunities",
-                    "key"
-                ]
-            ],
-            "elementKey": "",
-            "elementDesc": "",
-            "@@mycolor": null,
-            "tcId": "30",
-            "tsId": 7,
-            "testData": false,
-            "duration": 1006000000,
-            "executedOn": "2021-09-23T19:14:41.931Z",
-            "errMessage": "",
-            "isRowExpanded": false
+            "isRowExpanded": false,
+            "shared": true
         },
         {
             "command": "Wait For Present",
@@ -735,13 +459,15 @@
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "30",
-            "tsId": 7,
-            "testData": false,
-            "duration": 590000000,
-            "executedOn": "2021-09-23T19:14:42.521Z",
+            "tcId": "12",
+            "tsId": 10,
+            "testData": true,
+            "duration": 560000000,
+            "executedOn": "2021-10-18T04:23:40.119Z",
             "errMessage": "",
-            "isRowExpanded": false
+            "isRowExpanded": false,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"unitCost\":\"123\"}",
+            "tdId": 1
         },
         {
             "indexColumn": "",
@@ -762,13 +488,15 @@
             "elementKey": "",
             "elementDesc": "",
             "@@mycolor": null,
-            "tcId": "30",
-            "tsId": 7,
-            "testData": false,
-            "duration": 638000000,
-            "executedOn": "2021-09-23T19:14:43.159Z",
+            "tcId": "12",
+            "tsId": 10,
+            "testData": true,
+            "duration": 6695000000,
+            "executedOn": "2021-10-18T04:23:46.814Z",
             "errMessage": "",
-            "isRowExpanded": false
+            "isRowExpanded": false,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"unitCost\":\"123\"}",
+            "tdId": 1
         },
         {
             "command": "Wait For Present",
@@ -823,13 +551,15 @@
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "30",
-            "tsId": 7,
-            "testData": false,
-            "duration": 538000000,
-            "executedOn": "2021-09-23T19:14:43.697Z",
+            "tcId": "12",
+            "tsId": 10,
+            "testData": true,
+            "duration": 559000000,
+            "executedOn": "2021-10-18T04:23:47.373Z",
             "errMessage": "",
-            "isRowExpanded": false
+            "isRowExpanded": false,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"unitCost\":\"123\"}",
+            "tdId": 1
         },
         {
             "indexColumn": "",
@@ -854,13 +584,15 @@
             "elementKey": "",
             "elementDesc": "",
             "@@mycolor": null,
-            "tcId": "30",
-            "tsId": 7,
-            "testData": false,
-            "duration": 763000000,
-            "executedOn": "2021-09-23T19:14:44.460Z",
+            "tcId": "12",
+            "tsId": 10,
+            "testData": true,
+            "duration": 6703000000,
+            "executedOn": "2021-10-18T04:23:54.076Z",
             "errMessage": "",
-            "isRowExpanded": false
+            "isRowExpanded": false,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"unitCost\":\"123\"}",
+            "tdId": 1
         },
         {
             "indexColumn": "",
@@ -880,13 +612,15 @@
             "elementKey": "",
             "elementDesc": "",
             "@@mycolor": null,
-            "tcId": "30",
-            "tsId": 7,
-            "testData": false,
-            "duration": 2502000000,
-            "executedOn": "2021-09-23T19:14:46.962Z",
+            "tcId": "12",
+            "tsId": 10,
+            "testData": true,
+            "duration": 2509000000,
+            "executedOn": "2021-10-18T04:23:56.585Z",
             "errMessage": "",
-            "isRowExpanded": false
+            "isRowExpanded": false,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"unitCost\":\"123\"}",
+            "tdId": 1
         },
         {
             "command": "Wait For Present",
@@ -953,13 +687,15 @@
             "isDisplay": false,
             "indexColumn": "",
             "@@mycolor": null,
-            "tcId": "30",
-            "tsId": 7,
-            "testData": false,
-            "duration": 583000000,
-            "executedOn": "2021-09-23T19:14:47.545Z",
+            "tcId": "12",
+            "tsId": 10,
+            "testData": true,
+            "duration": 563000000,
+            "executedOn": "2021-10-18T04:23:57.148Z",
             "errMessage": "",
-            "isRowExpanded": false
+            "isRowExpanded": false,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"unitCost\":\"123\"}",
+            "tdId": 1
         },
         {
             "indexColumn": "",
@@ -995,14 +731,16 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "tcId": "30",
-            "tsId": 7,
-            "testData": false,
-            "duration": 680000000,
-            "executedOn": "2021-09-23T19:14:48.225Z",
+            "tcId": "12",
+            "tsId": 10,
+            "testData": true,
+            "duration": 21628000000,
+            "executedOn": "2021-10-18T04:24:18.776Z",
             "errMessage": "",
             "isRowExpanded": false,
-            "@@mycolor": null
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"unitCost\":\"123\"}",
+            "tdId": 1
         },
         {
             "indexColumn": "",
@@ -1019,13 +757,15 @@
             "elementKey": "",
             "elementDesc": "",
             "@@mycolor": null,
-            "tcId": "30",
-            "tsId": 7,
-            "testData": false,
+            "tcId": "12",
+            "tsId": 10,
+            "testData": true,
             "isRowExpanded": false,
-            "duration": 1171000000,
-            "executedOn": "2021-09-23T19:14:49.396Z",
-            "errMessage": ""
+            "duration": 13589000000,
+            "executedOn": "2021-10-18T04:24:32.365Z",
+            "errMessage": "",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"unitCost\":\"123\"}",
+            "tdId": 1
         },
         {
             "indexColumn": "",
@@ -1042,13 +782,15 @@
             "elementKey": "",
             "elementDesc": "",
             "@@mycolor": null,
-            "tcId": "30",
-            "tsId": 7,
-            "testData": false,
-            "duration": 617000000,
-            "executedOn": "2021-09-23T19:14:50.013Z",
+            "tcId": "12",
+            "tsId": 10,
+            "testData": true,
+            "duration": 6839000000,
+            "executedOn": "2021-10-18T04:24:39.204Z",
             "errMessage": "",
-            "isRowExpanded": false
+            "isRowExpanded": false,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"unitCost\":\"123\"}",
+            "tdId": 1
         },
         {
             "indexColumn": "",
@@ -1060,13 +802,15 @@
             "elementKey": "",
             "elementDesc": "",
             "@@mycolor": null,
-            "tcId": "30",
-            "tsId": 7,
-            "testData": false,
-            "duration": 1515000000,
-            "executedOn": "2021-09-23T19:14:51.529Z",
+            "tcId": "12",
+            "tsId": 10,
+            "testData": true,
+            "duration": 1518000000,
+            "executedOn": "2021-10-18T04:24:40.722Z",
             "errMessage": "",
-            "isRowExpanded": false
+            "isRowExpanded": false,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"unitCost\":\"123\"}",
+            "tdId": 1
         },
         {
             "indexColumn": "",
@@ -1082,14 +826,16 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "tcId": "30",
-            "tsId": 7,
-            "testData": false,
+            "tcId": "12",
+            "tsId": 10,
+            "testData": true,
             "@@mycolor": null,
-            "duration": 744000000,
-            "executedOn": "2021-09-23T19:14:52.273Z",
+            "duration": 6887000000,
+            "executedOn": "2021-10-18T04:24:47.609Z",
             "errMessage": "",
-            "isRowExpanded": false
+            "isRowExpanded": false,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"unitCost\":\"123\"}",
+            "tdId": 1
         },
         {
             "indexColumn": "",
@@ -1106,19 +852,21 @@
             "elementKey": "",
             "elementDesc": "",
             "@@mycolor": null,
-            "tcId": "30",
-            "tsId": 7,
-            "testData": false,
-            "duration": 960000000,
-            "executedOn": "2021-09-23T19:14:53.233Z",
+            "tcId": "12",
+            "tsId": 10,
+            "testData": true,
+            "duration": 1653000000,
+            "executedOn": "2021-10-18T04:24:49.262Z",
             "errMessage": "",
-            "isRowExpanded": false
+            "isRowExpanded": false,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"unitCost\":\"123\"}",
+            "tdId": 1
         },
         {
             "indexColumn": "",
             "command": "Type",
             "element": "cost.createCost.popup.unitCost",
-            "input": "123",
+            "input": "${unitCost}",
             "status": "NotRun",
             "eArray": [
                 [
@@ -1129,13 +877,17 @@
             "elementKey": "",
             "elementDesc": "",
             "@@mycolor": null,
-            "tcId": "30",
-            "tsId": 7,
-            "testData": false,
-            "duration": 606000000,
-            "executedOn": "2021-09-23T19:14:53.839Z",
+            "tcId": "12",
+            "tsId": 10,
+            "testData": true,
+            "duration": 694000000,
+            "executedOn": "2021-10-18T04:24:49.956Z",
             "errMessage": "",
-            "isRowExpanded": false
+            "isRowExpanded": false,
+            "isEncrypted": false,
+            "isDisplay": false,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"unitCost\":\"123\"}",
+            "tdId": 1
         },
         {
             "indexColumn": "",
@@ -1152,13 +904,15 @@
             "elementKey": "",
             "elementDesc": "",
             "@@mycolor": null,
-            "tcId": "30",
-            "tsId": 7,
-            "testData": false,
-            "duration": 610000000,
-            "executedOn": "2021-09-23T19:14:54.449Z",
+            "tcId": "12",
+            "tsId": 10,
+            "testData": true,
+            "duration": 6687000000,
+            "executedOn": "2021-10-18T04:24:56.643Z",
             "errMessage": "",
-            "isRowExpanded": false
+            "isRowExpanded": false,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"unitCost\":\"123\"}",
+            "tdId": 1
         },
         {
             "indexColumn": "",
@@ -1178,14 +932,16 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "tcId": "30",
-            "tsId": 7,
-            "testData": false,
-            "duration": 570000000,
-            "executedOn": "2021-09-23T19:14:55.019Z",
+            "tcId": "12",
+            "tsId": 10,
+            "testData": true,
+            "duration": 573000000,
+            "executedOn": "2021-10-18T04:24:57.216Z",
             "errMessage": "",
             "isRowExpanded": false,
-            "@@mycolor": null
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"unitCost\":\"123\"}",
+            "tdId": 1
         },
         {
             "indexColumn": "",
@@ -1205,22 +961,28 @@
             ],
             "elementKey": "",
             "elementDesc": "",
-            "tcId": "30",
-            "tsId": 7,
-            "testData": false,
-            "duration": 631000000,
-            "executedOn": "2021-09-23T19:14:55.650Z",
-            "errMessage": "",
+            "tcId": "12",
+            "tsId": 10,
+            "testData": true,
+            "duration": 36612000000,
+            "executedOn": "2021-10-18T04:25:33.828Z",
+            "errMessage": "Name: NoSuchElementError\r\nMessage: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//div[contains(@class, 'toastContainer')]//a\"}\n  (Session info: chrome=94.0.4606.81)\r\nStacktrace: NoSuchElementError: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//div[contains(@class, 'toastContainer')]//a\"}\n  (Session info: chrome=94.0.4606.81)\n\tat Object.throwDecodedError (c:\\Program Files\\QMetry Automation Studio\\resources\\app\\extensions\\node_modules\\selenium-webdriver\\lib\\error.js:550:15)\n\tat parseHttpResponse (c:\\Program Files\\QMetry Automation Studio\\resources\\app\\extensions\\node_modules\\selenium-webdriver\\lib\\http.js:565:13)\n\tat Executor.execute (c:\\Program Files\\QMetry Automation Studio\\resources\\app\\extensions\\node_modules\\selenium-webdriver\\lib\\http.js:491:26)\n\tat runMicrotasks (<anonymous>)\n\tat processTicksAndRejections (internal/process/task_queues.js:85:5)\n\tat async thenableWebDriverProxy.execute (c:\\Program Files\\QMetry Automation Studio\\resources\\app\\extensions\\node_modules\\selenium-webdriver\\lib\\webdriver.js:700:17)",
             "isRowExpanded": false,
-            "@@mycolor": null
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"unitCost\":\"123\"}",
+            "tdId": 1
         },
         {
             "indexColumn": "",
             "command": "Wait For Present",
-            "element": "cost.details.unitCost",
+            "element": "cost.details.unitCost.edit.button",
             "input": "",
             "status": "NotRun",
             "eArray": [
+                [
+                    "cost.details.unitCost.edit.button",
+                    "key"
+                ],
                 [
                     "cost.details.unitCost",
                     "key"
@@ -1233,21 +995,57 @@
             "elementKey": "",
             "elementDesc": "",
             "@@mycolor": null,
-            "tcId": "30",
-            "tsId": 7,
-            "testData": false,
-            "duration": 1418000000,
-            "executedOn": "2021-09-23T19:14:57.068Z",
+            "tcId": "12",
+            "tsId": 10,
+            "testData": true,
+            "duration": 550000000,
+            "executedOn": "2021-10-18T04:25:37.805Z",
             "errMessage": "",
-            "isRowExpanded": false
+            "isRowExpanded": false,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"unitCost\":\"123\"}",
+            "tdId": 1
         },
         {
             "indexColumn": "",
-            "command": "Assert Text",
-            "element": "cost.details.unitCost",
-            "input": "$123.00",
+            "command": "Click",
+            "element": "cost.details.unitCost.edit.button",
+            "input": "",
             "status": "NotRun",
             "eArray": [
+                [
+                    "cost.details.unitCost.edit.button",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": ""
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Present",
+            "element": "cost.details.unitCost.input",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "cost.details.unitCost.input",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": ""
+        },
+        {
+            "indexColumn": "",
+            "command": "Assert Value",
+            "element": "cost.details.unitCost.input",
+            "input": "${unitCost}",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "cost.details.unitCost.input",
+                    "key"
+                ],
                 [
                     "cost.details.unitCost",
                     "key"
@@ -1256,15 +1054,19 @@
             "elementKey": "",
             "elementDesc": "",
             "@@mycolor": null,
-            "tcId": "30",
-            "tsId": 7,
-            "testData": false,
-            "duration": 582000000,
-            "executedOn": "2021-09-23T19:14:57.650Z",
+            "tcId": "12",
+            "tsId": 10,
+            "testData": true,
+            "duration": 586000000,
+            "executedOn": "2021-10-18T04:25:38.391Z",
             "expected": "$123.00",
             "actual": "$123.00",
-            "errMessage": "",
-            "isRowExpanded": false
+            "errMessage": "\"Text '' is not match with '$123'\"",
+            "isRowExpanded": false,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"unitCost\":\"123\"}",
+            "tdId": 1,
+            "isEncrypted": false,
+            "isDisplay": false
         }
     ],
     "type": "web",

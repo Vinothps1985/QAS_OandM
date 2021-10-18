@@ -21,6 +21,8 @@ Scenario: Create OM Product
    And click on "products.createProduct.popup.next.button"
    And ShrdGetVarCurrentTime 
    And wait until "products.createProduct.popup.name.input" to be enable
+   And click on "products.createProduct.popup.name.input"
+   And wait until "products.createProduct.popup.name.input" to be enable
    And sendKeys "${currentTime}" into "products.createProduct.popup.name.input"
    And wait until "products.createProduct.popup.family.input" to be enable
    And click on "products.createProduct.popup.family.input"

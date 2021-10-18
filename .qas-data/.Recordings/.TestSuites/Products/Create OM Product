@@ -666,6 +666,21 @@
         },
         {
             "indexColumn": "",
+            "command": "Click",
+            "element": "products.createProduct.popup.name.input",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "products.createProduct.popup.name.input",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": ""
+        },
+        {
+            "indexColumn": "",
             "command": "Type",
             "element": "products.createProduct.popup.name.input",
             "input": "${currentTime}",
@@ -704,17 +719,7 @@
                 ]
             ],
             "elementKey": "",
-            "elementDesc": "",
-            "tcId": "11",
-            "tsId": 10,
-            "testData": true,
-            "duration": 6680000000,
-            "executedOn": "2021-10-18T02:31:07.600Z",
-            "errMessage": "",
-            "isRowExpanded": false,
-            "@@mycolor": null,
-            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"productDescription\":\"Product description\",\"oemManufacturer\":\"OEM Manufacturer\",\"watts\":\"123\",\"activeDataSheet\":\"Active Data Sheet\"}",
-            "tdId": 1
+            "elementDesc": ""
         },
         {
             "indexColumn": "",

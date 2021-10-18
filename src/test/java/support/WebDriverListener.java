@@ -97,8 +97,33 @@ import io.appium.java_client.AppiumDriver;
 
 						//If $A is undefined (e.g. login screen) just continue
 						if (aIsUndefined) {
+							logger.info("$A is undefined");
 							return true;
 						}
+
+						String NO_AURA_CONFIG = " return typeof $A.metricsService !== 'undefined' && " +
+							" typeof $A.metricsService.getCurrentPageTransaction !== 'undefined' && " +
+							" typeof $A.metricsService.getCurrentPageTransaction() === 'undefined' ";
+
+						Boolean noAuraConfig = (Boolean) ((JavascriptExecutor) driver).executeScript((NO_AURA_CONFIG));
+						//If no aura config, we may be inside an iframe. Ignore then...{}
+						if (noAuraConfig) {
+							logger.info("No aura config");
+							return true;
+						}
+
+						/*String INSIDE_IFRAME = "return window === window.parent;";
+						try {
+							Boolean insideIframe = (Boolean) ((JavascriptExecutor) driver).executeScript((INSIDE_IFRAME));
+							//If we're inside an iframe, we should not check the loading process
+							if (insideIframe) {
+								logger.info("Inside an iframe");
+								return true;
+							}
+						} catch (Exception x) {
+							logger.info("Exception. Inside Iframe.");
+							return true;
+						}*/
 
 						//$A object is defined. This must be a salesforce page so we should wait
 						//until the metricsService returns a number (only done when page finished loading)

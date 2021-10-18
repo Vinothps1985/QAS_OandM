@@ -204,7 +204,7 @@ import io.appium.java_client.AppiumDriver;
 					String alignToTop = i%2==0 ? "false" : "true";
 					((JavascriptExecutor)element.getWrappedDriver()).executeScript("arguments[0].scrollIntoView(" + alignToTop + ");", element);
 					//element.getWrappedDriver().executeScript("document.querySelector('div[data-message-id=\"loginAsSystemMessage\"]').style.display='none'");
-					try {Thread.sleep(3000);} catch (Exception x) {}
+					try {Thread.sleep(500);} catch (Exception x) {}
 					lastClick = "";
 				}
 			}
@@ -214,7 +214,7 @@ import io.appium.java_client.AppiumDriver;
 				try {
 					System.out.println("Oops final: Javascript");
 					((JavascriptExecutor)element.getWrappedDriver()).executeScript("arguments[0].click();", element);
-					Thread.sleep(2000);
+					Thread.sleep(5000);
 				} catch (Exception ex) {
 					System.out.println("Oops en catch final: " + ex.getMessage());
 				}

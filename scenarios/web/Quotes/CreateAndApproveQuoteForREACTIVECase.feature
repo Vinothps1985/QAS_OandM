@@ -14,7 +14,7 @@ Scenario: Create and approve quote for REACTIVE case
    And wait until "common.searchAssistant.input" to be enable
    And clear "common.searchAssistant.input"
    And wait until "common.searchAssistant.input" to be enable
-   And sendKeys "00290316" into "common.searchAssistant.input"
+   And sendKeys "${reactiveCaseNumber}" into "common.searchAssistant.input"
    Then wait until "cases.search.firstResult" to be present
    When wait until "cases.search.firstResult" to be enable
    And click on "cases.search.firstResult"
@@ -25,13 +25,13 @@ Scenario: Create and approve quote for REACTIVE case
    And wait until "quotes.createQuote.popup.salesRep.input" to be enable
    And clear "quotes.createQuote.popup.salesRep.input"
    And wait until "quotes.createQuote.popup.salesRep.input" to be enable
-   And sendKeys "test_o&m_manager" into "quotes.createQuote.popup.salesRep.input"
+   And sendKeys "${salesRep}" into "quotes.createQuote.popup.salesRep.input"
    And wait until "quotes.createQuote.popup.salesRep.firstOption" to be enable
    And click on "quotes.createQuote.popup.salesRep.firstOption"
    And wait until "quotes.createQuote.popup.primaryContact.input" to be enable
    And click on "quotes.createQuote.popup.primaryContact.input"
    And wait until "quotes.createQuote.popup.primaryContact.input" to be enable
-   And sendKeys "test_o&m_manager" into "quotes.createQuote.popup.primaryContact.input"
+   And sendKeys "${primaryContact}" into "quotes.createQuote.popup.primaryContact.input"
    And wait until "quotes.createQuote.popup.primaryContact.firstOption" to be enable
    And click on "quotes.createQuote.popup.primaryContact.firstOption"
    And wait until "quotes.createQuote.popup.estimatedWorkStartDate.calendar.icon" to be enable
@@ -49,22 +49,23 @@ Scenario: Create and approve quote for REACTIVE case
    And wait until "quotes.createQuote.popup.specialNotes.textarea" to be enable
    And clear "quotes.createQuote.popup.specialNotes.textarea"
    And wait until "quotes.createQuote.popup.specialNotes.textarea" to be enable
-   And sendKeys "Special notes for the quotes" into "quotes.createQuote.popup.specialNotes.textarea"
+   And sendKeys "${specialNotes}" into "quotes.createQuote.popup.specialNotes.textarea"
    And wait until "quotes.createQuote.popup.useDefaultShippingLocation.checkbox" to be enable
    And click on "quotes.createQuote.popup.useDefaultShippingLocation.checkbox"
    And wait until "quotes.createQuote.popup.save.button" to be enable
    And click on "quotes.createQuote.popup.save.button"
    Then wait until "common.toastContainer" to be present
    And wait until "quotes.details.salesRep.text" to be present
-   And assert "quotes.details.salesRep.text" text is "test_o&m_manager"
-   And assert "quotes.details.account" text is "CleanCapital"
+   And assert "quotes.details.salesRep.text" text is "${salesRep}"
    And wait until "quotes.editLines.button" to be present
    When wait until "quotes.editLines.button" to be enable
    And click on "quotes.editLines.button"
+   And wait until "quotes.edit.iframe" to be enable
+   And click on "quotes.edit.iframe"
    Then switch to frame "quotes.edit.iframe"
    And wait until "quotes.edit.laborBilling.select" to be present
-   When select "label=Billable" in "quotes.edit.laborBilling.select"
-   And select "label=Billable" in "quotes.edit.pmBilling.select"
+   When select "label=${laborBilling}" in "quotes.edit.laborBilling.select"
+   And select "label=${pmBilling}" in "quotes.edit.pmBilling.select"
    And wait until "quotes.edit.addProducts.button" to be enable
    And click on "quotes.edit.addProducts.button"
    Then wait until "quotes.addProducts.paperDrawerPanel" to be present
@@ -81,12 +82,12 @@ Scenario: Create and approve quote for REACTIVE case
    And click on "quotes.edit.products.row.1"
    And wait until "quotes.edit.products.row.1.costCode.edit.button" to be enable
    And click on "quotes.edit.products.row.1.costCode.edit.button"
-   And select "label=Parts - CM" in "quotes.edit.products.row.1.costCode.select"
+   And select "label=${costCode1}" in "quotes.edit.products.row.1.costCode.select"
    And wait until "quotes.edit.products.row.2" to be enable
    And click on "quotes.edit.products.row.2"
    And wait until "quotes.edit.products.row.2.costCode.edit.button" to be enable
    And click on "quotes.edit.products.row.2.costCode.edit.button"
-   And select "label=Parts - CM" in "quotes.edit.products.row.2.costCode.select"
+   And select "label=${costCode2}" in "quotes.edit.products.row.2.costCode.select"
    And wait until "quotes.edit.products.row.1" to be enable
    And click on "quotes.edit.products.row.1"
    And wait until "quotes.edit.products.row.1.notes.edit.button" to be enable
@@ -94,7 +95,7 @@ Scenario: Create and approve quote for REACTIVE case
    And wait until "quotes.edit.products.row.1.notes.textarea" to be enable
    And clear "quotes.edit.products.row.1.notes.textarea"
    And wait until "quotes.edit.products.row.1.notes.textarea" to be enable
-   And sendKeys "Notes 1" into "quotes.edit.products.row.1.notes.textarea"
+   And sendKeys "${notes1}" into "quotes.edit.products.row.1.notes.textarea"
    And wait until "quotes.edit.products.row.2" to be enable
    And click on "quotes.edit.products.row.2"
    And wait until "quotes.edit.products.row.2.notes.edit.button" to be enable
@@ -102,13 +103,14 @@ Scenario: Create and approve quote for REACTIVE case
    And wait until "quotes.edit.products.row.2.notes.textarea" to be enable
    And clear "quotes.edit.products.row.2.notes.textarea"
    And wait until "quotes.edit.products.row.2.notes.textarea" to be enable
-   And sendKeys "Notes 2" into "quotes.edit.products.row.2.notes.textarea"
+   And sendKeys "${notes2}" into "quotes.edit.products.row.2.notes.textarea"
    And wait until "quotes.edit.products.row.1.vendor.edit.button" to be enable
    And click on "quotes.edit.products.row.1.vendor.edit.button"
    And wait until "quotes.edit.products.row.1.vendor.input" to be enable
    And clear "quotes.edit.products.row.1.vendor.input"
    And wait until "quotes.edit.products.row.1.vendor.input" to be enable
-   And sendKeys "Amazon.com for purchasing" into "quotes.edit.products.row.1.vendor.input"
+   And sendKeys "${vendor1}" into "quotes.edit.products.row.1.vendor.input"
+   And wait for 3000 milisec
    Then wait until "quotes.edit.products.row.1.vendor.option.2" to be present
    When wait until "quotes.edit.products.row.1.vendor.option.2" to be enable
    And click on "quotes.edit.products.row.1.vendor.option.2"
@@ -117,7 +119,8 @@ Scenario: Create and approve quote for REACTIVE case
    And wait until "quotes.edit.products.row.2.vendor.input" to be enable
    And clear "quotes.edit.products.row.2.vendor.input"
    And wait until "quotes.edit.products.row.2.vendor.input" to be enable
-   And sendKeys "Amazon.com for purchasing" into "quotes.edit.products.row.2.vendor.input"
+   And sendKeys "${vendor2}" into "quotes.edit.products.row.2.vendor.input"
+   And wait for 3000 milisec
    Then wait until "quotes.edit.products.row.2.vendor.option.2" to be present
    When wait until "quotes.edit.products.row.2.vendor.option.2" to be enable
    And click on "quotes.edit.products.row.2.vendor.option.2"
@@ -126,7 +129,8 @@ Scenario: Create and approve quote for REACTIVE case
    And wait until "quotes.edit.products.row.1.vendorContact.input" to be enable
    And clear "quotes.edit.products.row.1.vendorContact.input"
    And wait until "quotes.edit.products.row.1.vendorContact.input" to be enable
-   And sendKeys "null null" into "quotes.edit.products.row.1.vendorContact.input"
+   And sendKeys "${vendorContact1}" into "quotes.edit.products.row.1.vendorContact.input"
+   And wait for 3000 milisec
    Then wait until "quotes.edit.products.row.1.vendorContact.option.2" to be present
    When wait until "quotes.edit.products.row.1.vendorContact.option.2" to be enable
    And click on "quotes.edit.products.row.1.vendorContact.option.2"
@@ -135,14 +139,16 @@ Scenario: Create and approve quote for REACTIVE case
    And wait until "quotes.edit.products.row.2.vendorContact.input" to be enable
    And clear "quotes.edit.products.row.2.vendorContact.input"
    And wait until "quotes.edit.products.row.2.vendorContact.input" to be enable
-   And sendKeys "null null" into "quotes.edit.products.row.2.vendorContact.input"
+   And sendKeys "${vendorContact2}" into "quotes.edit.products.row.2.vendorContact.input"
+   And wait for 3000 milisec
    Then wait until "quotes.edit.products.row.2.vendorContact.option.2" to be present
    When wait until "quotes.edit.products.row.2.vendorContact.option.2" to be enable
    And click on "quotes.edit.products.row.2.vendorContact.option.2"
    Then assert "quotes.edit.save.button" is present
    When wait until "quotes.edit.save.button" to be enable
    And click on "quotes.edit.save.button"
-   Then wait until "quotes.details.recordType" to be present
+   Then switch to default window 
+   And wait until "quotes.details.recordType" to be present
    And assert "quotes.details.recordType" text is "Draft"
    When wait until "quotes.submitForApproval.button" to be enable
    And click on "quotes.submitForApproval.button"

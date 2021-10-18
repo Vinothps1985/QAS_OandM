@@ -2,25 +2,15 @@ Feature: Cases
 
 @author:Rodrigo Montemayor
 
-@case
+@case @regression
 @dataFile:resources/testdata/Cases/Generate case closure report with completed WO Line Items.csv
 @requirementKey=QTM-RQ-23
 
 Scenario: Generate case closure report with completed WO Line Items
 	
    Given ShrdLoginToFullCopy "${username}" "${password}"
-
-   When wait until "applauncher.div" to be enable
-   And click on "applauncher.div"
-   Then wait until "applauncher.input.text" to be present
-   When wait until "applauncher.input.text" to be enable
-   And clear "applauncher.input.text"
-   And wait until "applauncher.input.text" to be enable
-   And sendKeys "cases" into "applauncher.input.text"
-   Then wait until "applauncher.link.cases" to be visible
-   When wait until "applauncher.link.cases" to be enable
-   And click on "applauncher.link.cases"
-   And wait for 4000 milisec
+   And ShrdChangeLoggedInUser "test_ops_center_operator"
+   And ShrdLaunchApp "cases"
    And wait until "common.searchAssistant.button" to be enable
    And click on "common.searchAssistant.button"
    And wait until "common.searchAssistant.input" to be enable
@@ -29,7 +19,7 @@ Scenario: Generate case closure report with completed WO Line Items
    Then wait until "cases.search.firstResult" to be visible
    When wait until "cases.search.firstResult" to be enable
    And click on "cases.search.firstResult"
-   And wait for 2000 milisec
+   #And wait for 2000 milisec
    Then wait until "cases.caseNumber" to be visible
    And assert "cases.caseNumber" text is "${reactiveCaseNumber}"
    When wait until "cases.quickLinks.serviceAppointments" to be enable
@@ -87,11 +77,11 @@ Scenario: Generate case closure report with completed WO Line Items
 
    Then load latest pdf in downloads directory
    And wait for 10000 milisec
-   And assert text "Case Number: 00290346" appears in the pdf
-   And assert text "Project: Acushnet - ADM Makepeace" appears in the pdf
-   And assert text "Account: CleanCapital" appears in the pdf
-   And assert text "Subject: testing" appears in the pdf
-   And assert text "Description: testing" appears in the pdf
+   And assert text "Case Number: ${reactiveCaseNumber}" appears in the pdf
+   And assert text "Project: ${projectName}" appears in the pdf
+   And assert text "Account: ${accountName}" appears in the pdf
+   And assert text "Subject: ${description}" appears in the pdf
+   And assert text "Description: ${description}" appears in the pdf
    And wait for 10000 milisec
 
    

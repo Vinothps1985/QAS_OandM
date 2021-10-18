@@ -1,0 +1,3023 @@
+{
+    "steps": [
+        {
+            "indexColumn": "",
+            "command": "ShrdLoginToFullCopy",
+            "element": "",
+            "input": "${username},${password}",
+            "status": "NotRun",
+            "eArray": [],
+            "elementKey": "",
+            "elementDesc": "",
+            "shared": true,
+            "@@mycolor": null,
+            "isEncrypted": false,
+            "isDisplay": false,
+            "tcId": "77",
+            "tsId": 2,
+            "testData": false,
+            "lastExecutionDetail": [
+                {
+                    "command": "Open",
+                    "element": "",
+                    "eArray": [],
+                    "input": "https://bssi--fullcopy.lightning.force.com/",
+                    "status": "Passed",
+                    "elementKey": "",
+                    "elementDesc": "",
+                    "isEncrypted": false,
+                    "isDisplay": false,
+                    "indexColumn": "",
+                    "@@mycolor": null,
+                    "tcId": "77",
+                    "tsId": 2,
+                    "testData": false,
+                    "duration": 3177000000,
+                    "executedOn": "2021-10-18T06:01:54.357Z",
+                    "errMessage": "",
+                    "isRowExpanded": false,
+                    "isSharable": true,
+                    "length": 7
+                },
+                {
+                    "indexColumn": "",
+                    "command": "Maximize",
+                    "element": "",
+                    "input": "",
+                    "status": "Passed",
+                    "eArray": [],
+                    "elementKey": "",
+                    "elementDesc": "",
+                    "@@mycolor": null,
+                    "tcId": "77",
+                    "tsId": 2,
+                    "testData": false,
+                    "duration": 519000000,
+                    "executedOn": "2021-10-18T06:01:54.876Z",
+                    "errMessage": "",
+                    "isRowExpanded": false,
+                    "isSharable": true,
+                    "length": 7
+                },
+                {
+                    "command": "Clear",
+                    "element": "login.username",
+                    "eArray": [
+                        [
+                            "login.username",
+                            "key"
+                        ],
+                        [
+                            "id=username",
+                            "id"
+                        ],
+                        [
+                            "name=username",
+                            "name"
+                        ],
+                        [
+                            "xpath=//div[@id='username_container']/input",
+                            "xpath:idRelative"
+                        ],
+                        [
+                            "xpath=//div/input",
+                            "xpath:position"
+                        ],
+                        [
+                            "css=#username",
+                            "css"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Nombre de usuario'])[1]/following::input[1]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Cancelar'])[1]/following::input[19]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Contraseña'])[1]/preceding::input[2]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Recordarme'])[1]/preceding::input[5]",
+                            "xpath:neighbor"
+                        ]
+                    ],
+                    "input": "",
+                    "status": "Passed",
+                    "elementKey": "email.username",
+                    "elementDesc": "username email",
+                    "isEncrypted": false,
+                    "isDisplay": false,
+                    "indexColumn": "",
+                    "@@mycolor": null,
+                    "tcId": "77",
+                    "tsId": 2,
+                    "testData": false,
+                    "duration": 592000000,
+                    "executedOn": "2021-10-18T06:01:55.468Z",
+                    "errMessage": "",
+                    "isRowExpanded": false,
+                    "isSharable": true,
+                    "length": 7
+                },
+                {
+                    "command": "Type",
+                    "element": "login.username",
+                    "eArray": [
+                        [
+                            "login.username",
+                            "key"
+                        ],
+                        [
+                            "id=username",
+                            "id"
+                        ],
+                        [
+                            "name=username",
+                            "name"
+                        ],
+                        [
+                            "xpath=//div[@id='username_container']/input",
+                            "xpath:idRelative"
+                        ],
+                        [
+                            "xpath=//div/input",
+                            "xpath:position"
+                        ],
+                        [
+                            "css=#username",
+                            "css"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Nombre de usuario'])[1]/following::input[1]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Cancelar'])[1]/following::input[19]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Contraseña'])[1]/preceding::input[2]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Recordarme'])[1]/preceding::input[5]",
+                            "xpath:neighbor"
+                        ]
+                    ],
+                    "input": "${username}",
+                    "status": "Passed",
+                    "elementKey": "email.username",
+                    "elementDesc": "username email",
+                    "isEncrypted": false,
+                    "isDisplay": false,
+                    "indexColumn": "",
+                    "@@mycolor": null,
+                    "tcId": "77",
+                    "tsId": 2,
+                    "testData": false,
+                    "duration": 654000000,
+                    "executedOn": "2021-10-18T06:01:56.122Z",
+                    "errMessage": "",
+                    "isRowExpanded": false,
+                    "isSharable": true,
+                    "length": 7
+                },
+                {
+                    "command": "Clear",
+                    "element": "login.password",
+                    "eArray": [
+                        [
+                            "login.password",
+                            "key"
+                        ],
+                        [
+                            "id=password",
+                            "id"
+                        ],
+                        [
+                            "name=pw",
+                            "name"
+                        ],
+                        [
+                            "xpath=//form[@id='login_form']/input",
+                            "xpath:idRelative"
+                        ],
+                        [
+                            "xpath=//form/input",
+                            "xpath:position"
+                        ],
+                        [
+                            "css=#password",
+                            "css"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Contraseña'])[1]/following::input[1]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Nombre de usuario'])[1]/following::input[3]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Recordarme'])[1]/preceding::input[3]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='¿Olvidó la contraseña?'])[1]/preceding::input[3]",
+                            "xpath:neighbor"
+                        ]
+                    ],
+                    "input": "",
+                    "status": "Passed",
+                    "elementKey": "password.password",
+                    "elementDesc": "password password",
+                    "isEncrypted": false,
+                    "isDisplay": false,
+                    "indexColumn": "",
+                    "@@mycolor": null,
+                    "tcId": "77",
+                    "tsId": 2,
+                    "testData": false,
+                    "duration": 579000000,
+                    "executedOn": "2021-10-18T06:01:56.701Z",
+                    "errMessage": "",
+                    "isRowExpanded": false,
+                    "isSharable": true,
+                    "length": 7
+                },
+                {
+                    "command": "Type",
+                    "element": "login.password",
+                    "eArray": [
+                        [
+                            "login.password",
+                            "key"
+                        ],
+                        [
+                            "id=password",
+                            "id"
+                        ],
+                        [
+                            "name=pw",
+                            "name"
+                        ],
+                        [
+                            "xpath=//form[@id='login_form']/input",
+                            "xpath:idRelative"
+                        ],
+                        [
+                            "xpath=//form/input",
+                            "xpath:position"
+                        ],
+                        [
+                            "css=#password",
+                            "css"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Contraseña'])[1]/following::input[1]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Nombre de usuario'])[1]/following::input[3]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Recordarme'])[1]/preceding::input[3]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='¿Olvidó la contraseña?'])[1]/preceding::input[3]",
+                            "xpath:neighbor"
+                        ]
+                    ],
+                    "input": "${password}",
+                    "status": "Passed",
+                    "elementKey": "password.password",
+                    "elementDesc": "password password",
+                    "isEncrypted": false,
+                    "isDisplay": false,
+                    "indexColumn": "",
+                    "@@mycolor": null,
+                    "tcId": "77",
+                    "tsId": 2,
+                    "testData": false,
+                    "duration": 608000000,
+                    "executedOn": "2021-10-18T06:01:57.309Z",
+                    "errMessage": "",
+                    "isRowExpanded": false,
+                    "isSharable": true,
+                    "length": 7
+                },
+                {
+                    "command": "Click",
+                    "element": "login.submit",
+                    "eArray": [
+                        [
+                            "login.submit",
+                            "key"
+                        ],
+                        [
+                            "id=Login",
+                            "id"
+                        ],
+                        [
+                            "name=Login",
+                            "name"
+                        ],
+                        [
+                            "xpath=//form[@id='login_form']/input[2]",
+                            "xpath:idRelative"
+                        ],
+                        [
+                            "xpath=//input[2]",
+                            "xpath:position"
+                        ],
+                        [
+                            "css=#Login",
+                            "css"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Contraseña'])[1]/following::input[2]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Nombre de usuario'])[1]/following::input[4]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Recordarme'])[1]/preceding::input[2]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='¿Olvidó la contraseña?'])[1]/preceding::input[2]",
+                            "xpath:neighbor"
+                        ]
+                    ],
+                    "input": "",
+                    "status": "Passed",
+                    "elementKey": "submit.login",
+                    "elementDesc": "Login submit",
+                    "isEncrypted": false,
+                    "isDisplay": false,
+                    "indexColumn": "",
+                    "@@mycolor": null,
+                    "tcId": "77",
+                    "tsId": 2,
+                    "testData": false,
+                    "duration": 6895000000,
+                    "executedOn": "2021-10-18T06:02:04.204Z",
+                    "errMessage": "",
+                    "isRowExpanded": false,
+                    "isSharable": true,
+                    "length": 7
+                }
+            ]
+        },
+        {
+            "indexColumn": "",
+            "command": "ShrdChangeLoggedInUser",
+            "element": "",
+            "input": "test_ops_center_operator",
+            "status": "NotRun",
+            "eArray": [],
+            "elementKey": "",
+            "elementDesc": "",
+            "shared": true,
+            "@@mycolor": null,
+            "tcId": "77",
+            "tsId": 2,
+            "testData": false,
+            "lastExecutionDetail": [
+                {
+                    "indexColumn": "",
+                    "command": "Wait For Present",
+                    "element": "common.activeTab",
+                    "input": "",
+                    "status": "NotRun",
+                    "eArray": [
+                        [
+                            "common.activeTab",
+                            "key"
+                        ]
+                    ],
+                    "elementKey": "",
+                    "elementDesc": "",
+                    "@@mycolor": null,
+                    "tcId": "77",
+                    "tsId": 2,
+                    "testData": false,
+                    "isSharable": true,
+                    "shared": false,
+                    "length": 11
+                },
+                {
+                    "command": "Click",
+                    "element": "common.searchAssistant.button",
+                    "eArray": [
+                        [
+                            "common.searchAssistant.button",
+                            "key"
+                        ],
+                        [
+                            "xpath=//button[text()='Search...']",
+                            "xpath:innerText"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='AS: Projects'])[1]/following::button[1]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Skip to Main Content'])[1]/following::button[1]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='AS: Projects'])[2]/preceding::button[1]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Add favorite'])[1]/preceding::button[1]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=//header[@id='oneHeader']/div[2]/div[2]/div/button",
+                            "xpath:idRelative"
+                        ],
+                        [
+                            "xpath=//button",
+                            "xpath:position"
+                        ],
+                        [
+                            "css=button.slds-button.slds-button_neutral.search-button.slds-truncate",
+                            "css"
+                        ]
+                    ],
+                    "input": "",
+                    "status": "NotRun",
+                    "elementKey": "button.search",
+                    "elementDesc": "Button search...",
+                    "isEncrypted": false,
+                    "isDisplay": false,
+                    "iframeNode": [],
+                    "indexColumn": "",
+                    "@@mycolor": null,
+                    "tcId": "77",
+                    "tsId": 2,
+                    "testData": false,
+                    "isSharable": true,
+                    "length": 11
+                },
+                {
+                    "command": "Clear",
+                    "element": "common.searchAssistant.input",
+                    "eArray": [
+                        [
+                            "common.searchAssistant.input",
+                            "key"
+                        ],
+                        [
+                            "xpath=//*[@placeholder='Search...']",
+                            "xpath:placeholder"
+                        ],
+                        [
+                            "xpath=//label[text()='Search...']//following::input",
+                            "xpath:nearLabel"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Search...'])[3]/following::input[1]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Search by object type'])[1]/following::input[2]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Clear'])[1]/preceding::input[1]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "id=input-35",
+                            "id"
+                        ],
+                        [
+                            "xpath=//div[@id='content_402:0']/div/div/lightning-input/div/input",
+                            "xpath:idRelative"
+                        ],
+                        [
+                            "xpath=//lightning-input/div/input",
+                            "xpath:position"
+                        ],
+                        [
+                            "css=#input-35",
+                            "css"
+                        ]
+                    ],
+                    "input": "",
+                    "status": "NotRun",
+                    "elementKey": "search.input-35",
+                    "elementDesc": "input-35 search",
+                    "isEncrypted": false,
+                    "isDisplay": false,
+                    "iframeNode": [],
+                    "indexColumn": "",
+                    "@@mycolor": null,
+                    "tcId": "77",
+                    "tsId": 2,
+                    "testData": false,
+                    "isSharable": true,
+                    "length": 11
+                },
+                {
+                    "command": "Type",
+                    "element": "common.searchAssistant.input",
+                    "eArray": [
+                        [
+                            "common.searchAssistant.input",
+                            "key"
+                        ],
+                        [
+                            "xpath=//*[@placeholder='Search...']",
+                            "xpath:placeholder"
+                        ],
+                        [
+                            "xpath=//label[text()='Search...']//following::input",
+                            "xpath:nearLabel"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Search...'])[3]/following::input[1]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Search by object type'])[1]/following::input[2]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Clear'])[1]/preceding::input[1]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "id=input-35",
+                            "id"
+                        ],
+                        [
+                            "xpath=//div[@id='content_402:0']/div/div/lightning-input/div/input",
+                            "xpath:idRelative"
+                        ],
+                        [
+                            "xpath=//lightning-input/div/input",
+                            "xpath:position"
+                        ],
+                        [
+                            "css=#input-35",
+                            "css"
+                        ]
+                    ],
+                    "input": "test_ops_center_operator",
+                    "status": "NotRun",
+                    "elementKey": "search.input-35",
+                    "elementDesc": "input-35 search",
+                    "isEncrypted": false,
+                    "isDisplay": false,
+                    "iframeNode": [],
+                    "indexColumn": "",
+                    "@@mycolor": null,
+                    "tcId": "77",
+                    "tsId": 2,
+                    "testData": false,
+                    "isSharable": true,
+                    "shared": false,
+                    "length": 11
+                },
+                {
+                    "command": "Wait For Present",
+                    "element": "users.search.firstResult",
+                    "eArray": [
+                        [
+                            "users.search.firstResult",
+                            "key"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='test_o&m_manager'])[1]/following::div[1]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='cases'])[1]/following::div[6]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='test_o&m_manager'])[2]/preceding::div[2]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=//div[@id='suggestionsList-36']/search_lightning-instant-result-item[4]/div/div[2]/div",
+                            "xpath:idRelative"
+                        ],
+                        [
+                            "xpath=//search_lightning-instant-result-item[4]/div/div[2]/div",
+                            "xpath:position"
+                        ],
+                        [
+                            "css=div.slds-text-link--reset.slds-grid.slds-grid--vertical-align-center.slds-truncate.instant-result-item.slds-p-left_small.two-fields.instant-result-item-record-suggestion.focused > div.slds-truncate.instant-result-item__content > div.slds-clearfix.slds-text-heading--label-normal.slds-show.slds-truncate",
+                            "css"
+                        ]
+                    ],
+                    "input": "",
+                    "status": "NotRun",
+                    "elementKey": "div.user",
+                    "elementDesc": "Text user",
+                    "isEncrypted": false,
+                    "isDisplay": false,
+                    "iframeNode": [],
+                    "indexColumn": "",
+                    "@@mycolor": null,
+                    "tcId": "77",
+                    "tsId": 2,
+                    "testData": false,
+                    "isSharable": true,
+                    "length": 11
+                },
+                {
+                    "indexColumn": "",
+                    "command": "Click",
+                    "element": "users.search.firstResult",
+                    "input": "",
+                    "status": "NotRun",
+                    "eArray": [
+                        [
+                            "users.search.firstResult",
+                            "key"
+                        ]
+                    ],
+                    "elementKey": "",
+                    "elementDesc": "",
+                    "@@mycolor": null,
+                    "tcId": "77",
+                    "isSharable": true,
+                    "tsId": 2,
+                    "testData": false,
+                    "length": 11
+                },
+                {
+                    "command": "Click",
+                    "element": "users.userDetails.button",
+                    "eArray": [
+                        [
+                            "users.userDetails.button",
+                            "key"
+                        ],
+                        [
+                            "xpath=//div[text()='User Detail']/ancestor::a",
+                            "xpath:innerText"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Edit'])[1]/following::div[1]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Follow'])[1]/following::div[3]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Tabs'])[1]/preceding::div[6]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Details'])[1]/preceding::div[6]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=//div[@id='brandBand_2']/div[2]/div/div/div/div/div/div/div/header/div[2]/div/div/div[3]/div[2]/ul/li[2]/a/div",
+                            "xpath:idRelative"
+                        ],
+                        [
+                            "xpath=//li[2]/a/div",
+                            "xpath:position"
+                        ],
+                        [
+                            "css=div[title=\"User Detail\"]",
+                            "css"
+                        ]
+                    ],
+                    "input": "",
+                    "status": "NotRun",
+                    "elementKey": "div.user detail",
+                    "elementDesc": "Text User Detail",
+                    "isEncrypted": false,
+                    "isDisplay": false,
+                    "iframeNode": [],
+                    "indexColumn": "",
+                    "@@mycolor": null,
+                    "tcId": "77",
+                    "tsId": 2,
+                    "testData": false,
+                    "isSharable": true,
+                    "length": 11
+                },
+                {
+                    "indexColumn": "",
+                    "command": "Switch To Frame",
+                    "element": "users.details.iframe",
+                    "input": "",
+                    "status": "NotRun",
+                    "eArray": [
+                        [
+                            "users.details.iframe",
+                            "key"
+                        ],
+                        [
+                            "xpath=//iframe[contains(@title, 'User:')]",
+                            "xpath"
+                        ],
+                        [
+                            "xpath=//iframe",
+                            "xpath"
+                        ]
+                    ],
+                    "elementKey": "",
+                    "elementDesc": "",
+                    "@@mycolor": null,
+                    "tcId": "77",
+                    "isSharable": true,
+                    "tsId": 2,
+                    "testData": false,
+                    "length": 11
+                },
+                {
+                    "command": "Click",
+                    "element": "users.userDetails.login.button",
+                    "eArray": [
+                        [
+                            "users.userDetails.login.button",
+                            "key"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='User Detail'])[1]/following::input[4]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='[0]'])[11]/following::input[4]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Name'])[1]/preceding::input[2]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "name=login",
+                            "name"
+                        ],
+                        [
+                            "xpath=//td[@id='topButtonRow']/input[4]",
+                            "xpath:idRelative"
+                        ],
+                        [
+                            "xpath=//input[4]",
+                            "xpath:position"
+                        ],
+                        [
+                            "css=input[name=\"login\"]",
+                            "css"
+                        ]
+                    ],
+                    "input": "",
+                    "status": "NotRun",
+                    "elementKey": "button.login",
+                    "elementDesc": "Login button",
+                    "isEncrypted": false,
+                    "isDisplay": false,
+                    "iframeNode": [],
+                    "indexColumn": "",
+                    "@@mycolor": null,
+                    "tcId": "77",
+                    "tsId": 2,
+                    "testData": false,
+                    "isSharable": true,
+                    "length": 11
+                },
+                {
+                    "indexColumn": "",
+                    "command": "Switch To Default Content",
+                    "element": "",
+                    "input": "",
+                    "status": "NotRun",
+                    "eArray": [],
+                    "elementKey": "",
+                    "elementDesc": "",
+                    "@@mycolor": null,
+                    "tcId": "77",
+                    "isSharable": true,
+                    "tsId": 2,
+                    "testData": false,
+                    "length": 11
+                },
+                {
+                    "indexColumn": "",
+                    "command": "Wait For Present",
+                    "element": "common.logOutAs.link",
+                    "input": "",
+                    "status": "NotRun",
+                    "eArray": [
+                        [
+                            "common.logOutAs.link",
+                            "key"
+                        ]
+                    ],
+                    "elementKey": "",
+                    "elementDesc": "",
+                    "@@mycolor": null,
+                    "tcId": "77",
+                    "tsId": 2,
+                    "testData": false,
+                    "isSharable": true,
+                    "shared": false,
+                    "length": 11
+                }
+            ]
+        },
+        {
+            "indexColumn": "",
+            "command": "ShrdLaunchApp",
+            "element": "",
+            "input": "cases",
+            "status": "NotRun",
+            "eArray": [],
+            "elementKey": "",
+            "elementDesc": "",
+            "shared": true,
+            "@@mycolor": null,
+            "tcId": "77",
+            "tsId": 2,
+            "testData": false,
+            "lastExecutionDetail": [
+                {
+                    "indexColumn": "",
+                    "command": "Wait For Present",
+                    "element": "common.activeTab",
+                    "input": "",
+                    "status": "NotRun",
+                    "eArray": [
+                        [
+                            "common.activeTab",
+                            "key"
+                        ]
+                    ],
+                    "elementKey": "",
+                    "elementDesc": "",
+                    "@@mycolor": null,
+                    "tcId": "77",
+                    "isSharable": true,
+                    "tsId": 2,
+                    "testData": false,
+                    "length": 9
+                },
+                {
+                    "indexColumn": "",
+                    "command": "Wait For Present",
+                    "element": "applauncher.div",
+                    "input": "",
+                    "status": "NotRun",
+                    "eArray": [
+                        [
+                            "applauncher.div",
+                            "key"
+                        ]
+                    ],
+                    "elementKey": "",
+                    "elementDesc": "",
+                    "@@mycolor": null,
+                    "tcId": "77",
+                    "isSharable": true,
+                    "tsId": 2,
+                    "testData": false,
+                    "length": 9
+                },
+                {
+                    "command": "Click",
+                    "element": "applauncher.div",
+                    "eArray": [
+                        [
+                            "applauncher.div",
+                            "key"
+                        ],
+                        [
+                            "xpath=//one-app-launcher-header/button/div",
+                            "xpath:position"
+                        ],
+                        [
+                            "css=div.slds-icon-waffle",
+                            "css"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='View profile'])[1]/following::div[8]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Notifications'])[1]/following::div[11]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Agile Accelerator'])[3]/preceding::div[10]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "div.applauncher",
+                            "key"
+                        ]
+                    ],
+                    "input": "",
+                    "status": "NotRun",
+                    "elementKey": "div.applauncher",
+                    "elementDesc": "Text applauncher",
+                    "isEncrypted": false,
+                    "isDisplay": false,
+                    "indexColumn": "",
+                    "tcId": "77",
+                    "tsId": 2,
+                    "testData": false,
+                    "duration": 6676000000,
+                    "executedOn": "2021-10-15T00:59:11.788Z",
+                    "errMessage": "",
+                    "isRowExpanded": false,
+                    "@@mycolor": null,
+                    "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"caseNumber\":\"00290316\",\"vendor\":\"Borrego Solar Systems Inc. (O&M)\",\"vendorContact\":\"Mike Halloran\",\"lineItem\":\"Parts - CM\",\"taxCategory\":\"Data Storage\",\"qtyOrdered\":\"1\",\"unitCost\":\"2\",\"notToExceed\":\"Yes\"}",
+                    "tdId": 1,
+                    "isSharable": true,
+                    "length": 9
+                },
+                {
+                    "indexColumn": "",
+                    "command": "Wait For Present",
+                    "element": "applauncher.input.text",
+                    "input": "",
+                    "status": "NotRun",
+                    "eArray": [
+                        [
+                            "applauncher.input.text",
+                            "key"
+                        ],
+                        [
+                            "input.applauncher",
+                            "key"
+                        ],
+                        [
+                            "input.applauncher.text",
+                            "key"
+                        ],
+                        [
+                            "xpath=//one-app-launcher-search-bar/lightning-input/div/input",
+                            "xpath"
+                        ],
+                        [
+                            "xpath...one-app-launcher-search-bar.lightning-input.div.input",
+                            "key"
+                        ]
+                    ],
+                    "elementKey": "",
+                    "elementDesc": "",
+                    "tcId": "77",
+                    "tsId": 2,
+                    "testData": false,
+                    "duration": 1617000000,
+                    "executedOn": "2021-10-15T00:59:13.406Z",
+                    "errMessage": "",
+                    "isRowExpanded": false,
+                    "@@mycolor": null,
+                    "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"caseNumber\":\"00290316\",\"vendor\":\"Borrego Solar Systems Inc. (O&M)\",\"vendorContact\":\"Mike Halloran\",\"lineItem\":\"Parts - CM\",\"taxCategory\":\"Data Storage\",\"qtyOrdered\":\"1\",\"unitCost\":\"2\",\"notToExceed\":\"Yes\"}",
+                    "tdId": 1,
+                    "isSharable": true,
+                    "length": 9
+                },
+                {
+                    "command": "Clear",
+                    "element": "applauncher.input.text",
+                    "eArray": [
+                        [
+                            "applauncher.input.text",
+                            "key"
+                        ],
+                        [
+                            "input.applauncher",
+                            "key"
+                        ],
+                        [
+                            "input.applauncher.text",
+                            "key"
+                        ],
+                        [
+                            "xpath=//one-app-launcher-search-bar/lightning-input/div/input",
+                            "xpath:position"
+                        ],
+                        [
+                            "xpath=//div[@id='content_795:0']/one-app-launcher-menu/div/one-app-launcher-search-bar/lightning-input/div/input",
+                            "xpath:idRelative"
+                        ],
+                        [
+                            "id=input-109",
+                            "id"
+                        ],
+                        [
+                            "css=#input-109",
+                            "css"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Search apps and items...'])[1]/following::input[1]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='No record selected'])[1]/following::input[1]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Clear'])[1]/preceding::input[1]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Apps'])[1]/preceding::input[1]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath...one-app-launcher-search-bar.lightning-input.div.input",
+                            "key"
+                        ]
+                    ],
+                    "input": "",
+                    "status": "NotRun",
+                    "elementKey": "search.input109",
+                    "elementDesc": "input-109 search",
+                    "isEncrypted": false,
+                    "isDisplay": false,
+                    "indexColumn": "",
+                    "tcId": "77",
+                    "tsId": 2,
+                    "testData": false,
+                    "duration": 30660000000,
+                    "executedOn": "2021-10-15T00:59:44.066Z",
+                    "errMessage": "Name: NoSuchElementError\r\nMessage: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//one-app-launcher-search-bar/lightning-input/div/input\"}\n  (Session info: chrome=94.0.4606.81)\r\nStacktrace: NoSuchElementError: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//one-app-launcher-search-bar/lightning-input/div/input\"}\n  (Session info: chrome=94.0.4606.81)\n\tat Object.throwDecodedError (c:\\Program Files\\QMetry Automation Studio\\resources\\app\\extensions\\node_modules\\selenium-webdriver\\lib\\error.js:550:15)\n\tat parseHttpResponse (c:\\Program Files\\QMetry Automation Studio\\resources\\app\\extensions\\node_modules\\selenium-webdriver\\lib\\http.js:565:13)\n\tat Executor.execute (c:\\Program Files\\QMetry Automation Studio\\resources\\app\\extensions\\node_modules\\selenium-webdriver\\lib\\http.js:491:26)\n\tat runMicrotasks (<anonymous>)\n\tat processTicksAndRejections (internal/process/task_queues.js:85:5)\n\tat async thenableWebDriverProxy.execute (c:\\Program Files\\QMetry Automation Studio\\resources\\app\\extensions\\node_modules\\selenium-webdriver\\lib\\webdriver.js:700:17)",
+                    "isRowExpanded": false,
+                    "@@mycolor": null,
+                    "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"caseNumber\":\"00290316\",\"vendor\":\"Borrego Solar Systems Inc. (O&M)\",\"vendorContact\":\"Mike Halloran\",\"lineItem\":\"Parts - CM\",\"taxCategory\":\"Data Storage\",\"qtyOrdered\":\"1\",\"unitCost\":\"2\",\"notToExceed\":\"Yes\"}",
+                    "tdId": 1,
+                    "isSharable": true,
+                    "length": 9
+                },
+                {
+                    "command": "Type",
+                    "element": "applauncher.input.text",
+                    "eArray": [
+                        [
+                            "applauncher.input.text",
+                            "key"
+                        ],
+                        [
+                            "input.applauncher",
+                            "key"
+                        ],
+                        [
+                            "input.applauncher.text",
+                            "key"
+                        ],
+                        [
+                            "xpath=//one-app-launcher-search-bar/lightning-input/div/input",
+                            "xpath:position"
+                        ],
+                        [
+                            "xpath=//div[@id='content_795:0']/one-app-launcher-menu/div/one-app-launcher-search-bar/lightning-input/div/input",
+                            "xpath:idRelative"
+                        ],
+                        [
+                            "id=input-109",
+                            "id"
+                        ],
+                        [
+                            "css=#input-109",
+                            "css"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Search apps and items...'])[1]/following::input[1]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='No record selected'])[1]/following::input[1]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Clear'])[1]/preceding::input[1]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Apps'])[1]/preceding::input[1]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath...one-app-launcher-search-bar.lightning-input.div.input",
+                            "key"
+                        ]
+                    ],
+                    "input": "cases",
+                    "status": "NotRun",
+                    "elementKey": "search.input109",
+                    "elementDesc": "input-109 search",
+                    "isEncrypted": false,
+                    "isDisplay": false,
+                    "indexColumn": "",
+                    "tcId": "77",
+                    "tsId": 2,
+                    "testData": false,
+                    "duration": 627000000,
+                    "executedOn": "2021-10-15T00:59:52.614Z",
+                    "errMessage": "",
+                    "isRowExpanded": false,
+                    "@@mycolor": null,
+                    "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"caseNumber\":\"00290316\",\"vendor\":\"Borrego Solar Systems Inc. (O&M)\",\"vendorContact\":\"Mike Halloran\",\"lineItem\":\"Parts - CM\",\"taxCategory\":\"Data Storage\",\"qtyOrdered\":\"1\",\"unitCost\":\"2\",\"notToExceed\":\"Yes\"}",
+                    "tdId": 1,
+                    "isSharable": true,
+                    "length": 9
+                },
+                {
+                    "indexColumn": "",
+                    "command": "Wait For Present",
+                    "element": "applauncher.link.main",
+                    "input": "",
+                    "status": "NotRun",
+                    "eArray": [
+                        [
+                            "applauncher.link.main",
+                            "key"
+                        ],
+                        [
+                            "xpath=//one-app-launcher-menu//p[string-length(text()) = 0]//b",
+                            "xpath"
+                        ]
+                    ],
+                    "elementKey": "",
+                    "elementDesc": "",
+                    "@@mycolor": null,
+                    "tcId": "77",
+                    "isSharable": true,
+                    "tsId": 2,
+                    "testData": false,
+                    "length": 9
+                },
+                {
+                    "indexColumn": "",
+                    "command": "Click",
+                    "element": "applauncher.link.main",
+                    "input": "",
+                    "status": "NotRun",
+                    "eArray": [
+                        [
+                            "applauncher.link.main",
+                            "key"
+                        ],
+                        [
+                            "xpath=//one-app-launcher-menu//p[string-length(text()) = 0]//b",
+                            "xpath"
+                        ]
+                    ],
+                    "elementKey": "",
+                    "elementDesc": "",
+                    "@@mycolor": null,
+                    "tcId": "77",
+                    "isSharable": true,
+                    "tsId": 2,
+                    "testData": false,
+                    "length": 9
+                },
+                {
+                    "indexColumn": "",
+                    "command": "Wait For Present",
+                    "element": "common.activeTab",
+                    "input": "",
+                    "status": "NotRun",
+                    "eArray": [
+                        [
+                            "common.activeTab",
+                            "key"
+                        ]
+                    ],
+                    "elementKey": "",
+                    "elementDesc": "",
+                    "@@mycolor": null,
+                    "tcId": "77",
+                    "isSharable": true,
+                    "tsId": 2,
+                    "testData": false,
+                    "length": 9
+                }
+            ]
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "common.searchAssistant.button",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "common.searchAssistant.button",
+                    "key"
+                ],
+                [
+                    "projects.search.button",
+                    "key"
+                ],
+                [
+                    "xpath=//div[contains(@class, 'forceSearchAssistant')]//button",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "tdId": 1,
+            "duration": 6735000000,
+            "executedOn": "2021-10-18T14:05:48.766Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Type",
+            "element": "common.searchAssistant.input",
+            "input": "${reactiveCaseNumber}",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "common.searchAssistant.input",
+                    "key"
+                ],
+                [
+                    "projects.search.input",
+                    "key"
+                ],
+                [
+                    "xpath=//div[contains(@class, 'container')]//input[@type='search']",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "tdId": 1,
+            "duration": 701000000,
+            "executedOn": "2021-10-18T14:05:49.467Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Visible",
+            "element": "cases.search.firstResult",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "cases.search.firstResult",
+                    "key"
+                ],
+                [
+                    "projects.search.firstResult",
+                    "key"
+                ],
+                [
+                    "xpath=(//search_lightning-instant-result-item)[1]",
+                    "xpath"
+                ],
+                [
+                    "(//search_lightning-instant-result-item)[1]",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "tdId": 1,
+            "duration": 577000000,
+            "executedOn": "2021-10-18T14:05:50.044Z",
+            "errMessage": "",
+            "isRowExpanded": false,
+            "@@mycolor": null
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "cases.search.firstResult",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "cases.search.firstResult",
+                    "key"
+                ],
+                [
+                    "projects.search.firstResult",
+                    "key"
+                ],
+                [
+                    "xpath=(//search_lightning-instant-result-item)[1]",
+                    "xpath"
+                ],
+                [
+                    "(//search_lightning-instant-result-item)[1]",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "tdId": 1,
+            "duration": 6635000000,
+            "executedOn": "2021-10-18T14:05:56.679Z",
+            "errMessage": "",
+            "isRowExpanded": false,
+            "@@mycolor": null
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Visible",
+            "element": "cases.caseNumber",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "cases.caseNumber",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "tdId": 1,
+            "duration": 2531000000,
+            "executedOn": "2021-10-18T14:05:59.210Z",
+            "errMessage": "",
+            "isRowExpanded": false,
+            "@@mycolor": null
+        },
+        {
+            "indexColumn": "",
+            "command": "Implicit Wait",
+            "input": "2000",
+            "status": "NotRun",
+            "eArray": [],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "tdId": 1,
+            "duration": 2517000000,
+            "executedOn": "2021-10-18T14:06:01.727Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Present",
+            "element": "cases.details.status.edit.button",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "cases.details.status.edit.button",
+                    "key"
+                ],
+                [
+                    "xpath=(//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//button[@title='Edit Status'])[1]",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tdId": 1,
+            "duration": 569000000,
+            "executedOn": "2021-10-18T14:06:02.296Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "cases.details.status.edit.button",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "cases.details.status.edit.button",
+                    "key"
+                ],
+                [
+                    "xpath=(//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//button[@title='Edit Status'])[1]",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tdId": 1,
+            "duration": 6749000000,
+            "executedOn": "2021-10-18T14:06:09.045Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Present",
+            "element": "cases.details.status.edit.input",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "cases.details.status.edit.input",
+                    "key"
+                ],
+                [
+                    "xpath=(//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//label[text() = 'Status']//following::input[1])",
+                    "xpath"
+                ],
+                [
+                    "xpath=//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//label[text() = 'Status']",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tdId": 1,
+            "duration": 579000000,
+            "executedOn": "2021-10-18T14:06:09.624Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "cases.details.status.edit.input",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "cases.details.status.edit.input",
+                    "key"
+                ],
+                [
+                    "xpath=(//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//label[text() = 'Status']//following::input[1])",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tdId": 1,
+            "duration": 6717000000,
+            "executedOn": "2021-10-18T14:06:16.341Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Present",
+            "element": "cases.details.status.edit.deploymentReview.option",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "cases.details.status.edit.deploymentReview.option",
+                    "key"
+                ],
+                [
+                    "xpath=//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//label[text() = 'Status']//following::span[text()='Deployment Review']",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tdId": 1,
+            "duration": 556000000,
+            "executedOn": "2021-10-18T14:06:16.897Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "cases.details.status.edit.deploymentReview.option",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "cases.details.status.edit.deploymentReview.option",
+                    "key"
+                ],
+                [
+                    "xpath=//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//label[text() = 'Status']//following::span[text()='Deployment Review']",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tdId": 1,
+            "duration": 6664000000,
+            "executedOn": "2021-10-18T14:06:23.561Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "cases.details.edit.save.button",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "cases.details.edit.save.button",
+                    "key"
+                ],
+                [
+                    "xpath=//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//button[@name='SaveEdit']",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tdId": 1,
+            "duration": 6675000000,
+            "executedOn": "2021-10-18T14:06:30.236Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Visible",
+            "element": "cases.details.status.edit.button",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "cases.details.status.edit.button",
+                    "key"
+                ],
+                [
+                    "xpath=(//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//button[@title='Edit Status'])[1]",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tdId": 1,
+            "duration": 7288000000,
+            "executedOn": "2021-10-18T14:06:37.525Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "cases.quickLinks.workOrders",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "cases.quickLinks.workOrders",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tdId": 1,
+            "duration": 6746000000,
+            "executedOn": "2021-10-18T14:06:44.271Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Present",
+            "element": "workOrders.table.firstResult.link",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "workOrders.table.firstResult.link",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tdId": 1,
+            "duration": 557000000,
+            "executedOn": "2021-10-18T14:06:44.828Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "workOrders.table.firstResult.link",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "workOrders.table.firstResult.link",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tdId": 1,
+            "duration": 6759000000,
+            "executedOn": "2021-10-18T14:06:51.587Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Present",
+            "element": "workOrders.details.dueDate.edit.button",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "workOrders.details.dueDate.edit.button",
+                    "key"
+                ],
+                [
+                    "xpath=(//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//button[@title='Edit Due Date'])[1]",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tdId": 1,
+            "duration": 1834000000,
+            "executedOn": "2021-10-18T14:06:53.421Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "workOrders.details.dueDate.edit.button",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "workOrders.details.dueDate.edit.button",
+                    "key"
+                ],
+                [
+                    "xpath=(//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//button[@title='Edit Due Date'])[1]",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tdId": 1,
+            "duration": 6672000000,
+            "executedOn": "2021-10-18T14:07:00.093Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Visible",
+            "element": "workOrders.details.dueDate.datePicker.icon",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "workOrders.details.dueDate.datePicker.icon",
+                    "key"
+                ],
+                [
+                    "xpath=//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//label//span[text()='Due Date']//following::a[contains(@class, 'datePicker')][1]",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tdId": 1,
+            "duration": 889000000,
+            "executedOn": "2021-10-18T14:07:00.982Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "workOrders.details.dueDate.datePicker.icon",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "workOrders.details.dueDate.datePicker.icon",
+                    "key"
+                ],
+                [
+                    "xpath=//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//label//span[text()='Due Date']//following::a[contains(@class, 'datePicker')][1]",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tdId": 1,
+            "duration": 6710000000,
+            "executedOn": "2021-10-18T14:07:07.692Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Visible",
+            "element": "common.openCalendar.tomorrow",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "common.openCalendar.tomorrow",
+                    "key"
+                ],
+                [
+                    "xpath=//td[contains(@class,'slds-is-today')]//following::td[1]",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tdId": 1,
+            "duration": 558000000,
+            "executedOn": "2021-10-18T14:07:08.250Z",
+            "errMessage": "",
+            "isRowExpanded": false,
+            "@@mycolor": null
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "common.openCalendar.tomorrow",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "common.openCalendar.tomorrow",
+                    "key"
+                ],
+                [
+                    "xpath=//td[contains(@class,'slds-is-today')]//following::td[1]",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tdId": 1,
+            "duration": 6783000000,
+            "executedOn": "2021-10-18T14:07:15.033Z",
+            "errMessage": "",
+            "isRowExpanded": false,
+            "@@mycolor": null
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "workOrders.details.save.button",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "workOrders.details.save.button",
+                    "key"
+                ],
+                [
+                    "xpath=//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//div[contains(@class, 'forceInlineEdit')]//span[text()='Save']",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tdId": 1,
+            "duration": 6656000000,
+            "executedOn": "2021-10-18T14:07:21.689Z",
+            "errMessage": "",
+            "isRowExpanded": false,
+            "@@mycolor": null
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Visible",
+            "element": "workOrders.details.dueDate.edit.button",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "workOrders.details.dueDate.edit.button",
+                    "key"
+                ],
+                [
+                    "xpath=(//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//button[@title='Edit Due Date'])[1]",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tdId": 1,
+            "duration": 568000000,
+            "executedOn": "2021-10-18T14:07:22.257Z",
+            "errMessage": "",
+            "isRowExpanded": false,
+            "@@mycolor": null
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "workOrders.details.case",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "workOrders.details.case",
+                    "key"
+                ],
+                [
+                    "xpath=(//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//span[text()='Case']//following::a[1])[1]",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "tdId": 1,
+            "duration": 7057000000,
+            "executedOn": "2021-10-18T14:07:29.314Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Present",
+            "element": "cases.details.status.edit.button",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "cases.details.status.edit.button",
+                    "key"
+                ],
+                [
+                    "xpath=(//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//button[@title='Edit Status'])[1]",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tdId": 1,
+            "duration": 1725000000,
+            "executedOn": "2021-10-18T14:07:31.040Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "cases.details.status.edit.button",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "cases.details.status.edit.button",
+                    "key"
+                ],
+                [
+                    "xpath=(//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//button[@title='Edit Status'])[1]",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tdId": 1,
+            "duration": 6868000000,
+            "executedOn": "2021-10-18T14:07:37.908Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Present",
+            "element": "cases.details.status.edit.input",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "cases.details.status.edit.input",
+                    "key"
+                ],
+                [
+                    "xpath=(//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//label[text() = 'Status']//following::input[1])",
+                    "xpath"
+                ],
+                [
+                    "xpath=//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//label[text() = 'Status']",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tdId": 1,
+            "duration": 562000000,
+            "executedOn": "2021-10-18T14:07:38.470Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "cases.details.status.edit.input",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "cases.details.status.edit.input",
+                    "key"
+                ],
+                [
+                    "xpath=(//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//label[text() = 'Status']//following::input[1])",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tdId": 1,
+            "duration": 6774000000,
+            "executedOn": "2021-10-18T14:07:45.244Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Present",
+            "element": "cases.details.status.edit.deploymentReview.option",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "cases.details.status.edit.deploymentReview.option",
+                    "key"
+                ],
+                [
+                    "xpath=//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//label[text() = 'Status']//following::span[text()='Ready to Schedule']",
+                    "xpath"
+                ],
+                [
+                    "xpath=//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//label[text() = 'Status']//following::span[text()='Deployment Review']",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tdId": 1,
+            "duration": 585000000,
+            "executedOn": "2021-10-18T14:07:45.830Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "cases.details.status.edit.deploymentReview.option",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "cases.details.status.edit.deploymentReview.option",
+                    "key"
+                ],
+                [
+                    "xpath=//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//label[text() = 'Status']//following::span[text()='Ready to Schedule']",
+                    "xpath"
+                ],
+                [
+                    "xpath=//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//label[text() = 'Status']//following::span[text()='Deployment Review']",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tdId": 1,
+            "duration": 6727000000,
+            "executedOn": "2021-10-18T14:07:52.557Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "cases.details.edit.save.button",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "cases.details.edit.save.button",
+                    "key"
+                ],
+                [
+                    "xpath=//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//button[@name='SaveEdit']",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tdId": 1,
+            "duration": 6686000000,
+            "executedOn": "2021-10-18T14:07:59.243Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Visible",
+            "element": "cases.details.status.edit.button",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "cases.details.status.edit.button",
+                    "key"
+                ],
+                [
+                    "xpath=(//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//button[@title='Edit Status'])[1]",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tdId": 1,
+            "duration": 5688000000,
+            "executedOn": "2021-10-18T14:08:04.931Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "ShrdLaunchApp",
+            "input": "Field Service",
+            "status": "NotRun",
+            "eArray": [],
+            "elementKey": "",
+            "elementDesc": "",
+            "shared": true,
+            "@@mycolor": null
+        },
+        {
+            "indexColumn": "",
+            "command": "Implicit Wait",
+            "element": "",
+            "input": "8000",
+            "status": "NotRun",
+            "eArray": [],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "tdId": 1,
+            "duration": 8513000000,
+            "executedOn": "2021-10-18T14:08:33.264Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Present",
+            "element": "fieldService.iframe",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "fieldService.iframe",
+                    "key"
+                ],
+                [
+                    "xpath=(//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//iframe)[1]",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "tdId": 1,
+            "duration": 2332000000,
+            "executedOn": "2021-10-18T14:08:35.596Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Switch To Frame",
+            "element": "fieldService.iframe",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "fieldService.iframe",
+                    "key"
+                ],
+                [
+                    "xpath=(//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//iframe)[1]",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "tdId": 1,
+            "duration": 2294000000,
+            "executedOn": "2021-10-18T14:08:37.890Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Present",
+            "element": "fieldService.selectTimeline.button",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "fieldService.selectTimeline.button",
+                    "key"
+                ],
+                [
+                    "xpath=//div[@id='selectTimeline']",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "tdId": 1,
+            "duration": 1798000000,
+            "executedOn": "2021-10-18T14:08:39.688Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "fieldService.selectTimeline.button",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "fieldService.selectTimeline.button",
+                    "key"
+                ],
+                [
+                    "xpath=//div[@id='selectTimeline']",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "tdId": 1,
+            "duration": 7563000000,
+            "executedOn": "2021-10-18T14:08:47.251Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Visible",
+            "element": "fieldService.selectTimeline.option.2days",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "fieldService.selectTimeline.option.2days",
+                    "key"
+                ],
+                [
+                    "xpath=//div[@id='selectTimeline']//following::button[text()='2 Days']",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "tdId": 1,
+            "duration": 562000000,
+            "executedOn": "2021-10-18T14:08:47.813Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "fieldService.selectTimeline.option.2days",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "fieldService.selectTimeline.option.2days",
+                    "key"
+                ],
+                [
+                    "xpath=//div[@id='selectTimeline']//following::button[text()='2 Days']",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "tdId": 1,
+            "duration": 6692000000,
+            "executedOn": "2021-10-18T14:08:54.505Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Implicit Wait",
+            "input": "2000",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "2000",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "tdId": 1,
+            "duration": 2510000000,
+            "executedOn": "2021-10-18T14:08:57.015Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Type",
+            "element": "fieldService.searchServiceAppointments.input",
+            "input": "SA-38086",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "fieldService.searchServiceAppointments.input",
+                    "key"
+                ],
+                [
+                    "xpath=//input[@id='TaskSearchFilterInput']",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "tdId": 1,
+            "duration": 599000000,
+            "executedOn": "2021-10-18T14:08:57.614Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Implicit Wait",
+            "element": "",
+            "input": "3000",
+            "status": "NotRun",
+            "eArray": [],
+            "elementKey": "",
+            "elementDesc": "",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "tdId": 1,
+            "duration": 3519000000,
+            "executedOn": "2021-10-18T14:09:01.133Z",
+            "errMessage": "",
+            "isRowExpanded": false,
+            "@@mycolor": null
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "fieldService.serviceAppointmentsList.firstOption",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "fieldService.serviceAppointmentsList.firstOption",
+                    "key"
+                ],
+                [
+                    "xpath=(//div[contains(@class, 'firstServiceIfSelection')]//div[contains(@class, 'SingleTask')])[1]",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "tdId": 1,
+            "duration": 6705000000,
+            "executedOn": "2021-10-18T14:09:07.838Z",
+            "errMessage": "",
+            "isRowExpanded": false,
+            "@@mycolor": null
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Visible",
+            "element": "fieldService.serviceAppointmentsList.firstOption.details.account",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "fieldService.serviceAppointmentsList.firstOption.details.account",
+                    "key"
+                ],
+                [
+                    "xpath=(//div[contains(@class, 'firstServiceIfSelection')]//following::div[contains(@class, 'ExtraInfoQuickAction')]//following::a[1])[1]",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "tdId": 1,
+            "duration": 1581000000,
+            "executedOn": "2021-10-18T14:09:09.419Z",
+            "errMessage": "",
+            "isRowExpanded": false,
+            "@@mycolor": null
+        },
+        {
+            "indexColumn": "",
+            "command": "Assert Visible",
+            "element": "fieldService.serviceAppointmentsList.firstOption.details.account",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "fieldService.serviceAppointmentsList.firstOption.details.account",
+                    "key"
+                ],
+                [
+                    "xpath=(//div[contains(@class, 'firstServiceIfSelection')]//following::div[contains(@class, 'ExtraInfoQuickAction')]//following::a[1])[1]",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "tdId": 1,
+            "duration": 1534000000,
+            "executedOn": "2021-10-18T14:09:10.953Z",
+            "errMessage": "",
+            "isRowExpanded": false,
+            "@@mycolor": null
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "fieldService.serviceAppointmentsList.firstOption.checkbox",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "fieldService.serviceAppointmentsList.firstOption.checkbox",
+                    "key"
+                ],
+                [
+                    "xpath=(//div[contains(@class, 'firstServiceIfSelection')]//following::input[1])[1]",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "tdId": 1,
+            "duration": 6711000000,
+            "executedOn": "2021-10-18T14:09:17.664Z",
+            "errMessage": "",
+            "isRowExpanded": false,
+            "@@mycolor": null
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "fieldService.serviceAppointmentsList.actions.button",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "fieldService.serviceAppointmentsList.actions.button",
+                    "key"
+                ],
+                [
+                    "xpath=//div[@id='ActionButton']",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "tdId": 1,
+            "duration": 6623000000,
+            "executedOn": "2021-10-18T14:09:24.287Z",
+            "errMessage": "",
+            "isRowExpanded": false,
+            "@@mycolor": null
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Present",
+            "element": "fieldService.serviceAppointmentsList.actions.optimize.button",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "fieldService.serviceAppointmentsList.actions.optimize.button",
+                    "key"
+                ],
+                [
+                    "ieldService.serviceAppointmentsList.actions.optimize.button",
+                    "key"
+                ],
+                [
+                    "xpath=//div[@id='MainActionContainer']//div[contains(., 'Optimize')]",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "tdId": 1,
+            "duration": 556000000,
+            "executedOn": "2021-10-18T14:09:24.843Z",
+            "errMessage": "",
+            "isRowExpanded": false,
+            "@@mycolor": null
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "fieldService.serviceAppointmentsList.actions.optimize.button",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "fieldService.serviceAppointmentsList.actions.optimize.button",
+                    "key"
+                ],
+                [
+                    "ieldService.serviceAppointmentsList.actions.optimize.button",
+                    "key"
+                ],
+                [
+                    "xpath=//div[@id='MainActionContainer']//div[contains(., 'Optimize')]",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "tdId": 1,
+            "duration": 6637000000,
+            "executedOn": "2021-10-18T14:09:31.480Z",
+            "errMessage": "",
+            "isRowExpanded": false,
+            "@@mycolor": null
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Visible",
+            "element": "fieldService.optimization.popup.territories.firstOption.checkbox",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "fieldService.optimization.popup.territories.firstOption.checkbox",
+                    "key"
+                ],
+                [
+                    "xpath=(//div[contains(@class, 'OptimizationLightbox')]//following::input)[1]",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "tdId": 1,
+            "duration": 550000000,
+            "executedOn": "2021-10-18T14:09:32.030Z",
+            "errMessage": "",
+            "isRowExpanded": false,
+            "@@mycolor": null
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "fieldService.optimization.popup.territories.firstOption.checkbox",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "fieldService.optimization.popup.territories.firstOption.checkbox",
+                    "key"
+                ],
+                [
+                    "xpath=(//div[contains(@class, 'OptimizationLightbox')]//following::input)[1]",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "tdId": 1,
+            "duration": 6607000000,
+            "executedOn": "2021-10-18T14:09:38.637Z",
+            "errMessage": "",
+            "isRowExpanded": false,
+            "@@mycolor": null
+        },
+        {
+            "indexColumn": "",
+            "command": "Select",
+            "element": "fieldService.optimization.popup.filterServicesBy.select",
+            "input": "label=Ready to Schedule",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "fieldService.optimization.popup.filterServicesBy.select",
+                    "key"
+                ],
+                [
+                    "xpath=//div[contains(@class, 'OptimizationLightbox')]//select[@ng-model='optimizeSelectedFilter']",
+                    "xpath"
+                ],
+                [
+                    "xpath=//select[@ng-model='optimizeSelectedFilter']",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "tdId": 1,
+            "duration": 793000000,
+            "executedOn": "2021-10-18T14:09:39.430Z",
+            "errMessage": "",
+            "isRowExpanded": false,
+            "@@mycolor": null
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "fieldService.optimization.popup.optimize.button",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "fieldService.optimization.popup.optimize.button",
+                    "key"
+                ],
+                [
+                    "xpath=//div[contains(@class, 'OptimizationLightbox')]//button[text()='Optimize']",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "tdId": 1,
+            "duration": 6626000000,
+            "executedOn": "2021-10-18T14:09:46.056Z",
+            "errMessage": "",
+            "isRowExpanded": false,
+            "@@mycolor": null
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Visible",
+            "element": "fieldService.optimizationRequests.badge",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "fieldService.optimizationRequests.badge",
+                    "key"
+                ],
+                [
+                    "xpath=//div[@id='iconsNearTabs']//div[@id='SmartThingButton']//following::div[@class='smart-running']",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "tdId": 1,
+            "duration": 6353000000,
+            "executedOn": "2021-10-18T14:09:52.409Z",
+            "errMessage": "",
+            "isRowExpanded": false,
+            "@@mycolor": null
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "fieldService.notifications.button",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "fieldService.notifications.button",
+                    "key"
+                ],
+                [
+                    "xpath=//div[@id='iconsNearTabs']//div[@id='ButlerButton']",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Visible",
+            "element": "fieldService.notifications.popup.firstOption",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "fieldService.notifications.popup.firstOption",
+                    "key"
+                ],
+                [
+                    "xpath=(//div[@id='ButlerContainer']//div[contains(@class, 'SingleNotificationContainer')])[1]",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "fieldService.notifications.popup.firstOption",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "fieldService.notifications.popup.firstOption",
+                    "key"
+                ],
+                [
+                    "xpath=(//div[@id='ButlerContainer']//div[contains(@class, 'SingleNotificationContainer')])[1]",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null
+        },
+        {
+            "indexColumn": "",
+            "command": "Switch To Default Content",
+            "element": "",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"reactiveCaseNumber\":\"00290444\",\"serviceAppointmentNumber\":\"SA-38137\"}",
+            "tcId": "77",
+            "tsId": 2,
+            "testData": true,
+            "tdId": 1,
+            "duration": 521000000,
+            "executedOn": "2021-10-18T14:09:53.485Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Switch To Window",
+            "element": "",
+            "input": "1",
+            "status": "NotRun",
+            "eArray": [],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Visible",
+            "element": "optimizationRequests.details.status",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "optimizationRequests.details.status",
+                    "key"
+                ],
+                [
+                    "xpath=//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//span[text()='Status']//following::lightning-formatted-text[1]",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null
+        },
+        {
+            "indexColumn": "",
+            "command": "Assert Text",
+            "element": "optimizationRequests.details.status",
+            "input": "Completed",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "optimizationRequests.details.status",
+                    "key"
+                ],
+                [
+                    "xpath=//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//span[text()='Status']//following::lightning-formatted-text[1]",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null
+        }
+    ],
+    "type": "web",
+    "capabilities": {
+        "remoteUrl": "https://bssi--fullcopy.lightning.force.com/",
+        "type": "web",
+        "selectBrowser": "chrome",
+        "selectDevice": "",
+        "isRemote": false,
+        "remoteHubUrl": "http://127.0.0.1:4444/wd/hub/",
+        "isDebugMode": false,
+        "details": {
+            "deviceMetrics": {
+                "name": "",
+                "width": "",
+                "height": "",
+                "pixelRatio": "",
+                "userAgent": ""
+            }
+        }
+    },
+    "testData": "resources/testdata/Cases/Optimization of service appointment using REACTIVE case.csv",
+    "testDataExample": [],
+    "isTCValid": true,
+    "externalTestData": false,
+    "recordSessionType": "multiple",
+    "tags": [
+        {
+            "name": "case"
+        },
+        {
+            "name": "positive"
+        },
+        {
+            "name": "smoke"
+        }
+    ],
+    "description": "Verify the optimization of service appointment using a REACTIVE case",
+    "shared": true,
+    "executionStatus": "NotRun"
+}

@@ -92,22 +92,6 @@
         },
         {
             "indexColumn": "",
-            "command": "Wait For Visible",
-            "element": "common.activeTab",
-            "input": "",
-            "status": "NotRun",
-            "eArray": [
-                [
-                    "common.activeTab",
-                    "key"
-                ]
-            ],
-            "elementKey": "",
-            "elementDesc": "",
-            "@@mycolor": null
-        },
-        {
-            "indexColumn": "",
             "command": "Click",
             "element": "common.searchAssistant.button",
             "input": "",

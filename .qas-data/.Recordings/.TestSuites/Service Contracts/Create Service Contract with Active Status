@@ -1,0 +1,2752 @@
+{
+    "steps": [
+        {
+            "indexColumn": "",
+            "command": "ShrdLoginToFullCopy",
+            "element": "",
+            "input": "${username},${password}",
+            "status": "NotRun",
+            "eArray": [],
+            "elementKey": "",
+            "elementDesc": "",
+            "shared": true,
+            "@@mycolor": null,
+            "tcId": "84",
+            "tsId": 83,
+            "testData": false,
+            "lastExecutionDetail": [
+                {
+                    "command": "Open",
+                    "element": "",
+                    "eArray": [],
+                    "input": "https://bssi--fullcopy.lightning.force.com/",
+                    "status": "Passed",
+                    "elementKey": "",
+                    "elementDesc": "",
+                    "isEncrypted": false,
+                    "isDisplay": false,
+                    "indexColumn": "",
+                    "@@mycolor": null,
+                    "tcId": "84",
+                    "tsId": 83,
+                    "testData": false,
+                    "duration": 3408000000,
+                    "executedOn": "2021-10-18T20:19:09.490Z",
+                    "errMessage": "",
+                    "isRowExpanded": false,
+                    "isSharable": true,
+                    "length": 7
+                },
+                {
+                    "indexColumn": "",
+                    "command": "Maximize",
+                    "element": "",
+                    "input": "",
+                    "status": "Passed",
+                    "eArray": [],
+                    "elementKey": "",
+                    "elementDesc": "",
+                    "@@mycolor": null,
+                    "tcId": "84",
+                    "tsId": 83,
+                    "testData": false,
+                    "duration": 517000000,
+                    "executedOn": "2021-10-18T20:19:10.008Z",
+                    "errMessage": "",
+                    "isRowExpanded": false,
+                    "isSharable": true,
+                    "length": 7
+                },
+                {
+                    "command": "Clear",
+                    "element": "login.username",
+                    "eArray": [
+                        [
+                            "login.username",
+                            "key"
+                        ],
+                        [
+                            "id=username",
+                            "id"
+                        ],
+                        [
+                            "name=username",
+                            "name"
+                        ],
+                        [
+                            "xpath=//div[@id='username_container']/input",
+                            "xpath:idRelative"
+                        ],
+                        [
+                            "xpath=//div/input",
+                            "xpath:position"
+                        ],
+                        [
+                            "css=#username",
+                            "css"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Nombre de usuario'])[1]/following::input[1]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Cancelar'])[1]/following::input[19]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Contraseña'])[1]/preceding::input[2]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Recordarme'])[1]/preceding::input[5]",
+                            "xpath:neighbor"
+                        ]
+                    ],
+                    "input": "",
+                    "status": "Passed",
+                    "elementKey": "email.username",
+                    "elementDesc": "username email",
+                    "isEncrypted": false,
+                    "isDisplay": false,
+                    "indexColumn": "",
+                    "@@mycolor": null,
+                    "tcId": "84",
+                    "tsId": 83,
+                    "testData": false,
+                    "duration": 638000000,
+                    "executedOn": "2021-10-18T20:19:10.647Z",
+                    "errMessage": "",
+                    "isRowExpanded": false,
+                    "isSharable": true,
+                    "length": 7
+                },
+                {
+                    "command": "Type",
+                    "element": "login.username",
+                    "eArray": [
+                        [
+                            "login.username",
+                            "key"
+                        ],
+                        [
+                            "id=username",
+                            "id"
+                        ],
+                        [
+                            "name=username",
+                            "name"
+                        ],
+                        [
+                            "xpath=//div[@id='username_container']/input",
+                            "xpath:idRelative"
+                        ],
+                        [
+                            "xpath=//div/input",
+                            "xpath:position"
+                        ],
+                        [
+                            "css=#username",
+                            "css"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Nombre de usuario'])[1]/following::input[1]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Cancelar'])[1]/following::input[19]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Contraseña'])[1]/preceding::input[2]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Recordarme'])[1]/preceding::input[5]",
+                            "xpath:neighbor"
+                        ]
+                    ],
+                    "input": "${username}",
+                    "status": "Passed",
+                    "elementKey": "email.username",
+                    "elementDesc": "username email",
+                    "isEncrypted": false,
+                    "isDisplay": false,
+                    "indexColumn": "",
+                    "@@mycolor": null,
+                    "tcId": "84",
+                    "tsId": 83,
+                    "testData": false,
+                    "duration": 622000000,
+                    "executedOn": "2021-10-18T20:19:11.270Z",
+                    "errMessage": "",
+                    "isRowExpanded": false,
+                    "isSharable": true,
+                    "length": 7
+                },
+                {
+                    "command": "Clear",
+                    "element": "login.password",
+                    "eArray": [
+                        [
+                            "login.password",
+                            "key"
+                        ],
+                        [
+                            "id=password",
+                            "id"
+                        ],
+                        [
+                            "name=pw",
+                            "name"
+                        ],
+                        [
+                            "xpath=//form[@id='login_form']/input",
+                            "xpath:idRelative"
+                        ],
+                        [
+                            "xpath=//form/input",
+                            "xpath:position"
+                        ],
+                        [
+                            "css=#password",
+                            "css"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Contraseña'])[1]/following::input[1]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Nombre de usuario'])[1]/following::input[3]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Recordarme'])[1]/preceding::input[3]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='¿Olvidó la contraseña?'])[1]/preceding::input[3]",
+                            "xpath:neighbor"
+                        ]
+                    ],
+                    "input": "",
+                    "status": "Passed",
+                    "elementKey": "password.password",
+                    "elementDesc": "password password",
+                    "isEncrypted": false,
+                    "isDisplay": false,
+                    "indexColumn": "",
+                    "@@mycolor": null,
+                    "tcId": "84",
+                    "tsId": 83,
+                    "testData": false,
+                    "duration": 588000000,
+                    "executedOn": "2021-10-18T20:19:11.858Z",
+                    "errMessage": "",
+                    "isRowExpanded": false,
+                    "isSharable": true,
+                    "length": 7
+                },
+                {
+                    "command": "Type",
+                    "element": "login.password",
+                    "eArray": [
+                        [
+                            "login.password",
+                            "key"
+                        ],
+                        [
+                            "id=password",
+                            "id"
+                        ],
+                        [
+                            "name=pw",
+                            "name"
+                        ],
+                        [
+                            "xpath=//form[@id='login_form']/input",
+                            "xpath:idRelative"
+                        ],
+                        [
+                            "xpath=//form/input",
+                            "xpath:position"
+                        ],
+                        [
+                            "css=#password",
+                            "css"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Contraseña'])[1]/following::input[1]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Nombre de usuario'])[1]/following::input[3]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Recordarme'])[1]/preceding::input[3]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='¿Olvidó la contraseña?'])[1]/preceding::input[3]",
+                            "xpath:neighbor"
+                        ]
+                    ],
+                    "input": "${password}",
+                    "status": "Passed",
+                    "elementKey": "password.password",
+                    "elementDesc": "password password",
+                    "isEncrypted": false,
+                    "isDisplay": false,
+                    "indexColumn": "",
+                    "@@mycolor": null,
+                    "tcId": "84",
+                    "tsId": 83,
+                    "testData": false,
+                    "duration": 617000000,
+                    "executedOn": "2021-10-18T20:19:12.475Z",
+                    "errMessage": "",
+                    "isRowExpanded": false,
+                    "isSharable": true,
+                    "length": 7
+                },
+                {
+                    "command": "Click",
+                    "element": "login.submit",
+                    "eArray": [
+                        [
+                            "login.submit",
+                            "key"
+                        ],
+                        [
+                            "id=Login",
+                            "id"
+                        ],
+                        [
+                            "name=Login",
+                            "name"
+                        ],
+                        [
+                            "xpath=//form[@id='login_form']/input[2]",
+                            "xpath:idRelative"
+                        ],
+                        [
+                            "xpath=//input[2]",
+                            "xpath:position"
+                        ],
+                        [
+                            "css=#Login",
+                            "css"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Contraseña'])[1]/following::input[2]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Nombre de usuario'])[1]/following::input[4]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Recordarme'])[1]/preceding::input[2]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='¿Olvidó la contraseña?'])[1]/preceding::input[2]",
+                            "xpath:neighbor"
+                        ]
+                    ],
+                    "input": "",
+                    "status": "Passed",
+                    "elementKey": "submit.login",
+                    "elementDesc": "Login submit",
+                    "isEncrypted": false,
+                    "isDisplay": false,
+                    "indexColumn": "",
+                    "@@mycolor": null,
+                    "tcId": "84",
+                    "tsId": 83,
+                    "testData": false,
+                    "duration": 6846000000,
+                    "executedOn": "2021-10-18T20:19:19.321Z",
+                    "errMessage": "",
+                    "isRowExpanded": false,
+                    "isSharable": true,
+                    "length": 7
+                }
+            ],
+            "isEncrypted": false,
+            "isDisplay": false
+        },
+        {
+            "command": "ShrdChangeLoggedInUser",
+            "element": "",
+            "eArray": [],
+            "input": "test_ops_center_operator",
+            "status": "NotRun",
+            "elementKey": "",
+            "elementDesc": "",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "iframeNode": [],
+            "indexColumn": "",
+            "shared": true,
+            "@@mycolor": null,
+            "tcId": "84",
+            "tsId": 83,
+            "testData": false,
+            "lastExecutionDetail": [
+                {
+                    "indexColumn": "",
+                    "command": "Wait For Present",
+                    "element": "common.activeTab",
+                    "input": "",
+                    "status": "Failed",
+                    "eArray": [
+                        [
+                            "common.activeTab",
+                            "key"
+                        ]
+                    ],
+                    "elementKey": "",
+                    "elementDesc": "",
+                    "@@mycolor": null,
+                    "tcId": "84",
+                    "tsId": 83,
+                    "testData": false,
+                    "isSharable": true,
+                    "shared": false,
+                    "length": 11,
+                    "duration": 18510000000,
+                    "executedOn": "2021-10-18T20:19:37.831Z",
+                    "errMessage": "\"Element not found\"",
+                    "isRowExpanded": false
+                },
+                {
+                    "command": "Click",
+                    "element": "common.searchAssistant.button",
+                    "eArray": [
+                        [
+                            "common.searchAssistant.button",
+                            "key"
+                        ],
+                        [
+                            "xpath=//button[text()='Search...']",
+                            "xpath:innerText"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='AS: Projects'])[1]/following::button[1]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Skip to Main Content'])[1]/following::button[1]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='AS: Projects'])[2]/preceding::button[1]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Add favorite'])[1]/preceding::button[1]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=//header[@id='oneHeader']/div[2]/div[2]/div/button",
+                            "xpath:idRelative"
+                        ],
+                        [
+                            "xpath=//button",
+                            "xpath:position"
+                        ],
+                        [
+                            "css=button.slds-button.slds-button_neutral.search-button.slds-truncate",
+                            "css"
+                        ]
+                    ],
+                    "input": "",
+                    "status": "NotRun",
+                    "elementKey": "button.search",
+                    "elementDesc": "Button search...",
+                    "isEncrypted": false,
+                    "isDisplay": false,
+                    "iframeNode": [],
+                    "indexColumn": "",
+                    "@@mycolor": null,
+                    "tcId": "84",
+                    "tsId": 83,
+                    "testData": false,
+                    "isSharable": true,
+                    "length": 11
+                },
+                {
+                    "command": "Clear",
+                    "element": "common.searchAssistant.input",
+                    "eArray": [
+                        [
+                            "common.searchAssistant.input",
+                            "key"
+                        ],
+                        [
+                            "xpath=//*[@placeholder='Search...']",
+                            "xpath:placeholder"
+                        ],
+                        [
+                            "xpath=//label[text()='Search...']//following::input",
+                            "xpath:nearLabel"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Search...'])[3]/following::input[1]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Search by object type'])[1]/following::input[2]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Clear'])[1]/preceding::input[1]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "id=input-35",
+                            "id"
+                        ],
+                        [
+                            "xpath=//div[@id='content_402:0']/div/div/lightning-input/div/input",
+                            "xpath:idRelative"
+                        ],
+                        [
+                            "xpath=//lightning-input/div/input",
+                            "xpath:position"
+                        ],
+                        [
+                            "css=#input-35",
+                            "css"
+                        ]
+                    ],
+                    "input": "",
+                    "status": "NotRun",
+                    "elementKey": "search.input-35",
+                    "elementDesc": "input-35 search",
+                    "isEncrypted": false,
+                    "isDisplay": false,
+                    "iframeNode": [],
+                    "indexColumn": "",
+                    "@@mycolor": null,
+                    "tcId": "84",
+                    "tsId": 83,
+                    "testData": false,
+                    "isSharable": true,
+                    "length": 11
+                },
+                {
+                    "command": "Type",
+                    "element": "common.searchAssistant.input",
+                    "eArray": [
+                        [
+                            "common.searchAssistant.input",
+                            "key"
+                        ],
+                        [
+                            "xpath=//*[@placeholder='Search...']",
+                            "xpath:placeholder"
+                        ],
+                        [
+                            "xpath=//label[text()='Search...']//following::input",
+                            "xpath:nearLabel"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Search...'])[3]/following::input[1]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Search by object type'])[1]/following::input[2]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Clear'])[1]/preceding::input[1]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "id=input-35",
+                            "id"
+                        ],
+                        [
+                            "xpath=//div[@id='content_402:0']/div/div/lightning-input/div/input",
+                            "xpath:idRelative"
+                        ],
+                        [
+                            "xpath=//lightning-input/div/input",
+                            "xpath:position"
+                        ],
+                        [
+                            "css=#input-35",
+                            "css"
+                        ]
+                    ],
+                    "input": "test_ops_center_operator",
+                    "status": "NotRun",
+                    "elementKey": "search.input-35",
+                    "elementDesc": "input-35 search",
+                    "isEncrypted": false,
+                    "isDisplay": false,
+                    "iframeNode": [],
+                    "indexColumn": "",
+                    "@@mycolor": null,
+                    "tcId": "84",
+                    "tsId": 83,
+                    "testData": false,
+                    "isSharable": true,
+                    "shared": false,
+                    "length": 11
+                },
+                {
+                    "command": "Wait For Present",
+                    "element": "users.search.firstResult",
+                    "eArray": [
+                        [
+                            "users.search.firstResult",
+                            "key"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='test_o&m_manager'])[1]/following::div[1]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='cases'])[1]/following::div[6]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='test_o&m_manager'])[2]/preceding::div[2]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=//div[@id='suggestionsList-36']/search_lightning-instant-result-item[4]/div/div[2]/div",
+                            "xpath:idRelative"
+                        ],
+                        [
+                            "xpath=//search_lightning-instant-result-item[4]/div/div[2]/div",
+                            "xpath:position"
+                        ],
+                        [
+                            "css=div.slds-text-link--reset.slds-grid.slds-grid--vertical-align-center.slds-truncate.instant-result-item.slds-p-left_small.two-fields.instant-result-item-record-suggestion.focused > div.slds-truncate.instant-result-item__content > div.slds-clearfix.slds-text-heading--label-normal.slds-show.slds-truncate",
+                            "css"
+                        ]
+                    ],
+                    "input": "",
+                    "status": "NotRun",
+                    "elementKey": "div.user",
+                    "elementDesc": "Text user",
+                    "isEncrypted": false,
+                    "isDisplay": false,
+                    "iframeNode": [],
+                    "indexColumn": "",
+                    "@@mycolor": null,
+                    "tcId": "84",
+                    "tsId": 83,
+                    "testData": false,
+                    "isSharable": true,
+                    "length": 11
+                },
+                {
+                    "indexColumn": "",
+                    "command": "Click",
+                    "element": "users.search.firstResult",
+                    "input": "",
+                    "status": "NotRun",
+                    "eArray": [
+                        [
+                            "users.search.firstResult",
+                            "key"
+                        ]
+                    ],
+                    "elementKey": "",
+                    "elementDesc": "",
+                    "@@mycolor": null,
+                    "tcId": "84",
+                    "isSharable": true,
+                    "tsId": 83,
+                    "testData": false,
+                    "length": 11
+                },
+                {
+                    "command": "Click",
+                    "element": "users.userDetails.button",
+                    "eArray": [
+                        [
+                            "users.userDetails.button",
+                            "key"
+                        ],
+                        [
+                            "xpath=//div[text()='User Detail']/ancestor::a",
+                            "xpath:innerText"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Edit'])[1]/following::div[1]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Follow'])[1]/following::div[3]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Tabs'])[1]/preceding::div[6]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Details'])[1]/preceding::div[6]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=//div[@id='brandBand_2']/div[2]/div/div/div/div/div/div/div/header/div[2]/div/div/div[3]/div[2]/ul/li[2]/a/div",
+                            "xpath:idRelative"
+                        ],
+                        [
+                            "xpath=//li[2]/a/div",
+                            "xpath:position"
+                        ],
+                        [
+                            "css=div[title=\"User Detail\"]",
+                            "css"
+                        ]
+                    ],
+                    "input": "",
+                    "status": "NotRun",
+                    "elementKey": "div.user detail",
+                    "elementDesc": "Text User Detail",
+                    "isEncrypted": false,
+                    "isDisplay": false,
+                    "iframeNode": [],
+                    "indexColumn": "",
+                    "@@mycolor": null,
+                    "tcId": "84",
+                    "tsId": 83,
+                    "testData": false,
+                    "isSharable": true,
+                    "length": 11
+                },
+                {
+                    "indexColumn": "",
+                    "command": "Switch To Frame",
+                    "element": "users.details.iframe",
+                    "input": "",
+                    "status": "NotRun",
+                    "eArray": [
+                        [
+                            "users.details.iframe",
+                            "key"
+                        ],
+                        [
+                            "xpath=//iframe[contains(@title, 'User:')]",
+                            "xpath"
+                        ],
+                        [
+                            "xpath=//iframe",
+                            "xpath"
+                        ]
+                    ],
+                    "elementKey": "",
+                    "elementDesc": "",
+                    "@@mycolor": null,
+                    "tcId": "84",
+                    "isSharable": true,
+                    "tsId": 83,
+                    "testData": false,
+                    "length": 11
+                },
+                {
+                    "command": "Click",
+                    "element": "users.userDetails.login.button",
+                    "eArray": [
+                        [
+                            "users.userDetails.login.button",
+                            "key"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='User Detail'])[1]/following::input[4]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='[0]'])[11]/following::input[4]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Name'])[1]/preceding::input[2]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "name=login",
+                            "name"
+                        ],
+                        [
+                            "xpath=//td[@id='topButtonRow']/input[4]",
+                            "xpath:idRelative"
+                        ],
+                        [
+                            "xpath=//input[4]",
+                            "xpath:position"
+                        ],
+                        [
+                            "css=input[name=\"login\"]",
+                            "css"
+                        ]
+                    ],
+                    "input": "",
+                    "status": "NotRun",
+                    "elementKey": "button.login",
+                    "elementDesc": "Login button",
+                    "isEncrypted": false,
+                    "isDisplay": false,
+                    "iframeNode": [],
+                    "indexColumn": "",
+                    "@@mycolor": null,
+                    "tcId": "84",
+                    "tsId": 83,
+                    "testData": false,
+                    "isSharable": true,
+                    "length": 11
+                },
+                {
+                    "indexColumn": "",
+                    "command": "Switch To Default Content",
+                    "element": "",
+                    "input": "",
+                    "status": "NotRun",
+                    "eArray": [],
+                    "elementKey": "",
+                    "elementDesc": "",
+                    "@@mycolor": null,
+                    "tcId": "84",
+                    "isSharable": true,
+                    "tsId": 83,
+                    "testData": false,
+                    "length": 11
+                },
+                {
+                    "indexColumn": "",
+                    "command": "Wait For Present",
+                    "element": "common.logOutAs.link",
+                    "input": "",
+                    "status": "NotRun",
+                    "eArray": [
+                        [
+                            "common.logOutAs.link",
+                            "key"
+                        ]
+                    ],
+                    "elementKey": "",
+                    "elementDesc": "",
+                    "@@mycolor": null,
+                    "tcId": "84",
+                    "tsId": 83,
+                    "testData": false,
+                    "isSharable": true,
+                    "shared": false,
+                    "length": 11
+                }
+            ]
+        },
+        {
+            "indexColumn": "",
+            "command": "ShrdLaunchApp",
+            "element": "",
+            "input": "projects",
+            "status": "NotRun",
+            "eArray": [],
+            "elementKey": "",
+            "elementDesc": "",
+            "shared": true,
+            "@@mycolor": null,
+            "tcId": "84",
+            "tsId": 83,
+            "testData": false,
+            "lastExecutionDetail": [
+                {
+                    "indexColumn": "",
+                    "command": "Wait For Present",
+                    "element": "common.activeTab",
+                    "input": "",
+                    "status": "NotRun",
+                    "eArray": [
+                        [
+                            "common.activeTab",
+                            "key"
+                        ]
+                    ],
+                    "elementKey": "",
+                    "elementDesc": "",
+                    "@@mycolor": null,
+                    "tcId": "84",
+                    "isSharable": true,
+                    "tsId": 83,
+                    "testData": false,
+                    "length": 9
+                },
+                {
+                    "indexColumn": "",
+                    "command": "Wait For Present",
+                    "element": "applauncher.div",
+                    "input": "",
+                    "status": "NotRun",
+                    "eArray": [
+                        [
+                            "applauncher.div",
+                            "key"
+                        ]
+                    ],
+                    "elementKey": "",
+                    "elementDesc": "",
+                    "@@mycolor": null,
+                    "tcId": "84",
+                    "isSharable": true,
+                    "tsId": 83,
+                    "testData": false,
+                    "length": 9
+                },
+                {
+                    "command": "Click",
+                    "element": "applauncher.div",
+                    "eArray": [
+                        [
+                            "applauncher.div",
+                            "key"
+                        ],
+                        [
+                            "xpath=//one-app-launcher-header/button/div",
+                            "xpath:position"
+                        ],
+                        [
+                            "css=div.slds-icon-waffle",
+                            "css"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='View profile'])[1]/following::div[8]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Notifications'])[1]/following::div[11]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Agile Accelerator'])[3]/preceding::div[10]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "div.applauncher",
+                            "key"
+                        ]
+                    ],
+                    "input": "",
+                    "status": "NotRun",
+                    "elementKey": "div.applauncher",
+                    "elementDesc": "Text applauncher",
+                    "isEncrypted": false,
+                    "isDisplay": false,
+                    "indexColumn": "",
+                    "tcId": "84",
+                    "tsId": 83,
+                    "testData": false,
+                    "duration": 6676000000,
+                    "executedOn": "2021-10-15T00:59:11.788Z",
+                    "errMessage": "",
+                    "isRowExpanded": false,
+                    "@@mycolor": null,
+                    "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"caseNumber\":\"00290316\",\"vendor\":\"Borrego Solar Systems Inc. (O&M)\",\"vendorContact\":\"Mike Halloran\",\"lineItem\":\"Parts - CM\",\"taxCategory\":\"Data Storage\",\"qtyOrdered\":\"1\",\"unitCost\":\"2\",\"notToExceed\":\"Yes\"}",
+                    "tdId": 1,
+                    "isSharable": true,
+                    "length": 9
+                },
+                {
+                    "indexColumn": "",
+                    "command": "Wait For Present",
+                    "element": "applauncher.input.text",
+                    "input": "",
+                    "status": "NotRun",
+                    "eArray": [
+                        [
+                            "applauncher.input.text",
+                            "key"
+                        ],
+                        [
+                            "input.applauncher",
+                            "key"
+                        ],
+                        [
+                            "input.applauncher.text",
+                            "key"
+                        ],
+                        [
+                            "xpath=//one-app-launcher-search-bar/lightning-input/div/input",
+                            "xpath"
+                        ],
+                        [
+                            "xpath...one-app-launcher-search-bar.lightning-input.div.input",
+                            "key"
+                        ]
+                    ],
+                    "elementKey": "",
+                    "elementDesc": "",
+                    "tcId": "84",
+                    "tsId": 83,
+                    "testData": false,
+                    "duration": 1617000000,
+                    "executedOn": "2021-10-15T00:59:13.406Z",
+                    "errMessage": "",
+                    "isRowExpanded": false,
+                    "@@mycolor": null,
+                    "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"caseNumber\":\"00290316\",\"vendor\":\"Borrego Solar Systems Inc. (O&M)\",\"vendorContact\":\"Mike Halloran\",\"lineItem\":\"Parts - CM\",\"taxCategory\":\"Data Storage\",\"qtyOrdered\":\"1\",\"unitCost\":\"2\",\"notToExceed\":\"Yes\"}",
+                    "tdId": 1,
+                    "isSharable": true,
+                    "length": 9
+                },
+                {
+                    "command": "Clear",
+                    "element": "applauncher.input.text",
+                    "eArray": [
+                        [
+                            "applauncher.input.text",
+                            "key"
+                        ],
+                        [
+                            "input.applauncher",
+                            "key"
+                        ],
+                        [
+                            "input.applauncher.text",
+                            "key"
+                        ],
+                        [
+                            "xpath=//one-app-launcher-search-bar/lightning-input/div/input",
+                            "xpath:position"
+                        ],
+                        [
+                            "xpath=//div[@id='content_795:0']/one-app-launcher-menu/div/one-app-launcher-search-bar/lightning-input/div/input",
+                            "xpath:idRelative"
+                        ],
+                        [
+                            "id=input-109",
+                            "id"
+                        ],
+                        [
+                            "css=#input-109",
+                            "css"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Search apps and items...'])[1]/following::input[1]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='No record selected'])[1]/following::input[1]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Clear'])[1]/preceding::input[1]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Apps'])[1]/preceding::input[1]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath...one-app-launcher-search-bar.lightning-input.div.input",
+                            "key"
+                        ]
+                    ],
+                    "input": "",
+                    "status": "NotRun",
+                    "elementKey": "search.input109",
+                    "elementDesc": "input-109 search",
+                    "isEncrypted": false,
+                    "isDisplay": false,
+                    "indexColumn": "",
+                    "tcId": "84",
+                    "tsId": 83,
+                    "testData": false,
+                    "duration": 30660000000,
+                    "executedOn": "2021-10-15T00:59:44.066Z",
+                    "errMessage": "Name: NoSuchElementError\r\nMessage: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//one-app-launcher-search-bar/lightning-input/div/input\"}\n  (Session info: chrome=94.0.4606.81)\r\nStacktrace: NoSuchElementError: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//one-app-launcher-search-bar/lightning-input/div/input\"}\n  (Session info: chrome=94.0.4606.81)\n\tat Object.throwDecodedError (c:\\Program Files\\QMetry Automation Studio\\resources\\app\\extensions\\node_modules\\selenium-webdriver\\lib\\error.js:550:15)\n\tat parseHttpResponse (c:\\Program Files\\QMetry Automation Studio\\resources\\app\\extensions\\node_modules\\selenium-webdriver\\lib\\http.js:565:13)\n\tat Executor.execute (c:\\Program Files\\QMetry Automation Studio\\resources\\app\\extensions\\node_modules\\selenium-webdriver\\lib\\http.js:491:26)\n\tat runMicrotasks (<anonymous>)\n\tat processTicksAndRejections (internal/process/task_queues.js:85:5)\n\tat async thenableWebDriverProxy.execute (c:\\Program Files\\QMetry Automation Studio\\resources\\app\\extensions\\node_modules\\selenium-webdriver\\lib\\webdriver.js:700:17)",
+                    "isRowExpanded": false,
+                    "@@mycolor": null,
+                    "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"caseNumber\":\"00290316\",\"vendor\":\"Borrego Solar Systems Inc. (O&M)\",\"vendorContact\":\"Mike Halloran\",\"lineItem\":\"Parts - CM\",\"taxCategory\":\"Data Storage\",\"qtyOrdered\":\"1\",\"unitCost\":\"2\",\"notToExceed\":\"Yes\"}",
+                    "tdId": 1,
+                    "isSharable": true,
+                    "length": 9
+                },
+                {
+                    "command": "Type",
+                    "element": "applauncher.input.text",
+                    "eArray": [
+                        [
+                            "applauncher.input.text",
+                            "key"
+                        ],
+                        [
+                            "input.applauncher",
+                            "key"
+                        ],
+                        [
+                            "input.applauncher.text",
+                            "key"
+                        ],
+                        [
+                            "xpath=//one-app-launcher-search-bar/lightning-input/div/input",
+                            "xpath:position"
+                        ],
+                        [
+                            "xpath=//div[@id='content_795:0']/one-app-launcher-menu/div/one-app-launcher-search-bar/lightning-input/div/input",
+                            "xpath:idRelative"
+                        ],
+                        [
+                            "id=input-109",
+                            "id"
+                        ],
+                        [
+                            "css=#input-109",
+                            "css"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Search apps and items...'])[1]/following::input[1]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='No record selected'])[1]/following::input[1]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Clear'])[1]/preceding::input[1]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath=(.//*[normalize-space(text()) and normalize-space(.)='Apps'])[1]/preceding::input[1]",
+                            "xpath:neighbor"
+                        ],
+                        [
+                            "xpath...one-app-launcher-search-bar.lightning-input.div.input",
+                            "key"
+                        ]
+                    ],
+                    "input": "projects",
+                    "status": "NotRun",
+                    "elementKey": "search.input109",
+                    "elementDesc": "input-109 search",
+                    "isEncrypted": false,
+                    "isDisplay": false,
+                    "indexColumn": "",
+                    "tcId": "84",
+                    "tsId": 83,
+                    "testData": false,
+                    "duration": 627000000,
+                    "executedOn": "2021-10-15T00:59:52.614Z",
+                    "errMessage": "",
+                    "isRowExpanded": false,
+                    "@@mycolor": null,
+                    "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"caseNumber\":\"00290316\",\"vendor\":\"Borrego Solar Systems Inc. (O&M)\",\"vendorContact\":\"Mike Halloran\",\"lineItem\":\"Parts - CM\",\"taxCategory\":\"Data Storage\",\"qtyOrdered\":\"1\",\"unitCost\":\"2\",\"notToExceed\":\"Yes\"}",
+                    "tdId": 1,
+                    "isSharable": true,
+                    "length": 9
+                },
+                {
+                    "indexColumn": "",
+                    "command": "Wait For Present",
+                    "element": "applauncher.link.main",
+                    "input": "",
+                    "status": "NotRun",
+                    "eArray": [
+                        [
+                            "applauncher.link.main",
+                            "key"
+                        ],
+                        [
+                            "xpath=//one-app-launcher-menu//p[string-length(text()) = 0]//b",
+                            "xpath"
+                        ]
+                    ],
+                    "elementKey": "",
+                    "elementDesc": "",
+                    "@@mycolor": null,
+                    "tcId": "84",
+                    "isSharable": true,
+                    "tsId": 83,
+                    "testData": false,
+                    "length": 9
+                },
+                {
+                    "indexColumn": "",
+                    "command": "Click",
+                    "element": "applauncher.link.main",
+                    "input": "",
+                    "status": "NotRun",
+                    "eArray": [
+                        [
+                            "applauncher.link.main",
+                            "key"
+                        ],
+                        [
+                            "xpath=//one-app-launcher-menu//p[string-length(text()) = 0]//b",
+                            "xpath"
+                        ]
+                    ],
+                    "elementKey": "",
+                    "elementDesc": "",
+                    "@@mycolor": null,
+                    "tcId": "84",
+                    "isSharable": true,
+                    "tsId": 83,
+                    "testData": false,
+                    "length": 9
+                },
+                {
+                    "indexColumn": "",
+                    "command": "Wait For Present",
+                    "element": "common.activeTab",
+                    "input": "",
+                    "status": "NotRun",
+                    "eArray": [
+                        [
+                            "common.activeTab",
+                            "key"
+                        ]
+                    ],
+                    "elementKey": "",
+                    "elementDesc": "",
+                    "@@mycolor": null,
+                    "tcId": "84",
+                    "isSharable": true,
+                    "tsId": 83,
+                    "testData": false,
+                    "length": 9
+                }
+            ]
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "common.searchAssistant.button",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "common.searchAssistant.button",
+                    "key"
+                ],
+                [
+                    "projects.search.button",
+                    "key"
+                ],
+                [
+                    "xpath=//div[contains(@class, 'forceSearchAssistant')]//button",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"AZ Walmart - Chandler #3360 - O&M\"}",
+            "tcId": "26",
+            "tsId": 25,
+            "testData": true,
+            "tdId": 1,
+            "duration": 6706000000,
+            "executedOn": "2021-10-18T22:02:06.912Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Type",
+            "element": "common.searchAssistant.input",
+            "input": "${projectName}",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "common.searchAssistant.input",
+                    "key"
+                ],
+                [
+                    "projects.search.input",
+                    "key"
+                ],
+                [
+                    "xpath=//div[contains(@class, 'container')]//input[@type='search']",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "isEncrypted": false,
+            "isDisplay": false,
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"AZ Walmart - Chandler #3360 - O&M\"}",
+            "tcId": "26",
+            "tsId": 25,
+            "testData": true,
+            "tdId": 1,
+            "duration": 825000000,
+            "executedOn": "2021-10-18T22:02:07.737Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Visible",
+            "element": "projects.search.firstResult",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "projects.search.firstResult",
+                    "key"
+                ],
+                [
+                    "xpath=(//search_lightning-instant-result-item)[1]",
+                    "xpath"
+                ],
+                [
+                    "(//search_lightning-instant-result-item)[1]",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"AZ Walmart - Chandler #3360 - O&M\"}",
+            "tcId": "26",
+            "tsId": 25,
+            "testData": true,
+            "tdId": 1,
+            "duration": 572000000,
+            "executedOn": "2021-10-18T22:02:08.309Z",
+            "errMessage": "",
+            "isRowExpanded": false,
+            "@@mycolor": null
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "projects.search.firstResult",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "projects.search.firstResult",
+                    "key"
+                ],
+                [
+                    "xpath=(//search_lightning-instant-result-item)[1]",
+                    "xpath"
+                ],
+                [
+                    "(//search_lightning-instant-result-item)[1]",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"AZ Walmart - Chandler #3360 - O&M\"}",
+            "tcId": "26",
+            "tsId": 25,
+            "testData": true,
+            "tdId": 1,
+            "duration": 6605000000,
+            "executedOn": "2021-10-18T22:02:14.914Z",
+            "errMessage": "",
+            "isRowExpanded": false,
+            "@@mycolor": null
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Present",
+            "element": "project.details.opportunity.link",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "project.details.opportunity.link",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "tcId": "26",
+            "tsId": 25,
+            "testData": true,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"AZ Walmart - Chandler #3360 - O&M\"}",
+            "tdId": 1,
+            "duration": 2951000000,
+            "executedOn": "2021-10-18T22:02:17.865Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "project.details.opportunity.link",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "project.details.opportunity.link",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "tcId": "26",
+            "tsId": 25,
+            "testData": true,
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"AZ Walmart - Chandler #3360 - O&M\"}",
+            "tdId": 1,
+            "duration": 7716000000,
+            "executedOn": "2021-10-18T22:02:25.581Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Present",
+            "element": "opportunities.details.opportunityRecordType",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "opportunities.details.opportunityRecordType",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "tcId": "26",
+            "tsId": 25,
+            "testData": true,
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"AZ Walmart - Chandler #3360 - O&M\"}",
+            "tdId": 1,
+            "duration": 1836000000,
+            "executedOn": "2021-10-18T22:02:27.417Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Assert Text",
+            "element": "opportunities.details.opportunityRecordType",
+            "input": "${opportunityRecordType}",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "opportunities.details.opportunityRecordType",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "tcId": "26",
+            "tsId": 25,
+            "testData": true,
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"AZ Walmart - Chandler #3360 - O&M\"}",
+            "tdId": 1,
+            "duration": 575000000,
+            "executedOn": "2021-10-18T22:02:27.992Z",
+            "expected": "O&M Opportunity",
+            "actual": "O&M Opportunity",
+            "errMessage": "",
+            "isRowExpanded": false,
+            "isEncrypted": false,
+            "isDisplay": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Assert Text",
+            "element": "opportunities.details.solarStage",
+            "input": "${solarStage}",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "opportunities.details.solarStage",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "tcId": "26",
+            "tsId": 25,
+            "testData": true,
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"AZ Walmart - Chandler #3360 - O&M\"}",
+            "tdId": 1,
+            "duration": 583000000,
+            "executedOn": "2021-10-18T22:02:28.576Z",
+            "errMessage": "\"Text '' is not match with 'Contract Signed'\"",
+            "isRowExpanded": false,
+            "isEncrypted": false,
+            "isDisplay": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "opportunities.createContract.button",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "opportunities.createContract.button",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "tcId": "26",
+            "tsId": 25,
+            "testData": true,
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"AZ Walmart - Chandler #3360 - O&M\"}",
+            "tdId": 1,
+            "duration": 6722000000,
+            "executedOn": "2021-10-18T22:02:38.178Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Alert",
+            "input": "10000",
+            "status": "NotRun",
+            "eArray": [],
+            "elementKey": "",
+            "elementDesc": "",
+            "tcId": "26",
+            "tsId": 25,
+            "testData": true,
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"AZ Walmart - Chandler #3360 - O&M\"}",
+            "tdId": 1,
+            "duration": 1107000000,
+            "executedOn": "2021-10-18T22:02:39.285Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Accept Alert",
+            "element": "",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [],
+            "elementKey": "",
+            "elementDesc": "",
+            "tcId": "26",
+            "tsId": 25,
+            "testData": true,
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"AZ Walmart - Chandler #3360 - O&M\"}",
+            "tdId": 1,
+            "duration": 519000000,
+            "executedOn": "2021-10-18T22:02:39.804Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Implicit Wait",
+            "element": "",
+            "input": "5000",
+            "status": "NotRun",
+            "eArray": [],
+            "elementKey": "",
+            "elementDesc": "",
+            "tcId": "26",
+            "tsId": 25,
+            "testData": true,
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"AZ Walmart - Chandler #3360 - O&M\"}",
+            "tdId": 1,
+            "duration": 5520000000,
+            "executedOn": "2021-10-18T22:02:45.324Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Present",
+            "element": "serviceContracts.newPaid.popup.title",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "serviceContracts.newPaid.popup.title",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "tcId": "26",
+            "tsId": 25,
+            "testData": true,
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"AZ Walmart - Chandler #3360 - O&M\"}",
+            "tdId": 1,
+            "duration": 581000000,
+            "executedOn": "2021-10-18T22:02:45.905Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Assert Present",
+            "element": "serviceContracts.newPaid.popup.title",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "serviceContracts.newPaid.popup.title",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "tcId": "26",
+            "tsId": 25,
+            "testData": true,
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"AZ Walmart - Chandler #3360 - O&M\"}",
+            "tdId": 1,
+            "duration": 575000000,
+            "executedOn": "2021-10-18T22:02:46.480Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "serviceContracts.newPaid.popup.branch.select",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "serviceContracts.newPaid.popup.branch.select",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"AZ Walmart - Chandler #3360 - O&M\"}",
+            "tcId": "26",
+            "tsId": 25,
+            "testData": true,
+            "tdId": 1,
+            "duration": 6756000000,
+            "executedOn": "2021-10-18T22:02:53.236Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Visible",
+            "element": "serviceContracts.newPaid.popup.branch.norCal.option",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "serviceContracts.newPaid.popup.branch.norCal.option",
+                    "key"
+                ],
+                [
+                    "serviceContracts.newPaid.popup.contractStatus.pending.option",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"AZ Walmart - Chandler #3360 - O&M\"}",
+            "tcId": "26",
+            "tsId": 25,
+            "testData": true,
+            "tdId": 1,
+            "duration": 575000000,
+            "executedOn": "2021-10-18T22:02:53.812Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "serviceContracts.newPaid.popup.branch.norCal.option",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "serviceContracts.newPaid.popup.branch.norCal.option",
+                    "key"
+                ],
+                [
+                    "serviceContracts.newPaid.popup.contractStatus.pending.option",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"AZ Walmart - Chandler #3360 - O&M\"}",
+            "tcId": "26",
+            "tsId": 25,
+            "testData": true,
+            "tdId": 1,
+            "duration": 6864000000,
+            "executedOn": "2021-10-18T22:03:00.676Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "serviceContracts.newPaid.popup.contractStatus.select",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "serviceContracts.newPaid.popup.contractStatus.select",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "tcId": "26",
+            "tsId": 25,
+            "testData": true,
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"AZ Walmart - Chandler #3360 - O&M\"}",
+            "tdId": 1,
+            "duration": 6667000000,
+            "executedOn": "2021-10-18T22:03:07.343Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Visible",
+            "element": "serviceContracts.newPaid.popup.contractStatus.pending.option",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "serviceContracts.newPaid.popup.contractStatus.pending.option",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "tcId": "26",
+            "tsId": 25,
+            "testData": true,
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"AZ Walmart - Chandler #3360 - O&M\"}",
+            "tdId": 1,
+            "duration": 580000000,
+            "executedOn": "2021-10-18T22:03:07.923Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "serviceContracts.newPaid.popup.contractStatus.pending.option",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "serviceContracts.newPaid.popup.contractStatus.pending.option",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "tcId": "26",
+            "tsId": 25,
+            "testData": true,
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"AZ Walmart - Chandler #3360 - O&M\"}",
+            "tdId": 1,
+            "duration": 6865000000,
+            "executedOn": "2021-10-18T22:03:14.788Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Type",
+            "element": "serviceContracts.newPaid.popup.description.textarea",
+            "input": "${serviceContractDescription}",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "serviceContracts.newPaid.popup.description.textarea",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "tcId": "26",
+            "tsId": 25,
+            "testData": true,
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"AZ Walmart - Chandler #3360 - O&M\"}",
+            "tdId": 1,
+            "duration": 889000000,
+            "executedOn": "2021-10-18T22:03:15.678Z",
+            "errMessage": "",
+            "isRowExpanded": false,
+            "isEncrypted": false,
+            "isDisplay": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "serviceContracts.newPaid.popup.contractAutoRenew.select",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "serviceContracts.newPaid.popup.contractAutoRenew.select",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "tcId": "26",
+            "tsId": 25,
+            "testData": true,
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"AZ Walmart - Chandler #3360 - O&M\"}",
+            "tdId": 1,
+            "duration": 6692000000,
+            "executedOn": "2021-10-18T22:03:22.370Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Visible",
+            "element": "serviceContracts.newPaid.popup.contractAutoRenew.yes.option",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "serviceContracts.newPaid.popup.contractAutoRenew.yes.option",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "tcId": "26",
+            "tsId": 25,
+            "testData": true,
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"AZ Walmart - Chandler #3360 - O&M\"}",
+            "tdId": 1,
+            "duration": 568000000,
+            "executedOn": "2021-10-18T22:03:22.938Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "serviceContracts.newPaid.popup.contractAutoRenew.yes.option",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "serviceContracts.newPaid.popup.contractAutoRenew.yes.option",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "tcId": "26",
+            "tsId": 25,
+            "testData": true,
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"AZ Walmart - Chandler #3360 - O&M\"}",
+            "tdId": 1,
+            "duration": 6733000000,
+            "executedOn": "2021-10-18T22:03:29.671Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "serviceContracts.newPaid.popup.serviceContractStartDate.calendar.icon",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "serviceContracts.newPaid.popup.serviceContractStartDate.calendar.icon",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "tcId": "26",
+            "tsId": 25,
+            "testData": true,
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"AZ Walmart - Chandler #3360 - O&M\"}",
+            "tdId": 1,
+            "duration": 6760000000,
+            "executedOn": "2021-10-18T22:03:36.431Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Visible",
+            "element": "common.openCalendar.today",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "common.openCalendar.today",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "tcId": "26",
+            "tsId": 25,
+            "testData": true,
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"AZ Walmart - Chandler #3360 - O&M\"}",
+            "tdId": 1,
+            "duration": 555000000,
+            "executedOn": "2021-10-18T22:03:36.986Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "common.openCalendar.today",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "common.openCalendar.today",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "tcId": "26",
+            "tsId": 25,
+            "testData": true,
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"AZ Walmart - Chandler #3360 - O&M\"}",
+            "tdId": 1,
+            "duration": 6874000000,
+            "executedOn": "2021-10-18T22:03:43.860Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Type",
+            "element": "serviceContracts.newPaid.popup.contractTerm.input",
+            "input": "${contractTermMonths}",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "serviceContracts.newPaid.popup.contractTerm.input",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "tcId": "26",
+            "tsId": 25,
+            "testData": true,
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"AZ Walmart - Chandler #3360 - O&M\"}",
+            "tdId": 1,
+            "duration": 811000000,
+            "executedOn": "2021-10-18T22:03:44.671Z",
+            "errMessage": "",
+            "isRowExpanded": false,
+            "isEncrypted": false,
+            "isDisplay": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "serviceContracts.newPaid.popup.contractEndDate.calendar.icon",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "serviceContracts.newPaid.popup.contractEndDate.calendar.icon",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "tcId": "26",
+            "tsId": 25,
+            "testData": true,
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"AZ Walmart - Chandler #3360 - O&M\"}",
+            "tdId": 1,
+            "duration": 6734000000,
+            "executedOn": "2021-10-18T22:03:51.405Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Visible",
+            "element": "common.openCalendar.year.select",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "common.openCalendar.year.select",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "tcId": "26",
+            "tsId": 25,
+            "testData": true,
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"AZ Walmart - Chandler #3360 - O&M\"}",
+            "tdId": 1,
+            "duration": 629000000,
+            "executedOn": "2021-10-18T22:03:52.034Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "common.openCalendar.year.select",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "common.openCalendar.year.select",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "tcId": "26",
+            "tsId": 25,
+            "testData": true,
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"AZ Walmart - Chandler #3360 - O&M\"}",
+            "tdId": 1,
+            "duration": 6826000000,
+            "executedOn": "2021-10-18T22:03:58.860Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Visible",
+            "element": "common.openCalendar.year.select.option.twoYearsLater",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "common.openCalendar.year.select.option.twoYearsLater",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "tcId": "26",
+            "tsId": 25,
+            "testData": true,
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"AZ Walmart - Chandler #3360 - O&M\"}",
+            "tdId": 1,
+            "duration": 566000000,
+            "executedOn": "2021-10-18T22:03:59.426Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "common.openCalendar.year.select.option.twoYearsLater",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "common.openCalendar.year.select.option.twoYearsLater",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "tcId": "26",
+            "tsId": 25,
+            "testData": true,
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"AZ Walmart - Chandler #3360 - O&M\"}",
+            "tdId": 1,
+            "duration": 6624000000,
+            "executedOn": "2021-10-18T22:04:06.051Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Present",
+            "element": "common.openCalendar.firstDayOfOpenMonth",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "common.openCalendar.firstDayOfOpenMonth",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "tcId": "26",
+            "tsId": 25,
+            "testData": true,
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"AZ Walmart - Chandler #3360 - O&M\"}",
+            "tdId": 1,
+            "duration": 558000000,
+            "executedOn": "2021-10-18T22:04:06.609Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "common.openCalendar.firstDayOfOpenMonth",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "common.openCalendar.firstDayOfOpenMonth",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "tcId": "26",
+            "tsId": 25,
+            "testData": true,
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"AZ Walmart - Chandler #3360 - O&M\"}",
+            "tdId": 1,
+            "duration": 6830000000,
+            "executedOn": "2021-10-18T22:04:13.439Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Assert Present",
+            "element": "serviceContracts.newPaid.popup.salesTaxResponsibility.label",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "serviceContracts.newPaid.popup.salesTaxResponsibility.label",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "tcId": "26",
+            "tsId": 25,
+            "testData": true,
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"AZ Walmart - Chandler #3360 - O&M\"}",
+            "tdId": 1,
+            "duration": 595000000,
+            "executedOn": "2021-10-18T22:04:14.034Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Assert Present",
+            "element": "serviceContracts.newPaid.popup.escalator.label",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "serviceContracts.newPaid.popup.escalator.label",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "tcId": "26",
+            "tsId": 25,
+            "testData": true,
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"AZ Walmart - Chandler #3360 - O&M\"}",
+            "tdId": 1,
+            "duration": 574000000,
+            "executedOn": "2021-10-18T22:04:14.608Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Assert Present",
+            "element": "serviceContracts.newPaid.popup.solarElectrician1Rate.label",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "serviceContracts.newPaid.popup.solarElectrician1Rate.label",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "tcId": "26",
+            "tsId": 25,
+            "testData": true,
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"AZ Walmart - Chandler #3360 - O&M\"}",
+            "tdId": 1,
+            "duration": 585000000,
+            "executedOn": "2021-10-18T22:04:15.193Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Assert Present",
+            "element": "serviceContracts.newPaid.popup.solarEngineerRate.label",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "serviceContracts.newPaid.popup.solarEngineerRate.label",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "tcId": "26",
+            "tsId": 25,
+            "testData": true,
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"AZ Walmart - Chandler #3360 - O&M\"}",
+            "tdId": 1,
+            "duration": 572000000,
+            "executedOn": "2021-10-18T22:04:15.765Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "serviceContracts.newPaid.save.button",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "serviceContracts.newPaid.save.button",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "tcId": "26",
+            "tsId": 25,
+            "testData": true,
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"AZ Walmart - Chandler #3360 - O&M\"}",
+            "tdId": 1,
+            "duration": 6690000000,
+            "executedOn": "2021-10-18T22:04:22.455Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Present",
+            "element": "serviceContracts.edit.button",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "serviceContracts.edit.button",
+                    "key"
+                ],
+                [
+                    "xpath=//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//a[@title='Edit']",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"AZ Walmart - Chandler #3360 - O&M\"}",
+            "tcId": "26",
+            "tsId": 25,
+            "testData": true,
+            "tdId": 1,
+            "duration": 6132000000,
+            "executedOn": "2021-10-18T22:04:28.587Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "serviceContracts.edit.button",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "serviceContracts.edit.button",
+                    "key"
+                ],
+                [
+                    "xpath=//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//a[@title='Edit']",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"AZ Walmart - Chandler #3360 - O&M\"}",
+            "tcId": "26",
+            "tsId": 25,
+            "testData": true,
+            "tdId": 1,
+            "duration": 6844000000,
+            "executedOn": "2021-10-18T22:04:35.431Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Present",
+            "element": "serviceContracts.edit.popup.regionalManager.input",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "serviceContracts.edit.popup.regionalManager.input",
+                    "key"
+                ],
+                [
+                    "xpath=//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//div[contains(@class, 'isModal')]//span[text()='Regional Manager']//following::input[1]",
+                    "xpath"
+                ],
+                [
+                    "xpath=//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//div[contains(@class, 'isModal')]//span[text()='Regional Manager']//following::input",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"AZ Walmart - Chandler #3360 - O&M\"}",
+            "tcId": "26",
+            "tsId": 25,
+            "testData": true,
+            "tdId": 1,
+            "duration": 1911000000,
+            "executedOn": "2021-10-18T22:04:37.342Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Type",
+            "element": "serviceContracts.edit.popup.regionalManager.input",
+            "input": "${regionalManager}",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "serviceContracts.edit.popup.regionalManager.input",
+                    "key"
+                ],
+                [
+                    "xpath=//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//div[contains(@class, 'isModal')]//span[text()='Regional Manager']//following::input[1]",
+                    "xpath"
+                ],
+                [
+                    "xpath=//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//div[contains(@class, 'isModal')]//span[text()='Regional Manager']//following::input",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"AZ Walmart - Chandler #3360 - O&M\"}",
+            "tcId": "26",
+            "tsId": 25,
+            "testData": true,
+            "tdId": 1,
+            "duration": 1034000000,
+            "executedOn": "2021-10-18T22:04:38.376Z",
+            "errMessage": "",
+            "isRowExpanded": false,
+            "isEncrypted": false,
+            "isDisplay": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Implicit Wait",
+            "element": "",
+            "input": "1000",
+            "status": "NotRun",
+            "eArray": [],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"AZ Walmart - Chandler #3360 - O&M\"}",
+            "tcId": "26",
+            "tsId": 25,
+            "testData": true,
+            "tdId": 1,
+            "duration": 1516000000,
+            "executedOn": "2021-10-18T22:04:39.892Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Present",
+            "element": "serviceContracts.edit.popup.regionalManager.firstOption",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "serviceContracts.edit.popup.regionalManager.firstOption",
+                    "key"
+                ],
+                [
+                    "xpath=//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//div[contains(@class, 'isModal')]//span[text() = 'Regional Manager']//following::li[not(contains(@class, 'invisible'))][1]",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"AZ Walmart - Chandler #3360 - O&M\"}",
+            "tcId": "26",
+            "tsId": 25,
+            "testData": true,
+            "tdId": 1,
+            "duration": 586000000,
+            "executedOn": "2021-10-18T22:04:40.478Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "serviceContracts.edit.popup.regionalManager.firstOption",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "serviceContracts.edit.popup.regionalManager.firstOption",
+                    "key"
+                ],
+                [
+                    "xpath=//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//div[contains(@class, 'isModal')]//span[text() = 'Regional Manager']//following::li[not(contains(@class, 'invisible'))][1]",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"AZ Walmart - Chandler #3360 - O&M\"}",
+            "tcId": "26",
+            "tsId": 25,
+            "testData": true,
+            "tdId": 1,
+            "duration": 6763000000,
+            "executedOn": "2021-10-18T22:04:47.241Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Type",
+            "element": "serviceContracts.edit.popup.areaSupervisor.input",
+            "input": "${areaSupervisor}",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "serviceContracts.edit.popup.areaSupervisor.input",
+                    "key"
+                ],
+                [
+                    "xpath=//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//div[contains(@class, 'isModal')]//span[text()='Area Supervisor']//following::input[1]",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"AZ Walmart - Chandler #3360 - O&M\"}",
+            "tcId": "26",
+            "tsId": 25,
+            "testData": true,
+            "tdId": 1,
+            "duration": 1063000000,
+            "executedOn": "2021-10-18T22:04:48.304Z",
+            "errMessage": "",
+            "isRowExpanded": false,
+            "isEncrypted": false,
+            "isDisplay": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Implicit Wait",
+            "element": "",
+            "input": "1000",
+            "status": "NotRun",
+            "eArray": [],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"AZ Walmart - Chandler #3360 - O&M\"}",
+            "tcId": "26",
+            "tsId": 25,
+            "testData": true,
+            "tdId": 1,
+            "duration": 1526000000,
+            "executedOn": "2021-10-18T22:04:49.830Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Present",
+            "element": "serviceContracts.edit.popup.areaSupervisor.firstOption",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "serviceContracts.edit.popup.areaSupervisor.firstOption",
+                    "key"
+                ],
+                [
+                    "xpath=//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//div[contains(@class, 'isModal')]//span[text() = 'Area Supervisor']//following::li[not(contains(@class, 'invisible'))][1]",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"AZ Walmart - Chandler #3360 - O&M\"}",
+            "tcId": "26",
+            "tsId": 25,
+            "testData": true,
+            "tdId": 1,
+            "duration": 580000000,
+            "executedOn": "2021-10-18T22:04:50.411Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "serviceContracts.edit.popup.areaSupervisor.firstOption",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "serviceContracts.edit.popup.areaSupervisor.firstOption",
+                    "key"
+                ],
+                [
+                    "xpath=//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//div[contains(@class, 'isModal')]//span[text() = 'Area Supervisor']//following::li[not(contains(@class, 'invisible'))][1]",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"AZ Walmart - Chandler #3360 - O&M\"}",
+            "tcId": "26",
+            "tsId": 25,
+            "testData": true,
+            "tdId": 1,
+            "duration": 6701000000,
+            "executedOn": "2021-10-18T22:04:57.112Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "serviceContracts.edit.popup.contractStatus.select",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "serviceContracts.edit.popup.contractStatus.select",
+                    "key"
+                ],
+                [
+                    "xpath=//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//div[contains(@class, 'isModal')]//span[text() = 'Contract Status']//following::a[1]",
+                    "xpath"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"AZ Walmart - Chandler #3360 - O&M\"}",
+            "tcId": "26",
+            "tsId": 25,
+            "testData": true,
+            "tdId": 1,
+            "duration": 6763000000,
+            "executedOn": "2021-10-18T22:05:03.875Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Wait For Present",
+            "element": "serviceContracts.edit.popup.contractStatus.active.option",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "serviceContracts.edit.popup.contractStatus.active.option",
+                    "key"
+                ],
+                [
+                    "xpath=//div[@class='select-options']//li//a[text()='Active']",
+                    "xpath"
+                ],
+                [
+                    "serviceContracts.details.areaSupervisor.edit.firstOption",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"AZ Walmart - Chandler #3360 - O&M\"}",
+            "tcId": "26",
+            "tsId": 25,
+            "testData": true,
+            "tdId": 1,
+            "duration": 577000000,
+            "executedOn": "2021-10-18T22:05:04.452Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "serviceContracts.edit.popup.contractStatus.active.option",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "serviceContracts.edit.popup.contractStatus.active.option",
+                    "key"
+                ],
+                [
+                    "xpath=//div[@class='select-options']//li//a[text()='Active']",
+                    "xpath"
+                ],
+                [
+                    "serviceContracts.details.contractStatus.edit.select",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"AZ Walmart - Chandler #3360 - O&M\"}",
+            "tcId": "26",
+            "tsId": 25,
+            "testData": true,
+            "tdId": 1,
+            "duration": 6958000000,
+            "executedOn": "2021-10-18T22:05:11.410Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        },
+        {
+            "indexColumn": "",
+            "command": "Click",
+            "element": "serviceContracts.details.edit.save.button",
+            "input": "",
+            "status": "NotRun",
+            "eArray": [
+                [
+                    "serviceContracts.details.edit.save.button",
+                    "key"
+                ]
+            ],
+            "elementKey": "",
+            "elementDesc": "",
+            "@@mycolor": null,
+            "arg": "{\"__index\":1,\"username\":\"rmontemayor@borregosolar.com.fullcopy\",\"password\":\"FCpassword123!\",\"projectName\":\"AZ Walmart - Chandler #3360 - O&M\"}",
+            "tcId": "26",
+            "tsId": 25,
+            "testData": true,
+            "tdId": 1,
+            "duration": 6655000000,
+            "executedOn": "2021-10-18T22:05:18.065Z",
+            "errMessage": "",
+            "isRowExpanded": false
+        }
+    ],
+    "type": "web",
+    "capabilities": {
+        "remoteUrl": "https://bssi--fullcopy.lightning.force.com/",
+        "type": "web",
+        "selectBrowser": "chrome",
+        "selectDevice": "",
+        "isRemote": false,
+        "remoteHubUrl": "http://127.0.0.1:4444/wd/hub/",
+        "isDebugMode": false,
+        "details": {
+            "deviceMetrics": {
+                "name": "",
+                "width": "",
+                "height": "",
+                "pixelRatio": "",
+                "userAgent": ""
+            }
+        }
+    },
+    "testData": "resources/testdata/Service Contracts/Create Service Contract with Active Status.csv",
+    "testDataExample": [],
+    "isTCValid": true,
+    "externalTestData": false,
+    "dbDetails": {},
+    "recordSessionType": "multiple",
+    "tags": [
+        {
+            "name": "servicecontract"
+        },
+        {
+            "name": "positive"
+        },
+        {
+            "name": "smoke"
+        }
+    ],
+    "description": "Verify whether user is able to create a Service contract with Active status",
+    "shared": true,
+    "executionStatus": "NotRun"
+}

@@ -252,9 +252,11 @@ import io.appium.java_client.AppiumDriver;
 			System.getProperty("application.properties.file", "resources/application.properties"));
 		String downloadsFolderBase = prop.getPropertyValue("downloads.folder.base");
 		String userDataDir = prop.getPropertyValue("user.data.dir");
+		String loginPath = prop.getPropertyValue("login.path");
 
 		logger.info("Downloads folder base: " + downloadsFolderBase);
 		logger.info("User data dir: " + userDataDir);
+		logger.info("Login path: " + loginPath);
 
 		logger.info("support.WebDriverListener.beforeInitialize(): Configuring...");
 		java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("yyyy-MM-dd_HHmmss");
@@ -263,6 +265,7 @@ import io.appium.java_client.AppiumDriver;
 		if (!dir.exists()) {
 			dir.mkdir();
 		}
+		Util.LOGIN_PATH = loginPath != null ? loginPath : "https://bssi--fullcopy.lightning.force.com/";
 
 		DesiredCapabilities capabilities = (DesiredCapabilities) desiredCapabilities;
         ChromeOptions chromeOptions = new ChromeOptions();

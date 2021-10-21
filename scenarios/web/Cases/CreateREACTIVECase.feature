@@ -7,7 +7,7 @@ Feature: Cases
 @requirementKey=QTM-RQ-23
 Scenario: Create REACTIVE case
 	
-   Given ShrdLoginToFullCopy "${username}" "${password}"
+   Given ShrdLogin "${username}" "${password}"
    And ShrdChangeLoggedInUser "test_ops_center_operator"
    And ShrdLaunchApp "projects"
    Then wait until "common.activeTab" to be visible

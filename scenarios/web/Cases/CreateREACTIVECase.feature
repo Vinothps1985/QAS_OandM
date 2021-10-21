@@ -24,6 +24,7 @@ Scenario: Create REACTIVE case
    And click on "projects.quicklink.contracts"
    Then wait until "projects.contracts.firstContract.status" to be present
    And assert "projects.contracts.firstContract.status" is present
+   And take a screenshot
    When wait until "breadcrumbs.second" to be enable
    And click on "breadcrumbs.second"
    And wait until "projects.createCase.button" to be enable
@@ -58,18 +59,17 @@ Scenario: Create REACTIVE case
    And sendKeys "${subject}" into "case.createCase.popup.subject.input"
    And wait until "case.createCase.popup.description.textarea" to be enable
    And sendKeys "${caseDescription}" into "case.createCase.popup.description.textarea"
-   Then verify "case.createCase.popup.recordType" text is "${recordType}"
+   #Then verify "case.createCase.popup.recordType" text is "${recordType}"
    When wait until "case.createCase.popup.save.button" to be enable
    And click on "case.createCase.popup.save.button"
    Then verify "case.entityName" text is "Case"
    And wait until "case.priority" to be present
+   And take a screenshot
    And assert "case.priority" text is "${casePriority}"
-   And verify "case.caseOrigin" text is "${caseOrigin}"
-   And verify "case.reportedIssue" text is "${reportedIssue}"
-   And verify "case.caseCause" text is "${caseCause}"
+   And assert "case.caseOrigin" text is "${caseOrigin}"
+   And assert "case.reportedIssue" text is "${reportedIssue}"
+   And assert "case.caseCause" text is "${caseCause}"
    And assert "case.subject" text is "${subject}"
-   And verify "case.description" text is "${caseDescription}"
-   
-
-
-
+   And assert "case.description" text is "${caseDescription}"
+   And scroll until "case.subject" is visible
+   And take a screenshot

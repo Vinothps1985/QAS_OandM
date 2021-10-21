@@ -1,0 +1,1 @@
+serviceAppointments.table.completed.first={"locator":"xpath=(//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//table//span[text()='Completed'])[1]","desc":"","eArray":[{"name":"xpath=(//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//table//span[text()='Completed'])[1]","key":"xpath"}]}

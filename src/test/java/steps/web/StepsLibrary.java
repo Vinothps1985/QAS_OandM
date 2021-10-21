@@ -3,6 +3,7 @@ package steps.web;
 import static com.qmetry.qaf.automation.step.CommonStep.click;
 import static com.qmetry.qaf.automation.step.CommonStep.sendKeys;
 import support.Util;
+import static com.qmetry.qaf.automation.ui.webdriver.ElementFactory.$;
 
 import java.io.File;
 import java.io.FileFilter;
@@ -12,6 +13,7 @@ import com.qmetry.qaf.automation.ui.webdriver.QAFExtendedWebDriver;
 import com.qmetry.qaf.automation.ui.webdriver.QAFExtendedWebElement;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
 import org.apache.pdfbox.text.PDFTextStripper;
@@ -30,6 +32,7 @@ import org.apache.commons.io.comparator.LastModifiedFileComparator;
 import org.apache.pdfbox.Loader;
 import org.apache.pdfbox.pdmodel.PDDocument;
 
+import com.qmetry.qaf.automation.core.TestBaseProvider;
 import com.qmetry.qaf.automation.step.CommonStep;
 import com.qmetry.qaf.automation.step.QAFTestStep;
 
@@ -189,10 +192,21 @@ public class StepsLibrary {
 			x.printStackTrace();
 		}
 	}
+	
+	@QAFTestStep(description="take a screenshot")
+	public static void takeAScreenshot() {
+		TestBaseProvider.instance().get().takeScreenShot();
+	}
 
-	/*@QAFTestStep(description = "click on {loc}")
-	public static void click(String loc) {
-		System.out.println("CLICKING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-		CommonStep.click(loc);
-	}*/
+	@QAFTestStep(description="scroll until {0} is visible")
+	public static void scrollUntilVisible(String locator) {
+		try {
+			((JavascriptExecutor)new WebDriverTestBase().getDriver())
+						.executeScript("arguments[0].scrollIntoView({block: 'center'});", $(locator));
+			Thread.sleep(500);
+		} catch (Exception x) {
+			//?
+			x.printStackTrace();
+		}
+	}
 }

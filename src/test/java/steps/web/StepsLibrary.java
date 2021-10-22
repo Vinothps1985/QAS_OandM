@@ -29,6 +29,8 @@ import java.util.Optional;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.comparator.LastModifiedFileComparator;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.apache.pdfbox.Loader;
 import org.apache.pdfbox.pdmodel.PDDocument;
 
@@ -37,6 +39,8 @@ import com.qmetry.qaf.automation.step.CommonStep;
 import com.qmetry.qaf.automation.step.QAFTestStep;
 
 public class StepsLibrary {
+
+	private static Log logger = LogFactory.getLog(StepsLibrary.class);
 
 	public static String latestPdfContents = null;
 	public static String latestFileDownloadedUrl = null;
@@ -207,6 +211,34 @@ public class StepsLibrary {
 		} catch (Exception x) {
 			//?
 			x.printStackTrace();
+		}
+	}
+
+	/**
+	 * 
+	 * @param milisec
+	 * @param refreshes
+	 * @param loc
+	 * @param text
+	 */
+	@QAFTestStep(description="wait {milisec} milisec up to {refreshes} times until {loc} has the text {text}")
+	public static void waitMilisecAndRefreshUntilTextIs(int milisec, int refreshes, String loc, String text) {
+		try {
+			int currentRefreshes=0;
+			while (currentRefreshes < refreshes) {
+				try {
+					$(loc).waitForPresent();
+					$(loc).waitForText(text, milisec);
+					logger.info("Text " + text + " found in locator " + loc + "!");
+					break;
+				} catch (Exception x) {
+					logger.info("Text " + text + " not found yet for locator " + loc);
+					currentRefreshes++;
+					steps.common.StepsLibrary.executeJavaScript("window.location.reload();");
+				}
+			}
+		} catch (Exception x) {
+			logger.error("Error waiting for text " + text + " in locator " + loc, x);
 		}
 	}
 }

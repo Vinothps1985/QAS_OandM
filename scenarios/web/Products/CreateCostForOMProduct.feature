@@ -7,28 +7,22 @@ Feature: Products
 @requirementKey=QTM-RQ-23
 Scenario: Create Cost for OM Product
 	
-   Given ShrdLoginToFullCopy "${username}" "${password}"
+   Given ShrdLogin "${username}" "${password}"
    And ShrdChangeLoggedInUser "test_ops_center_operator"
-   And ShrdLaunchApp "products"
-   Then wait until "products.selectListView" to be present
-   When wait until "products.selectListView" to be enable
-   And click on "products.selectListView"
-   Then wait until "products.selectListView.OMProducts" to be present
-   When wait until "products.selectListView.OMProducts" to be enable
-   And click on "products.selectListView.OMProducts"
-   And wait for 2000 milisec
-   Then wait until "products.search.results.first" to be present
-   When wait until "products.search.results.first" to be enable
-   And click on "products.search.results.first"
+   And ShrdCreateProduct "ANY" "${productDescription}" "${oemManufacturer}" "${activeDataSheet}"
+
+   And take a screenshot
+
    Then wait until "products.costs.dropDownMenu" to be present
    When wait until "products.costs.dropDownMenu" to be enable
    And click on "products.costs.dropDownMenu"
-   And wait for 1000 milisec
    And wait until "products.costs.dropDownMenu.option.new" to be enable
+   And wait until "products.costs.dropDownMenu.option.new" to be visible
    And click on "products.costs.dropDownMenu.option.new"
    Then wait until "cost.createCost.popup.unitCost" to be visible
    When wait until "cost.createCost.popup.unitCost" to be enable
    And sendKeys "${unitCost}" into "cost.createCost.popup.unitCost"
+   And take a screenshot
    And wait until "cost.createCost.popup.save.button" to be enable
    And click on "cost.createCost.popup.save.button"
    Then wait until "common.toastContainer.link" to be present
@@ -40,6 +34,8 @@ Scenario: Create Cost for OM Product
    Then wait until "cost.details.unitCost.input" to be present
    And assert "cost.details.unitCost.input" value is "${unitCost}"
    
+   And take a screenshot
+   And wait for 2000 milisec
 
 
 

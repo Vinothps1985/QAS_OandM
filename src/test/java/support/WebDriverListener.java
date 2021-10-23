@@ -190,6 +190,9 @@ import io.appium.java_client.AppiumDriver;
 			for (int i=0; i < 3; i++) {
 				try {
 					success = true;
+					if (!element.isEnabled()) {
+						return;
+					}
 					if (!element.getId().equals(lastClick)) {
 						lastClick = element.getId();
 						commandTracker.setResponce(new Response());
@@ -202,6 +205,9 @@ import io.appium.java_client.AppiumDriver;
 					System.out.println("Oops " + i + ": " + ex.getMessage());
 					//Wait 2 seconds and try again
 					String alignToTop = i%2==0 ? "false" : "true";
+					if (!element.isEnabled()) {
+						return;
+					}
 					((JavascriptExecutor)element.getWrappedDriver()).executeScript("arguments[0].scrollIntoView(" + alignToTop + ");", element);
 					//element.getWrappedDriver().executeScript("document.querySelector('div[data-message-id=\"loginAsSystemMessage\"]').style.display='none'");
 					try {Thread.sleep(500);} catch (Exception x) {}
@@ -212,6 +218,9 @@ import io.appium.java_client.AppiumDriver;
 			//Could not find. Attempt one last time with Javascript
 			if (!success) {
 				try {
+					if (!element.isEnabled()) {
+						return;
+					}
 					System.out.println("Oops final: Javascript");
 					((JavascriptExecutor)element.getWrappedDriver()).executeScript("arguments[0].click();", element);
 					Thread.sleep(5000);

@@ -10,6 +10,7 @@ import java.util.Date;
 import java.io.FileFilter;
 
 import com.qmetry.qaf.automation.ui.WebDriverTestBase;
+import com.qmetry.qaf.automation.ui.util.ExpectedCondition;
 import com.qmetry.qaf.automation.ui.webdriver.QAFExtendedWebDriver;
 import com.qmetry.qaf.automation.ui.webdriver.QAFExtendedWebElement;
 
@@ -19,6 +20,7 @@ import org.openqa.selenium.WebDriver;
 
 import org.apache.pdfbox.text.PDFTextStripper;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.qmetry.qaf.automation.util.Validator;
 
@@ -255,5 +257,66 @@ public class StepsLibrary {
 		String time = String.valueOf(new Date().getTime());
 		logger.info("Storing time " + time + " in variable named " + variableName);
 		CommonStep.store(time, variableName);
+	}
+
+	@QAFTestStep(description="wait for the page to finish loading")
+	public static void waitForPageToFinishLoading() {
+
+		WebDriverWait wait = new WebDriverWait(new WebDriverTestBase().getDriver(), 30);
+			
+		//Page should have finished loading
+		org.openqa.selenium.support.ui.ExpectedCondition<Boolean> jsLoad = 
+		    new org.openqa.selenium.support.ui.ExpectedCondition<Boolean>() {
+			@Override
+			public Boolean apply(WebDriver driver) {
+				return ((JavascriptExecutor) driver).executeScript("return document.readyState").toString()
+						.equals("complete");
+			}
+		};
+				
+		//Salesforce objects should finish loading (in case $A is defined)
+		org.openqa.selenium.support.ui.ExpectedCondition<Boolean> aurascriptLoad = 
+		    new org.openqa.selenium.support.ui.ExpectedCondition<Boolean>() {
+			@Override
+			public Boolean apply(WebDriver driver) {
+				String A_IS_UNDEFINED = "return typeof $A === 'undefined' || !$A";
+				Boolean aIsUndefined = (Boolean) ((JavascriptExecutor) driver).executeScript((A_IS_UNDEFINED));
+
+				//If $A is undefined (e.g. login screen) just continue
+				if (aIsUndefined) {
+					logger.info("$A is undefined");
+					return true;
+				}
+
+				String NO_AURA_CONFIG = " return typeof $A.metricsService !== 'undefined' && " +
+					" typeof $A.metricsService.getCurrentPageTransaction !== 'undefined' && " +
+					" typeof $A.metricsService.getCurrentPageTransaction() === 'undefined' ";
+
+				Boolean noAuraConfig = (Boolean) ((JavascriptExecutor) driver).executeScript((NO_AURA_CONFIG));
+				//If no aura config, we may be inside an iframe. Ignore then...{}
+				if (noAuraConfig) {
+					logger.info("No aura config");
+					return true;
+				}
+
+				//$A object is defined. This must be a salesforce page so we should wait
+				//until the metricsService returns a number (only done when page finished loading)
+				//all sections and tabs open
+				//This prevents things like clicking the search assistant to type, only to have
+				//it be closed automatically when some tabs continue loading...
+				String WAIT_FOR_AURA_SCRIPT = "return (typeof $A !== 'undefined' && $A && " +
+				" typeof $A.metricsService !== 'undefined' && typeof $A.metricsService.getCurrentPageTransaction !== 'undefined' && " +
+				" $A.metricsService.getCurrentPageTransaction() != null && typeof $A.metricsService.getCurrentPageTransaction().config !== 'undefined' && " +
+				" typeof $A.metricsService.getCurrentPageTransaction().config.context !== 'undefined' && " +
+				" $A.metricsService.getCurrentPageTransaction().config.context.ept > 0)";
+				Boolean result = (Boolean) ((JavascriptExecutor) driver).executeScript((WAIT_FOR_AURA_SCRIPT));
+
+				return result;
+			}
+		};
+				
+		if (wait.until(jsLoad) && wait.until(aurascriptLoad)) {
+			logger.info("Page load complete");
+		}
 	}
 }

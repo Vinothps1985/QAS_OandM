@@ -7,14 +7,26 @@ Feature: Quotes
 @requirementKey=QTM-RQ-23
 Scenario: Create and approve quote for REACTIVE case
 	
-   Given ShrdLoginToFullCopy "${username}" "${password}"
+   Given ShrdLogin "${username}" "${password}"
+   And ShrdChangeLoggedInUser "test_ops_center_operator"
+   And ShrdLaunchApp "cases"
+   And ShrdCreateCase "${projectName}" "${subject}" "${caseDescription}" "${recordType}" "${casePriority}" "${caseOrigin}" "${reportedIssue}" "${caseCause}"
+   And take a screenshot
+   And ShrdCreateWorkOrder "${generated_caseNumber}" "${assetType1}" "${assetType2}"
+   And take a screenshot
+   
+   And wait for the page to finish loading
    And ShrdChangeLoggedInUser "test_o&M_manager"
+
+   And wait for the page to finish loading
+   And ShrdLaunchApp "cases"
    When wait until "common.searchAssistant.button" to be enable
    And click on "common.searchAssistant.button"
    And wait until "common.searchAssistant.input" to be enable
    And clear "common.searchAssistant.input"
    And wait until "common.searchAssistant.input" to be enable
-   And sendKeys "${reactiveCaseNumber}" into "common.searchAssistant.input"
+   And sendKeys "${generated_caseNumber}" into "common.searchAssistant.input"
+
    Then wait until "cases.search.firstResult" to be present
    When wait until "cases.search.firstResult" to be enable
    And click on "cases.search.firstResult"
@@ -32,6 +44,7 @@ Scenario: Create and approve quote for REACTIVE case
    And click on "quotes.createQuote.popup.primaryContact.input"
    And wait until "quotes.createQuote.popup.primaryContact.input" to be enable
    And sendKeys "${primaryContact}" into "quotes.createQuote.popup.primaryContact.input"
+   And take a screenshot
    And wait until "quotes.createQuote.popup.primaryContact.firstOption" to be enable
    And click on "quotes.createQuote.popup.primaryContact.firstOption"
    And wait until "quotes.createQuote.popup.estimatedWorkStartDate.calendar.icon" to be enable
@@ -50,13 +63,16 @@ Scenario: Create and approve quote for REACTIVE case
    And clear "quotes.createQuote.popup.specialNotes.textarea"
    And wait until "quotes.createQuote.popup.specialNotes.textarea" to be enable
    And sendKeys "${specialNotes}" into "quotes.createQuote.popup.specialNotes.textarea"
-   And wait until "quotes.createQuote.popup.useDefaultShippingLocation.checkbox" to be enable
+   And take a screenshot
+   And scroll until "quotes.createQuote.popup.useDefaultShippingLocation.checkbox" is visible
    And click on "quotes.createQuote.popup.useDefaultShippingLocation.checkbox"
    And wait until "quotes.createQuote.popup.save.button" to be enable
    And click on "quotes.createQuote.popup.save.button"
    Then wait until "common.toastContainer" to be present
    And wait until "quotes.details.salesRep.text" to be present
    And assert "quotes.details.salesRep.text" text is "${salesRep}"
+   And take a screenshot
+
    And wait until "quotes.editLines.button" to be present
    When wait until "quotes.editLines.button" to be enable
    And click on "quotes.editLines.button"
@@ -77,7 +93,7 @@ Scenario: Create and approve quote for REACTIVE case
    And click on "quotes.addProducts.rows.third.checkbox"
    And wait until "quotes.addProducts.select.button" to be enable
    And click on "quotes.addProducts.select.button"
-   Then assert "quotes.edit.save.button" is present
+   And take a screenshot
    When wait until "quotes.edit.products.row.1" to be enable
    And click on "quotes.edit.products.row.1"
    And wait until "quotes.edit.products.row.1.costCode.edit.button" to be enable
@@ -144,12 +160,13 @@ Scenario: Create and approve quote for REACTIVE case
    Then wait until "quotes.edit.products.row.2.vendorContact.option.2" to be present
    When wait until "quotes.edit.products.row.2.vendorContact.option.2" to be enable
    And click on "quotes.edit.products.row.2.vendorContact.option.2"
-   Then assert "quotes.edit.save.button" is present
+   And take a screenshot
    When wait until "quotes.edit.save.button" to be enable
    And click on "quotes.edit.save.button"
    Then switch to default window 
    And wait until "quotes.details.recordType" to be present
    And assert "quotes.details.recordType" text is "Draft"
+   And take a screenshot
    When wait until "quotes.submitForApproval.button" to be enable
    And click on "quotes.submitForApproval.button"
    And wait until "quotes.submitForApproval.popup.submit.button" to be enable
@@ -157,7 +174,5 @@ Scenario: Create and approve quote for REACTIVE case
    Then wait until "quotes.details.recordType" to be present
    And wait until "quotes.details.recordType.approved" to be present
    And assert "quotes.details.recordType.approved" text is "Approved"
-   
-
-
-
+   And take a screenshot
+   And wait for 2000 milisec

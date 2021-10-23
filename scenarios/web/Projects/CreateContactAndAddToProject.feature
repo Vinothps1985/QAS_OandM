@@ -7,58 +7,20 @@ Feature: Projects
 @requirementKey=QTM-RQ-23
 Scenario: Create contact and add to project
 	
-   Given ShrdLoginToFullCopy "${username}" "${password}"
+   Given ShrdLogin "${username}" "${password}"
    And ShrdChangeLoggedInUser "test_ops_center_operator"
-   And ShrdLaunchApp "opportunities"
-   Then wait until "opportunities.selectListView" to be present
-   When wait until "opportunities.selectListView" to be enable
-   And click on "opportunities.selectListView"
-   Then wait until "opportunities.selectListView.allOpportunities" to be present
-   When wait until "opportunities.selectListView.allOpportunities" to be enable
-   And click on "opportunities.selectListView.allOpportunities"
-   Then wait until "opportunities.search.input" to be present
-   When wait until "opportunities.search.input" to be enable
-   And clear "opportunities.search.input"
-   And wait for 3000 milisec
-   And wait until "opportunities.search.input" to be enable
-   And sendKeys "O&M" into "opportunities.search.input"
-   And wait until "opportunities.search.input" to be enable
-   And type Enter "opportunities.search.input"
-   And wait for 3000 milisec
-   Then wait until "opportunities.search.results.first" to be present
-   When wait until "opportunities.search.results.first" to be enable
-   And click on "opportunities.search.results.first"
-   Then wait until "opportunities.createProject.button" to be present
-   When wait until "opportunities.createProject.button" to be enable
-   And click on "opportunities.createProject.button"
-   Then switch to frame "opportunities.createProject.iframe"
-   And wait until "opportunities.createProject.template.select" to be present
-   When wait until "opportunities.createProject.template.select.option.OM" to be enable
-   And click on "opportunities.createProject.template.select.option.OM"
-   And wait until "opportunities.createProject.template.createProject.button" to be enable
-   And click on "opportunities.createProject.template.createProject.button"
-   Then switch to default window 
-   And wait until "projects.editProject.button" to be visible
-   When wait until "projects.editProject.button" to be enable
-   And click on "projects.editProject.button"
-   And wait until "projects.editProject.popup.name.input" to be enable
-   And clear "projects.editProject.popup.name.input"
-   And wait until "projects.editProject.popup.name.input" to be enable
-   And sendKeys "Project Name - Creating Contact" into "projects.editProject.popup.name.input"
-   And wait until "projects.editProject.popup.save.button" to be enable
-   And click on "projects.editProject.popup.save.button"
-   Then wait until "common.toastContainer" to be present
-   And wait until "projects.details.projectName" to be present
-   And wait for 2000 milisec
-   And assert "projects.details.projectName" text is "Project Name - Creating Contact"
-   And Execute Java Script with data "var elem = document.createElement(\"div\");elem.id=\"the-url\";elem.innerHTML=window.location.href;document.body.insertAdjacentElement(\"beforeend\", elem);"
-   And store text from "common.var.the-url" into "projectsURL"
-   And ShrdGetVarCurrentTime 
+   And ShrdCreateProject "ANY" "${projectName}" "" ""
+   Then assert "projects.details.projectName" text is "${projectName}"
+   
+   And take a screenshot
+   And store the current url in "projectsURL"
+   And store the current time in "currentTime"
+   
    When wait until "projects.details.account.link" to be enable
    And click on "projects.details.account.link"
-   Then wait until "accounts.contacts.all.link" to be present
-   When wait until "accounts.contacts.all.link" to be enable
-   And click on "accounts.contacts.all.link"
+   Then wait until "accounts.quickLinks.contacts" to be present
+   When wait until "accounts.quickLinks.contacts" to be enable
+   And click on "accounts.quickLinks.contacts"
    And wait until "contacts.create.new.button" to be enable
    And click on "contacts.create.new.button"
    Then wait until "contacts.createContact.popup.firstName.input" to be visible
@@ -68,6 +30,7 @@ Scenario: Create contact and add to project
    And sendKeys "${currentTime}" into "contacts.createContact.popup.lastName.input"
    And wait until "contacts.createContact.popup.save.button" to be enable
    And click on "contacts.createContact.popup.save.button"
+
    Then wait until "common.toastContainer.link" to be present
    When wait until "common.toastContainer.link" to be enable
    And click on "common.toastContainer.link"
@@ -82,10 +45,9 @@ Scenario: Create contact and add to project
    And wait until "contacts.details.name" to be present
    And wait for 2000 milisec
    And assert "contacts.details.name" text is "${fullName}"
-   And Execute Java Script with data "var input = document.createElement(\"input\");input.id=\"input-url\";document.body.insertAdjacentElement(\"beforeend\", input);"
-   When wait until "common.var.input-url" to be enable
-   And sendKeys "${projectsURL}" into "common.var.input-url"
-   Then Execute Java Script with data "window.location.href=document.getElementById(\"input-url\").value"
+   And take a screenshot
+   And get "${projectsURL}"
+
    And wait until "projects.siteInformation.onSiteContact.edit.button" to be present
    When wait until "projects.siteInformation.onSiteContact.edit.button" to be enable
    And click on "projects.siteInformation.onSiteContact.edit.button"
@@ -108,7 +70,5 @@ Scenario: Create contact and add to project
    And click on "projects.save.button"
    Then wait until "projects.siteInformation.onSiteContact.link.span" to be present
    And assert "projects.siteInformation.onSiteContact.link.span" text is "${fullName}"
-   
-
-
-
+   And take a screenshot
+   And wait for 2000 milisec

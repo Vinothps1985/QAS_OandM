@@ -7,7 +7,7 @@ Feature: Cases
 @requirementKey=QTM-RQ-23
 Scenario: Optimization of service appointment using REACTIVE case
 	
-   Given ShrdLoginToFullCopy "${username}" "${password}"
+   Given ShrdLogin "${username}" "${password}"
    And ShrdChangeLoggedInUser "test_ops_center_operator"
    And ShrdLaunchApp "cases"
    And ShrdCreateCase "${projectName}" "${subject}" "${caseDescription}" "${recordType}" "${casePriority}" "${caseOrigin}" "${reportedIssue}" "${caseCause}"
@@ -132,7 +132,6 @@ Scenario: Optimization of service appointment using REACTIVE case
    Then switch to default window 
    Then wait until "optimizationRequests.details.status" to be visible
    And take a screenshot
-   #TODO confirm :( test case says it should fail but in our runs, it gets to status 'Completed'
    And wait 10000 milisec up to 10 times until "optimizationRequests.details.status" has the text "Completed"
    And take a screenshot
 

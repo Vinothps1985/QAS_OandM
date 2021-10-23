@@ -6,6 +6,7 @@ import support.Util;
 import static com.qmetry.qaf.automation.ui.webdriver.ElementFactory.$;
 
 import java.io.File;
+import java.util.Date;
 import java.io.FileFilter;
 
 import com.qmetry.qaf.automation.ui.WebDriverTestBase;
@@ -240,5 +241,19 @@ public class StepsLibrary {
 		} catch (Exception x) {
 			logger.error("Error waiting for text " + text + " in locator " + loc, x);
 		}
+	}
+
+	@QAFTestStep(description="store the current url in {variableName}")
+	public static void saveTheCurrentUrl(String variableName) {
+		String url = new WebDriverTestBase().getDriver().getCurrentUrl();
+		logger.info("Storing URL " + url + " in variable named " + variableName);
+		CommonStep.store(url, variableName);
+	}
+
+	@QAFTestStep(description="store the current time in {variableName}")
+	public static void saveTheCurrentTime(String variableName) {
+		String time = String.valueOf(new Date().getTime());
+		logger.info("Storing time " + time + " in variable named " + variableName);
+		CommonStep.store(time, variableName);
 	}
 }

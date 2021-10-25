@@ -14,26 +14,20 @@ import java.io.IOException;
 import java.util.Map;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import steps.common.*;
+import steps.shareable.cases.CaseSteps;
 /**
 * @author Rodrigo Montemayor
 */
 public class ShrdCreateWorkOrder extends WebDriverTestCase {
 
 	@QAFTestStep(description = "ShrdCreateWorkOrder {0} {1} {2}")
-	public void customShrdCreateWorkOrder(Object caseNumber, Object assetType1, Object assetType2) {
+	public void customShrdCreateWorkOrder(String caseNumber, Object assetType1, Object assetType2) {
 		
 		//Look for the case
-		$("common.searchAssistant.button").waitForEnabled();
-		CommonStep.click("common.searchAssistant.button");
-		CommonStep.sendKeys(""+String.valueOf(caseNumber)+"","common.searchAssistant.input");
-		$("cases.search.firstResult").waitForVisible();
-		$("cases.search.firstResult").waitForEnabled();
-		CommonStep.click("cases.search.firstResult");
-		$("cases.caseNumber").waitForVisible();
-
-		$("cases.caseNumber").waitForPresent();
-		$("cases.caseNumber").assertText(String.valueOf(caseNumber));
-		TestBaseProvider.instance().get().takeScreenShot(); //Take a screenshot
+		CaseSteps cs = new CaseSteps();
+		if (!cs.inCaseScreen(caseNumber)) {
+			cs.goToCase(caseNumber);
+		}
 
 		//Click on create work order button
 		$("cases.createWorkOrderHybrid.button").waitForEnabled();

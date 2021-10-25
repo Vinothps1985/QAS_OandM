@@ -2,7 +2,7 @@ Feature: Cases
 
 @author:Rodrigo Montemayor
 @description:Verify user is able to create Work Order Hybrid using a REACTIVE case
-@case @positive @workorder @smoke @second
+@case @positive @workorder @smoke
 @dataFile:resources/testdata/Cases/Create Work Order using REACTIVE case.csv
 @requirementKey=QTM-RQ-23
 Scenario: Create Work Order using REACTIVE case

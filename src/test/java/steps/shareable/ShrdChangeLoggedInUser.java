@@ -13,14 +13,28 @@ import java.io.IOException;
 import java.util.Map;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import steps.common.*;
+
 /**
 * @author Rodrigo Montemayor
 */
-public class ShrdChangeLoggedInUser extends WebDriverTestCase {
-
+public class ShrdChangeLoggedInUser extends WebDriverTestCase{
 	@QAFTestStep(description = "ShrdChangeLoggedInUser {0}")
 	public void customShrdChangeLoggedInUser(Object userToSet) {
 		
+		//If already logged in as another user, log out from that user first
+		if ($("common.logOutAs.link").isPresent() && $("common.logOutAs.link").isDisplayed() 
+		    && $("common.logOutAs.link").isEnabled()) {
+
+			$("common.logOutAs.link").click();
+
+			steps.web.StepsLibrary.waitForPageToFinishLoading();
+		}
+
+		//Go first to the 'Cases' section to have the regular top search assistant
+		//(Avoid having the top search from the 'Admin' section)
+		ShrdLaunchApp launchApp = new ShrdLaunchApp();
+		launchApp.customShrdLaunchApp("cases");
+
 		$("common.activeTab").waitForPresent();
 		$("common.searchAssistant.button").waitForEnabled();
 		CommonStep.click("common.searchAssistant.button");

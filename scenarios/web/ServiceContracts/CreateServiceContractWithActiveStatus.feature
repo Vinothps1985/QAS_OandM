@@ -18,11 +18,13 @@ Scenario: Create Service Contract with Active Status
    When wait until "projects.search.firstResult" to be enable
    And click on "projects.search.firstResult"
    Then wait until "project.details.opportunity.link" to be present
+   And take a screenshot
    When wait until "project.details.opportunity.link" to be enable
    And click on "project.details.opportunity.link"
    Then wait until "opportunities.details.opportunityRecordType" to be present
    And assert "opportunities.details.opportunityRecordType" text is "${opportunityRecordType}"
    And assert "opportunities.details.solarStage" text is "${solarStage}"
+   And take a screenshot
    When wait until "opportunities.createContract.button" to be enable
    And click on "opportunities.createContract.button"
    And waitForAlert 10000 millisec
@@ -40,6 +42,7 @@ Scenario: Create Service Contract with Active Status
    Then wait until "serviceContracts.newPaid.popup.contractStatus.pending.option" to be visible
    When wait until "serviceContracts.newPaid.popup.contractStatus.pending.option" to be enable
    And click on "serviceContracts.newPaid.popup.contractStatus.pending.option"
+   And take a screenshot
    And wait until "serviceContracts.newPaid.popup.description.textarea" to be enable
    And sendKeys "${serviceContractDescription}" into "serviceContracts.newPaid.popup.description.textarea"
    And wait until "serviceContracts.newPaid.popup.contractAutoRenew.select" to be enable
@@ -49,6 +52,7 @@ Scenario: Create Service Contract with Active Status
    And click on "serviceContracts.newPaid.popup.contractAutoRenew.yes.option"
    And wait until "serviceContracts.newPaid.popup.serviceContractStartDate.calendar.icon" to be enable
    And click on "serviceContracts.newPaid.popup.serviceContractStartDate.calendar.icon"
+   And take a screenshot
    Then wait until "common.openCalendar.today" to be visible
    When wait until "common.openCalendar.today" to be enable
    And click on "common.openCalendar.today"
@@ -69,6 +73,7 @@ Scenario: Create Service Contract with Active Status
    And assert "serviceContracts.newPaid.popup.escalator.label" is present
    And assert "serviceContracts.newPaid.popup.solarElectrician1Rate.label" is present
    And assert "serviceContracts.newPaid.popup.solarEngineerRate.label" is present
+   And take a screenshot
    When wait until "serviceContracts.newPaid.save.button" to be enable
    And click on "serviceContracts.newPaid.save.button"
    Then wait until "serviceContracts.edit.button" to be present
@@ -94,6 +99,8 @@ Scenario: Create Service Contract with Active Status
    And click on "serviceContracts.edit.popup.contractStatus.active.option"
    And wait until "serviceContracts.details.edit.save.button" to be enable
    And click on "serviceContracts.details.edit.save.button"
+   And take a screenshot
+   And wait for 2000 milisec
    
 
 

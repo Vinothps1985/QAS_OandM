@@ -19,67 +19,32 @@ import steps.common.*;
 */
 public class ShrdCreateAndApproveQuote extends WebDriverTestCase {
 
-	@QAFTestStep(description = "ShrdCreateAndApproveQuote {0} {1} {2} {3} {4} {5} {6} {7} {8} {9} {10} {11} {12} {13}")
-	public void customShrdShrdCreateAndApproveQuote(String caseNumber,Object salesRep,Object primaryContact,Object specialNotes,Object laborBilling,Object pmBilling,Object costCode1,Object costCode2,Object notes1,Object notes2,Object vendor1,Object vendor2,Object vendorContact1,Object vendorContact2) {
-		
-		ShrdLaunchApp launchApp = new ShrdLaunchApp();
-		launchApp.customShrdLaunchApp("cases");
+	/**
+	 * Creates a new case in salesforce
+	 * 
+	 * If correctly generated, the quote number is saved on a variable called
+	 * ${generated_quoteNumber}
+	 * 
+	 * 
+	 * @param caseNumber
+	 * @param salesRep
+	 * @param primaryContact
+	 * @param specialNotes
+	 * @param laborBilling
+	 * @param pmBilling
+	 * @param costCode1
+	 * @param costCode2
+	 * @param notes1
+	 * @param notes2
+	 * @param vendor1
+	 * @param vendor2
+	 * @param vendorContact1
+	 * @param vendorContact2
+	 */
+	@QAFTestStep(description = "ShrdCreateAndApproveQuoteWithLines {0} {1} {2} {3} {4} {5} {6} {7} {8} {9} {10} {11} {12} {13}")
+	public void customShrdShrdCreateAndApproveQuoteWithLines(String caseNumber,Object salesRep,Object primaryContact,Object specialNotes,Object laborBilling,Object pmBilling,Object costCode1,Object costCode2,Object notes1,Object notes2,Object vendor1,Object vendor2,Object vendorContact1,Object vendorContact2) {
 
-		$("common.searchAssistant.button").waitForEnabled();
-		CommonStep.click("common.searchAssistant.button");
-		CommonStep.clear("common.searchAssistant.input");
-		CommonStep.sendKeys(caseNumber,"common.searchAssistant.input");
-		$("cases.search.firstResult").waitForPresent();
-		$("cases.search.firstResult").waitForEnabled();
-		CommonStep.click("cases.search.firstResult");
-
-		$("cases.createNewQuote.button").waitForEnabled();
-		CommonStep.click("cases.createNewQuote.button");
-
-		$("quotes.createQuote.popup.salesRep.input").waitForEnabled();
-		CommonStep.click("quotes.createQuote.popup.salesRep.input");
-		CommonStep.clear("quotes.createQuote.popup.salesRep.input");
-		CommonStep.sendKeys(""+String.valueOf(salesRep)+"","quotes.createQuote.popup.salesRep.input");
-		$("quotes.createQuote.popup.salesRep.firstOption").waitForEnabled();
-		CommonStep.click("quotes.createQuote.popup.salesRep.firstOption");
-		$("quotes.createQuote.popup.primaryContact.input").waitForEnabled();
-		CommonStep.click("quotes.createQuote.popup.primaryContact.input");
-		CommonStep.sendKeys(""+String.valueOf(primaryContact)+"","quotes.createQuote.popup.primaryContact.input");
-		$("quotes.createQuote.popup.primaryContact.firstOption").waitForEnabled();
-		CommonStep.click("quotes.createQuote.popup.primaryContact.firstOption");
-
-		TestBaseProvider.instance().get().takeScreenShot(); //Take a screenshot
-		
-		$("quotes.createQuote.popup.estimatedWorkStartDate.calendar.icon").waitForEnabled();
-		CommonStep.click("quotes.createQuote.popup.estimatedWorkStartDate.calendar.icon");
-		$("common.openLightningCalendar.today").waitForEnabled();
-		CommonStep.click("common.openLightningCalendar.today");
-		$("quotes.createQuote.popup.siteWorkState.select").waitForEnabled();
-		CommonStep.click("quotes.createQuote.popup.siteWorkState.select");
-		$("quotes.createQuote.popup.siteWorkState.option.second").waitForEnabled();
-		CommonStep.click("quotes.createQuote.popup.siteWorkState.option.second");
-		$("quotes.createQuote.popup.typeOfWork.select").waitForEnabled();
-		CommonStep.click("quotes.createQuote.popup.typeOfWork.select");
-		$("quotes.createQuote.popup.typeOfWork.option.initialVisit").waitForEnabled();
-		CommonStep.click("quotes.createQuote.popup.typeOfWork.option.initialVisit");
-		CommonStep.clear("quotes.createQuote.popup.specialNotes.textarea");
-		CommonStep.sendKeys(""+String.valueOf(specialNotes)+"","quotes.createQuote.popup.specialNotes.textarea");
-
-		TestBaseProvider.instance().get().takeScreenShot(); //Take a screenshot
-
-		steps.web.StepsLibrary.scrollUntilVisible("quotes.createQuote.popup.useDefaultShippingLocation.checkbox");
-
-		$("quotes.createQuote.popup.useDefaultShippingLocation.checkbox").waitForEnabled();
-		CommonStep.click("quotes.createQuote.popup.useDefaultShippingLocation.checkbox");
-		$("quotes.createQuote.popup.save.button").waitForEnabled();
-		CommonStep.click("quotes.createQuote.popup.save.button");
-
-		$("common.toastContainer").waitForPresent();
-		$("quotes.details.salesRep.text").waitForPresent();
-		
-		$("quotes.details.salesRep.text").assertText(""+String.valueOf(salesRep)+"");
-
-		TestBaseProvider.instance().get().takeScreenShot(); //Take a screenshot
+		customShrdShrdCreateAndApproveQuote(caseNumber, salesRep, primaryContact, specialNotes);
 
 		$("quotes.editLines.button").waitForPresent();
 		$("quotes.editLines.button").waitForEnabled();
@@ -173,15 +138,109 @@ public class ShrdCreateAndApproveQuote extends WebDriverTestCase {
 		$("quotes.details.recordType").assertText("Draft");
 
 		TestBaseProvider.instance().get().takeScreenShot(); //Take a screenshot
+	}
+
+	/**
+	 * 
+	 * @param quoteNumber
+	 */
+	@QAFTestStep(description = "approve quote {quoteNumber}")
+	public void approveQuote(String quoteNumber) {
+		
+		//Confirm in quotes page
+		//Confirm in quote page with the quote number
+
+		if (!$("quote.details.quoteNumber").isPresent() || !$("quote.details.quoteNumber").isDisplayed()) {
+			//Go to correct quote
+		}
 
 		$("quotes.submitForApproval.button").waitForEnabled();
-		CommonStep.click("quotes.submitForApproval.button");
+		$("quotes.submitForApproval.button").click();
 
 		$("quotes.submitForApproval.popup.submit.button").waitForEnabled();
-		CommonStep.click("quotes.submitForApproval.popup.submit.button");
+		$("quotes.submitForApproval.popup.submit.button").click();
 
 		$("quotes.details.recordType").waitForPresent();
 		$("quotes.details.recordType.approved").waitForPresent();
+	}
+
+	/**
+	 * Creates a new quote in salesforce (without any quote lines)
+	 * 
+	 * If correctly generated, the quote number is saved on a variable called
+	 * ${generated_quoteNumber}
+	 * 
+	 * 
+	 * @param caseNumber
+	 * @param salesRep
+	 * @param primaryContact
+	 * @param specialNotes
+	 */
+	@QAFTestStep(description = "ShrdCreateAndApproveQuote {caseNumber} {salesRep} {primaryContact} {specialNotes}")
+	public void customShrdShrdCreateAndApproveQuote(String caseNumber, Object salesRep, Object primaryContact, Object specialNotes) {
+
+		ShrdLaunchApp launchApp = new ShrdLaunchApp();
+		launchApp.customShrdLaunchApp("cases");
+
+		$("common.searchAssistant.button").waitForEnabled();
+		CommonStep.click("common.searchAssistant.button");
+		CommonStep.clear("common.searchAssistant.input");
+		CommonStep.sendKeys(caseNumber,"common.searchAssistant.input");
+		$("cases.search.firstResult").waitForPresent();
+		$("cases.search.firstResult").waitForEnabled();
+		CommonStep.click("cases.search.firstResult");
+
+		$("cases.createNewQuote.button").waitForEnabled();
+		CommonStep.click("cases.createNewQuote.button");
+
+		$("quotes.createQuote.popup.salesRep.input").waitForEnabled();
+		CommonStep.click("quotes.createQuote.popup.salesRep.input");
+		CommonStep.clear("quotes.createQuote.popup.salesRep.input");
+		CommonStep.sendKeys(""+String.valueOf(salesRep)+"","quotes.createQuote.popup.salesRep.input");
+		$("quotes.createQuote.popup.salesRep.firstOption").waitForEnabled();
+		CommonStep.click("quotes.createQuote.popup.salesRep.firstOption");
+		$("quotes.createQuote.popup.primaryContact.input").waitForEnabled();
+		CommonStep.click("quotes.createQuote.popup.primaryContact.input");
+		CommonStep.sendKeys(""+String.valueOf(primaryContact)+"","quotes.createQuote.popup.primaryContact.input");
+		$("quotes.createQuote.popup.primaryContact.firstOption").waitForEnabled();
+		CommonStep.click("quotes.createQuote.popup.primaryContact.firstOption");
+
+		TestBaseProvider.instance().get().takeScreenShot(); //Take a screenshot
+		
+		$("quotes.createQuote.popup.estimatedWorkStartDate.calendar.icon").waitForEnabled();
+		CommonStep.click("quotes.createQuote.popup.estimatedWorkStartDate.calendar.icon");
+		$("common.openLightningCalendar.today").waitForEnabled();
+		CommonStep.click("common.openLightningCalendar.today");
+		$("quotes.createQuote.popup.siteWorkState.select").waitForEnabled();
+		CommonStep.click("quotes.createQuote.popup.siteWorkState.select");
+		$("quotes.createQuote.popup.siteWorkState.option.second").waitForEnabled();
+		CommonStep.click("quotes.createQuote.popup.siteWorkState.option.second");
+		$("quotes.createQuote.popup.typeOfWork.select").waitForEnabled();
+		CommonStep.click("quotes.createQuote.popup.typeOfWork.select");
+		$("quotes.createQuote.popup.typeOfWork.option.initialVisit").waitForEnabled();
+		CommonStep.click("quotes.createQuote.popup.typeOfWork.option.initialVisit");
+		CommonStep.clear("quotes.createQuote.popup.specialNotes.textarea");
+		CommonStep.sendKeys(""+String.valueOf(specialNotes)+"","quotes.createQuote.popup.specialNotes.textarea");
+
+		TestBaseProvider.instance().get().takeScreenShot(); //Take a screenshot
+
+		steps.web.StepsLibrary.scrollUntilVisible("quotes.createQuote.popup.useDefaultShippingLocation.checkbox");
+
+		$("quotes.createQuote.popup.useDefaultShippingLocation.checkbox").waitForEnabled();
+		CommonStep.click("quotes.createQuote.popup.useDefaultShippingLocation.checkbox");
+		$("quotes.createQuote.popup.save.button").waitForEnabled();
+		CommonStep.click("quotes.createQuote.popup.save.button");
+
+		$("common.toastContainer").waitForPresent();
+		$("quotes.details.salesRep.text").waitForPresent();
+		
+		$("quotes.details.salesRep.text").assertText(""+String.valueOf(salesRep)+"");
+
+		TestBaseProvider.instance().get().takeScreenShot(); //Take a screenshot
+
+		logger.info("Generated quote number: " + $("quote.details.quoteNumber").getText());
+		CommonStep.store($("quote.details.quoteNumber").getText(), "generated_quoteNumber");
+
 	}
 }
 

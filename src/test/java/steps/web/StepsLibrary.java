@@ -1,12 +1,14 @@
 package steps.web;
 
 import static com.qmetry.qaf.automation.step.CommonStep.click;
+import com.qmetry.qaf.automation.ui.webdriver.QAFWebElement;
 import static com.qmetry.qaf.automation.step.CommonStep.sendKeys;
 import support.Util;
 import static com.qmetry.qaf.automation.ui.webdriver.ElementFactory.$;
 
 import java.io.File;
 import java.util.Date;
+import java.util.List;
 import java.io.FileFilter;
 
 import com.qmetry.qaf.automation.ui.WebDriverTestBase;
@@ -262,7 +264,7 @@ public class StepsLibrary {
 	@QAFTestStep(description="wait for the page to finish loading")
 	public static void waitForPageToFinishLoading() {
 
-		WebDriverWait wait = new WebDriverWait(new WebDriverTestBase().getDriver(), 30);
+		WebDriverWait wait = new WebDriverWait(new WebDriverTestBase().getDriver(), 60);
 			
 		//Page should have finished loading
 		org.openqa.selenium.support.ui.ExpectedCondition<Boolean> jsLoad = 
@@ -318,5 +320,42 @@ public class StepsLibrary {
 		if (wait.until(jsLoad) && wait.until(aurascriptLoad)) {
 			logger.info("Page load complete");
 		}
+	}
+
+	@QAFTestStep(description = "store table {tableLoc} column index with title {title} on {varName}")
+	public static void storeTableColumnIndexWithTitleOn(String tableLoc, String title, String varName) {
+		if (!$(tableLoc).isPresent() || !$(tableLoc).isEnabled()) {
+			$(tableLoc).waitForPresent();
+		}
+		
+		int idx = -1;
+
+		List lstThs = $(tableLoc).findElements(By.xpath("//thead//th"));
+		if (lstThs != null && lstThs.size() > 0) {
+			System.out.println("List of THS has size of: " + lstThs.size());
+			for (int i=0; i < lstThs.size(); i++) {
+				if (((WebElement)lstThs.get(i)).getAttribute("title").equalsIgnoreCase(title)) {
+					idx = i;
+					break;
+				}
+			}
+		}
+
+		if (idx > -1) {
+			CommonStep.store(String.valueOf(idx), varName);
+		}
+	}
+
+	@QAFTestStep(description = "assert row exists on table {tableLoc} where text on index {idx1} is {val1} and text on index {idx2} is {val2}")
+	public static void assertRowExistsOnTableWithTextAndText(String tableLoc, String idx1, String val1, String idx2, String val2) {
+		if (!$(tableLoc).isPresent() || !$(tableLoc).isEnabled()) {
+			$(tableLoc).waitForPresent();
+		}
+
+		QAFWebElement element = $(tableLoc).findElement(By.xpath("//td[" + idx1 + " and .='" + val1 + "']//ancestor::tr//td[" + idx2 +" and .='" + val2 + "']"));
+
+		Validator.assertTrue(element != null && element.isPresent() && element.isEnabled(),
+			"Could not find a row on table " + tableLoc + " where " + val1 + " = " + val2,
+			"Found a row on table " + tableLoc + " where " + val1 + " = " + val2);
 	}
 }

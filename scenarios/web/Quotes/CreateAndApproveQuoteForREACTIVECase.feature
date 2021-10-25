@@ -8,7 +8,7 @@ Feature: Quotes
 Scenario: Create and approve quote for REACTIVE case
 	
    Given ShrdLogin "${username}" "${password}"
-   And ShrdChangeLoggedInUser "test_o&M_manager"
+   And ShrdChangeLoggedInUser "test_ops_center_operator"
    And ShrdLaunchApp "cases"
    And ShrdCreateCase "${projectName}" "${subject}" "${caseDescription}" "${recordType}" "${casePriority}" "${caseOrigin}" "${reportedIssue}" "${caseCause}"
    And take a screenshot
@@ -19,7 +19,7 @@ Scenario: Create and approve quote for REACTIVE case
    And ShrdChangeLoggedInUser "test_o&M_manager"
    And wait for the page to finish loading
 
-   And ShrdCreateAndApproveQuote "${generated_caseNumber}" "${salesRep}" "${primaryContact}" "${specialNotes}" "${laborBilling}" "${pmBilling}" "${costCode1}" "${costCode2}" "${notes1}" "${notes2}" "${vendor1}" "${vendor2}" "${vendorContact1}" "${vendorContact2}"
+   And ShrdCreateAndApproveQuoteWithLines "${generated_caseNumber}" "${salesRep}" "${primaryContact}" "${specialNotes}" "${laborBilling}" "${pmBilling}" "${costCode1}" "${costCode2}" "${notes1}" "${notes2}" "${vendor1}" "${vendor2}" "${vendorContact1}" "${vendorContact2}"
 
    And take a screenshot
 

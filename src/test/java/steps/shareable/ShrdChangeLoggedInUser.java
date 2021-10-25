@@ -22,8 +22,12 @@ public class ShrdChangeLoggedInUser extends WebDriverTestCase{
 	public void customShrdChangeLoggedInUser(Object userToSet) {
 		
 		//If already logged in as another user, log out from that user first
-		if ($("common.logOutAs.link").isPresent() && $("common.logOutAs.link").isDisplayed()) {
+		if ($("common.logOutAs.link").isPresent() && $("common.logOutAs.link").isDisplayed() 
+		    && $("common.logOutAs.link").isEnabled()) {
+
 			$("common.logOutAs.link").click();
+
+			steps.web.StepsLibrary.waitForPageToFinishLoading();
 		}
 
 		//Go first to the 'Cases' section to have the regular top search assistant

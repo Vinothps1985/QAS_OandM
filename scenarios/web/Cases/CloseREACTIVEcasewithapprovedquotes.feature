@@ -20,7 +20,7 @@ Scenario: Close REACTIVE case with approved quotes
    And wait for the page to finish loading
 
    #Create a quote with no lines
-   #TODO if we create it with lines, it cannot be approved :(
+   #TODO if we create it with lines, it cannot be accepted :(
    And ShrdCreateAndApproveQuote "${generated_caseNumber}" "${salesRep}" "${primaryContact}" "${specialNotes}"
    And take a screenshot
    And approve quote "${generated_quoteNumber}"
@@ -35,6 +35,7 @@ Scenario: Close REACTIVE case with approved quotes
 
    #And store "00290506" into "generated_caseNumber"
    
+   #TODO Should happen automatically after closing al SA, WO and WOLI
    Then change status of case "${generated_caseNumber}" to "Ops Review"
    And take a screenshot
 

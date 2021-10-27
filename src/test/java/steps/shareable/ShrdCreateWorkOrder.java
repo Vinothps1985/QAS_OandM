@@ -34,7 +34,7 @@ public class ShrdCreateWorkOrder extends WebDriverTestCase {
 		CommonStep.click("cases.createWorkOrderHybrid.button");
 
 		//Change into iframe and start creating the work order
-		$("workOrders.iframe").waitForPresent();
+		$("workOrders.iframe").waitForPresent(120 * 1000); //Can take a while
 		new WebDriverTestBase().getDriver().switchTo().frame(new QAFExtendedWebElement("workOrders.iframe"));
 
 		$("workOrders.create.next.button").waitForPresent();

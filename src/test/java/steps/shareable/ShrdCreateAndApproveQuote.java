@@ -9,6 +9,8 @@ import com.qmetry.qaf.automation.step.*;
 import com.qmetry.qaf.automation.ui.WebDriverTestBase;
 import com.qmetry.qaf.automation.ui.WebDriverTestCase;
 import static com.qmetry.qaf.automation.core.ConfigurationManager.getBundle;
+
+import com.qmetry.qaf.automation.util.Reporter;
 import com.qmetry.qaf.automation.util.Validator;
 import java.io.IOException;
 import java.util.Map;
@@ -67,7 +69,8 @@ public class ShrdCreateAndApproveQuote extends WebDriverTestCase {
 		$("quotes.addProducts.select.button").waitForEnabled();
 		CommonStep.click("quotes.addProducts.select.button");
 
-		TestBaseProvider.instance().get().takeScreenShot(); //Take a screenshot
+		//TestBaseProvider.instance().get().takeScreenShot(); //Take a screenshot
+		Reporter.logWithScreenShot("take a screenshot");
 
 		$("quotes.edit.save.button").assertPresent();
 		$("quotes.edit.products.row.1").waitForEnabled();
@@ -117,7 +120,8 @@ public class ShrdCreateAndApproveQuote extends WebDriverTestCase {
 		$("quotes.edit.products.row.1.vendorContact.option.2").waitForEnabled();
 		CommonStep.click("quotes.edit.products.row.1.vendorContact.option.2");
 
-		TestBaseProvider.instance().get().takeScreenShot(); //Take a screenshot
+		//TestBaseProvider.instance().get().takeScreenShot(); //Take a screenshot
+		Reporter.logWithScreenShot("take a screenshot");
 
 		$("quotes.edit.products.row.2.vendorContact.edit.button").waitForEnabled();
 		CommonStep.click("quotes.edit.products.row.2.vendorContact.edit.button");
@@ -137,7 +141,8 @@ public class ShrdCreateAndApproveQuote extends WebDriverTestCase {
 		$("quotes.details.recordType").waitForPresent();
 		$("quotes.details.recordType").assertText("Draft");
 
-		TestBaseProvider.instance().get().takeScreenShot(); //Take a screenshot
+		//TestBaseProvider.instance().get().takeScreenShot(); //Take a screenshot
+		Reporter.logWithScreenShot("take a screenshot");
 	}
 
 	/**
@@ -205,7 +210,8 @@ public class ShrdCreateAndApproveQuote extends WebDriverTestCase {
 		$("quotes.createQuote.popup.primaryContact.firstOption").waitForEnabled();
 		CommonStep.click("quotes.createQuote.popup.primaryContact.firstOption");
 
-		TestBaseProvider.instance().get().takeScreenShot(); //Take a screenshot
+		//TestBaseProvider.instance().get().takeScreenShot(); //Take a screenshot
+		Reporter.logWithScreenShot("take a screenshot");
 		
 		$("quotes.createQuote.popup.estimatedWorkStartDate.calendar.icon").waitForEnabled();
 		CommonStep.click("quotes.createQuote.popup.estimatedWorkStartDate.calendar.icon");
@@ -222,7 +228,8 @@ public class ShrdCreateAndApproveQuote extends WebDriverTestCase {
 		CommonStep.clear("quotes.createQuote.popup.specialNotes.textarea");
 		CommonStep.sendKeys(""+String.valueOf(specialNotes)+"","quotes.createQuote.popup.specialNotes.textarea");
 
-		TestBaseProvider.instance().get().takeScreenShot(); //Take a screenshot
+		//TestBaseProvider.instance().get().takeScreenShot(); //Take a screenshot
+		Reporter.logWithScreenShot("take a screenshot");
 
 		steps.web.StepsLibrary.scrollUntilVisible("quotes.createQuote.popup.useDefaultShippingLocation.checkbox");
 
@@ -236,7 +243,8 @@ public class ShrdCreateAndApproveQuote extends WebDriverTestCase {
 		
 		$("quotes.details.salesRep.text").assertText(""+String.valueOf(salesRep)+"");
 
-		TestBaseProvider.instance().get().takeScreenShot(); //Take a screenshot
+		//TestBaseProvider.instance().get().takeScreenShot(); //Take a screenshot
+		Reporter.logWithScreenShot("take a screenshot");
 
 		logger.info("Generated quote number: " + $("quote.details.quoteNumber").getText());
 		CommonStep.store($("quote.details.quoteNumber").getText(), "generated_quoteNumber");

@@ -9,7 +9,7 @@ Scenario: Create project for OM Opportunity
 	
    Given ShrdLogin "${username}" "${password}"
    And ShrdChangeLoggedInUser "test_ops_center_operator"
-   And ShrdCreateProject "ANY" "ANY" "${epcSite}" "${watts}"
+   And ShrdCreateProject "${opportunityName}" "ANY" "${epcSite}" "${watts}"
    
    Then assert "projects.details.projectName" text is "${generated_projectName}"
    And take a screenshot
@@ -25,4 +25,3 @@ Scenario: Create project for OM Opportunity
    And assert "projects.siteInformation.sitePTODate.notEmpty" is present
    And assert "projects.siteInformation.siteSubstantialDate.notEmpty" is present
    And take a screenshot
-   And wait for 2000 milisec

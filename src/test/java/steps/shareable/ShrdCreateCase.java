@@ -12,6 +12,8 @@ import com.qmetry.qaf.automation.step.*;
 import com.qmetry.qaf.automation.ui.WebDriverTestBase;
 import com.qmetry.qaf.automation.ui.WebDriverTestCase;
 import static com.qmetry.qaf.automation.core.ConfigurationManager.getBundle;
+
+import com.qmetry.qaf.automation.util.Reporter;
 import com.qmetry.qaf.automation.util.Validator;
 import java.io.IOException;
 import java.util.Map;
@@ -51,7 +53,8 @@ public class ShrdCreateCase extends WebDriverTestCase {
 
 		$("projects.details.projectName").waitForPresent();
 		$("projects.details.projectName").assertText(String.valueOf(projectName));
-		TestBaseProvider.instance().get().takeScreenShot(); //Take a screenshot
+		//TestBaseProvider.instance().get().takeScreenShot(); //Take a screenshot
+		Reporter.logWithScreenShot("take a screenshot");
 
 		//Verify the project has active contracts
 		$("projects.quicklink.contracts").waitForPresent();
@@ -60,6 +63,7 @@ public class ShrdCreateCase extends WebDriverTestCase {
 		$("projects.contracts.firstContract.status").waitForPresent();
 		$("projects.contracts.firstContract.status").assertPresent();
 		TestBaseProvider.instance().get().takeScreenShot(); //Take a screenshot
+		Reporter.logWithScreenShot("take a screenshot");
 
 		//Return to cases
 		$("breadcrumbs.second").waitForEnabled();

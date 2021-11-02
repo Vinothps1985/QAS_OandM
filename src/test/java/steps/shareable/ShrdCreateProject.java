@@ -4,10 +4,14 @@ import static com.qmetry.qaf.automation.ui.webdriver.ElementFactory.$;
 import com.qmetry.qaf.automation.core.ConfigurationManager;
 import com.qmetry.qaf.automation.step.QAFTestStep;
 import java.util.Date;
+import java.util.List;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+
 import com.qmetry.qaf.automation.step.*;
 import com.qmetry.qaf.automation.ui.WebDriverTestBase;
 import com.qmetry.qaf.automation.ui.WebDriverTestCase;
@@ -71,9 +75,47 @@ public class ShrdCreateProject extends WebDriverTestCase {
 			$("opportunities.search.results.first").waitForEnabled();
 			CommonStep.click("opportunities.search.results.first");
 		} else {
-			logger.error("Please implement code to create project on a specific opportunity, or send ANY as the opportunity value");
-		}
+			//Search for the opportuntiy in the search bar
+			$("common.searchAssistant.button").waitForEnabled();
+			CommonStep.click("common.searchAssistant.button");
+			CommonStep.sendKeys(""+String.valueOf(opportunityName)+"","common.searchAssistant.input");
+			$("common.search.showMoreResults").waitForVisible();
+			$("common.search.showMoreResults").waitForEnabled();
+			$("common.search.showMoreResults").click();
 
+			steps.web.StepsLibrary.waitForPageToFinishLoading();
+
+			if ($("search.results.categories.opportunities").isPresent()) {
+				$("search.results.categories.opportunities").click();
+			} else {
+				if ($("search.results.categories.expandList.button").isPresent() && $("search.results.categories.expandList.button").isEnabled()) {
+					$("search.results.categories.expandList.button").click();
+				}
+
+				$("search.results.categories.showMore.button").waitForPresent();
+				$("search.results.categories.showMore.button").waitForEnabled();
+				$("search.results.categories.showMore.button").click();
+				steps.web.StepsLibrary.waitForPageToFinishLoading();
+				if ($("search.results.categories.opportunities").isPresent()) {
+					$("search.results.categories.opportunities").click();
+				}
+			}
+
+			$("search.results.panel.opportunities.title").waitForEnabled();
+			$("search.results.panel.opportunities.title").waitForVisible();
+
+			steps.web.StepsLibrary.waitForPageToFinishLoading();
+
+			$("search.results.panel.table.tr.first").waitForEnabled();
+			$("search.results.panel.table.tr.first.link.first").waitForEnabled();
+
+			$("search.results.panel.table.tr.first.link.first").assertText(opportunityName);
+			$("search.results.panel.table.tr.first.link.first").click();
+		}
+		
+		//Assert we're in the correct opportunity before continuing
+		$("opportunities.opportunityName").waitForPresent();
+		$("opportunities.opportunityName").assertText(String.valueOf(opportunityName));
 
 		$("opportunities.createProject.button").waitForVisible();
 		$("opportunities.createProject.button").waitForEnabled();

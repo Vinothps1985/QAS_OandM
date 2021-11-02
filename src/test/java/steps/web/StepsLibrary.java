@@ -1,6 +1,7 @@
 package steps.web;
 
 import static com.qmetry.qaf.automation.step.CommonStep.click;
+import com.qmetry.qaf.automation.util.Reporter;
 import com.qmetry.qaf.automation.ui.webdriver.QAFWebElement;
 import static com.qmetry.qaf.automation.step.CommonStep.sendKeys;
 import support.Util;
@@ -204,7 +205,8 @@ public class StepsLibrary {
 	
 	@QAFTestStep(description="take a screenshot")
 	public static void takeAScreenshot() {
-		TestBaseProvider.instance().get().takeScreenShot();
+		//TestBaseProvider.instance().get().takeScreenShot();
+		Reporter.logWithScreenShot("take a screenshot");
 	}
 
 	@QAFTestStep(description="scroll until {0} is visible")

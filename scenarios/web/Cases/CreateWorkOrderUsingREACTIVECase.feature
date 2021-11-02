@@ -11,8 +11,8 @@ Scenario: Create Work Order using REACTIVE case
    And ShrdChangeLoggedInUser "test_ops_center_operator"
    And ShrdLaunchApp "cases"
    And ShrdCreateCase "${projectName}" "${subject}" "${caseDescription}" "${recordType}" "${casePriority}" "${caseOrigin}" "${reportedIssue}" "${caseCause}"
+   And take a screenshot
    And ShrdCreateWorkOrder "${generated_caseNumber}" "${assetType1}" "${assetType2}"
-
    And take a screenshot
 
    #Confirm and screenshot work order lines created
@@ -21,6 +21,7 @@ Scenario: Create Work Order using REACTIVE case
    Then wait until "woLineItems.table.firstResult.link" to be present
    And take a screenshot
    And wait for 2000 milisec
+   And take a screenshot
    
 
 

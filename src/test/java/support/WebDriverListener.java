@@ -55,12 +55,14 @@ import io.appium.java_client.AppiumDriver;
 			commandTracker.setResponce(new Response());
 		}
 
-		if (command.equalsIgnoreCase(DriverCommand.CLICK_ELEMENT)) {
-			System.out.println("BEFORE CLICK!");
-			// NO CLICK
-			commandTracker.setResponce(new Response());
+		if (ConfigurationManager.getBundle().getString("platform").equals("web")) {
+			if (command.equalsIgnoreCase(DriverCommand.CLICK_ELEMENT)) {
+				System.out.println("BEFORE CLICK!");
+				// NO CLICK
+				commandTracker.setResponce(new Response());
+			}
 		}
-
+		
 		if (Util.DEBUG) {
 			String source = getDriver().getPageSource();
 			System.out.println("SOURCEX");
@@ -170,62 +172,64 @@ import io.appium.java_client.AppiumDriver;
 
 	@Override
 	public void beforeCommand(QAFExtendedWebElement element, CommandTracker commandTracker) {
-
-		waitForPageToLoad(element.getWrappedDriver(), commandTracker.getCommand());
-		if (commandTracker.getCommand().equalsIgnoreCase(DriverCommand.CLICK_ELEMENT)) {
-			/*System.out.println("BEFORE CLICK!");
-			try {
-				//element.getWrappedDriver().
-				Map<String, Object> params = commandTracker.getParameters();
-				for (Map.Entry<String,Object> entry : params.entrySet()) {
-					System.out.println("Key = " + entry.getKey() +
-									", Value = " + entry.getValue());
-					}
-			} catch (Exception ex) {
-
-			}*/
-			
-			// NO CLICK
-			boolean success = false;
-			for (int i=0; i < 3; i++) {
+		if (ConfigurationManager.getBundle().getString("platform").equals("web")) {
+		    
+			waitForPageToLoad(element.getWrappedDriver(), commandTracker.getCommand());
+			if (commandTracker.getCommand().equalsIgnoreCase(DriverCommand.CLICK_ELEMENT)) {
+				/*System.out.println("BEFORE CLICK!");
 				try {
-					success = true;
-					if (!element.isEnabled()) {
-						return;
-					}
-					if (!element.getId().equals(lastClick)) {
-						lastClick = element.getId();
-						commandTracker.setResponce(new Response());
-						System.out.println("Click intercepted (" + i + ")");
-						element.click();
-					}
-					break;
+					//element.getWrappedDriver().
+					Map<String, Object> params = commandTracker.getParameters();
+					for (Map.Entry<String,Object> entry : params.entrySet()) {
+						System.out.println("Key = " + entry.getKey() +
+										", Value = " + entry.getValue());
+						}
 				} catch (Exception ex) {
-					success = false;
-					System.out.println("Oops " + i + ": " + ex.getMessage());
-					//Wait 2 seconds and try again
-					String alignToTop = i%2==0 ? "false" : "true";
-					if (!element.isEnabled()) {
-						return;
+
+				}*/
+				
+				// NO CLICK
+				boolean success = false;
+				for (int i=0; i < 3; i++) {
+					try {
+						success = true;
+						if (!element.isEnabled()) {
+							return;
+						}
+						if (!element.getId().equals(lastClick)) {
+							lastClick = element.getId();
+							commandTracker.setResponce(new Response());
+							System.out.println("Click intercepted (" + i + ")");
+							element.click();
+						}
+						break;
+					} catch (Exception ex) {
+						success = false;
+						System.out.println("Oops " + i + ": " + ex.getMessage());
+						//Wait 2 seconds and try again
+						String alignToTop = i%2==0 ? "false" : "true";
+						if (!element.isEnabled()) {
+							return;
+						}
+						((JavascriptExecutor)element.getWrappedDriver()).executeScript("arguments[0].scrollIntoView(" + alignToTop + ");", element);
+						//element.getWrappedDriver().executeScript("document.querySelector('div[data-message-id=\"loginAsSystemMessage\"]').style.display='none'");
+						try {Thread.sleep(500);} catch (Exception x) {}
+						lastClick = "";
 					}
-					((JavascriptExecutor)element.getWrappedDriver()).executeScript("arguments[0].scrollIntoView(" + alignToTop + ");", element);
-					//element.getWrappedDriver().executeScript("document.querySelector('div[data-message-id=\"loginAsSystemMessage\"]').style.display='none'");
-					try {Thread.sleep(500);} catch (Exception x) {}
-					lastClick = "";
 				}
-			}
-			
-			//Could not find. Attempt one last time with Javascript
-			if (!success) {
-				try {
-					if (!element.isEnabled()) {
-						return;
+				
+				//Could not find. Attempt one last time with Javascript
+				if (!success) {
+					try {
+						if (!element.isEnabled()) {
+							return;
+						}
+						System.out.println("Oops final: Javascript");
+						((JavascriptExecutor)element.getWrappedDriver()).executeScript("arguments[0].click();", element);
+						Thread.sleep(5000);
+					} catch (Exception ex) {
+						System.out.println("Oops en catch final: " + ex.getMessage());
 					}
-					System.out.println("Oops final: Javascript");
-					((JavascriptExecutor)element.getWrappedDriver()).executeScript("arguments[0].click();", element);
-					Thread.sleep(5000);
-				} catch (Exception ex) {
-					System.out.println("Oops en catch final: " + ex.getMessage());
 				}
 			}
 		}
@@ -311,7 +315,9 @@ import io.appium.java_client.AppiumDriver;
 		// chromeOptions.addArguments("--allow-running-insecure-content");
 		// chromeOptions.addArguments("--force-fieldtrials=SiteIsolationExtensions/Control");
 		// chromeOptions.addArguments("--ignore-certificate-errors");
-		capabilities.setCapability("chromeOptions", chromeOptions);
+		if (ConfigurationManager.getBundle().getString("platform").equals("web")) {
+		    capabilities.setCapability("chromeOptions", chromeOptions);
+		}
 
 		super.beforeInitialize(desiredCapabilities);
 

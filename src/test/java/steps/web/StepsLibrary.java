@@ -32,6 +32,7 @@ import java.io.FileInputStream;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.Optional;
+import java.util.Random;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.comparator.LastModifiedFileComparator;
@@ -360,4 +361,14 @@ public class StepsLibrary {
 			"Could not find a row on table " + tableLoc + " where " + val1 + " = " + val2,
 			"Found a row on table " + tableLoc + " where " + val1 + " = " + val2);
 	}
+
+	@QAFTestStep(description = "create a random number with {digits} digits and store it in {varName}")
+	public static void createRandomNumber(int digits, String varName) {
+
+		int num = (int) Math.pow(10, digits - 1);
+		String randomNumber = String.valueOf(num + new Random().nextInt(9 * num));
+	
+		CommonStep.store(randomNumber, varName);
+	}
+
 }

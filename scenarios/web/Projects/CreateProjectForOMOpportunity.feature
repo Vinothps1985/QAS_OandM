@@ -9,7 +9,9 @@ Scenario: Create project for OM Opportunity
 	
    Given ShrdLogin "${username}" "${password}"
    And ShrdChangeLoggedInUser "test_ops_center_operator"
-   And ShrdCreateProject "${opportunityName}" "ANY" "${epcSite}" "${watts}"
+   #Project name will be 'ProjectName-1234' where 1234 is a random number
+   And create a random number with 4 digits and store it in "randomNumber"
+   And ShrdCreateProject "${opportunityName}" "ProjectName-${randomNumber}" "${epcSite}" "${watts}"
    
    Then assert "projects.details.projectName" text is "${generated_projectName}"
    And take a screenshot

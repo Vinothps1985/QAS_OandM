@@ -51,6 +51,10 @@ public class ShrdCreateWorkOrder extends WebDriverTestCase {
 		$("workOrders.create.assetTable.checkbox.first").waitForEnabled();
 		CommonStep.click("workOrders.create.assetTable.checkbox.first");
 
+		//Save the asset type name that appears on the table here. It may be used for assertions later
+		//Sometimes it's different (e.g. Asset Type 'Combiner Box' has name 'Combiner' only)
+		CommonStep.store($("workOrders.create.assetTable.assetType.first").getText(), "assetType1_realName");
+
 		$("workOrders.create.next.button").waitForEnabled();
 		CommonStep.click("workOrders.create.next.button");
 		
@@ -69,6 +73,10 @@ public class ShrdCreateWorkOrder extends WebDriverTestCase {
 		$("workOrders.create.assetTable.checkbox.first").waitForPresent();
 		$("workOrders.create.assetTable.checkbox.first").waitForEnabled();
 		CommonStep.click("workOrders.create.assetTable.checkbox.first");
+
+		//Save the asset type name that appears on the table here. It may be used for assertions later
+		//Sometimes it's different (e.g. Asset Type 'Combiner Box' has name 'Combiner' only)
+		CommonStep.store($("workOrders.create.assetTable.assetType.first").getText(), "assetType2_realName");
 
 		$("workOrders.create.next.button").waitForEnabled();
 		CommonStep.click("workOrders.create.next.button");

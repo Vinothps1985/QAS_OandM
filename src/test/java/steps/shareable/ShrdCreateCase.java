@@ -54,7 +54,7 @@ public class ShrdCreateCase extends WebDriverTestCase {
 		$("projects.details.projectName").waitForPresent();
 		$("projects.details.projectName").assertText(String.valueOf(projectName));
 		//TestBaseProvider.instance().get().takeScreenShot(); //Take a screenshot
-		Reporter.logWithScreenShot("take a screenshot");
+		Reporter.logWithScreenShot("Screenshot of project");
 
 		//Verify the project has active contracts
 		$("projects.quicklink.contracts").waitForPresent();
@@ -62,8 +62,8 @@ public class ShrdCreateCase extends WebDriverTestCase {
 		CommonStep.click("projects.quicklink.contracts");
 		$("projects.contracts.firstContract.status").waitForPresent();
 		$("projects.contracts.firstContract.status").assertPresent();
-		TestBaseProvider.instance().get().takeScreenShot(); //Take a screenshot
-		Reporter.logWithScreenShot("take a screenshot");
+		//TestBaseProvider.instance().get().takeScreenShot(); //Take a screenshot
+		Reporter.logWithScreenShot("Screenshot of project's contracts");
 
 		//Return to cases
 		$("breadcrumbs.second").waitForEnabled();

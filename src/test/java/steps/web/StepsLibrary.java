@@ -371,4 +371,16 @@ public class StepsLibrary {
 		CommonStep.store(randomNumber, varName);
 	}
 
+	@QAFTestStep(description = "click on {loc} if {loc2} appears within {secs} seconds")
+	public static void clickOnIfAppearsWith(String loc, String loc2, int secs) {
+		try {
+			$(loc2).waitForVisible(secs*1000);
+			if ($(loc2).isPresent()) {
+				$(loc).click();
+			}
+		} catch (Exception x) {
+			//Do nothing
+		}
+	}
+
 }

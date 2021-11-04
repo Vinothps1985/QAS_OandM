@@ -137,6 +137,8 @@ public class ShrdCreateProject extends WebDriverTestCase {
 		$("projects.editProject.button").waitForEnabled();
 		CommonStep.click("projects.editProject.button");
 
+		$("projects.editProject.popup.name.input").waitForVisible();
+		$("projects.editProject.popup.name.input").waitForEnabled();
 		CommonStep.clear("projects.editProject.popup.name.input");
 		CommonStep.sendKeys(""+String.valueOf(projectName)+"","projects.editProject.popup.name.input");
 

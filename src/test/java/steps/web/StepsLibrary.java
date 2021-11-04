@@ -383,4 +383,50 @@ public class StepsLibrary {
 		}
 	}
 
+	@QAFTestStep(description = "assert {loc} contains the text {text}")
+	public static void assertLocContainsText(String loc, String text) {
+		$(loc).waitForEnabled();
+		String locText = $(loc).getText();
+		boolean contained = locText.contains(text);
+		Validator.assertTrue(contained,
+			"The text " + text + " was not contained in the text " + locText + " as expected",
+			"The text " + text + " was found in the text " + locText + " as expected");
+	}
+
+	/**
+	 * 
+	 * @param milisec
+	 * @param refreshes
+	 * @param loc
+	 * @param text
+	 */
+	@QAFTestStep(description="wait {milisec} milisec up to {refreshes} times until {loc} contains the text {text}")
+	public static void waitMilisecAndRefreshUntilTextContains(int milisec, int refreshes, String loc, String text) {
+		int currentRefreshes=0;
+		boolean contained = false;
+		while (currentRefreshes < refreshes) {
+			try {
+				$(loc).waitForPresent();
+				String locText = $(loc).getText();
+				contained = locText.contains(text);
+				if (contained) {
+					break;
+				} else {
+					Thread.sleep(milisec);
+					steps.common.StepsLibrary.executeJavaScript("window.location.reload();");
+				}
+			} catch (Exception x) {
+				logger.info("Text " + text + " not found yet for locator " + loc);
+				currentRefreshes++;
+				try {Thread.sleep(milisec);} catch (Exception ex){}
+				steps.common.StepsLibrary.executeJavaScript("window.location.reload();");
+			}
+		}
+
+		
+		Validator.assertTrue(contained,
+			"The text " + text + " was not contained in the text " + loc + " as expected",
+			"The text " + text + " was found in the text " + loc + " as expected");
+	}
+
 }

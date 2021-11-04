@@ -32,7 +32,8 @@ public class ShrdCreateProduct extends WebDriverTestCase {
 	 * @param activeDataSheet
 	 */
 	@QAFTestStep(description = "ShrdCreateProduct {productName} {description} {oemManufacturer} {activeDataSheet}")
-	public void customShrdCreateProduct(String productName, String description, String oemManufacturer, String activeDataSheet) {
+	public void customShrdCreateProduct(String productName, String description, String oemManufacturer, 
+	    String activeDataSheet) {
 		
 		//Product name sent, or time in millis
 		if (productName == null || productName.trim().length() == 0 || productName.equalsIgnoreCase("ANY")) {
@@ -45,23 +46,35 @@ public class ShrdCreateProduct extends WebDriverTestCase {
 		$("products.create.new.button").waitForPresent();
 		$("products.create.new.button").waitForEnabled();
 		CommonStep.click("products.create.new.button");
+
 		$("products.createProduct.popup.recordType.OM.input").waitForVisible();
 		try {Thread.sleep(3000);} catch (Exception e) {System.out.println(e);}
 		$("products.createProduct.popup.recordType.OM.input").waitForEnabled();
 		CommonStep.click("products.createProduct.popup.recordType.OM.input");
 		$("products.createProduct.popup.next.button").waitForEnabled();
 		CommonStep.click("products.createProduct.popup.next.button");
+
 		$("products.createProduct.popup.name.input").waitForEnabled();
 		CommonStep.click("products.createProduct.popup.name.input");
 		CommonStep.sendKeys(productName,"products.createProduct.popup.name.input");
+
 		$("products.createProduct.popup.family.input").waitForEnabled();
 		CommonStep.click("products.createProduct.popup.family.input");
 		$("products.createProduct.popup.family.input.option.Tools").waitForEnabled();
 		CommonStep.click("products.createProduct.popup.family.input.option.Tools");
+
 		CommonStep.sendKeys(""+String.valueOf(description)+"","products.createProduct.popup.productDescription.input");
+
 		if (oemManufacturer != null && oemManufacturer.trim().length() > 0) {
 			CommonStep.sendKeys(""+String.valueOf(oemManufacturer)+"","products.createProduct.popup.oemManufacturer.input");
 		}
+		//Non-editable from the create screen
+		/*if (productCode != null && productCode.trim().length() > 0) {
+			CommonStep.sendKeys(""+String.valueOf(productCode)+"","products.createProduct.popup.productCode.input");
+		}
+		if (watts != null && watts.trim().length() > 0) {
+			CommonStep.sendKeys(""+String.valueOf(watts)+"","products.createProduct.popup.watts.input");
+		}*/
 		if (activeDataSheet != null && activeDataSheet.trim().length() > 0) {
 			CommonStep.sendKeys(""+String.valueOf(activeDataSheet)+"","products.createProduct.popup.activeDataSheet.input");
 		}

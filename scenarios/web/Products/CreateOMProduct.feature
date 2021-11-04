@@ -9,7 +9,9 @@ Scenario: Create OM Product
 	
    Given ShrdLogin "${username}" "${password}"
    And ShrdChangeLoggedInUser "test_ops_center_operator"
-   And ShrdCreateProduct "ANY" "${productDescription}" "${oemManufacturer}" "${activeDataSheet}"
+   #Product name will be the one in the test data file, with added random numbers
+   #to prevent duplication
+   And create a random number with 6 digits and store it in "randomNumber"
+   And ShrdCreateProduct "${productName}-${randomNumber}" "${productDescription}" "${oemManufacturer}" "${activeDataSheet}"
    And assert "products.details.name" text is "${generated_productName}"
    And take a screenshot
-   And wait for 2000 milisec

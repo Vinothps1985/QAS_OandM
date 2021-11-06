@@ -193,9 +193,9 @@ import io.appium.java_client.AppiumDriver;
 				for (int i=0; i < 3; i++) {
 					try {
 						success = true;
-						if (!element.isEnabled()) {
-							return;
-						}
+						//if (!element.isEnabled()) {
+							//return;
+						//}
 						if (!element.getId().equals(lastClick)) {
 							lastClick = element.getId();
 							commandTracker.setResponce(new Response());
@@ -207,11 +207,12 @@ import io.appium.java_client.AppiumDriver;
 						success = false;
 						System.out.println("Oops " + i + ": " + ex.getMessage());
 						//Wait 2 seconds and try again
-						String alignToTop = i%2==0 ? "false" : "true";
-						if (!element.isEnabled()) {
-							return;
-						}
-						((JavascriptExecutor)element.getWrappedDriver()).executeScript("arguments[0].scrollIntoView(" + alignToTop + ");", element);
+						//String alignToTop = i%2==0 ? "false" : "true";
+						//if (!element.isEnabled()) {
+							//return;
+						//}
+						//((JavascriptExecutor)element.getWrappedDriver()).executeScript("arguments[0].scrollIntoView(" + alignToTop + ");", element);
+						((JavascriptExecutor)element.getWrappedDriver()).executeScript("arguments[0].scrollIntoView({block: 'center'});", element);
 						//element.getWrappedDriver().executeScript("document.querySelector('div[data-message-id=\"loginAsSystemMessage\"]').style.display='none'");
 						try {Thread.sleep(500);} catch (Exception x) {}
 						lastClick = "";

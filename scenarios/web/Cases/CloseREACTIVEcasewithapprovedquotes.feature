@@ -10,7 +10,7 @@ Scenario: Close REACTIVE case with approved quotes
    Given ShrdLogin "${username}" "${password}"
    And ShrdChangeLoggedInUser "test_ops_center_operator"
    And ShrdLaunchApp "cases"
-   And ShrdCreateCase "${projectName}" "${subject}" "${caseDescription}" "${recordType}" "${casePriority}" "${caseOrigin}" "${reportedIssue}" "${caseCause}"
+   And ShrdCreateCase "${projectName}" "${subject}" "${caseDescription}" "${summary}" "${recordType}" "${casePriority}" "${caseOrigin}" "${reportedIssue}" "${caseCause}"
    And take a screenshot
    And ShrdCreateWorkOrder "${generated_caseNumber}" "${assetType1}" "${assetType2}"
    And take a screenshot

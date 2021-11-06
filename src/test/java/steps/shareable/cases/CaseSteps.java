@@ -17,6 +17,8 @@ import com.qmetry.qaf.automation.ui.WebDriverTestCase;
 import com.qmetry.qaf.automation.ui.webdriver.QAFExtendedWebElement;
 
 import static com.qmetry.qaf.automation.core.ConfigurationManager.getBundle;
+
+import com.qmetry.qaf.automation.util.Reporter;
 import com.qmetry.qaf.automation.util.Validator;
 import java.io.IOException;
 import java.util.List;
@@ -223,6 +225,147 @@ public class CaseSteps extends WebDriverTestCase {
 		}
 
 		logger.info("All Work Order Line Items set to " + newStatus);
+	}
+
+	@QAFTestStep(description = "add a comment starting with {comment} to all work order line items of case {caseNumber}")
+	public void addCommentToWorkOrdersLineItems(String comment, String caseNumber) {
+		
+		//open case
+		if (!inCaseScreen(caseNumber)) {
+			goToCase(caseNumber);
+		}
+
+		//Go to service appointments table
+		$("cases.quickLinks.workOrderLineItems").waitForPresent();
+		$("cases.quickLinks.workOrderLineItems").click();
+
+		$("woLineItems.table.firstResult.link").waitForPresent();
+
+		//Save the list url
+		String woliUrl = new WebDriverTestBase().getDriver().getCurrentUrl();
+
+		//All links xpath
+		//  ((//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//table//tbody//tr)[1]//a)[1]
+		String xpath = "//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//table//tbody//tr";
+		List<WebElement> woliTRs = new WebDriverTestBase().getDriver().findElementsByXPath(xpath);
+		if (woliTRs != null && woliTRs.size() > 0) {
+			for (int idx=1; idx <= woliTRs.size(); idx++) {
+				//Specific link to the WO
+				String linkPath = "((//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//table//tbody//tr)[" + idx + "]//a)[1]";
+				QAFExtendedWebElement validLink = new WebDriverTestBase().getDriver().findElementByXPath(linkPath);
+				validLink.waitForPresent();
+				validLink.click();
+				
+				//Have to scroll to find the button
+				steps.web.StepsLibrary.waitForPageToFinishLoading();
+				steps.web.StepsLibrary.scrollUntilVisible("woLineItems.details.comments.edit.button");
+				//$("woLineItems.details.comments.edit.button").waitFort();
+				//Now inside the Service Appointment
+				$("woLineItems.details.comments.edit.button").click();
+
+				$("woLineItems.details.edit.comments.textarea").waitForEnabled();
+				$("woLineItems.details.edit.comments.textarea").clear();
+				$("woLineItems.details.edit.comments.textarea").sendKeys(comment + " " + idx);
+
+				$("woLineItems.details.edit.save.button").waitForEnabled();
+				$("woLineItems.details.edit.save.button").click();
+
+				$("woLineItems.details.comments.edit.button").waitForVisible();
+
+				new WebDriverTestBase().getDriver().get(woliUrl);
+				$("woLineItems.table.firstResult.link").waitForPresent();
+			}
+		}
+
+		logger.info("All Work Order Line Items comments set to " + comment);
+	}
+
+	@QAFTestStep(description = "answer all questions of all work order line items of case {caseNumber} alternating pass and fail")
+	public void answerAllWOLIQuestionsAlternating(String caseNumber) {
+		
+		//open case
+		if (!inCaseScreen(caseNumber)) {
+			goToCase(caseNumber);
+		}
+
+		//Go to service appointments table
+		$("cases.quickLinks.workOrderLineItems").waitForPresent();
+		$("cases.quickLinks.workOrderLineItems").click();
+
+		$("woLineItems.table.firstResult.link").waitForPresent();
+
+		//Save the list url
+		String woliUrl = new WebDriverTestBase().getDriver().getCurrentUrl();
+
+		//All links xpath
+		String xpath = "//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//table//tbody//tr";
+		List<WebElement> woliTRs = new WebDriverTestBase().getDriver().findElementsByXPath(xpath);
+		if (woliTRs != null && woliTRs.size() > 0) {
+			for (int idx=1; idx <= woliTRs.size(); idx++) {
+				//Specific link to the WO
+				String linkPath = "((//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//table//tbody//tr)[" + idx + "]//a)[1]";
+				QAFExtendedWebElement validLink = new WebDriverTestBase().getDriver().findElementByXPath(linkPath);
+				validLink.waitForPresent();
+				validLink.click();
+
+				$("woLineItems.checklists.link").waitForPresent();
+				$("woLineItems.checklists.link").waitForEnabled();
+				$("woLineItems.checklists.link").click();
+
+				$("common.table.link.first").waitForPresent();
+				$("common.table.link.first").waitForEnabled();
+
+				//Now in the checklists page. Must edit one by one, alternating pass or fail
+				String checklistTrsXPath = "//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//table//tbody//tr";
+				List<WebElement> checklistTRs = new WebDriverTestBase().getDriver().findElementsByXPath(checklistTrsXPath);
+				if (checklistTRs != null && checklistTRs.size() > 0) {
+					for (int clIdx=1; clIdx <= checklistTRs.size(); clIdx++) {
+						int answerTdIndex = 5;
+						int actionsTdIndex = 8;
+
+						String answerXpath = "(" + checklistTrsXPath + ")[" + clIdx + "]//td[" + answerTdIndex + "]//span//span";
+						QAFExtendedWebElement answerSpan = 
+							new WebDriverTestBase().getDriver().findElementByXPath(answerXpath);
+						//If the answer is N/A, skip
+						if (answerSpan.isPresent() && !answerSpan.getText().equals("N/A")) {
+							//Can answer this question. Go
+							String actionButtonXpath = 
+								"(" + checklistTrsXPath + ")[" + clIdx + "]//td[" + actionsTdIndex + "]//a";
+							QAFExtendedWebElement actionButton = 
+								new WebDriverTestBase().getDriver().findElementByXPath(actionButtonXpath);
+							actionButton.click();
+							$("checklists.table.action.edit.button").waitForVisible();
+							$("checklists.table.action.edit.button").click();
+							
+							$("checklists.edit.popup.answerPassFail.input").waitForVisible();
+							$("checklists.edit.popup.answerPassFail.input").waitForEnabled();
+							$("checklists.edit.popup.answerPassFail.input").click();
+							//Even numbers are fail. Odd are pass.
+							if (clIdx % 2==0) {
+								$("checklists.edit.popup.answerPassFail.option.fail").waitForVisible();
+								$("checklists.edit.popup.answerPassFail.option.fail").click();
+								$("checklists.edit.popup.answerPassFail.option.fail").waitForNotVisible();
+							} else {
+								$("checklists.edit.popup.answerPassFail.option.pass").waitForVisible();
+								$("checklists.edit.popup.answerPassFail.option.pass").click();
+								$("checklists.edit.popup.answerPassFail.option.pass").waitForNotVisible();
+							}
+
+							$("checklists.edit.popup.save.button").click();
+							$("common.toastContainer").waitForVisible();
+						}
+						
+					}
+
+					Reporter.logWithScreenShot("Work order line items questions answered");
+				}
+
+				new WebDriverTestBase().getDriver().get(woliUrl);
+				$("woLineItems.table.firstResult.link").waitForPresent();
+			}
+		}
+
+		logger.info("All Work Order Line Items have been answered with pass and fail");
 	}
 
 	@QAFTestStep(description = "close case {caseNumber} with {reactiveServiceType}")

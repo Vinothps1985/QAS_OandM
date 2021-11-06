@@ -7,57 +7,53 @@ Feature: Cases
 @requirementKey=QTM-RQ-23
 
 Scenario: Generate case closure report with completed WO Line Items
-	
-   Given ShrdLoginToFullCopy "${username}" "${password}"
+   
+   Given ShrdLogin "${username}" "${password}"
    And ShrdChangeLoggedInUser "test_ops_center_operator"
    And ShrdLaunchApp "cases"
-   And wait until "common.searchAssistant.button" to be enable
-   And click on "common.searchAssistant.button"
-   And wait until "common.searchAssistant.input" to be enable
-   And click on "common.searchAssistant.input"
-   And sendKeys "${reactiveCaseNumber}" into "common.searchAssistant.input"
-   Then wait until "cases.search.firstResult" to be visible
-   When wait until "cases.search.firstResult" to be enable
-   And click on "cases.search.firstResult"
-   #And wait for 2000 milisec
-   Then wait until "cases.caseNumber" to be visible
-   And assert "cases.caseNumber" text is "${reactiveCaseNumber}"
-   When wait until "cases.quickLinks.serviceAppointments" to be enable
-   And click on "cases.quickLinks.serviceAppointments"
-   Then assert "common.table.span.completed.first" is present
-   When wait until "breadcrumbs.second" to be enable
-   And click on "breadcrumbs.second"
-   And wait until "cases.quickLinks.workOrders" to be enable
-   And click on "cases.quickLinks.workOrders"
-   Then assert "common.table.span.completed.first" is present
-   When wait until "breadcrumbs.second" to be enable
-   And click on "breadcrumbs.second"
-   And wait until "cases.quickLinks.workOrderLineItems" to be enable
-   And click on "cases.quickLinks.workOrderLineItems"
-   Then store text from "common.table.td.third" into "woLineItemComment"
-   When wait until "common.table.link.first" to be enable
-   And click on "common.table.link.first"
-   Then assert "woLineItems.header.status.completed" is present
-   When wait until "woLineItems.details.case.link" to be enable
-   And click on "woLineItems.details.case.link"
-   Then store text from "case.details.accountName" into "accountName"
-   And store text from "case.details.subject" into "subject"
-   And store text from "case.details.description" into "description"
-   And store text from "case.details.caseSummary" into "caseSummary"
+   And ShrdCreateCase "${projectName}" "${subject}" "${caseDescription}" "${summary}" "${recordType}" "${casePriority}" "${caseOrigin}" "${reportedIssue}" "${caseCause}"
+   And take a screenshot
+   And ShrdCreateWorkOrder "${generated_caseNumber}" "${assetType1}" "${assetType2}"
+   And take a screenshot
+
+   And set all service appointments of case "${generated_caseNumber}" to status "Completed"
+   And take a screenshot
+
+   And set all work orders of case "${generated_caseNumber}" to status "Completed"
+   And take a screenshot
+
+   And set all work order line items of case "${generated_caseNumber}" to status "Completed"
+   And take a screenshot
+
+   #After closing SA, WO and WO Line items, the case is now in status 'Ops Review'
+
+   Then go to case "${generated_caseNumber}"
+   And wait until "case.details.accountName" to be visible
+   And wait until "case.details.accountName" to be enable
+   And store text from "case.details.accountName" into "accountName"
+   #subject, case description and summary already in test data
+   #Adds comments to all work orders (e.g. Testing comment 1, Testing comment 2, etc...)
+   And add a comment starting with "Testing comment" to all work order line items of case "${generated_caseNumber}"
+   And take a screenshot
+   And go to case "${generated_caseNumber}"
+
+   #Answer all the questions in the work order line items
+   And answer all questions of all work order line items of case "${generated_caseNumber}" alternating pass and fail
+   And go to case "${generated_caseNumber}"
+   
+   #Create the email
    And verify "cases.sendPmCorrLsReport.button" is present
    When wait until "cases.sendPmCorrLsReport.button" to be enable
    And click on "cases.sendPmCorrLsReport.button"
    
-   #Agregado
-   And wait for 20000 milisec
    And switch to conga composer frame
-   When wait until "conga.outputOptions.action.input" to be enable
+   When wait until "conga.outputOptions.action.input" for a max of 60 seconds to be enable
    And assert "conga.outputOptions.action.input" value is "Email"
    And assert "conga.outputOptions.fileType.pdfFile.input.selected" is present
    And assert "conga.templates.correctiveReport.selected" is present
+   And take a screenshot
    And click on "conga.mergeAndEmail.button"
-   And wait for 12000 milisec
-   And wait until "conga.email.to.input" to be enable
+   And wait until "conga.email.to.input" for a max of 60 seconds to be enable
    And assert "conga.email.to.input" value is not ""
    And assert "conga.email.cc.input" value is not ""
    And assert "conga.email.subject.input" value is not ""
@@ -65,26 +61,27 @@ Scenario: Generate case closure report with completed WO Line Items
    And switch to frame "conga.email.contents.iframe"
    And assert "conga.email.body" text is not ""
    And assert "conga.email.body.logo" is present
+   And take a screenshot
    And switch to parent frame
    And click on "conga.email.attachment.img"
-   And wait for 3000 milisec
+   #Download time may vary and is not directly verifiable. Must leave implicit wait
+   And wait for 8000 milisec
    And switch to default window
-   And wait for 10000 milisec
    And get "chrome://downloads"
    And get latest download url from chrome downloads
    And download file locally
-   And wait for 5000 milisec
+   #Download time may vary and is not verifiable. Must leave implicit wait
+   And wait for 8000 milisec
 
+   #Download the PDF file and assert its contents
    Then load latest pdf in downloads directory
-   And wait for 10000 milisec
-   And assert text "Case Number: ${reactiveCaseNumber}" appears in the pdf
-   And assert text "Project: ${projectName}" appears in the pdf
-   And assert text "Account: ${accountName}" appears in the pdf
-   And assert text "Subject: ${description}" appears in the pdf
-   And assert text "Description: ${description}" appears in the pdf
-   And wait for 10000 milisec
+   And assert text "Case Number: ${generated_caseNumber}" appears in the pdf
+   And assert text "Project: ${pdfProjectName}" appears in the pdf
+   And assert text "Account: ${pdfAccountName}" appears in the pdf
+   And assert text "Subject: ${subject}" appears in the pdf
+   And assert text "Description: ${caseDescription}" appears in the pdf
+   And assert text "${summary}" appears in the pdf
 
-   
-
-
-
+   #Verify the line items answers and comments
+   And assert pdf contains a line item of type "${assetType1}" with comment "Testing comment 1" alternating pass and fail 
+   And assert pdf contains a line item of type "${assetType2}" with comment "Testing comment 2" alternating pass and fail 

@@ -64,7 +64,7 @@ public class StepsLibrary {
 	public static void switchToCongaComposerFrame() {
 
 		QAFExtendedWebElement element = 
-			new WebDriverTestBase().getDriver().findElementByXPath("(//div[contains(@class, 'windowViewMode-normal')]//iframe)[1]");
+			new WebDriverTestBase().getDriver().findElementByXPath("(//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//iframe)[1]");
 			
 		if (element.isPresent()) {
 			new WebDriverTestBase().getDriver().switchTo().frame(element);
@@ -86,7 +86,9 @@ public class StepsLibrary {
 			System.out.println("loadPdfCalled(): Loading PDF: " + Util.DOWNLOADS_FOLDER + "/" + pdfName);
             File file = new File(Util.DOWNLOADS_FOLDER + "/" + pdfName);
             try (PDDocument document = Loader.loadPDF(file)) {
-				latestPdfContents = new PDFTextStripper().getText(document);
+				PDFTextStripper pts = new PDFTextStripper();
+				pts.setSortByPosition(true);
+				latestPdfContents = pts.getText(document);
 				System.out.println("PRINTING PDF DOCUMENT");
 				System.out.println("= = = = = = =");
 				System.out.println("= = = = = = =");
@@ -159,6 +161,131 @@ public class StepsLibrary {
         
 	}
 
+	@QAFTestStep(description = "assert pdf contains a line item of type {assetType} with comment {comment} alternating pass and fail")
+    public static void assertPdfLineItemATCommentPassFail(String assetType, String comment) {
+		boolean checklistValidated = false;
+		boolean commentsValidated = false;
+
+		if (latestPdfContents != null) {
+			String[] lines = latestPdfContents.split("\n");
+			boolean inLineItemsSection = false;
+			boolean inLineItem = false;
+			boolean afterChecklistTableHeader = false;
+			boolean inChecklistSection = false;
+			boolean inComments = false;
+			String lastLine = null;
+			int responses = 0;
+			String fullComments = "";
+			int lineNum=0;
+			boolean afterIndex = false;
+			String fullChecklist = "";
+			for (String line : lines) {
+				lineNum++;
+				System.out.println(lineNum);
+				//Skip the index page to go straight to the real contents
+				if (!afterIndex) {
+					if (line.startsWith("Page 2 of")) {
+						afterIndex = true;
+					}
+					continue;
+				}
+				if (line.startsWith("Page") && line.contains(" of ")) {
+					continue;
+				}
+				if (!inLineItemsSection) {
+					if (line.contains("Corrective Maintenance Inspections")) {
+						System.out.println("Corrective maintenance inspections : " + line);
+						inLineItemsSection = true;
+					}
+					continue;
+				} 
+
+				//In the line items section
+				if (!inLineItem) {
+					if (line.contains("Corrective PM " + assetType)) {
+						System.out.println("Corrective PM" + assetType + ": " + line);
+						inLineItem = true;
+					}
+					continue;
+				}
+
+				//In the specific line item
+				if (!afterChecklistTableHeader) {
+					if (line.contains("Inspection Result")) {
+						System.out.println("Inspection Result" + line);
+						afterChecklistTableHeader = true;
+					}
+					continue;
+				}
+
+				if (!inChecklistSection) {
+					if (line.startsWith("1 ")) {
+						System.out.println("1 " + line);
+						inChecklistSection = true;
+					} else {
+						continue;
+					}
+				}
+				//Checklist items begin with a number, encompass 1-2 lines, and have the answer (Fail or Pass).
+				//The last one ends when we reach the comment section
+				if (Character.isDigit(line.toCharArray()[0]) || line.startsWith("Comments")) {
+					System.out.println("Digit or comments: " + line);
+					if (fullChecklist.length() > 0) {
+						//Check if the last line has the response we expected at the end
+						String expectedResponse = responses%2 == 0 ? "Fail" : "Pass"; //Even = Fail. Odd = Pass
+						boolean correct = fullChecklist.trim().contains(expectedResponse);
+						Validator.assertTrue(correct,
+						"Checklist item " + (responses+1) + " does not have the expected answer: Expected: " + expectedResponse + ", Actual text processed: " + fullChecklist.trim(),
+						"Checklist item " + (responses+1) + " has the expected answer: " + expectedResponse);
+
+						responses++;
+						fullChecklist = "";
+
+						checklistValidated = true;
+					}
+				}
+				
+				//Save the last line since it may contain the latest answer
+				//lastLine = line;
+				fullChecklist += line;
+
+				//Comments may have several lines
+				if (!inComments) {
+					if (line.startsWith("Comments")) {
+						System.out.println("Now in comments: " + line);
+						inComments = true;
+						fullComments += line.replace("Comments: ", "").trim();
+					}
+				} else {
+					if (line.startsWith("Photos:")) {
+						System.out.println("Now in photos: " + line);
+						//Comments have been fully obtained. Assert them
+						
+						//Test removing all spaces...
+						String fullCommentsCheck = fullComments.replaceAll(" ", "").replaceAll("\r", "").replaceAll("\n", "");
+						String commentCheck = comment.replaceAll(" ", "").replaceAll("\r", "").replaceAll("\n", "");
+
+						Validator.assertTrue(fullCommentsCheck.equalsIgnoreCase(commentCheck),
+							"Comments are different in the PDF for the Line Item. Expected: " + comment + ". Found: " + fullComments,
+							"Comments appear correctly in the PDF for the Line Item " + assetType);
+
+						//Now we can exit
+						commentsValidated = true;
+						break;
+					} else {
+						//More comments, continue adding...
+						System.out.println("Adding mor comments:  " + line);
+						fullComments += line.trim();
+					}
+				}
+			}
+		}
+
+		Validator.assertTrue(commentsValidated && checklistValidated,
+			"Comments and checklist were not validated correctly",
+			"Comments and checklist validated correctly");
+	}
+
 	@QAFTestStep(description = "get latest download url from chrome downloads")
 	public static void getLatestDownloadUrlFromChromeDownloads() throws Exception{
 
@@ -213,8 +340,32 @@ public class StepsLibrary {
 	@QAFTestStep(description="scroll until {0} is visible")
 	public static void scrollUntilVisible(String locator) {
 		try {
+			logger.info("Scrolling until " + locator + " is visible");
+			if ($(locator).isPresent()) {
+				logger.info("Scrolling mode 1");
+				((JavascriptExecutor)new WebDriverTestBase().getDriver())
+							.executeScript("arguments[0].scrollIntoView({block: 'center'});", $(locator));
+			} else {
+				logger.info("Scrolling mode 2");			
+				
+				int maxScrolls = 10;
+				int scrolls = 1;
+				while (scrolls <= maxScrolls) {
+					StringBuilder javascript = new StringBuilder();
+					javascript.append("var automation_scrollingElement = (document.scrollingElement || document.body);");
+					javascript.append("var automation_scrollHeight = automation_scrollingElement.scrollHeight;");
+					javascript.append("automation_scrollingElement.scrollTop = (300*"+scrolls + ");");
+					((JavascriptExecutor)new WebDriverTestBase().getDriver()).executeScript(javascript.toString());
+					Thread.sleep(500);
+					if ($(locator).isPresent()) {
+						logger.info("Scrolling mode 2: found");
 			((JavascriptExecutor)new WebDriverTestBase().getDriver())
 						.executeScript("arguments[0].scrollIntoView({block: 'center'});", $(locator));
+						break;
+					}
+					scrolls++;
+				}
+			}
 			Thread.sleep(500);
 		} catch (Exception x) {
 			//?

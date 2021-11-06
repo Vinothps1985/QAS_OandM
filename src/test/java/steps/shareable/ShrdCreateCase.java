@@ -39,8 +39,8 @@ public class ShrdCreateCase extends WebDriverTestCase {
 	 * @param reportedIssue
 	 * @param caseCause
 	 */
-	@QAFTestStep(description = "ShrdCreateCase {projectName} {subject} {caseDescription} {recordType} {casePriority} {caseOrigin} {reprtedIssue} {caseCause}")
-	public void customShrdCreateCase(Object projectName,Object subject,Object caseDescription,Object recordType,Object casePriority,Object caseOrigin,Object reportedIssue,Object caseCause) {
+	@QAFTestStep(description = "ShrdCreateCase {projectName} {subject} {caseDescription} {summary} {recordType} {casePriority} {caseOrigin} {reprtedIssue} {caseCause}")
+	public void customShrdCreateCase(Object projectName, Object subject, Object caseDescription, Object summary, Object recordType,Object casePriority,Object caseOrigin,Object reportedIssue,Object caseCause) {
 		
 		//Search for the project in the top search bar and click on the result
 		$("common.searchAssistant.button").waitForEnabled();
@@ -115,6 +115,7 @@ public class ShrdCreateCase extends WebDriverTestCase {
 
 		CommonStep.sendKeys(""+String.valueOf(subject)+"","case.createCase.popup.subject.input");
 		CommonStep.sendKeys(""+String.valueOf(caseDescription)+"","case.createCase.popup.description.textarea");
+		CommonStep.sendKeys(""+String.valueOf(summary)+"","case.createCase.popup.summary.textarea");
 
 		$("case.createCase.popup.save.button").waitForEnabled();
 		CommonStep.click("case.createCase.popup.save.button");

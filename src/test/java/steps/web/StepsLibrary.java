@@ -639,4 +639,30 @@ public class StepsLibrary {
 			"Date " + originDate + " with format " + originFormat + " converted successfully to format " + destFormat);
 	}
 
+	/**
+	 * Step to select a salesforce-picklist option.
+	 * These kind of picklists are not regular select options, so they have to be managed differently
+	 * 
+	 * @param label The label of the option to select
+	 */
+	@QAFTestStep(description = "select the picklist option with label {label}")
+	public static void selectSalesforcePicklistOption(String label) {
+		boolean success = false;
+		try {
+			String xpath = "//div[contains(@class, 'popupTargetContainer') and contains(@class, 'visible')]//div[@class='select-options']//li//a[.='" + label + "']";
+			QAFExtendedWebElement element = new WebDriverTestBase().getDriver().findElementByXPath(xpath);
+			element.waitForPresent();
+			element.waitForVisible();
+			element.click();
+			element.waitForNotVisible();
+			success = true;
+		} catch (Exception x) {}
+
+		Validator.assertTrue(success,
+			"Could not select the picklist option with label" + label,
+			"Picklist option with the label " + label + " found and selected");
+	}
+
+	
+
 }

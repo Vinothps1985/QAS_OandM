@@ -20,11 +20,10 @@ Scenario: Close REACTIVE case with approved quotes
    And wait for the page to finish loading
 
    #Create a quote with no lines
-   #TODO if we create it with lines, it cannot be accepted :(
+   #If we create the quote with lines, for some reason it cannot be accepted :(
    And ShrdCreateAndApproveQuote "${generated_caseNumber}" "${salesRep}" "${primaryContact}" "${specialNotes}"
    And take a screenshot
    And approve quote "${generated_quoteNumber}"
-   ##And store "Q-03767" into "generated_quoteNumber"
 
    And change status of quote "${generated_quoteNumber}" to "Accepted"
    And take a screenshot
@@ -32,12 +31,6 @@ Scenario: Close REACTIVE case with approved quotes
    And wait for the page to finish loading
    And ShrdChangeLoggedInUser "test_ops_center_operator"
    And wait for the page to finish loading
-
-   #And store "00290506" into "generated_caseNumber"
-   
-   #TODO Should happen automatically after closing al SA, WO and WOLI
-   Then change status of case "${generated_caseNumber}" to "Ops Review"
-   And take a screenshot
 
    And set all service appointments of case "${generated_caseNumber}" to status "Completed"
    And take a screenshot
@@ -48,18 +41,24 @@ Scenario: Close REACTIVE case with approved quotes
    And set all work order line items of case "${generated_caseNumber}" to status "Completed"
    And take a screenshot
 
+   #Status should've been changed to Ops Review automatically
+
+   #Now close the case
    And close case "${generated_caseNumber}" with "Reactive Service"
    And take a screenshot
 
-   ##TEMP
-   ##And go to case "${generated_caseNumber}"
-
-   And wait until "cases.caseHistory" to be enable
+   And store text from "case.details.caseResolutionDate" into "caseResolutionDate"
+   And format date "${caseResolutionDate}" from "M/d/yyyy" to "yyyy-MM-dd" into "caseResolutionDateFormatted"
+   
+   Then scroll until "cases.caseHistory" is visible
    And click on "cases.caseHistory"
 
+   And take a screenshot
    And store table "cases.caseHistory.table" column index with title "Field" on "fieldIdx"
    And store table "cases.caseHistory.table" column index with title "New Value" on "newValIdx"
 
    And assert row exists on table "cases.caseHistory.table" where text on index "${fieldIdx}" is "Status" and text on index "${newValIdx}" is "Closed"
    And assert row exists on table "cases.caseHistory.table" where text on index "${fieldIdx}" is "Labor Billing" and text on index "${newValIdx}" is "Billable"
-   #TODO case resolution date (to get) and billing status (appears a 'Not Billable'. Excel file says it should say 'In Progress')
+   And assert row exists on table "cases.caseHistory.table" where text on index "${fieldIdx}" is "Case Resolution Date" and text on index "${newValIdx}" is "${caseResolutionDateFormatted}"
+   #TODO should be: 'In Progress', not 'Not BIllable'
+   And assert row exists on table "cases.caseHistory.table" where text on index "${fieldIdx}" is "Billing Status" and text on index "${newValIdx}" is "In Progress"

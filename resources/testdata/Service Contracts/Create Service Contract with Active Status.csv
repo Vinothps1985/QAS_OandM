@@ -1,2 +1,2 @@
-username,password,projectName,opportunityRecordType,solarStage,serviceContractDescription,contractTermMonths,regionalManager,areaSupervisor
-rmontemayor@borregosolar.com.fullcopy,FCpassword123!,AZ Walmart - Chandler #3360 - O&M,O&M Opportunity,Contract Signed,Description,12,Kristyn Giannasca,Kristyn Giannasca
+username,password,projectName,opportunityRecordType,solarStage,contractStatus1,branch,contractAutoRenews,serviceContractDescription,contractTermMonths,regionalManager,areaSupervisor,contractStatus2
+rmontemayor@borregosolar.com.fullcopy,FCpassword123!,AZ Walmart - Chandler #3360 - O&M,O&M Opportunity,Contract Signed,Pending,Nor Cal,Yes,Description,12,Kristyn Giannasca,Kristyn Giannasca,Active

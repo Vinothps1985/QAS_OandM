@@ -37,17 +37,17 @@ public class ShrdChangeLoggedInUser extends WebDriverTestCase{
 
 		$("common.activeTab").waitForPresent();
 		$("common.searchAssistant.button").waitForEnabled();
-		CommonStep.click("common.searchAssistant.button");
+		$("common.searchAssistant.button").click();
 		CommonStep.clear("common.searchAssistant.input");
 		CommonStep.sendKeys(""+String.valueOf(userToSet)+"","common.searchAssistant.input");
 		$("users.search.firstResult").waitForPresent();
 		$("users.search.firstResult").waitForEnabled();
-		CommonStep.click("users.search.firstResult");
+		$("users.search.firstResult").click();
 		$("users.userDetails.button").waitForEnabled();
-		CommonStep.click("users.userDetails.button");
+		$("users.userDetails.button").click();
 		new WebDriverTestBase().getDriver().switchTo().frame(new QAFExtendedWebElement("users.details.iframe"));
 		$("users.userDetails.login.button").waitForEnabled();
-		CommonStep.click("users.userDetails.login.button");
+		$("users.userDetails.login.button").click();
 		new WebDriverTestBase().getDriver().switchTo().defaultContent();
 		$("common.logOutAs.link").waitForPresent();
 	}

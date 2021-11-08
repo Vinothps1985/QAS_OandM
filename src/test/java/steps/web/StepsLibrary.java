@@ -1,6 +1,7 @@
 package steps.web;
 
 import static com.qmetry.qaf.automation.step.CommonStep.click;
+import static com.qmetry.qaf.automation.core.ConfigurationManager.getBundle;
 import com.qmetry.qaf.automation.util.Reporter;
 import com.qmetry.qaf.automation.ui.webdriver.QAFWebElement;
 import static com.qmetry.qaf.automation.step.CommonStep.sendKeys;
@@ -63,18 +64,26 @@ public class StepsLibrary {
 	@QAFTestStep(description = "switch to conga composer frame")
 	public static void switchToCongaComposerFrame() {
 
+		int maxAttempts = 5;
+		for (int attempt = 0; attempt < maxAttempts; attempt++) {
+			try {
+				new WebDriverTestBase().getDriver().switchTo().defaultContent();
+
 		QAFExtendedWebElement element = 
-			new WebDriverTestBase().getDriver().findElementByXPath("(//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//iframe)[1]");
+					new WebDriverTestBase().getDriver()
+					.findElementByXPath("(//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//iframe)[1]");
 			
-		if (element.isPresent()) {
+				element.waitForPresent();
 			new WebDriverTestBase().getDriver().switchTo().frame(element);
 			element = new WebDriverTestBase().getDriver().findElement(By.xpath("//iframe"));
-			if (element.isPresent()) {
+				element.waitForPresent();
 				new WebDriverTestBase().getDriver().switchTo().frame(element);
+
 				element = new WebDriverTestBase().getDriver().findElement(By.xpath("//iframe[contains(@title, 'Conga Composer')]"));
-				if (element.isPresent()) {
+				element.waitForPresent();
 					new WebDriverTestBase().getDriver().switchTo().frame(element);
-				}
+			} catch (Exception x) {
+				try {Thread.sleep(3000);} catch (Exception ex) {}
 			}
 		}
 	}
@@ -139,7 +148,7 @@ public class StepsLibrary {
 	}
 	
 	@QAFTestStep(description = "assert text {0} appears in the pdf")
-    public static void doSomethingWithReportData(String text) {
+    public static void assertTextAppearsInPdf(String text) {
         boolean found = false;
         try {
             if (latestPdfContents != null) {
@@ -155,6 +164,29 @@ public class StepsLibrary {
             Validator.assertTrue(found,
                 "Could not find the following text in the PDF: " + text,
                 "Data found successfully in PDF:" + text);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        
+	}
+
+	@QAFTestStep(description = "assert text {0} does not appear in the pdf")
+    public static void assertTextDoesNotAppearInPdf(String text) {
+        boolean found = false;
+        try {
+            if (latestPdfContents != null) {
+                String[] lines = latestPdfContents.split("\n");
+                for (String line : lines) {
+                    if (line.contains(text)) {
+                        found = true;
+                        break;
+                    }
+                }
+            }
+
+            Validator.assertTrue(!found,
+                "The text " + text + " was found in the PDF, when it should not exist",
+                "The text " + text + " was not found in the PDF, which is correct");
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -498,6 +530,10 @@ public class StepsLibrary {
 		if (idx > -1) {
 			CommonStep.store(String.valueOf(idx), varName);
 		}
+
+		Validator.assertTrue(idx > -1,
+			"Column index with title " + title + " was not found on " + tableLoc,
+			"Column index with title " + title + " found successfully on " + tableLoc + " with index " + idx);
 	}
 
 	@QAFTestStep(description = "assert row exists on table {tableLoc} where text on index {idx1} is {val1} and text on index {idx2} is {val2}")
@@ -506,7 +542,10 @@ public class StepsLibrary {
 			$(tableLoc).waitForPresent();
 		}
 
-		QAFWebElement element = $(tableLoc).findElement(By.xpath("//td[" + idx1 + " and .='" + val1 + "']//ancestor::tr//td[" + idx2 +" and .='" + val2 + "']"));
+		QAFWebElement element = null;
+		try {
+			element = $(tableLoc).findElement(By.xpath("//td[" + idx1 + " and .='" + val1 + "']//parent::tr//td[" + idx2 +" and .='" + val2 + "']"));
+		} catch (Exception x) {}
 
 		Validator.assertTrue(element != null && element.isPresent() && element.isEnabled(),
 			"Could not find a row on table " + tableLoc + " where " + val1 + " = " + val2,
@@ -578,6 +617,26 @@ public class StepsLibrary {
 		Validator.assertTrue(contained,
 			"The text " + text + " was not contained in the text " + loc + " as expected",
 			"The text " + text + " was found in the text " + loc + " as expected");
+	}
+
+
+	@QAFTestStep(description = "wait until {loc} for a max of {sec} seconds to be enable")
+	public static void waitForEnabledFoxMaxSeconds(String loc, long sec) {
+		$(loc).waitForEnabled(sec * 1000);
+	}
+
+	@QAFTestStep(description = "format date {originDate} from {originFormat} to {destFormat} into {destVar}")
+	public static void formatDateFromVarToVarWithFormats(String originDate, String originFormat, String destFormat, String destVar) {
+		boolean success = false;
+		try {
+			Date date = new java.text.SimpleDateFormat(originFormat).parse(originDate);
+			CommonStep.store(new java.text.SimpleDateFormat(destFormat).format(date), destVar);
+			success = true;
+		} catch (Exception x) {}
+
+		Validator.assertTrue(success,
+			"Could not format date " + originDate + " with format " + originFormat + " to convert to format " + destFormat,
+			"Date " + originDate + " with format " + originFormat + " converted successfully to format " + destFormat);
 	}
 
 }

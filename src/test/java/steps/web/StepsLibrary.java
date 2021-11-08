@@ -6,6 +6,9 @@ import com.qmetry.qaf.automation.util.Reporter;
 import com.qmetry.qaf.automation.ui.webdriver.QAFWebElement;
 import static com.qmetry.qaf.automation.step.CommonStep.sendKeys;
 import support.Util;
+import support.EmailHelper;
+import support.EmailObject;
+
 import static com.qmetry.qaf.automation.ui.webdriver.ElementFactory.$;
 
 import java.io.File;
@@ -34,6 +37,8 @@ import java.net.URL;
 import java.util.Arrays;
 import java.util.Optional;
 import java.util.Random;
+
+import javax.mail.Message;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.comparator.LastModifiedFileComparator;
@@ -69,19 +74,19 @@ public class StepsLibrary {
 			try {
 				new WebDriverTestBase().getDriver().switchTo().defaultContent();
 
-		QAFExtendedWebElement element = 
+				QAFExtendedWebElement element = 
 					new WebDriverTestBase().getDriver()
 					.findElementByXPath("(//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//iframe)[1]");
-			
+					
 				element.waitForPresent();
-			new WebDriverTestBase().getDriver().switchTo().frame(element);
-			element = new WebDriverTestBase().getDriver().findElement(By.xpath("//iframe"));
+				new WebDriverTestBase().getDriver().switchTo().frame(element);
+				element = new WebDriverTestBase().getDriver().findElement(By.xpath("//iframe"));
 				element.waitForPresent();
 				new WebDriverTestBase().getDriver().switchTo().frame(element);
 
 				element = new WebDriverTestBase().getDriver().findElement(By.xpath("//iframe[contains(@title, 'Conga Composer')]"));
 				element.waitForPresent();
-					new WebDriverTestBase().getDriver().switchTo().frame(element);
+				new WebDriverTestBase().getDriver().switchTo().frame(element);
 			} catch (Exception x) {
 				try {Thread.sleep(3000);} catch (Exception ex) {}
 			}
@@ -391,8 +396,8 @@ public class StepsLibrary {
 					Thread.sleep(500);
 					if ($(locator).isPresent()) {
 						logger.info("Scrolling mode 2: found");
-			((JavascriptExecutor)new WebDriverTestBase().getDriver())
-						.executeScript("arguments[0].scrollIntoView({block: 'center'});", $(locator));
+						((JavascriptExecutor)new WebDriverTestBase().getDriver())
+									.executeScript("arguments[0].scrollIntoView({block: 'center'});", $(locator));
 						break;
 					}
 					scrolls++;
@@ -619,6 +624,81 @@ public class StepsLibrary {
 			"The text " + text + " was found in the text " + loc + " as expected");
 	}
 
+	@QAFTestStep(description="store the timestamp of the latest received email in {varName}")
+	public static void storeLatestEmailTimestamp(String varName) {
+		try {
+			long time = 0;
+			EmailHelper email = new EmailHelper();
+			List<EmailObject> latestMessages = email.getLatestMessages(1);
+			if (latestMessages != null) {
+				for (EmailObject m : latestMessages) {
+					time = m.getSentDate().getTime();
+					break;
+				}
+			}
+
+			CommonStep.store(time, varName);
+		} catch (Exception x) {
+			x.printStackTrace();
+			throw new AssertionError("Could not store the timestamp of the latest received email in " + varName + ". Error details: " + x.getMessage());
+		}
+	}
+
+	@QAFTestStep(description="assert an email is received after {timestamp} and the subject contains the text {subject}")
+	public static void assertEmailIsReceivedWithSubject(Object timestamp, String subject) {
+		String matchSubject = null;
+		try {
+			int maxAttempts = 10;
+			int waitBetweenAttemptsMilis = 5000;
+			
+			for (int attempt = 0; attempt < maxAttempts; attempt++) {
+				logger.info("Looking for matching email");
+				long compareTimestamp = Long.parseLong(timestamp + "");
+				EmailHelper email = new EmailHelper();
+				List<EmailObject> latestMessages = email.getLatestMessages(10);
+				if (latestMessages != null) {
+					for (EmailObject m : latestMessages) {
+						long time = m.getSentDate().getTime();
+						if (time > compareTimestamp) {
+							//Time matches. Check subject
+							if (m.getSubject().toUpperCase().trim().contains(subject.toUpperCase().trim())) {
+								matchSubject = m.getSubject();
+								break;
+							}
+						}
+					}
+				}
+				if (matchSubject != null) {
+					break;
+				}
+				logger.info("Email not found yet. Waiting...");
+				Thread.sleep(waitBetweenAttemptsMilis);
+			}
+		} catch (Exception x) {
+			x.printStackTrace();
+		}
+
+		Validator.assertTrue(matchSubject != null,
+		"An email was not received after " + timestamp + " with a subject that contains the text " + subject,
+		"An email was received after " + timestamp + " with a subject that contains the text " + subject + ". Email full subject: " + matchSubject);
+	}
+
+	@QAFTestStep(description="check the latest emails")
+	public static void checkTheLatestEmails() {
+		try {
+			EmailHelper email = new EmailHelper();
+			List<EmailObject> latestMessages = email.getLatestMessages(3);
+			if (latestMessages != null) {
+				for (EmailObject m : latestMessages) {
+					System.out.println("Subject: " + m.getSubject());
+					System.out.println("From: " + m.getFrom().get(0));
+					System.out.println("Timestamp: " + m.getSentDate().getTime());
+				}
+			}
+		} catch (Exception x) {
+			x.printStackTrace();
+		}
+	}
 
 	@QAFTestStep(description = "wait until {loc} for a max of {sec} seconds to be enable")
 	public static void waitForEnabledFoxMaxSeconds(String loc, long sec) {

@@ -21,7 +21,7 @@ Scenario: Close REACTIVE case with approved quotes
 
    #Create a quote with no lines
    #If we create the quote with lines, for some reason it cannot be accepted :(
-   And ShrdCreateAndApproveQuote "${generated_caseNumber}" "${salesRep}" "${primaryContact}" "${specialNotes}"
+   And ShrdCreateQuote "${generated_caseNumber}" "${salesRep}" "${primaryContact}" "${specialNotes}"
    And take a screenshot
    And approve quote "${generated_quoteNumber}"
 

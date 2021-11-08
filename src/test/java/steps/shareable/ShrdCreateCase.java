@@ -44,11 +44,11 @@ public class ShrdCreateCase extends WebDriverTestCase {
 		
 		//Search for the project in the top search bar and click on the result
 		$("common.searchAssistant.button").waitForEnabled();
-		CommonStep.click("common.searchAssistant.button");
+		$("common.searchAssistant.button").click();
 		CommonStep.sendKeys(""+String.valueOf(projectName)+"","common.searchAssistant.input");
 		$("projects.search.firstResult").waitForVisible();
 		$("projects.search.firstResult").waitForEnabled();
-		CommonStep.click("projects.search.firstResult");
+		$("projects.search.firstResult").click();
 		new WebDriverTestBase().getDriver().switchTo().defaultContent();
 
 		$("projects.details.projectName").waitForPresent();
@@ -59,7 +59,7 @@ public class ShrdCreateCase extends WebDriverTestCase {
 		//Verify the project has active contracts
 		$("projects.quicklink.contracts").waitForPresent();
 		$("projects.quicklink.contracts").waitForEnabled();
-		CommonStep.click("projects.quicklink.contracts");
+		$("projects.quicklink.contracts").click();
 		$("projects.contracts.firstContract.status").waitForPresent();
 		$("projects.contracts.firstContract.status").assertPresent();
 		//TestBaseProvider.instance().get().takeScreenShot(); //Take a screenshot
@@ -67,22 +67,22 @@ public class ShrdCreateCase extends WebDriverTestCase {
 
 		//Return to cases
 		$("breadcrumbs.second").waitForEnabled();
-		CommonStep.click("breadcrumbs.second");
+		$("breadcrumbs.second").click();
 		$("projects.createCase.button").waitForEnabled();
 
 		//Create new case
-		CommonStep.click("projects.createCase.button");
+		$("projects.createCase.button").click();
 
 		$("projects.createCase.popup.OnM.first").verifyPresent();
 		$("projects.createCase.popup.OnM.first.createCase.button").waitForEnabled();
-		CommonStep.click("projects.createCase.popup.OnM.first.createCase.button");
+		$("projects.createCase.popup.OnM.first.createCase.button").click();
 
 		$("case.createCase.recordType.select").waitForPresent();
 		$("case.createCase.recordType.select").waitForEnabled();
-		CommonStep.click("case.createCase.recordType.select");
+		$("case.createCase.recordType.select").click();
 
 		$("case.createCase.recordType.select.reactive.option").waitForEnabled();
-		CommonStep.click("case.createCase.recordType.select.reactive.option");
+		$("case.createCase.recordType.select.reactive.option").click();
 
 		$("case.createCase.recordType.next.button").waitForEnabled();
 		CommonStep.click("case.createCase.recordType.next.button");

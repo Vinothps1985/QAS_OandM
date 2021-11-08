@@ -272,6 +272,13 @@ import io.appium.java_client.AppiumDriver;
 		logger.info("User data dir: " + userDataDir);
 		logger.info("Login path: " + loginPath);
 
+		Util.EMAIL_HOST = prop.getPropertyValue("email.host");
+		Util.EMAIL_USERNAME = prop.getPropertyValue("email.username");
+		Util.EMAIL_PASSWORD = prop.getPropertyValue("email.password");
+
+		logger.info("Email host: " + Util.EMAIL_HOST);
+		logger.info("Email username: " + Util.EMAIL_USERNAME);
+
 		logger.info("support.WebDriverListener.beforeInitialize(): Configuring...");
 		java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("yyyy-MM-dd_HHmmss");
 		Util.DOWNLOADS_FOLDER = downloadsFolderBase + sdf.format(new java.util.Date());

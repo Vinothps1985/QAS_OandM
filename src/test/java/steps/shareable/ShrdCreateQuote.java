@@ -19,7 +19,7 @@ import steps.common.*;
 /**
 * @author Rodrigo Montemayor
 */
-public class ShrdCreateAndApproveQuote extends WebDriverTestCase {
+public class ShrdCreateQuote extends WebDriverTestCase {
 
 	/**
 	 * Creates a new case in salesforce
@@ -43,94 +43,92 @@ public class ShrdCreateAndApproveQuote extends WebDriverTestCase {
 	 * @param vendorContact1
 	 * @param vendorContact2
 	 */
-	@QAFTestStep(description = "ShrdCreateAndApproveQuoteWithLines {0} {1} {2} {3} {4} {5} {6} {7} {8} {9} {10} {11} {12} {13}")
-	public void customShrdShrdCreateAndApproveQuoteWithLines(String caseNumber,Object salesRep,Object primaryContact,Object specialNotes,Object laborBilling,Object pmBilling,Object costCode1,Object costCode2,Object notes1,Object notes2,Object vendor1,Object vendor2,Object vendorContact1,Object vendorContact2) {
+	@QAFTestStep(description = "ShrdCreateQuoteWithLines {0} {1} {2} {3} {4} {5} {6} {7} {8} {9} {10} {11} {12} {13}")
+	public void customShrdShrdCreateQuoteWithLines(String caseNumber,Object salesRep,Object primaryContact,Object specialNotes,Object laborBilling,Object pmBilling,Object costCode1,Object costCode2,Object notes1,Object notes2,Object vendor1,Object vendor2,Object vendorContact1,Object vendorContact2) {
 
-		customShrdShrdCreateAndApproveQuote(caseNumber, salesRep, primaryContact, specialNotes);
+		customShrdShrdCreateQuote(caseNumber, salesRep, primaryContact, specialNotes);
 
 		$("quotes.editLines.button").waitForPresent();
 		$("quotes.editLines.button").waitForEnabled();
-		CommonStep.click("quotes.editLines.button");
+		$("quotes.editLines.button").click();
 		$("quotes.edit.iframe").waitForEnabled();
-		CommonStep.click("quotes.edit.iframe");
+		$("quotes.edit.iframe").click();
 		new WebDriverTestBase().getDriver().switchTo().frame(new QAFExtendedWebElement("quotes.edit.iframe"));
 		$("quotes.edit.laborBilling.select").waitForPresent();
 		StepsLibrary.selectIn("label="+String.valueOf(laborBilling)+"","quotes.edit.laborBilling.select");
 		StepsLibrary.selectIn("label="+String.valueOf(pmBilling)+"","quotes.edit.pmBilling.select");
 		$("quotes.edit.addProducts.button").waitForEnabled();
-		CommonStep.click("quotes.edit.addProducts.button");
+		$("quotes.edit.addProducts.button").click();
 		$("quotes.addProducts.paperDrawerPanel").waitForPresent();
 		$("quotes.addProducts.categoryRows.first").waitForEnabled();
-		CommonStep.click("quotes.addProducts.categoryRows.first");
+		$("quotes.addProducts.categoryRows.first").click();
 		$("quotes.addProducts.rows.second.checkbox").waitForEnabled();
-		CommonStep.click("quotes.addProducts.rows.second.checkbox");
+		$("quotes.addProducts.rows.second.checkbox").click();
 		$("quotes.addProducts.rows.third.checkbox").waitForEnabled();
-		CommonStep.click("quotes.addProducts.rows.third.checkbox");
+		$("quotes.addProducts.rows.third.checkbox").click();
 		$("quotes.addProducts.select.button").waitForEnabled();
-		CommonStep.click("quotes.addProducts.select.button");
+		$("quotes.addProducts.select.button").click();
 
-		//TestBaseProvider.instance().get().takeScreenShot(); //Take a screenshot
 		Reporter.logWithScreenShot("take a screenshot");
 
 		$("quotes.edit.save.button").assertPresent();
 		$("quotes.edit.products.row.1").waitForEnabled();
-		CommonStep.click("quotes.edit.products.row.1");
+		$("quotes.edit.products.row.1").click();
 		$("quotes.edit.products.row.1.costCode.edit.button").waitForEnabled();
-		CommonStep.click("quotes.edit.products.row.1.costCode.edit.button");
+		$("quotes.edit.products.row.1.costCode.edit.button").click();
 		StepsLibrary.selectIn("label="+String.valueOf(costCode1)+"","quotes.edit.products.row.1.costCode.select");
 		$("quotes.edit.products.row.2").waitForEnabled();
-		CommonStep.click("quotes.edit.products.row.2");
+		$("quotes.edit.products.row.2").click();
 		$("quotes.edit.products.row.2.costCode.edit.button").waitForEnabled();
-		CommonStep.click("quotes.edit.products.row.2.costCode.edit.button");
+		$("quotes.edit.products.row.2.costCode.edit.button").click();
 		StepsLibrary.selectIn("label="+String.valueOf(costCode2)+"","quotes.edit.products.row.2.costCode.select");
 		$("quotes.edit.products.row.1").waitForEnabled();
-		CommonStep.click("quotes.edit.products.row.1");
+		$("quotes.edit.products.row.1").click();
 		$("quotes.edit.products.row.1.notes.edit.button").waitForEnabled();
-		CommonStep.click("quotes.edit.products.row.1.notes.edit.button");
+		$("quotes.edit.products.row.1.notes.edit.button").click();
 		CommonStep.clear("quotes.edit.products.row.1.notes.textarea");
 		CommonStep.sendKeys(""+String.valueOf(notes1)+"","quotes.edit.products.row.1.notes.textarea");
 		$("quotes.edit.products.row.2").waitForEnabled();
-		CommonStep.click("quotes.edit.products.row.2");
+		$("quotes.edit.products.row.2").click();
 		$("quotes.edit.products.row.2.notes.edit.button").waitForEnabled();
-		CommonStep.click("quotes.edit.products.row.2.notes.edit.button");
+		$("quotes.edit.products.row.2.notes.edit.button").click();
 		CommonStep.clear("quotes.edit.products.row.2.notes.textarea");
 		CommonStep.sendKeys(""+String.valueOf(notes2)+"","quotes.edit.products.row.2.notes.textarea");
 		$("quotes.edit.products.row.1.vendor.edit.button").waitForEnabled();
-		CommonStep.click("quotes.edit.products.row.1.vendor.edit.button");
+		$("quotes.edit.products.row.1.vendor.edit.button").click();
 		CommonStep.clear("quotes.edit.products.row.1.vendor.input");
 		CommonStep.sendKeys(""+String.valueOf(vendor1)+"","quotes.edit.products.row.1.vendor.input");
 		try {Thread.sleep(3000);} catch (Exception e) {System.out.println(e);}
 		$("quotes.edit.products.row.1.vendor.option.2").waitForPresent();
 		$("quotes.edit.products.row.1.vendor.option.2").waitForEnabled();
-		CommonStep.click("quotes.edit.products.row.1.vendor.option.2");
+		$("quotes.edit.products.row.1.vendor.option.2").click();
 		$("quotes.edit.products.row.2.vendor.edit.button").waitForEnabled();
-		CommonStep.click("quotes.edit.products.row.2.vendor.edit.button");
+		$("quotes.edit.products.row.2.vendor.edit.button").click();
 		CommonStep.clear("quotes.edit.products.row.2.vendor.input");
 		CommonStep.sendKeys(""+String.valueOf(vendor2)+"","quotes.edit.products.row.2.vendor.input");
 		try {Thread.sleep(3000);} catch (Exception e) {System.out.println(e);}
 		$("quotes.edit.products.row.2.vendor.option.2").waitForPresent();
 		$("quotes.edit.products.row.2.vendor.option.2").waitForEnabled();
-		CommonStep.click("quotes.edit.products.row.2.vendor.option.2");
+		$("quotes.edit.products.row.2.vendor.option.2").click();
 		$("quotes.edit.products.row.1.vendorContact.edit.button").waitForEnabled();
-		CommonStep.click("quotes.edit.products.row.1.vendorContact.edit.button");
+		$("quotes.edit.products.row.1.vendorContact.edit.button").click();
 		CommonStep.clear("quotes.edit.products.row.1.vendorContact.input");
 		CommonStep.sendKeys(""+String.valueOf(vendorContact1)+"","quotes.edit.products.row.1.vendorContact.input");
 		try {Thread.sleep(3000);} catch (Exception e) {System.out.println(e);}
 		$("quotes.edit.products.row.1.vendorContact.option.2").waitForPresent();
 		$("quotes.edit.products.row.1.vendorContact.option.2").waitForEnabled();
-		CommonStep.click("quotes.edit.products.row.1.vendorContact.option.2");
+		$("quotes.edit.products.row.1.vendorContact.option.2").click();
 
-		//TestBaseProvider.instance().get().takeScreenShot(); //Take a screenshot
 		Reporter.logWithScreenShot("take a screenshot");
 
 		$("quotes.edit.products.row.2.vendorContact.edit.button").waitForEnabled();
-		CommonStep.click("quotes.edit.products.row.2.vendorContact.edit.button");
+		$("quotes.edit.products.row.2.vendorContact.edit.button").click();
 		CommonStep.clear("quotes.edit.products.row.2.vendorContact.input");
 		CommonStep.sendKeys(""+String.valueOf(vendorContact2)+"","quotes.edit.products.row.2.vendorContact.input");
 		try {Thread.sleep(3000);} catch (Exception e) {System.out.println(e);}
 		$("quotes.edit.products.row.2.vendorContact.option.2").waitForPresent();
 		$("quotes.edit.products.row.2.vendorContact.option.2").waitForEnabled();
-		CommonStep.click("quotes.edit.products.row.2.vendorContact.option.2");
+		$("quotes.edit.products.row.2.vendorContact.option.2").click();
 
 		$("quotes.edit.save.button").assertPresent();
 		$("quotes.edit.save.button").waitForEnabled();
@@ -181,8 +179,8 @@ public class ShrdCreateAndApproveQuote extends WebDriverTestCase {
 	 * @param primaryContact
 	 * @param specialNotes
 	 */
-	@QAFTestStep(description = "ShrdCreateAndApproveQuote {caseNumber} {salesRep} {primaryContact} {specialNotes}")
-	public void customShrdShrdCreateAndApproveQuote(String caseNumber, Object salesRep, Object primaryContact, Object specialNotes) {
+	@QAFTestStep(description = "ShrdCreateQuote {caseNumber} {salesRep} {primaryContact} {specialNotes}")
+	public void customShrdShrdCreateQuote(String caseNumber, Object salesRep, Object primaryContact, Object specialNotes) {
 
 		ShrdLaunchApp launchApp = new ShrdLaunchApp();
 		launchApp.customShrdLaunchApp("cases");
@@ -233,10 +231,10 @@ public class ShrdCreateAndApproveQuote extends WebDriverTestCase {
 
 		steps.web.StepsLibrary.scrollUntilVisible("quotes.createQuote.popup.useDefaultShippingLocation.checkbox");
 
-		$("quotes.createQuote.popup.useDefaultShippingLocation.checkbox").waitForEnabled();
-		CommonStep.click("quotes.createQuote.popup.useDefaultShippingLocation.checkbox");
+		//$("quotes.createQuote.popup.useDefaultShippingLocation.checkbox").waitForEnabled();
+		$("quotes.createQuote.popup.useDefaultShippingLocation.checkbox").click();
 		$("quotes.createQuote.popup.save.button").waitForEnabled();
-		CommonStep.click("quotes.createQuote.popup.save.button");
+		$("quotes.createQuote.popup.save.button").click();
 
 		$("common.toastContainer").waitForPresent();
 		$("quotes.details.salesRep.text").waitForPresent();

@@ -19,12 +19,17 @@ Scenario: Create and approve quote for REACTIVE case
    And ShrdChangeLoggedInUser "test_o&M_manager"
    And wait for the page to finish loading
 
-   And ShrdCreateAndApproveQuoteWithLines "${generated_caseNumber}" "${salesRep}" "${primaryContact}" "${specialNotes}" "${laborBilling}" "${pmBilling}" "${costCode1}" "${costCode2}" "${notes1}" "${notes2}" "${vendor1}" "${vendor2}" "${vendorContact1}" "${vendorContact2}"
-
+   And ShrdCreateQuoteWithLines "${generated_caseNumber}" "${salesRep}" "${primaryContact}" "${specialNotes}" "${laborBilling}" "${pmBilling}" "${costCode1}" "${costCode2}" "${notes1}" "${notes2}" "${vendor1}" "${vendor2}" "${vendorContact1}" "${vendorContact2}"
    And take a screenshot
 
-   And assert "quotes.details.recordType.approved" text is "Approved"
+   #Must check the latest emails to compare an email is received after the test
+   Then store the timestamp of the latest received email in "latestEmailTimestamp"
+
+   #Now approve the quote
+   And approve quote "${generated_quoteNumber}"
+   And assert "quotes.details.recordType" text is "Approved"
+   And assert "quotes.details.status" text is "Approved"
+   And take a screenshot
    
-
-
-
+   #Ensure email reception
+   And assert an email is received after "${latestEmailTimestamp}" and the subject contains the text "Quote has been Approved and Ready to be Sent"

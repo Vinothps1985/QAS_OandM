@@ -1,5 +1,5 @@
-
 package steps.shareable;
+
 import static com.qmetry.qaf.automation.ui.webdriver.ElementFactory.$;
 import com.qmetry.qaf.automation.core.ConfigurationManager;
 import com.qmetry.qaf.automation.step.QAFTestStep;
@@ -35,14 +35,30 @@ public class ShrdChangeLoggedInUser extends WebDriverTestCase{
 		ShrdLaunchApp launchApp = new ShrdLaunchApp();
 		launchApp.customShrdLaunchApp("cases");
 
-		$("common.activeTab").waitForPresent();
-		$("common.searchAssistant.button").waitForEnabled();
-		$("common.searchAssistant.button").click();
-		CommonStep.clear("common.searchAssistant.input");
-		CommonStep.sendKeys(""+String.valueOf(userToSet)+"","common.searchAssistant.input");
-		$("users.search.firstResult").waitForPresent();
-		$("users.search.firstResult").waitForEnabled();
-		$("users.search.firstResult").click();
+		int maxAttempts = 5;
+		boolean success = true;
+		for (int attempt = 0; attempt < maxAttempts; attempt++) {
+			try {
+				$("common.activeTab").waitForPresent();
+				$("common.searchAssistant.button").waitForEnabled();
+				$("common.searchAssistant.button").click();
+				CommonStep.clear("common.searchAssistant.input");
+				CommonStep.sendKeys(""+String.valueOf(userToSet)+"","common.searchAssistant.input");
+				$("users.search.firstResult").waitForPresent();
+				$("users.search.firstResult").waitForEnabled();
+				$("users.search.firstResult").click();
+				steps.web.StepsLibrary.waitForPageToFinishLoading();
+				success = true;
+				break;
+			} catch (Exception x) {
+				try { Thread.sleep(2000); } catch (Exception tx) {}
+			}
+		}
+		
+		if (!success) {
+			throw new AssertionError("Could not change the logged in user to: " + userToSet + " after " + maxAttempts + " attempts");
+		}
+		
 		$("users.userDetails.button").waitForEnabled();
 		$("users.userDetails.button").click();
 		new WebDriverTestBase().getDriver().switchTo().frame(new QAFExtendedWebElement("users.details.iframe"));

@@ -1,0 +1,4 @@
+classic.home.allTabs.link={"locator":"xpath=//a[contains(@href, 'showAllTabs')]","desc":"","eArray":[{"name":"xpath=//a[contains(@href, 'showAllTabs')]","key":"xpath"}]}
+classic.home.allTabs.constructionRequisitions.link={"locator":"xpath=//img[@title='Construction Requisitions']//parent::a","desc":"","eArray":[{"name":"xpath=//img[@title='Construction Requisitions']//parent::a","key":"xpath"}]}
+classic.home.allTabs.apInvoices.link={"locator":"xpath=//img[@title='AP Invoices']//parent::a","desc":"","eArray":[{"name":"xpath=//img[@title='AP Invoices']//parent::a","key":"xpath"}]}
+classic.home.allTabs.purchaseOrders.link={"locator":"xpath=//img[@title='Purchase Orders']//parent::a","desc":"","eArray":[{"name":"xpath=//img[@title='Purchase Orders']//parent::a","key":"xpath"}]}

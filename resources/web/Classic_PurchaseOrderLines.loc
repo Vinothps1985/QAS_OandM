@@ -1,0 +1,4 @@
+classic.poLines.edit.unitCost.input={"locator":"xpath=//label[text()='Unit Cost']//following::input[1]","desc":"","eArray":[{"name":"xpath=//label[text()='Unit Cost']//following::input[1]","key":"xpath"}]}
+classic.poLines.edit.freight.input={"locator":"xpath=//label[text()='Freight']//following::input[1]","desc":"","eArray":[{"name":"xpath=//label[text()='Freight']//following::input[1]","key":"xpath"}]}
+classic.poLines.edit.quantity.input={"locator":"xpath=//label[text()='Quantity']//following::input[1]","desc":"","eArray":[{"name":"xpath=//label[text()='Quantity']//following::input[1]","key":"xpath"}]}
+classic.poLines.edit.site.search.link={"locator":"xpath=//label[text()='Site']//following::a[1]","desc":"","eArray":[{"name":"xpath=//label[text()='Site']//following::a[1]","key":"xpath"}]}

@@ -1,0 +1,16 @@
+classic.common.loggedInAs.span={"locator":"xpath=//span[contains(@class, 'pageMsg') and contains(text(), 'Logged in as')]","desc":"","eArray":[{"name":"xpath=//span[contains(@class, 'pageMsg') and contains(text(), 'Logged in as')]","key":"xpath"}]}
+classic.common.success.h4={"locator":"xpath=//h4[contains(text(), 'Success')]","desc":"","eArray":[{"name":"xpath=//h4[contains(text(), 'Success')]","key":"xpath"}]}
+classic.common.pageDescription.h2={"locator":"xpath=//h2[@class='pageDescription']","desc":"","eArray":[{"name":"xpath=//h2[@class='pageDescription']","key":"xpath"}]}
+classic.common.edit.button.first={"locator":"xpath=(//input[@name='edit'])[1]","desc":"","eArray":[{"name":"xpath=(//input[@name='edit'])[1]","key":"xpath"}]}
+classic.common.save.button.first={"locator":"xpath=(//input[@name='save'])[1]","desc":"","eArray":[{"name":"xpath=(//input[@name='save'])[1]","key":"xpath"}]}
+classic.common.post.button.first={"locator":"xpath=(//input[contains(@value,'Post')])[1]","desc":"","eArray":[{"name":"xpath=(//input[@title='Post'])[1]","key":"xpath"},{"name":"xpath=(//input[contains(@value,'Post')])[1]","key":"xpath"}]}
+classic.common.new.button.first={"locator":"xpath=(//input[@name='new'])[1]","desc":"","eArray":[{"name":"xpath=(//input[@name='new'])[1]","key":"xpath"}]}
+classic.common.clone.button.first={"locator":"xpath=(//input[@name='clone'])[1]","desc":"","eArray":[{"name":"xpath=(//input[@name='clone'])[1]","key":"xpath"}]}
+classic.common.frame.first={"locator":"xpath=//frame[1]","desc":"","eArray":[{"name":"xpath=//frame[1]","key":"xpath"}]}
+classic.common.frame.second={"locator":"xpath=//frame[2]","desc":"","eArray":[{"name":"xpath=//frame[2]","key":"xpath"}]}
+classic.common.search.input={"locator":"xpath=//input[@type='text' and @id='lksrch']","desc":"","eArray":[{"name":"xpath=//input[@type='text' and @id='lksrch']","key":"xpath"}]}
+classic.common.search.go.button={"locator":"xpath=//input[@name='go']","desc":"","eArray":[{"name":"xpath=//input[@name='go']","key":"xpath"}]}
+classic.common.search.showAllResults.link={"locator":"xpath=//a[text()='Show all results']","desc":"","eArray":[{"name":"xpath=//a[text()='Show all results']","key":"xpath"}]}
+classic.common.search.results.first={"locator":"xpath=(//div[@class='pbBody']//tr[contains(@class, 'dataRow')]//a)[1]","desc":"","eArray":[{"name":"xpath=","key":"xpath"},{"name":"xpath=(//div[@class='pbBody']//a)[1]","key":"xpath"},{"name":"xpath=(//div[@class='pbBody']//tr[contains(@class, 'dataRow')]//a)[1]","key":"xpath"}]}
+classic.common.header.user.dropdown.link={"locator":"xpath=//a[@id='globalHeaderNameMink']","desc":"","eArray":[{"name":"xpath=//a[@id='globalHeaderNameMink']","key":"xpath"}]}
+classic.common.logout.link={"locator":"xpath=//a[@title='Logout']","desc":"","eArray":[{"name":"xpath=//a[@title='Logout']","key":"xpath"}]}

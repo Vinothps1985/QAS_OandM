@@ -1,0 +1,2 @@
+classic.conReqs.table.checkbox.first={"locator":"xpath=(//div[contains(@class, 'listViewport')]//table//tbody//tr//input[@type='checkbox'])[1]","desc":"","eArray":[{"name":"xpath=(//div[contains(@class, 'listViewport')]//table//tbody//tr//input[@type='checkbox'])[1]","key":"xpath"}]}
+classic.conReqs.table.createPurchaseOrders.button={"locator":"xpath=//input[@value='Create Purchase Orders']","desc":"","eArray":[{"name":"xpath=//input[@value='Create Purchase Orders']","key":"xpath"}]}

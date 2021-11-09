@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.util.Map;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import steps.common.*;
+import com.qmetry.qaf.automation.ui.webdriver.QAFWebElement;
 
 /**
 * @author Rodrigo Montemayor
@@ -28,6 +29,13 @@ public class ShrdChangeLoggedInUser extends WebDriverTestCase{
 			$("common.logOutAs.link").click();
 
 			steps.web.StepsLibrary.waitForPageToFinishLoading();
+		}
+
+		//Maybe in classic Mmode! Log out in that case
+		if ($("classic.common.header.user.dropdown.link").isPresent() && $("classic.common.header.user.dropdown.link").isDisplayed()) {
+			$("classic.common.header.user.dropdown.link").click();
+			$("classic.common.logout.link").waitForVisible();
+			$("classic.common.logout.link").click();
 		}
 
 		//Go first to the 'Cases' section to have the regular top search assistant
@@ -59,13 +67,38 @@ public class ShrdChangeLoggedInUser extends WebDriverTestCase{
 			throw new AssertionError("Could not change the logged in user to: " + userToSet + " after " + maxAttempts + " attempts");
 		}
 		
-		$("users.userDetails.button").waitForEnabled();
+		if (!$("users.userDetails.button").isPresent()) {
+			//Check to see if parent frame has it
+			new WebDriverTestBase().getDriver().switchTo().defaultContent();
+		}
+
+		$("users.userDetails.button").waitForVisible();
+		$("users.userDetails.button").waitForEnabled();	
 		$("users.userDetails.button").click();
 		new WebDriverTestBase().getDriver().switchTo().frame(new QAFExtendedWebElement("users.details.iframe"));
 		$("users.userDetails.login.button").waitForEnabled();
 		$("users.userDetails.login.button").click();
 		new WebDriverTestBase().getDriver().switchTo().defaultContent();
-		$("common.logOutAs.link").waitForPresent();
+		
+		//This piece of code checks if the 'logged in as' section appears
+		//and works both for lightning and classic mode
+		boolean found = false;
+		try {
+			maxAttempts = 10;
+			for (int attempt = 0; attempt < maxAttempts; attempt++) {
+				if ($("common.logOutAs.link").isPresent() || $("classic.common.loggedInAs.span").isPresent()) {
+					found = true;
+					break;
+				}
+				Thread.sleep(2500);
+			}
+		} catch (Exception x) {
+			x.printStackTrace();
+		}
+
+		Validator.assertTrue(found, 
+			"Failed while waiting for the user to be logged in correctly as the user " + userToSet,
+			"Logged in correctly as the user " + userToSet);		
 	}
 }
 

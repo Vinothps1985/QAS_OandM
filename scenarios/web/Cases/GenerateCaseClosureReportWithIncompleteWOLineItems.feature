@@ -1,7 +1,7 @@
 Feature: Cases
 
 @author:Rodrigo Montemayor
-
+@description:Generate case closure report with incomplete WO Line Items
 @case @regression @imthecaptainnow
 @dataFile:resources/testdata/Cases/Generate case closure report with incomplete WO Line Items.csv
 @requirementKey=QTM-RQ-23

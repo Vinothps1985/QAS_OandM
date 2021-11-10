@@ -1,7 +1,7 @@
 Feature: Cases
 
 @author:Rodrigo Montemayor
-
+@description:Generate case closure report with completed WO Line Items
 @case @regression
 @dataFile:resources/testdata/Cases/Generate case closure report with completed WO Line Items.csv
 @requirementKey=QTM-RQ-23

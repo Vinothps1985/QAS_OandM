@@ -67,19 +67,6 @@ public class StepsLibrary {
 		}
 	}
 
-	@QAFTestStep(description = "click on {0} if it appears within {1} milisec")
-	public static void clickElementIfAppearsWithin(String loc, int milisec) {
-
-		try {
-			$(loc).waitForEnabled(milisec);
-			System.out.println("IT WAS FOUND!");
-			$(loc).click();
-		} catch (Exception ex) {
-			System.out.println("IT WAS NOT FOUND!");
-			ex.printStackTrace();
-		}
-	}
-
 	@QAFTestStep(description = "wait for {0} minutes for {1} to be not present")
 	public static void waitForLocToBeNotPresentMinutes(int minutes, String loc) {
 		logger.info("Waiting for " + minutes + " minutes until " + loc + " is not present...");

@@ -423,7 +423,7 @@ public class StepsLibrary {
 			int currentRefreshes=0;
 			while (currentRefreshes < refreshes) {
 				try {
-					$(loc).waitForPresent();
+					$(loc).waitForPresent(milisec);
 					$(loc).waitForText(text, milisec);
 					logger.info("Text " + text + " found in locator " + loc + "!");
 					break;

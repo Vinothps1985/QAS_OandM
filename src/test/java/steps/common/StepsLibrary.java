@@ -318,4 +318,12 @@ public class StepsLibrary {
 		CommonStep.sendKeys(new String(decoded), loc);
 	}
 
+	@QAFTestStep(description = "click on {0} if it appears within {1} milisec")
+	public static void clickElementIfAppearsWithin(String loc, int milisec) {
+		try {
+			$(loc).waitForEnabled(milisec);
+			$(loc).click();
+		} catch (Exception ex) {}
+	}
+
 }

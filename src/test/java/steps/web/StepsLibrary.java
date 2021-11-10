@@ -705,6 +705,11 @@ public class StepsLibrary {
 		$(loc).waitForEnabled(sec * 1000);
 	}
 
+	@QAFTestStep(description = "wait until {loc} for a max of {sec} seconds to be visible")
+	public static void waitForVisibleFoxMaxSeconds(String loc, long sec) {
+		$(loc).waitForVisible(sec * 1000);
+	}
+
 	@QAFTestStep(description = "format date {originDate} from {originFormat} to {destFormat} into {destVar}")
 	public static void formatDateFromVarToVarWithFormats(String originDate, String originFormat, String destFormat, String destVar) {
 		boolean success = false;
@@ -717,6 +722,22 @@ public class StepsLibrary {
 		Validator.assertTrue(success,
 			"Could not format date " + originDate + " with format " + originFormat + " to convert to format " + destFormat,
 			"Date " + originDate + " with format " + originFormat + " converted successfully to format " + destFormat);
+	}
+
+	@QAFTestStep(description = "store the current date in format {format} into {varName}")
+	public static void storeCurrentDateInFormatInto(String format, String varName) {
+		boolean success = false;
+		try {
+			Date date = new Date();
+			java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat(format);
+			String result = sdf.format(date);
+			CommonStep.store(result, varName);
+			success = true;
+		} catch (Exception x) {}
+
+		Validator.assertTrue(success,
+			"Could not format current date into format " + format + " to store it into " + varName,
+			"Stored the date in format " + format + " into " + varName + " successfully");
 	}
 
 	/**
@@ -739,8 +760,36 @@ public class StepsLibrary {
 		} catch (Exception x) {}
 
 		Validator.assertTrue(success,
-			"Could not select the picklist option with label" + label,
+			"Could not select the picklist option with label " + label,
 			"Picklist option with the label " + label + " found and selected");
+	}
+
+	/**
+	 * Step to select a salesforce-dropdown option (different from the picklist, which exists globally)
+	 * These kind of drop downs are not regular select options either, so they have to be managed differently
+	 * 
+	 * @param inputLabel The name of the property in the form where the input and dropdown resides
+	 *                     If it is mandatory, it must include the * (e.g. *Solar Stage)
+	 * @param label The label of the option to select
+	 */
+	@QAFTestStep(description = "select the dropdown option for {inputLabel} with label {label}")
+	public static void selectSalesforceDropdownOption(String inputLabel, String label) {
+		boolean success = false;
+		try {
+			String xpath = "//label[.='" + inputLabel + "']//ancestor::force-record-layout-item" +
+				"//div[contains(@class, 'slds-dropdown') and contains(@class, 'slds-is-open')]" +
+				"//lightning-base-combobox-item[.='" + label + "']";
+			QAFExtendedWebElement element = new WebDriverTestBase().getDriver().findElementByXPath(xpath);
+			element.waitForPresent();
+			element.waitForVisible();
+			element.click();
+			element.waitForNotVisible();
+			success = true;
+		} catch (Exception x) {}
+
+		Validator.assertTrue(success,
+			"Could not select the dropdown option with label " + label +  " and input " + inputLabel,
+			"Dropdown option with the label " + label + " for input " + inputLabel + " found and selected");
 	}
 
 	

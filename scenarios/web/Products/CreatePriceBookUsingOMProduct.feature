@@ -7,7 +7,7 @@ Feature: Products
 @requirementKey=QTM-RQ-23
 Scenario: Create Price Book Using OM Product
 	
-   Given ShrdLogin "${username}" "${password}"
+   Given login to salesforce with "${username}" and "${password}"
    And ShrdChangeLoggedInUser "test_o&m_manager"
    #Product name will be the one in the test data file, with added random numbers
    #to prevent duplication

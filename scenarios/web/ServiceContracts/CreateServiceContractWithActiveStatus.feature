@@ -7,7 +7,7 @@ Feature: Service Contracts
 @requirementKey=QTM-RQ-23
 Scenario: Create Service Contract with Active Status
 	
-   Given ShrdLogin "${username}" "${password}"
+   Given login to salesforce with "${username}" and "${password}"
    And ShrdChangeLoggedInUser "test_o&m_manager"
    And ShrdLaunchApp "projects"
    When wait until "common.searchAssistant.button" to be enable

@@ -7,7 +7,7 @@ Feature: Products
 @requirementKey=QTM-RQ-23
 Scenario: Create OM Product
 	
-   Given ShrdLogin "${username}" "${password}"
+   Given login to salesforce with "${username}" and "${password}"
    And ShrdChangeLoggedInUser "test_ops_center_operator"
    #Product name will be the one in the test data file, with added random numbers
    #to prevent duplication

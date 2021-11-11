@@ -7,7 +7,7 @@ Feature: Projects
 @requirementKey=QTM-RQ-23
 Scenario: Create contact and add to project
 	
-   Given ShrdLogin "${username}" "${password}"
+   Given login to salesforce with "${username}" and "${password}"
    And ShrdChangeLoggedInUser "test_ops_center_operator"
    #Project name will be 'ProjectName-1234' where 1234 is a random number
    And create a random number with 6 digits and store it in "randomNumber"

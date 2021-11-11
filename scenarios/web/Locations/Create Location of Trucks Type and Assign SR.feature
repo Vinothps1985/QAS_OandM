@@ -7,7 +7,7 @@ Feature: Cases
 @requirementKey=QTM-RQ-23
 Scenario: Create a Location of Trucks type and assign the Service Resource
 	
-   Given ShrdLogin "${username}" "${password}"
+   Given login to salesforce with "${username}" and "${password}"
    And ShrdChangeLoggedInUser "test_o&m_manager"
    And ShrdLaunchApp "locations"
 

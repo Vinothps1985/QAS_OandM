@@ -7,7 +7,7 @@ Feature: Special Projects
 @requirementKey=QTM-RQ-23
 Scenario: Create a Quote for the New Opportunity
 	
-   Given ShrdLogin "${username}" "${password}"
+   Given login to salesforce with "${username}" and "${password}"
    And ShrdChangeLoggedInUser "test_special_projects"
    And ShrdLaunchApp "opportunities"
 

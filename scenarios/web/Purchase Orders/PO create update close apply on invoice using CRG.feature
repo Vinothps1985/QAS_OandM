@@ -7,7 +7,7 @@ Feature: Purchase Orders
 @requirementKey=QTM-RQ-23
 Scenario: Verify PO creation, update, close, apply on AP Invoice using Con Req Groups
 	
-   Given ShrdLogin "${username}" "${password}"
+   Given login to salesforce with "${username}" and "${password}"
    And ShrdChangeLoggedInUser "test_po procurement"
 
    #These users use classic mode!

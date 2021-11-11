@@ -8,7 +8,7 @@ Feature: Cases
 
 Scenario: Generate case closure report with completed WO Line Items
    
-   Given ShrdLogin "${username}" "${password}"
+   Given login to salesforce with "${username}" and "${password}"
    And ShrdChangeLoggedInUser "test_ops_center_operator"
    And ShrdLaunchApp "cases"
    And ShrdCreateCase "${projectName}" "${subject}" "${caseDescription}" "${summary}" "${recordType}" "${casePriority}" "${caseOrigin}" "${reportedIssue}" "${caseCause}"

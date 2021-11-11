@@ -14,6 +14,7 @@ Scenario: Create REACTIVE case
    #Assertions
    Then assert "case.entityName" text is "Case"
    And wait until "case.priority" to be present
+   #And take a screenshot
    And take a screenshot
    And assert "case.details.caseOwner" text is "${caseOwnerName}"
    And assert "cases.quickLinks.serviceAppointments" text is "Service Appointments (0)"

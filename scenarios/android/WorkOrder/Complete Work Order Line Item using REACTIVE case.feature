@@ -2,12 +2,14 @@ Feature: WorkOrders
 
 @author:Rodrigo Montemayor
 @description:Verify the ability to complete Work Order Line Item flow via FSL using a REACTIVE case
-@workorder @positive @mobile @mobileexecutenow
+@workorder @positive @mobile
 @dataFile:resources/testdata/WorkOrder/Complete Work Order Line Item using REACTIVE case.csv
 
 Scenario: Complete Work Order Line Item using REACTIVE case
 	
    Given sendKeys "${passcode}" into "login.passcode.input"
+
+   #Temp data - to reuse from service optimization process
    And store "00290773" into "generated_caseNumber"
    And store "SA-38508" into "generated_serviceAppointment"
    And store "11/15/2021" into "nextBusinessDay"
@@ -51,69 +53,10 @@ Scenario: Complete Work Order Line Item using REACTIVE case
 
    And answer the work order line item checklist until the question "Was the asset offline?" appears
 
-   #And select option "Corrected" for form input with name "Result"
-   #And wait until "woLineItem.complete.next.button" to be enable
-   #And click on "woLineItem.complete.next.button"
-
-   #Then wait until "woLineItem.complete.takePhotos.text" to be enable
-   #And wait until "woLineItem.complete.next.button" to be enable
-   #And click on "woLineItem.complete.next.button"
-
-   #And select option "Corrected" for form input with name "Result"
-   #And wait until "woLineItem.complete.next.button" to be enable
-   #And click on "woLineItem.complete.next.button"
-
-   #And select option "Corrected" for form input with name "Result"
-   #And wait until "woLineItem.complete.next.button" to be enable
-   #And click on "woLineItem.complete.next.button"
-
-   #And select option "Corrected" for form input with name "Result"
-   #And wait until "woLineItem.complete.next.button" to be enable
-   #And click on "woLineItem.complete.next.button"
-
-   #TODO Cannot take photos. 'Functionality not available' message in emulator
-   #Then wait until "woLineItem.complete.takePhotos.text" to be enable
-   #And wait until "woLineItem.complete.next.button" to be enable
-   #And click on "woLineItem.complete.next.button"
-
-   #And select option "Corrected" for form input with name "Result"
-   #And wait until "woLineItem.complete.next.button" to be enable
-   #And click on "woLineItem.complete.next.button"
-
-   #And select option "Corrected" for form input with name "Result"
-   #And wait until "woLineItem.complete.next.button" to be enable
-   #And click on "woLineItem.complete.next.button"
-
-   #And select option "Corrected" for form input with name "Result"
-   #And wait until "woLineItem.complete.next.button" to be enable
-   #And click on "woLineItem.complete.next.button"
-
-   #Step 11
-   #Then wait until "woLineItem.complete.takePhotos.text" to be enable
-   #And wait until "woLineItem.complete.next.button" to be enable
-   #And click on "woLineItem.complete.next.button"
-
-   #Step 12? Why...
-   #And select option "Corrected" for form input with name "Result"
-   #And wait until "woLineItem.complete.next.button" to be enable
-   #And click on "woLineItem.complete.next.button"
-
-   #Step 12
-   #Then wait until "woLineItem.complete.takePhotos.text" to be enable
-   #And wait until "woLineItem.complete.next.button" to be enable
-   #And click on "woLineItem.complete.next.button"
-
-   #Step 12? Why...
-   #And select option "Corrected" for form input with name "Result"
-   #And wait until "woLineItem.complete.next.button" to be enable
-   #And click on "woLineItem.complete.next.button"
-
-   #Step 13
    And select option "No" for form input with name "Was the asset offline?"
    And wait until "woLineItem.complete.next.button" to be enable
    And click on "woLineItem.complete.next.button"
 
-   #Step 14
    And select option "Failed DC Wire" for form input with name "Fault"
    And wait until "woLineItem.complete.next.button" to be enable
    And click on "woLineItem.complete.next.button"
@@ -150,7 +93,7 @@ Scenario: Complete Work Order Line Item using REACTIVE case
    And wait until "common.actions.button" to be enable
    And take a screenshot
 
-   #Cambiarnos a web!
+   #Change to web
    Then store "resource/testdata;resources/web" into "env.resources"
    And set current platform as "web"
    Given login to salesforce with "${username}" and "${password}"
@@ -175,7 +118,7 @@ Scenario: Complete Work Order Line Item using REACTIVE case
    And assert "workOrders.details.status" text is "In Progress"
    And take a screenshot
 
-   #Cambiarnos a Android de nuevo
+   #Change to Android
    Then store "resource/testdata;resources/android" into "env.resources"
    And set current platform as "android"
    Given sendKeys "${passcode}" into "login.passcode.input"
@@ -196,12 +139,9 @@ Scenario: Complete Work Order Line Item using REACTIVE case
    And wait until "workOrder.related.workOrderLineItems.button" to be enable
    And click on "workOrder.related.workOrderLineItems.button"
 
-   #ESPECIFICO PARA EL 2DO
-
    And wait until "workOrder.related.workOrderLineItems.second" to be enable
    And click on "workOrder.related.workOrderLineItems.second"
 
-   #ESPECIFICO PARA EL 2DO
    And wait until "common.actions.button" to be enable
    And click on "common.actions.button"
 
@@ -327,7 +267,7 @@ Scenario: Complete Work Order Line Item using REACTIVE case
    And assert "timeSheetEntries.table.secondResult.link" is present
    And take a screenshot
 
-   #Cambiarnos a Android de nuevo
+   #Change to Android
    Then store "resource/testdata;resources/android" into "env.resources"
    And set current platform as "android"
    Given sendKeys "${passcode}" into "login.passcode.input"
@@ -355,10 +295,6 @@ Scenario: Complete Work Order Line Item using REACTIVE case
 
    And wait until "schedule.date.icon" to be enable
    And click on "schedule.date.icon"
-   #And wait until "schedule.datepicker.element.nov12" to be present
-   #And click on "schedule.datepicker.element.nov12"
-   #And wait until "serviceAppointments.appointments.first" to be enable
-   #And click on "serviceAppointments.appointments.first"
    And click the date "${nextBusinessDayAndroidFormat}" in the scheduler datepicker
    And wait until "serviceAppointments.appointments.first" to be enable
    And scroll until the text "${generated_serviceAppointment}" is on the screen

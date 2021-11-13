@@ -2,10 +2,12 @@ package support;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.openqa.selenium.Capabilities;
@@ -41,6 +43,9 @@ import io.appium.java_client.AppiumDriver;
   public class WebDriverListener extends QAFListenerAdapter {
 	Log logger = LogFactory.getLog(getClass());
 
+	static String executionDate = null;
+	static int mobilleXmlPageIndex = 1;
+
 	@Override
 	public void beforeCommand(QAFExtendedWebDriver driver, CommandTracker commandTracker) {
 
@@ -55,18 +60,63 @@ import io.appium.java_client.AppiumDriver;
 			commandTracker.setResponce(new Response());
 		}
 
-		if (ConfigurationManager.getBundle().getString("platform").equals("web")) {
+		if (ConfigurationManager.getBundle().getString("platform").equals("web") || "web".equals(Util.CURRENT_PLATFORM)) {
 			if (command.equalsIgnoreCase(DriverCommand.CLICK_ELEMENT)) {
 				System.out.println("BEFORE CLICK!");
 				// NO CLICK
 				commandTracker.setResponce(new Response());
 			}
-		}
-		
-		if (Util.DEBUG) {
+		} else if (Util.DEBUG) {
 			String source = getDriver().getPageSource();
-			System.out.println("SOURCEX");
-			System.out.println(source);
+			if (Util.MOBILE_HELPER_XML_DIRECTORY != null) {
+				try {
+					//Directory for this execution already exists?
+					if (executionDate == null) {
+						createMobileXmlDirectory();
+					}
+
+					createFileIfXmlDoesntExist(source);
+				} catch (Exception x) {
+					logger.error(x.getMessage(), x);
+				}
+			} else {
+				System.out.println("= = BEGIN SOURCE = =");
+				System.out.println(source);
+				System.out.println("= = END SOURCE = =");
+			}
+		}
+	}
+
+	public synchronized void createMobileXmlDirectory() {
+		//Directory for this execution already exists?
+		if (executionDate == null) {
+			executionDate = new SimpleDateFormat("yyyyMMdd-HHmmss").format(new Date());
+			File dir = new File(Util.MOBILE_HELPER_XML_DIRECTORY + executionDate);
+			if (!dir.exists()) {
+				dir.mkdir();
+			}
+		}
+	}
+
+	public synchronized void createFileIfXmlDoesntExist(String source) throws Exception {
+		//If a file with similar content is not found, create it
+		File dir = new File(Util.MOBILE_HELPER_XML_DIRECTORY + executionDate);
+
+		File[] existingFiles = dir.listFiles();
+		boolean found = false;
+		for (File f : existingFiles) {
+			if (f.isFile()) {
+				String fileContents = FileUtils.readFileToString(f, "utf-8");
+				if (fileContents.equals(source)) {
+					found = true;
+					break;
+				}
+			}
+		}
+		if (!found) {
+			File f = new File(Util.MOBILE_HELPER_XML_DIRECTORY + executionDate + "/" + (mobilleXmlPageIndex++) + ".xml");
+			FileUtils.writeStringToFile(f, source, "utf-8");
+			logger.info("Created file " + f.getAbsolutePath());
 		}
 	}
 
@@ -172,7 +222,7 @@ import io.appium.java_client.AppiumDriver;
 
 	@Override
 	public void beforeCommand(QAFExtendedWebElement element, CommandTracker commandTracker) {
-		if (ConfigurationManager.getBundle().getString("platform").equals("web")) {
+		if (ConfigurationManager.getBundle().getString("platform").equals("web") || "web".equals(Util.CURRENT_PLATFORM)) {
 		    
 			waitForPageToLoad(element.getWrappedDriver(), commandTracker.getCommand());
 			if (commandTracker.getCommand().equalsIgnoreCase(DriverCommand.CLICK_ELEMENT)) {
@@ -279,6 +329,11 @@ import io.appium.java_client.AppiumDriver;
 		logger.info("Email host: " + Util.EMAIL_HOST);
 		logger.info("Email username: " + Util.EMAIL_USERNAME);
 
+		if (Util.DEBUG) {
+			String mobileHelperXmlDirectory = prop.getPropertyValue("mobile.helper.xml.directory");
+			Util.MOBILE_HELPER_XML_DIRECTORY = mobileHelperXmlDirectory;
+		}
+
 		logger.info("support.WebDriverListener.beforeInitialize(): Configuring...");
 		java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("yyyy-MM-dd_HHmmss");
 		Util.DOWNLOADS_FOLDER = downloadsFolderBase + sdf.format(new java.util.Date());
@@ -323,7 +378,7 @@ import io.appium.java_client.AppiumDriver;
 		// chromeOptions.addArguments("--allow-running-insecure-content");
 		// chromeOptions.addArguments("--force-fieldtrials=SiteIsolationExtensions/Control");
 		// chromeOptions.addArguments("--ignore-certificate-errors");
-		if (ConfigurationManager.getBundle().getString("platform").equals("web")) {
+		if (ConfigurationManager.getBundle().getString("platform").equals("web") || "web".equals(Util.CURRENT_PLATFORM)) {
 		    capabilities.setCapability("chromeOptions", chromeOptions);
 		}
 

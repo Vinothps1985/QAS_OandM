@@ -367,48 +367,6 @@ public class StepsLibrary {
 			x.printStackTrace();
 		}
 	}
-	
-	@QAFTestStep(description="take a screenshot")
-	public static void takeAScreenshot() {
-		//TestBaseProvider.instance().get().takeScreenShot();
-		Reporter.logWithScreenShot("take a screenshot");
-	}
-
-	@QAFTestStep(description="scroll until {0} is visible")
-	public static void scrollUntilVisible(String locator) {
-		try {
-			logger.info("Scrolling until " + locator + " is visible");
-			if ($(locator).isPresent()) {
-				logger.info("Scrolling mode 1");
-				((JavascriptExecutor)new WebDriverTestBase().getDriver())
-							.executeScript("arguments[0].scrollIntoView({block: 'center'});", $(locator));
-			} else {
-				logger.info("Scrolling mode 2");			
-				
-				int maxScrolls = 10;
-				int scrolls = 1;
-				while (scrolls <= maxScrolls) {
-					StringBuilder javascript = new StringBuilder();
-					javascript.append("var automation_scrollingElement = (document.scrollingElement || document.body);");
-					javascript.append("var automation_scrollHeight = automation_scrollingElement.scrollHeight;");
-					javascript.append("automation_scrollingElement.scrollTop = (300*"+scrolls + ");");
-					((JavascriptExecutor)new WebDriverTestBase().getDriver()).executeScript(javascript.toString());
-					Thread.sleep(500);
-					if ($(locator).isPresent()) {
-						logger.info("Scrolling mode 2: found");
-						((JavascriptExecutor)new WebDriverTestBase().getDriver())
-									.executeScript("arguments[0].scrollIntoView({block: 'center'});", $(locator));
-						break;
-					}
-					scrolls++;
-				}
-			}
-			Thread.sleep(500);
-		} catch (Exception x) {
-			//?
-			x.printStackTrace();
-		}
-	}
 
 	/**
 	 * 
@@ -708,20 +666,6 @@ public class StepsLibrary {
 	@QAFTestStep(description = "wait until {loc} for a max of {sec} seconds to be visible")
 	public static void waitForVisibleFoxMaxSeconds(String loc, long sec) {
 		$(loc).waitForVisible(sec * 1000);
-	}
-
-	@QAFTestStep(description = "format date {originDate} from {originFormat} to {destFormat} into {destVar}")
-	public static void formatDateFromVarToVarWithFormats(String originDate, String originFormat, String destFormat, String destVar) {
-		boolean success = false;
-		try {
-			Date date = new java.text.SimpleDateFormat(originFormat).parse(originDate);
-			CommonStep.store(new java.text.SimpleDateFormat(destFormat).format(date), destVar);
-			success = true;
-		} catch (Exception x) {}
-
-		Validator.assertTrue(success,
-			"Could not format date " + originDate + " with format " + originFormat + " to convert to format " + destFormat,
-			"Date " + originDate + " with format " + originFormat + " converted successfully to format " + destFormat);
 	}
 
 	@QAFTestStep(description = "store the current date in format {format} into {varName}")

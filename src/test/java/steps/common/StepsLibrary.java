@@ -10,13 +10,17 @@ import com.qmetry.qaf.automation.step.CommonStep;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.Keys;
+import support.Util;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Set;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import com.qmetry.qaf.automation.util.PropertyUtil;
+import com.qmetry.qaf.automation.util.Reporter;
 import com.qmetry.qaf.automation.util.Validator;
 import com.qmetry.qaf.automation.ui.webdriver.QAFExtendedWebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -28,6 +32,8 @@ import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.Base64;
+import java.util.Calendar;
+import java.util.Date;
 // define common steps among all the platforms.
 // You can create sub packages to organize the steps within different modules
 public class StepsLibrary {
@@ -324,6 +330,99 @@ public class StepsLibrary {
 			$(loc).waitForEnabled(milisec);
 			$(loc).click();
 		} catch (Exception ex) {}
+	}
+	
+	@QAFTestStep(description="take a screenshot")
+	public static void takeAScreenshot() {
+		//TestBaseProvider.instance().get().takeScreenShot();
+		Reporter.logWithScreenShot("take a screenshot");
+	}
+
+	@QAFTestStep(description="set current platform as {platform}")
+	public static void setCurrentPlatformAs(String platform) {
+		Util.CURRENT_PLATFORM = platform;
+	}
+
+	@QAFTestStep(description="store next business day into {varName} in format {format}")
+	public static void storeNextBusinessDayInto(String varName, String format) {
+		boolean success = false;
+		String value = null;
+
+		try {
+			SimpleDateFormat sdf = new SimpleDateFormat(format);
+			
+			Calendar c = Calendar.getInstance();
+			//c.setTime(d);
+			c.add(Calendar.DATE, 1);
+			while (c.get(Calendar.DAY_OF_WEEK) == Calendar.SATURDAY || c.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY) {
+				c.add(Calendar.DATE, 1);
+			}
+
+			value = sdf.format(c.getTime());
+
+			CommonStep.store(value, varName);
+			success = true;
+		} catch (Exception x) {
+			x.printStackTrace();
+		}
+		Validator.assertTrue(success,
+			"Could not store next business day into " + varName + " with format " + format,
+			"Next business day was stored in " + varName + " with value " + value);
+	}
+
+	@QAFTestStep(description = "format date {originDate} from {originFormat} to {destFormat} into {destVar}")
+	public static void formatDateFromVarToVarWithFormats(String originDate, String originFormat, String destFormat, String destVar) {
+		boolean success = false;
+		try {
+			Date date = new java.text.SimpleDateFormat(originFormat, Locale.ENGLISH).parse(originDate);
+			CommonStep.store(new java.text.SimpleDateFormat(destFormat, Locale.ENGLISH).format(date), destVar);
+			success = true;
+		} catch (Exception x) {}
+
+		Validator.assertTrue(success,
+			"Could not format date " + originDate + " with format " + originFormat + " to convert to format " + destFormat,
+			"Date " + originDate + " with format " + originFormat + " converted successfully to format " + destFormat);
+	}
+
+	/**
+	 * Intended for web. Needs to be here for the multi-platform tests
+	 * 
+	 * @param locator
+	 */
+	@QAFTestStep(description="scroll until {0} is visible")
+	public static void scrollUntilVisible(String locator) {
+		try {
+			//logger.info("Scrolling until " + locator + " is visible");
+			if ($(locator).isPresent()) {
+				//logger.info("Scrolling mode 1");
+				((JavascriptExecutor)new WebDriverTestBase().getDriver())
+							.executeScript("arguments[0].scrollIntoView({block: 'center'});", $(locator));
+			} else {
+				//logger.info("Scrolling mode 2");			
+				
+				int maxScrolls = 10;
+				int scrolls = 1;
+				while (scrolls <= maxScrolls) {
+					StringBuilder javascript = new StringBuilder();
+					javascript.append("var automation_scrollingElement = (document.scrollingElement || document.body);");
+					javascript.append("var automation_scrollHeight = automation_scrollingElement.scrollHeight;");
+					javascript.append("automation_scrollingElement.scrollTop = (300*"+scrolls + ");");
+					((JavascriptExecutor)new WebDriverTestBase().getDriver()).executeScript(javascript.toString());
+					Thread.sleep(500);
+					if ($(locator).isPresent()) {
+						//logger.info("Scrolling mode 2: found");
+						((JavascriptExecutor)new WebDriverTestBase().getDriver())
+									.executeScript("arguments[0].scrollIntoView({block: 'center'});", $(locator));
+						break;
+					}
+					scrolls++;
+				}
+			}
+			Thread.sleep(500);
+		} catch (Exception x) {
+			//?
+			x.printStackTrace();
+		}
 	}
 
 }

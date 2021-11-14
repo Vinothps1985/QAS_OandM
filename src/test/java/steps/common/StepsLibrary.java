@@ -3,6 +3,9 @@ package steps.common;
 import static com.qmetry.qaf.automation.ui.webdriver.ElementFactory.$;
 
 import com.qmetry.qaf.automation.core.ConfigurationManager;
+
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileBy;
 import com.qmetry.qaf.automation.step.QAFTestStep;
 import com.qmetry.qaf.automation.ui.WebDriverTestBase;
 import com.qmetry.qaf.automation.ui.webdriver.QAFWebElement;
@@ -27,6 +30,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Alert;
 import java.util.NoSuchElementException;
+import java.util.Random;
+
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -385,44 +390,96 @@ public class StepsLibrary {
 	}
 
 	/**
-	 * Intended for web. Needs to be here for the multi-platform tests
-	 * 
+	 * Defaults to 10 scrolls. Use "for up to {maxScrolls} scrolls" to specify max scroll number
 	 * @param locator
 	 */
 	@QAFTestStep(description="scroll until {0} is visible")
 	public static void scrollUntilVisible(String locator) {
+		scrollUntilVisibleWithMaxScrolls(locator, 15);
+	}
+
+	/**
+	 * @param locator
+	 */
+	@SuppressWarnings({"rawtypes"})
+	@QAFTestStep(description="scroll until {0} is visible for up to {maxScrolls} scrolls")
+	public static void scrollUntilVisibleWithMaxScrolls(String locator, long maxScrolls) {
 		try {
-			//logger.info("Scrolling until " + locator + " is visible");
-			if ($(locator).isPresent()) {
-				//logger.info("Scrolling mode 1");
-				((JavascriptExecutor)new WebDriverTestBase().getDriver())
-							.executeScript("arguments[0].scrollIntoView({block: 'center'});", $(locator));
-			} else {
-				//logger.info("Scrolling mode 2");			
-				
-				int maxScrolls = 10;
-				int scrolls = 1;
-				while (scrolls <= maxScrolls) {
-					StringBuilder javascript = new StringBuilder();
-					javascript.append("var automation_scrollingElement = (document.scrollingElement || document.body);");
-					javascript.append("var automation_scrollHeight = automation_scrollingElement.scrollHeight;");
-					javascript.append("automation_scrollingElement.scrollTop = (300*"+scrolls + ");");
-					((JavascriptExecutor)new WebDriverTestBase().getDriver()).executeScript(javascript.toString());
-					Thread.sleep(500);
-					if ($(locator).isPresent()) {
-						//logger.info("Scrolling mode 2: found");
-						((JavascriptExecutor)new WebDriverTestBase().getDriver())
-									.executeScript("arguments[0].scrollIntoView({block: 'center'});", $(locator));
-						break;
+			if (ConfigurationManager.getBundle().getString("platform").equals("web") || "web".equals(Util.CURRENT_PLATFORM)) {
+				//logger.info("Scrolling until " + locator + " is visible");
+				if ($(locator).isPresent()) {
+					//logger.info("Scrolling mode 1");
+					((JavascriptExecutor)new WebDriverTestBase().getDriver())
+								.executeScript("arguments[0].scrollIntoView({block: 'center'});", $(locator));
+				} else {
+					//logger.info("Scrolling mode 2");			
+					
+					int scrolls = 1;
+					while (scrolls <= maxScrolls) {
+						StringBuilder javascript = new StringBuilder();
+						javascript.append("var automation_scrollingElement = (document.scrollingElement || document.body);");
+						javascript.append("var automation_scrollHeight = automation_scrollingElement.scrollHeight;");
+						javascript.append("automation_scrollingElement.scrollTop = (300*"+scrolls + ");");
+						((JavascriptExecutor)new WebDriverTestBase().getDriver()).executeScript(javascript.toString());
+						Thread.sleep(500);
+						if ($(locator).isPresent()) {
+							//logger.info("Scrolling mode 2: found");
+							((JavascriptExecutor)new WebDriverTestBase().getDriver())
+										.executeScript("arguments[0].scrollIntoView({block: 'center'});", $(locator));
+							break;
+						}
+						scrolls++;
 					}
+				}
+				Thread.sleep(500);
+			} else {
+				//Mobile!
+				int scrolls = 0;
+				boolean found = false;
+				while (scrolls < maxScrolls) {
+					AppiumDriver driver = (AppiumDriver) new WebDriverTestBase().getDriver().getUnderLayingDriver();
+
+					try {
+						if ($(locator) != null && $(locator).isPresent() && $(locator).isEnabled()) {
+							found = true;
+							break;
+						}
+					} catch (Exception x) {}
+
+					//Not found. Scroll
+					driver.findElement(MobileBy.AndroidUIAutomator(
+					"new UiScrollable(new UiSelector().scrollable(true))" +
+					".setSwipeDeadZonePercentage(.3).scrollForward(50)"));
+			
 					scrolls++;
 				}
+
+				Validator.assertTrue(found,
+				    "Element with locator " + locator + " was not found while scrolling",
+				    "Element with locator " + locator + " found while scrolling");
 			}
-			Thread.sleep(500);
 		} catch (Exception x) {
 			//?
 			x.printStackTrace();
 		}
+	}
+
+	@QAFTestStep(description = "create a random number with {digits} digits and store it in {varName}")
+	public static void createRandomNumber(int digits, String varName) {
+
+		int num = (int) Math.pow(10, digits - 1);
+		String randomNumber = String.valueOf(num + new Random().nextInt(9 * num));
+	
+		CommonStep.store(randomNumber, varName);
+	}
+
+	
+
+	@QAFTestStep(description="store the current url in {variableName}")
+	public static void saveTheCurrentUrl(String variableName) {
+		String url = new WebDriverTestBase().getDriver().getCurrentUrl();
+		//logger.info("Storing URL " + url + " in variable named " + variableName);
+		CommonStep.store(url, variableName);
 	}
 
 }

@@ -396,13 +396,6 @@ public class StepsLibrary {
 		}
 	}
 
-	@QAFTestStep(description="store the current url in {variableName}")
-	public static void saveTheCurrentUrl(String variableName) {
-		String url = new WebDriverTestBase().getDriver().getCurrentUrl();
-		logger.info("Storing URL " + url + " in variable named " + variableName);
-		CommonStep.store(url, variableName);
-	}
-
 	@QAFTestStep(description="store the current time in {variableName}")
 	public static void saveTheCurrentTime(String variableName) {
 		String time = String.valueOf(new Date().getTime());
@@ -513,15 +506,6 @@ public class StepsLibrary {
 		Validator.assertTrue(element != null && element.isPresent() && element.isEnabled(),
 			"Could not find a row on table " + tableLoc + " where " + val1 + " = " + val2,
 			"Found a row on table " + tableLoc + " where " + val1 + " = " + val2);
-	}
-
-	@QAFTestStep(description = "create a random number with {digits} digits and store it in {varName}")
-	public static void createRandomNumber(int digits, String varName) {
-
-		int num = (int) Math.pow(10, digits - 1);
-		String randomNumber = String.valueOf(num + new Random().nextInt(9 * num));
-	
-		CommonStep.store(randomNumber, varName);
 	}
 
 	@QAFTestStep(description = "click on {loc} if {loc2} appears within {secs} seconds")

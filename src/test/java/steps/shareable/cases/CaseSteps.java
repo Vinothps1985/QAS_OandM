@@ -258,7 +258,7 @@ public class CaseSteps extends WebDriverTestCase {
 				
 				//Have to scroll to find the button
 				steps.web.StepsLibrary.waitForPageToFinishLoading();
-				steps.web.StepsLibrary.scrollUntilVisible("woLineItems.details.comments.edit.button");
+				steps.common.StepsLibrary.scrollUntilVisible("woLineItems.details.comments.edit.button");
 				//$("woLineItems.details.comments.edit.button").waitFort();
 				//Now inside the Service Appointment
 				$("woLineItems.details.comments.edit.button").click();

@@ -1,5 +1,9 @@
 package steps.android;
 
+import org.openqa.selenium.Dimension;
+import java.time.Duration;
+import io.appium.java_client.touch.WaitOptions;
+import io.appium.java_client.touch.offset.PointOption;
 import java.util.List;
 import com.qmetry.qaf.automation.ui.webdriver.QAFWebElement;
 import java.util.Set;
@@ -16,9 +20,11 @@ import com.qmetry.qaf.automation.ui.WebDriverTestBase;
 import com.qmetry.qaf.automation.util.Validator;
 
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.touch.offset.ElementOption;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.TouchAction;
 
 import static com.qmetry.qaf.automation.ui.webdriver.ElementFactory.$;
 import steps.common.*;
@@ -309,5 +315,44 @@ public class StepsLibrary {
 		Validator.assertTrue(success,
 			"Could not select option " + option + " for form input with name " + name,
 			"Successfully selected option " + option + " for form input with name " + name);
+	}
+
+	@QAFTestStep(description = "scroll refresh for up to {secs} seconds until {locator} is present")
+	@SuppressWarnings({"rawtypes"})
+	public static void scrollRefreshForSecondsUntilPresent(int secs, String loc) {
+		boolean success = false;
+		try {
+			int maxAttempts = secs/10; //we scroll each 10 secs
+			int attempts = 0;
+			while (attempts < maxAttempts) {
+				try {
+					Dimension dims = getDriver().manage().window().getSize();
+					//init start point = center of screen
+					PointOption pointOptionStart = PointOption.point(dims.width / 2, dims.height / 2);
+					//scroll down (pull to refresh)
+					PointOption pointOptionEnd = PointOption.point(dims.width / 2, (dims.height / 2) + (dims.height / 2));
+
+					new TouchAction(getDriver())
+						.press(pointOptionStart)
+						.waitAction(WaitOptions.waitOptions(Duration.ofMillis(500)))
+						.moveTo(pointOptionEnd)
+						.release().perform();
+
+					if ($(loc).isPresent() && $(loc).isDisplayed() && $(loc).isEnabled()) {
+						success = true;
+						break;
+					}
+				} catch (Exception x) {}
+		
+				attempts++;
+				Thread.sleep(10000);
+			}
+		} catch (Exception x) {
+			logger.error(x.getMessage(), x);
+		}
+
+		Validator.verifyTrue(success,
+				"Could not find element " + loc + " after refreshing for " + secs + " seconds",
+				"Element " + loc + " found successfully after refreshing");
 	}
 }

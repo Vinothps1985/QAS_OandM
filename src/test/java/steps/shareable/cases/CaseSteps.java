@@ -25,6 +25,7 @@ import java.util.List;
 import java.util.Map;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import steps.common.*;
+import steps.shareable.ShrdCreateCase;
 import steps.shareable.ShrdLaunchApp;
 
 public class CaseSteps extends WebDriverTestCase {
@@ -451,5 +452,15 @@ public class CaseSteps extends WebDriverTestCase {
 		} catch (Exception x) {
 			return false;
 		}
+	}
+
+
+	@QAFTestStep(description = "create a case with data {projectName} {subject} {caseDescription} {summary} {recordType} {casePriority} {caseOrigin} {reprtedIssue} {caseCause}")
+	public void createCaseWithData(Object projectName, Object subject, Object caseDescription, Object summary,
+	    Object recordType, Object casePriority,Object caseOrigin,Object reportedIssue,Object caseCause) {
+
+		ShrdCreateCase create = new ShrdCreateCase();
+		create.customShrdCreateCase(projectName, subject, caseDescription, summary,
+		    recordType, casePriority, caseOrigin, reportedIssue, caseCause);
 	}
 }

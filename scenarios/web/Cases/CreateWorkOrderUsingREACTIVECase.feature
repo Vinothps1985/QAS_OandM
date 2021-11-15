@@ -8,11 +8,12 @@ Feature: Cases
 Scenario: Create Work Order using REACTIVE case
 	
    Given login to salesforce with "${username}" and "${password}"
-   And ShrdChangeLoggedInUser "test_ops_center_operator"
-   And ShrdLaunchApp "cases"
-   And ShrdCreateCase "${projectName}" "${subject}" "${caseDescription}" "${summary}" "${recordType}" "${casePriority}" "${caseOrigin}" "${reportedIssue}" "${caseCause}"
+   And change logged in user to "test_ops_center_operator"
+   Then close all open web tabs
+   And launch salesforce app "cases"
+   And create a case with data "${projectName}" "${subject}" "${caseDescription}" "${summary}" "${recordType}" "${casePriority}" "${caseOrigin}" "${reportedIssue}" "${caseCause}"
    And take a screenshot
-   And ShrdCreateWorkOrder "${generated_caseNumber}" "${assetType1}" "${assetType2}"
+   And create a work order with data "${generated_caseNumber}" "${assetType1}" "${assetType2}"
    And take a screenshot
 
    #Confirm and screenshot work order lines created

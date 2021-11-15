@@ -8,10 +8,12 @@ Feature: Projects
 Scenario: Create project for OM Opportunity
 	
    Given login to salesforce with "${username}" and "${password}"
-   And ShrdChangeLoggedInUser "test_ops_center_operator"
-   #Project name will be 'ProjectName-1234' where 1234 is a random number
-   And create a random number with 4 digits and store it in "randomNumber"
-   And ShrdCreateProject "${opportunityName}" "ProjectName-${randomNumber}" "${epcSite}" "${watts}"
+   And change logged in user to "test_ops_center_operator"
+   Then close all open web tabs
+   #Append a random 6 digit number to the project name
+   #Final project name will be 'ProjectName-123456' where 123456 is the random number
+   And create a random number with 6 digits and store it in "randomNumber"
+   And create a project with data "${opportunityName}" "ProjectName-${randomNumber}" "${epcSite}" "${watts}"
    
    Then assert "projects.details.projectName" text is "${generated_projectName}"
    And take a screenshot

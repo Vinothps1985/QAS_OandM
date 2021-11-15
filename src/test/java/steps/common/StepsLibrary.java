@@ -6,6 +6,9 @@ import com.qmetry.qaf.automation.core.ConfigurationManager;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileBy;
+import steps.shareable.ShrdChangeLoggedInUser;
+import steps.shareable.ShrdLaunchApp;
+
 import com.qmetry.qaf.automation.step.QAFTestStep;
 import com.qmetry.qaf.automation.ui.WebDriverTestBase;
 import com.qmetry.qaf.automation.ui.webdriver.QAFWebElement;
@@ -20,6 +23,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Set;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import com.qmetry.qaf.automation.util.PropertyUtil;
@@ -42,6 +48,9 @@ import java.util.Date;
 // define common steps among all the platforms.
 // You can create sub packages to organize the steps within different modules
 public class StepsLibrary {
+
+	private static Log logger = LogFactory.getLog(StepsLibrary.class);
+	
 		private static String getJsDndHelper() {
 		return "function simulateDragDrop(sourceNode, destinationNode) {\r\n" +
 				"		    var EVENT_TYPES = {\r\n" +
@@ -406,15 +415,11 @@ public class StepsLibrary {
 	public static void scrollUntilVisibleWithMaxScrolls(String locator, long maxScrolls) {
 		try {
 			if (ConfigurationManager.getBundle().getString("platform").equals("web") || "web".equals(Util.CURRENT_PLATFORM)) {
-				//logger.info("Scrolling until " + locator + " is visible");
 				if ($(locator).isPresent()) {
-					//logger.info("Scrolling mode 1");
 					((JavascriptExecutor)new WebDriverTestBase().getDriver())
 								.executeScript("arguments[0].scrollIntoView({block: 'center'});", $(locator));
-				} else {
-					//logger.info("Scrolling mode 2");			
-					
-					int scrolls = 1;
+				} else {					
+					int scrolls = 0;
 					while (scrolls <= maxScrolls) {
 						StringBuilder javascript = new StringBuilder();
 						javascript.append("var automation_scrollingElement = (document.scrollingElement || document.body);");
@@ -423,7 +428,6 @@ public class StepsLibrary {
 						((JavascriptExecutor)new WebDriverTestBase().getDriver()).executeScript(javascript.toString());
 						Thread.sleep(500);
 						if ($(locator).isPresent()) {
-							//logger.info("Scrolling mode 2: found");
 							((JavascriptExecutor)new WebDriverTestBase().getDriver())
 										.executeScript("arguments[0].scrollIntoView({block: 'center'});", $(locator));
 							break;
@@ -473,13 +477,62 @@ public class StepsLibrary {
 		CommonStep.store(randomNumber, varName);
 	}
 
-	
-
 	@QAFTestStep(description="store the current url in {variableName}")
 	public static void saveTheCurrentUrl(String variableName) {
 		String url = new WebDriverTestBase().getDriver().getCurrentUrl();
 		//logger.info("Storing URL " + url + " in variable named " + variableName);
 		CommonStep.store(url, variableName);
+	}
+
+	@QAFTestStep(description="close all open web tabs")
+	public static void closeAllOpenWebTabs() {
+		boolean success = false;
+		try {
+			int maxAttempts = 50;
+			for (int attempt = 0; attempt < maxAttempts; attempt++) {
+				try {
+					steps.web.StepsLibrary.waitForPageToFinishLoading();
+
+					//Close all top tabs, if any exist
+					String closeButtonXPath = "//div[contains(@class, 'tabsetHeader ')]" +
+						"//button[contains(@class, 'slds-button_icon-x-small') and contains(@title, 'Close')]";
+						
+					QAFExtendedWebElement element = null;
+					try {
+						element = new WebDriverTestBase().getDriver().findElementByXPath(closeButtonXPath);
+					} catch (Exception x) {
+						success = true; //Not found anymore :)
+						break;
+					}
+
+					if (element != null && element.isPresent() && element.isEnabled()) {
+						element.click();
+					} else {
+						success = true;
+						break;
+					}
+					Thread.sleep(500);
+				} catch (Exception x) {}
+			}
+		} catch (Exception x) {
+			logger.error(x.getMessage(), x);
+		}
+
+		Validator.assertTrue(success,
+			"Could not close all open web tabs",
+			"Open web tabs have been closed");
+	}
+
+	@QAFTestStep(description = "launch salesforce app {0}")
+	public void launchSalesforceApp(Object appName) {
+		ShrdLaunchApp launch = new ShrdLaunchApp();
+		launch.customShrdLaunchApp(appName);
+	}
+
+	@QAFTestStep(description = "change logged in user to {0}")
+	public void changeLoggedInUserTo(Object userToSet) {
+		ShrdChangeLoggedInUser change = new ShrdChangeLoggedInUser();
+		change.customShrdChangeLoggedInUser(userToSet);
 	}
 
 }

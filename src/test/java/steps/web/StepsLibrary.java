@@ -730,15 +730,22 @@ public class StepsLibrary {
 	public static void selectSalesforceDropdownOption(String inputLabel, String label) {
 		boolean success = false;
 		try {
-			String xpath = "//label[.='" + inputLabel + "']//ancestor::force-record-layout-item" +
-				"//div[contains(@class, 'slds-dropdown') and contains(@class, 'slds-is-open')]" +
-				"//lightning-base-combobox-item[.='" + label + "']";
-			QAFExtendedWebElement element = new WebDriverTestBase().getDriver().findElementByXPath(xpath);
-			element.waitForPresent();
-			element.waitForVisible();
-			element.click();
-			element.waitForNotVisible();
-			success = true;
+			int maxAttempts = 5;
+			for (int attempt = 0; attempt < maxAttempts; attempt++) {
+				try {
+					String xpath = "//label[.='" + inputLabel + "']//ancestor::force-record-layout-item" +
+						"//div[contains(@class, 'slds-dropdown') and contains(@class, 'slds-is-open')]" +
+						"//lightning-base-combobox-item[.='" + label + "']";
+					QAFExtendedWebElement element = new WebDriverTestBase().getDriver().findElementByXPath(xpath);
+					element.waitForPresent();
+					element.waitForVisible();
+					element.click();
+					element.waitForNotVisible();
+					success = true;
+					break;
+				} catch (Exception x) {}
+				Thread.sleep(2000);
+			}
 		} catch (Exception x) {}
 
 		Validator.assertTrue(success,

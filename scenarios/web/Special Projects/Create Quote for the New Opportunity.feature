@@ -9,6 +9,7 @@ Scenario: Create a Quote for the New Opportunity
 	
    Given login to salesforce with "${username}" and "${password}"
    And change logged in user to "test_special_projects"
+   And close all open web tabs
    And launch salesforce app "opportunities"
 
    Then wait until "opportunities.new.button" to be enable

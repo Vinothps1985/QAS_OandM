@@ -8,8 +8,8 @@ Feature: Special Projects
 Scenario: Create a Quote for the New Opportunity
 	
    Given login to salesforce with "${username}" and "${password}"
-   And ShrdChangeLoggedInUser "test_special_projects"
-   And ShrdLaunchApp "opportunities"
+   And change logged in user to "test_special_projects"
+   And launch salesforce app "opportunities"
 
    Then wait until "opportunities.new.button" to be enable
    And click on "opportunities.new.button"

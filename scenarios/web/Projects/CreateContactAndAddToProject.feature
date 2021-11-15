@@ -41,8 +41,8 @@ Scenario: Create contact and add to project
    #If duplicate error appears, then click on save again (doesn't always appear, may appear because of similar last names)
    And click on "contacts.createContact.popup.save.button" if "contacts.createContact.popup.similarRecordsDialog.close.button" appears within 10 seconds
 
-   Then wait until "common.toastContainer.link" to be present
-   And click on "common.toastContainer.link"
+   #Then wait until "common.toastContainer.link" to be present
+   #And click on "common.toastContainer.link"
 
    Then wait until "contacts.details.name" to be present
    And wait until "contacts.details.name" to be visible

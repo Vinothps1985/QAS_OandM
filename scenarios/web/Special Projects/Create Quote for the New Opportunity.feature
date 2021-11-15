@@ -152,6 +152,7 @@ Scenario: Create a Quote for the New Opportunity
    Then click on "quotes.createQuote.popup.laborBilling.input"
    And select the dropdown option for "Labor Billing" with label "${quoteLaborBilling}"
 
+   Then scroll until "quotes.createQuote.popup.pmBilling.input" is visible
    Then click on "quotes.createQuote.popup.pmBilling.input"
    And select the dropdown option for "P&M Billing" with label "${quotePmBilling}"
 

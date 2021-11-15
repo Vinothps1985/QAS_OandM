@@ -8,15 +8,15 @@ Feature: Quotes
 Scenario: Create and approve quote for REACTIVE case
 	
    Given login to salesforce with "${username}" and "${password}"
-   And ShrdChangeLoggedInUser "test_ops_center_operator"
-   And ShrdLaunchApp "cases"
-   And ShrdCreateCase "${projectName}" "${subject}" "${caseDescription}" "${summary}" "${recordType}" "${casePriority}" "${caseOrigin}" "${reportedIssue}" "${caseCause}"
+   And change logged in user to "test_ops_center_operator"
+   And launch salesforce app "cases"
+   And create a case with data "${projectName}" "${subject}" "${caseDescription}" "${summary}" "${recordType}" "${casePriority}" "${caseOrigin}" "${reportedIssue}" "${caseCause}"
    And take a screenshot
-   And ShrdCreateWorkOrder "${generated_caseNumber}" "${assetType1}" "${assetType2}"
+   And create a work order with data "${generated_caseNumber}" "${assetType1}" "${assetType2}"
    And take a screenshot
    
    And wait for the page to finish loading
-   And ShrdChangeLoggedInUser "test_o&M_manager"
+   And change logged in user to "test_o&M_manager"
    And wait for the page to finish loading
 
    And ShrdCreateQuoteWithLines "${generated_caseNumber}" "${salesRep}" "${primaryContact}" "${specialNotes}" "${laborBilling}" "${pmBilling}" "${costCode1}" "${costCode2}" "${notes1}" "${notes2}" "${vendor1}" "${vendor2}" "${vendorContact1}" "${vendorContact2}"

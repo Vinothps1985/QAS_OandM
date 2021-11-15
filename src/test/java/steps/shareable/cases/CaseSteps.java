@@ -95,6 +95,14 @@ public class CaseSteps extends WebDriverTestCase {
 				
 				$("serviceAppointments.details.status.edit.button").waitForPresent();
 				//Now inside the Service Appointment
+
+				//Reload the page to avoid modified errors
+				steps.common.StepsLibrary.executeJavaScript("window.location.reload();");
+				steps.web.StepsLibrary.waitForPageToFinishLoading();
+				$("serviceAppointments.details.status.edit.button").waitForPresent();
+				$("serviceAppointments.details.status.edit.button").waitForEnabled();
+
+				//Now inside the Service Appointment again
 				$("serviceAppointments.details.status.edit.button").click();
 
 				$("serviceAppointments.details.edit.status.select").waitForEnabled();

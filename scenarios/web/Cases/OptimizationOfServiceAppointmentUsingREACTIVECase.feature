@@ -8,10 +8,11 @@ Feature: Cases
 Scenario: Optimization of service appointment using REACTIVE case
 	
    Given login to salesforce with "${username}" and "${password}"
-   And ShrdChangeLoggedInUser "test_ops_center_operator"
-   And ShrdLaunchApp "cases"
-   And ShrdCreateCase "${projectName}" "${subject}" "${caseDescription}" "${summary}" "${recordType}" "${casePriority}" "${caseOrigin}" "${reportedIssue}" "${caseCause}"
-   And ShrdCreateWorkOrder "${generated_caseNumber}" "${assetType1}" "${assetType2}"
+   And change logged in user to "test_ops_center_operator"
+   Then close all open web tabs
+   And launch salesforce app "cases"
+   And create a case with data "${projectName}" "${subject}" "${caseDescription}" "${summary}" "${recordType}" "${casePriority}" "${caseOrigin}" "${reportedIssue}" "${caseCause}"
+   And create a work order with data "${generated_caseNumber}" "${assetType1}" "${assetType2}"
 
    And take a screenshot
 
@@ -33,7 +34,7 @@ Scenario: Optimization of service appointment using REACTIVE case
    #Refresh and verify status of service appointment
    Then Execute Java Script with data "window.location.reload();"
    
-   #Go to service appointments to get the SA number and check status is None
+   ##Go to service appointments to get the SA number and check status is None
    And wait until "cases.quickLinks.serviceAppointments" to be present
    And click on "cases.quickLinks.serviceAppointments"
    And wait until "serviceAppointments.table.first.link" to be present
@@ -46,7 +47,7 @@ Scenario: Optimization of service appointment using REACTIVE case
    And take a screenshot
    #Return
    And click on "serviceAppointments.details.case.link"
-   
+
    #Assert case owner is area supervisor
    And wait until "case.details.caseOwner.link.value" to be visible
    And wait until "case.details.caseOwner.link.value" to be enable
@@ -64,13 +65,26 @@ Scenario: Optimization of service appointment using REACTIVE case
    And wait until "workOrders.details.dueDate.edit.button" to be enable
    And click on "workOrders.details.dueDate.edit.button"
 
-   Then wait until "workOrders.details.dueDate.datePicker.icon" to be visible
-   And wait until "workOrders.details.dueDate.datePicker.icon" to be enable
-   And click on "workOrders.details.dueDate.datePicker.icon"
+   And store next business day into "nextBusinessDay" in format "M/d/yyyy"
+
+   Then wait until "workOrders.details.dueDate.edit.input" to be enable
+   And wait until "workOrders.details.dueDate.edit.input" to be visible
+   Then clear "workOrders.details.dueDate.edit.input"
+   And sendKeys "${nextBusinessDay}" into "workOrders.details.dueDate.edit.input"
+
+   #And scroll until "workOrders.details.startDate.edit.input" is visible
+   #And wait until "workOrders.details.startDate.edit.input" to be enable
+   #And clear "workOrders.details.startDate.edit.input"
+   #And sendKeys "${nextBusinessDay}" into "workOrders.details.startDate.edit.input"
+
+   #This would be the code to select the 'tomorrow' option
+   #Then wait until "workOrders.details.dueDate.datePicker.icon" to be visible
+   #And wait until "workOrders.details.dueDate.datePicker.icon" to be enable
+   #And click on "workOrders.details.dueDate.datePicker.icon"
    
-   Then wait until "common.openCalendar.tomorrow" to be visible
-   And wait until "common.openCalendar.tomorrow" to be enable
-   And click on "common.openCalendar.tomorrow"
+   #Then wait until "common.openCalendar.tomorrow" to be visible
+   #And wait until "common.openCalendar.tomorrow" to be enable
+   #And click on "common.openCalendar.tomorrow"
 
    And wait until "workOrders.details.save.button" to be enable
    And click on "workOrders.details.save.button"
@@ -78,7 +92,7 @@ Scenario: Optimization of service appointment using REACTIVE case
    And take a screenshot
    And store text from "workOrders.details.dueDate" into "dueDate"
    And click on "workOrders.details.case"
-   
+
    #Check service appointment for due date and earliest start permitted date to be changed
    Then get "${serviceAppointmentURL}"
    And wait until "serviceAppointments.details.dueDate" to be visible
@@ -89,7 +103,6 @@ Scenario: Optimization of service appointment using REACTIVE case
    And scroll until "serviceAppointments.details.dueDate" is visible
    And assert "serviceAppointments.details.earliestStartPermitted" contains the text "${dueDate}"
    And take a screenshot
-   #Return
    And click on "serviceAppointments.details.case.link"
 
    #Change case status to Ready to Schedule
@@ -124,23 +137,28 @@ Scenario: Optimization of service appointment using REACTIVE case
    And assert "case.details.caseOwner" text is "${caseOwnerReadyToSchedule}"
    And take a screenshot
 
-   And ShrdLaunchApp "Field Service"
+   And launch salesforce app "Field Service"
 
-   And wait for 10000 milisec
-   
-   And wait until "fieldService.iframe" to be present
+   And wait until "fieldService.iframe" for a max of 60 and min of 10 seconds to be present
+   And wait until "fieldService.iframe" to be enable
    And switch to frame "fieldService.iframe"
    And wait until "fieldService.selectTimeline.button" to be present
    When wait until "fieldService.selectTimeline.button" to be enable
    And click on "fieldService.selectTimeline.button"
-   Then wait until "fieldService.selectTimeline.option.2days" to be visible
-   When wait until "fieldService.selectTimeline.option.2days" to be enable
-   And click on "fieldService.selectTimeline.option.2days"
-   And wait for 2000 milisec
+   #Then wait until "fieldService.selectTimeline.option.2days" to be visible
+   #When wait until "fieldService.selectTimeline.option.2days" to be enable
+   #And click on "fieldService.selectTimeline.option.2days"
+   Then wait until "fieldService.selectTimeline.option.weekly" to be visible
+   When wait until "fieldService.selectTimeline.option.weekly" to be enable
+   And click on "fieldService.selectTimeline.option.weekly"
+   
+   Then wait until "fieldService.matchGanttDates.checkbox" to be enable
+   And check angular checkbox "fieldService.matchGanttDates.checkbox" if not checked
    And wait until "fieldService.searchServiceAppointments.input" to be enable
    And sendKeys "${serviceAppointment}" into "fieldService.searchServiceAppointments.input"
-   And wait for 3000 milisec
+   #And wait for 3000 milisec
    And wait until "fieldService.serviceAppointmentsList.firstOption" to be enable
+   And wait until "fieldService.serviceAppointmentsList.firstOption.serviceAppointmentID" text "${serviceAppointment}"
    And click on "fieldService.serviceAppointmentsList.firstOption"
    Then wait until "fieldService.serviceAppointmentsList.firstOption.details.account" to be visible
    And assert "fieldService.serviceAppointmentsList.firstOption.details.account" is visible
@@ -201,9 +219,9 @@ Scenario: Optimization of service appointment using REACTIVE case
    And wait until "common.toastContainer" to be enable
    And take a screenshot
 
-   And ShrdLaunchApp "Field Service"
-   And wait for 10000 milisec
-   And wait until "fieldService.iframe" to be present
+   And launch salesforce app "Field Service"
+   And wait until "fieldService.iframe" for a max of 60 seconds to be present
+   And wait until "fieldService.iframe" to be enable
    And take a screenshot
 
    #Validate case status to be Scheduled

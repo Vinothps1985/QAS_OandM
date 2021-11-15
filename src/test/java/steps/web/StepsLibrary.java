@@ -647,6 +647,32 @@ public class StepsLibrary {
 		$(loc).waitForEnabled(sec * 1000);
 	}
 
+	@QAFTestStep(description = "wait until {loc} for a max of {sec} seconds to be present")
+	public static void waitForPresentFoxMaxSeconds(String loc, long sec) {
+		$(loc).waitForPresent(sec * 1000);
+	}
+
+	@QAFTestStep(description = "wait until {loc} for a max of {max} and min of {min} seconds to be present")
+	public static void waitForPresentFoxMaxMinSeconds(String loc, long max, long min) {
+		try {
+			Thread.sleep(min*1000);
+			$(loc).waitForPresent((max-min) * 1000);
+		} catch (Exception x) {
+			logger.error(x.getMessage(), x);
+		}
+		
+	}
+
+	@QAFTestStep(description = "check angular checkbox {loc} if not checked")
+	public static void checkCheckboxIfNotChecked(String loc) {
+		$(loc).waitForPresent();
+		boolean hasClass = $(loc).verifyCssClass("ng-not-empty");
+		if (!hasClass) {
+			$(loc).click();
+			$(loc).waitForCssClass("ng-not-empty");
+		}
+	}
+
 	@QAFTestStep(description = "wait until {loc} for a max of {sec} seconds to be visible")
 	public static void waitForVisibleFoxMaxSeconds(String loc, long sec) {
 		$(loc).waitForVisible(sec * 1000);

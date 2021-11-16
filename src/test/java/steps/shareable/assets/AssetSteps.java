@@ -122,5 +122,72 @@ public class AssetSteps extends WebDriverTestCase {
 		$("common.toastContainer").waitForVisible();
 
 	}
+
+	@QAFTestStep(description = "create a truck inspection for the current asset with data {workType} {dueDate} {subject} {description}")
+	public void createTruckInspectionForCurrentAssetWithData() {
+
+		$("assets.moreActions.button").waitForPresent();
+		$("assets.moreActions.button").waitForEnabled();
+		$("assets.moreActions.button").click();
+
+		$("assets.newAdHocTruckInspection.button").waitForEnabled();
+		$("assets.newAdHocTruckInspection.button").waitForVisible();
+		$("assets.newAdHocTruckInspection.button").click();
+
+		$("assets.newTruckInspection.popup.newAdHocTruckInspection.checkbox").waitForEnabled();
+		$("assets.newTruckInspection.popup.newAdHocTruckInspection.checkbox").waitForVisible();
+		$("assets.newTruckInspection.popup.newAdHocTruckInspection.checkbox").click();
+
+		$("assets.newTruckInspection.popup.save.button").waitForEnabled();
+		$("assets.newTruckInspection.popup.save.button").click();
+
+		$("common.toastContainer").waitForVisible();
+
+	}
+
+	@QAFTestStep(description = "search for asset {assetName}")
+	public void searchForAsset(String assetName) {
+
+		//Search for the asset in the search bar
+		$("common.searchAssistant.button").waitForEnabled();
+		CommonStep.click("common.searchAssistant.button");
+		CommonStep.sendKeys(""+String.valueOf(assetName)+"","common.searchAssistant.input");
+		$("common.search.showMoreResults").waitForVisible();
+		$("common.search.showMoreResults").waitForEnabled();
+		$("common.search.showMoreResults").click();
+
+		steps.web.StepsLibrary.waitForPageToFinishLoading();
+
+		if ($("search.results.categories.assets").isPresent()) {
+			$("search.results.categories.assets").click();
+		} else {
+			if ($("search.results.categories.expandList.button").isPresent() && $("search.results.categories.expandList.button").isEnabled()) {
+				$("search.results.categories.expandList.button").click();
+			}
+
+			$("search.results.categories.showMore.button").waitForPresent();
+			$("search.results.categories.showMore.button").waitForEnabled();
+			$("search.results.categories.showMore.button").click();
+			steps.web.StepsLibrary.waitForPageToFinishLoading();
+			if ($("search.results.categories.assets").isPresent()) {
+				$("search.results.categories.assets").click();
+			}
+		}
+
+		$("search.results.panel.assets.title").waitForEnabled();
+		$("search.results.panel.assets.title").waitForVisible();
+
+		steps.web.StepsLibrary.waitForPageToFinishLoading();
+
+		$("search.results.panel.assets.table.tr.first").waitForEnabled();
+		$("search.results.panel.assets.table.tr.first.link.first").waitForEnabled();
+
+		$("search.results.panel.assets.table.tr.first.link.first").assertText(assetName);
+		$("search.results.panel.assets.table.tr.first.link.first").click();
+		
+		//Assert we're in the correct opportunity before continuing
+		$("assets.details.assetName").waitForPresent();
+		$("assets.details.assetName").assertText(String.valueOf(assetName));
+	}
 	
 }

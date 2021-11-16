@@ -119,32 +119,9 @@ public class StepsLibrary {
 		logger.info("Scrolling to find the text: " + text);
 		boolean found = false;
 		try {
-			//Original
-			/*getDriver().findElement(MobileBy.AndroidUIAutomator(
-			"new UiScrollable(new UiSelector().scrollable(true))" +
-			".scrollIntoView(new UiSelector().textContains(\"" + text + "\"))"));*/
-
-			/*getDriver().findElement(MobileBy.AndroidUIAutomator(
-			"new UiScrollable(new UiSelector().scrollable(true))" +
-			".setSwipeDeadZonePercentage(.3).setMaxSearchSwipes(20).scrollIntoView(new UiSelector().textContains(\"" + text + "\"))"));*/
-
-			/*int maxAttempts = 2;
-			int attempts = 0;
-			while (attempts < maxAttempts) {
-				getDriver().findElement(MobileBy.AndroidUIAutomator(
-				"new UiScrollable(new UiSelector().scrollable(true))" +
-				".setSwipeDeadZonePercentage(.3).scrollBackward(5)"));
-				Thread.sleep(500);
-				attempts++;
-			}*/
-
 			int maxAttempts = 10;
 			int attempts = 0;
 			while (attempts < maxAttempts) {
-				getDriver().findElement(MobileBy.AndroidUIAutomator(
-				"new UiScrollable(new UiSelector().scrollable(true))" +
-				".setSwipeDeadZonePercentage(.3).scrollForward(50)"));
-
 				try {
 					String xpath = "(//*[@text='" + text + "'])[1]";
 					WebElement element = getDriver().findElementByXPath(xpath);
@@ -156,6 +133,10 @@ public class StepsLibrary {
 		
 				attempts++;
 				Thread.sleep(500);
+				
+				getDriver().findElement(MobileBy.AndroidUIAutomator(
+				"new UiScrollable(new UiSelector().scrollable(true))" +
+				".setSwipeDeadZonePercentage(.3).scrollForward(50)"));
 			}
 		} catch (Exception x) {
 			x.printStackTrace();
@@ -193,10 +174,10 @@ public class StepsLibrary {
 			while (attempt < maxAttempts) {
 				getDriver().findElement(MobileBy.AndroidUIAutomator(
 				"new UiScrollable(new UiSelector().scrollable(true))" +
-				".setSwipeDeadZonePercentage(.3).setMaxSearchSwipes(20).scrollToEnd(20, 50)"));
+				".setSwipeDeadZonePercentage(.3).setMaxSearchSwipes(20).scrollToEnd(20, 20)"));
 
 				attempt++;
-				Thread.sleep(200);
+				Thread.sleep(100);
 			}
 		} catch (Exception x) {
 			//x.printStackTrace();
@@ -254,29 +235,22 @@ public class StepsLibrary {
 			int maxAttempts = 10;
 			for (int attempt = 0; attempt < maxAttempts; attempt++) {
 				try {
-					logger.info("****1");
 					String xpath= "(" +
 						"//android.widget.TextView[contains(@text, '" + name + "')]//following::android.widget.TextView[@text='" + option + "'][1]" +
 						")" +
 						"//ancestor::*[@clickable='true'][1]";
 					WebElement element = getDriver().findElementByXPath(xpath);
-					logger.info("****2");
 					if (element.isDisplayed() && element.isEnabled()) {
-						logger.info("****3");
 						element.click();
 						success = true;
-						logger.info("****4");
 						break;
 					}
-				} catch (Exception x) {logger.info("****5");}
+				} catch (Exception x) {}
 				Thread.sleep(2000);
-				logger.info("****6");
 			}
 		} catch (Exception x) {
-			logger.info("****7");
 			logger.error(x.getMessage(), x);
 		}
-		logger.info("****8");
 		Validator.assertTrue(success,
 			"Could not select option " + option + " for form input with name " + name,
 			"Successfully selected option " + option + " for form input with name " + name);
@@ -324,6 +298,7 @@ public class StepsLibrary {
 		try {
 			int maxAttempts = secs/10; //we scroll each 10 secs
 			int attempts = 0;
+			Thread.sleep(1500);
 			while (attempts < maxAttempts) {
 				try {
 					Dimension dims = getDriver().manage().window().getSize();
@@ -354,5 +329,68 @@ public class StepsLibrary {
 		Validator.verifyTrue(success,
 				"Could not find element " + loc + " after refreshing for " + secs + " seconds",
 				"Element " + loc + " found successfully after refreshing");
+	}
+
+	@QAFTestStep(description = "assert android TextView is present with the text {text}")
+	public static void assertAndroidTextViewPresentWithText(String text) {
+		boolean success = false;
+		try {
+			int maxAttempts = 10;
+			for (int attempt = 0; attempt < maxAttempts; attempt++) {
+				try {
+					String xpath= "//android.widget.TextView[@text='" + text + "']";
+					WebElement element = getDriver().findElementByXPath(xpath);
+					if (element != null && element.isDisplayed() && element.isEnabled()) {
+						success = true;
+						break;
+					}
+				} catch (Exception x) {}
+				Thread.sleep(2000);
+			}
+		} catch (Exception x) {
+			logger.error(x.getMessage(), x);
+		}
+		Validator.assertTrue(success,
+			"Could not find TextView with text " + text,
+			text + " found successfully on screen");
+	}
+
+	@QAFTestStep(description = "hide the android keyboard")
+	public static void hideAndroidKeyboard() {
+		boolean success = false;
+		try {
+			getDriver().hideKeyboard();
+			success = true;
+		} catch (Exception x) {
+			logger.error(x.getMessage(), x);
+		}
+		Validator.assertTrue(success,
+			"Keyboard could not be hidden",
+			"Keyboard hidden successfully");
+	}
+
+	@QAFTestStep(description = "click on select button for form input with name {name}")
+	public static void clickOnSelectInputForFormInput(String name) {
+		boolean success = false;
+		try {
+			int maxAttempts = 10;
+			for (int attempt = 0; attempt < maxAttempts; attempt++) {
+				try {
+					String xpath= "(//android.widget.TextView[contains(@text, '" + name + "')]//ancestor::*[@clickable='true'])[1]";
+					WebElement element = getDriver().findElementByXPath(xpath);
+					if (element.isDisplayed() && element.isEnabled()) {
+						element.click();
+						success = true;
+						break;
+					}
+				} catch (Exception x) {}
+				Thread.sleep(2000);
+			}
+		} catch (Exception x) {
+			logger.error(x.getMessage(), x);
+		}
+		Validator.assertTrue(success,
+			"Could not click on select button for form input with name " + name,
+			"Successfully clicked on select button for form input with name " + name);
 	}
 }

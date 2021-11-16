@@ -162,7 +162,7 @@ public class TruckInspectionSteps extends WebDriverTestCase {
 	public void answerDentsQuestionsAndClickOnNext(String answer1, String answer2,
 	String answer3, String answer4, String answer5) {
 
-		/*steps.android.StepsLibrary.clickOnSelectInputForFormInput("Qty of Major Dents");
+		steps.android.StepsLibrary.clickOnSelectInputForFormInput("Qty of Major Dents");
 		steps.android.StepsLibrary.selectOptionForFormInput(answer1, "Qty of Major Dents");
 		steps.android.StepsLibrary.clickOnSelectInputForFormInput("Qty of Minor Dents");
 		steps.android.StepsLibrary.selectOptionForFormInput(answer2, "Qty of Minor Dents");
@@ -174,14 +174,14 @@ public class TruckInspectionSteps extends WebDriverTestCase {
 		steps.android.StepsLibrary.clickOnSelectInputForFormInput("Qty of Paint Chips");
 		steps.android.StepsLibrary.selectOptionForFormInput(answer5, "Qty of Paint Chips");
 
-		steps.android.StepsLibrary.selectOptionForFormInput("Continue", "Would you like to Continue or Save");*/
+		steps.android.StepsLibrary.selectOptionForFormInput("Continue", "Would you like to Continue or Save");
 		$("serviceAppointment.truckInspection.next.button").click();
 	}
 
 	public void answerStainsQuestionsAndClickOnNext(String answer1, String answer2,
 	String answer3, String answer4) {
 
-		/*steps.android.StepsLibrary.clickOnSelectInputForFormInput("Qty of Major Stains");
+		steps.android.StepsLibrary.clickOnSelectInputForFormInput("Qty of Major Stains");
 		steps.android.StepsLibrary.selectOptionForFormInput(answer1, "Qty of Major Stains");
 		steps.android.StepsLibrary.clickOnSelectInputForFormInput("Qty of Minor Stains");
 		steps.android.StepsLibrary.selectOptionForFormInput(answer2, "Qty of Minor Stains");
@@ -191,7 +191,7 @@ public class TruckInspectionSteps extends WebDriverTestCase {
 		steps.android.StepsLibrary.clickOnSelectInputForFormInput("Qty of Minor Tears");
 		steps.android.StepsLibrary.selectOptionForFormInput(answer4, "Qty of Minor Tears");
 
-		steps.android.StepsLibrary.selectOptionForFormInput("Continue", "Would you like to Continue or Save");*/
+		steps.android.StepsLibrary.selectOptionForFormInput("Continue", "Would you like to Continue or Save");
 		$("serviceAppointment.truckInspection.next.button").click();
 	}
 

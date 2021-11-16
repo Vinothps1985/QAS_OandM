@@ -535,4 +535,30 @@ public class StepsLibrary {
 		change.customShrdChangeLoggedInUser(userToSet);
 	}
 
+	@QAFTestStep(description = "wait until {loc} for a max of {max} and min of {min} seconds to be present")
+	public static void waitForPresentFoxMaxMinSeconds(String loc, long max, long min) {
+		try {
+			Thread.sleep(min*1000);
+			$(loc).waitForPresent((max-min) * 1000);
+		} catch (Exception x) {
+			logger.error(x.getMessage(), x);
+		}
+	}
+
+	@QAFTestStep(description = "extract the date component from {data} into {varName}")
+	public static void extractDateComponent(String data, String varName) {
+		String result = null;
+		try {
+			String[] components = data.split(" ");
+			result = components[0].trim();
+			CommonStep.store(result, varName);
+		} catch (Exception x) {
+			logger.error(x.getMessage(), x);
+		}
+
+		Validator.assertTrue(result != null && result.length() > 0,
+			"Could not extract the date component from " + data + " into " + varName,
+			"Successfully extracted the date component from " + data + " into " + varName + ": " + result);
+	}
+
 }

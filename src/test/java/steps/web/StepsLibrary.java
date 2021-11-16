@@ -652,17 +652,6 @@ public class StepsLibrary {
 		$(loc).waitForPresent(sec * 1000);
 	}
 
-	@QAFTestStep(description = "wait until {loc} for a max of {max} and min of {min} seconds to be present")
-	public static void waitForPresentFoxMaxMinSeconds(String loc, long max, long min) {
-		try {
-			Thread.sleep(min*1000);
-			$(loc).waitForPresent((max-min) * 1000);
-		} catch (Exception x) {
-			logger.error(x.getMessage(), x);
-		}
-		
-	}
-
 	@QAFTestStep(description = "check angular checkbox {loc} if not checked")
 	public static void checkCheckboxIfNotChecked(String loc) {
 		$(loc).waitForPresent();

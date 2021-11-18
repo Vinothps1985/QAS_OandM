@@ -8,12 +8,16 @@ Feature: Projects
 Scenario: Create contact and add to project
 	
    Given login to salesforce with "${username}" and "${password}"
-   And ShrdChangeLoggedInUser "test_ops_center_operator"
-   #Project name will be 'ProjectName-1234' where 1234 is a random number
-   And create a random number with 6 digits and store it in "randomNumber"
-   And ShrdCreateProject "${opportunityName}" "ProjectName-${randomNumber}" "${epcSite}" "${watts}"
+   And change logged in user to "test_ops_center_operator"
+   Then close all open web tabs
    
-   Then assert "projects.details.projectName" text is "${generated_projectName}"   
+   #Append a random 6 digit number to the project name
+   #Final project name will be 'ProjectName-123456' where 123456 is the random number
+   And create a random number with 6 digits and store it in "randomNumber"
+   And create a project with data "${opportunityName}" "ProjectName-${randomNumber}" "${epcSite}" "${watts}"
+   
+   Then scroll until "projects.details.projectName" is visible
+   And assert "projects.details.projectName" text is "${generated_projectName}"
    And take a screenshot
    And store the current url in "projectsURL"
    
@@ -28,18 +32,17 @@ Scenario: Create contact and add to project
    Then wait until "contacts.createContact.popup.firstName.input" to be enable
    And sendKeys "${firstName}" into "contacts.createContact.popup.firstName.input"
    And wait until "contacts.createContact.popup.lastName.input" to be enable
-   And create a random number with 5 digits and store it in "randomNumLastName"
+   And create a random number with 6 digits and store it in "randomNumLastName"
    #This randomized info is necessary to later search for this specific contact avoiding duplications
    #and ensuring we're selecting this contact when searched by name
    And sendKeys "Last ${randomNumLastName} Name" into "contacts.createContact.popup.lastName.input"
    And wait until "contacts.createContact.popup.save.button" to be enable
    And click on "contacts.createContact.popup.save.button"
-   #If duplicate error appears, then click on save again
+   #If duplicate error appears, then click on save again (doesn't always appear, may appear because of similar last names)
    And click on "contacts.createContact.popup.save.button" if "contacts.createContact.popup.similarRecordsDialog.close.button" appears within 10 seconds
 
-   Then wait until "common.toastContainer.link" to be present
-   And wait until "common.toastContainer.link" to be enable
-   And click on "common.toastContainer.link"
+   #Then wait until "common.toastContainer.link" to be present
+   #And click on "common.toastContainer.link"
 
    Then wait until "contacts.details.name" to be present
    And wait until "contacts.details.name" to be visible

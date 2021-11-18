@@ -106,11 +106,11 @@ public class ShrdCreateProject extends WebDriverTestCase {
 
 			steps.web.StepsLibrary.waitForPageToFinishLoading();
 
-			$("search.results.panel.table.tr.first").waitForEnabled();
-			$("search.results.panel.table.tr.first.link.first").waitForEnabled();
+			$("search.results.panel.opportunities.table.tr.first").waitForEnabled();
+			$("search.results.panel.opportunities.table.tr.first.link.first").waitForEnabled();
 
-			$("search.results.panel.table.tr.first.link.first").assertText(opportunityName);
-			$("search.results.panel.table.tr.first.link.first").click();
+			$("search.results.panel.opportunities.table.tr.first.link.first").assertText(opportunityName);
+			$("search.results.panel.opportunities.table.tr.first.link.first").click();
 		}
 		
 		//Assert we're in the correct opportunity before continuing

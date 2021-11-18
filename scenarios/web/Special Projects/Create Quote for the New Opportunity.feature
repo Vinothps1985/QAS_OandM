@@ -8,8 +8,9 @@ Feature: Special Projects
 Scenario: Create a Quote for the New Opportunity
 	
    Given login to salesforce with "${username}" and "${password}"
-   And ShrdChangeLoggedInUser "test_special_projects"
-   And ShrdLaunchApp "opportunities"
+   And change logged in user to "test_special_projects"
+   And close all open web tabs
+   And launch salesforce app "opportunities"
 
    Then wait until "opportunities.new.button" to be enable
    And click on "opportunities.new.button"
@@ -151,6 +152,7 @@ Scenario: Create a Quote for the New Opportunity
    Then click on "quotes.createQuote.popup.laborBilling.input"
    And select the dropdown option for "Labor Billing" with label "${quoteLaborBilling}"
 
+   Then scroll until "quotes.createQuote.popup.pmBilling.input" is visible
    Then click on "quotes.createQuote.popup.pmBilling.input"
    And select the dropdown option for "P&M Billing" with label "${quotePmBilling}"
 

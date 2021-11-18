@@ -2,14 +2,14 @@ Feature: Cases
 
 @author:Rodrigo Montemayor
 @description:Verify that user is able to create a location of Trucks type and assign the Service Resource to the location
-@location @positive @regression @locationyesss
+@location @positive @regression
 @dataFile:resources/testdata/Locations/Create Location of Trucks Type and Assign SR.csv
 @requirementKey=QTM-RQ-23
 Scenario: Create a Location of Trucks type and assign the Service Resource
 	
    Given login to salesforce with "${username}" and "${password}"
-   And ShrdChangeLoggedInUser "test_o&m_manager"
-   And ShrdLaunchApp "locations"
+   And change logged in user to "test_o&m_manager"
+   And launch salesforce app "locations"
 
    Then wait until "locations.new.button" to be enable
    And wait until "locations.new.button" to be visible

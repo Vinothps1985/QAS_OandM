@@ -8,7 +8,9 @@ Feature: Products
 Scenario: Create Price Book Using OM Product
 	
    Given login to salesforce with "${username}" and "${password}"
-   And ShrdChangeLoggedInUser "test_o&m_manager"
+   And change logged in user to "test_o&m_manager"
+   Then close all open web tabs
+   
    #Product name will be the one in the test data file, with added random numbers
    #to prevent duplication
    And create a random number with 6 digits and store it in "randomNumber"

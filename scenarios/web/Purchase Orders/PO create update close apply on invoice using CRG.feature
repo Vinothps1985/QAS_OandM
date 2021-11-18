@@ -2,13 +2,13 @@ Feature: Purchase Orders
 
 @author:Rodrigo Montemayor
 @description:Verify the Purchase order creation, update, close and applying them on the AP Invoice using Con Req Groups
-@purchaseorder @positive @regression @poforyoumyfriend
+@purchaseorder @positive @regression
 @dataFile:resources/testdata/Purchase Orders/PO create update close apply on invoice using CRG.csv
 @requirementKey=QTM-RQ-23
 Scenario: Verify PO creation, update, close, apply on AP Invoice using Con Req Groups
 	
    Given login to salesforce with "${username}" and "${password}"
-   And ShrdChangeLoggedInUser "test_po procurement"
+   And change logged in user to "test_po procurement"
 
    #These users use classic mode!
 
@@ -123,7 +123,7 @@ Scenario: Verify PO creation, update, close, apply on AP Invoice using Con Req G
    Then wait until "classic.common.edit.button.first" to be enable
    And take a screenshot
 
-   And ShrdChangeLoggedInUser "test_po accounting"
+   And change logged in user to "test_po accounting"
 
    Then wait until "classic.home.allTabs.link" to be enable
    And click on "classic.home.allTabs.link"

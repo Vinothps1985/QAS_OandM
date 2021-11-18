@@ -3,6 +3,12 @@ package steps.common;
 import static com.qmetry.qaf.automation.ui.webdriver.ElementFactory.$;
 
 import com.qmetry.qaf.automation.core.ConfigurationManager;
+
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileBy;
+import steps.shareable.ShrdChangeLoggedInUser;
+import steps.shareable.ShrdLaunchApp;
+
 import com.qmetry.qaf.automation.step.QAFTestStep;
 import com.qmetry.qaf.automation.ui.WebDriverTestBase;
 import com.qmetry.qaf.automation.ui.webdriver.QAFWebElement;
@@ -10,27 +16,41 @@ import com.qmetry.qaf.automation.step.CommonStep;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.Keys;
+import support.Util;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Set;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import com.qmetry.qaf.automation.util.PropertyUtil;
+import com.qmetry.qaf.automation.util.Reporter;
 import com.qmetry.qaf.automation.util.Validator;
 import com.qmetry.qaf.automation.ui.webdriver.QAFExtendedWebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Alert;
 import java.util.NoSuchElementException;
+import java.util.Random;
+
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.Base64;
+import java.util.Calendar;
+import java.util.Date;
 // define common steps among all the platforms.
 // You can create sub packages to organize the steps within different modules
 public class StepsLibrary {
+
+	private static Log logger = LogFactory.getLog(StepsLibrary.class);
+	
 		private static String getJsDndHelper() {
 		return "function simulateDragDrop(sourceNode, destinationNode) {\r\n" +
 				"		    var EVENT_TYPES = {\r\n" +
@@ -324,6 +344,223 @@ public class StepsLibrary {
 			$(loc).waitForEnabled(milisec);
 			$(loc).click();
 		} catch (Exception ex) {}
+	}
+	
+	@QAFTestStep(description="take a screenshot")
+	public static void takeAScreenshot() {
+		if (ConfigurationManager.getBundle().getString("platform").equals("web") || "web".equals(Util.CURRENT_PLATFORM)) {
+			steps.web.StepsLibrary.waitForPageToFinishLoading();
+		}
+		Reporter.logWithScreenShot("take a screenshot");
+	}
+
+	@QAFTestStep(description="set current platform as {platform}")
+	public static void setCurrentPlatformAs(String platform) {
+		Util.CURRENT_PLATFORM = platform;
+	}
+
+	@QAFTestStep(description="store next business day into {varName} in format {format}")
+	public static void storeNextBusinessDayInto(String varName, String format) {
+		boolean success = false;
+		String value = null;
+
+		try {
+			SimpleDateFormat sdf = new SimpleDateFormat(format);
+			
+			Calendar c = Calendar.getInstance();
+			//c.setTime(d);
+			c.add(Calendar.DATE, 1);
+			while (c.get(Calendar.DAY_OF_WEEK) == Calendar.SATURDAY || c.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY) {
+				c.add(Calendar.DATE, 1);
+			}
+
+			value = sdf.format(c.getTime());
+
+			CommonStep.store(value, varName);
+			success = true;
+		} catch (Exception x) {
+			x.printStackTrace();
+		}
+		Validator.assertTrue(success,
+			"Could not store next business day into " + varName + " with format " + format,
+			"Next business day was stored in " + varName + " with value " + value);
+	}
+
+	@QAFTestStep(description = "format date {originDate} from {originFormat} to {destFormat} into {destVar}")
+	public static void formatDateFromVarToVarWithFormats(String originDate, String originFormat, String destFormat, String destVar) {
+		boolean success = false;
+		try {
+			Date date = new java.text.SimpleDateFormat(originFormat, Locale.ENGLISH).parse(originDate);
+			CommonStep.store(new java.text.SimpleDateFormat(destFormat, Locale.ENGLISH).format(date), destVar);
+			success = true;
+		} catch (Exception x) {}
+
+		Validator.assertTrue(success,
+			"Could not format date " + originDate + " with format " + originFormat + " to convert to format " + destFormat,
+			"Date " + originDate + " with format " + originFormat + " converted successfully to format " + destFormat);
+	}
+
+	/**
+	 * Defaults to 10 scrolls. Use "for up to {maxScrolls} scrolls" to specify max scroll number
+	 * @param locator
+	 */
+	@QAFTestStep(description="scroll until {0} is visible")
+	public static void scrollUntilVisible(String locator) {
+		scrollUntilVisibleWithMaxScrolls(locator, 15);
+	}
+
+	/**
+	 * @param locator
+	 */
+	@SuppressWarnings({"rawtypes"})
+	@QAFTestStep(description="scroll until {0} is visible for up to {maxScrolls} scrolls")
+	public static void scrollUntilVisibleWithMaxScrolls(String locator, long maxScrolls) {
+		try {
+			if (ConfigurationManager.getBundle().getString("platform").equals("web") || "web".equals(Util.CURRENT_PLATFORM)) {
+				if ($(locator).isPresent()) {
+					((JavascriptExecutor)new WebDriverTestBase().getDriver())
+								.executeScript("arguments[0].scrollIntoView({block: 'center'});", $(locator));
+				} else {					
+					int scrolls = 0;
+					while (scrolls <= maxScrolls) {
+						StringBuilder javascript = new StringBuilder();
+						javascript.append("var automation_scrollingElement = (document.scrollingElement || document.body);");
+						javascript.append("var automation_scrollHeight = automation_scrollingElement.scrollHeight;");
+						javascript.append("automation_scrollingElement.scrollTop = (300*"+scrolls + ");");
+						((JavascriptExecutor)new WebDriverTestBase().getDriver()).executeScript(javascript.toString());
+						Thread.sleep(500);
+						if ($(locator).isPresent()) {
+							((JavascriptExecutor)new WebDriverTestBase().getDriver())
+										.executeScript("arguments[0].scrollIntoView({block: 'center'});", $(locator));
+							break;
+						}
+						scrolls++;
+					}
+				}
+				Thread.sleep(500);
+			} else {
+				//Mobile!
+				int scrolls = 0;
+				boolean found = false;
+				while (scrolls < maxScrolls) {
+					AppiumDriver driver = (AppiumDriver) new WebDriverTestBase().getDriver().getUnderLayingDriver();
+
+					try {
+						if ($(locator) != null && $(locator).isPresent() && $(locator).isEnabled()) {
+							found = true;
+							break;
+						}
+					} catch (Exception x) {}
+
+					//Not found. Scroll
+					driver.findElement(MobileBy.AndroidUIAutomator(
+					"new UiScrollable(new UiSelector().scrollable(true))" +
+					".setSwipeDeadZonePercentage(.3).scrollForward(50)"));
+			
+					scrolls++;
+				}
+
+				Validator.assertTrue(found,
+				    "Element with locator " + locator + " was not found while scrolling",
+				    "Element with locator " + locator + " found while scrolling");
+			}
+		} catch (Exception x) {
+			//?
+			x.printStackTrace();
+		}
+	}
+
+	@QAFTestStep(description = "create a random number with {digits} digits and store it in {varName}")
+	public static void createRandomNumber(int digits, String varName) {
+
+		int num = (int) Math.pow(10, digits - 1);
+		String randomNumber = String.valueOf(num + new Random().nextInt(9 * num));
+	
+		CommonStep.store(randomNumber, varName);
+	}
+
+	@QAFTestStep(description="store the current url in {variableName}")
+	public static void saveTheCurrentUrl(String variableName) {
+		String url = new WebDriverTestBase().getDriver().getCurrentUrl();
+		//logger.info("Storing URL " + url + " in variable named " + variableName);
+		CommonStep.store(url, variableName);
+	}
+
+	@QAFTestStep(description="close all open web tabs")
+	public static void closeAllOpenWebTabs() {
+		boolean success = false;
+		try {
+			int maxAttempts = 50;
+			for (int attempt = 0; attempt < maxAttempts; attempt++) {
+				try {
+					steps.web.StepsLibrary.waitForPageToFinishLoading();
+
+					//Close all top tabs, if any exist
+					String closeButtonXPath = "//div[contains(@class, 'tabsetHeader ')]" +
+						"//button[contains(@class, 'slds-button_icon-x-small') and contains(@title, 'Close')]";
+						
+					QAFExtendedWebElement element = null;
+					try {
+						element = new WebDriverTestBase().getDriver().findElementByXPath(closeButtonXPath);
+					} catch (Exception x) {
+						success = true; //Not found anymore :)
+						break;
+					}
+
+					if (element != null && element.isPresent() && element.isEnabled()) {
+						element.click();
+					} else {
+						success = true;
+						break;
+					}
+					Thread.sleep(500);
+				} catch (Exception x) {}
+			}
+		} catch (Exception x) {
+			logger.error(x.getMessage(), x);
+		}
+
+		Validator.assertTrue(success,
+			"Could not close all open web tabs",
+			"Open web tabs have been closed");
+	}
+
+	@QAFTestStep(description = "launch salesforce app {0}")
+	public void launchSalesforceApp(Object appName) {
+		ShrdLaunchApp launch = new ShrdLaunchApp();
+		launch.customShrdLaunchApp(appName);
+	}
+
+	@QAFTestStep(description = "change logged in user to {0}")
+	public void changeLoggedInUserTo(Object userToSet) {
+		ShrdChangeLoggedInUser change = new ShrdChangeLoggedInUser();
+		change.customShrdChangeLoggedInUser(userToSet);
+	}
+
+	@QAFTestStep(description = "wait until {loc} for a max of {max} and min of {min} seconds to be present")
+	public static void waitForPresentFoxMaxMinSeconds(String loc, long max, long min) {
+		try {
+			Thread.sleep(min*1000);
+			$(loc).waitForPresent((max-min) * 1000);
+		} catch (Exception x) {
+			logger.error(x.getMessage(), x);
+		}
+	}
+
+	@QAFTestStep(description = "extract the date component from {data} into {varName}")
+	public static void extractDateComponent(String data, String varName) {
+		String result = null;
+		try {
+			String[] components = data.split(" ");
+			result = components[0].trim();
+			CommonStep.store(result, varName);
+		} catch (Exception x) {
+			logger.error(x.getMessage(), x);
+		}
+
+		Validator.assertTrue(result != null && result.length() > 0,
+			"Could not extract the date component from " + data + " into " + varName,
+			"Successfully extracted the date component from " + data + " into " + varName + ": " + result);
 	}
 
 }

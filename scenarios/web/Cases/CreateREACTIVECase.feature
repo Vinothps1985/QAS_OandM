@@ -8,8 +8,9 @@ Feature: Cases
 Scenario: Create REACTIVE case
 	
    Given login to salesforce with "${username}" and "${password}"
-   And ShrdChangeLoggedInUser "test_ops_center_operator"
-   Then ShrdCreateCase "${projectName}" "${subject}" "${caseDescription}" "${summary}" "${recordType}" "${casePriority}" "${caseOrigin}" "${reportedIssue}" "${caseCause}"
+   And change logged in user to "test_ops_center_operator"
+   Then close all open web tabs
+   Then create a case with data "${projectName}" "${subject}" "${caseDescription}" "${summary}" "${recordType}" "${casePriority}" "${caseOrigin}" "${reportedIssue}" "${caseCause}"
 
    #Assertions
    Then assert "case.entityName" text is "Case"

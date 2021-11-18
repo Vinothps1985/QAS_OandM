@@ -25,6 +25,7 @@ import java.util.List;
 import java.util.Map;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import steps.common.*;
+import steps.shareable.ShrdCreateCase;
 import steps.shareable.ShrdLaunchApp;
 
 public class CaseSteps extends WebDriverTestCase {
@@ -94,6 +95,14 @@ public class CaseSteps extends WebDriverTestCase {
 				
 				$("serviceAppointments.details.status.edit.button").waitForPresent();
 				//Now inside the Service Appointment
+
+				//Reload the page to avoid modified errors
+				steps.common.StepsLibrary.executeJavaScript("window.location.reload();");
+				steps.web.StepsLibrary.waitForPageToFinishLoading();
+				$("serviceAppointments.details.status.edit.button").waitForPresent();
+				$("serviceAppointments.details.status.edit.button").waitForEnabled();
+
+				//Now inside the Service Appointment again
 				$("serviceAppointments.details.status.edit.button").click();
 
 				$("serviceAppointments.details.edit.status.select").waitForEnabled();
@@ -258,7 +267,7 @@ public class CaseSteps extends WebDriverTestCase {
 				
 				//Have to scroll to find the button
 				steps.web.StepsLibrary.waitForPageToFinishLoading();
-				steps.web.StepsLibrary.scrollUntilVisible("woLineItems.details.comments.edit.button");
+				steps.common.StepsLibrary.scrollUntilVisible("woLineItems.details.comments.edit.button");
 				//$("woLineItems.details.comments.edit.button").waitFort();
 				//Now inside the Service Appointment
 				$("woLineItems.details.comments.edit.button").click();
@@ -451,5 +460,15 @@ public class CaseSteps extends WebDriverTestCase {
 		} catch (Exception x) {
 			return false;
 		}
+	}
+
+
+	@QAFTestStep(description = "create a case with data {projectName} {subject} {caseDescription} {summary} {recordType} {casePriority} {caseOrigin} {reprtedIssue} {caseCause}")
+	public void createCaseWithData(Object projectName, Object subject, Object caseDescription, Object summary,
+	    Object recordType, Object casePriority,Object caseOrigin,Object reportedIssue,Object caseCause) {
+
+		ShrdCreateCase create = new ShrdCreateCase();
+		create.customShrdCreateCase(projectName, subject, caseDescription, summary,
+		    recordType, casePriority, caseOrigin, reportedIssue, caseCause);
 	}
 }

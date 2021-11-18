@@ -8,8 +8,8 @@ Feature: Service Contracts
 Scenario: Create Service Contract with Active Status
 	
    Given login to salesforce with "${username}" and "${password}"
-   And ShrdChangeLoggedInUser "test_o&m_manager"
-   And ShrdLaunchApp "projects"
+   And change logged in user to "test_o&m_manager"
+   And launch salesforce app "projects"
    When wait until "common.searchAssistant.button" to be enable
    And click on "common.searchAssistant.button"
    And wait until "common.searchAssistant.input" to be enable

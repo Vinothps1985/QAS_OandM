@@ -2,18 +2,18 @@ Feature: Cases
 
 @author:Rodrigo Montemayor
 @description:Generate case closure report with incomplete WO Line Items
-@case @regression @imthecaptainnow
+@case @regression @conga @pdf
 @dataFile:resources/testdata/Cases/Generate case closure report with incomplete WO Line Items.csv
 @requirementKey=QTM-RQ-23
 
 Scenario: Generate case closure report with incomplete WO Line Items
    
    Given login to salesforce with "${username}" and "${password}"
-   And ShrdChangeLoggedInUser "test_ops_center_operator"
-   And ShrdLaunchApp "cases"
-   And ShrdCreateCase "${projectName}" "${subject}" "${caseDescription}" "${summary}" "${recordType}" "${casePriority}" "${caseOrigin}" "${reportedIssue}" "${caseCause}"
+   And change logged in user to "test_ops_center_operator"
+   And launch salesforce app "cases"
+   And create a case with data "${projectName}" "${subject}" "${caseDescription}" "${summary}" "${recordType}" "${casePriority}" "${caseOrigin}" "${reportedIssue}" "${caseCause}"
    And take a screenshot
-   And ShrdCreateWorkOrder "${generated_caseNumber}" "${assetType1}" "${assetType2}"
+   And create a work order with data "${generated_caseNumber}" "${assetType1}" "${assetType2}"
    And take a screenshot
 
    And set all service appointments of case "${generated_caseNumber}" to status "Completed"
@@ -28,8 +28,9 @@ Scenario: Generate case closure report with incomplete WO Line Items
    And wait until "case.details.accountName" to be visible
    And wait until "case.details.accountName" to be enable
    And store text from "case.details.accountName" into "accountName"
-   #subject, case description and summary already in test data
-   #Adds comments to all work orders (e.g. Testing comment 1, Testing comment 2, etc...)
+   
+   #Adds comments to all work orders 
+   #It adds a sequential number to each comment(e.g. Testing comment 1, Testing comment 2, etc...)
    And add a comment starting with "Testing comment" to all work order line items of case "${generated_caseNumber}"
    And take a screenshot
    And go to case "${generated_caseNumber}"

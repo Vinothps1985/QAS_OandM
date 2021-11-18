@@ -40,7 +40,7 @@ public class ShrdCreateCase extends WebDriverTestCase {
 	 * @param caseCause
 	 */
 	@QAFTestStep(description = "ShrdCreateCase {projectName} {subject} {caseDescription} {summary} {recordType} {casePriority} {caseOrigin} {reprtedIssue} {caseCause}")
-	public void customShrdCreateCase(Object projectName, Object subject, Object caseDescription, Object summary, Object recordType,Object casePriority,Object caseOrigin,Object reportedIssue,Object caseCause) {
+	public void customShrdCreateCase(Object projectName, Object subject, Object caseDescription, Object summary, Object recordType, Object casePriority,Object caseOrigin,Object reportedIssue,Object caseCause) {
 		
 		//Search for the project in the top search bar and click on the result
 		$("common.searchAssistant.button").waitForEnabled();
@@ -81,8 +81,7 @@ public class ShrdCreateCase extends WebDriverTestCase {
 		$("case.createCase.recordType.select").waitForEnabled();
 		$("case.createCase.recordType.select").click();
 
-		$("case.createCase.recordType.select.reactive.option").waitForEnabled();
-		$("case.createCase.recordType.select.reactive.option").click();
+		StepsLibrary.selectIn("label=" + recordType,"case.createCase.recordType.select");
 
 		$("case.createCase.recordType.next.button").waitForEnabled();
 		CommonStep.click("case.createCase.recordType.next.button");
@@ -90,18 +89,25 @@ public class ShrdCreateCase extends WebDriverTestCase {
 		$("case.createCase.popup.priority.select").waitForEnabled();
 		CommonStep.click("case.createCase.popup.priority.select");
 
-		$("case.createCase.popup.priority.low.option").waitForEnabled();
-		CommonStep.click("case.createCase.popup.priority.low.option");
+		steps.web.StepsLibrary.selectSalesforcePicklistOption(casePriority.toString());
+
+		//$("case.createCase.popup.priority.low.option").waitForEnabled();
+		//CommonStep.click("case.createCase.popup.priority.low.option");
 
 		$("case.createCase.popup.caseOrigin.select").waitForEnabled();
 		CommonStep.click("case.createCase.popup.caseOrigin.select");
-		$("case.createCase.popup.caseOrigin.managerCreated.option").waitForEnabled();
-		CommonStep.click("case.createCase.popup.caseOrigin.managerCreated.option");
+
+		steps.web.StepsLibrary.selectSalesforcePicklistOption(caseOrigin.toString());
+
+		//$("case.createCase.popup.caseOrigin.managerCreated.option").waitForEnabled();
+		//CommonStep.click("case.createCase.popup.caseOrigin.managerCreated.option");
 
 		$("case.createCase.popup.reportedIssue.select").waitForEnabled();
 		CommonStep.click("case.createCase.popup.reportedIssue.select");
-		$("case.createCase.popup.reportedIssue.systemDown.option").waitForEnabled();
-		CommonStep.click("case.createCase.popup.reportedIssue.systemDown.option");
+
+		steps.web.StepsLibrary.selectSalesforcePicklistOption(reportedIssue.toString());
+		//$("case.createCase.popup.reportedIssue.systemDown.option").waitForEnabled();
+		//CommonStep.click("case.createCase.popup.reportedIssue.systemDown.option");
 
 		$("case.createCase.popup.branch.select").waitForEnabled();
 		CommonStep.click("case.createCase.popup.branch.select");
@@ -110,8 +116,10 @@ public class ShrdCreateCase extends WebDriverTestCase {
 		
 		$("case.createCase.popup.caseCause.select").waitForEnabled();
 		CommonStep.click("case.createCase.popup.caseCause.select");
-		$("case.createCase.popup.caseCause.other.option").waitForEnabled();
-		CommonStep.click("case.createCase.popup.caseCause.other.option");
+
+		steps.web.StepsLibrary.selectSalesforcePicklistOption(caseCause.toString());
+		//$("case.createCase.popup.caseCause.other.option").waitForEnabled();
+		//CommonStep.click("case.createCase.popup.caseCause.other.option");
 
 		CommonStep.sendKeys(""+String.valueOf(subject)+"","case.createCase.popup.subject.input");
 		CommonStep.sendKeys(""+String.valueOf(caseDescription)+"","case.createCase.popup.description.textarea");

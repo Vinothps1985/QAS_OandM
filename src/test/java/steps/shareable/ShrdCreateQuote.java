@@ -229,7 +229,7 @@ public class ShrdCreateQuote extends WebDriverTestCase {
 		//TestBaseProvider.instance().get().takeScreenShot(); //Take a screenshot
 		Reporter.logWithScreenShot("take a screenshot");
 
-		steps.web.StepsLibrary.scrollUntilVisible("quotes.createQuote.popup.useDefaultShippingLocation.checkbox");
+		steps.common.StepsLibrary.scrollUntilVisible("quotes.createQuote.popup.useDefaultShippingLocation.checkbox");
 
 		//$("quotes.createQuote.popup.useDefaultShippingLocation.checkbox").waitForEnabled();
 		$("quotes.createQuote.popup.useDefaultShippingLocation.checkbox").click();

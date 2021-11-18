@@ -367,48 +367,6 @@ public class StepsLibrary {
 			x.printStackTrace();
 		}
 	}
-	
-	@QAFTestStep(description="take a screenshot")
-	public static void takeAScreenshot() {
-		//TestBaseProvider.instance().get().takeScreenShot();
-		Reporter.logWithScreenShot("take a screenshot");
-	}
-
-	@QAFTestStep(description="scroll until {0} is visible")
-	public static void scrollUntilVisible(String locator) {
-		try {
-			logger.info("Scrolling until " + locator + " is visible");
-			if ($(locator).isPresent()) {
-				logger.info("Scrolling mode 1");
-				((JavascriptExecutor)new WebDriverTestBase().getDriver())
-							.executeScript("arguments[0].scrollIntoView({block: 'center'});", $(locator));
-			} else {
-				logger.info("Scrolling mode 2");			
-				
-				int maxScrolls = 10;
-				int scrolls = 1;
-				while (scrolls <= maxScrolls) {
-					StringBuilder javascript = new StringBuilder();
-					javascript.append("var automation_scrollingElement = (document.scrollingElement || document.body);");
-					javascript.append("var automation_scrollHeight = automation_scrollingElement.scrollHeight;");
-					javascript.append("automation_scrollingElement.scrollTop = (300*"+scrolls + ");");
-					((JavascriptExecutor)new WebDriverTestBase().getDriver()).executeScript(javascript.toString());
-					Thread.sleep(500);
-					if ($(locator).isPresent()) {
-						logger.info("Scrolling mode 2: found");
-						((JavascriptExecutor)new WebDriverTestBase().getDriver())
-									.executeScript("arguments[0].scrollIntoView({block: 'center'});", $(locator));
-						break;
-					}
-					scrolls++;
-				}
-			}
-			Thread.sleep(500);
-		} catch (Exception x) {
-			//?
-			x.printStackTrace();
-		}
-	}
 
 	/**
 	 * 
@@ -436,13 +394,6 @@ public class StepsLibrary {
 		} catch (Exception x) {
 			logger.error("Error waiting for text " + text + " in locator " + loc, x);
 		}
-	}
-
-	@QAFTestStep(description="store the current url in {variableName}")
-	public static void saveTheCurrentUrl(String variableName) {
-		String url = new WebDriverTestBase().getDriver().getCurrentUrl();
-		logger.info("Storing URL " + url + " in variable named " + variableName);
-		CommonStep.store(url, variableName);
 	}
 
 	@QAFTestStep(description="store the current time in {variableName}")
@@ -555,15 +506,6 @@ public class StepsLibrary {
 		Validator.assertTrue(element != null && element.isPresent() && element.isEnabled(),
 			"Could not find a row on table " + tableLoc + " where " + val1 + " = " + val2,
 			"Found a row on table " + tableLoc + " where " + val1 + " = " + val2);
-	}
-
-	@QAFTestStep(description = "create a random number with {digits} digits and store it in {varName}")
-	public static void createRandomNumber(int digits, String varName) {
-
-		int num = (int) Math.pow(10, digits - 1);
-		String randomNumber = String.valueOf(num + new Random().nextInt(9 * num));
-	
-		CommonStep.store(randomNumber, varName);
 	}
 
 	@QAFTestStep(description = "click on {loc} if {loc2} appears within {secs} seconds")
@@ -705,23 +647,24 @@ public class StepsLibrary {
 		$(loc).waitForEnabled(sec * 1000);
 	}
 
+	@QAFTestStep(description = "wait until {loc} for a max of {sec} seconds to be present")
+	public static void waitForPresentFoxMaxSeconds(String loc, long sec) {
+		$(loc).waitForPresent(sec * 1000);
+	}
+
+	@QAFTestStep(description = "check angular checkbox {loc} if not checked")
+	public static void checkCheckboxIfNotChecked(String loc) {
+		$(loc).waitForPresent();
+		boolean hasClass = $(loc).verifyCssClass("ng-not-empty");
+		if (!hasClass) {
+			$(loc).click();
+			$(loc).waitForCssClass("ng-not-empty");
+		}
+	}
+
 	@QAFTestStep(description = "wait until {loc} for a max of {sec} seconds to be visible")
 	public static void waitForVisibleFoxMaxSeconds(String loc, long sec) {
 		$(loc).waitForVisible(sec * 1000);
-	}
-
-	@QAFTestStep(description = "format date {originDate} from {originFormat} to {destFormat} into {destVar}")
-	public static void formatDateFromVarToVarWithFormats(String originDate, String originFormat, String destFormat, String destVar) {
-		boolean success = false;
-		try {
-			Date date = new java.text.SimpleDateFormat(originFormat).parse(originDate);
-			CommonStep.store(new java.text.SimpleDateFormat(destFormat).format(date), destVar);
-			success = true;
-		} catch (Exception x) {}
-
-		Validator.assertTrue(success,
-			"Could not format date " + originDate + " with format " + originFormat + " to convert to format " + destFormat,
-			"Date " + originDate + " with format " + originFormat + " converted successfully to format " + destFormat);
 	}
 
 	@QAFTestStep(description = "store the current date in format {format} into {varName}")
@@ -776,15 +719,22 @@ public class StepsLibrary {
 	public static void selectSalesforceDropdownOption(String inputLabel, String label) {
 		boolean success = false;
 		try {
-			String xpath = "//label[.='" + inputLabel + "']//ancestor::force-record-layout-item" +
-				"//div[contains(@class, 'slds-dropdown') and contains(@class, 'slds-is-open')]" +
-				"//lightning-base-combobox-item[.='" + label + "']";
-			QAFExtendedWebElement element = new WebDriverTestBase().getDriver().findElementByXPath(xpath);
-			element.waitForPresent();
-			element.waitForVisible();
-			element.click();
-			element.waitForNotVisible();
-			success = true;
+			int maxAttempts = 5;
+			for (int attempt = 0; attempt < maxAttempts; attempt++) {
+				try {
+					String xpath = "//label[.='" + inputLabel + "']//ancestor::force-record-layout-item" +
+						"//div[contains(@class, 'slds-dropdown') and contains(@class, 'slds-is-open')]" +
+						"//lightning-base-combobox-item[.='" + label + "']";
+					QAFExtendedWebElement element = new WebDriverTestBase().getDriver().findElementByXPath(xpath);
+					element.waitForPresent();
+					element.waitForVisible();
+					element.click();
+					element.waitForNotVisible();
+					success = true;
+					break;
+				} catch (Exception x) {}
+				Thread.sleep(2000);
+			}
 		} catch (Exception x) {}
 
 		Validator.assertTrue(success,

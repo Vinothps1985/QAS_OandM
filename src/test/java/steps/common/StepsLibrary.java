@@ -348,7 +348,9 @@ public class StepsLibrary {
 	
 	@QAFTestStep(description="take a screenshot")
 	public static void takeAScreenshot() {
-		//TestBaseProvider.instance().get().takeScreenShot();
+		if (ConfigurationManager.getBundle().getString("platform").equals("web") || "web".equals(Util.CURRENT_PLATFORM)) {
+			steps.web.StepsLibrary.waitForPageToFinishLoading();
+		}
 		Reporter.logWithScreenShot("take a screenshot");
 	}
 

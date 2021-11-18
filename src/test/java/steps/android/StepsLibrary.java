@@ -1,6 +1,8 @@
 package steps.android;
 
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Keys;
+
 import java.time.Duration;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
@@ -15,6 +17,8 @@ import com.qmetry.qaf.automation.step.QAFTestStep;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.interactions.touch.TouchActions;
 
 import com.qmetry.qaf.automation.ui.WebDriverTestBase;
 import com.qmetry.qaf.automation.util.Validator;
@@ -355,6 +359,30 @@ public class StepsLibrary {
 			text + " found successfully on screen");
 	}
 
+	@QAFTestStep(description = "assert android TextView is present with the text contains {text}")
+	public static void assertAndroidTextViewPresentWithTextContains(String text) {
+		boolean success = false;
+		try {
+			int maxAttempts = 10;
+			for (int attempt = 0; attempt < maxAttempts; attempt++) {
+				try {
+					String xpath= "//android.widget.TextView[contains(@text,'" + text + "')]";
+					WebElement element = getDriver().findElementByXPath(xpath);
+					if (element != null && element.isDisplayed() && element.isEnabled()) {
+						success = true;
+						break;
+					}
+				} catch (Exception x) {}
+				Thread.sleep(2000);
+			}
+		} catch (Exception x) {
+			logger.error(x.getMessage(), x);
+		}
+		Validator.assertTrue(success,
+			"Could not find TextView with text contains " + text,
+			text + " found successfully on screen");
+	}
+
 	@QAFTestStep(description = "hide the android keyboard")
 	public static void hideAndroidKeyboard() {
 		boolean success = false;
@@ -392,5 +420,108 @@ public class StepsLibrary {
 		Validator.assertTrue(success,
 			"Could not click on select button for form input with name " + name,
 			"Successfully clicked on select button for form input with name " + name);
+	}
+
+	@QAFTestStep(description = "open the date picker for form input with name {name}")
+	public static void openDatepickerForFormInput(String name) {
+		boolean success = false;
+		try {
+			int maxAttempts = 10;
+			for (int attempt = 0; attempt < maxAttempts; attempt++) {
+				try {
+					String xpath = "//android.widget.TextView[contains(@text, '" + name + "')]" +
+					    "//following::android.view.ViewGroup[@clickable='true'][1]";
+					WebElement element = getDriver().findElementByXPath(xpath);
+					if (element.isDisplayed() && element.isEnabled()) {
+						element.click();
+						success = true;
+						break;
+					}
+				} catch (Exception x) {}
+				Thread.sleep(2000);
+			}
+		} catch (Exception x) {
+			logger.error(x.getMessage(), x);
+		}
+		Validator.assertTrue(success,
+			"Could not open the datepickerfor form input with name " + name,
+			"Successfully opened the datepicker for form input with name " + name);
+	}
+
+	@QAFTestStep(description = "sendKeys {data} into form input group with name {name}")
+	public static void sendKeysIntoFormInputGroup(String data, String name) {
+		boolean success = false;
+		try {
+
+			String xpathInputGroup = "(" +
+				"//android.widget.TextView[contains(@text,'" + name + "')]//following::android.view.ViewGroup" +
+			")[1]";
+
+			WebElement inputGroup = waitAndReturnWhenPresentByXpath(xpathInputGroup);
+			inputGroup.click();
+
+			String xpathEditText = "//android.widget.TextView[contains(@text,'" + name + "')]" +
+				"//following::android.widget.EditText[1]";
+			WebElement editText = waitAndReturnWhenPresentByXpath(xpathEditText);
+			editText.sendKeys(data);
+
+			String xpathEditTextPrecedingVG = xpathEditText + "//preceding::android.view.ViewGroup[1]";
+			WebElement precedingVG = waitAndReturnWhenPresentByXpath(xpathEditTextPrecedingVG);
+			
+			Dimension dims = getDriver().manage().window().getSize();
+			PointOption pointOption = PointOption.point(precedingVG.getRect().getX(), precedingVG.getRect().getY());
+			PointOption pointOption2 = PointOption.point(precedingVG.getRect().getX(), precedingVG.getRect().getY()-2);
+			new TouchAction(getDriver())
+				.tap(pointOption)
+				.waitAction(WaitOptions.waitOptions(Duration.ofMillis(100)))
+				.tap(pointOption2)
+				.waitAction(WaitOptions.waitOptions(Duration.ofMillis(100)))
+				.perform();
+			
+			hideAndroidKeyboard();
+			success = true;
+		} catch (Exception x) {
+			logger.error(x.getMessage(), x);
+		}
+		Validator.assertTrue(success,
+			"Could not sendKeys " + data + " to into form input group with name " + name,
+			"Successfuly sent sendKeys " + data + " to into form input group with name " + name);
+	}
+
+	@SuppressWarnings({"rawtypes"})
+	@QAFTestStep(description = "click on unclickable TextView with text {text}")
+	public static void clickUnclickableTextView(String text) {
+		boolean success = false;
+		try {
+
+			String xpath = "//android.widget.TextView[contains(@text,'" + text + "')]";
+
+			WebElement element = waitAndReturnWhenPresentByXpath(xpath);
+			PointOption pointOption = PointOption.point(element.getRect().getX(), element.getRect().getY());
+			new TouchAction(getDriver())
+				.tap(pointOption)
+				.waitAction(WaitOptions.waitOptions(Duration.ofMillis(100)))
+				.perform();
+			success = true;
+		} catch (Exception x) {
+			logger.error(x.getMessage(), x);
+		}
+		Validator.assertTrue(success,
+			"Could not click unclickable TextView with text: " + text,
+			"Successfully clicked unclickable TextView with text: " + text);
+	}
+
+	public static WebElement waitAndReturnWhenPresentByXpath(String xpath) {
+		int maxAttempts = 10;
+		for (int attempt = 0; attempt < maxAttempts; attempt++) {
+			try {
+				WebElement element = getDriver().findElementByXPath(xpath);
+				if (element.isDisplayed() && element.isEnabled()) {
+					return element;
+				}
+			} catch (Exception x) {}
+			try {Thread.sleep(2000);} catch (Exception x) {}
+		}
+		throw new AssertionError("Could not find the element with xpath: " + xpath);
 	}
 }

@@ -6,22 +6,93 @@ Feature: WorkOrders
 @dataFile:resources/testdata/WorkOrder/Complete Work Order Line Item using REACTIVE case.csv
 
 Scenario: Complete Work Order Line Item using REACTIVE case
-	
-   Given sendKeys "${passcode}" into "login.passcode.input"
 
-   #Temp data - to reuse from service optimization process
-   And store "00290773" into "generated_caseNumber"
-   And store "SA-38508" into "generated_serviceAppointment"
-   And store "11/15/2021" into "nextBusinessDay"
+   #First create the testing data in web
+   Given store "resource/testdata;resources/web" into "env.resources"
+   And set current platform as "web"
+   Given login to salesforce with "${username}" and "${password}"
+   And change logged in user to "test_ops_center_operator"
+   And close all open web tabs
+   And launch salesforce app "cases"
+   And create a case with data "${projectName}" "${subject}" "${caseDescription}" "${summary}" "${recordType}" "${casePriority}" "${caseOrigin}" "${reportedIssue}" "${caseCause}"
+   And take a screenshot
+   And create a work order with data "${generated_caseNumber}" "${assetType1}" "${assetType2}"
+   And take a screenshot
+
+   Then wait until "cases.quickLinks.serviceAppointments" to be enable
+   And click on "cases.quickLinks.serviceAppointments"
+   And wait until "serviceAppointments.table.first.link" to be enable
+   Then store text from "serviceAppointments.table.first.link" into "generated_serviceAppointment"
+   And click on "serviceAppointments.table.first.link"
+
+   Then wait until "serviceAppointments.details.status" to be present
+   And wait until "serviceAppointments.details.status" to be enable
+   And store the current url in "generated_serviceAppointmentURL"
+
+   And launch salesforce app "Field Service"
+   And wait until "fieldService.iframe" for a max of 60 and min of 10 seconds to be present
+   And wait until "fieldService.iframe" to be enable
+   And switch to frame "fieldService.iframe"
+
+   And wait until "fieldService.predefinedFilterSelector.select" to be present
+   And select "label=All Service Appointments" in "fieldService.predefinedFilterSelector.select"
+   And wait until "fieldService.searchServiceAppointments.input" to be enable
+   And sendKeys "${generated_serviceAppointment}" into "fieldService.searchServiceAppointments.input"
+   And wait until "fieldService.serviceAppointmentsList.firstOption" to be enable
+   And wait until "fieldService.serviceAppointmentsList.firstOption.serviceAppointmentID" text "${generated_serviceAppointment}"
+   And click on "fieldService.serviceAppointmentsList.firstOption"
+   Then wait until "fieldService.serviceAppointment.firstOption.schedule.button" to be visible
+   And click on "fieldService.serviceAppointment.firstOption.schedule.button"
+   And wait until "fieldService.loadingIndicator" to be visible
+   Then wait until "fieldService.loadingIndicator" not to be visible
+
+   Then get "${generated_serviceAppointmentURL}"
+   Then wait until "serviceAppointments.details.status" to be enable
+   And wait until "serviceAppointments.details.status" to be visible
+
+   #Reload and assign to mobile user (e.g. Test Technician)
+   Then Execute Java Script with data "window.location.reload();"
+   Then wait until "serviceAppointments.assignedResources.first.dropDown.button" to be enable
+   And wait until "serviceAppointments.assignedResources.first.dropDown.button" to be visible
+   And click on "serviceAppointments.assignedResources.first.dropDown.button"
+   Then wait until "serviceAppointments.assignedResources.first.dropDown.edit.option" to be present
+   And click on "serviceAppointments.assignedResources.first.dropDown.edit.option"
+   Then wait until "serviceAppointment.editResource.popup.serviceResource.delete.link" to be enable
+   And wait until "serviceAppointment.editResource.popup.serviceResource.delete.link" to be visible
+   And click on "serviceAppointment.editResource.popup.serviceResource.delete.link"
+   Then wait until "serviceAppointment.editResource.popup.serviceResource.input" to be enable
+   And wait until "serviceAppointment.editResource.popup.serviceResource.input" to be visible
+   And sendKeys "${serviceAppointmentAssignee}" into "serviceAppointment.editResource.popup.serviceResource.input"
+   Then wait until "serviceAppointment.editResource.popup.serviceResource.option.first" to be present
+   And wait until "serviceAppointment.editResource.popup.serviceResource.option.first" to be visible
+   And click on "serviceAppointment.editResource.popup.serviceResource.option.first"
+   And take a screenshot
+   And click on "serviceAppointment.editResource.popup.save.button"
+   Then wait until "common.toastContainer" to be present
+   And wait until "common.toastContainer" to be enable
+   And take a screenshot
+   #Save the scheduled date
+   Then scroll until "serviceAppointments.details.scheduledStart" is visible
+   And store text from "serviceAppointments.details.scheduledStart" into "sa_scheduledStart"
+   #Remove the time and take just the date (e.g. 11/16/2021 9:18 AM = 11/16/2021)
+   And extract the date component from "${sa_scheduledStart}" into "sa_scheduledStart"
+
+   #Change to Android
+   Then store "resource/testdata;resources/android" into "env.resources"
+   And set current platform as "android"
+
+   When sendKeys "${passcode}" into "login.passcode.input"
 
    And click on "home.popup.useLocation.notYet.option" if it appears within 10000 milisec
 
    And wait until "schedule.date.icon" to be enable
    And click on "schedule.date.icon"
 
-   Then format date "${nextBusinessDay}" from "M/d/yyyy" to "EEE, MMM dd" into "nextBusinessDayAndroidFormat"
+   Then format date "${sa_scheduledStart}" from "M/d/yyyy" to "EEE, MMM dd" into "scheduledDateAndroidFormat"
 
-   And click the date "${nextBusinessDayAndroidFormat}" in the scheduler datepicker
+   And click the date "${scheduledDateAndroidFormat}" in the scheduler datepicker
+
+   And scroll refresh for up to 60 seconds until "serviceAppointments.appointments.first" is present
 
    And wait until "serviceAppointments.appointments.first" to be enable
    And scroll until the text "${generated_serviceAppointment}" is on the screen
@@ -42,22 +113,22 @@ Scenario: Complete Work Order Line Item using REACTIVE case
    And wait until "woLineItem.actions.completeWoLineItem.button" to be enable
    And click on "woLineItem.actions.completeWoLineItem.button"
 
-   Then select option "Sunny" for form input with name "Weather Conditions"
+   Then select option "${weatherConditions}" for form input with name "Weather Conditions"
    Then wait until "woLineItem.complete.vegetation.select" to be enable
    And click on "woLineItem.complete.vegetation.select"
-   And select option that contains "24" for form input with name "Vegetation"
+   And select option that contains "${vegetation}" for form input with name "Vegetation"
    And scroll to end
-   And select option "Light" for form input with name "Soiling"
+   And select option "${soiling}" for form input with name "Soiling"
    And wait until "woLineItem.complete.next.button" to be enable
    And click on "woLineItem.complete.next.button"
 
    And answer the work order line item checklist until the question "Was the asset offline?" appears
 
-   And select option "No" for form input with name "Was the asset offline?"
+   And select option "${assetOffline}" for form input with name "Was the asset offline?"
    And wait until "woLineItem.complete.next.button" to be enable
    And click on "woLineItem.complete.next.button"
 
-   And select option "Failed DC Wire" for form input with name "Fault"
+   And select option "${fault}" for form input with name "Fault"
    And wait until "woLineItem.complete.next.button" to be enable
    And click on "woLineItem.complete.next.button"
 
@@ -65,20 +136,26 @@ Scenario: Complete Work Order Line Item using REACTIVE case
    And click on "woLineItem.complete.woLineItemStatus.completed.option"
    And wait until "woLineItem.complete.travelStartTime.datepicker" to be enable
    And click on "woLineItem.complete.travelStartTime.datepicker"
+
+   #Convert the date to the format the datepicker expects (e.g. 23 November 2021)
+   Then format date "${sa_scheduledStart}" from "M/d/yyyy" to "dd MMMM yyyy" into "scheduledDateDatepickerFormat"
+   And click on android View with content desc "${scheduledDateDatepickerFormat}"
    And wait until "common.date.popup.ok" to be enable
    And click on "common.date.popup.ok"
    And wait until "woLineItem.complete.workStartTime.datepicker" to be enable
    And click on "woLineItem.complete.workStartTime.datepicker"
+   And click on android View with content desc "${scheduledDateDatepickerFormat}"
    And wait until "common.date.popup.ok" to be enable
    And click on "common.date.popup.ok"
    And wait until "woLineItem.complete.workEndTime.datepicker" to be enable
    And click on "woLineItem.complete.workEndTime.datepicker"
+   And click on android View with content desc "${scheduledDateDatepickerFormat}"
    And wait until "common.date.popup.ok" to be enable
    And click on "common.date.popup.ok"
    And scroll to end
    And wait until "woLineItem.complete.comments.input" to be enable
    And click on "woLineItem.complete.comments.input"
-   And sendKeys "The comments" into "woLineItem.complete.comments.input"
+   And sendKeys "${comments}" into "woLineItem.complete.comments.input"
    And scroll to end
    And wait until "woLineItem.complete.next.button" to be enable
    And click on "woLineItem.complete.next.button"
@@ -128,7 +205,8 @@ Scenario: Complete Work Order Line Item using REACTIVE case
    And wait until "schedule.date.icon" to be enable
    And click on "schedule.date.icon"
    
-   And click the date "${nextBusinessDayAndroidFormat}" in the scheduler datepicker
+   And click the date "${scheduledDateAndroidFormat}" in the scheduler datepicker
+   And scroll refresh for up to 60 seconds until "serviceAppointments.appointments.first" is present
    And wait until "serviceAppointments.appointments.first" to be enable
    And scroll until the text "${generated_serviceAppointment}" is on the screen
    And click on service appointment "${generated_serviceAppointment}"
@@ -150,11 +228,11 @@ Scenario: Complete Work Order Line Item using REACTIVE case
 
    And answer the work order line item checklist until the question "Was the asset offline?" appears
 
-   And select option "No" for form input with name "Was the asset offline?"
+   And select option "${assetOffline2}" for form input with name "Was the asset offline?"
    And wait until "woLineItem.complete.next.button" to be enable
    And click on "woLineItem.complete.next.button"
 
-   And select option "External Damage" for form input with name "Fault"
+   And select option "${fault2}" for form input with name "Fault"
    And wait until "woLineItem.complete.next.button" to be enable
    And click on "woLineItem.complete.next.button"
 
@@ -178,7 +256,7 @@ Scenario: Complete Work Order Line Item using REACTIVE case
    And scroll to end
    And wait until "woLineItem.complete.comments.input" to be enable
    And click on "woLineItem.complete.comments.input"
-   And sendKeys "The comments 2" into "woLineItem.complete.comments.input"
+   And sendKeys "${comments2}" into "woLineItem.complete.comments.input"
    And scroll to end
    And wait until "woLineItem.complete.next.button" to be enable
    And click on "woLineItem.complete.next.button"
@@ -295,7 +373,8 @@ Scenario: Complete Work Order Line Item using REACTIVE case
 
    And wait until "schedule.date.icon" to be enable
    And click on "schedule.date.icon"
-   And click the date "${nextBusinessDayAndroidFormat}" in the scheduler datepicker
+   And click the date "${scheduledDateAndroidFormat}" in the scheduler datepicker
+   And scroll refresh for up to 60 seconds until "serviceAppointments.appointments.first" is present
    And wait until "serviceAppointments.appointments.first" to be enable
    And scroll until the text "${generated_serviceAppointment}" is on the screen
    And click on service appointment "${generated_serviceAppointment}"

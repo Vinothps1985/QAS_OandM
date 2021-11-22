@@ -176,6 +176,12 @@ Scenario: Optimization of service appointment using REACTIVE case
    Then wait until "fieldService.optimization.popup.territories.firstOption.checkbox" to be visible
    When wait until "fieldService.optimization.popup.territories.firstOption.checkbox" to be enable
    And click on "fieldService.optimization.popup.territories.firstOption.checkbox"
+   And select "label=Unscheduled" in "fieldService.optimization.popup.including.select"
+   And format date "${nextBusinessDay}" from "M/d/yyyy" to "yyyy-MM-dd" into "nextBusinessDayAngular"
+   And click on "fieldService.optimization.popup.untilDate.link"
+   And select date "${nextBusinessDayAngular}" on angular datepicker
+   And click on "fieldService.optimization.popup.startingDate.link"
+   And select date "${nextBusinessDayAngular}" on angular datepicker
    And select "label=Ready to Schedule" in "fieldService.optimization.popup.filterServicesBy.select"
    And wait until "fieldService.optimization.popup.optimize.button" to be enable
    And click on "fieldService.optimization.popup.optimize.button"

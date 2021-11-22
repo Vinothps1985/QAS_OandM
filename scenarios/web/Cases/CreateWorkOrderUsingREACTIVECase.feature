@@ -14,10 +14,10 @@ Scenario: Create Work Order using REACTIVE case
    And create a case with data "${projectName}" "${subject}" "${caseDescription}" "${summary}" "${recordType}" "${casePriority}" "${caseOrigin}" "${reportedIssue}" "${caseCause}"
    And take a screenshot
    And create a work order with data "${generated_caseNumber}" "${assetType1}" "${assetType2}"
-   And take a screenshot
 
    #Confirm and screenshot work order lines created
    Then wait until "cases.quickLinks.workOrderLineItems" to be enable
+   And take a screenshot
    And click on "cases.quickLinks.workOrderLineItems"
    Then wait until "woLineItems.table.firstResult.link" to be present
    And take a screenshot

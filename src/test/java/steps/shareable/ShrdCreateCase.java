@@ -53,7 +53,6 @@ public class ShrdCreateCase extends WebDriverTestCase {
 
 		$("projects.details.projectName").waitForPresent();
 		$("projects.details.projectName").assertText(String.valueOf(projectName));
-		//TestBaseProvider.instance().get().takeScreenShot(); //Take a screenshot
 		Reporter.logWithScreenShot("Screenshot of project");
 
 		//Verify the project has active contracts
@@ -62,7 +61,6 @@ public class ShrdCreateCase extends WebDriverTestCase {
 		$("projects.quicklink.contracts").click();
 		$("projects.contracts.firstContract.status").waitForPresent();
 		$("projects.contracts.firstContract.status").assertPresent();
-		//TestBaseProvider.instance().get().takeScreenShot(); //Take a screenshot
 		Reporter.logWithScreenShot("Screenshot of project's contracts");
 
 		//Return to cases
@@ -91,35 +89,25 @@ public class ShrdCreateCase extends WebDriverTestCase {
 
 		steps.web.StepsLibrary.selectSalesforcePicklistOption(casePriority.toString());
 
-		//$("case.createCase.popup.priority.low.option").waitForEnabled();
-		//CommonStep.click("case.createCase.popup.priority.low.option");
-
 		$("case.createCase.popup.caseOrigin.select").waitForEnabled();
 		CommonStep.click("case.createCase.popup.caseOrigin.select");
 
 		steps.web.StepsLibrary.selectSalesforcePicklistOption(caseOrigin.toString());
 
-		//$("case.createCase.popup.caseOrigin.managerCreated.option").waitForEnabled();
-		//CommonStep.click("case.createCase.popup.caseOrigin.managerCreated.option");
-
 		$("case.createCase.popup.reportedIssue.select").waitForEnabled();
 		CommonStep.click("case.createCase.popup.reportedIssue.select");
 
 		steps.web.StepsLibrary.selectSalesforcePicklistOption(reportedIssue.toString());
-		//$("case.createCase.popup.reportedIssue.systemDown.option").waitForEnabled();
-		//CommonStep.click("case.createCase.popup.reportedIssue.systemDown.option");
 
-		$("case.createCase.popup.branch.select").waitForEnabled();
+		/*$("case.createCase.popup.branch.select").waitForEnabled();
 		CommonStep.click("case.createCase.popup.branch.select");
 		$("case.createCase.popup.branch.midAtlantic.option").waitForEnabled();
-		CommonStep.click("case.createCase.popup.branch.midAtlantic.option");
+		CommonStep.click("case.createCase.popup.branch.midAtlantic.option");*/
 		
 		$("case.createCase.popup.caseCause.select").waitForEnabled();
 		CommonStep.click("case.createCase.popup.caseCause.select");
 
 		steps.web.StepsLibrary.selectSalesforcePicklistOption(caseCause.toString());
-		//$("case.createCase.popup.caseCause.other.option").waitForEnabled();
-		//CommonStep.click("case.createCase.popup.caseCause.other.option");
 
 		CommonStep.sendKeys(""+String.valueOf(subject)+"","case.createCase.popup.subject.input");
 		CommonStep.sendKeys(""+String.valueOf(caseDescription)+"","case.createCase.popup.description.textarea");

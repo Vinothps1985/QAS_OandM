@@ -73,16 +73,17 @@ Scenario: Generate case closure report with completed WO Line Items
    And download file locally
    #Download time may vary and is not verifiable. Must leave implicit wait
    And wait for 8000 milisec
-
+   
    #Download the PDF file and assert its contents
    Then load latest pdf in downloads directory
-   And assert text "Case Number: ${generated_caseNumber}" appears in the pdf
+   And assert text "Case Number: ${generated_caseNumber}" appears in the pdf with screenshot
    And assert text "Project: ${pdfProjectName}" appears in the pdf
-   And assert text "Account: ${pdfAccountName}" appears in the pdf
+   And assert text "Account: ${pdfAccountName}" appears in the pdf with screenshot
    And assert text "Subject: ${subject}" appears in the pdf
    And assert text "Description: ${caseDescription}" appears in the pdf
    And assert text "${summary}" appears in the pdf
 
    #Verify the line items answers and comments
+   #These custom steps automatically take screenshots where applicable
    And assert pdf contains a line item of type "${assetType1}" with comment "Testing comment 1" alternating pass and fail 
    And assert pdf contains a line item of type "${assetType2}" with comment "Testing comment 2" alternating pass and fail 

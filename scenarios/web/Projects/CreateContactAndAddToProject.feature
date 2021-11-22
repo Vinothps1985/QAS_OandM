@@ -15,7 +15,7 @@ Scenario: Create contact and add to project
    #Final project name will be 'ProjectName-123456' where 123456 is the random number
    And create a random number with 6 digits and store it in "randomNumber"
    And create a project with data "${opportunityName}" "ProjectName-${randomNumber}" "${epcSite}" "${watts}"
-   
+
    Then scroll until "projects.details.projectName" is visible
    And assert "projects.details.projectName" text is "${generated_projectName}"
    And take a screenshot
@@ -77,6 +77,7 @@ Scenario: Create contact and add to project
    And click on "projects.save.button"
    
    Then wait until "projects.siteInformation.onSiteContact.link.span" to be present
+   And scroll until "projects.siteInformation.onSiteContact.link.span" is visible
    And assert "projects.siteInformation.onSiteContact.link.span" text is "${fullName}"
    And assert "projects.siteInformation.primaryOMContact.link.span" text is "${fullName}"
    And take a screenshot

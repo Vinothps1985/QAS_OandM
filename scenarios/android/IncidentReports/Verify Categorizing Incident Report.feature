@@ -126,6 +126,9 @@ Scenario: Verify Categorizing an Incident Report
    And click on select button for form input with name "Incident Type"
    And select option that contains "${incidentType}" for form input with name "Incident Type"
    And open the date picker for form input with name "Incident Date and Time"
+
+   Then format date "${sa_scheduledStart}" from "M/d/yyyy" to "dd MMMM yyyy" into "scheduledDateDatepickerFormat"
+   And click on android View with content desc "${scheduledDateDatepickerFormat}"
    And wait until "common.date.popup.ok" to be enable
    And click on "common.date.popup.ok"
    And wait until "common.date.popup.ok" is not present

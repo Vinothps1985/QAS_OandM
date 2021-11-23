@@ -422,6 +422,31 @@ public class StepsLibrary {
 			"Successfully clicked on select button for form input with name " + name);
 	}
 
+	@QAFTestStep(description = "click on android View with content desc {contentDesc}")
+	public static void clickOnAndroidViewWithContentDesc(String contentDesc) {
+		boolean success = false;
+		try {
+			int maxAttempts = 10;
+			for (int attempt = 0; attempt < maxAttempts; attempt++) {
+				try {
+					String xpath= "(//android.view.View[@content-desc='" + contentDesc + "'])[1]";
+					WebElement element = getDriver().findElementByXPath(xpath);
+					if (element.isDisplayed() && element.isEnabled()) {
+						element.click();
+						success = true;
+						break;
+					}
+				} catch (Exception x) {}
+				Thread.sleep(2000);
+			}
+		} catch (Exception x) {
+			logger.error(x.getMessage(), x);
+		}
+		Validator.assertTrue(success,
+			"Could not click on android View with content desc " + contentDesc,
+			"Successfully clicked on android View with content desc " + contentDesc);
+	}
+
 	@QAFTestStep(description = "open the date picker for form input with name {name}")
 	public static void openDatepickerForFormInput(String name) {
 		boolean success = false;

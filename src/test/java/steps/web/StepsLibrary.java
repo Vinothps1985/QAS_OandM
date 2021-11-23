@@ -31,13 +31,16 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.qmetry.qaf.automation.util.Validator;
 
+import java.awt.image.BufferedImage;
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Optional;
 import java.util.Random;
 
+import javax.imageio.ImageIO;
 import javax.mail.Message;
 
 import org.apache.commons.io.FileUtils;
@@ -46,8 +49,12 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.pdfbox.Loader;
 import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.pdmodel.PDPage;
+import org.apache.pdfbox.rendering.ImageType;
+import org.apache.pdfbox.rendering.PDFRenderer;
 
 import com.qmetry.qaf.automation.core.TestBaseProvider;
+import com.qmetry.qaf.automation.keys.ApplicationProperties;
 import com.qmetry.qaf.automation.step.CommonStep;
 import com.qmetry.qaf.automation.step.QAFTestStep;
 
@@ -55,7 +62,8 @@ public class StepsLibrary {
 
 	private static Log logger = LogFactory.getLog(StepsLibrary.class);
 
-	public static String latestPdfContents = null;
+	protected static List<String> latestPdfPageContents = null;
+	protected static String latestPdfFilePath = null;
 	public static String latestFileDownloadedUrl = null;
 	
 	/**
@@ -96,21 +104,36 @@ public class StepsLibrary {
 	@QAFTestStep(description = "load pdf called {0}")
     public static void loadPdfCalled(String pdfName) {
         try {
-			latestPdfContents = null;
+			latestPdfPageContents = new ArrayList<String>();
 			System.out.println("loadPdfCalled(): Loading PDF: " + Util.DOWNLOADS_FOLDER + "/" + pdfName);
-            File file = new File(Util.DOWNLOADS_FOLDER + "/" + pdfName);
+			File file = new File(Util.DOWNLOADS_FOLDER + "/" + pdfName);
+
+			PDFTextStripper pts = new PDFTextStripper();
+
             try (PDDocument document = Loader.loadPDF(file)) {
-				PDFTextStripper pts = new PDFTextStripper();
+				latestPdfFilePath = file.getAbsolutePath();
 				pts.setSortByPosition(true);
-				latestPdfContents = pts.getText(document);
+				for (int p=0; p < document.getNumberOfPages(); p++) {
+					pts = new PDFTextStripper();
+					pts.setStartPage(p+1);
+					pts.setEndPage(p+1);
+					pts.setSortByPosition(true);
+					latestPdfPageContents.add(pts.getText(document));
+				}
+
 				System.out.println("PRINTING PDF DOCUMENT");
 				System.out.println("= = = = = = =");
 				System.out.println("= = = = = = =");
 				System.out.println("= = = = = = =");
-				if (latestPdfContents != null) {
-					String[] lines = latestPdfContents.split("\n");
-					for (String line : lines) {
-						System.out.println(line);
+				if (latestPdfPageContents != null && latestPdfPageContents.size() > 0) {
+					for (int p = 0; p < latestPdfPageContents.size(); p++) {
+						String pageContent = latestPdfPageContents.get(p);
+						System.out.println(" = = Page " + (p+1));
+						String[] lines = pageContent.split("\n");
+						for (String line : lines) {
+							System.out.println(line);
+						}
+						System.out.println(" = = End of page " + (p+1));
 					}
 				}
 				System.out.println("= = = = = = =");
@@ -151,20 +174,39 @@ public class StepsLibrary {
             ex.printStackTrace();
         }
 	}
-	
+
+	@QAFTestStep(description = "assert text {0} appears in the pdf with screenshot")
+    public static void assertTextAppearsInPdfWithScreenshot(String text) {
+		assertTextAppearsInPdf(text, true);
+	}
+
 	@QAFTestStep(description = "assert text {0} appears in the pdf")
-    public static void assertTextAppearsInPdf(String text) {
+    public static void assertTextAppearsInPdfWithoutScreenshot(String text) {
+		assertTextAppearsInPdf(text, false);
+	}
+	
+    public static void assertTextAppearsInPdf(String text, boolean takeScreenshot) {
         boolean found = false;
         try {
-            if (latestPdfContents != null) {
-                String[] lines = latestPdfContents.split("\n");
-                for (String line : lines) {
-                    if (line.contains(text)) {
-                        found = true;
-                        break;
-                    }
-                }
-            }
+			if (latestPdfPageContents != null && latestPdfPageContents.size() > 0) {
+				for (int p=0; p < latestPdfPageContents.size(); p++) {
+					String pageContent = latestPdfPageContents.get(p);
+					String[] lines = pageContent.split("\n");
+					for (String line : lines) {
+						System.out.println("    " + line);
+						if (line.contains(text)) {
+							found = true;
+							if (takeScreenshot) {
+								takePDFScreenshot(latestPdfFilePath, p);
+							}
+							break;
+						}
+					}
+					if (found) {
+						break;
+					}
+				}
+			}
 
             Validator.assertTrue(found,
                 "Could not find the following text in the PDF: " + text,
@@ -175,19 +217,78 @@ public class StepsLibrary {
         
 	}
 
+	/**
+	 * Take a screenshot of the latest PDF
+	 * @param pageIndex 0-based index of the page
+	 */
+	private static void takePDFScreenshot(String pdfFileName, int pageIndex) throws Exception {
+		File pdf = new File(pdfFileName);
+
+		try (PDDocument document = Loader.loadPDF(pdf)) {
+			PDFRenderer pdfRenderer = new PDFRenderer(document);
+			//BufferedImage bim = pdfRenderer.renderImageWithDPI(pageFound, 300, ImageType.RGB);
+			BufferedImage bim = pdfRenderer.renderImageWithDPI(pageIndex, 100, ImageType.RGB);
+
+			//We cannot set a screenshot from an existing image currently (QAF)
+			//So we take a regular screenshot, and then replace the file with this one
+			//with the same name
+
+			//Take the screenshot
+			steps.common.StepsLibrary.takeAScreenshot();
+			//Get the screenshots dir of this test execution
+			File screenshotDir = new File(ApplicationProperties.SCREENSHOT_DIR.getStringVal("./img"));
+
+			//Find the latest screenshot in the directory (the one just taken)
+			File[] dirFiles = screenshotDir.listFiles((FileFilter)org.apache.commons.io.filefilter.FileFilterUtils.fileFileFilter());
+			File latest = null;
+			if (dirFiles != null && dirFiles.length > 0) {
+				Arrays.sort(dirFiles, LastModifiedFileComparator.LASTMODIFIED_REVERSE);
+				latest = dirFiles[0];
+			}
+			if (latest != null) {
+				//We get its name, delete the file, and replace it with our new PDF image
+				String fileName = latest.getAbsolutePath();
+				latest.delete();
+				File outputfile = new File(fileName);
+				ImageIO.write(bim, "jpg", outputfile);
+			} else {
+				logger.error("Could not get the latest file in the screenshots directory" + screenshotDir.getAbsolutePath());
+			}
+		}
+	}
+
+	@QAFTestStep(description = "assert text {0} does not appear in the pdf with screenshot")
+    public static void assertTextDoesntAppearInPdfWithScreenshot(String text) {
+		assertTextDoesNotAppearInPdf(text, true);
+	}
+
 	@QAFTestStep(description = "assert text {0} does not appear in the pdf")
-    public static void assertTextDoesNotAppearInPdf(String text) {
+    public static void assertTextDoesntAppearInPdfWithoutScreenshot(String text) {
+		assertTextDoesNotAppearInPdf(text, false);
+	}
+
+    public static void assertTextDoesNotAppearInPdf(String text, boolean takeScreenshot) {
         boolean found = false;
         try {
-            if (latestPdfContents != null) {
-                String[] lines = latestPdfContents.split("\n");
-                for (String line : lines) {
-                    if (line.contains(text)) {
-                        found = true;
-                        break;
-                    }
-                }
-            }
+			if (latestPdfPageContents != null && latestPdfPageContents.size() > 0) {
+				for (int p=0; p < latestPdfPageContents.size(); p++) {
+					String pageContent = latestPdfPageContents.get(p);
+					String[] lines = pageContent.split("\n");
+					for (String line : lines) {
+						System.out.println("    " + line);
+						if (line.contains(text)) {
+							found = true;
+							if (takeScreenshot) {
+								takePDFScreenshot(latestPdfFilePath, p);
+							}
+							break;
+						}
+					}
+					if (found) {
+						break;
+					}
+				}
+			}
 
             Validator.assertTrue(!found,
                 "The text " + text + " was found in the PDF, when it should not exist",
@@ -203,119 +304,140 @@ public class StepsLibrary {
 		boolean checklistValidated = false;
 		boolean commentsValidated = false;
 
-		if (latestPdfContents != null) {
-			String[] lines = latestPdfContents.split("\n");
-			boolean inLineItemsSection = false;
-			boolean inLineItem = false;
-			boolean afterChecklistTableHeader = false;
-			boolean inChecklistSection = false;
-			boolean inComments = false;
-			String lastLine = null;
-			int responses = 0;
-			String fullComments = "";
-			int lineNum=0;
-			boolean afterIndex = false;
-			String fullChecklist = "";
-			for (String line : lines) {
-				lineNum++;
-				System.out.println(lineNum);
-				//Skip the index page to go straight to the real contents
-				if (!afterIndex) {
-					if (line.startsWith("Page 2 of")) {
-						afterIndex = true;
-					}
-					continue;
-				}
-				if (line.startsWith("Page") && line.contains(" of ")) {
-					continue;
-				}
-				if (!inLineItemsSection) {
-					if (line.contains("Corrective Maintenance Inspections")) {
-						System.out.println("Corrective maintenance inspections : " + line);
-						inLineItemsSection = true;
-					}
-					continue;
-				} 
+		try {
 
-				//In the line items section
-				if (!inLineItem) {
-					if (line.contains("Corrective PM " + assetType)) {
-						System.out.println("Corrective PM" + assetType + ": " + line);
-						inLineItem = true;
-					}
-					continue;
-				}
+			List<Integer> pageIndexesWithScreenshotAlready = new ArrayList<Integer>();
 
-				//In the specific line item
-				if (!afterChecklistTableHeader) {
-					if (line.contains("Inspection Result")) {
-						System.out.println("Inspection Result" + line);
-						afterChecklistTableHeader = true;
-					}
-					continue;
-				}
+			if (latestPdfPageContents != null && latestPdfPageContents.size() > 0) {
 
-				if (!inChecklistSection) {
-					if (line.startsWith("1 ")) {
-						System.out.println("1 " + line);
-						inChecklistSection = true;
-					} else {
-						continue;
-					}
-				}
-				//Checklist items begin with a number, encompass 1-2 lines, and have the answer (Fail or Pass).
-				//The last one ends when we reach the comment section
-				if (Character.isDigit(line.toCharArray()[0]) || line.startsWith("Comments")) {
-					System.out.println("Digit or comments: " + line);
-					if (fullChecklist.length() > 0) {
-						//Check if the last line has the response we expected at the end
-						String expectedResponse = responses%2 == 0 ? "Fail" : "Pass"; //Even = Fail. Odd = Pass
-						boolean correct = fullChecklist.trim().contains(expectedResponse);
-						Validator.assertTrue(correct,
-						"Checklist item " + (responses+1) + " does not have the expected answer: Expected: " + expectedResponse + ", Actual text processed: " + fullChecklist.trim(),
-						"Checklist item " + (responses+1) + " has the expected answer: " + expectedResponse);
+				boolean inLineItemsSection = false;
+				boolean inLineItem = false;
+				boolean afterChecklistTableHeader = false;
+				boolean inChecklistSection = false;
+				boolean inComments = false;
+				//String lastLine = null;
+				int responses = 0;
+				String fullComments = "";
+				//int lineNum=0;
+				//boolean afterIndex = false;
+				String fullChecklist = "";
 
-						responses++;
-						fullChecklist = "";
+				//Start at page 2 to skip the intro and index
+				for (int p=2; p < latestPdfPageContents.size(); p++) {
+					String pageContent = latestPdfPageContents.get(p);
+					String[] lines = pageContent.split("\n");
+					for (String line : lines) {
+						//System.out.println("    " + line);
 
-						checklistValidated = true;
-					}
-				}
-				
-				//Save the last line since it may contain the latest answer
-				//lastLine = line;
-				fullChecklist += line;
+						if (!inLineItemsSection) {
+							if (line.contains("Corrective Maintenance Inspections")) {
+								System.out.println("Corrective maintenance inspections : " + line);
+								inLineItemsSection = true;
+							}
+							continue;
+						}
 
-				//Comments may have several lines
-				if (!inComments) {
-					if (line.startsWith("Comments")) {
-						System.out.println("Now in comments: " + line);
-						inComments = true;
-						fullComments += line.replace("Comments: ", "").trim();
-					}
-				} else {
-					if (line.startsWith("Photos:")) {
-						System.out.println("Now in photos: " + line);
-						//Comments have been fully obtained. Assert them
+						//In the line items section
+						if (!inLineItem) {
+							if (line.contains("Corrective PM " + assetType)) {
+								System.out.println("Corrective PM" + assetType + ": " + line);
+								inLineItem = true;
+							}
+							continue;
+						}
+
+						//In the specific line item
+						if (!afterChecklistTableHeader) {
+							if (line.contains("Inspection Result")) {
+								System.out.println("Inspection Result" + line);
+								afterChecklistTableHeader = true;
+							}
+							continue;
+						}
+
+						if (!inChecklistSection) {
+							if (line.startsWith("1 ")) {
+								System.out.println("1 " + line);
+								inChecklistSection = true;
+							} else {
+								continue;
+							}
+						}
+
+						//Checklist items begin with a number, encompass 1-2 lines, and have the answer (Fail or Pass).
+						//The last one ends when we reach the comment section
+						if ((Character.isDigit(line.toCharArray()[0]) || line.startsWith("Comments")) && !inComments) {
+							System.out.println("Digit or comments: " + line);
+							if (fullChecklist.length() > 0) {
+								//Check if the last line has the response we expected at the end
+								String expectedResponse = responses%2 == 0 ? "Fail" : "Pass"; //Even = Fail. Odd = Pass
+								boolean correct = fullChecklist.trim().contains(expectedResponse);
+								Validator.assertTrue(correct,
+								"Checklist item " + (responses+1) + " does not have the expected answer: Expected: " + expectedResponse + ", Actual text processed: " + fullChecklist.trim(),
+								"Checklist item " + (responses+1) + " has the expected answer: " + expectedResponse);
+
+								//Take a screenshot if necessary
+								if (!pageIndexesWithScreenshotAlready.contains(p)) {
+									takePDFScreenshot(latestPdfFilePath, p);
+									pageIndexesWithScreenshotAlready.add(p);
+								}
+
+								responses++;
+								fullChecklist = "";
+
+								checklistValidated = true;
+							}
+						}
 						
-						//Test removing all spaces...
-						String fullCommentsCheck = fullComments.replaceAll(" ", "").replaceAll("\r", "").replaceAll("\n", "");
-						String commentCheck = comment.replaceAll(" ", "").replaceAll("\r", "").replaceAll("\n", "");
+						//Save the last line since it may contain the latest answer
+						//lastLine = line;
+						fullChecklist += line;
 
-						Validator.assertTrue(fullCommentsCheck.equalsIgnoreCase(commentCheck),
-							"Comments are different in the PDF for the Line Item. Expected: " + comment + ". Found: " + fullComments,
-							"Comments appear correctly in the PDF for the Line Item " + assetType);
+						//Comments may have several lines
+						if (!inComments) {
+							if (line.startsWith("Comments")) {
+								System.out.println("Now in comments: " + line);
+								inComments = true;
+								fullComments += line.replace("Comments: ", "").trim();
+							}
+						} else {
+							if (line.startsWith("Photos:")) {
+								System.out.println("Now in photos: " + line);
+								//Comments have been fully obtained. Assert them
+								
+								//Test removing all spaces...
+								String fullCommentsCheck = fullComments.replaceAll(" ", "").replaceAll("\r", "").replaceAll("\n", "");
+								String commentCheck = comment.replaceAll(" ", "").replaceAll("\r", "").replaceAll("\n", "");
 
-						//Now we can exit
-						commentsValidated = true;
-						break;
-					} else {
-						//More comments, continue adding...
-						System.out.println("Adding mor comments:  " + line);
-						fullComments += line.trim();
+								Validator.assertTrue(fullCommentsCheck.equalsIgnoreCase(commentCheck),
+									"Comments are different in the PDF for the Line Item. Expected: " + comment + ". Found: " + fullComments,
+									"Comments appear correctly in the PDF for the Line Item " + assetType);
+
+								//Take a screenshot if necessary
+								if (!pageIndexesWithScreenshotAlready.contains(p)) {
+									takePDFScreenshot(latestPdfFilePath, p);
+									pageIndexesWithScreenshotAlready.add(p);
+								}
+
+								//Now we can exit
+								commentsValidated = true;
+								break;
+							} else {
+								//More comments, continue adding...
+								System.out.println("Adding mor comments:  " + line);
+								fullComments += line.trim();
+							}
+						}
+
+						if (commentsValidated && checklistValidated) {
+							break;
+						}
 					}
 				}
 			}
+
+		} catch (Exception x) {
+			logger.error(x.getMessage(), x);
 		}
 
 		Validator.assertTrue(commentsValidated && checklistValidated,
@@ -662,6 +784,30 @@ public class StepsLibrary {
 		}
 	}
 
+	@QAFTestStep(description = "select date {date} on angular datepicker")
+	public static void selectDateOnAngularDatepicker(String date) {
+		boolean success = false;
+		try {
+			int maxAttempts = 5;
+			for (int attempt = 0; attempt < maxAttempts; attempt++) {
+				try {
+					//Angular needs a bit to form its correct tree, or else we only get stale elements...
+					Thread.sleep(2000);
+					String xpath = "(//div[contains(@class, 'dhx_minical_popup')]//table//td[contains(@data-cell-date,'" + date + "')]//div)[1]";
+					QAFExtendedWebElement element = new WebDriverTestBase().getDriver().findElementByXPath(xpath);
+					element.click();
+				} catch (Exception x) {
+					//Ignore the stale error, it's still being clicked
+					success = true; break;
+				}
+			}
+		} catch (Exception x) {}
+
+		Validator.assertTrue(success,
+			"Could not select the date " + date + " on the angular datepicker",
+			"Date " + date + " successfully selected on the angular datepicker");
+	}
+
 	@QAFTestStep(description = "wait until {loc} for a max of {sec} seconds to be visible")
 	public static void waitForVisibleFoxMaxSeconds(String loc, long sec) {
 		$(loc).waitForVisible(sec * 1000);
@@ -693,13 +839,20 @@ public class StepsLibrary {
 	public static void selectSalesforcePicklistOption(String label) {
 		boolean success = false;
 		try {
-			String xpath = "//div[contains(@class, 'popupTargetContainer') and contains(@class, 'visible')]//div[@class='select-options']//li//a[.='" + label + "']";
-			QAFExtendedWebElement element = new WebDriverTestBase().getDriver().findElementByXPath(xpath);
-			element.waitForPresent();
-			element.waitForVisible();
-			element.click();
-			element.waitForNotVisible();
-			success = true;
+			int maxAttempts = 5;
+			for (int attempt = 0; attempt < maxAttempts; attempt++) {
+				try {
+					String xpath = "//div[contains(@class, 'popupTargetContainer') and contains(@class, 'visible')]//div[@class='select-options']//li//a[.='" + label + "']";
+					QAFExtendedWebElement element = new WebDriverTestBase().getDriver().findElementByXPath(xpath);
+					element.waitForPresent();
+					element.waitForVisible();
+					element.click();
+					element.waitForNotVisible();
+					success = true;
+					break;
+				} catch (Exception x) {}
+				Thread.sleep(2000);
+			}
 		} catch (Exception x) {}
 
 		Validator.assertTrue(success,

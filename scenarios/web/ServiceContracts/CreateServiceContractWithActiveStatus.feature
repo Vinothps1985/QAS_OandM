@@ -119,5 +119,7 @@ Scenario: Create Service Contract with Active Status
    And click on "serviceContracts.details.edit.save.button"
 
    Then wait for the page to finish loading
-   And wait until "serviceContracts.details.contractStatus.edit.button" to be enable
+   Then wait until "serviceContracts.details.contractStatus" to be present
+   And wait until "serviceContracts.details.contractStatus" to be enable
+   And assert "serviceContracts.details.contractStatus" text is "${contractStatus2}"
    And take a screenshot

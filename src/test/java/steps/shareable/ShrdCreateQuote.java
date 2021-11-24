@@ -137,6 +137,8 @@ public class ShrdCreateQuote extends WebDriverTestCase {
 		new WebDriverTestBase().getDriver().switchTo().defaultContent();
 
 		$("quotes.details.recordType").waitForPresent();
+		$("quotes.details.recordType").waitForEnabled();
+		$("quotes.details.recordType").waitForText("Draft");
 		$("quotes.details.recordType").assertText("Draft");
 
 		//TestBaseProvider.instance().get().takeScreenShot(); //Take a screenshot
@@ -186,22 +188,22 @@ public class ShrdCreateQuote extends WebDriverTestCase {
 		launchApp.customShrdLaunchApp("cases");
 
 		$("common.searchAssistant.button").waitForEnabled();
-		CommonStep.click("common.searchAssistant.button");
-		CommonStep.clear("common.searchAssistant.input");
+		$("common.searchAssistant.button").click();
+		$("common.searchAssistant.input").clear();
 		CommonStep.sendKeys(caseNumber,"common.searchAssistant.input");
 		$("cases.search.firstResult").waitForPresent();
 		$("cases.search.firstResult").waitForEnabled();
-		CommonStep.click("cases.search.firstResult");
+		$("cases.search.firstResult").click();
 
 		$("cases.createNewQuote.button").waitForEnabled();
-		CommonStep.click("cases.createNewQuote.button");
+		$("cases.createNewQuote.button").click();
 
 		$("quotes.createQuote.popup.salesRep.input").waitForEnabled();
-		CommonStep.click("quotes.createQuote.popup.salesRep.input");
-		CommonStep.clear("quotes.createQuote.popup.salesRep.input");
+		$("quotes.createQuote.popup.salesRep.input").click();
+		$("quotes.createQuote.popup.salesRep.input").clear();
 		CommonStep.sendKeys(""+String.valueOf(salesRep)+"","quotes.createQuote.popup.salesRep.input");
 		$("quotes.createQuote.popup.salesRep.firstOption").waitForEnabled();
-		CommonStep.click("quotes.createQuote.popup.salesRep.firstOption");
+		$("quotes.createQuote.popup.salesRep.firstOption").click();
 		$("quotes.createQuote.popup.primaryContact.input").waitForEnabled();
 		CommonStep.click("quotes.createQuote.popup.primaryContact.input");
 		CommonStep.sendKeys(""+String.valueOf(primaryContact)+"","quotes.createQuote.popup.primaryContact.input");

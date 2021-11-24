@@ -1,11 +1,11 @@
 Feature: Con Req Groups
 
 @author:Rodrigo Montemayor
-@description:Verify that user is able to create Con Req Group and PO manually using an Overhead account
+@description:Verify that user is able to create Con Req Group and PO manually using an O&M Project
 @conreqgroup @regression @positive
 @dataFile:resources/testdata/Con Req Groups/Create Con Req Group and PO using Overhead.csv
 @requirementKey=QTM-RQ-23
-Scenario: Create Con Req Group and PO using Overhead
+Scenario: Create Con Req Group and PO using OM Project
 
    Given login to salesforce with "${username}" and "${password}"
    And change logged in user to "test_o&M_manager"

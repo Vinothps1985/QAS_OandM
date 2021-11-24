@@ -563,4 +563,14 @@ public class StepsLibrary {
 			"Successfully extracted the date component from " + data + " into " + varName + ": " + result);
 	}
 
+	@QAFTestStep(description = "assert {loc} contains the text {text}")
+	public static void assertLocContainsText(String loc, String text) {
+		$(loc).waitForEnabled();
+		String locText = $(loc).getText();
+		boolean contained = locText.contains(text);
+		Validator.assertTrue(contained,
+			"The text " + text + " was not contained in the text " + locText + " as expected",
+			"The text " + text + " was found in the text " + locText + " as expected");
+	}
+
 }

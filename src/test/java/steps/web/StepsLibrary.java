@@ -1,6 +1,7 @@
 package steps.web;
 
 import static com.qmetry.qaf.automation.step.CommonStep.click;
+import org.openqa.selenium.Cookie;
 import static com.qmetry.qaf.automation.core.ConfigurationManager.getBundle;
 import com.qmetry.qaf.automation.util.Reporter;
 import com.qmetry.qaf.automation.ui.webdriver.QAFWebElement;
@@ -34,16 +35,23 @@ import com.qmetry.qaf.automation.util.Validator;
 import java.awt.image.BufferedImage;
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLConnection;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Optional;
 import java.util.Random;
+import java.util.Set;
 
 import javax.imageio.ImageIO;
 import javax.mail.Message;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
 import org.apache.commons.io.comparator.LastModifiedFileComparator;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -148,26 +156,41 @@ public class StepsLibrary {
 
 	@QAFTestStep(description = "load latest pdf in downloads directory")
     public static void loadLatestPdf() {
-        try {
-			System.out.println("Load latest pdf...");
-			File dir = new File(Util.DOWNLOADS_FOLDER);
-			File latest = null;
-			if (dir.isDirectory()) {
-				System.out.println("Is DIR OK");
-				File[] dirFiles = dir.listFiles((FileFilter)org.apache.commons.io.filefilter.FileFilterUtils.fileFileFilter());
-				if (dirFiles != null && dirFiles.length > 0) {
-					Arrays.sort(dirFiles, LastModifiedFileComparator.LASTMODIFIED_REVERSE);
-					latest = dirFiles[0];
-				}
-			} else {
-				System.out.println("Is DIR NOT OK");
-			}
+		boolean success = false;
+		try {
+			int maxAttempts = 5;
+			for (int attempt = 0; attempt < maxAttempts; attempt++) {
+				try {
+					System.out.println("Load latest pdf...");
+					File dir = new File(Util.DOWNLOADS_FOLDER);
+					System.out.println("Looking in dir: " + Util.DOWNLOADS_FOLDER);
+					File latest = null;
+					if (dir.isDirectory()) {
+						System.out.println("Is DIR OK");
+						File[] dirFiles = dir.listFiles((FileFilter)org.apache.commons.io.filefilter.FileFilterUtils.fileFileFilter());
+						if (dirFiles != null && dirFiles.length > 0) {
+							Arrays.sort(dirFiles, LastModifiedFileComparator.LASTMODIFIED_REVERSE);
+							for (File dirFile : dirFiles) {
+								if (dirFile.getName().toLowerCase().endsWith(".pdf")) {
+									latest = dirFile;
+									break;
+								}
+							}
+						}
+					} else {
+						System.out.println("Is DIR NOT OK");
+					}
 
-			if (latest != null) {
-				System.out.println("Latest found: " + latest.getName());
-				loadPdfCalled(latest.getName());
-			} else {
-				System.out.println("Latest not found");
+					if (latest != null) {
+						System.out.println("Latest found: " + latest.getName());
+						loadPdfCalled(latest.getName());
+						success = true;
+						break;
+					} else {
+						System.out.println("Latest not found");
+					}
+				} catch (Exception x) {}
+				Thread.sleep(2000);
 			}
             
         } catch (Exception ex) {
@@ -464,6 +487,7 @@ public class StepsLibrary {
 		QAFExtendedWebElement input = new WebDriverTestBase().getDriver().findElementByXPath("//input[@id='input-url']");
 		if (input.isPresent()) {
 			latestFileDownloadedUrl = input.getAttribute("value");
+			logger.info("latestFileDownloadedUrl: " + latestFileDownloadedUrl);
 		}
 
 		Validator.assertTrue(latestFileDownloadedUrl != null,
@@ -481,13 +505,111 @@ public class StepsLibrary {
 		try {
 			java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("yyyy-MM-dd_HHmmss");
 			String pdfName = sdf.format(new java.util.Date()) + ".pdf";
-			System.out.println("Downloading file...");
+			System.out.println("Downloading file from URL: " + latestFileDownloadedUrl);
 			FileUtils.copyURLToFile(new URL(latestFileDownloadedUrl), new java.io.File(Util.DOWNLOADS_FOLDER + "/" + pdfName));
 			System.out.println("File downloaded!");
 			System.out.println("File path: " + Util.DOWNLOADS_FOLDER + "/" + pdfName);
 		} catch (Exception x) {
 			x.printStackTrace();
 		}
+	}
+
+	@QAFTestStep(description = "download file locally with cookies {cookies}")
+	public static void downloadFileLocallyWithCookies(String cookies) throws Exception{
+
+		if (latestFileDownloadedUrl == null) {
+			System.out.println("Cannot download. File URL is null!");
+		}
+
+		try {
+			java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("yyyy-MM-dd_HHmmss");
+			String pdfName = sdf.format(new java.util.Date()) + ".pdf";
+			System.out.println("Downloading file from URL: " + latestFileDownloadedUrl);
+
+			HttpURLConnection connection = (HttpURLConnection) new URL(latestFileDownloadedUrl).openConnection();
+			connection.setRequestMethod("GET");
+			connection.addRequestProperty("Cookie", cookies);
+
+			try (InputStream in = connection.getInputStream()) {;
+				File downloadedFile = new File(Util.DOWNLOADS_FOLDER + "/" + pdfName);
+				try (FileOutputStream out = new FileOutputStream(downloadedFile)) {
+					byte[] buffer = new byte[1024];
+					int len = in.read(buffer);
+					while (len != -1) {
+						out.write(buffer, 0, len);
+						len = in.read(buffer);
+						if (Thread.interrupted()) {
+							throw new InterruptedException();
+						}
+					}
+				}
+			}
+
+			System.out.println("File downloaded!");
+			System.out.println("File path: " + Util.DOWNLOADS_FOLDER + "/" + pdfName);
+		} catch (Exception x) {
+			x.printStackTrace();
+		}
+	}
+
+	@QAFTestStep(description = "store cookies into {varName}")
+	public static void storeCookiesInto(String varName) throws Exception{
+
+		try {
+			String cookies = ((JavascriptExecutor) new WebDriverTestBase().getDriver())
+						.executeScript("return document.cookie;").toString();
+			if (cookies != null && cookies.trim().length() > 0) {
+				System.out.println("We got cookies!");
+				System.out.println(cookies);
+				CommonStep.store(cookies, varName);
+			} else {
+				System.out.println("No cookies :(");
+			}
+		} catch (Exception x) {
+			x.printStackTrace();
+		}
+	}
+
+	@QAFTestStep(description = "get embedded PDF URL into {varName}")
+	public static void getEmbeddedPDFURLInto(String varName) throws Exception{
+		boolean success = false;
+		try {
+			int maxAttempts = 5;
+			for (int attempt = 0; attempt < maxAttempts; attempt++) {
+				try {
+					String info = ((JavascriptExecutor) new WebDriverTestBase().getDriver())
+									.executeScript("return (typeof pageData !== 'undefined' ? pageData : loadTimeData.data_).summary.failedUrl;").toString();
+					if (info != null && info.trim().length() > 0) {
+						info = java.net.URLDecoder.decode(info, StandardCharsets.UTF_8.name());
+						String[] lines = info.split("\n");
+						for (String line : lines) {
+							if (line.contains("pdfUrl")) {
+								logger.info("Found pdfUrl");
+								line = line.substring(line.indexOf("pdfUrl") + 9);
+								line = line.substring(0, line.indexOf("};"));
+								latestFileDownloadedUrl = line;
+
+								CommonStep.store(latestFileDownloadedUrl, varName);
+
+								success = true;
+								break;
+							}
+						}
+
+						if (success) {
+							break;
+						}
+					}
+				} catch (Exception x) {}
+				Thread.sleep(2000);
+			}
+		} catch (Exception x) {
+			logger.error(x.getMessage(), x);
+		}
+
+		Validator.assertTrue(success,
+			"Could not get PDF download URL",
+			"Embedded PDF download URL obtained successfull");
 	}
 
 	/**
@@ -640,16 +762,6 @@ public class StepsLibrary {
 		} catch (Exception x) {
 			//Do nothing
 		}
-	}
-
-	@QAFTestStep(description = "assert {loc} contains the text {text}")
-	public static void assertLocContainsText(String loc, String text) {
-		$(loc).waitForEnabled();
-		String locText = $(loc).getText();
-		boolean contained = locText.contains(text);
-		Validator.assertTrue(contained,
-			"The text " + text + " was not contained in the text " + locText + " as expected",
-			"The text " + text + " was found in the text " + locText + " as expected");
 	}
 
 	/**
@@ -894,7 +1006,35 @@ public class StepsLibrary {
 			"Could not select the dropdown option with label " + label +  " and input " + inputLabel,
 			"Dropdown option with the label " + label + " for input " + inputLabel + " found and selected");
 	}
-
 	
+	@QAFTestStep(description = "switch to frame {frameLocator} until {searchLocator} is present")
+	public static void switchToFrameUntilLocIsPresent(String frameLocator, String searchLocator) {
+
+		boolean success = false;
+		try {
+			int maxAttempts = 6;
+			for (int attempt = 0; attempt < maxAttempts; attempt++) {
+				try {
+					new WebDriverTestBase().getDriver().switchTo().defaultContent();
+
+					$(frameLocator).waitForPresent();
+					new WebDriverTestBase().getDriver().switchTo().frame(new QAFExtendedWebElement(frameLocator));
+
+					$(searchLocator).waitForPresent(5000);
+					if ($(searchLocator).isPresent()) {
+						success = true;
+						break;
+					}
+				} catch (Exception x) {}
+				Thread.sleep(3000);
+			}
+		} catch (Exception x) {
+			logger.error(x.getMessage(), x);
+		}
+
+		Validator.assertTrue(success,
+			"Could not find " + searchLocator + " in frame " + frameLocator,
+			"Successfully switched to frame " + frameLocator);
+	}
 
 }

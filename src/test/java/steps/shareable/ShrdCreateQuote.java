@@ -137,6 +137,8 @@ public class ShrdCreateQuote extends WebDriverTestCase {
 		new WebDriverTestBase().getDriver().switchTo().defaultContent();
 
 		$("quotes.details.recordType").waitForPresent();
+		$("quotes.details.recordType").waitForEnabled();
+		$("quotes.details.recordType").waitForText("Draft");
 		$("quotes.details.recordType").assertText("Draft");
 
 		//TestBaseProvider.instance().get().takeScreenShot(); //Take a screenshot

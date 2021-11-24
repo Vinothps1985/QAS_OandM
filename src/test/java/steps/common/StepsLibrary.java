@@ -35,6 +35,8 @@ import com.qmetry.qaf.automation.ui.webdriver.QAFExtendedWebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+
 import java.util.NoSuchElementException;
 import java.util.Random;
 
@@ -573,4 +575,25 @@ public class StepsLibrary {
 			"The text " + text + " was found in the text " + locText + " as expected");
 	}
 
+	@QAFTestStep(description = "store number of rows from table into {varName}")
+	public static void storeNumberOfRowsFromTableInto(String varName) {
+		boolean success = false;
+		int numRows = 0;
+		try {
+			String xpath = "//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//table//tbody//tr";
+			
+			List lstTRs = new WebDriverTestBase().getDriver().findElements(By.xpath(xpath));
+			if (lstTRs != null && lstTRs.size() > 0) {
+				numRows = lstTRs.size();
+			}
+			CommonStep.store(numRows, varName);
+			success = true;
+		} catch (Exception x) {
+			logger.error(x.getMessage(), x);
+		}
+
+		Validator.assertTrue(success,
+			"Could not store the number of rows from table into " + varName,
+			"Stored the number of rows " + numRows + " from table into " + varName);
+	}
 }

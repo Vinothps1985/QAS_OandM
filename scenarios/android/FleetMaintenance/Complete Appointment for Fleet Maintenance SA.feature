@@ -192,7 +192,7 @@ Scenario: Complete Appointment for a given Fleet Maintenance Service Appointment
    Then store "resource/testdata;resources/web" into "env.resources"
    And set current platform as "web"
    Given login to salesforce with "${username}" and "${password}"
-   Then ShrdChangeLoggedInUser "test_ops_center_operator"
+   Then change logged in user to "test_ops_center_operator"
 
    Then get "${generated_workOrderURL}"
    Then wait until "workOrders.details.workOrderNumber" to be enable

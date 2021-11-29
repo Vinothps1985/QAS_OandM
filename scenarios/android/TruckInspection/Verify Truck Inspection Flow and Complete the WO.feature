@@ -235,7 +235,7 @@ Scenario: Verify Truck Inspection flow and COMPLETE the Truck Inspection work or
    And select option "OK" for form input with name "Exhaust Condition"
    And click on "serviceAppointment.truckInspection.next.button"
 
-   Then perform truck inspection steps with data "01" "02" "03" "04" "05"
+   Then perform truck inspection steps with data "${answer1}" "${answer2}" "${answer3}" "${answer4}" "${answer5}"
 
    And wait until "serviceAppointment.truckInspection.confirmCompletion.title" to be present
    And wait until "serviceAppointment.truckInspection.confirmCompletion.title" to be enable

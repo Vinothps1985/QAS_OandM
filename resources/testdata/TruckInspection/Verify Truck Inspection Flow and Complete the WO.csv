@@ -1,2 +1,2 @@
-username,password,passcode,truckName,account,assetType,workType,serviceAppointmentAssignee,woSubject,woDescription
-rmontemayor@borregosolar.com.fullcopy,RkNwYXNzd29yZDEyMyE=,1234,Truck Name,CleanCapital,Fleet Vehicle - Truck,Fleet Maintenance,Test Technician,The subject,The description
+username,password,passcode,truckName,account,assetType,workType,serviceAppointmentAssignee,woSubject,woDescription,answer1,answer2,answer3,answer4,answer5
+rmontemayor@borregosolar.com.fullcopy,RkNwYXNzd29yZDEyMyE=,1234,Truck Name,CleanCapital,Fleet Vehicle - Truck,Fleet Maintenance,Test Technician,The subject,The description,01,02,03,04,05

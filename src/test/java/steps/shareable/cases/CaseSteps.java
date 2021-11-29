@@ -439,10 +439,10 @@ public class CaseSteps extends WebDriverTestCase {
 		$("cases.search.firstResult").waitForVisible();
 		$("cases.search.firstResult").waitForEnabled();
 		CommonStep.click("cases.search.firstResult");
-		$("cases.caseNumber").waitForVisible();
+		$("cases.titleCaseNumber").waitForVisible();
 
-		$("cases.caseNumber").waitForPresent();
-		$("cases.caseNumber").assertText(String.valueOf(caseNumber));
+		$("cases.titleCaseNumber").waitForPresent();
+		$("cases.titleCaseNumber").assertText(String.valueOf(caseNumber));
 	}
 
 	public boolean inCaseScreen(String caseNumber) {

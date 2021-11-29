@@ -1,2 +1,2 @@
-passcode,locationInfo,injuryInfo,damageInfo,sequenceInfo
-1234,The location info,The injury info,The damage info,The sequence info
+username,password,projectName,subject,caseDescription,summary,recordType,casePriority,caseOrigin,reportedIssue,caseCause,assetType1,assetType2,passcode,locationInfo,injuryInfo,damageInfo,sequenceInfo,serviceAppointmentAssignee
+rmontemayor@borregosolar.com.fullcopy,RkNwYXNzd29yZDEyMyE=,Acushnet - ADM Makepeace - O&M,Sample subject from QAS,Sample description from QAS,Sample summary,Reactive,Low,Manager Created,System Down,Other,Solar Array,Combiner Box,1234,The location info,The injury info,The damage info,The sequence info,Test Technician

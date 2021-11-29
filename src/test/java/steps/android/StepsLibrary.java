@@ -118,8 +118,42 @@ public class StepsLibrary {
 		}
 	}
 
+	@QAFTestStep(description = "scroll until the text containing {0} is on the screen")
+	public static void scrollUntilTextContainingOnScreen(String text) {
+		logger.info("Scrolling to find the text containing: " + text);
+		boolean found = false;
+		try {
+			int maxAttempts = 10;
+			int attempts = 0;
+			while (attempts < maxAttempts) {
+				try {
+					String xpath = "(//*[contains(@text,'" + text + "')])[1]";
+					WebElement element = getDriver().findElementByXPath(xpath);
+					if (element.isDisplayed()) {
+						found = true;
+						break;
+					}
+				} catch (Exception x) {}
+		
+				attempts++;
+				Thread.sleep(500);
+				
+				getDriver().findElement(MobileBy.AndroidUIAutomator(
+				"new UiScrollable(new UiSelector().scrollable(true))" +
+				".setSwipeDeadZonePercentage(.3).scrollForward(50)"));
+			}
+		} catch (Exception x) {
+			x.printStackTrace();
+			throw new AssertionError("Could not find element with text " + text);
+		}
+
+		Validator.assertTrue(found,
+				"No element was found with the text " + text,
+				"The element with text " + text + " was found");
+	}
+
 	@QAFTestStep(description = "scroll until the text {0} is on the screen")
-	public static void scrollThingy(String text) {
+	public static void scrollUntilTextOnScreen(String text) {
 		logger.info("Scrolling to find the text: " + text);
 		boolean found = false;
 		try {
@@ -258,6 +292,31 @@ public class StepsLibrary {
 		Validator.assertTrue(success,
 			"Could not select option " + option + " for form input with name " + name,
 			"Successfully selected option " + option + " for form input with name " + name);
+	}
+
+	@QAFTestStep(description = "toggle the switch for form input with name {name}")
+	public static void toggleswitchForFormInput(String name) {
+		boolean success = false;
+		try {
+			int maxAttempts = 10;
+			for (int attempt = 0; attempt < maxAttempts; attempt++) {
+				try {
+					String xpath= "(//android.widget.TextView[contains(@text, '" + name + "')]//following::android.widget.Switch)[1]";
+					WebElement element = getDriver().findElementByXPath(xpath);
+					if (element.isDisplayed() && element.isEnabled()) {
+						element.click();
+						success = true;
+						break;
+					}
+				} catch (Exception x) {}
+				Thread.sleep(2000);
+			}
+		} catch (Exception x) {
+			logger.error(x.getMessage(), x);
+		}
+		Validator.assertTrue(success,
+			"Could not toggle switch for form input with name " + name,
+			"Successfully toggled switch for form input with name " + name);
 	}
 
 	@QAFTestStep(description = "select option that contains {option} for form input with name {name}")
@@ -539,13 +598,13 @@ public class StepsLibrary {
 	public static WebElement waitAndReturnWhenPresentByXpath(String xpath) {
 		int maxAttempts = 10;
 		for (int attempt = 0; attempt < maxAttempts; attempt++) {
+			try {Thread.sleep(2000);} catch (Exception x) {}
 			try {
 				WebElement element = getDriver().findElementByXPath(xpath);
 				if (element.isDisplayed() && element.isEnabled()) {
 					return element;
 				}
 			} catch (Exception x) {}
-			try {Thread.sleep(2000);} catch (Exception x) {}
 		}
 		throw new AssertionError("Could not find the element with xpath: " + xpath);
 	}

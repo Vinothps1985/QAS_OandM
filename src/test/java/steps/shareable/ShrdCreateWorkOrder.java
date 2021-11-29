@@ -106,11 +106,11 @@ public class ShrdCreateWorkOrder extends WebDriverTestCase {
 		new WebDriverTestBase().getDriver().switchTo().defaultContent();
 
 		//Reload the case page
-		$("cases.caseNumber").waitForVisible();
+		$("cases.titleCaseNumber").waitForVisible();
 		StepsLibrary.executeJavaScript("window.location.reload();");
 
 		//Wait until the cases page is updated
-		$("cases.caseNumber").waitForPresent();
+		$("cases.titleCaseNumber").waitForPresent();
 	}
 }
 

@@ -94,6 +94,10 @@ public class ShrdCreateCase extends WebDriverTestCase {
 
 		steps.web.StepsLibrary.selectSalesforcePicklistOption(caseOrigin.toString());
 
+		//Reported Issue and Case Cause fields should be filled for Reactive and Additional Services case types
+		if(recordType.equals("Reactive") || recordType.equals("Additional Services"))
+		{
+
 		$("case.createCase.popup.reportedIssue.select").waitForEnabled();
 		CommonStep.click("case.createCase.popup.reportedIssue.select");
 
@@ -108,6 +112,8 @@ public class ShrdCreateCase extends WebDriverTestCase {
 		CommonStep.click("case.createCase.popup.caseCause.select");
 
 		steps.web.StepsLibrary.selectSalesforcePicklistOption(caseCause.toString());
+
+		}
 
 		CommonStep.sendKeys(""+String.valueOf(subject)+"","case.createCase.popup.subject.input");
 		CommonStep.sendKeys(""+String.valueOf(caseDescription)+"","case.createCase.popup.description.textarea");

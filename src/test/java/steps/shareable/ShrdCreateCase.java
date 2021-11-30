@@ -95,7 +95,7 @@ public class ShrdCreateCase extends WebDriverTestCase {
 		steps.web.StepsLibrary.selectSalesforcePicklistOption(caseOrigin.toString());
 
 		//Reported Issue and Case Cause fields should be filled for Reactive and Additional Services case types
-		if(recordType.equals("Reactive") || recordType.equals("Additional Services"))
+		if(recordType.equals("Reactive") || recordType.equals("Additional Services") || recordType.equals("Performance Investigation"))
 		{
 
 		$("case.createCase.popup.reportedIssue.select").waitForEnabled();

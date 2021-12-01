@@ -14,10 +14,11 @@ Scenario: Complete Appointment for a given Fleet Repair Service Appointment
    Then login to salesforce with "${username}" and "${password}"
    And ShrdChangeLoggedInUser "test_ops_center_operator"
 
-   #Create a new asset of type truck to use
+   #This is used if we need to create a new one
    Then create a random number with 6 digits and store it in "randomTruckNumber"
    And store "${truckName} - ${randomTruckNumber}" into "newTruckName"
-   Then create an asset with data "Truck" "${assetType}" "${newTruckName}" "${account}"
+   #Search for the asset or create one
+   Then search for asset "${assetName}" or create one with data "Truck" "${assetType}" "${newTruckName}" "${account}"
    And take a screenshot
 
    #Create a work order from the asset page
@@ -179,6 +180,7 @@ Scenario: Complete Appointment for a given Fleet Repair Service Appointment
 
    And assert "serviceAppointment.related.timeSheetEntries.first" is present
    And take a screenshot
+   And store text from "serviceAppointment.related.timeSheetEntries.first" into "generated_timeSheetNum"
 
    #Change to web
    Then store "resource/testdata;resources/web" into "env.resources"
@@ -187,11 +189,30 @@ Scenario: Complete Appointment for a given Fleet Repair Service Appointment
    Then ShrdChangeLoggedInUser "test_ops_center_operator"
 
    Then get "${generated_workOrderURL}"
-   Then wait until "workOrders.details.workOrderNumber" to be enable
-   And wait until "workOrders.details.workOrderNumber" to be visible
-
-   And scroll until "workOrders.timeSheetEntries.link" is visible
+   And wait until "workOrders.details.status" to be enable
+   And wait until "workOrders.details.status" to be visible
+   And assert "workOrders.details.status" text is "Completed"
    And take a screenshot
+
+   And click on "workOrders.serviceAppointments.link"
+   
+   Then wait until "serviceAppointments.table.first.link" to be enable
+   And wait until "serviceAppointments.table.first.link" to be visible
+   And click on "serviceAppointments.table.first.link"
+
+   Then wait until "serviceAppointments.details.status" to be enable
+   And wait until "serviceAppointments.details.status" to be visible
+   And assert "serviceAppointments.details.status" text is "Completed"
+   And take a screenshot
+
+   Then get "${generated_workOrderURL}"
+   And scroll until "workOrders.timeSheetEntries.link" is visible
    And click on "workOrders.timeSheetEntries.link"
-   And assert "timeSheetEntries.table.firstResult.link" is present
+   Then wait until "timeSheetEntries.table.firstResult.link" to be present
+   Then wait until "timeSheetEntries.table.firstResult.link" to be enable
+   And assert "timeSheetEntries.table.firstResult.link" text is "${generated_timeSheetNum}"
+   And click on "timeSheetEntries.table.firstResult.link"
+   And wait until "timeSheetEntries.details.status" to be present
+   And wait until "timeSheetEntries.details.status" to be enable
+   And assert "timeSheetEntries.details.status" text is "New"
    And take a screenshot

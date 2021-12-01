@@ -91,7 +91,7 @@ Scenario: Verify Categorizing an Incident Report
    And wait until "schedule.date.icon" to be enable
    And click on "schedule.date.icon"
 
-   Then format date "${sa_scheduledStart}" from "M/d/yyyy" to "EEE, MMM dd" into "scheduledDateAndroidFormat"
+   Then format date "${sa_scheduledStart}" from "M/d/yyyy" to "EEE, MMM d" into "scheduledDateAndroidFormat"
 
    And click the date "${scheduledDateAndroidFormat}" in the scheduler datepicker
 

@@ -23,6 +23,18 @@ Scenario: Generate case closure report with incomplete WO Line Items
    And take a screenshot
 
    #Do not set the line items as completed
+   And go to case "${generated_caseNumber}"
+   Then wait until "cases.quickLinks.workOrderLineItems" to be present
+   And wait until "cases.quickLinks.workOrderLineItems" to be enable
+   And click on "cases.quickLinks.workOrderLineItems"
+
+	And wait until "woLineItems.table.firstResult.link" to be present
+   And wait until "woLineItems.table.firstResult.link" to be enable
+   And click on "woLineItems.table.firstResult.link"
+
+   Then wait until "woLineItems.details.workOrder.link" to be enable
+   And assert "woLineItems.details.status" text is not "Completed"
+   And take a screenshot
 
    Then go to case "${generated_caseNumber}"
    And wait until "case.details.accountName" to be visible

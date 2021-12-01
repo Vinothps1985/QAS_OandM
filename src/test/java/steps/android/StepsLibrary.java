@@ -157,7 +157,7 @@ public class StepsLibrary {
 		logger.info("Scrolling to find the text: " + text);
 		boolean found = false;
 		try {
-			int maxAttempts = 10;
+			int maxAttempts = 20;
 			int attempts = 0;
 			while (attempts < maxAttempts) {
 				try {

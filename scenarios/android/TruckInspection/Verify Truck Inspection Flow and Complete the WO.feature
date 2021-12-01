@@ -13,8 +13,8 @@ Scenario: Verify Truck Inspection flow and COMPLETE the Truck Inspection work or
    #Login and change user
    Then login to salesforce with "${username}" and "${password}"
    And change logged in user to "test_ops_center_operator"
-
-   Then search for asset "Truck Test Asset - 1"
+   And close all open web tabs
+   Then search for asset "${assetName}"
 
    #Create a truck inspection from the asset page
    Then store next business day into "nextBusinessDay" in format "M/d/yyyy"
@@ -49,30 +49,18 @@ Scenario: Verify Truck Inspection flow and COMPLETE the Truck Inspection work or
    And click on "serviceAppointments.details.scheduledStart.edit.button"
    And wait until "serviceAppointments.details.scheduledStart.edit.input" to be enable
    And wait until "serviceAppointments.details.scheduledStart.edit.input" to be visible
+   And clear "serviceAppointments.details.scheduledStart.edit.input"
    And sendKeys "${nextBusinessDay}" into "serviceAppointments.details.scheduledStart.edit.input"
    And type Enter "serviceAppointments.details.scheduledStart.edit.input"
+   And clear "serviceAppointments.details.scheduledEnd.edit.input"
    Then sendKeys "${nextBusinessDay}" into "serviceAppointments.details.scheduledEnd.edit.input"
 
    Then click on "serviceAppointments.details.edit.save.button"
    And wait until "serviceAppointments.details.scheduledStart.edit.button" to be visible
    And take a screenshot
 
-   Then click on "serviceAppointments.assignedResources.all.link"
-
-   Then wait until "serviceAppointments.assignedResources.new.button" to be enable
-   Then wait until "serviceAppointments.assignedResources.new.button" to be visible
-   And click on "serviceAppointments.assignedResources.new.button"
-
-   Then wait until "serviceAppointment.editResource.popup.serviceResource.input" to be enable
-   And wait until "serviceAppointment.editResource.popup.serviceResource.input" to be visible
-   And sendKeys "${serviceAppointmentAssignee}" into "serviceAppointment.editResource.popup.serviceResource.input"
-   Then wait until "serviceAppointment.editResource.popup.serviceResource.option.first" to be present
-   And wait until "serviceAppointment.editResource.popup.serviceResource.option.first" to be visible
-   And click on "serviceAppointment.editResource.popup.serviceResource.option.first"
-   And take a screenshot
-   And click on "common.save.button"
-   Then wait until "common.toastContainer" to be present
-   And wait until "common.toastContainer" to be enable
+   #Usually takes a while to be auto-assigned
+   Then assign "${serviceAppointmentAssignee}" to service appointment if it is not autoassigned after 30 seconds
    And take a screenshot
    
    #Change to Android
@@ -86,7 +74,7 @@ Scenario: Verify Truck Inspection flow and COMPLETE the Truck Inspection work or
    And wait until "schedule.date.icon" to be enable
    And click on "schedule.date.icon"
 
-   Then format date "${nextBusinessDay}" from "M/d/yyyy" to "EEE, MMM dd" into "nextBusinessDayAndroidFormat"
+   Then format date "${nextBusinessDay}" from "M/d/yyyy" to "EEE, MMM d" into "nextBusinessDayAndroidFormat"
 
    And click the date "${nextBusinessDayAndroidFormat}" in the scheduler datepicker
 
@@ -247,15 +235,23 @@ Scenario: Verify Truck Inspection flow and COMPLETE the Truck Inspection work or
    Then wait until "serviceAppointment.truckInspection.travelStartTime.datepicker" to be present
    And wait until "serviceAppointment.truckInspection.travelStartTime.datepicker" to be enable
    And click on "serviceAppointment.truckInspection.travelStartTime.datepicker"
-   And wait until "common.date.popup.ok" to be enable
+   Then select current selected date on datepicker
+   Then open timepicker for form input with name "Travel Start Time"
+   And select "${travelStartTimeHour}" "${travelStartTimeMin}" on timepicker
    And click on "common.date.popup.ok"
+
    And wait until "serviceAppointment.truckInspection.workStartTime.datepicker" to be enable
    And click on "serviceAppointment.truckInspection.workStartTime.datepicker"
-   And wait until "common.date.popup.ok" to be enable
+   Then select current selected date on datepicker
+   Then open timepicker for form input with name "Work Start Time"
+   And select "${workStartTimeHour}" "${workStartTimeMin}" on timepicker
    And click on "common.date.popup.ok"
+
    And wait until "serviceAppointment.truckInspection.workEndTime.datepicker" to be enable
    And click on "serviceAppointment.truckInspection.workEndTime.datepicker"
-   And wait until "common.date.popup.ok" to be enable
+   Then select current selected date on datepicker
+   Then open timepicker for form input with name "Work End Time"
+   And select "${workEndTimeHour}" "${workEndTimeMin}" on timepicker
    And click on "common.date.popup.ok"
    And take a screenshot
 
@@ -292,4 +288,69 @@ Scenario: Verify Truck Inspection flow and COMPLETE the Truck Inspection work or
    And scroll refresh for up to 120 seconds until "serviceAppointment.related.timeSheetEntries.first" is present
 
    And assert "serviceAppointment.related.timeSheetEntries.first" is present
+   And take a screenshot
+   And store text from "serviceAppointment.related.timeSheetEntries.first" into "generated_timeSheetNum"
+
+   Then click on "common.back.button"
+   And wait until "common.actions.button" to be enable
+   Then scroll to end
+   And click on "serviceAppointment.related.truckInspections.button"
+   And wait until "serviceAppointment.related.truckInspections.first" to be present
+   And store text from "serviceAppointment.related.truckInspections.first" into "generated_truckInspectionNum"
+   And take a screenshot
+
+
+   Then store "resource/testdata;resources/web" into "env.resources"
+   And set current platform as "web"
+   Given login to salesforce with "${username}" and "${password}"
+   Then change logged in user to "test_ops_center_operator"
+   And close all open web tabs
+
+   Then get "${generated_workOrderURL}"
+   And wait until "workOrders.details.status" to be enable
+   And wait until "workOrders.details.status" to be visible
+   And assert "workOrders.details.status" text is "Completed"
+   And take a screenshot
+
+   And click on "workOrders.serviceAppointments.link"
+   
+   Then wait until "serviceAppointments.table.first.link" to be enable
+   And wait until "serviceAppointments.table.first.link" to be visible
+   And click on "serviceAppointments.table.first.link"
+
+   Then wait until "serviceAppointments.details.status" to be enable
+   And wait until "serviceAppointments.details.status" to be visible
+   And assert "serviceAppointments.details.status" text is "Completed"
+   And take a screenshot
+
+   Then scroll until "serviceAppointments.truckInspections" is visible
+   And click on "serviceAppointments.truckInspections"
+
+   Then wait until "common.table.link.first" to be present
+   Then wait until "common.table.link.first" to be enable
+   And assert "common.table.link.first" text is "${generated_truckInspectionNum}"
+   And click on "common.table.link.first"
+
+   And wait until "truckInspections.details.status" to be present
+   And wait until "truckInspections.details.status" to be enable
+   And assert "truckInspections.details.status" text is "Completed"
+   And take a screenshot
+   Then scroll until "truckInspections.details.sharinPix.iframe" is visible
+   And wait until "truckInspections.details.sharinPix.iframe" to be enable
+   And switch to frame "truckInspections.details.sharinPix.iframe"
+   And wait until "truckInspections.details.sharinPix.image.first" to be present
+   And wait until "truckInspections.details.sharinPix.image.first" to be enable
+   And assert "truckInspections.details.sharinPix.image.first" is present
+   And switch to parent frame
+
+   Then get "${generated_workOrderURL}"
+   And scroll until "workOrders.timeSheetEntries.link" is visible
+   And click on "workOrders.timeSheetEntries.link"
+   Then wait until "timeSheetEntries.table.firstResult.link" to be present
+   Then wait until "timeSheetEntries.table.firstResult.link" to be enable
+   And assert "timeSheetEntries.table.firstResult.link" text is "${generated_timeSheetNum}"
+   And click on "timeSheetEntries.table.firstResult.link"
+   And wait until "timeSheetEntries.details.status" to be present
+   And wait until "timeSheetEntries.details.status" to be enable
+   And assert "timeSheetEntries.details.status" text is "New"
    And take a screenshot

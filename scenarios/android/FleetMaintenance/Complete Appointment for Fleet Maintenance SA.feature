@@ -14,11 +14,15 @@ Scenario: Complete Appointment for a given Fleet Maintenance Service Appointment
    Then login to salesforce with "${username}" and "${password}"
    And ShrdChangeLoggedInUser "test_ops_center_operator"
 
-   #Create a new asset of type truck to use
+   #Create or reuse a truckName
+   #This is used if we need to create a new one
    Then create a random number with 6 digits and store it in "randomTruckNumber"
    And store "${truckName} - ${randomTruckNumber}" into "newTruckName"
-   Then create an asset with data "Truck" "${assetType}" "${newTruckName}" "${account}"
+   #Search for the asset or create one
+   Then search for asset "${assetName}" or create one with data "Truck" "${assetType}" "${newTruckName}" "${account}"
    And take a screenshot
+   #Then create an asset with data "Truck" "${assetType}" "${newTruckName}" "${account}"
+   #And take a screenshot
 
    #Create a work order from the asset page
    Then store next business day into "nextBusinessDay" in format "M/d/yyyy"
@@ -41,31 +45,38 @@ Scenario: Complete Appointment for a given Fleet Maintenance Service Appointment
 
    Then wait until "serviceAppointments.details.status" to be enable
    And wait until "serviceAppointments.details.status" to be visible
+   And store the current url in "generated_serviceAppointmentURL"
 
-   #Reload
-   Then Execute Java Script with data "window.location.reload();"
+   And launch salesforce app "Field Service"
+   And wait until "fieldService.iframe" for a max of 60 and min of 10 seconds to be present
+   And wait until "fieldService.iframe" to be enable
+   And switch to frame "fieldService.iframe"
 
+   And select "label=All Service Appointments" in "fieldService.predefinedFilterSelector.select"
+   And wait until "fieldService.searchServiceAppointments.input" to be enable
+   And sendKeys "${generated_serviceAppointment}" into "fieldService.searchServiceAppointments.input"
+   And wait until "fieldService.serviceAppointmentsList.firstOption" to be enable
+   And wait until "fieldService.serviceAppointmentsList.firstOption.serviceAppointmentID" text "${generated_serviceAppointment}"
+   And click on "fieldService.serviceAppointmentsList.firstOption"
+   Then wait until "fieldService.serviceAppointment.firstOption.schedule.button" to be visible
+   And click on "fieldService.serviceAppointment.firstOption.schedule.button"
+   And wait until "fieldService.loadingIndicator" to be visible
+   Then wait until "fieldService.loadingIndicator" not to be visible
+
+   Then get "${generated_serviceAppointmentURL}"
    Then wait until "serviceAppointments.details.status" to be enable
    And wait until "serviceAppointments.details.status" to be visible
 
-   Then scroll until "serviceAppointments.details.scheduledStart.edit.button" is visible
-   And click on "serviceAppointments.details.scheduledStart.edit.button"
-   And wait until "serviceAppointments.details.scheduledStart.edit.input" to be enable
-   And wait until "serviceAppointments.details.scheduledStart.edit.input" to be visible
-   And sendKeys "${nextBusinessDay}" into "serviceAppointments.details.scheduledStart.edit.input"
-   And type Enter "serviceAppointments.details.scheduledStart.edit.input"
-   Then sendKeys "${nextBusinessDay}" into "serviceAppointments.details.scheduledEnd.edit.input"
-   And type Enter "serviceAppointments.details.scheduledEnd.edit.input"
-
-   Then click on "serviceAppointments.details.edit.save.button"
-   And wait until "serviceAppointments.details.scheduledStart.edit.button" to be visible
-
-   Then click on "serviceAppointments.assignedResources.all.link"
-
-   Then wait until "serviceAppointments.assignedResources.new.button" to be enable
-   Then wait until "serviceAppointments.assignedResources.new.button" to be visible
-   And click on "serviceAppointments.assignedResources.new.button"
-
+   #Reload
+   Then Execute Java Script with data "window.location.reload();"
+   Then wait until "serviceAppointments.assignedResources.first.dropDown.button" to be enable
+   And wait until "serviceAppointments.assignedResources.first.dropDown.button" to be visible
+   And click on "serviceAppointments.assignedResources.first.dropDown.button"
+   Then wait until "serviceAppointments.assignedResources.first.dropDown.edit.option" to be present
+   And click on "serviceAppointments.assignedResources.first.dropDown.edit.option"
+   Then wait until "serviceAppointment.editResource.popup.serviceResource.delete.link" to be enable
+   And wait until "serviceAppointment.editResource.popup.serviceResource.delete.link" to be visible
+   And click on "serviceAppointment.editResource.popup.serviceResource.delete.link"
    Then wait until "serviceAppointment.editResource.popup.serviceResource.input" to be enable
    And wait until "serviceAppointment.editResource.popup.serviceResource.input" to be visible
    And sendKeys "${serviceAppointmentAssignee}" into "serviceAppointment.editResource.popup.serviceResource.input"
@@ -73,47 +84,32 @@ Scenario: Complete Appointment for a given Fleet Maintenance Service Appointment
    And wait until "serviceAppointment.editResource.popup.serviceResource.option.first" to be visible
    And click on "serviceAppointment.editResource.popup.serviceResource.option.first"
    And take a screenshot
-   And click on "common.save.button"
+   And click on "serviceAppointment.editResource.popup.save.button"
    Then wait until "common.toastContainer" to be present
    And wait until "common.toastContainer" to be enable
    And take a screenshot
-
+   #Save the scheduled date
+   Then scroll until "serviceAppointments.details.scheduledStart" is visible
+   And store text from "serviceAppointments.details.scheduledStart" into "sa_scheduledStart"
+   #Remove the time and take just the date (e.g. 11/16/2021 9:18 AM = 11/16/2021)
+   And extract the date component from "${sa_scheduledStart}" into "sa_scheduledStart"
 
    #Change to Android
    Then store "resource/testdata;resources/android" into "env.resources"
    And set current platform as "android"
-   
+
    Then sendKeys "${passcode}" into "login.passcode.input"
 
    And click on "home.popup.useLocation.notYet.option" if it appears within 10000 milisec
 
-   #### START DATASYNC
-   And wait until "home.menu.profile.button" to be enable
-   And click on "home.menu.profile.button"
-   And wait until "profile.settings.icon" to be enable
-   And click on "profile.settings.icon"
-   And wait until "settings.dataSync.button" to be enable
-   And click on "settings.dataSync.button"
-   
-   #Do the datasync
-   And wait until "dataSync.sync.button" to be enable
-   And click on "dataSync.sync.button"
-   And wait for 10000 milisec
-   And wait for 5 minutes for "dataSync.cancelSync.button" to be not present
-
-   And wait until "dataSync.syncComplete.dismiss.button" to be enable
-   And click on "dataSync.syncComplete.dismiss.button"
-   And go back until "home.menu.profile.button" is present
-   And wait until "home.menu.schedule.button" to be enable
-   And click on "home.menu.schedule.button"
-   #### END DATASYNC
-
    And wait until "schedule.date.icon" to be enable
    And click on "schedule.date.icon"
 
-   Then format date "${nextBusinessDay}" from "M/d/yyyy" to "EEE, MMM dd" into "nextBusinessDayAndroidFormat"
+   Then format date "${sa_scheduledStart}" from "M/d/yyyy" to "EEE, MMM d" into "nextBusinessDayAndroidFormat"
 
    And click the date "${nextBusinessDayAndroidFormat}" in the scheduler datepicker
+
+   And scroll refresh for up to 60 seconds until "serviceAppointments.appointments.first" is present
 
    And wait until "serviceAppointments.appointments.first" to be enable
    And scroll until the text "${generated_serviceAppointment}" is on the screen
@@ -152,18 +148,27 @@ Scenario: Complete Appointment for a given Fleet Maintenance Service Appointment
    And select option that contains "Completed" for form input with name "Status"
    And wait until "serviceAppointment.fleetMaintenanceComplete.travelStartTime.datepicker" to be enable
    And click on "serviceAppointment.fleetMaintenanceComplete.travelStartTime.datepicker"
-   And wait until "common.date.popup.ok" to be enable
+   And select current selected date on datepicker
+   Then open timepicker for form input with name "Travel Start Time"
+   And select "${travelStartTimeHour}" "${travelStartTimeMin}" on timepicker
    And click on "common.date.popup.ok"
+
    And wait until "serviceAppointment.fleetMaintenanceComplete.workStartTime.datepicker" to be enable
    And click on "serviceAppointment.fleetMaintenanceComplete.workStartTime.datepicker"
-   And wait until "common.date.popup.ok" to be enable
+   And select current selected date on datepicker
+   Then open timepicker for form input with name "Work Start Time"
+   And select "${workStartTimeHour}" "${workStartTimeMin}" on timepicker
    And click on "common.date.popup.ok"
+
    And scroll to end
    And wait until "serviceAppointment.fleetMaintenanceComplete.workEndTime.datepicker" to be enable
    And click on "serviceAppointment.fleetMaintenanceComplete.workEndTime.datepicker"
-   And wait until "common.date.popup.ok" to be enable
+   And select current selected date on datepicker
+   Then open timepicker for form input with name "Work End Time"
+   And select "${workEndTimeHour}" "${workEndTimeMin}" on timepicker
    And click on "common.date.popup.ok"
    And take a screenshot
+
    And wait until "serviceAppointment.fleetMaintenanceComplete.next.button" to be enable
    And click on "serviceAppointment.fleetMaintenanceComplete.next.button"
 
@@ -187,6 +192,7 @@ Scenario: Complete Appointment for a given Fleet Maintenance Service Appointment
 
    And assert "serviceAppointment.related.timeSheetEntries.first" is present
    And take a screenshot
+   And store text from "serviceAppointment.related.timeSheetEntries.first" into "generated_timeSheetNum"
 
    #Change to web
    Then store "resource/testdata;resources/web" into "env.resources"
@@ -195,11 +201,30 @@ Scenario: Complete Appointment for a given Fleet Maintenance Service Appointment
    Then change logged in user to "test_ops_center_operator"
 
    Then get "${generated_workOrderURL}"
-   Then wait until "workOrders.details.workOrderNumber" to be enable
-   And wait until "workOrders.details.workOrderNumber" to be visible
-
-   And scroll until "workOrders.timeSheetEntries.link" is visible
+   And wait until "workOrders.details.status" to be enable
+   And wait until "workOrders.details.status" to be visible
+   And assert "workOrders.details.status" text is "Completed"
    And take a screenshot
+
+   And click on "workOrders.serviceAppointments.link"
+   
+   Then wait until "serviceAppointments.table.first.link" to be enable
+   And wait until "serviceAppointments.table.first.link" to be visible
+   And click on "serviceAppointments.table.first.link"
+
+   Then wait until "serviceAppointments.details.status" to be enable
+   And wait until "serviceAppointments.details.status" to be visible
+   And assert "serviceAppointments.details.status" text is "Completed"
+   And take a screenshot
+
+   Then get "${generated_workOrderURL}"
+   And scroll until "workOrders.timeSheetEntries.link" is visible
    And click on "workOrders.timeSheetEntries.link"
-   And assert "timeSheetEntries.table.firstResult.link" is present
+   Then wait until "timeSheetEntries.table.firstResult.link" to be present
+   Then wait until "timeSheetEntries.table.firstResult.link" to be enable
+   And assert "timeSheetEntries.table.firstResult.link" text is "${generated_timeSheetNum}"
+   And click on "timeSheetEntries.table.firstResult.link"
+   And wait until "timeSheetEntries.details.status" to be present
+   And wait until "timeSheetEntries.details.status" to be enable
+   And assert "timeSheetEntries.details.status" text is "New"
    And take a screenshot

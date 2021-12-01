@@ -122,7 +122,7 @@ public class ShrdCreateCase extends WebDriverTestCase {
 		$("case.createCase.popup.save.button").waitForEnabled();
 		CommonStep.click("case.createCase.popup.save.button");
 
-		$("case.entityName").verifyText("Case");
+		//$("case.entityName").verifyText("Case");
 		$("cases.titleCaseNumber").waitForPresent();
 		logger.info("Generated case number: " + $("cases.titleCaseNumber").getText());
 		CommonStep.store($("cases.titleCaseNumber").getText(), "generated_caseNumber");

@@ -189,5 +189,14 @@ public class AssetSteps extends WebDriverTestCase {
 		$("assets.details.assetName").waitForPresent();
 		$("assets.details.assetName").assertText(String.valueOf(assetName));
 	}
+
+	@QAFTestStep(description = "search for asset {assetName} or create one with data {recordType} {assetType} {name} {account}")
+	public void searchForAssetOrCreateOne(String assetName, String recordType, String assetType, String name, String account) {
+		if (assetName != null && assetName.trim().length() > 0) {
+			searchForAsset(assetName);
+		} else {
+			createAssetWithTypeNameAccount(recordType, assetType, name, account);
+		}
+	}
 	
 }

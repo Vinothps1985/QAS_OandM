@@ -172,6 +172,12 @@ Scenario: Create a Quote for the New Opportunity
    And assert "quote.details.siteWorkState" text is "${quoteSiteWorkState}"
    And take a screenshot
 
+   And scroll until "quotes.details.primaryContact.link" is visible
+   And take a screenshot
+
+   Then scroll until "quotes.details.groupLineItems.input" is visible
+   And take a screenshot
+
    And scroll until "quotes.details.specialNotes" is visible
    And assert "quotes.details.specialNotes" text is "${quoteSpecialNotes}"
    And take a screenshot

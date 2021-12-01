@@ -366,6 +366,8 @@ import io.appium.java_client.AppiumDriver;
 
 		chromeOptions.setExperimentalOption("prefs", chromePrefs);
 
+		chromeOptions.addArguments("--disable-dev-shm-usage");
+
 		/*
 		 * chromeOptions.addArguments("--no-sandbox");//setExperimentalOption(
 		 * "mobileEmulation", mobileEmulation);

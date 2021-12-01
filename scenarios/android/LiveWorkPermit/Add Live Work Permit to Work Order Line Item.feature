@@ -146,6 +146,8 @@ Scenario: Add Live Work Permit to Work Order Line Item
    Then sendKeys "${voltage}" into form input group with name "Voltage to which personnel will be exposed"
    Then sendKeys "${availableIncidentEnergy}" into form input group with name "Available Incident Energy"
    And scroll to end
+   And hide the android keyboard
+   And scroll to end
    Then sendKeys "${shockPPERequired}" into form input group with name "Shock PPE Required"
    Then sendKeys "${arcFlashPPERequired}" into form input group with name "Arc Flash PPE Required"
    Then click on "common.next.button"

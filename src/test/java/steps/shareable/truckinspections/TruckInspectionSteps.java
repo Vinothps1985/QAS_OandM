@@ -5,7 +5,10 @@ import com.qmetry.qaf.automation.step.QAFTestStep;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.openqa.selenium.WebElement;
+
 import com.qmetry.qaf.automation.ui.WebDriverTestCase;
+import com.qmetry.qaf.automation.util.Validator;
 
 public class TruckInspectionSteps extends WebDriverTestCase {
 
@@ -13,25 +16,112 @@ public class TruckInspectionSteps extends WebDriverTestCase {
 
 	@QAFTestStep(description = "perform truck inspection steps with data {answer1} {answer2} {answer3} {answer4} {answer5}")
 	public void performTruckInspectionStepsWithData(String answer1, String answer2,
-	String answer3, String answer4, String answer5) {
-		
-		int component = 1;
-		for (component = 1; component <= 1; component++) {
-			//1 = Driver Side Front Quarter Panel
-			//Separated to test the saving-continuing functionality in component 2
-			$("serviceAppointment.truckInspection.component" + component + ".title").waitForPresent();
-			$("serviceAppointment.truckInspection.component" + component + ".title").waitForEnabled();
-			$("serviceAppointment.truckInspection.component" + component + ".title").assertPresent();
-			//steps.common.StepsLibrary.takeAScreenshot();
-			answerDentsQuestionsAndClickOnNext(answer1, answer2, answer3, answer4, answer5);
-		}
+		String answer3, String answer4, String answer5) {
 
-		//2 = Driver Side Front Door
-		//Separated to test the saving-continuing functionality in component 2
-		$("serviceAppointment.truckInspection.component" + component + ".title").waitForPresent();
-		$("serviceAppointment.truckInspection.component" + component + ".title").waitForEnabled();
-		$("serviceAppointment.truckInspection.component" + component + ".title").assertPresent();
-		
+		//Components (Driver Side Front Quarter Panel, Front Door, etc) are actually dynamic
+		//the screens currently have two options: They either ask about exterior (dents & scratches)
+		//or interior (stains & tears). So we check which is the current screen and answer based
+		//on that
+
+		//Exterior questions have the text: Qty of Major Dents
+		//Interior questions have the text: Qty of Major Stains
+
+		//We may also be asked to take pictures, with texts:
+		//    Exterior Picture Required
+		//    Interior Picture Required
+
+		//We will continue until we find the last screen with the text: Confirm Completion
+
+		int iteration = 0;
+		int maxChecksWithoutPage = 30; //Max rounds waiting 1.5 secs without getting one of the expected pages
+		int checksWithoutPage = 0;
+		int picturesTaken = 0;
+		while (true) {
+			boolean exteriorQuestions = isTextOnScreen("Qty of Major Dents");
+			boolean interiorQuestions = isTextOnScreen("Qty of Major Stains");
+			boolean exteriorPicture = isTextOnScreen("Exterior Picture Required");
+			boolean interiorPicture = isTextOnScreen("Interior Picture Required");
+			boolean confirmCompletion = isTextOnScreen("Confirm Completion");
+
+			if (confirmCompletion) {
+				//we're out
+				break;
+			}
+
+			boolean clickNext = true;
+			//If it's the second page, we want to test the 'save and exit' functionality!
+			if (iteration == 1) {
+				clickNext = false;
+			}
+
+			if (exteriorQuestions) {
+				answerDentsQuestions(answer1, answer2, answer3, answer4, answer5, clickNext);
+			} else if (interiorQuestions) {
+				answerStainsQuestions(answer1, answer2, answer3, answer4, clickNext);
+			} else if (exteriorPicture) {
+				if (picturesTaken == 0) {
+					logger.info("Taking a picture");
+					takePicture();
+					picturesTaken++;
+				}
+				$("serviceAppointment.truckInspection.next.button").click();
+			} else if (interiorPicture) {
+				if (picturesTaken == 0) {
+					logger.info("Taking a picture");
+					takePicture();
+					picturesTaken++;
+				}
+				$("serviceAppointment.truckInspection.next.button").click();
+			} else {
+				//No page, wait and continue
+				checksWithoutPage++;
+				if (checksWithoutPage > maxChecksWithoutPage) {
+					throw new AssertionError("No expected page found in the truck inspection flow");
+				}
+				try {Thread.sleep(1500);} catch (Exception x) {}
+				continue;
+			}
+
+			//We got a page
+			checksWithoutPage = 0;
+
+			//If we didn't click on next, text the Save and Exit functionality
+			if (!clickNext) {
+				saveAndExitAndRestart();
+			}
+
+			iteration++;
+		}
+			
+	}
+
+	private void takePicture() {
+		steps.android.StepsLibrary.clickUnclickableTextView("Take Pictures using SharinPix app");
+		$("sharinPix.takePhoto.button").waitForPresent();
+		$("sharinPix.takePhoto.button").waitForEnabled();
+		$("sharinPix.takePhoto.button").click();
+
+		$("sharinPix.uploadPhoto.button").waitForPresent();
+		$("sharinPix.uploadPhoto.button").waitForEnabled();
+		$("sharinPix.uploadPhoto.button").click();
+		steps.android.StepsLibrary.assertAndroidTextViewPresentWithText("Take Pictures using SharinPix app");
+	}
+
+	private boolean isTextOnScreen(String text) {
+		try {
+			String xpath= "//android.widget.TextView[contains(@text, '" + text + "')]";
+			WebElement element = getDriver().findElementByXPath(xpath);
+			if (element != null && element.isDisplayed() && element.isEnabled()) {
+				return true;
+			}
+		} catch (Exception x) {
+			return false;
+		}
+		return false;
+	}
+	
+	public void answerDentsQuestions(String answer1, String answer2, String answer3, String answer4, String answer5, boolean clickNext) {
+
 		steps.android.StepsLibrary.clickOnSelectInputForFormInput("Qty of Major Dents");
 		steps.android.StepsLibrary.selectOptionForFormInput(answer1, "Qty of Major Dents");
 		steps.android.StepsLibrary.clickOnSelectInputForFormInput("Qty of Minor Dents");
@@ -44,7 +134,31 @@ public class TruckInspectionSteps extends WebDriverTestCase {
 		steps.android.StepsLibrary.clickOnSelectInputForFormInput("Qty of Paint Chips");
 		steps.android.StepsLibrary.selectOptionForFormInput(answer5, "Qty of Paint Chips");
 
-		//Save and exit!
+		if (clickNext) {
+			steps.android.StepsLibrary.selectOptionForFormInput("Continue", "Would you like to Continue or Save");
+			$("serviceAppointment.truckInspection.next.button").click();
+		}
+	}
+
+	public void answerStainsQuestions(String answer1, String answer2, String answer3, String answer4, boolean clickNext) {
+
+		steps.android.StepsLibrary.clickOnSelectInputForFormInput("Qty of Major Stains");
+		steps.android.StepsLibrary.selectOptionForFormInput(answer1, "Qty of Major Stains");
+		steps.android.StepsLibrary.clickOnSelectInputForFormInput("Qty of Minor Stains");
+		steps.android.StepsLibrary.selectOptionForFormInput(answer2, "Qty of Minor Stains");
+		steps.android.StepsLibrary.clickOnSelectInputForFormInput("Qty of Major Tears");
+		steps.android.StepsLibrary.selectOptionForFormInput(answer3, "Qty of Major Tears");
+		steps.android.StepsLibrary.scrollAndroidToEnd();
+		steps.android.StepsLibrary.clickOnSelectInputForFormInput("Qty of Minor Tears");
+		steps.android.StepsLibrary.selectOptionForFormInput(answer4, "Qty of Minor Tears");
+
+		if (clickNext) {
+		    steps.android.StepsLibrary.selectOptionForFormInput("Continue", "Would you like to Continue or Save");
+			$("serviceAppointment.truckInspection.next.button").click();
+		}
+	}
+
+	public void saveAndExitAndRestart() {
 		steps.android.StepsLibrary.selectOptionForFormInput("Save and Exit", "Would you like to Continue or Save");
 		steps.common.StepsLibrary.takeAScreenshot();
 		$("serviceAppointment.truckInspection.next.button").click();
@@ -66,132 +180,6 @@ public class TruckInspectionSteps extends WebDriverTestCase {
 		steps.android.StepsLibrary.assertAndroidTextViewPresentWithText("Resume or Restart?");
 		steps.android.StepsLibrary.selectOptionForFormInput("Resume Inspection", "This Truck Inspection is In Progress");
 		steps.common.StepsLibrary.takeAScreenshot();
-		$("serviceAppointment.truckInspection.next.button").click();
-
-		for (component = 3; component <= 4; component++) {
-			//3 = Driver Side Rear Door, 4 = Driver Side Rear Quarter Panel
-			$("serviceAppointment.truckInspection.component" + component + ".title").waitForPresent();
-			$("serviceAppointment.truckInspection.component" + component + ".title").waitForEnabled();
-			$("serviceAppointment.truckInspection.component" + component + ".title").assertPresent();
-			//steps.common.StepsLibrary.takeAScreenshot();
-			answerDentsQuestionsAndClickOnNext(answer1, answer2, answer3, answer4, answer5);
-		}
-
-		//Exterior picture required
-		$("serviceAppointment.truckInspection.exteriorPictureRequired.title").waitForPresent();
-		$("serviceAppointment.truckInspection.exteriorPictureRequired.title").waitForEnabled();
-		$("serviceAppointment.truckInspection.exteriorPictureRequired.title").assertPresent();
-		$("serviceAppointment.truckInspection.next.button").click();
-
-		for (component = 5; component <= 6; component++) {
-			//5 = Tailgate, 6 = Rear Bumper
-			$("serviceAppointment.truckInspection.component" + component + ".title").waitForPresent();
-			$("serviceAppointment.truckInspection.component" + component + ".title").waitForEnabled();
-			$("serviceAppointment.truckInspection.component" + component + ".title").assertPresent();
-			//steps.common.StepsLibrary.takeAScreenshot();
-			answerDentsQuestionsAndClickOnNext(answer1, answer2, answer3, answer4, answer5);
-		}
-
-		//Exterior picture required
-		$("serviceAppointment.truckInspection.exteriorPictureRequired.title").waitForPresent();
-		$("serviceAppointment.truckInspection.exteriorPictureRequired.title").waitForEnabled();
-		$("serviceAppointment.truckInspection.exteriorPictureRequired.title").assertPresent();
-		$("serviceAppointment.truckInspection.next.button").click();
-
-		for (component = 7; component <= 8; component++) {
-			//7 = Front Bumper, 8 = Hood
-			$("serviceAppointment.truckInspection.component" + component + ".title").waitForPresent();
-			$("serviceAppointment.truckInspection.component" + component + ".title").waitForEnabled();
-			$("serviceAppointment.truckInspection.component" + component + ".title").assertPresent();
-			//steps.common.StepsLibrary.takeAScreenshot();
-			answerDentsQuestionsAndClickOnNext(answer1, answer2, answer3, answer4, answer5);
-		}
-
-		//Exterior picture required
-		$("serviceAppointment.truckInspection.exteriorPictureRequired.title").waitForPresent();
-		$("serviceAppointment.truckInspection.exteriorPictureRequired.title").waitForEnabled();
-		$("serviceAppointment.truckInspection.exteriorPictureRequired.title").assertPresent();
-		$("serviceAppointment.truckInspection.next.button").click();
-
-		for (component = 9; component <= 12; component++) {
-			//9 = Passenger Side Front Quarter Panel, 10 = Passenger Side Front Door
-			//11 = Passenger Side Rear Door, 12 = Side Rear Quarter Panel
-			$("serviceAppointment.truckInspection.component" + component + ".title").waitForPresent();
-			$("serviceAppointment.truckInspection.component" + component + ".title").waitForEnabled();
-			$("serviceAppointment.truckInspection.component" + component + ".title").assertPresent();
-			//steps.common.StepsLibrary.takeAScreenshot();
-			answerDentsQuestionsAndClickOnNext(answer1, answer2, answer3, answer4, answer5);
-		}
-
-		//Exterior picture required
-		$("serviceAppointment.truckInspection.exteriorPictureRequired.title").waitForPresent();
-		$("serviceAppointment.truckInspection.exteriorPictureRequired.title").waitForEnabled();
-		$("serviceAppointment.truckInspection.exteriorPictureRequired.title").assertPresent();
-		$("serviceAppointment.truckInspection.next.button").click();
-
-		for (component = 13; component <= 20; component++) {
-			//13 = Front Carpet/Flooring, 14 = Rear Carpet/Flooring
-			//15 = Front Seats, 16 = Rear Seats, 17 = Head Liner, 18 = Dash
-			//19 = Internal Front Door Panels, 20 = Internal Rear Door Panels
-			$("serviceAppointment.truckInspection.component" + component + ".title").waitForPresent();
-			$("serviceAppointment.truckInspection.component" + component + ".title").waitForEnabled();
-			$("serviceAppointment.truckInspection.component" + component + ".title").assertPresent();
-			//steps.common.StepsLibrary.takeAScreenshot();
-			answerStainsQuestionsAndClickOnNext(answer1, answer2, answer3, answer4);
-
-		}
-
-		//Interior picture required
-		$("serviceAppointment.truckInspection.interiorPictureRequired.title").waitForPresent();
-		$("serviceAppointment.truckInspection.interiorPictureRequired.title").waitForEnabled();
-		$("serviceAppointment.truckInspection.interiorPictureRequired.title").assertPresent();
-		$("serviceAppointment.truckInspection.next.button").click();
-
-		for (component = 21; component <= 22; component++) {
-			//21 = Cab Top
-			//22 = Ladder Rack
-			$("serviceAppointment.truckInspection.component" + component + ".title").waitForPresent();
-			$("serviceAppointment.truckInspection.component" + component + ".title").waitForEnabled();
-			$("serviceAppointment.truckInspection.component" + component + ".title").assertPresent();
-			//steps.common.StepsLibrary.takeAScreenshot();
-			answerDentsQuestionsAndClickOnNext(answer1, answer2, answer3, answer4, answer5);
-		}
-			
-	}
-	
-	public void answerDentsQuestionsAndClickOnNext(String answer1, String answer2,
-	String answer3, String answer4, String answer5) {
-
-		steps.android.StepsLibrary.clickOnSelectInputForFormInput("Qty of Major Dents");
-		steps.android.StepsLibrary.selectOptionForFormInput(answer1, "Qty of Major Dents");
-		steps.android.StepsLibrary.clickOnSelectInputForFormInput("Qty of Minor Dents");
-		steps.android.StepsLibrary.selectOptionForFormInput(answer2, "Qty of Minor Dents");
-		steps.android.StepsLibrary.clickOnSelectInputForFormInput("Qty of Major Scratches");
-		steps.android.StepsLibrary.selectOptionForFormInput(answer3, "Qty of Major Scratches");
-		steps.android.StepsLibrary.scrollAndroidToEnd();
-		steps.android.StepsLibrary.clickOnSelectInputForFormInput("Qty of Minor Scratches");
-		steps.android.StepsLibrary.selectOptionForFormInput(answer4, "Qty of Minor Scratches");
-		steps.android.StepsLibrary.clickOnSelectInputForFormInput("Qty of Paint Chips");
-		steps.android.StepsLibrary.selectOptionForFormInput(answer5, "Qty of Paint Chips");
-
-		steps.android.StepsLibrary.selectOptionForFormInput("Continue", "Would you like to Continue or Save");
-		$("serviceAppointment.truckInspection.next.button").click();
-	}
-
-	public void answerStainsQuestionsAndClickOnNext(String answer1, String answer2,
-	String answer3, String answer4) {
-
-		steps.android.StepsLibrary.clickOnSelectInputForFormInput("Qty of Major Stains");
-		steps.android.StepsLibrary.selectOptionForFormInput(answer1, "Qty of Major Stains");
-		steps.android.StepsLibrary.clickOnSelectInputForFormInput("Qty of Minor Stains");
-		steps.android.StepsLibrary.selectOptionForFormInput(answer2, "Qty of Minor Stains");
-		steps.android.StepsLibrary.clickOnSelectInputForFormInput("Qty of Major Tears");
-		steps.android.StepsLibrary.selectOptionForFormInput(answer3, "Qty of Major Tears");
-		steps.android.StepsLibrary.scrollAndroidToEnd();
-		steps.android.StepsLibrary.clickOnSelectInputForFormInput("Qty of Minor Tears");
-		steps.android.StepsLibrary.selectOptionForFormInput(answer4, "Qty of Minor Tears");
-
-		steps.android.StepsLibrary.selectOptionForFormInput("Continue", "Would you like to Continue or Save");
 		$("serviceAppointment.truckInspection.next.button").click();
 	}
 

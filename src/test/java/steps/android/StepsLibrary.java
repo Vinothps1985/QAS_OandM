@@ -294,6 +294,94 @@ public class StepsLibrary {
 			"Successfully selected option " + option + " for form input with name " + name);
 	}
 
+	@QAFTestStep(description = "open timepicker for form input with name {name}")
+	public static void openTimepickerForFormInput(String name) {
+		boolean success = false;
+		try {
+			int maxAttempts = 10;
+			for (int attempt = 0; attempt < maxAttempts; attempt++) {
+				try {
+					Thread.sleep(2000);
+					String xpath= "//android.widget.TextView[contains(@text, '" + name + "')]//following::android.view.ViewGroup[@clickable='true'][3]";
+					WebElement element = getDriver().findElementByXPath(xpath);
+					if (element.isDisplayed() && element.isEnabled()) {
+						element.click();
+						success = true;
+						break;
+					}
+				} catch (Exception x) {}
+			}
+		} catch (Exception x) {
+			logger.error(x.getMessage(), x);
+		}
+		Validator.assertTrue(success,
+			"Could not open timepicker for form input with name " + name,
+			"Successfully opened timepicker for form input with name " + name);
+	}
+
+	@QAFTestStep(description = "select current selected date on datepicker")
+	public static void selectCurrentSelectedDateOnDatePicker() {
+		boolean success = false;
+		try {
+			int maxAttempts = 3;
+			for (int attempt = 0; attempt < maxAttempts; attempt++) {
+				try {
+					$("common.date.popup.ok").waitForPresent();
+					$("common.date.popup.ok").waitForEnabled();
+					$("common.date.popup.ok").click();
+					$("common.date.popup.ok").waitForNotPresent();
+					Thread.sleep(2000);
+					success = true;
+					break;
+				} catch (Exception x) {}
+				Thread.sleep(2000);
+			}
+		} catch (Exception x) {
+			logger.error(x.getMessage(), x);
+		}
+		Validator.assertTrue(success,
+			"Could not select current selected date on datepicker",
+			"Successfully selected current date on datepicker");
+	}
+	
+	/**
+	 * 
+	 * @param hour
+	 * @param minute needs to be either 0, 5, 10, 15... up to 55
+	 */
+	@QAFTestStep(description = "select {hour} {minute} on timepicker")
+	public static void selectTimeOnTimepicker(String hour, String minute) {
+		boolean success = false;
+		try {
+			int maxAttempts = 10;
+			for (int attempt = 0; attempt < maxAttempts; attempt++) {
+				try {
+					String xpath= "//android.widget.RadialTimePickerView.RadialPickerTouchHelper[@content-desc='" + hour + "']";
+					WebElement element = getDriver().findElementByXPath(xpath);
+					if (element.isDisplayed() && element.isEnabled()) {
+						element.click();
+						Thread.sleep(2000);
+						//If minute is 05, it should be 5
+						minute = minute.length() == 2 && minute.startsWith("0") ? minute.substring(1, 1) : minute;
+						xpath= "//android.widget.RadialTimePickerView.RadialPickerTouchHelper[@content-desc='" + minute + "']";
+						WebElement elementMinute = getDriver().findElementByXPath(xpath);
+						if (elementMinute.isDisplayed() && elementMinute.isEnabled()) {
+							elementMinute.click();
+							success = true;
+							break;
+						}
+					}
+				} catch (Exception x) {}
+				Thread.sleep(2000);
+			}
+		} catch (Exception x) {
+			logger.error(x.getMessage(), x);
+		}
+		Validator.assertTrue(success,
+			"Could not select " + hour + " " + minute + " on timepicker",
+			"Successfully selected " + hour + " " + minute + " on timepicker");
+	}
+
 	@QAFTestStep(description = "toggle the switch for form input with name {name}")
 	public static void toggleswitchForFormInput(String name) {
 		boolean success = false;

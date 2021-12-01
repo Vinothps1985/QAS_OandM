@@ -347,6 +347,16 @@ public class StepsLibrary {
 			$(loc).click();
 		} catch (Exception ex) {}
 	}
+
+	@QAFTestStep(description = "click on {0} if {1} appears within {2} milisec")
+	public static void clickElementIfAnotherAppearsWithin(String clickLoc, String findLoc, int milisec) {
+		try {
+			$(findLoc).waitForPresent(milisec);
+			if ($(findLoc).isEnabled()) {
+				$(clickLoc).click();
+			}
+		} catch (Exception ex) {}
+	}
 	
 	@QAFTestStep(description="take a screenshot")
 	public static void takeAScreenshot() {

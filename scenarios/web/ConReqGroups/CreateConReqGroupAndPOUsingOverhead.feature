@@ -121,20 +121,25 @@ Scenario: Create Con Req Group and PO using OM Project
    And click on "conReqGroups.constructionRequisitionLines.add.lineItem.save.button"
 
    #Then wait for the page to finish loading
-   And wait until "conReqGroups.iframe" to be present
-   And wait until "conReqGroups.iframe" to be enable
+   #And wait until "conReqGroups.iframe" to be present
+   #And wait until "conReqGroups.iframe" to be enable
+   Then switch to default window
    And store the current url in "conReqGroupURL"
    And switch to frame "conReqGroups.iframe" until "conReqGroups.constructionRequisitionLines.table" is present
    And scroll until "conReqGroups.constructionRequisitionLines.table" is visible
    And assert "conReqGroups.constructionRequisitionLines.table" is present
    And take a screenshot
 
+   #Must check the latest emails to compare an email is received after the test
+   Then store the timestamp of the latest received email in "latestEmailTimestamp"
+
    And wait until "conReqGroups.details.submitForApproval.button" to be present
    When wait until "conReqGroups.details.submitForApproval.button" to be enable
    And click on "conReqGroups.details.submitForApproval.button"
    Then assert "conReqGroups.details.status" text is "Pending Approval"
 
-   #TODO Re-add Email verification
+   #Ensure email reception
+   And assert an email is received after "${latestEmailTimestamp}" and the subject contains the text "A Service Construction Requisition is pending your approval"
 
    And switch to default window
 
@@ -222,6 +227,20 @@ Scenario: Create Con Req Group and PO using OM Project
 
    #Get the PDF File
    Then store the current url in "purchaseOrderURL"
+
+   #Set the special notes to assert later
+   Then wait until "purchaseOrder.details.status.edit.button" to be present
+   Then wait until "purchaseOrder.details.status.edit.button" to be enable
+   And click on "purchaseOrder.details.status.edit.button"
+   Then scroll until "purchaseOrder.details.specialNotes.edit.input" is visible
+   And clear "purchaseOrder.details.specialNotes.edit.input"
+   And sendKeys "${specialNotes}" into "purchaseOrder.details.specialNotes.edit.input"
+   And click on "purchaseOrder.edit.save.button"
+   And wait for the page to finish loading
+   And wait until "purchaseOrder.details.status.edit.button" to be present
+   And wait until "purchaseOrder.details.status.edit.button" to be enable
+   
+   #Print and test PDF
    Then click on "purchaseOrders.printPOOnM.button"
    Then switch to frame "purchaseOrders.printPOOnM.iframe" until "purchaseOrders.printPOOnM.download.errordiv" is present
    And get embedded PDF URL into "pdfURL"
@@ -237,6 +256,7 @@ Scenario: Create Con Req Group and PO using OM Project
    And assert text "To: ${shipToCity}" appears in the pdf
    And assert text "${poLineNumber}" appears in the pdf
    And assert text "Purchase Order Total: ${poTotal}" appears in the pdf
+   And assert text "${specialNotes}" appears in the pdf
 
    Then get "${purchaseOrderURL}"
    Then wait until "purchaseOrder.details.name" to be present
@@ -252,6 +272,7 @@ Scenario: Create Con Req Group and PO using OM Project
    And wait until "purchaseOrder.details.status.edit.submittedToVendor.option" to be visible
    And click on "purchaseOrder.details.status.edit.submittedToVendor.option"
    And wait until "purchaseOrder.details.status.edit.submittedToVendor.option" not to be visible
+
    And click on "purchaseOrder.edit.save.button"
    And wait for the page to finish loading
    And wait until "purchaseOrder.details.status.edit.button" to be present

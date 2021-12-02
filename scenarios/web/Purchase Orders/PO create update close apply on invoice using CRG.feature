@@ -4,7 +4,7 @@ Feature: Purchase Orders
 @description:Verify the Purchase order creation, update, close and applying them on the AP Invoice using Con Req Groups
 @purchaseorder @positive @regression
 @dataFile:resources/testdata/Purchase Orders/PO create update close apply on invoice using CRG.csv
-@requirementKey=QTM-RQ-23
+@requirementKey:QTM-RQ-23
 Scenario: Verify PO creation, update, close, apply on AP Invoice using Con Req Groups
 	
    Given login to salesforce with "${username}" and "${password}"
@@ -40,6 +40,39 @@ Scenario: Verify PO creation, update, close, apply on AP Invoice using Con Req G
    And store text from "classic.common.pageDescription.h2" into "purchaseOrder"
    And take a screenshot
 
+   #Get the info from the con req and assert on PO
+
+   #Click on first po line
+   Then store the current url in "purchaseOrder_URL"
+   And wait until "classic.purchaseOrders.poLines.table.name.link.first" to be enable
+   And click on "classic.purchaseOrders.poLines.table.name.link.first"
+   Then wait until "classic.poLines.details.constructionRequisition" to be present
+   Then wait until "classic.poLines.details.constructionRequisition" to be enable
+   And click on "classic.poLines.details.constructionRequisition"
+   
+   Then wait until "classic.conReqs.details.project.link" to be present
+   Then wait until "classic.conReqs.details.project.link" to be enable
+   And store text from "classic.conReqs.details.project.link" into "conreq_project"
+   And store text from "classic.conReqs.productInformation.soLineTotal" into "conreq_soLineTotal"
+   And store text from "classic.conReqs.productInformation.salesTax" into "conreq_salesTax"
+   And store text from "classic.conReqs.productInformation.freight" into "conreq_freight"
+   And store text from "classic.conReqs.productInformation.vendor.link" into "conreq_vendor"
+   And store text from "classic.conReqs.productInformation.product.link" into "conreq_product"
+   And store text from "classic.conReqs.productInformation.requestedDeliveryDate" into "conreq_deliveryDate"
+   And store text from "classic.conReqs.productInformation.unitCost" into "conreq_unitCost"
+
+   #Go back to PO to make the assertions and continue
+   Then get "${purchaseOrder_URL}"
+   And wait until "classic.purchaseOrders.details.subtotal" to be present
+   And wait until "classic.purchaseOrders.details.subtotal" to be enable
+   And assert "classic.purchaseOrders.details.subtotal" text is "${conreq_soLineTotal}"
+   And assert "classic.purchaseOrders.details.poTotal" text is "${conreq_soLineTotal}"
+   And assert "classic.purchaseOrders.details.balanceRemaining" text is "${conreq_soLineTotal}"
+   And assert "classic.purchaseOrders.details.totalSalesTax" text is "${conreq_salesTax}"
+   And assert "classic.purchaseOrders.details.totalFreightAllowed" text is "${conreq_freight}"
+   And assert "classic.purchaseOrders.vendorShippingInfo.vendor.link" text is "${conreq_vendor}"
+
+   #Now edit the PO
    Then click on "classic.common.edit.button.first"
    And wait until "classic.purchaseOrders.edit.paymentTerms.input" to be present
 
@@ -73,6 +106,16 @@ Scenario: Verify PO creation, update, close, apply on AP Invoice using Con Req G
    And sendKeys "${deliveryNotes}" into "classic.purchaseOrders.edit.deliveryNotes.input"
    And take a screenshot
    And click on "classic.common.save.button.first"
+   And take a screenshot
+   
+   #Assert information was modified correctly
+   And assert "classic.purchaseOrders.details.paymentTerms" text is "${paymentTerms}" 
+   And assert "classic.purchaseOrders.details.termsConditions" text is "${termsAndConditions}"
+   And take a screenshot
+   And scroll until "classic.purchaseOrders.additionalInfo.deliveryNotes" is visible
+   And assert "classic.purchaseOrders.vendorShippingInfo.shippingMethod" text is "${shippingMethod}"
+   And assert "classic.purchaseOrders.additionalInfo.deliveryNotes" text is "${deliveryNotes}"
+   And take a screenshot
 
    #Click on first po line
    And wait until "classic.purchaseOrders.poLines.table.name.link.first" to be enable
@@ -121,6 +164,14 @@ Scenario: Verify PO creation, update, close, apply on AP Invoice using Con Req G
    And take a screenshot
    And click on "classic.common.save.button.first"
    Then wait until "classic.common.edit.button.first" to be enable
+
+   #Assert adjustments were done correctly
+   And assert "classic.poLines.details.site" text is "${site}"
+   And take a screenshot
+   And scroll until "classic.poLines.productInformation.freight" is visible
+   And assert "classic.poLines.productInformation.freight" numeric value matches "${freight}"
+   And assert "classic.poLines.productInformation.quantity" numeric value matches "${quantity}"
+   And assert "classic.poLines.productInformation.unitCost" numeric value matches "${unitCost}"
    And take a screenshot
 
    And change logged in user to "test_po accounting"
@@ -189,6 +240,15 @@ Scenario: Verify PO creation, update, close, apply on AP Invoice using Con Req G
    #Save the invoice
    And click on "classic.common.save.button.first"
    And wait until "classic.common.edit.button.first" to be present
+
+   And wait until "classic.invoices.details.invoiceAmount" to be present
+   And wait until "classic.invoices.details.invoiceAmount" to be enable
+   And assert "classic.invoices.details.invoiceAmount" numeric value matches "${invoiceAmount}"
+   And assert "classic.invoices.details.payeeInformation.purchaseOrder.link" text is "${purchaseOrder}"
+   And take a screenshot
+   And scroll until "classic.invoices.payeeInformation.employee.link" is visible
+   And assert "classic.invoices.payeeInformation.employee.link" text is "${invoiceEmployee}"
+   And assert "classic.invoices.payeeInformation.invoiceNumber" text is "${invoiceNumber}"
    And take a screenshot
 
    Then wait until "classic.invoices.details.newPayableLine.button" to be enable

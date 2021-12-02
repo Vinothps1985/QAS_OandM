@@ -585,6 +585,27 @@ public class StepsLibrary {
 			"The text " + text + " was found in the text " + locText + " as expected");
 	}
 
+	@QAFTestStep(description = "assert {loc} numeric value matches {text}")
+	public static void assertLocNumericValueMatches(String loc, String text) {
+		$(loc).waitForEnabled();
+		String locText = $(loc).getText();
+		boolean success = false;
+		try {
+			locText = locText.replace("$", "").replace(",", "");
+			double dLocText = Double.parseDouble(locText);
+			text = text.replace("$", "").replace(",", "");
+			double dText = Double.parseDouble(text);
+			if (dLocText == dText) {
+				success = true;
+			}
+		} catch (Exception x) {
+			logger.error(x.getMessage(), x);
+		}
+		Validator.assertTrue(success,
+			"The numeric value of " + text + " does not match " + locText + " as expected",
+			"The numeric value of " + text + " matches " + locText + " as expected");
+	}
+
 	@QAFTestStep(description = "store number of rows from table into {varName}")
 	public static void storeNumberOfRowsFromTableInto(String varName) {
 		boolean success = false;

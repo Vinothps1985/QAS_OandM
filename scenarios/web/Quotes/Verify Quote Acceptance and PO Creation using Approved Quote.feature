@@ -28,6 +28,9 @@ Scenario: Verify Quote Acceptance and PO Creation using Approved Quote
    And assert "quotes.details.status" text is "Approved"
    And take a screenshot
 
+   #Must check the latest emails to compare an email is received after the test
+   Then store the timestamp of the latest received email in "latestEmailTimestamp"
+
    #Now accept the quote
    Then change status of quote "${generated_quoteNumber}" to "Accepted"
    And assert "quotes.details.status" text is "Accepted"
@@ -45,7 +48,9 @@ Scenario: Verify Quote Acceptance and PO Creation using Approved Quote
    And wait until "quotes.details.status" to be present
    And wait until "quotes.details.status" to be enable
 
-   #TODO re-add email verification #1
+   #Ensure email reception
+   #TODO not being received
+   #And assert an email is received after "${latestEmailTimestamp}" and the subject contains the text "Quote is accepted by client"
 
    Then scroll until "quotes.conReqGroups.link" is visible
    And click on "quotes.conReqGroups.link"
@@ -69,8 +74,6 @@ Scenario: Verify Quote Acceptance and PO Creation using Approved Quote
    Then refresh the con req group until the status is "Approved" for a max of 1800 seconds
    And take a screenshot
 
-   #TODO re-add email verification #2
-
    Then go to case "${generated_caseNumber}"
    And wait until "case.details.status" to be present
    And wait until "case.details.status" to be enable
@@ -80,3 +83,5 @@ Scenario: Verify Quote Acceptance and PO Creation using Approved Quote
    And wait until "cases.purchaseOrders.firstResult.link" to be enable
    And assert "cases.purchaseOrders.firstResult.link" is present
    And take a screenshot
+
+   And assert number of purchase orders created matches "${vendor1}" "${vendor2}"

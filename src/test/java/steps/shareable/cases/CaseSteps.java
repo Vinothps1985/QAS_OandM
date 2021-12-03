@@ -436,9 +436,40 @@ public class CaseSteps extends WebDriverTestCase {
 		$("common.searchAssistant.button").waitForEnabled();
 		CommonStep.click("common.searchAssistant.button");
 		CommonStep.sendKeys(""+String.valueOf(caseNumber)+"","common.searchAssistant.input");
-		$("cases.search.firstResult").waitForVisible();
-		$("cases.search.firstResult").waitForEnabled();
-		CommonStep.click("cases.search.firstResult");
+
+		$("common.search.showMoreResults").waitForVisible();
+		$("common.search.showMoreResults").waitForEnabled();
+		$("common.search.showMoreResults").click();
+
+		steps.web.StepsLibrary.waitForPageToFinishLoading();
+
+		if ($("search.results.categories.cases").isPresent()) {
+			$("search.results.categories.cases").click();
+		} else {
+			if ($("search.results.categories.expandList.button").isPresent() && $("search.results.categories.expandList.button").isEnabled()) {
+				$("search.results.categories.expandList.button").click();
+			}
+
+			$("search.results.categories.showMore.button").waitForPresent();
+			$("search.results.categories.showMore.button").waitForEnabled();
+			$("search.results.categories.showMore.button").click();
+			steps.web.StepsLibrary.waitForPageToFinishLoading();
+			if ($("search.results.categories.cases").isPresent()) {
+				$("search.results.categories.cases").click();
+			}
+		}
+
+		$("search.results.panel.cases.title").waitForEnabled();
+		$("search.results.panel.cases.title").waitForVisible();
+
+		steps.web.StepsLibrary.waitForPageToFinishLoading();
+
+		$("search.results.panel.cases.table.tr.first").waitForEnabled();
+		$("search.results.panel.cases.table.tr.first.link.first").waitForEnabled();
+
+		$("search.results.panel.cases.table.tr.first.link.first").assertText(caseNumber);
+		$("search.results.panel.cases.table.tr.first.link.first").click();
+
 		$("cases.titleCaseNumber").waitForVisible();
 
 		$("cases.titleCaseNumber").waitForPresent();

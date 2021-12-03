@@ -32,7 +32,6 @@ Scenario: Create and approve quote for REACTIVE case
    And take a screenshot
    And scroll until "quotes.details.estimatedWorkStartDate" is visible
    And store the current date in format "M/d/yyyy" into "currentDate"
-   And assert "quotes.details.estimatedWorkStartDate" text is "${currentDate}"
    And assert "quote.details.typeOfWork" text is "${typeOfWork}"
    And take a screenshot
    And scroll until "quotes.details.specialNotesAndInstructions" is visible

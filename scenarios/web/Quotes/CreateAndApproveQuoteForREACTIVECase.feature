@@ -9,6 +9,7 @@ Scenario: Create and approve quote for REACTIVE case
 	
    Given login to salesforce with "${username}" and "${password}"
    And change logged in user to "test_ops_center_operator"
+   And close all open web tabs
    And launch salesforce app "cases"
    And create a case with data "${projectName}" "${subject}" "${caseDescription}" "${summary}" "${recordType}" "${casePriority}" "${caseOrigin}" "${reportedIssue}" "${caseCause}"
    And take a screenshot
@@ -18,6 +19,7 @@ Scenario: Create and approve quote for REACTIVE case
    And wait for the page to finish loading
    And change logged in user to "test_o&M_manager"
    And wait for the page to finish loading
+   And close all open web tabs
 
    And ShrdCreateQuoteWithLines "${generated_caseNumber}" "${salesRep}" "${primaryContact}" "${specialNotes}" "${typeOfWork}" "${laborBilling}" "${pmBilling}" "${costCode1}" "${costCode2}" "${notes1}" "${notes2}" "${vendor1}" "${vendor2}" "${vendorContact1}" "${vendorContact2}"
    And take a screenshot

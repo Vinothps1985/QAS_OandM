@@ -52,9 +52,12 @@ public class ShrdCreateQuote extends WebDriverTestCase {
 		$("quotes.editLines.button").waitForPresent();
 		$("quotes.editLines.button").waitForEnabled();
 		$("quotes.editLines.button").click();
-		$("quotes.edit.iframe").waitForEnabled();
-		$("quotes.edit.iframe").click();
-		new WebDriverTestBase().getDriver().switchTo().frame(new QAFExtendedWebElement("quotes.edit.iframe"));
+		
+		//$("quotes.edit.iframe").waitForEnabled();
+		//$("quotes.edit.iframe").click();
+		//new WebDriverTestBase().getDriver().switchTo().frame(new QAFExtendedWebElement("quotes.edit.iframe"));
+		steps.web.StepsLibrary.switchToFrameUntilLocIsPresent("quotes.edit.iframe", "quotes.edit.laborBilling.select");
+
 		$("quotes.edit.laborBilling.select").waitForPresent();
 		StepsLibrary.selectIn("label="+String.valueOf(laborBilling)+"","quotes.edit.laborBilling.select");
 		StepsLibrary.selectIn("label="+String.valueOf(pmBilling)+"","quotes.edit.pmBilling.select");

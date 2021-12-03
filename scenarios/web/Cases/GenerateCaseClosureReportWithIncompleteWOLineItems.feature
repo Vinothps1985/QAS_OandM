@@ -60,13 +60,13 @@ Scenario: Generate case closure report with incomplete WO Line Items
    And wait for the page to finish loading
    
    And switch to conga composer frame
-   When wait until "conga.outputOptions.action.input" for a max of 60 seconds to be enable
+   When wait until "conga.outputOptions.action.input" for a max of 180 seconds to be enable
    And assert "conga.outputOptions.action.input" value is "Email"
    And assert "conga.outputOptions.fileType.pdfFile.input.selected" is present
    And assert "conga.templates.correctiveReport.selected" is present
    And take a screenshot
    And click on "conga.mergeAndEmail.button"
-   And wait until "conga.email.to.input" for a max of 60 seconds to be enable
+   And wait until "conga.email.to.input" for a max of 180 seconds to be enable
    And assert "conga.email.to.input" value is not ""
    And assert "conga.email.cc.input" value is not ""
    And assert "conga.email.subject.input" value is not ""

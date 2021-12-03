@@ -19,7 +19,7 @@ Scenario: Verify Quote Acceptance and PO Creation using Approved Quote
    And change logged in user to "test_o&M_manager"
    And wait for the page to finish loading
 
-   And ShrdCreateQuoteWithLines "${generated_caseNumber}" "${salesRep}" "${primaryContact}" "${specialNotes}" "${laborBilling}" "${pmBilling}" "${costCode1}" "${costCode2}" "${notes1}" "${notes2}" "${vendor1}" "${vendor2}" "${vendorContact1}" "${vendorContact2}"
+   And ShrdCreateQuoteWithLines "${generated_caseNumber}" "${salesRep}" "${primaryContact}" "${specialNotes}" "${typeOfWork}" "${laborBilling}" "${pmBilling}" "${costCode1}" "${costCode2}" "${notes1}" "${notes2}" "${vendor1}" "${vendor2}" "${vendorContact1}" "${vendorContact2}"
    And take a screenshot
 
    #Now approve the quote

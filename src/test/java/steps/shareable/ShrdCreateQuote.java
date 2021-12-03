@@ -43,10 +43,11 @@ public class ShrdCreateQuote extends WebDriverTestCase {
 	 * @param vendorContact1
 	 * @param vendorContact2
 	 */
-	@QAFTestStep(description = "ShrdCreateQuoteWithLines {0} {1} {2} {3} {4} {5} {6} {7} {8} {9} {10} {11} {12} {13}")
-	public void customShrdShrdCreateQuoteWithLines(String caseNumber,Object salesRep,Object primaryContact,Object specialNotes,Object laborBilling,Object pmBilling,Object costCode1,Object costCode2,Object notes1,Object notes2,Object vendor1,Object vendor2,Object vendorContact1,Object vendorContact2) {
+	@QAFTestStep(description = "ShrdCreateQuoteWithLines {0} {1} {2} {3} {4} {5} {6} {7} {8} {9} {10} {11} {12} {13} {14}")
+	public void customShrdShrdCreateQuoteWithLines(String caseNumber,Object salesRep,Object primaryContact,Object specialNotes, Object typeOfWork, 
+      Object laborBilling,Object pmBilling,Object costCode1,Object costCode2,Object notes1,Object notes2,Object vendor1,Object vendor2,Object vendorContact1,Object vendorContact2) {
 
-		customShrdShrdCreateQuote(caseNumber, salesRep, primaryContact, specialNotes);
+		customShrdShrdCreateQuote(caseNumber, salesRep, primaryContact, specialNotes, typeOfWork);
 
 		$("quotes.editLines.button").waitForPresent();
 		$("quotes.editLines.button").waitForEnabled();
@@ -181,8 +182,8 @@ public class ShrdCreateQuote extends WebDriverTestCase {
 	 * @param primaryContact
 	 * @param specialNotes
 	 */
-	@QAFTestStep(description = "ShrdCreateQuote {caseNumber} {salesRep} {primaryContact} {specialNotes}")
-	public void customShrdShrdCreateQuote(String caseNumber, Object salesRep, Object primaryContact, Object specialNotes) {
+	@QAFTestStep(description = "ShrdCreateQuote {caseNumber} {salesRep} {primaryContact} {specialNotes} {typeOfWork}")
+	public void customShrdShrdCreateQuote(String caseNumber, Object salesRep, Object primaryContact, Object specialNotes, Object typeOfWork) {
 
 		ShrdLaunchApp launchApp = new ShrdLaunchApp();
 		launchApp.customShrdLaunchApp("cases");
@@ -223,8 +224,7 @@ public class ShrdCreateQuote extends WebDriverTestCase {
 		CommonStep.click("quotes.createQuote.popup.siteWorkState.option.second");
 		$("quotes.createQuote.popup.typeOfWork.select").waitForEnabled();
 		CommonStep.click("quotes.createQuote.popup.typeOfWork.select");
-		$("quotes.createQuote.popup.typeOfWork.option.initialVisit").waitForEnabled();
-		CommonStep.click("quotes.createQuote.popup.typeOfWork.option.initialVisit");
+		steps.web.StepsLibrary.selectSalesforceDropdownOption("*Type of Work", String.valueOf(typeOfWork));
 		CommonStep.clear("quotes.createQuote.popup.specialNotes.textarea");
 		CommonStep.sendKeys(""+String.valueOf(specialNotes)+"","quotes.createQuote.popup.specialNotes.textarea");
 

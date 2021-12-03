@@ -4,7 +4,7 @@ Feature: Cases
 @description:Generate case closure report with completed WO Line Items
 @case @regression @conga @pdf
 @dataFile:resources/testdata/Cases/Generate case closure report with completed WO Line Items.csv
-@requirementKey=QTM-RQ-23
+@requirementKey:OPERA-RQ-520
 
 Scenario: Generate case closure report with completed WO Line Items
    

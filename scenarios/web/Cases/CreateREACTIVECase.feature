@@ -4,7 +4,7 @@ Feature: Cases
 @description:Verify whether user is able to create a case of record type REACTIVE
 @case @positive @smoke
 @dataFile:resources/testdata/Cases/Create REACTIVE case.csv
-@requirementKey=QTM-RQ-23
+@requirementKey:OPERA-RQ-520
 Scenario: Create REACTIVE case
 	
    Given login to salesforce with "${username}" and "${password}"

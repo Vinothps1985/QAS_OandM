@@ -4,7 +4,7 @@ Feature: Cases
 @description:Verify whether user is able to create a case of record type Module Washing
 @case @positive @regression
 @dataFile:resources/testdata/Cases/Create Module Washing case.csv
-@requirementKey=QTM-RQ-23
+@requirementKey:OPERA-RQ-520
 Scenario: Create Module Washing case
 	
    Given login to salesforce with "${username}" and "${password}"

@@ -4,7 +4,7 @@ Feature: Cases
 @description:Verify whether user is able to create a case of record type Additional Services
 @case @positive @regression
 @dataFile:resources/testdata/Cases/Create Additional Services case.csv
-@requirementKey=QTM-RQ-23
+@requirementKey:OPERA-RQ-520
 Scenario: Create Additional Services case
 	
    Given login to salesforce with "${username}" and "${password}"

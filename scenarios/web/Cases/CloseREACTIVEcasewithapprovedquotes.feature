@@ -4,7 +4,7 @@ Feature: Cases
 @description:Verify the ability to close case using a REACTIVE case having Quotes with status Accepted.
 @case @positive @smoke
 @dataFile:resources/testdata/Cases/Close REACTIVE case with approved quotes.csv
-@requirementKey=QTM-RQ-23
+@requirementKey:OPERA-RQ-520
 Scenario: Close REACTIVE case with approved quotes
 	
    Given login to salesforce with "${username}" and "${password}"

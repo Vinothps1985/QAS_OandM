@@ -4,7 +4,7 @@ Feature: Cases
 @description:Verify user is able to create Work Order Hybrid using a REACTIVE case
 @case @positive @workorder @smoke
 @dataFile:resources/testdata/Cases/Create Work Order using REACTIVE case.csv
-@requirementKey=QTM-RQ-23
+@requirementKey:OPERA-RQ-520
 Scenario: Create Work Order using REACTIVE case
 	
    Given login to salesforce with "${username}" and "${password}"

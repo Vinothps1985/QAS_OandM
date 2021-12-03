@@ -4,7 +4,7 @@ Feature: Cases
 @description:Verify whether user is able to create a case of record type Landscaping
 @case @positive @regression
 @dataFile:resources/testdata/Cases/Create Landscaping case.csv
-@requirementKey=QTM-RQ-23
+@requirementKey:OPERA-RQ-520
 Scenario: Create Landscaping case
 	
    Given login to salesforce with "${username}" and "${password}"

@@ -26,6 +26,8 @@ import com.qmetry.qaf.automation.ui.webdriver.QAFExtendedWebElement;
 import com.qmetry.qaf.automation.ui.webdriver.QAFWebDriverCommandAdapter;
 import com.qmetry.qaf.automation.util.PropertyUtil;
 import com.qmetry.qaf.automation.step.QAFTestStep;
+import com.qmetry.qaf.automation.step.StepExecutionTracker;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.qmetry.qaf.automation.ui.WebDriverTestBase;
@@ -291,6 +293,27 @@ import io.appium.java_client.AppiumDriver;
 		super.onFailure(driver, commandTracker);
 		commandTracker.getException().printStackTrace();
 		commandTracker.setException(null);
+	}
+
+	/**
+	 * Close all tabs in case the test fails (if we're on web)
+	 * 
+	 * This is important because in some instances, the test failed while a
+	 * certain screen was open (create work order). Then on next login, that screen
+	 * got loaded automatically, and that screen on load, creates a WO, so it was
+	 * creating unneeded data
+	 */
+	@Override
+	public void onFailure(StepExecutionTracker tracker) {
+		super.onFailure(tracker);
+		if (ConfigurationManager.getBundle().getString("platform").equals("web") || "web".equals(Util.CURRENT_PLATFORM)) {
+			try {
+				steps.common.StepsLibrary.closeAllOpenWebTabs();
+			} catch (Exception x) {
+				logger.error("Error while attempting to close tabs after test failure");
+				logger.error(x.getMessage(), x);
+			}
+		}
 	}
 
 	@Override

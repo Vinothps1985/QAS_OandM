@@ -398,6 +398,37 @@ public class StepsLibrary {
 			"Next business day was stored in " + varName + " with value " + value);
 	}
 
+	@QAFTestStep(description="add {daysToAdd} business days to current date and store it into {varName} in format {format}")
+	public static void addBusinessDaysToCurrentDateAndStoreInto(long daysToAdd, String varName, String format) {
+		boolean success = false;
+		String value = null;
+
+		try {
+			SimpleDateFormat sdf = new SimpleDateFormat(format);
+			
+			Calendar c = Calendar.getInstance();
+			long daysAdded = 0;
+			while (daysAdded < daysToAdd) {
+				c.add(Calendar.DATE, 1);
+				//Skip saturdays and sundays
+				while (c.get(Calendar.DAY_OF_WEEK) == Calendar.SATURDAY || c.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY) {
+					c.add(Calendar.DATE, 1);
+				}
+				daysAdded++;
+			}
+
+			value = sdf.format(c.getTime());
+
+			CommonStep.store(value, varName);
+			success = true;
+		} catch (Exception x) {
+			x.printStackTrace();
+		}
+		Validator.assertTrue(success,
+			"Could not add " + daysToAdd + " business days to current date and store into " + varName + " with format " + format,
+			daysToAdd + " business days added to current date and stored in " + varName + " with value " + value);
+	}
+
 	@QAFTestStep(description = "format date {originDate} from {originFormat} to {destFormat} into {destVar}")
 	public static void formatDateFromVarToVarWithFormats(String originDate, String originFormat, String destFormat, String destVar) {
 		boolean success = false;

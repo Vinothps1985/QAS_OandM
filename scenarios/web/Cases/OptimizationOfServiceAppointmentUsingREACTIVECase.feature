@@ -2,7 +2,7 @@ Feature: Cases
 
 @author:Rodrigo Montemayor
 @description:Verify the optimization of service appointment using a REACTIVE case
-@case @positive @smoke
+@case @positive @smoke @optimizeme
 @dataFile:resources/testdata/Cases/Optimization of service appointment using REACTIVE case.csv
 @requirementKey:OPERA-RQ-520
 Scenario: Optimization of service appointment using REACTIVE case
@@ -65,7 +65,8 @@ Scenario: Optimization of service appointment using REACTIVE case
    And wait until "workOrders.details.dueDate.edit.button" to be enable
    And click on "workOrders.details.dueDate.edit.button"
 
-   And store next business day into "nextBusinessDay" in format "M/d/yyyy"
+   #And store next business day into "nextBusinessDay" in format "M/d/yyyy"
+   And add 5 business days to current date and store it into "nextBusinessDay" in format "M/d/yyyy"
 
    Then wait until "workOrders.details.dueDate.edit.input" to be enable
    And wait until "workOrders.details.dueDate.edit.input" to be visible
@@ -101,7 +102,6 @@ Scenario: Optimization of service appointment using REACTIVE case
    #Need to refresh several times because this dueDate (In Service Appointment) takes a while to get updated...
    And wait 10000 milisec up to 10 times until "serviceAppointments.details.dueDate" contains the text "${dueDate}"
    And scroll until "serviceAppointments.details.dueDate" is visible
-   And assert "serviceAppointments.details.earliestStartPermitted" contains the text "${dueDate}"
    And take a screenshot
    And click on "serviceAppointments.details.case.link"
 
@@ -137,8 +137,11 @@ Scenario: Optimization of service appointment using REACTIVE case
    And assert "case.details.caseOwner" text is "${caseOwnerReadyToSchedule}"
    And take a screenshot
 
+   And close all open web tabs
+   
    And launch salesforce app "Field Service"
-
+   And wait until "fieldService.iframe" for a max of 60 and min of 10 seconds to be present
+   Then Execute Java Script with data "window.location.reload();"
    And wait until "fieldService.iframe" for a max of 60 and min of 10 seconds to be present
    And wait until "fieldService.iframe" to be enable
    And switch to frame "fieldService.iframe"
@@ -148,9 +151,12 @@ Scenario: Optimization of service appointment using REACTIVE case
    #Then wait until "fieldService.selectTimeline.option.2days" to be visible
    #When wait until "fieldService.selectTimeline.option.2days" to be enable
    #And click on "fieldService.selectTimeline.option.2days"
-   Then wait until "fieldService.selectTimeline.option.weekly" to be visible
-   When wait until "fieldService.selectTimeline.option.weekly" to be enable
-   And click on "fieldService.selectTimeline.option.weekly"
+   #Then wait until "fieldService.selectTimeline.option.weekly" to be visible
+   #When wait until "fieldService.selectTimeline.option.weekly" to be enable
+   #And click on "fieldService.selectTimeline.option.weekly"
+   Then wait until "fieldService.selectTimeline.option.2weeks" to be visible
+   When wait until "fieldService.selectTimeline.option.2weeks" to be enable
+   And click on "fieldService.selectTimeline.option.2weeks"
    
    Then wait until "fieldService.matchGanttDates.checkbox" to be enable
    And check angular checkbox "fieldService.matchGanttDates.checkbox" if not checked
@@ -225,7 +231,11 @@ Scenario: Optimization of service appointment using REACTIVE case
    And wait until "common.toastContainer" to be enable
    And take a screenshot
 
+   And close all open web tabs
+
    And launch salesforce app "Field Service"
+   And wait until "fieldService.iframe" for a max of 60 seconds to be present
+   Then Execute Java Script with data "window.location.reload();"
    And wait until "fieldService.iframe" for a max of 60 seconds to be present
    And wait until "fieldService.iframe" to be enable
    And take a screenshot

@@ -476,6 +476,54 @@ public class CaseSteps extends WebDriverTestCase {
 		$("cases.titleCaseNumber").assertText(String.valueOf(caseNumber));
 	}
 
+	// Try to close the case having quotes with status other then Accepted
+	@QAFTestStep(description = "close case error {caseNumber} with {reactiveServiceType}")
+	public void closeCaseError(String caseNumber, String reactiveServiceType) {
+		
+		//open case
+		if (!inCaseScreen(caseNumber)) {
+			goToCase(caseNumber);
+		}
+
+		//Change status
+		$("cases.closeCase.button").waitForPresent();
+		$("cases.closeCase.button").waitForEnabled();
+		$("cases.closeCase.button").click();
+
+		$("cases.closeCase.caseResolutionDate.datepicker").waitForPresent();
+		$("cases.closeCase.caseResolutionDate.datepicker").waitForEnabled();
+		$("cases.closeCase.caseResolutionDate.datepicker").click();
+
+		$("common.openCalendar.today").waitForPresent();
+		$("common.openCalendar.today").waitForEnabled();
+		$("common.openCalendar.today").click();
+	 
+		$("cases.details.status.edit.input").waitForPresent();
+		$("cases.details.status.edit.input").waitForEnabled();
+		$("cases.details.status.edit.input").click();
+
+		$("cases.closeCase.reactiveServiceType.select").waitForEnabled();
+		$("cases.closeCase.reactiveServiceType.select").click();
+
+		String optionXpath = "//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//label[text()='Reactive Service Type']//following::span[text()='" + reactiveServiceType + "']//ancestor::lightning-base-combobox-item[1]";
+		QAFExtendedWebElement option = new WebDriverTestBase().getDriver().findElementByXPath(optionXpath);
+		option.waitForEnabled();
+		option.click();
+
+		Validator.assertTrue(option.isPresent() && option.isEnabled(), 
+			"Reactive Service Type " + reactiveServiceType + " not found as an option to set when closing case " + caseNumber,
+			"Reactive Service Type " + reactiveServiceType + " found as an option to set when closing case " + caseNumber);
+
+		$("cases.closeCase.save.button").waitForEnabled();
+		$("cases.closeCase.save.button").click();
+
+		steps.common.StepsLibrary.scrollUntilVisible("case.details.caseCloseError");
+		$("case.details.caseCloseError").waitForPresent();
+		$("case.details.caseCloseError").waitForEnabled();
+
+		$("case.details.caseCloseError").assertText("A quote must be accepted before closing a case.");
+	}
+
 	public boolean inCaseScreen(String caseNumber) {
 		try {
 			QAFWebElement title = $("common.entityNameTitle");

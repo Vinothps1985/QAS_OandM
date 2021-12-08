@@ -66,22 +66,32 @@ import com.qmetry.qaf.automation.keys.ApplicationProperties;
 import com.qmetry.qaf.automation.step.CommonStep;
 import com.qmetry.qaf.automation.step.QAFTestStep;
 
+/**
+ * Steps Library for web executions.
+ * It's important to note that this steps will only be available for web executions.
+ * They will not be available either for android executions, or hybrid executions.
+ * That's because hybrid executions are actually ran under the 'android' execution process
+ * 
+ * If you want steps to be visible in web and Android, code them in the StepsLibrary
+ * class inside the 'common' package.
+ */
 public class StepsLibrary {
 
 	private static Log logger = LogFactory.getLog(StepsLibrary.class);
 
+	//PDF Testing needs several pieces to work correctly.
+	//This variables serve as helpers to allow PDF testing to work
+	//in functions that appear later in this class
 	protected static List<String> latestPdfPageContents = null;
 	protected static String latestPdfFilePath = null;
 	public static String latestFileDownloadedUrl = null;
-	
-	/**
-	 * @param data
-	 *                       : data which is being passed from bdd
-	 */
-	@QAFTestStep(description = "sample step with {0}")
-	public static void sampleStep(String data) {
-	}
 
+	/**
+	 * When using conga for email generation, the conga process is actually
+	 * generated inside a deep tree of iframes. So this function attempts to get
+	 * into the specific conga iframe to be able to start testing conga components
+	 * (e.g. the email components)
+	 */
 	@QAFTestStep(description = "switch to conga composer frame")
 	public static void switchToCongaComposerFrame() {
 
@@ -109,6 +119,21 @@ public class StepsLibrary {
 		}
 	}
 
+	/**
+	 * This function is executed after a PDF exists in the file-system, specifically
+	 * in the DOWNLOADS_FOLDER folder (configurable in application.properties)
+	 * 
+	 * Once loaded, it loads page after page and saves the text of each page in the
+	 * 'latestPdfPageContents' variable as a list. So if the PDF has 10 pages, the
+	 * list will have 10 strings, each of them representing the text in each page.
+	 * 
+	 * This process uses Apache PDFBox for PDF reading.
+	 * 
+	 * This process also prints each page on the console (via System.out.printlns)
+	 * so the tester can check how the text is structured to make any assertions
+	 * 
+	 * @param pdfName The name of the pdf to look for and read
+	 */
 	@QAFTestStep(description = "load pdf called {0}")
     public static void loadPdfCalled(String pdfName) {
         try {
@@ -129,6 +154,9 @@ public class StepsLibrary {
 					latestPdfPageContents.add(pts.getText(document));
 				}
 
+				//This section is only relevant to print on console the
+				//PDF contents, as a 'utility' so the tester can check how
+				//the text is structured to make any assertions
 				System.out.println("PRINTING PDF DOCUMENT");
 				System.out.println("= = = = = = =");
 				System.out.println("= = = = = = =");
@@ -154,6 +182,11 @@ public class StepsLibrary {
         }
 	}
 
+	/**
+	 * This function checks the DOWNLOADS_FOLDER directory (configurable in application.properties)
+	 * and searches for all PDF files, and takes the latest one (most recent). Then it loads
+	 * the information from that PDF by calling the 'loadPdfCalled' method.
+	 */
 	@QAFTestStep(description = "load latest pdf in downloads directory")
     public static void loadLatestPdf() {
 		boolean success = false;
@@ -198,16 +231,32 @@ public class StepsLibrary {
         }
 	}
 
+	/**
+	 * Ensures a certain text appears in the latest PDF loaded.
+	 * This assertion takes a screenshot of the PDF page where the text appears
+	 * @param text The text to ensure exists in the pdf as-is
+	 */
 	@QAFTestStep(description = "assert text {0} appears in the pdf with screenshot")
     public static void assertTextAppearsInPdfWithScreenshot(String text) {
 		assertTextAppearsInPdf(text, true);
 	}
 
+	/**
+	 * Ensures a certain text appears in the latest PDF loaded.
+	 * This assertion does not take any screenshots
+	 * @param text The text to ensure exists in the pdf as-is
+	 */
 	@QAFTestStep(description = "assert text {0} appears in the pdf")
     public static void assertTextAppearsInPdfWithoutScreenshot(String text) {
 		assertTextAppearsInPdf(text, false);
 	}
 	
+	/**
+	 * Ensures a certain text appears in the latest PDF loaded
+	 * 
+	 * @param text The text to ensure exists in the pdf as-is
+	 * @param takeScreenshot True if the process should take a screenshot.
+	 */
     public static void assertTextAppearsInPdf(String text, boolean takeScreenshot) {
         boolean found = false;
         try {
@@ -241,8 +290,10 @@ public class StepsLibrary {
 	}
 
 	/**
-	 * Take a screenshot of the latest PDF
-	 * @param pageIndex 0-based index of the page
+	 * Take a screenshot of the latest PDF loaded
+	 * 
+	 * @param pdfFileName The name of the PDF file
+	 * @param pageIndex 0-based index of the page to take a screenshot of
 	 */
 	private static void takePDFScreenshot(String pdfFileName, int pageIndex) throws Exception {
 		File pdf = new File(pdfFileName);
@@ -280,16 +331,32 @@ public class StepsLibrary {
 		}
 	}
 
+	/**
+	 * Ensures a certain text does not appear in the latest PDF loaded.
+	 * This assertion takes a screenshot of the PDF page where the text appears
+	 * @param text The text to ensure doesn't exist in the pdf as-is
+	 */
 	@QAFTestStep(description = "assert text {0} does not appear in the pdf with screenshot")
     public static void assertTextDoesntAppearInPdfWithScreenshot(String text) {
 		assertTextDoesNotAppearInPdf(text, true);
 	}
 
+	/**
+	 * Ensures a certain text does not appear in the latest PDF loaded.
+	 * This assertion does not take any screenshot
+	 * @param text The text to ensure doesn't exist in the pdf as-is
+	 */
 	@QAFTestStep(description = "assert text {0} does not appear in the pdf")
     public static void assertTextDoesntAppearInPdfWithoutScreenshot(String text) {
 		assertTextDoesNotAppearInPdf(text, false);
 	}
 
+	/**
+	 * Ensures a certain text does not in the latest PDF loaded
+	 * 
+	 * @param text The text to ensure doesn't exist in the pdf as-is
+	 * @param takeScreenshot True if the process should take a screenshot.
+	 */
     public static void assertTextDoesNotAppearInPdf(String text, boolean takeScreenshot) {
         boolean found = false;
         try {
@@ -322,6 +389,13 @@ public class StepsLibrary {
         
 	}
 
+	/**
+	 * A very specific function to assert a PDF contains line items of a certain asset type, with certain comments
+	 * and alternating pass/fail checklist
+	 * 
+	 * @param assetType The asset type that should be reviewed in case the PDF has several
+	 * @param comment The comment that should appear after the passing/failing checklist
+	 */
 	@QAFTestStep(description = "assert pdf contains a line item of type {assetType} with comment {comment} alternating pass and fail")
     public static void assertPdfLineItemATCommentPassFail(String assetType, String comment) {
 		boolean checklistValidated = false;
@@ -468,8 +542,16 @@ public class StepsLibrary {
 			"Comments and checklist validated correctly");
 	}
 
+	/**
+	 * To ensure PDF testing works locally and remotely (In Zalenium), the actual process of downloading
+	 * PDF files needs to download the file, and then go to the 'chrome downloads' section in chrome
+	 * and take the URL of the latest downloaded file, so it can then be downloaded by the calling
+	 * process (e.g. the Jenkins server or local computer), so it can then be opened and asserted.
+	 * 
+	 * @throws Exception in case something goes wrong
+	 */
 	@QAFTestStep(description = "get latest download url from chrome downloads")
-	public static void getLatestDownloadUrlFromChromeDownloads() throws Exception{
+	public static void getLatestDownloadUrlFromChromeDownloads() throws Exception {
 
 		latestFileDownloadedUrl = null;
 
@@ -495,8 +577,16 @@ public class StepsLibrary {
                 "Latest file downloaded URL obtained successfully");
 	}
 
+	/**
+	 * Download a file saved in the 'latestFileDownloadedUrl' variable locally.
+	 * Locally means 'where the test is being executed'. For example if executing locally, it means
+	 * the local computer. If it's being executed from jenkins and running on Zalenium, then locally
+	 * means the Jenkins server
+	 * 
+	 * @throws Exception if anything goes wrong
+	 */
 	@QAFTestStep(description = "download file locally")
-	public static void downloadFileLocally() throws Exception{
+	public static void downloadFileLocally() throws Exception {
 
 		if (latestFileDownloadedUrl == null) {
 			System.out.println("Cannot download. File URL is null!");
@@ -514,8 +604,21 @@ public class StepsLibrary {
 		}
 	}
 
+	/**
+	 * Downloads a file using specific cookies sent as a variable.
+	 * This works, for example, when printing a Purchase Order, since it works differently
+	 * than other PDFs in Salesforce.
+	 * 
+	 * Can be sen in action in CreateConReqGroupAndPOUsingOverhead.feature
+	 * 
+	 * The cookies are taken before, because the cookies in each frame are different so first
+	 * we save the correct cookies, and then they're sent here to be able to download the PDF
+	 * 
+	 * @param cookies The cookies to send to the download process
+	 * @throws Exception
+	 */
 	@QAFTestStep(description = "download file locally with cookies {cookies}")
-	public static void downloadFileLocallyWithCookies(String cookies) throws Exception{
+	public static void downloadFileLocallyWithCookies(String cookies) throws Exception {
 
 		if (latestFileDownloadedUrl == null) {
 			System.out.println("Cannot download. File URL is null!");
@@ -552,6 +655,13 @@ public class StepsLibrary {
 		}
 	}
 
+	/**
+	 * Store the current cookies from the current frame inside a variable
+	 * 
+	 * @param varName The name of the variable to save the cookies to
+	 * 
+	 * @throws Exception In case anything goes wrong
+	 */
 	@QAFTestStep(description = "store cookies into {varName}")
 	public static void storeCookiesInto(String varName) throws Exception{
 
@@ -570,6 +680,13 @@ public class StepsLibrary {
 		}
 	}
 
+	/**
+	 * A specific test made to get the URL of a PDF generated in-page, specifically (at least)
+	 * when creating a Purchase Order O&M PDF. To get the URL to download the file locally, we need
+	 * to execute a very specific process to get that URL so it can be later downloaded, and asserted on
+	 * 
+	 * @param varName The name of the variable to save the PDF URL to download later
+	 */
 	@QAFTestStep(description = "get embedded PDF URL into {varName}")
 	public static void getEmbeddedPDFURLInto(String varName) throws Exception{
 		boolean success = false;
@@ -613,11 +730,16 @@ public class StepsLibrary {
 	}
 
 	/**
+	 * Wait for a number of milliseconds, refreshing 'refreshes' times after
+	 * the milliseconds have passed, trying to see if the text of a locator matches the text
+	 * sent. This is useful for long-running processes where we have to refresh the page
+	 * several times until the text of a 'Status' changes from 'Open' to something like 'Completed'
+	 * (e.g. Service Optimization Process)
 	 * 
-	 * @param milisec
-	 * @param refreshes
-	 * @param loc
-	 * @param text
+	 * @param milisec Number of miliseconds to wait each iteration (refresh)
+	 * @param refreshes Number of times to refresh (iterations)
+	 * @param loc The locator where we'll look for a specific text
+	 * @param text The specific text to look for
 	 */
 	@QAFTestStep(description="wait {milisec} milisec up to {refreshes} times until {loc} has the text {text}")
 	public static void waitMilisecAndRefreshUntilTextIs(int milisec, int refreshes, String loc, String text) {
@@ -640,13 +762,22 @@ public class StepsLibrary {
 		}
 	}
 
-	@QAFTestStep(description="store the current time in {variableName}")
-	public static void saveTheCurrentTime(String variableName) {
-		String time = String.valueOf(new Date().getTime());
-		logger.info("Storing time " + time + " in variable named " + variableName);
-		CommonStep.store(time, variableName);
-	}
-
+	/**
+	 * Salesforce manages it's loading lifetime in a special way.
+	 * Since it uses a lot of Ajax (background loading of resources), the browser
+	 * actually thinks it has finished loading, but the page is full of loading indicators
+	 * and blank pages. This process attempts to use salesforce lightning internal javascript
+	 * indicators to wait until the page has really finished loading (after all pending ajax processes
+	 * have finished).
+	 * 
+	 * This doesn't mean that the full page is always loaded. Salesforce Lightning uses lazy-loading,
+	 * which means if you scroll down on certain pages, only then is that information loaded. For example
+	 * when viewing a 'Case' page, the 'Details' section may be loaded, but if you scroll down, the rest
+	 * of the elements are not loaded and will start loading. This is important because some locators may
+	 * return 'false' for 'isPresent()' function, because you have to scroll first to see them.
+	 * 
+	 * You can use 'and scroll until {loc} is visible' for this.
+	 */
 	@QAFTestStep(description="wait for the page to finish loading")
 	public static void waitForPageToFinishLoading() {
 
@@ -708,6 +839,15 @@ public class StepsLibrary {
 		}
 	}
 
+	/**
+	 * Finds the table with the locator 'tableLoc', then searches what column has a specific title
+	 * (e.g. Status), and saves the index of that column in 'varName', that way it can be later used
+	 * for assertions
+	 * 
+	 * @param tableLoc The locator of the table to check
+	 * @param title The title the column must have (e.g. Status)
+	 * @param varName The variable that will hold the column index number if found
+	 */
 	@QAFTestStep(description = "store table {tableLoc} column index with title {title} on {varName}")
 	public static void storeTableColumnIndexWithTitleOn(String tableLoc, String title, String varName) {
 		if (!$(tableLoc).isPresent() || !$(tableLoc).isEnabled()) {
@@ -736,6 +876,18 @@ public class StepsLibrary {
 			"Column index with title " + title + " found successfully on " + tableLoc + " with index " + idx);
 	}
 
+	/**
+	 * Asserts that the table 'tableLoc' has 2 columns with specific texts. This works specially in places
+	 * like the 'Case History' section of a Case, where we want to see if the 'Status' is 'Closed' or if
+	 * 'Labor Billing' is 'Billable', etc. Since columns can change indexes, we use the index number to
+	 * find it (see storeTableColumnIndexWithTitleOn).
+	 * 
+	 * @param tableLoc The locator of the table
+	 * @param idx1 The index of the first column
+	 * @param val1 The text that the first column must have (e.g. Status)
+	 * @param idx2 The index of the second column
+	 * @param val2 The text that the second column must have (e.g. Closed)
+	 */
 	@QAFTestStep(description = "assert row exists on table {tableLoc} where text on index {idx1} is {val1} and text on index {idx2} is {val2}")
 	public static void assertRowExistsOnTableWithTextAndText(String tableLoc, String idx1, String val1, String idx2, String val2) {
 		if (!$(tableLoc).isPresent() || !$(tableLoc).isEnabled()) {
@@ -752,6 +904,17 @@ public class StepsLibrary {
 			"Found a row on table " + tableLoc + " where " + val1 + " = " + val2);
 	}
 
+	/**
+	 * Clicks on a locator if another locator appears after a certain number of seconds
+	 * This works in very specific cases. For example sometimes when trying to save an
+	 * entity (e.g. a Contact), when trying to save, a message may appear indicating a similar
+	 * contact already exists. In this case we can say: Click on 'Save' (again) if the message
+	 * 'Similar etc etc' appears on screen (with locators, instead of the texts).
+	 * 
+	 * @param loc The locator to click on
+	 * @param loc2 The locator that, if it appears, will trigger a click on the first locator
+	 * @param secs The seconds to wait to see if the loc2 element appears
+	 */
 	@QAFTestStep(description = "click on {loc} if {loc2} appears within {secs} seconds")
 	public static void clickOnIfAppearsWith(String loc, String loc2, int secs) {
 		try {
@@ -765,11 +928,19 @@ public class StepsLibrary {
 	}
 
 	/**
+	 * Wait for a number of milliseconds, refreshing 'refreshes' times after
+	 * the milliseconds have passed, trying to see if the text of a locator contains the text
+	 * sent. This is useful for long-running processes where we have to refresh the page
+	 * several times until the text of a 'Status' changes from 'Open' to something like 'Completed'
+	 * (e.g. Service Optimization Process)
 	 * 
-	 * @param milisec
-	 * @param refreshes
-	 * @param loc
-	 * @param text
+	 * This function is similar to waitMilisecAndRefreshUntilTextIs but this one checks if
+	 * the text is contained, not exactly equal
+	 * 
+	 * @param milisec Number of miliseconds to wait each iteration (refresh)
+	 * @param refreshes Number of times to refresh (iterations)
+	 * @param loc The locator where we'll look for a specific text
+	 * @param text The text to look for (should be contained in 'loc')
 	 */
 	@QAFTestStep(description="wait {milisec} milisec up to {refreshes} times until {loc} contains the text {text}")
 	public static void waitMilisecAndRefreshUntilTextContains(int milisec, int refreshes, String loc, String text) {
@@ -800,6 +971,12 @@ public class StepsLibrary {
 			"The text " + text + " was found in the text " + loc + " as expected");
 	}
 
+	/**
+	 * Store the timestamp of the latest email received. Email configuration
+	 * appears in application.properties.
+	 * 
+	 * @param varName The variable where the latest message received timestamp will be saved
+	 */
 	@QAFTestStep(description="store the timestamp of the latest received email in {varName}")
 	public static void storeLatestEmailTimestamp(String varName) {
 		try {
@@ -820,6 +997,15 @@ public class StepsLibrary {
 		}
 	}
 
+	/**
+	 * Assert that an email is received with a certain subject. To ensure it's the correct email
+	 * we want, we send a timestamp so we don't read any emails received before this timestamp.
+	 * 
+	 * To be used in conjunction with 'storeLatestEmailTimestamp'
+	 * 
+	 * @param timestamp Don't read any emails received before this timestamp
+	 * @param subject The subject of the email must contain this text
+	 */
 	@QAFTestStep(description="assert an email is received after {timestamp} and the subject contains the text {subject}")
 	public static void assertEmailIsReceivedWithSubject(Object timestamp, String subject) {
 		String matchSubject = null;
@@ -859,6 +1045,11 @@ public class StepsLibrary {
 		"An email was received after " + timestamp + " with a subject that contains the text " + subject + ". Email full subject: " + matchSubject);
 	}
 
+	/**
+	 * This is not really used anywhere. It's just to be used for testing purposes
+	 * by the tester. It checks the latest 3 email messages and prints on console
+	 * the subject, from and sent date of the emails.
+	 */
 	@QAFTestStep(description="check the latest emails")
 	public static void checkTheLatestEmails() {
 		try {
@@ -876,16 +1067,37 @@ public class StepsLibrary {
 		}
 	}
 
+	/**
+	 * Waits for a locator to be enabled, with a timeout in seconds
+	 * 
+	 * @param loc The locator to look for to be enabled
+	 * @param sec Timeout in seconds
+	 */
 	@QAFTestStep(description = "wait until {loc} for a max of {sec} seconds to be enable")
 	public static void waitForEnabledFoxMaxSeconds(String loc, long sec) {
 		$(loc).waitForEnabled(sec * 1000);
 	}
 
+	/**
+	 * Waits for a locator to be present, with a timeout in seconds
+	 * 
+	 * @param loc The locator to look for to be present
+	 * @param sec Timeout in seconds
+	 */
 	@QAFTestStep(description = "wait until {loc} for a max of {sec} seconds to be present")
 	public static void waitForPresentFoxMaxSeconds(String loc, long sec) {
 		$(loc).waitForPresent(sec * 1000);
 	}
 
+	/**
+	 * Some places (like FieldService) use a simple angular-based interface
+	 * instead of the Salesforce-Lightning more complicated UI components.
+	 * 
+	 * This process searches for a checkbox with a specific locator and, if it is not
+	 * checked, it clicks it
+	 * 
+	 * @param loc The locator for the checkbox to look for
+	 */
 	@QAFTestStep(description = "check angular checkbox {loc} if not checked")
 	public static void checkCheckboxIfNotChecked(String loc) {
 		$(loc).waitForPresent();
@@ -896,6 +1108,15 @@ public class StepsLibrary {
 		}
 	}
 
+	/**
+	 * Some places (like FieldService) use a simple angular-based interface
+	 * instead of the Salesforce-Lightning more complicated UI components.
+	 * 
+	 * This process looks for a specific date in an angular datepicker
+	 * and clicks it (e.g. on ServiceOptimization optimize popup section)
+	 * 
+	 * @param loc The locator for the date to look for in yyyy-MM-dd format
+	 */
 	@QAFTestStep(description = "select date {date} on angular datepicker")
 	public static void selectDateOnAngularDatepicker(String date) {
 		boolean success = false;
@@ -920,11 +1141,23 @@ public class StepsLibrary {
 			"Date " + date + " successfully selected on the angular datepicker");
 	}
 
+	/**
+	 * Waits for a locator to be visible with a timeout in seconds
+	 * 
+	 * @param loc The locator to look for to be visible
+	 * @param sec The timeout in seconds
+	 */
 	@QAFTestStep(description = "wait until {loc} for a max of {sec} seconds to be visible")
 	public static void waitForVisibleFoxMaxSeconds(String loc, long sec) {
 		$(loc).waitForVisible(sec * 1000);
 	}
 
+	/**
+	 * Store the current date in a specific format into a variable
+	 * 
+	 * @param format The format to be saved (for formats look for java SimpleDateFormat documentation)
+	 * @param varName The variable where the formatted date will be saved to
+	 */
 	@QAFTestStep(description = "store the current date in format {format} into {varName}")
 	public static void storeCurrentDateInFormatInto(String format, String varName) {
 		boolean success = false;
@@ -1007,6 +1240,19 @@ public class StepsLibrary {
 			"Dropdown option with the label " + label + " for input " + inputLabel + " found and selected");
 	}
 	
+	/**
+	 * Switch to a frame in a more secure way.
+	 * 
+	 * Sometimes we want to change to a specific iframe, but when doing so, may mistakenly get
+	 * into an erroneous iframe (e.g. if we only change to the 'first iframe', it may not be
+	 * the correct one because the page had not finished loading)
+	 * 
+	 * This process switches to the iframe in 'frameLocator', but searches if 'searchLocator'
+	 * can be found once there. If not, it gets out, waits a while, and tries again several times.
+	 * 
+	 * @param frameLocator The locator of the frame/iframe to switch to
+	 * @param searchLocator The locator that MUST be found once inside that frame/iframe
+	 */
 	@QAFTestStep(description = "switch to frame {frameLocator} until {searchLocator} is present")
 	public static void switchToFrameUntilLocIsPresent(String frameLocator, String searchLocator) {
 

@@ -47,13 +47,25 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.Base64;
 import java.util.Calendar;
 import java.util.Date;
-// define common steps among all the platforms.
-// You can create sub packages to organize the steps within different modules
+
+/**
+ * Steps Library for android, web or hybrid executions.
+ * These steps are shared for all execution types so place them here if needed
+ * 
+ * Note: When running hybrid executions, even when running a 'web' section, they
+ * MUST be here instead of the web.StepsLibrary class. That class is only for
+ * web-only tests.
+ */
 public class StepsLibrary {
 
 	private static Log logger = LogFactory.getLog(StepsLibrary.class);
 	
-		private static String getJsDndHelper() {
+	/**
+	 * Internal QAS step
+	 * 
+	 * @return
+	 */
+	private static String getJsDndHelper() {
 		return "function simulateDragDrop(sourceNode, destinationNode) {\r\n" +
 				"		    var EVENT_TYPES = {\r\n" +
 				"		        DRAG_END: 'dragend',\r\n" +
@@ -98,37 +110,63 @@ public class StepsLibrary {
 				"		    dispatchEvent(sourceNode, EVENT_TYPES.DRAG_END, dragEndEvent)\r\n" +
 				"		}";
 	}
-	/**
-	 * @param data : data which is being passed from bdd
-	 */
-	@QAFTestStep(description = "sample step with {0}")
-	public static void sampleStep(String data) {
-	}
 
+	/**
+	 * Send a numeric value into a locator
+	 * @param number The number to send
+	 * @param loc The locator to receive the number
+	 */
 	@QAFTestStep(description = "sendNumericKeys {number} into {loc}")
 	public static void sendKeysInt(Integer number, String loc) {
 		$(loc).sendKeys(number.toString());
 	}
 
+	/**
+	 * Internal QAS step
+	 * 
+	 * @return
+	 */
 	@QAFTestStep(description = "store value of {0} into system as {1}")
 	public static void storeValueToSystem(String localKey, String systemKey) {
 		System.setProperty(systemKey, String.valueOf(ConfigurationManager.getBundle().getObject(localKey)));
 	}
 
+	/**
+	 * Internal QAS step
+	 * 
+	 * @return
+	 */
 	@QAFTestStep(description = "store {0} into system as {1}")
 	public static void storeToSystem(String localKey, String systemKey) {
 		System.setProperty(systemKey, localKey);
 	}
 
+	/**
+	 * Internal QAS step
+	 * 
+	 * @return
+	 */
 	@QAFTestStep(description = "get value from system {0} into {1}")
 	public static void getValueFromSystem(String systemKey, String localKey) {
 		ConfigurationManager.getBundle().setProperty(localKey, System.getProperty(systemKey));
 	}
 
+	/**
+	 * Internal QAS step
+	 * 
+	 * @return
+	 */
 	@QAFTestStep(description = "switch to {0} platform")
 	public static void switchToPlatform(String platform) {
 		ConfigurationManager.getBundle().setProperty("env.resources", "resources/testdata;resources/" + platform);
 	}
+
+	/**
+	 * Select a specific option in an HTML select field.
+	 * 
+	 * @param value The value to look for
+	 * @param loc The locator of the select field
+	 */
 	@QAFTestStep(description="select {0} in {1}")
 	public static void selectIn(String value,String loc) {
 		WebElement sel = new WebDriverTestBase().getDriver().findElement(loc);
@@ -139,16 +177,31 @@ public class StepsLibrary {
 			selectDropDown.selectByVisibleText(value.contains("=")?value.split("=")[1]:value);
 		}
 	}
+
+	/**
+	 * Send the ENTER key to a locator (e.g. input)
+	 * 
+	 * @param loc The locator to receive th entery key
+	 */
 	@QAFTestStep(description = "type Enter {loc}")
 		public static void typeEnter(String loc) {
 			$(loc).sendKeys(Keys.ENTER);
 	}
 
+	/**
+	 * Close the driver
+	 * @param loc
+	 */
 	@QAFTestStep(description = "close {loc}")
 	public static void close(String loc) {
 		new WebDriverTestBase().getDriver().close();
 	}
 
+	/**
+	 * Switch to a window based on a 0-based index (e.g. for when a window pops up)
+	 * 
+	 * @param str0 The 0-index number of the window to focus
+	 */
 	@QAFTestStep(description = "switchWindow {0}")
 	public static void switchWindow(String str0) {
 		Set<String> windowHandles = new WebDriverTestBase().getDriver().getWindowHandles();
@@ -157,6 +210,11 @@ public class StepsLibrary {
 		new WebDriverTestBase().getDriver().switchTo().window(reqWindow);
 	}
 
+	/**
+	 * Wait for a certain amount of miliseconds, doing nothing
+	 * 
+	 * @param time Time in milliseconds to wait
+	 */
 	@QAFTestStep(description = "wait for {0} milisec")
 	public static void waitForMilliseconds(int time) {
 		try {
@@ -167,10 +225,24 @@ public class StepsLibrary {
         }
 	}
 	
+	/**
+	 * Wait for a certain amount of miliseconds, doing nothing
+	 * 
+	 * (Helper used for when Test Recorder has issues exporting the waiting command and
+	 * includes an un-needed space before the 'wait' word)
+	 * 
+	 * @param time Time in milliseconds to wait
+	 */
 	@QAFTestStep(description = " wait for {0} milisec")
 	public static void waitForMillisecondsSpace(int time) {
 		waitForMilliseconds(time);
-    }
+	}
+	
+	/**
+	 * Internal QAS step
+	 * 
+	 * @return
+	 */
 	@QAFTestStep(description = "setBeforeLambdaTestCapabilities {data}")
 	public static void setBeforeLambdaTestCapabilities(String data) {
 		String jsonText = data;
@@ -189,6 +261,11 @@ public class StepsLibrary {
 
 	}
 
+	/**
+	 * Internal QAS step
+	 * 
+	 * @return
+	 */
 	@QAFTestStep(description = "setAfterLambdaTestCapabilities")
 	public static void setAfterLambdaTestCapabilities() {
 		PropertyUtil prop = new PropertyUtil(
@@ -197,6 +274,11 @@ public class StepsLibrary {
 		ConfigurationManager.getBundle().setProperty("remote.server", prop.getPropertyValue("remote.server"));
 	}
 
+	/**
+	 * Internal QAS step
+	 * 
+	 * @return
+	 */
 	@QAFTestStep(description = "drag {source} and drop on {target} perform")
 	public static void dragAndDropPerform(String source, String target) {
 		((JavascriptExecutor) new WebDriverTestBase().getDriver()).executeScript(getJsDndHelper() + "simulateDragDrop(arguments[0], arguments[1])", $(source),  $(target));
@@ -205,6 +287,11 @@ public class StepsLibrary {
 		actions.dragAndDrop(src, $(target)).perform();
 	}
 
+	/**
+	 * Internal QAS step
+	 * 
+	 * @return
+	 */
 	@QAFTestStep(description = "drag {0} and drop on {1} and {2} perform")
 	public static void dragAndDropOnAndPerform(String source, String Xtarget, String Ytarget) {
 			QAFExtendedWebElement src = (QAFExtendedWebElement) $(source);
@@ -212,42 +299,82 @@ public class StepsLibrary {
 			actions.dragAndDropBy(src, Integer.parseInt(Xtarget), Integer.parseInt(Ytarget)).build().perform();
 	}
 
+	/**
+	 * Internal QAS step
+	 * 
+	 * @return
+	 */
 	@QAFTestStep(description = "drag {0} and drop on value {1} perform")
 	public static void dragAndDropOnValuePerform(String source, String value) {
 		String executScriptValue ="arguments[0].setAttribute('value',"+Integer.parseInt(value)+");if(typeof(arguments[0].onchange) === 'function'){arguments[0].onchange('');}";
 			((JavascriptExecutor) new WebDriverTestBase().getDriver()).executeScript(executScriptValue, $(source));
 	}
 
+	/**
+	 * Internal QAS step
+	 * 
+	 * @return
+	 */
 	@QAFTestStep(description = "maximise window")
 	public static void maximiseWindow() {
 		new WebDriverTestBase().getDriver().manage().window().maximize();
 	}
 
+	/**
+	 * Internal QAS step
+	 * 
+	 * @return
+	 */
 	@QAFTestStep(description = "verifyTitle {0}")
 	public static void verifyTitle(String input) {
 		Validator.verifyTrue(new WebDriverTestBase().getDriver().getTitle().equalsIgnoreCase(input),"Actual Title: \""+ new WebDriverTestBase().getDriver().getTitle() +"\" does not match with Expected: \"" +input+"\"" , "Actual Title: \""+ new WebDriverTestBase().getDriver().getTitle()+"\" matches with Expected: \"" +input+"\"");
 	}
 
+	/**
+	 * Internal QAS step
+	 * 
+	 * @return
+	 */
 	@QAFTestStep(description = "assertTitle {0}")
 	public static void assertTitle(String input) {
 		Validator.assertTrue(new WebDriverTestBase().getDriver().getTitle().equalsIgnoreCase(input),"Actual Title: \""+ new WebDriverTestBase().getDriver().getTitle() +"\" does not match with Expected: \"" +input+"\"" , "Actual Title: \""+ new WebDriverTestBase().getDriver().getTitle()+"\" matches with Expected: \"" +input+"\"");
 	}
 
+	/**
+	 * Internal QAS step
+	 * 
+	 * @return
+	 */
 	@QAFTestStep(description = "maximizeWindow")
 	public static void maximizeWindow() {
 		new WebDriverTestBase().getDriver().manage().window().maximize();
 	}
 
+	/**
+	 * Internal QAS step
+	 * 
+	 * @return
+	 */
 	@QAFTestStep(description = "Execute Java Script with data {0}")
 	public static void executeJavaScript(String dataScript) {
 			new WebDriverTestBase().getDriver().executeScript(dataScript);;
 	}
 
+	/**
+	 * Internal QAS step
+	 * 
+	 * @return
+	 */
 	@QAFTestStep(description = "Execute Async Java Script with data {0}")
 	public static void executeAsyncJavaScript(String dataScript) {
 			new WebDriverTestBase().getDriver().executeAsyncScript(dataScript);;
 	}
 
+	/**
+	 * Internal QAS step
+	 * 
+	 * @return
+	 */
 	@QAFTestStep(description = "acceptAlert")
 	public static void acceptAlert() {
 		if (checkAlert(0)) {
@@ -255,6 +382,11 @@ public class StepsLibrary {
 		}
 	}
 
+	/**
+	 * Internal QAS step
+	 * 
+	 * @return
+	 */
 	@QAFTestStep(description = "dismissAlert")
 	public static void dismissAlert() {
 		if (checkAlert(0)) {
@@ -262,6 +394,11 @@ public class StepsLibrary {
 		}
 	}
 
+	/**
+	 * Internal QAS step
+	 * 
+	 * @return
+	 */
 	@QAFTestStep(description = "getAlertText {0}")
 	public static void getAlertText(String input) {
 		if (checkAlert(0)) {
@@ -272,18 +409,35 @@ public class StepsLibrary {
 		}
 	}
 
+	/**
+	 * Internal QAS step
+	 * 
+	 * @return
+	 */
 	@QAFTestStep(description = "setAlertText {0}")
 	public static void setAlertText(String input) {
 		if (checkAlert(0)) {
 			new WebDriverTestBase().getDriver().switchTo().alert().sendKeys(input);
 		}
 	}
+	
+	/**
+	 * Internal QAS step
+	 * 
+	 * @return
+	 */
 	@QAFTestStep(description = "verifyAlertPresent {0} millisec")
 	public static void verifyAlertPresent(String timeout) {
 		if (!checkAlert(Long.valueOf(timeout))){
 			Validator.verifyFalse(true, "Alert is not present.", "Alert is present.");
 		}
 	}
+
+	/**
+	 * Internal QAS step
+	 * 
+	 * @return
+	 */
 	@QAFTestStep(description = "verifyAlertNotPresent {0} millisec")
 	public static void verifyAlertNotPresent(String timeout) {
 		if (checkAlert(Long.valueOf(timeout))){
@@ -291,6 +445,11 @@ public class StepsLibrary {
 		}
 	}
 
+	/**
+	 * Internal QAS step
+	 * 
+	 * @return
+	 */
 	@QAFTestStep(description = "waitForAlert {0} millisec")
 	public static void waitForAlert(String timeout) {
 		try{
@@ -301,11 +460,21 @@ public class StepsLibrary {
 		}
 	}
 
+	/**
+	 * Store the value from a specific locator inside a variable
+	 * @param loc Locator to look the value in (e.g. an input)
+	 * @param varName The variable to save the text
+	 */
 	@QAFTestStep(description = "store value from {0} into {1}")
 	public static void storeValueIntoVariable(String loc , String varName) {
 		CommonStep.store($(loc).getAttribute("value"), varName);
 	}
 
+	/**
+	 * Store the text from a specific locator inside a variable
+	 * @param loc The locator to look the text from
+	 * @param varName The variable to save the text
+	 */
 	@QAFTestStep(description = "store text from {0} into {1}")
 	public static void storeTextIntoVariable(String loc , String varName) {
 		CommonStep.store(CommonStep.getText(loc), varName);
@@ -358,6 +527,10 @@ public class StepsLibrary {
 		} catch (Exception ex) {}
 	}
 	
+	/**
+	 * Takes a screenshot. It makes sure to wait for the page to finish loading if this is
+	 * a web environment
+	 */
 	@QAFTestStep(description="take a screenshot")
 	public static void takeAScreenshot() {
 		if (ConfigurationManager.getBundle().getString("platform").equals("web") || "web".equals(Util.CURRENT_PLATFORM)) {
@@ -366,11 +539,22 @@ public class StepsLibrary {
 		Reporter.logWithScreenShot("take a screenshot");
 	}
 
+	/**
+	 * Change the current platform in the Util class so it can be checked
+	 * in other places
+	 * @param platform web/mobile
+	 */
 	@QAFTestStep(description="set current platform as {platform}")
 	public static void setCurrentPlatformAs(String platform) {
 		Util.CURRENT_PLATFORM = platform;
 	}
 
+	/**
+	 * Stores the next business day (mon-fri) inside a variable with a specific format
+	 * 
+	 * @param varName Name of the variable to save the date into
+	 * @param format The format the date will be saved in (see java SimpleDateFormat formats for options)
+	 */
 	@QAFTestStep(description="store next business day into {varName} in format {format}")
 	public static void storeNextBusinessDayInto(String varName, String format) {
 		boolean success = false;
@@ -398,6 +582,14 @@ public class StepsLibrary {
 			"Next business day was stored in " + varName + " with value " + value);
 	}
 
+	/**
+	 * Add a certain amount of business days to the current day (mon-fri) and save it into a variable
+	 * in a specific format
+	 * 
+	 * @param daysToAdd Number of business days to add to the current date (e.g. 5 for a week)
+	 * @param varName Name of the variable to save the date in
+	 * @param format Format of the date. see SimpleDateFormat class for format options
+	 */
 	@QAFTestStep(description="add {daysToAdd} business days to current date and store it into {varName} in format {format}")
 	public static void addBusinessDaysToCurrentDateAndStoreInto(long daysToAdd, String varName, String format) {
 		boolean success = false;
@@ -429,6 +621,14 @@ public class StepsLibrary {
 			daysToAdd + " business days added to current date and stored in " + varName + " with value " + value);
 	}
 
+	/**
+	 * Take a date in one format, change it to another format and save it in a variable
+	 * 
+	 * @param originDate Variable name where the original date resides
+	 * @param originFormat Format in which the original date is
+	 * @param destFormat Format in which we want the date to be formatted to
+	 * @param destVar Variable that will get the date in the destination format
+	 */
 	@QAFTestStep(description = "format date {originDate} from {originFormat} to {destFormat} into {destVar}")
 	public static void formatDateFromVarToVarWithFormats(String originDate, String originFormat, String destFormat, String destVar) {
 		boolean success = false;
@@ -444,7 +644,7 @@ public class StepsLibrary {
 	}
 
 	/**
-	 * Defaults to 10 scrolls. Use "for up to {maxScrolls} scrolls" to specify max scroll number
+	 * Defaults to 15 scrolls. Use "for up to {maxScrolls} scrolls" to specify max scroll number
 	 * @param locator
 	 */
 	@QAFTestStep(description="scroll until {0} is visible")
@@ -453,7 +653,13 @@ public class StepsLibrary {
 	}
 
 	/**
-	 * @param locator
+	 * Scrolls the web or Android page until a locator exists and is visible.
+	 * 
+	 * In the case of web, it starts scrolling from the top of the page always. In 
+	 * the case of android it 'swipes' from the current position only.
+	 * 
+	 * @param locator the locator that must be present
+	 * @param maxScrolls the maximum number of scrolls to try to find the element
 	 */
 	@SuppressWarnings({"rawtypes"})
 	@QAFTestStep(description="scroll until {0} is visible for up to {maxScrolls} scrolls")
@@ -513,6 +719,12 @@ public class StepsLibrary {
 		}
 	}
 
+	/**
+	 * Create a random number with a certain amount of digits, saving it in a variable.
+	 * 
+	 * @param digits Number of digits the random number must have
+	 * @param varName Variable to save the generated random number into 
+	 */
 	@QAFTestStep(description = "create a random number with {digits} digits and store it in {varName}")
 	public static void createRandomNumber(int digits, String varName) {
 
@@ -522,6 +734,11 @@ public class StepsLibrary {
 		CommonStep.store(randomNumber, varName);
 	}
 
+	/**
+	 * Store the URL of the current frame into a variable
+	 * 
+	 * @param variableName Variable name that will hold the URL
+	 */
 	@QAFTestStep(description="store the current url in {variableName}")
 	public static void saveTheCurrentUrl(String variableName) {
 		String url = new WebDriverTestBase().getDriver().getCurrentUrl();
@@ -529,6 +746,9 @@ public class StepsLibrary {
 		CommonStep.store(url, variableName);
 	}
 
+	/**
+	 * Salesforce-specific function to close all open web tasks, one by one
+	 */
 	@QAFTestStep(description="close all open web tabs")
 	public static void closeAllOpenWebTabs() {
 		boolean success = false;
@@ -568,18 +788,38 @@ public class StepsLibrary {
 			"Open web tabs have been closed");
 	}
 
+	/**
+	 * Launch a salesforce-lightning app using the AppLauncher
+	 * 
+	 * @param appName The name of the app to launch (e.g. Cases, Projects, Field Service)
+	 */
 	@QAFTestStep(description = "launch salesforce app {0}")
 	public void launchSalesforceApp(Object appName) {
 		ShrdLaunchApp launch = new ShrdLaunchApp();
 		launch.customShrdLaunchApp(appName);
 	}
 
+	/**
+	 * Change the current logged in user. This depends on the logged-in user to have the
+	 * permissions to search for a user and impersonate it.
+	 * 
+	 * @param userToSet The user we want to change to by using impersonation
+	 */
 	@QAFTestStep(description = "change logged in user to {0}")
 	public void changeLoggedInUserTo(Object userToSet) {
 		ShrdChangeLoggedInUser change = new ShrdChangeLoggedInUser();
 		change.customShrdChangeLoggedInUser(userToSet);
 	}
 
+	/**
+	 * Wait for a locator to be present, with a minimum/maximum amount of seconds to wait for
+	 * This is relevant in cases like FieldService that usually takes several seconds to load, so
+	 * we wait a bit first, and then start looking for it constantly
+	 * 
+	 * @param loc The locator to search for
+	 * @param max Maximum number of seconds to wait for
+	 * @param min Minimum number of seconds to wait for
+	 */
 	@QAFTestStep(description = "wait until {loc} for a max of {max} and min of {min} seconds to be present")
 	public static void waitForPresentFoxMaxMinSeconds(String loc, long max, long min) {
 		try {
@@ -590,6 +830,15 @@ public class StepsLibrary {
 		}
 	}
 
+	/**
+	 * Extract the date component from a String, and save it into a variable.
+	 * It basically splits the string by its first space, and takes the first element
+	 * 
+	 * e.g. 2021-12-30 15:30:25 = 2021-12-30
+	 * 
+	 * @param data The string to take only the first part (date) from
+	 * @param varName The variable to save the date into
+	 */
 	@QAFTestStep(description = "extract the date component from {data} into {varName}")
 	public static void extractDateComponent(String data, String varName) {
 		String result = null;
@@ -606,6 +855,12 @@ public class StepsLibrary {
 			"Successfully extracted the date component from " + data + " into " + varName + ": " + result);
 	}
 
+	/**
+	 * Assert that a locator contains a certain text
+	 * 
+	 * @param loc Locator to look for
+	 * @param text Text that must be contained inside the locator's text
+	 */
 	@QAFTestStep(description = "assert {loc} contains the text {text}")
 	public static void assertLocContainsText(String loc, String text) {
 		$(loc).waitForEnabled();
@@ -616,6 +871,17 @@ public class StepsLibrary {
 			"The text " + text + " was found in the text " + locText + " as expected");
 	}
 
+	/**
+	 * Assert that a locator has a numeric value that matches the sent text.
+	 * This is important in cases where these are the same:
+	 * - 2
+	 * - 2.00
+	 * - $2.00
+	 * - $2.0000
+	 * 
+	 * @param loc The locator to look for
+	 * @param text The text that must appear 'numerically' inside the locator
+	 */
 	@QAFTestStep(description = "assert {loc} numeric value matches {text}")
 	public static void assertLocNumericValueMatches(String loc, String text) {
 		$(loc).waitForEnabled();
@@ -637,6 +903,11 @@ public class StepsLibrary {
 			"The numeric value of " + text + " matches " + locText + " as expected");
 	}
 
+	/**
+	 * Count the number of rows a table has, and save it in a variable
+	 * 
+	 * @param varName The variable name to save the number of rows into
+	 */
 	@QAFTestStep(description = "store number of rows from table into {varName}")
 	public static void storeNumberOfRowsFromTableInto(String varName) {
 		boolean success = false;

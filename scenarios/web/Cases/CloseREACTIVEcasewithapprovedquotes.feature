@@ -59,5 +59,9 @@ Scenario: Close REACTIVE case with approved quotes
    And assert row exists on table "cases.caseHistory.table" where text on index "${fieldIdx}" is "Status" and text on index "${newValIdx}" is "Closed"
    And assert row exists on table "cases.caseHistory.table" where text on index "${fieldIdx}" is "Labor Billing" and text on index "${newValIdx}" is "Billable"
    And assert row exists on table "cases.caseHistory.table" where text on index "${fieldIdx}" is "Case Resolution Date" and text on index "${newValIdx}" is "${caseResolutionDateFormatted}"
+
+   And scroll until "cases.caseHistory.table.td.last" is visible
+   And take a screenshot
+   
    #Commented out this failing assertion by request
    #And assert row exists on table "cases.caseHistory.table" where text on index "${fieldIdx}" is "Billing Status" and text on index "${newValIdx}" is "In Progress"

@@ -38,46 +38,6 @@ import steps.common.*;
 public class StepsLibrary {
 	
 	static Log logger = LogFactory.getLog(StepsLibrary.class);
-	
-	/**
-	 * @param data
-	 *                 : data which is being passed from bdd
-	 */
-	@QAFTestStep(description = "sample step with {0}")
-	public static void sampleStep(String data) {
-	}
-
-	/**
-	 * @param data
-	 *                 : data which is being passed from bdd
-	 */
-	@QAFTestStep(description = "print page information to log")
-	public static void doSomething() {
-		//logger.info("DO SOMETHING");
-		if (Util.DEBUG) {
-			System.out.println("================================");
-			Set<String> contextNames = getDriver().getContextHandles();
-			for (String context : contextNames) {
-				System.out.println("Available context: " + context);
-			}
-			System.out.println("================================");
-
-			System.out.println("");
-
-			System.out.println("================================");
-			
-			//WebElement element = getDriver().findElementByXPath("//android.widget.ImageButton[@content-desc='More options']");
-			//element.click();
-
-			WebElement loginButton = getDriver().findElementByXPath("//android.widget.Button[@resource-id='Login']");
-			loginButton.click();
-
-			System.out.println("================================");
-			String source = getDriver().getPageSource();
-			System.out.println(source);
-			System.out.println("================================");
-		}
-	}
 
 	@QAFTestStep(description = "wait for {0} minutes for {1} to be not present")
 	public static void waitForLocToBeNotPresentMinutes(int minutes, String loc) {

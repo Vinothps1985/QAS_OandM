@@ -41,6 +41,9 @@ public class ShrdCreateWorkOrder extends WebDriverTestCase {
 		$("workOrders.create.next.button").waitForEnabled();
 		CommonStep.click("workOrders.create.next.button");
 
+		if(!assetType1.equals(""))
+		{
+
 		$("workOrders.create.assetType.select").waitForPresent();
 		StepsLibrary.selectIn("label="+String.valueOf(assetType1)+"","workOrders.create.assetType.select");
 
@@ -57,6 +60,11 @@ public class ShrdCreateWorkOrder extends WebDriverTestCase {
 
 		$("workOrders.create.next.button").waitForEnabled();
 		CommonStep.click("workOrders.create.next.button");
+
+		}
+
+		if(!assetType2.equals(""))
+		{
 		
 		$("workOrders.create.addAdditionalAssets.yes.option").waitForEnabled();
 		CommonStep.click("workOrders.create.addAdditionalAssets.yes.option");
@@ -81,6 +89,12 @@ public class ShrdCreateWorkOrder extends WebDriverTestCase {
 		$("workOrders.create.next.button").waitForEnabled();
 		CommonStep.click("workOrders.create.next.button");
 
+		}
+
+		if(!assetType1.equals(""))
+
+		{
+
 		$("workOrders.create.addAdditionalAssets.no.option").waitForEnabled();
 		CommonStep.click("workOrders.create.addAdditionalAssets.no.option");
 
@@ -91,6 +105,8 @@ public class ShrdCreateWorkOrder extends WebDriverTestCase {
 
 		$("workOrders.create.next.button").waitForEnabled();
 		CommonStep.click("workOrders.create.next.button");
+
+		}
 
 		$("workOrders.create.updateDuration.label").waitForPresent();
 

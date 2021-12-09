@@ -35,8 +35,6 @@ Scenario: Close REACTIVE case without quotes
    And click on "cases.caseHistory"
 
    And take a screenshot
-   Then scroll until "cases.caseHistory.newValue" is visible
-   And take a screenshot
    And store table "cases.caseHistory.table" column index with title "Field" on "fieldIdx"
    And store table "cases.caseHistory.table" column index with title "New Value" on "newValIdx"
 
@@ -44,3 +42,6 @@ Scenario: Close REACTIVE case without quotes
    And assert row exists on table "cases.caseHistory.table" where text on index "${fieldIdx}" is "Labor Billing" and text on index "${newValIdx}" is "Not Billable"
    And assert row exists on table "cases.caseHistory.table" where text on index "${fieldIdx}" is "Case Resolution Date" and text on index "${newValIdx}" is "${caseResolutionDateFormatted}"
    And assert row exists on table "cases.caseHistory.table" where text on index "${fieldIdx}" is "Billing Status" and text on index "${newValIdx}" is "Not Billable"
+
+   And scroll until "cases.caseHistory.table.td.last" is visible
+   And take a screenshot

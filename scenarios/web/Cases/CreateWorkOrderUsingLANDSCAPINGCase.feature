@@ -15,7 +15,7 @@ Scenario: Create Work Order using LANDSCAPING case
    And take a screenshot
    And create a work order with data "${generated_caseNumber}" "${assetType1}" "${assetType2}"
 
-   #Confirm and screenshot work order lines created
+   #Verify Service Appointment and Work Order details
    Then wait until "cases.quickLinks.serviceAppointments" to be enable
    And take a screenshot
 
@@ -41,9 +41,9 @@ Scenario: Create Work Order using LANDSCAPING case
    And assert "workOrders.details.workType.link" text is "Landscaping"
    And take a screenshot
    
-   And wait until "workorders.workOrders.woLineItems.viewAll" to be present
-   And wait until "workorders.workOrders.woLineItems.viewAll" to be enable
-   And click on "workorders.workOrders.woLineItems.viewAll"
+   And scroll until "workOrders.woLineItems.label" is visible
+   Then wait until "workOrders.woLineItems.viewAll" to be enable
+   And click on "workOrders.woLineItems.viewAll"
    Then wait until "woLineItems.table.firstResult.link" to be present
    And take a screenshot
    
@@ -54,7 +54,11 @@ Scenario: Create Work Order using LANDSCAPING case
    And assert "woLineItems.details.workOrder.link" text is "${generated_workOrder}"
    And assert "woLineItems.details.status" text is "New"
    And take a screenshot
+   Then wait until "woLineItems.details.checklistRecordType" to be enable
+   And scroll until "woLineItems.details.checklistRecordType" is visible
+   And assert "woLineItems.details.checklistRecordType" text is "${checklistRecordType}"
+   And take a screenshot
    Then wait until "woLineItems.details.assetType" to be enable
    And scroll until "woLineItems.details.assetType" is visible
-   And assert "woLineItems.details.assetType" text is "${assetType1_realName}"
+   And assert "woLineItems.details.assetType" text is "${recordType}"
    And take a screenshot

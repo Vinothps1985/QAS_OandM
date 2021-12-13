@@ -4,7 +4,6 @@ Feature: Cases
 @description:Verify whether user is able to create a case of record type Performance Investigation
 @case @positive @regression
 @dataFile:resources/testdata/Cases/Create Performance Investigation case.csv
-@requirementKey:OPERA-RQ-520
 Scenario: Create Performance Investigation case
 	
    Given login to salesforce with "${username}" and "${password}"

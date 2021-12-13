@@ -4,7 +4,7 @@ Feature: Purchase Orders
 @description:Verify the Purchase order creation, update, close and applying them on the AP Invoice using Con Req Groups
 @purchaseorder @positive @regression
 @dataFile:resources/testdata/Purchase Orders/PO create update close apply on invoice using CRG.csv
-@requirementKey:QTM-RQ-23
+
 Scenario: Verify PO creation, update, close, apply on AP Invoice using Con Req Groups
 	
    Given login to salesforce with "${username}" and "${password}"

@@ -4,7 +4,7 @@ Feature: Products
 @description:Verify whether user is able to create a Cost using an O&M Product
 @product @positive @cost
 @dataFile:resources/testdata/Products/Create Cost For OM Product.csv
-@requirementKey=QTM-RQ-23
+
 Scenario: Create Cost for OM Product
 	
    Given login to salesforce with "${username}" and "${password}"

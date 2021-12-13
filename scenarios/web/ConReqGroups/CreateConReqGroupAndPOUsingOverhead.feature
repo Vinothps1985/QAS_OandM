@@ -4,7 +4,7 @@ Feature: Con Req Groups
 @description:Verify that user is able to create Con Req Group and PO manually using an O&M Project
 @conreqgroup @regression @positive
 @dataFile:resources/testdata/Con Req Groups/Create Con Req Group and PO using Overhead.csv
-@requirementKey=QTM-RQ-23
+
 Scenario: Create Con Req Group and PO using OM Project
 
    Given login to salesforce with "${username}" and "${password}"

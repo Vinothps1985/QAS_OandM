@@ -4,7 +4,7 @@ Feature: Cases
 @description:Verify the optimization of service appointment using a REACTIVE case
 @case @positive @smoke @optimizeme
 @dataFile:resources/testdata/Cases/Optimization of service appointment using REACTIVE case.csv
-@requirementKey:OPERA-RQ-520
+
 Scenario: Optimization of service appointment using REACTIVE case
 	
    Given login to salesforce with "${username}" and "${password}"

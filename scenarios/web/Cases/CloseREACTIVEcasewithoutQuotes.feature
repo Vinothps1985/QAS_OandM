@@ -4,7 +4,6 @@ Feature: Cases
 @description:Verify the ability to close a Case without Quotes using a REACTIVE case
 @case @positive @regression
 @dataFile:resources/testdata/Cases/Close REACTIVE case without quotes.csv
-@requirementKey:QTM-RQ-23
 Scenario: Close REACTIVE case without quotes
 	
    Given login to salesforce with "${username}" and "${password}"

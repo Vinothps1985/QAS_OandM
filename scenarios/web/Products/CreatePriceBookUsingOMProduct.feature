@@ -4,7 +4,7 @@ Feature: Products
 @description:Verify whether user is able to create a Price Book using an O&M Product
 @product @positive @pricebook
 @dataFile:resources/testdata/Products/Create Price Book Using OM Product.csv
-@requirementKey=QTM-RQ-23
+
 Scenario: Create Price Book Using OM Product
 	
    Given login to salesforce with "${username}" and "${password}"

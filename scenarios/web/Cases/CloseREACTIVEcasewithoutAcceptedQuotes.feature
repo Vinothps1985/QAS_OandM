@@ -4,7 +4,6 @@ Feature: Cases
 @description:Verify that user is unable to close case using a REACTIVE case having Quotes with status other than Accepted.
 @case @positive @regression
 @dataFile:resources/testdata/Cases/Close REACTIVE case without accepted quotes.csv
-@requirementKey:QTM-RQ-23
 Scenario: Close REACTIVE case without accepted quotes
 	
    Given login to salesforce with "${username}" and "${password}"

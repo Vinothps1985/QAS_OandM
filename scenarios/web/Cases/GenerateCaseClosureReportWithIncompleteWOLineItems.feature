@@ -4,7 +4,6 @@ Feature: Cases
 @description:Generate case closure report with incomplete WO Line Items
 @case @regression @conga @pdf
 @dataFile:resources/testdata/Cases/Generate case closure report with incomplete WO Line Items.csv
-@requirementKey:OPERA-RQ-520
 
 Scenario: Generate case closure report with incomplete WO Line Items
    

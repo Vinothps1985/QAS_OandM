@@ -4,7 +4,7 @@ Feature: Service Contracts
 @description:Verify whether user is able to create a Service contract with Active status
 @servicecontract @positive @smoke
 @dataFile:resources/testdata/Service Contracts/Create Service Contract with Active Status.csv
-@requirementKey=QTM-RQ-23
+
 Scenario: Create Service Contract with Active Status
 	
    Given login to salesforce with "${username}" and "${password}"

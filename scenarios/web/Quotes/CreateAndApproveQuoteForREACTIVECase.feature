@@ -4,7 +4,7 @@ Feature: Quotes
 @description:Verify that user is able to CREATE and APPROVE the Quote for a REACTIVE case.
 @quote @positive @smoke
 @dataFile:resources/testdata/Quotes/Create and approve quote for REACTIVE case.csv
-@requirementKey:QTM-RQ-23
+
 Scenario: Create and approve quote for REACTIVE case
 	
    Given login to salesforce with "${username}" and "${password}"

@@ -4,7 +4,7 @@ Feature: Special Projects
 @description:Verify that user is able to create a Quote for the New Opportunity
 @specialproject @regression
 @dataFile:resources/testdata/Special Projects/Create Quote for the New Opportunity.csv
-@requirementKey=QTM-RQ-23
+
 Scenario: Create a Quote for the New Opportunity
 	
    Given login to salesforce with "${username}" and "${password}"

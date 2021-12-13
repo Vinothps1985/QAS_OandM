@@ -4,7 +4,7 @@ Feature: Cases
 @description:Verify that user is able to create a location of Trucks type and assign the Service Resource to the location
 @location @positive @regression
 @dataFile:resources/testdata/Locations/Create Location of Trucks Type and Assign SR.csv
-@requirementKey=QTM-RQ-23
+
 Scenario: Create a Location of Trucks type and assign the Service Resource
 	
    Given login to salesforce with "${username}" and "${password}"

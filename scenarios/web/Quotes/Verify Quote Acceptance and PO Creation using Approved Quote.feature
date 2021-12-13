@@ -4,7 +4,7 @@ Feature: Quotes
 @description:Verify the Quote Acceptance and Purchase Order creation functionality using an Approved Quote.
 @quote @positive @regression
 @dataFile:resources/testdata/Quotes/Verify Quote Acceptance and PO Creation using Approved Quote.csv
-@requirementKey=QTM-RQ-23
+
 Scenario: Verify Quote Acceptance and PO Creation using Approved Quote
 	
    Given login to salesforce with "${username}" and "${password}"

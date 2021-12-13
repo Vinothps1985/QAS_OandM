@@ -4,7 +4,6 @@ Feature: Cases
 @description:Verify user is able to create Work Order Hybrid using a LANDSCAPING case
 @case @positive @workorder @regression
 @dataFile:resources/testdata/Cases/Create Work Order using LANDSCAPING case.csv
-@requirementKey:OPERA-RQ-520
 Scenario: Create Work Order using LANDSCAPING case
 	
    Given login to salesforce with "${username}" and "${password}"

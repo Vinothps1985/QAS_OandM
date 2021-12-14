@@ -89,8 +89,16 @@ Scenario: Complete Appointment for a given Fleet Maintenance Service Appointment
    And wait until "common.toastContainer" to be enable
    And take a screenshot
    #Save the scheduled date
+
+   #Ensure we are in the SA page
+   Then get "${generated_serviceAppointmentURL}"
+   #Reload
+   Then Execute Java Script with data "window.location.reload();"
+   Then wait until "serviceAppointments.details.status" to be enable
+   And wait until "serviceAppointments.details.status" to be visible
    Then scroll until "serviceAppointments.details.scheduledStart" is visible
    And store text from "serviceAppointments.details.scheduledStart" into "sa_scheduledStart"
+   And take a screenshot
    #Remove the time and take just the date (e.g. 11/16/2021 9:18 AM = 11/16/2021)
    And extract the date component from "${sa_scheduledStart}" into "sa_scheduledStart"
 

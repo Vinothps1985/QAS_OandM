@@ -156,6 +156,9 @@ public class StepsLibrary {
 		logger.info("Scrolling to find the text: " + text);
 		boolean found = false;
 		try {
+			int maxFullAttempts = 2;
+			int fullAttempts = 0;
+			while (fullAttempts < maxFullAttempts) {
 			int maxAttempts = 20;
 			int attempts = 0;
 			while (attempts < maxAttempts) {
@@ -175,6 +178,18 @@ public class StepsLibrary {
 				"new UiScrollable(new UiSelector().scrollable(true))" +
 				".setSwipeDeadZonePercentage(.3).scrollForward(50)"));
 			}
+
+				//If not found, re-refresh once and try again!
+				fullAttempts++;
+
+				if (found) {
+					break;
+				} else {
+					scrollAndroidToBeginning();
+					scrollRefreshForSecondsUntilPresent(60, "serviceAppointments.appointments.first");
+					$("serviceAppointments.appointments.first").waitForEnabled();
+				}
+			}
 		} catch (Exception x) {
 			x.printStackTrace();
 			throw new AssertionError("Could not find element with text " + text);
@@ -185,18 +200,36 @@ public class StepsLibrary {
 				"The element with text " + text + " was found");
 	}
 
+	public static void scrollAndroidToBeginning() {
+		try {
+			int maxAttempts = 2;
+			int attempt = 0;
+			while (attempt < maxAttempts) {
+				getDriver().findElement(MobileBy.AndroidUIAutomator(
+				"new UiScrollable(new UiSelector().scrollable(true))" +
+				".setSwipeDeadZonePercentage(.3).setMaxSearchSwipes(20).scrollToBeginning(20, 20)"));
+
+				attempt++;
+				Thread.sleep(100);
+			}
+		} catch (Exception x) {
+			//x.printStackTrace();
+			logger.error(x);
+		}
+	}
+
 	/**
-	 * Scroll the Android scroller to the end of the page, starting from the current position
-	 * 
-	 * There is a concept in scrolling call 'Deadzone', that basically creates an area all around
-	 * the screen that will not be touched. Important for example to avoid the scrolling action
-	 * to start from the very bottom of the screen, which sometimes clicks the 'Actions' button
-	 * when it shouldn't
-	 * 
-	 * DeadZone: .3
-	 * Max Swipes: 20
-	 * 
-	 */
+     * Scroll the Android scroller to the end of the page, starting from the current position
+     * 
+     * There is a concept in scrolling call 'Deadzone', that basically creates an area all around
+     * the screen that will not be touched. Important for example to avoid the scrolling action
+     * to start from the very bottom of the screen, which sometimes clicks the 'Actions' button
+     * when it shouldn't
+     * 
+     * DeadZone: .3
+     * Max Swipes: 20
+     * 
+     */
 	@QAFTestStep(description = "scroll to end")
 	public static void scrollAndroidToEnd() {
 		try {

@@ -1153,28 +1153,6 @@ public class StepsLibrary {
 	}
 
 	/**
-	 * Store the current date in a specific format into a variable
-	 * 
-	 * @param format The format to be saved (for formats look for java SimpleDateFormat documentation)
-	 * @param varName The variable where the formatted date will be saved to
-	 */
-	@QAFTestStep(description = "store the current date in format {format} into {varName}")
-	public static void storeCurrentDateInFormatInto(String format, String varName) {
-		boolean success = false;
-		try {
-			Date date = new Date();
-			java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat(format);
-			String result = sdf.format(date);
-			CommonStep.store(result, varName);
-			success = true;
-		} catch (Exception x) {}
-
-		Validator.assertTrue(success,
-			"Could not format current date into format " + format + " to store it into " + varName,
-			"Stored the date in format " + format + " into " + varName + " successfully");
-	}
-
-	/**
 	 * Step to select a salesforce-picklist option.
 	 * These kind of picklists are not regular select options, so they have to be managed differently
 	 * 

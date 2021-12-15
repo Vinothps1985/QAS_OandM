@@ -929,4 +929,26 @@ public class StepsLibrary {
 			"Could not store the number of rows from table into " + varName,
 			"Stored the number of rows " + numRows + " from table into " + varName);
 	}
+
+	/**
+	 * Store the current date in a specific format into a variable
+	 * 
+	 * @param format The format to be saved (for formats look for java SimpleDateFormat documentation)
+	 * @param varName The variable where the formatted date will be saved to
+	 */
+	@QAFTestStep(description = "store the current date in format {format} into {varName}")
+	public static void storeCurrentDateInFormatInto(String format, String varName) {
+		boolean success = false;
+		try {
+			Date date = new Date();
+			java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat(format, Locale.ENGLISH);
+			String result = sdf.format(date);
+			CommonStep.store(result, varName);
+			success = true;
+		} catch (Exception x) {}
+
+		Validator.assertTrue(success,
+			"Could not format current date into format " + format + " to store it into " + varName,
+			"Stored the date in format " + format + " into " + varName + " successfully");
+	}
 }

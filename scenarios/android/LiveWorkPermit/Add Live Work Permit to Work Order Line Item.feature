@@ -102,6 +102,7 @@ Scenario: Add Live Work Permit to Work Order Line Item
    And click on "schedule.date.icon"
 
    Then format date "${sa_scheduledStart}" from "M/d/yyyy" to "EEE, MMM d" into "scheduledDateAndroidFormat"
+   Then store the current date in format "MMM d, yyyy" into "currentDateAndroidFormat"
 
    And click the date "${scheduledDateAndroidFormat}" in the scheduler datepicker
 
@@ -126,10 +127,14 @@ Scenario: Add Live Work Permit to Work Order Line Item
    And wait until "woLineItem.actions.newLiveWorkPermit.button" to be enable
    And click on "woLineItem.actions.newLiveWorkPermit.button"
 
-   #TODO Add Assertions here
    Then assert android TextView is present with the text "PROJECT INFORMATION"
    And toggle the switch for form input with name "Does Everything Above Look Correct?"
-   #${projectName}
+   
+   And assert android TextView is present with the text contains "Date:  ${currentDateAndroidFormat}"
+   And assert android TextView is present with the text contains "Work Order:  ${generated_workOrder}"
+   And assert android TextView is present with the text contains "Account:  ${accountName}"
+   And assert android TextView is present with the text contains "Requestor:  ${serviceAppointmentAssignee}"
+   
    Then click on "common.next.button"
 
    Then assert android TextView is present with the text "Work Explanation"

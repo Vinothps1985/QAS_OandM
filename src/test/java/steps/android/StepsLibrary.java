@@ -738,7 +738,17 @@ public class StepsLibrary {
 
 			String xpathEditText = "//android.widget.TextView[contains(@text,'" + name + "')]" +
 				"//following::android.widget.EditText[1]";
-			WebElement editText = waitAndReturnWhenPresentByXpath(xpathEditText);
+			WebElement editText = null;
+			try {
+				editText = waitAndReturnWhenPresentByXpath(xpathEditText);
+			} catch (Exception x) {
+				//We might stumble upon this if the field is the last one. The android keyboard
+				//may hide the input field, and then we'd get an error. So we scroll again to
+				//try to fix that
+				scrollAndroidToEnd();
+				//If this fails again, then the test will fail, which should be OK
+				editText = waitAndReturnWhenPresentByXpath(xpathEditText);
+			}
 			editText.sendKeys(data);
 
 			String xpathEditTextPrecedingVG = xpathEditText + "//preceding::android.view.ViewGroup[1]";

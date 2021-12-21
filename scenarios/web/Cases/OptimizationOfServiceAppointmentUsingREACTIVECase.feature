@@ -66,7 +66,7 @@ Scenario: Optimization of service appointment using REACTIVE case
    And click on "workOrders.details.dueDate.edit.button"
 
    #And store next business day into "nextBusinessDay" in format "M/d/yyyy"
-   And add 5 business days to current date and store it into "nextBusinessDay" in format "M/d/yyyy"
+   And add 1 business days to current date and store it into "nextBusinessDay" in format "M/d/yyyy"
 
    Then wait until "workOrders.details.dueDate.edit.input" to be enable
    And wait until "workOrders.details.dueDate.edit.input" to be visible

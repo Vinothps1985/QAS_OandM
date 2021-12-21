@@ -159,25 +159,26 @@ public class StepsLibrary {
 			int maxFullAttempts = 2;
 			int fullAttempts = 0;
 			while (fullAttempts < maxFullAttempts) {
-			int maxAttempts = 20;
-			int attempts = 0;
-			while (attempts < maxAttempts) {
-				try {
-					String xpath = "(//*[@text='" + text + "'])[1]";
-					WebElement element = getDriver().findElementByXPath(xpath);
-					if (element.isDisplayed()) {
-						found = true;
-						break;
-					}
-				} catch (Exception x) {}
-		
-				attempts++;
-				Thread.sleep(500);
-				
-				getDriver().findElement(MobileBy.AndroidUIAutomator(
-				"new UiScrollable(new UiSelector().scrollable(true))" +
-				".setSwipeDeadZonePercentage(.3).scrollForward(50)"));
-			}
+				int maxAttempts = 20;
+				int attempts = 0;
+				while (attempts < maxAttempts) {
+					try {
+						String xpath = "(//*[@text='" + text + "'])[1]";
+						WebElement element = getDriver().findElementByXPath(xpath);
+						if (element.isDisplayed()) {
+							found = true;
+							break;
+						}
+					} catch (Exception x) {}
+			
+					attempts++;
+					Thread.sleep(500);
+					try {
+						getDriver().findElement(MobileBy.AndroidUIAutomator(
+						"new UiScrollable(new UiSelector().scrollable(true))" +
+						".setSwipeDeadZonePercentage(.3).scrollForward(50)"));
+					} catch (Exception x) {}
+				}
 
 				//If not found, re-refresh once and try again!
 				fullAttempts++;

@@ -408,7 +408,8 @@ import io.appium.java_client.AppiumDriver;
 		// chromeOptions.addArguments("--ignore-certificate-errors");
 		if (ConfigurationManager.getBundle().getString("platform").equals("web") || "web".equals(Util.CURRENT_PLATFORM)) {
 			logger.info("Setting chromeOptions");
-		    capabilities.setCapability("chromeOptions", chromeOptions);
+			capabilities.setCapability("chromeOptions", chromeOptions);
+			capabilities.setCapability("goog:chromeOptions", chromeOptions);
 		}
 
 		super.beforeInitialize(desiredCapabilities);

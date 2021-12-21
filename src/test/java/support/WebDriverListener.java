@@ -391,6 +391,8 @@ import io.appium.java_client.AppiumDriver;
 
 		chromeOptions.addArguments("--disable-dev-shm-usage");
 		chromeOptions.addArguments("--no-sandbox");
+		chromeOptions.addArguments("--disable-gpu");
+		chromeOptions.addArguments("--mute-audio");
 
 		/*
 		 * chromeOptions.addArguments("--no-sandbox");//setExperimentalOption(
@@ -405,6 +407,7 @@ import io.appium.java_client.AppiumDriver;
 		// chromeOptions.addArguments("--force-fieldtrials=SiteIsolationExtensions/Control");
 		// chromeOptions.addArguments("--ignore-certificate-errors");
 		if (ConfigurationManager.getBundle().getString("platform").equals("web") || "web".equals(Util.CURRENT_PLATFORM)) {
+			logger.info("Setting chromeOptions");
 		    capabilities.setCapability("chromeOptions", chromeOptions);
 		}
 

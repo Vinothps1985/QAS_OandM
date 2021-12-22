@@ -17,6 +17,7 @@ import org.openqa.selenium.remote.DriverCommand;
 import org.openqa.selenium.remote.Response;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import java.util.Base64;
 
 import com.qmetry.qaf.automation.core.ConfigurationManager;
 import com.qmetry.qaf.automation.core.QAFListenerAdapter;
@@ -348,6 +349,11 @@ import io.appium.java_client.AppiumDriver;
 		Util.EMAIL_HOST = prop.getPropertyValue("email.host");
 		Util.EMAIL_USERNAME = prop.getPropertyValue("email.username");
 		Util.EMAIL_PASSWORD = prop.getPropertyValue("email.password");
+
+		//Decode the email password string
+		byte[] passwordBytes = Base64.getDecoder().decode(Util.EMAIL_PASSWORD);
+		String realPassword = new String(passwordBytes);
+		Util.EMAIL_PASSWORD = realPassword;
 
 		logger.info("Email host: " + Util.EMAIL_HOST);
 		logger.info("Email username: " + Util.EMAIL_USERNAME);

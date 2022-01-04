@@ -35,6 +35,7 @@ Scenario: Create Follow Up Work Order using REACTIVE case
    And switch to frame "fieldService.iframe"
 
    And wait until "fieldService.predefinedFilterSelector.select" to be present
+   And wait for 10000 milisec
    And select "label=All Service Appointments" in "fieldService.predefinedFilterSelector.select"
    And wait until "fieldService.searchServiceAppointments.input" to be enable
    And sendKeys "${generated_serviceAppointment}" into "fieldService.searchServiceAppointments.input"
@@ -224,4 +225,6 @@ Scenario: Create Follow Up Work Order using REACTIVE case
    And click on "cases.quickLinks.workOrders"
    And wait until "workOrders.table.firstResult.link" to be enable
    And click on "workOrders.table.firstResult.link"
+
+   
    

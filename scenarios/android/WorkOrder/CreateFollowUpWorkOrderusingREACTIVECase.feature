@@ -3,6 +3,7 @@ Feature: WorkOrders
 @author:Anusha MG
 @description:Verify the ability to create follow up work order using a REACTIVE case
 @workorder @positive @mobile
+@requirementKey:OPERA-RQ-586
 @dataFile:resources/testdata/WorkOrder/Create Follow Up Work Order using REACTIVE case.csv
 
 Scenario: Create Follow Up Work Order using REACTIVE case
@@ -225,6 +226,88 @@ Scenario: Create Follow Up Work Order using REACTIVE case
    And click on "cases.quickLinks.workOrders"
    And wait until "workOrders.table.firstResult.link" to be enable
    And click on "workOrders.table.firstResult.link"
+   And prerequisite for follow up work order creation
+   And wait for 5000 milisec
 
+   #Assertions before creating follow up work order
+   Then wait until "workOrders.details.status" to be enable
+   And wait until "workOrders.details.status" to be visible
+   And assert "workOrders.details.status" text is "Cannot Complete"
+   And take a screenshot
+   And click on "workOrders.details.case"
+
+   And wait until "cases.quickLinks.serviceAppointments" to be enable
+   Then click on "cases.quickLinks.serviceAppointments"
+   And wait until "serviceAppointments.table.first.link" to be enable
+   And click on "serviceAppointments.table.first.link"
+   Then wait until "serviceAppointments.details.status" to be enable
+   And wait until "serviceAppointments.details.status" to be visible
+   And assert "serviceAppointments.details.status" text is "Cannot Complete"
+   And take a screenshot
+   Then click on "serviceAppointments.details.case.link"
+
+   And wait until "cases.quickLinks.workOrderLineItems" to be enable
+   And click on "cases.quickLinks.workOrderLineItems"
+   And wait until "woLineItems.table.secondResult.link" to be enable
+   And click on "woLineItems.table.secondResult.link"
+   And wait until "woLineItems.details.status" to be enable
+   And wait until "woLineItems.details.status" to be visible
+   And assert "woLineItems.details.status" text is "Cannot Complete"
+   Then store text from "woLineItems.details.asset" into "incompleteWOLineItem_asset"
+   And take a screenshot
+   And click on "woLineItems.details.case.link"
+   Then wait until "cases.quickLinks.workOrders" to be enable
+   And click on "cases.quickLinks.workOrders"
+   And wait until "workOrders.table.firstResult.link" to be enable
+   And click on "workOrders.table.firstResult.link"
+   Then wait until "workOrders.details.status" to be enable
+   And wait until "workOrders.details.status" to be visible
    
+   # Create a follow up work order
+   And wait until "workOrders.create.followUpWorkOrder.link" to be enable
+   And click on "workOrders.create.followUpWorkOrder.link"
+
+   And wait until "workOrders.create.followUpWorkOrder.next.button" to be enable
+   And click on "workOrders.create.followUpWorkOrder.next.button"
+
+   And wait until "workOrders.create.followUpWorkOrder.save.button" to be enable
+   And click on "workOrders.create.followUpWorkOrder.save.button"
+
+   Then wait until "workOrders.details.case" to be enable
+   And wait for 10000 milisec
+   And wait until "workOrders.details.case" to be enable
+   And take a screenshot
+   And store the follow up work order number
+
+   #Assertions after creating follow up work order
+   Then wait until "workOrders.details.status" to be enable
+   And wait until "workOrders.details.status" to be visible
+   And assert "workOrders.titleWONumber" text is not "${generated_workOrderNumber_old}"
+   And assert "workOrders.details.case" text is "${generated_caseNumber}"
+   And assert "workOrders.details.status" text is "New"
+   And take a screenshot
+
+   Then wait until "workOrders.serviceAppointment.number.link" to be enable
+   And assert "workOrders.serviceAppointment.count.link" text is "(1)"
+   And assert "workOrders.serviceAppointment.number.link" text is not "${generated_serviceAppointmentURL}"
+   And click on "workOrders.serviceAppointment.number.link"
+   Then wait until "serviceAppointments.details.status" to be enable
+   And wait until "serviceAppointments.details.status" to be visible
+   And assert "serviceAppointments.details.status" text is "None"
+   And take a screenshot
+   Then click on "serviceAppointments.details.workOrder.link"
+   And wait until "workOrders.details.status" to be enable
+   And wait until "workOrders.details.status" to be visible
+
+   Then scroll until "workOrders.workOrderLineItems.scroll.link" is visible
+   And wait until "workOrders.workOrderLineItems.scroll.link" to be enable
+   And assert "workOrders.workOrderLineItem.count.link" text is "(1)"
+   And wait until "workOrders.workOrderLineItem.number.link" to be enable
+   And wait until "workOrders.workOrderLineItem.number.link" to be visible
+   Then click on "workOrders.workOrderLineItem.number.link"
+   And wait until "woLineItems.details.status" to be enable
+   And wait until "woLineItems.details.status" to be visible
+   And assert "woLineItems.details.status" text is "New"
+   And assert "woLineItems.details.asset" text is "${incompleteWOLineItem_asset}"
+   And take a screenshot
    

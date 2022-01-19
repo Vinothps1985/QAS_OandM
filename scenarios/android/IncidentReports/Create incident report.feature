@@ -3,6 +3,7 @@ Feature: IncidentReports
 @author:Rodrigo Montemayor
 @description:Verify Incident report creation from FSL app
 @incidentreports @positive @mobile
+@requirementKey:QTM-RQ-23
 @dataFile:resources/testdata/IncidentReports/Create incident report.csv
 
 Scenario: Create Incident Report
@@ -44,6 +45,7 @@ Scenario: Create Incident Report
    And switch to frame "fieldService.iframe"
 
    And wait until "fieldService.predefinedFilterSelector.select" to be present
+   And wait for 10000 milisec
    And select "label=All Service Appointments" in "fieldService.predefinedFilterSelector.select"
    And wait until "fieldService.searchServiceAppointments.input" to be enable
    And sendKeys "${generated_serviceAppointment}" into "fieldService.searchServiceAppointments.input"

@@ -3,6 +3,7 @@ Feature: WorkOrders
 @author:Rodrigo Montemayor
 @description:Verify the ability to complete Work Order Line Item flow via FSL using a REACTIVE case
 @workorder @positive @mobile
+@requirementKey:QTM-RQ-23
 @dataFile:resources/testdata/WorkOrder/Complete Work Order Line Item using REACTIVE case.csv
 
 Scenario: Complete Work Order Line Item using REACTIVE case
@@ -35,6 +36,7 @@ Scenario: Complete Work Order Line Item using REACTIVE case
    And switch to frame "fieldService.iframe"
 
    And wait until "fieldService.predefinedFilterSelector.select" to be present
+   And wait for 10000 milisec
    And select "label=All Service Appointments" in "fieldService.predefinedFilterSelector.select"
    And wait until "fieldService.searchServiceAppointments.input" to be enable
    And sendKeys "${generated_serviceAppointment}" into "fieldService.searchServiceAppointments.input"

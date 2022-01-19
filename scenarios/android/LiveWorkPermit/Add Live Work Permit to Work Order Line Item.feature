@@ -3,6 +3,7 @@ Feature: LiveWorkPermit
 @author:Rodrigo Montemayor
 @description:Verify whether a user is able to Add Live Work Permit to the Work Order Line item using FSL app
 @liveworkpermit @positive @mobile
+@requirementKey:QTM-RQ-23
 @dataFile:resources/testdata/LiveWorkPermit/Add Live Work Permit to Work Order Line Item.csv
 
 Scenario: Add Live Work Permit to Work Order Line Item
@@ -44,6 +45,7 @@ Scenario: Add Live Work Permit to Work Order Line Item
    And switch to frame "fieldService.iframe"
 
    And wait until "fieldService.predefinedFilterSelector.select" to be present
+   And wait for 10000 milisec
    And select "label=All Service Appointments" in "fieldService.predefinedFilterSelector.select"
    And wait until "fieldService.searchServiceAppointments.input" to be enable
    And sendKeys "${generated_serviceAppointment}" into "fieldService.searchServiceAppointments.input"

@@ -3,7 +3,7 @@ Feature: WorkOrders
 @author:Anusha MG
 @description:Verify the ability to create follow up work order using a REACTIVE case
 @workorder @positive @mobile
-@requirementKey:OPERA-RQ-586
+@requirementKey:QTM-RQ-23
 @dataFile:resources/testdata/WorkOrder/Create Follow Up Work Order using REACTIVE case.csv
 
 Scenario: Create Follow Up Work Order using REACTIVE case

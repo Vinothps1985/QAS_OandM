@@ -3,6 +3,7 @@ Feature: FleetMaintenance
 @author:Rodrigo Montemayor
 @description:Verify whether user is able to COMPLETE the Appointment via FS Mobile for a given Fleet Repair Service Appointment
 @fleetrepair @positive @mobile @repairme
+@requirementKey:QTM-RQ-23
 @dataFile:resources/testdata/FleetRepair/Complete Appointment for Fleet Repair SA.csv
 
 Scenario: Complete Appointment for a given Fleet Repair Service Appointment
@@ -49,6 +50,7 @@ Scenario: Complete Appointment for a given Fleet Repair Service Appointment
    And wait until "fieldService.iframe" to be enable
    And switch to frame "fieldService.iframe"
 
+   And wait for 10000 milisec
    And select "label=All Service Appointments" in "fieldService.predefinedFilterSelector.select"
    And wait until "fieldService.searchServiceAppointments.input" to be enable
    And sendKeys "${generated_serviceAppointment}" into "fieldService.searchServiceAppointments.input"

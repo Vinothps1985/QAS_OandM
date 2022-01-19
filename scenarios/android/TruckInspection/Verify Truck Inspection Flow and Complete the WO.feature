@@ -3,6 +3,7 @@ Feature: TruckInspection
 @author:Rodrigo Montemayor
 @description:Verify Truck Inspection flow and COMPLETE the Truck Inspection work order
 @truckinspection @positive @mobile
+@requirementKey:QTM-RQ-23
 @dataFile:resources/testdata/TruckInspection/Verify Truck Inspection Flow and Complete the WO.csv
 
 Scenario: Verify Truck Inspection flow and COMPLETE the Truck Inspection work order

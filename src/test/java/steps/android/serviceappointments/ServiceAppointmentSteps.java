@@ -12,6 +12,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.MobileBy;
 
 import com.qmetry.qaf.automation.step.*;
 import com.qmetry.qaf.automation.ui.WebDriverTestBase;
@@ -83,7 +84,7 @@ public class ServiceAppointmentSteps extends WebDriverTestCase {
 					String resultXpath= "(//android.widget.TextView[contains(@text, 'Result')])[1]";
 					WebElement resultElement = getDriver().findElementByXPath(resultXpath);
 					if (resultElement != null && resultElement.isDisplayed() && resultElement.isEnabled()) {
-						String option = "Corrected";
+						String option = "Pass";
 						String xpath= "(" +
 							"//android.widget.TextView[contains(@text, 'Result')]//following::android.widget.TextView[@text='" + option + "'][1]" +
 							")" +
@@ -111,6 +112,23 @@ public class ServiceAppointmentSteps extends WebDriverTestCase {
 					} catch (Exception x) {}
 				}
 
+				if (!answered) {
+					//Is this a 'Service Contract' Question?
+					try {
+						QAFWebElement serviceContractElement = $("woLineItem.serviceContractQuestion.input");
+						if (serviceContractElement.getText().equals("") && serviceContractElement.isDisplayed() && serviceContractElement.isEnabled()) {
+							//Input the Service Contract test data
+							$("woLineItem.serviceContractQuestion.input").click();
+							$("woLineItem.serviceContractQuestion.input").sendKeys("5");
+							$("woLineItem.customChecklistNumeric.text").click();
+							//Click the next button
+                            $("woLineItem.complete.next.button").waitForEnabled();
+							$("woLineItem.complete.next.button").click();
+							answered = true;
+						}
+					} catch (Exception x) {}
+				}
+
 				Thread.sleep(2000);
 			}
 
@@ -121,6 +139,24 @@ public class ServiceAppointmentSteps extends WebDriverTestCase {
 		Validator.assertTrue(success,
 			"Could not finish answering the checklist",
 			"Checklist answered sucessfully and the question " + question + " appeared");
+	}
+
+	public void scrollAndroidToEnd() {
+		try {
+			int maxAttempts = 2;
+			int attempt = 0;
+			while (attempt < maxAttempts) {
+				getDriver().findElement(MobileBy.AndroidUIAutomator(
+				"new UiScrollable(new UiSelector().scrollable(true))" +
+				".setSwipeDeadZonePercentage(.3).setMaxSearchSwipes(20).scrollToEnd(20, 20)"));
+
+				attempt++;
+				Thread.sleep(100);
+			}
+		} catch (Exception x) {
+			//x.printStackTrace();
+			logger.error(x);
+		}
 	}
 
 }

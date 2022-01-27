@@ -41,3 +41,4 @@ Scenario: Create and Delete REACTIVE case
    And wait until "case.deleteCase.deleteConfirmation.text" to be visible
    Then assert "case.deleteCase.deleteConfirmation.text" text is "Case \"${generated_caseNumber}\" was deleted. Undo"
    And take a screenshot
+   Then close all open web tabs

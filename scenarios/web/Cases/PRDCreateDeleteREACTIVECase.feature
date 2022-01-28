@@ -32,13 +32,12 @@ Scenario: Create and Delete REACTIVE case
    #Delete Case
    And wait until "case.deleteCase.showMoreActions.button" to be visible
    And click on "case.deleteCase.showMoreActions.button"
-   And wait until "case.deleteCase.button" to be visible
-   And click on "case.deleteCase.button"
-   And wait until "case.deleteCase.popup.title" to be visible
-   Then assert "case.deleteCase.popup.title" text is "Delete Case"
-   And wait until "case.deleteCase.popup.deleteConfirmation.button" to be visible
-   And click on "case.deleteCase.popup.deleteConfirmation.button"
-   And wait until "case.deleteCase.deleteConfirmation.text" to be visible
-   Then assert "case.deleteCase.deleteConfirmation.text" text is "Case \"${generated_caseNumber}\" was deleted. Undo"
+   And wait until "case.deleteCase.delete.link" to be visible
+   And click on "case.deleteCase.delete.link"
+   And wait until "case.deleteCase.popup.title.text" to be visible
+   Then assert "case.deleteCase.popup.title.text" text is "Delete Case"
+   And wait until "case.deleteCase.popup.delete.button" to be visible
+   And click on "case.deleteCase.popup.delete.button"
+   And wait until "case.deleteCase.delete.text" to be visible
+   Then assert "case.deleteCase.delete.text" text is "Case \"${generated_caseNumber}\" was deleted. Undo"
    And take a screenshot
-   Then close all open web tabs

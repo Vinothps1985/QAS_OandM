@@ -8,7 +8,7 @@ Scenario: Create and Delete REACTIVE case
 	
    Given login to salesforce with "${username}" and "${password}"
    And change logged in user to "test_ops_center_operator"
-   Then close all open web tabs
+   #Then close all open web tabs
    And launch salesforce app "cases"
    Then create a case with data "${projectName}" "${subject}" "${caseDescription}" "${summary}" "${recordType}" "${casePriority}" "${caseOrigin}" "${reportedIssue}" "${caseCause}"
 

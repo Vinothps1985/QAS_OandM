@@ -11,6 +11,7 @@ Scenario: Create and Delete REACTIVE case
    #Then close all open web tabs
    And launch salesforce app "cases"
    Then create a case with data "${projectName}" "${subject}" "${caseDescription}" "${summary}" "${recordType}" "${casePriority}" "${caseOrigin}" "${reportedIssue}" "${caseCause}"
+   And take a screenshot
 
    #Assertions
    Then assert "case.entityName" text is "Case"

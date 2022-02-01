@@ -97,7 +97,10 @@ Scenario: Create and Delete Work Order using REACTIVE case
    And wait until "woLineItems.deleteWOLine.delete.text" to be visible
    Then assert "woLineItems.deleteWOLine.delete.text" text is "Work Order Line Item \"00000001\" was deleted. Undo"
    And take a screenshot
-
+   
+   Then get "${caseURL}"
+   And wait until "cases.quickLinks.workOrderLineItems" to be enable
+   And click on "cases.quickLinks.workOrderLineItems"
    Then wait until "woLineItems.table.firstResult.link" to be enable
    And click on "woLineItems.table.firstResult.link"
 
@@ -136,5 +139,17 @@ Scenario: Create and Delete Work Order using REACTIVE case
    And assert "cases.quickLinks.serviceAppointments" text is "Service Appointments (0)"
    And assert "cases.quickLinks.workOrders" text is "Work Orders (0)"
    And assert "cases.quickLinks.workOrderLineItems" text is "Work Order Line Items (0)"
+   And take a screenshot
+
+   And wait until "case.deleteCase.showMoreActions.button" to be visible
+   And click on "case.deleteCase.showMoreActions.button"
+   And wait until "case.deleteCase.delete.link" to be visible
+   And click on "case.deleteCase.delete.link"
+   And wait until "case.deleteCase.popup.title.text" to be visible
+   Then assert "case.deleteCase.popup.title.text" text is "Delete Case"
+   And wait until "case.deleteCase.popup.delete.button" to be visible
+   And click on "case.deleteCase.popup.delete.button"
+   And wait until "case.deleteCase.delete.text" to be visible
+   Then assert "case.deleteCase.delete.text" text is "Case \"${generated_caseNumber}\" was deleted. Undo"
    And take a screenshot
    

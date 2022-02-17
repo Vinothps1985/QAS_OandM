@@ -26,6 +26,7 @@ import java.util.Map;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import steps.common.*;
 import steps.shareable.ShrdCreateCase;
+import steps.shareable.ShrdCreateMaintenancePlan;
 import steps.shareable.ShrdLaunchApp;
 
 public class CaseSteps extends WebDriverTestCase {
@@ -549,5 +550,14 @@ public class CaseSteps extends WebDriverTestCase {
 		ShrdCreateCase create = new ShrdCreateCase();
 		create.customShrdCreateCase(projectName, subject, caseDescription, summary,
 		    recordType, casePriority, caseOrigin, reportedIssue, caseCause);
+	}
+
+	@QAFTestStep(description = "create a maintenance plan with data {projectName} {startDate} {type} {frequency} {generationTimeframe} {dateofFirstWOinNextBatch} {maintenancePlanTitle} {maintenancePlanDescription}")
+	public void createMaintenancePlanWithData(Object projectName, Object startDate, Object type, Object frequency,
+	    Object generationTimeframe, Object dateofFirstWOinNextBatch,Object maintenancePlanTitle,Object maintenancePlanDescription) {
+
+		ShrdCreateMaintenancePlan create = new ShrdCreateMaintenancePlan();
+		create.customShrdCreateMaintenancePlan(projectName, startDate, type, frequency,
+		generationTimeframe, dateofFirstWOinNextBatch, maintenancePlanTitle, maintenancePlanDescription);
 	}
 }

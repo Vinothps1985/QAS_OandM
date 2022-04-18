@@ -2,8 +2,8 @@ Feature: FleetMaintenance
 
 @author:Rodrigo Montemayor
 @description:Verify whether user is able to COMPLETE the Appointment via FS Mobile for a given Fleet Repair Service Appointment
-@fleetrepair @positive @mobile @repairme
-@requirementKey:QTM-RQ-23
+@fleetrepair @positive @mobile @fleet
+@requirementKey:SDT-RQ-93
 @dataFile:resources/testdata/FleetRepair/Complete Appointment for Fleet Repair SA.csv
 
 Scenario: Complete Appointment for a given Fleet Repair Service Appointment
@@ -51,9 +51,13 @@ Scenario: Complete Appointment for a given Fleet Repair Service Appointment
    And switch to frame "fieldService.iframe"
 
    And wait for 10000 milisec
+   And wait until "fieldService.searchServiceAppointments.input" to be present
+   And wait until "fieldService.searchServiceAppointments.input" to be enable
    And select "label=All Service Appointments" in "fieldService.predefinedFilterSelector.select"
    And wait until "fieldService.searchServiceAppointments.input" to be enable
    And sendKeys "${generated_serviceAppointment}" into "fieldService.searchServiceAppointments.input"
+   And wait until "fieldService.searchServiceAppointments.searchAllRecords" to be present
+   And click on "fieldService.searchServiceAppointments.searchAllRecords"
    And wait until "fieldService.serviceAppointmentsList.firstOption" to be enable
    And wait until "fieldService.serviceAppointmentsList.firstOption.serviceAppointmentID" text "${generated_serviceAppointment}"
    And click on "fieldService.serviceAppointmentsList.firstOption"
@@ -119,10 +123,11 @@ Scenario: Complete Appointment for a given Fleet Repair Service Appointment
    And wait until "common.DETAILS.link" to be enable
    And click on "common.DETAILS.link"
 
-   And scroll until "serviceAppointment.details.subject.text" is visible
+   #And scroll until "serviceAppointment.details.subject.text" is visible
+   And scroll until "serviceAppointment.details.description.text" is visible
    And assert "serviceAppointment.details.subject.text" text is "${woSubject}"
 
-   And scroll until "serviceAppointment.details.description.text" is visible
+   #And scroll until "serviceAppointment.details.description.text" is visible
    And assert "serviceAppointment.details.description.text" text is "${woDescription}"
 
    And take a screenshot
@@ -162,9 +167,10 @@ Scenario: Complete Appointment for a given Fleet Repair Service Appointment
    And wait until "serviceAppointment.fleetMaintenanceComplete.next.button" to be enable
    And click on "serviceAppointment.fleetMaintenanceComplete.next.button"
 
-   And wait until "serviceAppointment.finish.button" to be present
-   And wait until "serviceAppointment.finish.button" to be enable
-   And click on "serviceAppointment.finish.button"
+   #The below 3 steps were working on FSL app V234 but removed from V236
+   #And wait until "serviceAppointment.finish.button" to be present
+   #And wait until "serviceAppointment.finish.button" to be enable
+   #And click on "serviceAppointment.finish.button"
 
    And wait until "common.RELATED.link" to be present
    And wait until "common.RELATED.link" to be enable

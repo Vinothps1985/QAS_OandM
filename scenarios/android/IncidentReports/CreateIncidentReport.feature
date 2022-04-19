@@ -3,7 +3,7 @@ Feature: IncidentReports
 @author:Rodrigo Montemayor
 @description:Verify Incident report creation from FSL app
 @incidentreports @positive @mobile
-@requirementKey:QTM-RQ-23
+@requirementKey:SDT-RQ-93
 @dataFile:resources/testdata/IncidentReports/Create incident report.csv
 
 Scenario: Create Incident Report
@@ -46,9 +46,13 @@ Scenario: Create Incident Report
 
    And wait until "fieldService.predefinedFilterSelector.select" to be present
    And wait for 10000 milisec
+   And wait until "fieldService.searchServiceAppointments.input" to be present
+   And wait until "fieldService.searchServiceAppointments.input" to be enable
    And select "label=All Service Appointments" in "fieldService.predefinedFilterSelector.select"
    And wait until "fieldService.searchServiceAppointments.input" to be enable
    And sendKeys "${generated_serviceAppointment}" into "fieldService.searchServiceAppointments.input"
+   And wait until "fieldService.searchServiceAppointments.searchAllRecords" to be present
+   And click on "fieldService.searchServiceAppointments.searchAllRecords"
    And wait until "fieldService.serviceAppointmentsList.firstOption" to be enable
    And wait until "fieldService.serviceAppointmentsList.firstOption.serviceAppointmentID" text "${generated_serviceAppointment}"
    And click on "fieldService.serviceAppointmentsList.firstOption"
@@ -143,7 +147,9 @@ Scenario: Create Incident Report
    And sendKeys "${locationInfo}" into "serviceAppointment.newIncidentReport.closeCall.location.input"
    And sendKeys "${injuryInfo}" into "serviceAppointment.newIncidentReport.closeCall.injury.input"
    And scroll until the text "Describe the Close Call sequence of events. *" is on the screen
+   And scroll until "serviceAppointment.newIncidentReport.closeCall.sequence.input" is visible
    And sendKeys "${damageInfo}" into "serviceAppointment.newIncidentReport.closeCall.damage.input"
+   And scroll until "serviceAppointment.newIncidentReport.closeCall.sequence.input" is visible
    And sendKeys "${sequenceInfo}" into "serviceAppointment.newIncidentReport.closeCall.sequence.input"
    And wait until "serviceAppointment.newIncidentReport.next" to be enable
    And click on "serviceAppointment.newIncidentReport.next"
@@ -165,8 +171,10 @@ Scenario: Create Incident Report
    Then assert android TextView is present with the text contains "Take Pictures"
    And wait until "serviceAppointment.newIncidentReport.next" to be enable
    And click on "serviceAppointment.newIncidentReport.next"
-   And wait until "serviceAppointment.finish.button" to be enable
-   And click on "serviceAppointment.finish.button"
+
+   #The below 2 steps were working on FSL app V234 but removed from V236
+   #And wait until "serviceAppointment.finish.button" to be enable
+   #And click on "serviceAppointment.finish.button"
    
    And wait until "serviceAppointment.details.related.button" to be enable
    And click on "serviceAppointment.details.related.button"

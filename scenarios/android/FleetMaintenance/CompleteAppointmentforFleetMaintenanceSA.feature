@@ -2,7 +2,7 @@ Feature: FleetMaintenance
 
 @author:Rodrigo Montemayor
 @description:Verify whether user is able to COMPLETE the Appointment via FS Mobile for a given Fleet Maintenance Service Appointment
-@fleetmaintenance @positive @mobile @fleet
+@fleetmaintenance @positive @mobile
 @requirementKey:SDT-RQ-93
 @dataFile:resources/testdata/FleetMaintenance/Complete Appointment for Fleet Maintenance SA.csv
 

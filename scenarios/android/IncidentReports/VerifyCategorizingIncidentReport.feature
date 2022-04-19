@@ -2,8 +2,8 @@ Feature: IncidentReports
 
 @author:Rodrigo Montemayor
 @description:Verify Categorizing an Incident report from FSL app
-@incidentreports @positive @mobile
-@requirementKey:QTM-RQ-23
+@incidentreports2 @positive @mobile
+@requirementKey:JHA-RQ-14
 @dataFile:resources/testdata/IncidentReports/Verify Categorizing Incident Report.csv
 
 Scenario: Verify Categorizing an Incident Report
@@ -37,9 +37,13 @@ Scenario: Verify Categorizing an Incident Report
 
    And wait until "fieldService.predefinedFilterSelector.select" to be present
    And wait for 10000 milisec
+   And wait until "fieldService.searchServiceAppointments.input" to be present
+   And wait until "fieldService.searchServiceAppointments.input" to be enable
    And select "label=All Service Appointments" in "fieldService.predefinedFilterSelector.select"
    And wait until "fieldService.searchServiceAppointments.input" to be enable
    And sendKeys "${generated_serviceAppointment}" into "fieldService.searchServiceAppointments.input"
+   And wait until "fieldService.searchServiceAppointments.searchAllRecords" to be present
+   And click on "fieldService.searchServiceAppointments.searchAllRecords"
    And wait until "fieldService.serviceAppointmentsList.firstOption" to be enable
    And wait until "fieldService.serviceAppointmentsList.firstOption.serviceAppointmentID" text "${generated_serviceAppointment}"
    And click on "fieldService.serviceAppointmentsList.firstOption"

@@ -2,8 +2,8 @@ Feature: WorkOrders
 
 @author:Anusha MG
 @description:Verify the ability to create follow up work order using a REACTIVE case
-@workorder @positive @mobile
-@requirementKey:QTM-RQ-23
+@workorder @positive @mobile @followupwo
+@requirementKey:SDT-RQ-93
 @dataFile:resources/testdata/WorkOrder/Create Follow Up Work Order using REACTIVE case.csv
 
 Scenario: Create Follow Up Work Order using REACTIVE case
@@ -37,9 +37,13 @@ Scenario: Create Follow Up Work Order using REACTIVE case
 
    And wait until "fieldService.predefinedFilterSelector.select" to be present
    And wait for 10000 milisec
+   And wait until "fieldService.searchServiceAppointments.input" to be present
+   And wait until "fieldService.searchServiceAppointments.input" to be enable
    And select "label=All Service Appointments" in "fieldService.predefinedFilterSelector.select"
    And wait until "fieldService.searchServiceAppointments.input" to be enable
    And sendKeys "${generated_serviceAppointment}" into "fieldService.searchServiceAppointments.input"
+   And wait until "fieldService.searchServiceAppointments.searchAllRecords" to be present
+   And click on "fieldService.searchServiceAppointments.searchAllRecords"
    And wait until "fieldService.serviceAppointmentsList.firstOption" to be enable
    And wait until "fieldService.serviceAppointmentsList.firstOption.serviceAppointmentID" text "${generated_serviceAppointment}"
    And click on "fieldService.serviceAppointmentsList.firstOption"
@@ -87,6 +91,7 @@ Scenario: Create Follow Up Work Order using REACTIVE case
 
    And click on "home.popup.useLocation.notYet.option" if it appears within 10000 milisec
 
+   And wait until "schedule.date.icon" to be visible
    And wait until "schedule.date.icon" to be enable
    And click on "schedule.date.icon"
 
@@ -115,6 +120,15 @@ Scenario: Create Follow Up Work Order using REACTIVE case
    And wait until "woLineItem.actions.completeWoLineItem.button" to be enable
    And click on "woLineItem.actions.completeWoLineItem.button"
 
+   #Override the JHA
+   Then wait until "woLineItem.completeWoLineItem.override.jobHazardAnalysis.option" to be enable
+   And click on "woLineItem.completeWoLineItem.override.jobHazardAnalysis.option"
+   And wait until "woLineItem.complete.next.button" to be enable
+   And click on "woLineItem.complete.next.button"
+   And wait until "woLineItem.complete.next.button" to be enable
+   And click on "woLineItem.complete.next.button"
+
+   #Continue with WOLI completion checklist questions
    Then select option "${weatherConditions}" for form input with name "Weather Conditions"
    Then wait until "woLineItem.complete.vegetation.select" to be enable
    And click on "woLineItem.complete.vegetation.select"
@@ -165,9 +179,9 @@ Scenario: Create Follow Up Work Order using REACTIVE case
    Then wait until "woLineItem.complete.checklistCompleted.text" to be enable
    And click on "woLineItem.complete.next.button"
 
-   Then wait until "woLineItem.complete.completeWOLICompleted.text" to be enable
+   #Then wait until "woLineItem.complete.completeWOLICompleted.text" to be enable
    And take a screenshot
-   And click on "woLineItem.complete.finish.button"
+   #And click on "woLineItem.complete.finish.button"
 
    And wait until "common.actions.button" to be enable
    And take a screenshot
@@ -264,13 +278,16 @@ Scenario: Create Follow Up Work Order using REACTIVE case
    And wait until "workOrders.details.status" to be visible
    
    # Create a follow up work order
+   And wait until "workOrders.create.followUpWorkOrder.link" to be visible
    And wait until "workOrders.create.followUpWorkOrder.link" to be enable
    And click on "workOrders.create.followUpWorkOrder.link"
 
-   And wait until "workOrders.create.followUpWorkOrder.next.button" to be enable
+   And wait for 3000 milisec
+   #And wait until "workOrders.create.followUpWorkOrder.next.button" to be enable
    And click on "workOrders.create.followUpWorkOrder.next.button"
 
-   And wait until "workOrders.create.followUpWorkOrder.save.button" to be enable
+   And wait for 3000 milisec
+   #And wait until "workOrders.create.followUpWorkOrder.save.button" to be enable
    And click on "workOrders.create.followUpWorkOrder.save.button"
 
    Then wait until "workOrders.details.case" to be enable

@@ -31,8 +31,8 @@ workOrders.edit.status.select={"locator":"xpath=//div[contains(@class, 'Mode-nor
 workOrders.edit.save.button={"locator":"xpath=//div[contains(@class, 'Mode-normal')]//span[text()='Save']","eArray":[{},{}]}
 workOrders.titleWONumber={"locator":"xpath=//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//h1//div[contains(@class, 'entityNameTitle') and text()='Work Order']//following::span[1]","eArray":[{},{}]}
 workOrders.create.followUpWorkOrder.link={"locator":"xpath=//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//a/div[text()='Create Follow Up Wo']","eArray":[{},{}]}
-workOrders.create.followUpWorkOrder.next.button={"locator":"xpath=//button[text()='Next']","eArray":[{},{}]}
-workOrders.create.followUpWorkOrder.save.button={"locator":"xpath=//button[text()='Save']","eArray":[{},{}]}
+workOrders.create.followUpWorkOrder.next.button={"locator":"xpath=//button[@title='Next']","eArray":[{},{}]}
+workOrders.create.followUpWorkOrder.save.button={"locator":"xpath=//button[@title='Save']","eArray":[{},{}]}
 workOrders.serviceAppointment.count.link={"locator":"xpath=//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//span[contains(text(),'Service Appointments')]/following-sibling::span","eArray":[{},{}]}
 workOrders.workOrderLineItem.count.link={"locator":"xpath=//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//span[contains(text(),'Work Order Line Items')]/following-sibling::span","eArray":[{},{}]}
 workOrders.workOrderLineItems.scroll.link={"locator":"xpath=//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//span[contains(text(),'Work Order Line Items')]","eArray":[{},{}]}

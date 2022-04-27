@@ -3,7 +3,7 @@ Feature: LiveWorkPermit
 @author:Rodrigo Montemayor
 @description:Verify whether a user is able to Add Live Work Permit to the Work Order Line item using FSL app
 @liveworkpermit @positive @mobile
-@requirementKey:QTM-RQ-23
+@requirementKey:SDT-RQ-93
 @dataFile:resources/testdata/LiveWorkPermit/Add Live Work Permit to Work Order Line Item.csv
 
 Scenario: Add Live Work Permit to Work Order Line Item
@@ -46,9 +46,13 @@ Scenario: Add Live Work Permit to Work Order Line Item
 
    And wait until "fieldService.predefinedFilterSelector.select" to be present
    And wait for 10000 milisec
+   And wait until "fieldService.searchServiceAppointments.input" to be present
+   And wait until "fieldService.searchServiceAppointments.input" to be enable
    And select "label=All Service Appointments" in "fieldService.predefinedFilterSelector.select"
    And wait until "fieldService.searchServiceAppointments.input" to be enable
    And sendKeys "${generated_serviceAppointment}" into "fieldService.searchServiceAppointments.input"
+   And wait until "fieldService.searchServiceAppointments.searchAllRecords" to be present
+   And click on "fieldService.searchServiceAppointments.searchAllRecords"
    And wait until "fieldService.serviceAppointmentsList.firstOption" to be enable
    And wait until "fieldService.serviceAppointmentsList.firstOption.serviceAppointmentID" text "${generated_serviceAppointment}"
    And click on "fieldService.serviceAppointmentsList.firstOption"
@@ -135,7 +139,7 @@ Scenario: Add Live Work Permit to Work Order Line Item
    And assert android TextView is present with the text contains "Date:  ${currentDateAndroidFormat}"
    And assert android TextView is present with the text contains "Work Order:  ${generated_workOrder}"
    And assert android TextView is present with the text contains "Account:  ${accountName}"
-   And assert android TextView is present with the text contains "Requestor:  ${serviceAppointmentAssignee}"
+   #And assert android TextView is present with the text contains "Requestor:  ${serviceAppointmentAssignee}"
    
    Then click on "common.next.button"
 
@@ -156,6 +160,7 @@ Scenario: Add Live Work Permit to Work Order Line Item
    And hide the android keyboard
    And scroll to end
    Then sendKeys "${shockPPERequired}" into form input group with name "Shock PPE Required"
+   And scroll until "common.next.button" is visible
    Then sendKeys "${arcFlashPPERequired}" into form input group with name "Arc Flash PPE Required"
    Then click on "common.next.button"
 

@@ -3,7 +3,7 @@ Feature: TruckInspection
 @author:Rodrigo Montemayor
 @description:Verify Truck Inspection flow and COMPLETE the Truck Inspection work order
 @truckinspection @positive @mobile
-@requirementKey:QTM-RQ-23
+@requirementKey:SDT-RQ-93
 @dataFile:resources/testdata/TruckInspection/Verify Truck Inspection Flow and Complete the WO.csv
 
 Scenario: Verify Truck Inspection flow and COMPLETE the Truck Inspection work order
@@ -272,7 +272,7 @@ Scenario: Verify Truck Inspection flow and COMPLETE the Truck Inspection work or
    And wait until "serviceAppointment.truckInspection.truckInspectionCompleted.title" to be enable
 
    Then take a screenshot
-   And click on "serviceAppointment.finish.button"
+   #And click on "serviceAppointment.finish.button"
 
    And wait until "common.RELATED.link" to be present
    And wait until "common.RELATED.link" to be enable

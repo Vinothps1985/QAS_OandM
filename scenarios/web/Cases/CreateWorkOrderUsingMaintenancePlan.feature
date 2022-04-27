@@ -46,6 +46,7 @@ Scenario: Create Work Order using Maintenance Plan
    #Verify the Work Orders created
    And wait for 5000 milisec
    Then get "${MaintenancePlanURL}"
+   Then refresh the maintenance plan page until work order generation status is "In Progress" for a max of 60 seconds
    And assert "maintenancePlan.workOrderGenerationStatus.text" text is "In Progress"
    And scroll until "maintenancePlan.workOrderGenerationStatus.text" is visible
    And take a screenshot

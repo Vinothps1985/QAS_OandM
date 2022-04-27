@@ -167,7 +167,7 @@ public class TruckInspectionSteps extends WebDriverTestCase {
 		$("serviceAppointment.truckInspection.next.button").click();
 		$("serviceAppointment.truckInspection.truckInspectionCompleted.title").waitForPresent();
 		$("serviceAppointment.truckInspection.truckInspectionCompleted.title").waitForEnabled();
-		$("serviceAppointment.finish.button").click();
+		//$("serviceAppointment.finish.button").click();
 
 		$("common.actions.button").waitForPresent();
 		$("common.actions.button").waitForEnabled();

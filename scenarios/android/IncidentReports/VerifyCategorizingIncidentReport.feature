@@ -3,7 +3,7 @@ Feature: IncidentReports
 @author:Rodrigo Montemayor
 @description:Verify Categorizing an Incident report from FSL app
 @incidentreports2 @positive @mobile
-@requirementKey:JHA-RQ-14
+@requirementKey:SDT-RQ-93
 @dataFile:resources/testdata/IncidentReports/Verify Categorizing Incident Report.csv
 
 Scenario: Verify Categorizing an Incident Report
@@ -128,7 +128,7 @@ Scenario: Verify Categorizing an Incident Report
    And assert android TextView is present with the text "Major Incident To Report"
    And click on "serviceAppointment.newIncidentReport.next"
 
-   And assert android TextView is present with the text contains "General Incident Info"
+   And assert android TextView is present with the text contains "General Incident Info"  
    And click on select button for form input with name "Incident Type"
    And select option that contains "${incidentType}" for form input with name "Incident Type"
    And open the date picker for form input with name "Incident Date and Time"

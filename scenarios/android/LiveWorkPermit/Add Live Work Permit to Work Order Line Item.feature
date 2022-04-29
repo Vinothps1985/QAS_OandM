@@ -160,7 +160,7 @@ Scenario: Add Live Work Permit to Work Order Line Item
    And hide the android keyboard
    And scroll to end
    Then sendKeys "${shockPPERequired}" into form input group with name "Shock PPE Required"
-   And scroll until "common.next.button" is visible
+   And scroll until "woLineItem.related.liveWorkPermits.arcFlashPPERequired.input" is visible
    Then sendKeys "${arcFlashPPERequired}" into form input group with name "Arc Flash PPE Required"
    Then click on "common.next.button"
 
@@ -211,8 +211,8 @@ Scenario: Add Live Work Permit to Work Order Line Item
    Then select option "Yes" for form input with name "Submit Live Work Request for"
    Then click on "common.next.button"
 
-   Then assert android TextView is present with the text contains "New Live Work Permit Completed"
-   Then click on "common.finish.button"
+   #Then assert android TextView is present with the text contains "New Live Work Permit Completed"
+   #Then click on "common.finish.button"
 
    Then assert android TextView is present with the text contains "WORK ORDER LINE ITEM"
    Then click on "common.RELATED.link"

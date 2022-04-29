@@ -127,8 +127,53 @@ Scenario: Create Incident Report
    And wait until "serviceAppointment.newIncidentReport.next" to be enable
    And click on "serviceAppointment.newIncidentReport.next"
    And wait for 1500 milisec
+   And assert android TextView is present with the text "Confirm Project"
    And wait until "serviceAppointment.newIncidentReport.next" to be enable
    And click on "serviceAppointment.newIncidentReport.next"
+   And wait until "serviceAppointment.newIncidentReport.severity.closeCall" to be enable
+   And click on "serviceAppointment.newIncidentReport.severity.closeCall"
+   And wait until "serviceAppointment.newIncidentReport.next" to be enable
+   And click on "serviceAppointment.newIncidentReport.next"
+   And wait until "serviceAppointment.newIncidentReport.next" to be enable
+   And click on "serviceAppointment.newIncidentReport.next"
+   And wait until "serviceAppointment.newIncidentReport.closeCall.incidentDate.input" to be enable
+
+   #Below flows are added to make sure "Back" button functionality is working without crashing the app
+   And wait until "serviceAppointment.incidentReport.back.button" to be enable
+   And click on "serviceAppointment.incidentReport.back.button"
+   And wait until "serviceAppointment.incidentReport.back.button" to be enable
+   And click on "serviceAppointment.incidentReport.back.button"
+   And assert android TextView is present with the text "Major Incident or Close Call"
+   And select option "Major Incident" for form input with name "Are you reporting a"
+   And click on "serviceAppointment.newIncidentReport.next"
+   And assert android TextView is present with the text "Major Incident To Report"
+   And click on "serviceAppointment.newIncidentReport.next"
+   And assert android TextView is present with the text contains "General Incident Info" 
+   And wait until "serviceAppointment.incidentReport.back.button" to be enable
+   And click on "serviceAppointment.incidentReport.back.button"
+   And wait until "serviceAppointment.incidentReport.back.button" to be enable
+   And click on "serviceAppointment.incidentReport.back.button"
+   And wait until "serviceAppointment.newIncidentReport.severity.closeCall" to be enable
+   And click on "serviceAppointment.newIncidentReport.severity.closeCall"
+   And wait until "serviceAppointment.newIncidentReport.next" to be enable
+   And click on "serviceAppointment.newIncidentReport.next"
+   And wait until "serviceAppointment.newIncidentReport.next" to be enable
+   And click on "serviceAppointment.newIncidentReport.next"
+   And wait until "serviceAppointment.newIncidentReport.closeCall.incidentDate.input" to be enable
+   And wait until "serviceAppointment.incidentReport.back.button" to be enable
+   And click on "serviceAppointment.incidentReport.back.button"
+   And wait until "serviceAppointment.incidentReport.back.button" to be enable
+   And click on "serviceAppointment.incidentReport.back.button"
+   And assert android TextView is present with the text "Major Incident or Close Call"
+   And select option "Major Incident" for form input with name "Are you reporting a"
+   And click on "serviceAppointment.newIncidentReport.next"
+   And assert android TextView is present with the text "Major Incident To Report"
+   And click on "serviceAppointment.newIncidentReport.next"
+   And assert android TextView is present with the text contains "General Incident Info" 
+   And wait until "serviceAppointment.incidentReport.back.button" to be enable
+   And click on "serviceAppointment.incidentReport.back.button"
+   And wait until "serviceAppointment.incidentReport.back.button" to be enable
+   And click on "serviceAppointment.incidentReport.back.button"
    And wait until "serviceAppointment.newIncidentReport.severity.closeCall" to be enable
    And click on "serviceAppointment.newIncidentReport.severity.closeCall"
    And wait until "serviceAppointment.newIncidentReport.next" to be enable

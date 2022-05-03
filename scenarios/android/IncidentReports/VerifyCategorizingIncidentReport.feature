@@ -128,7 +128,51 @@ Scenario: Verify Categorizing an Incident Report
    And assert android TextView is present with the text "Major Incident To Report"
    And click on "serviceAppointment.newIncidentReport.next"
 
+   #Below flows are added to make sure "Back" button functionality is working without crashing the app
    And assert android TextView is present with the text contains "General Incident Info"  
+   And wait until "serviceAppointment.incidentReport.back.button" to be enable
+   And click on "serviceAppointment.incidentReport.back.button"
+   And wait until "serviceAppointment.incidentReport.back.button" to be enable
+   And click on "serviceAppointment.incidentReport.back.button"
+   And wait until "serviceAppointment.newIncidentReport.severity.closeCall" to be enable
+   And click on "serviceAppointment.newIncidentReport.severity.closeCall"
+   And wait until "serviceAppointment.newIncidentReport.next" to be enable
+   And click on "serviceAppointment.newIncidentReport.next"
+   And wait until "serviceAppointment.newIncidentReport.next" to be enable
+   And click on "serviceAppointment.newIncidentReport.next"
+   And wait until "serviceAppointment.newIncidentReport.closeCall.incidentDate.input" to be enable
+   And wait until "serviceAppointment.incidentReport.back.button" to be enable
+   And click on "serviceAppointment.incidentReport.back.button"
+   And wait until "serviceAppointment.incidentReport.back.button" to be enable
+   And click on "serviceAppointment.incidentReport.back.button"
+   And assert android TextView is present with the text "Major Incident or Close Call"
+   And select option "Major Incident" for form input with name "Are you reporting a"
+   And click on "serviceAppointment.newIncidentReport.next"
+   And assert android TextView is present with the text "Major Incident To Report"
+   And click on "serviceAppointment.newIncidentReport.next"
+   And assert android TextView is present with the text contains "General Incident Info" 
+   And wait until "serviceAppointment.incidentReport.back.button" to be enable
+   And click on "serviceAppointment.incidentReport.back.button"
+   And wait until "serviceAppointment.incidentReport.back.button" to be enable
+   And click on "serviceAppointment.incidentReport.back.button"
+   And wait until "serviceAppointment.newIncidentReport.severity.closeCall" to be enable
+   And click on "serviceAppointment.newIncidentReport.severity.closeCall"
+   And wait until "serviceAppointment.newIncidentReport.next" to be enable
+   And click on "serviceAppointment.newIncidentReport.next"
+   And wait until "serviceAppointment.newIncidentReport.next" to be enable
+   And click on "serviceAppointment.newIncidentReport.next"
+   And wait until "serviceAppointment.newIncidentReport.closeCall.incidentDate.input" to be enable
+   And wait until "serviceAppointment.incidentReport.back.button" to be enable
+   And click on "serviceAppointment.incidentReport.back.button"
+   And wait until "serviceAppointment.incidentReport.back.button" to be enable
+   And click on "serviceAppointment.incidentReport.back.button"
+   And assert android TextView is present with the text "Major Incident or Close Call"
+   And select option "Major Incident" for form input with name "Are you reporting a"
+   And click on "serviceAppointment.newIncidentReport.next"
+   And assert android TextView is present with the text "Major Incident To Report"
+   And click on "serviceAppointment.newIncidentReport.next"
+
+   And assert android TextView is present with the text contains "General Incident Info"
    And click on select button for form input with name "Incident Type"
    And select option that contains "${incidentType}" for form input with name "Incident Type"
    And open the date picker for form input with name "Incident Date and Time"
@@ -233,10 +277,11 @@ Scenario: Verify Categorizing an Incident Report
 
    Then assert android TextView is present with the text contains "Launch SharinPix"
    And click on "serviceAppointment.newIncidentReport.next"
-
-   Then assert android TextView is present with the text contains "New Incident Report Completed"
    And take a screenshot
-   And click on "serviceAppointment.finish.button"
+
+   #The below 2 steps were working on FSL app V234 but removed from V236
+   #Then assert android TextView is present with the text contains "New Incident Report Completed"
+   #And click on "serviceAppointment.finish.button"
 
    And wait until "common.RELATED.link" to be present
    And wait until "common.RELATED.link" to be enable

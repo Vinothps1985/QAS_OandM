@@ -1,2 +1,2 @@
 username,password,passcode,truckName,account,assetType,workType,serviceAppointmentAssignee,woSubject,woDescription,answer1,answer2,answer3,answer4,answer5,assetName,travelStartTimeHour,travelStartTimeMin,workStartTimeHour,workStartTimeMin,workEndTimeHour,workEndTimeMin
-amg@borregosolar.com.fullcopy,SUc4MyNpbnQ=,1234,Truck Name,CleanCapital,Fleet Vehicle - Truck,Fleet Maintenance,Test Technician,The subject,The description,01,02,03,04,05,Truck Test Asset - 1,12,10,12,20,12,50
+amg@borregosolar.com.fullcopy,SUc4MyNpbnQ=,1234,Truck Name,CleanCapital,Fleet Vehicle - Truck,Fleet Maintenance,Test Technician O&M,The subject,The description,01,02,03,04,05,Truck Test Asset - 1,12,10,12,20,12,50

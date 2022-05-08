@@ -83,6 +83,24 @@ Scenario: Complete Work Order Line Item using REACTIVE case
    #Remove the time and take just the date (e.g. 11/16/2021 9:18 AM = 11/16/2021)
    And extract the date component from "${sa_scheduledStart}" into "sa_scheduledStart"
 
+   #Verify whether JHA is created or not
+   Then scroll until "serviceAppointment.jhas.link" is visible
+   And wait until "serviceAppointment.jhas.link" to be enable
+   And assert "serviceAppointment.jhas.verifyJhaCreated" text is "(1)"
+   Then scroll until "serviceAppointment.jhas.jhaNumber" is visible
+   Then wait until "serviceAppointment.jhas.jhaNumber" to be present
+   And wait until "serviceAppointment.jhas.jhaNumber" to be enable
+   And take a screenshot
+   And store text from "serviceAppointment.jhas.jhaNumber" into "jha_number"
+   And click on "serviceAppointment.jhas.jhaNumber"
+   And wait until "serviceAppointment.jha.details.status" to be enable
+   And wait until "serviceAppointment.jha.details.status" to be visible
+   And assert "serviceAppointment.jha.details.jhaNumber" text is "${jha_number}"
+   And assert "serviceAppointment.jha.details.status" text is "Open"
+   And assert "serviceAppointment.jha.details.owner" text is "${serviceAppointmentAssignee}"
+   And assert "serviceAppointment.jha.jhaQuestions" text is "(3+)"
+   And take a screenshot
+
    #Change to Android
    Then store "resource/testdata;resources/android" into "env.resources"
    And set current platform as "android"

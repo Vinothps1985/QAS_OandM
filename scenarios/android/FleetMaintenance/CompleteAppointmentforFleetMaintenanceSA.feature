@@ -108,6 +108,17 @@ Scenario: Complete Appointment for a given Fleet Maintenance Service Appointment
    #Remove the time and take just the date (e.g. 11/16/2021 9:18 AM = 11/16/2021)
    And extract the date component from "${sa_scheduledStart}" into "sa_scheduledStart"
 
+   #Verify whether JHA is created or not
+   And wait for 5000 milisec
+   Then scroll until "serviceAppointment.jhas.link" is visible
+   And scroll until "serviceAppointment.jhas.verifyJhaCreated" is visible
+   And wait until "serviceAppointment.jhas.link" to be visible
+   And wait until "serviceAppointment.jhas.link" to be enable
+   And wait until "serviceAppointment.jhas.verifyJhaCreated" to be visible
+   And wait until "serviceAppointment.jhas.verifyJhaCreated" to be enable
+   And assert "serviceAppointment.jhas.verifyJhaCreated" text is "(0)"
+   And take a screenshot
+   
    #Change to Android
    Then store "resource/testdata;resources/android" into "env.resources"
    And set current platform as "android"

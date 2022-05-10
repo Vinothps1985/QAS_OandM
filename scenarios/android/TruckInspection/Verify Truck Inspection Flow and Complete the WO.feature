@@ -39,6 +39,7 @@ Scenario: Verify Truck Inspection flow and COMPLETE the Truck Inspection work or
 
    Then wait until "serviceAppointments.details.status" to be enable
    And wait until "serviceAppointments.details.status" to be visible
+   And store the current url in "generated_serviceAppointmentURL"
 
    #Reload
    Then Execute Java Script with data "window.location.reload();"
@@ -62,6 +63,19 @@ Scenario: Verify Truck Inspection flow and COMPLETE the Truck Inspection work or
 
    #Usually takes a while to be auto-assigned
    Then assign "${serviceAppointmentAssignee}" to service appointment if it is not autoassigned after 30 seconds
+   And take a screenshot
+
+   Then get "${generated_serviceAppointmentURL}"
+   Then wait until "serviceAppointments.details.status" to be enable
+   And wait until "serviceAppointments.details.status" to be visible
+
+   #Verify whether JHA is created or not
+   Then scroll until "serviceAppointment.jhas.icon.image" is visible
+   And wait until "serviceAppointment.jhas.link" to be visible
+   And wait until "serviceAppointment.jhas.link" to be enable
+   And wait until "serviceAppointment.jhas.verifyJhaCreated" to be visible
+   And wait until "serviceAppointment.jhas.verifyJhaCreated" to be enable
+   And assert "serviceAppointment.jhas.verifyJhaCreated" text is "(0)"
    And take a screenshot
    
    #Change to Android

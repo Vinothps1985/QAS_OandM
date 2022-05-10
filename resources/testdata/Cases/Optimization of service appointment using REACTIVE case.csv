@@ -1,2 +1,2 @@
 username,password,projectName,subject,caseDescription,summary,recordType,casePriority,caseOrigin,reportedIssue,caseCause,assetType1,assetType2,caseOwnerDeploymentReview,caseOwnerReadyToSchedule,serviceAppointmentAssignee
-amg@borregosolar.com.fullcopy,SUc4MyNpbnQ=,Acushnet - ADM Makepeace - O&M,Sample subject from QAS,Sample description from QAS,Sample summary,Reactive,Low,Manager Created,System Down,Other,Solar Array,Combiner Box,Michael Kaufman,O&M Ops Center,Test Technician
+amg@borregosolar.com.fullcopy,SUc4MyNpbnQ=,Acushnet - ADM Makepeace - O&M,Sample subject from QAS,Sample description from QAS,Sample summary,Reactive,Low,Manager Created,System Down,Other,Solar Array,Combiner Box,Michael Kaufman,O&M Ops Center,test_technician_o&m

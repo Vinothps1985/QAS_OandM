@@ -30,6 +30,15 @@ Scenario: Complete Work Order Line Item using REACTIVE case
    And wait until "serviceAppointments.details.status" to be enable
    And store the current url in "generated_serviceAppointmentURL"
 
+   #Verify that JHA is not created when the SA status is Not 'Scheduled'
+   Then scroll until "serviceAppointment.jhas.icon.image" is visible
+   And wait until "serviceAppointment.jhas.link" to be visible
+   And wait until "serviceAppointment.jhas.link" to be enable
+   And wait until "serviceAppointment.jhas.verifyJhaCreated" to be visible
+   And wait until "serviceAppointment.jhas.verifyJhaCreated" to be enable
+   And assert "serviceAppointment.jhas.verifyJhaCreated" text is "(0)"
+   And take a screenshot
+
    And launch salesforce app "Field Service"
    And wait until "fieldService.iframe" for a max of 60 and min of 10 seconds to be present
    And wait until "fieldService.iframe" to be enable
@@ -83,7 +92,7 @@ Scenario: Complete Work Order Line Item using REACTIVE case
    #Remove the time and take just the date (e.g. 11/16/2021 9:18 AM = 11/16/2021)
    And extract the date component from "${sa_scheduledStart}" into "sa_scheduledStart"
 
-   #Verify whether JHA is created or not
+   #Verify that JHA is created when SA status is 'Scheduled'
    Then scroll until "serviceAppointment.jhas.link" is visible
    And wait until "serviceAppointment.jhas.link" to be enable
    And assert "serviceAppointment.jhas.verifyJhaCreated" text is "(1)"

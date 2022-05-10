@@ -109,9 +109,7 @@ Scenario: Complete Appointment for a given Fleet Maintenance Service Appointment
    And extract the date component from "${sa_scheduledStart}" into "sa_scheduledStart"
 
    #Verify whether JHA is created or not
-   And wait for 5000 milisec
-   Then scroll until "serviceAppointment.jhas.link" is visible
-   And scroll until "serviceAppointment.jhas.verifyJhaCreated" is visible
+   Then scroll until "serviceAppointment.jhas.icon.image" is visible
    And wait until "serviceAppointment.jhas.link" to be visible
    And wait until "serviceAppointment.jhas.link" to be enable
    And wait until "serviceAppointment.jhas.verifyJhaCreated" to be visible

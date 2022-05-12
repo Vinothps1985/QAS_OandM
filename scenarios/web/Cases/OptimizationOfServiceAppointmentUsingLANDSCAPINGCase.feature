@@ -34,7 +34,9 @@ Scenario: Optimization of service appointment using Landscaping case
    And click on "cases.details.status.edit.button"
    Then wait until "cases.details.status.edit.input" to be present
    When wait until "cases.details.status.edit.input" to be enable
+   And wait for 2000 milisec
    And click on "cases.details.status.edit.input"
+   And wait for 2000 milisec
    Then wait until "cases.details.status.edit.deploymentReview.option" to be present
    When wait until "cases.details.status.edit.deploymentReview.option" to be enable
    And click on "cases.details.status.edit.deploymentReview.option"
@@ -72,12 +74,14 @@ Scenario: Optimization of service appointment using Landscaping case
    And wait until "workOrders.table.firstResult.link" to be enable
    And click on "workOrders.table.firstResult.link"
 
+   And scroll until "workOrders.details.dueDate" is visible
    Then wait until "workOrders.details.dueDate.edit.button" to be present
    And wait until "workOrders.details.dueDate.edit.button" to be enable
    And click on "workOrders.details.dueDate.edit.button"
 
    #And store next business day into "nextBusinessDay" in format "M/d/yyyy"
-   And add 1 business days to current date and store it into "nextBusinessDay" in format "M/d/yyyy"
+   # Use 7 bussiness days to add if optimizations fails for 1 business day
+   And add 7 business days to current date and store it into "nextBusinessDay" in format "M/d/yyyy"
 
    Then wait until "workOrders.details.dueDate.edit.input" to be enable
    And wait until "workOrders.details.dueDate.edit.input" to be visible
@@ -122,7 +126,9 @@ Scenario: Optimization of service appointment using Landscaping case
    And click on "cases.details.status.edit.button"
    Then wait until "cases.details.status.edit.input" to be present
    When wait until "cases.details.status.edit.input" to be enable
+   And wait for 2000 milisec
    And click on "cases.details.status.edit.input"
+   And wait for 2000 milisec
    Then wait until "cases.details.status.edit.readyToSchedule.option" to be present
    When wait until "cases.details.status.edit.readyToSchedule.option" to be enable
    And click on "cases.details.status.edit.readyToSchedule.option"
@@ -139,6 +145,16 @@ Scenario: Optimization of service appointment using Landscaping case
    And wait until "serviceAppointments.details.status" to be enable
    And assert "serviceAppointments.details.status" text is "None"
    And take a screenshot
+
+   #Verify that JHA is not created when the SA status is Not 'Scheduled'
+   Then scroll until "serviceAppointment.jhas.icon.image" is visible
+   And wait until "serviceAppointment.jhas.link" to be visible
+   And wait until "serviceAppointment.jhas.link" to be enable
+   And wait until "serviceAppointment.jhas.verifyJhaCreated" to be visible
+   And wait until "serviceAppointment.jhas.verifyJhaCreated" to be enable
+   And assert "serviceAppointment.jhas.verifyJhaCreated" text is "(0)"
+   And take a screenshot
+
    #Return
    And click on "serviceAppointments.details.case.link"
 
@@ -171,9 +187,12 @@ Scenario: Optimization of service appointment using Landscaping case
    
    Then wait until "fieldService.matchGanttDates.checkbox" to be enable
    And check angular checkbox "fieldService.matchGanttDates.checkbox" if not checked
+   And select "label=Borrego Ready to Schedule" in "fieldService.predefinedFilterSelector.select"
    And wait until "fieldService.searchServiceAppointments.input" to be enable
    And sendKeys "${serviceAppointment}" into "fieldService.searchServiceAppointments.input"
-   #And wait for 3000 milisec
+   And wait for 3000 milisec
+   And wait until "fieldService.searchServiceAppointments.searchAllRecords" to be present
+   And click on "fieldService.searchServiceAppointments.searchAllRecords"
    And wait until "fieldService.serviceAppointmentsList.firstOption" to be enable
    And wait until "fieldService.serviceAppointmentsList.firstOption.serviceAppointmentID" text "${serviceAppointment}"
    And click on "fieldService.serviceAppointmentsList.firstOption"
@@ -240,6 +259,23 @@ Scenario: Optimization of service appointment using Landscaping case
    And click on "serviceAppointment.editResource.popup.save.button"
    Then wait until "common.toastContainer" to be present
    And wait until "common.toastContainer" to be enable
+   And take a screenshot
+
+   #Verify whether JHA is created or not
+   Then scroll until "serviceAppointment.jhas.link" is visible
+   And wait until "serviceAppointment.jhas.link" to be enable
+   And assert "serviceAppointment.jhas.verifyJhaCreated" text is "(1)"
+   Then wait until "serviceAppointment.jhas.jhaNumber" to be present
+   And wait until "serviceAppointment.jhas.jhaNumber" to be enable
+   And take a screenshot
+   And store text from "serviceAppointment.jhas.jhaNumber" into "jha_number"
+   And click on "serviceAppointment.jhas.jhaNumber"
+   And wait until "serviceAppointment.jha.details.status" to be enable
+   And wait until "serviceAppointment.jha.details.status" to be visible
+   And assert "serviceAppointment.jha.details.jhaNumber" text is "${jha_number}"
+   And assert "serviceAppointment.jha.details.status" text is "Open"
+   And assert "serviceAppointment.jha.details.owner" text is "${serviceAppointmentAssignee}"
+   And assert "serviceAppointment.jha.jhaQuestions" text is "(3+)"
    And take a screenshot
 
    And close all open web tabs

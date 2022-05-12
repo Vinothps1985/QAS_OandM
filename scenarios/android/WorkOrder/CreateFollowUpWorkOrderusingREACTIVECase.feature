@@ -248,6 +248,7 @@ Scenario: Create Follow Up Work Order using REACTIVE case
    And wait until "workOrders.details.status" to be visible
    And assert "workOrders.details.status" text is "Cannot Complete"
    And take a screenshot
+   And wait for 2000 milisec
    And click on "workOrders.details.case"
 
    And wait until "cases.quickLinks.serviceAppointments" to be enable

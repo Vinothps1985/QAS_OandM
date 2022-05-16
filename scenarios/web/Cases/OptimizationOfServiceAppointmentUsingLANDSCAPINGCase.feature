@@ -35,6 +35,7 @@ Scenario: Optimization of service appointment using Landscaping case
    Then wait until "cases.details.status.edit.input" to be present
    When wait until "cases.details.status.edit.input" to be enable
    And wait for 2000 milisec
+   And scroll until "cases.details.status.edit.input" is visible
    And click on "cases.details.status.edit.input"
    And wait for 2000 milisec
    Then wait until "cases.details.status.edit.deploymentReview.option" to be present
@@ -127,6 +128,7 @@ Scenario: Optimization of service appointment using Landscaping case
    Then wait until "cases.details.status.edit.input" to be present
    When wait until "cases.details.status.edit.input" to be enable
    And wait for 2000 milisec
+   And scroll until "cases.details.status.edit.input" is visible
    And click on "cases.details.status.edit.input"
    And wait for 2000 milisec
    Then wait until "cases.details.status.edit.readyToSchedule.option" to be present
@@ -262,6 +264,7 @@ Scenario: Optimization of service appointment using Landscaping case
    And take a screenshot
 
    #Verify whether JHA is created or not
+   And wait for 3000 milisec
    Then scroll until "serviceAppointment.jhas.link" is visible
    And wait until "serviceAppointment.jhas.link" to be enable
    And assert "serviceAppointment.jhas.verifyJhaCreated" text is "(1)"

@@ -101,14 +101,14 @@ Scenario: Create Service Contract with Active Status
    Then wait until "serviceContracts.edit.popup.regionalManager.firstOption" to be present
    And wait until "serviceContracts.edit.popup.regionalManager.firstOption" to be visible
    And click on "serviceContracts.edit.popup.regionalManager.firstOption"
-   And wait until "serviceContracts.edit.popup.regionalManager.firstOption" not to be visible
+   #And wait until "serviceContracts.edit.popup.regionalManager.firstOption" not to be visible
    
    And wait until "serviceContracts.edit.popup.areaSupervisor.input" to be enable
    And sendKeys "${areaSupervisor}" into "serviceContracts.edit.popup.areaSupervisor.input"
    Then wait until "serviceContracts.edit.popup.areaSupervisor.firstOption" to be present
    When wait until "serviceContracts.edit.popup.areaSupervisor.firstOption" to be visible
    And click on "serviceContracts.edit.popup.areaSupervisor.firstOption"
-   And wait until "serviceContracts.edit.popup.areaSupervisor.firstOption" not to be visible
+   #And wait until "serviceContracts.edit.popup.areaSupervisor.firstOption" not to be visible
 
    And wait until "serviceContracts.edit.popup.contractStatus.select" to be enable
    And click on "serviceContracts.edit.popup.contractStatus.select"

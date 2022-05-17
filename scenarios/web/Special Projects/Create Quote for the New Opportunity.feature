@@ -8,7 +8,7 @@ Feature: Special Projects
 Scenario: Create a Quote for the New Opportunity
 	
    Given login to salesforce with "${username}" and "${password}"
-   And change logged in user to "test_special_projects"
+   And change logged in user to "${quotePrimaryContact}"
    And close all open web tabs
    And launch salesforce app "opportunities"
 

@@ -15,7 +15,7 @@ Scenario: Close REACTIVE case without accepted quotes
    And take a screenshot
    
    And wait for the page to finish loading
-   And change logged in user to "test_o&M_manager"
+   And change logged in user to "test_o&m_manager"
    And wait for the page to finish loading
 
    #Create a quote with no lines

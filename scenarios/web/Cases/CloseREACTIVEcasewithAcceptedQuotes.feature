@@ -3,8 +3,8 @@ Feature: Cases
 @author:Rodrigo Montemayor
 @description:Verify the ability to close case using a REACTIVE case having Quotes with status Accepted.
 @case @positive @smoke
-@dataFile:resources/testdata/Cases/Close REACTIVE case with approved quotes.csv
-Scenario: Close REACTIVE case with approved quotes
+@dataFile:resources/testdata/Cases/Close REACTIVE case with Accepted Quotes.csv
+Scenario: Close REACTIVE case with accepted quotes
 	
    Given login to salesforce with "${username}" and "${password}"
    And change logged in user to "test_ops_center_operator"

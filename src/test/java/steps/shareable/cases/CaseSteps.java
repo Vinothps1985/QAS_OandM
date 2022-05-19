@@ -399,21 +399,21 @@ public class CaseSteps extends WebDriverTestCase {
 		$("common.openCalendar.today").waitForEnabled();
 		$("common.openCalendar.today").click();
 	 
-		$("cases.details.status.edit.input").waitForPresent();
-		$("cases.details.status.edit.input").waitForEnabled();
-		$("cases.details.status.edit.input").click();
+		$("cases.closeCase.reactiveServiceType.select.button").waitForPresent();
+		$("cases.closeCase.reactiveServiceType.select.button").waitForEnabled();
+		$("cases.closeCase.reactiveServiceType.select.button").click();
 
-		$("cases.closeCase.reactiveServiceType.select").waitForEnabled();
-		$("cases.closeCase.reactiveServiceType.select").click();
+		$("cases.closeCase.reactiveServiceType.select.text").waitForEnabled();
+		$("cases.closeCase.reactiveServiceType.select.text").click();
 
-		String optionXpath = "//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//label[text()='Reactive Service Type']//following::span[text()='" + reactiveServiceType + "']//ancestor::lightning-base-combobox-item[1]";
-		QAFExtendedWebElement option = new WebDriverTestBase().getDriver().findElementByXPath(optionXpath);
-		option.waitForEnabled();
-		option.click();
+		//String optionXpath = "//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//label[text()='Reactive Service Type']//following::span[text()='" + reactiveServiceType + "']//ancestor::lightning-base-combobox-item[1]";
+		//QAFExtendedWebElement option = new WebDriverTestBase().getDriver().findElementByXPath(optionXpath);
+		//option.waitForEnabled();
+		//option.click();
 
-		Validator.assertTrue(option.isPresent() && option.isEnabled(), 
-			"Reactive Service Type " + reactiveServiceType + " not found as an option to set when closing case " + caseNumber,
-			"Reactive Service Type " + reactiveServiceType + " found as an option to set when closing case " + caseNumber);
+		//Validator.assertTrue(option.isPresent() && option.isEnabled(), 
+		//	"Reactive Service Type " + reactiveServiceType + " not found as an option to set when closing case " + caseNumber,
+		//	"Reactive Service Type " + reactiveServiceType + " found as an option to set when closing case " + caseNumber);
 
 		$("cases.closeCase.save.button").waitForEnabled();
 		$("cases.closeCase.save.button").click();
@@ -499,21 +499,21 @@ public class CaseSteps extends WebDriverTestCase {
 		$("common.openCalendar.today").waitForEnabled();
 		$("common.openCalendar.today").click();
 	 
-		$("cases.details.status.edit.input").waitForPresent();
-		$("cases.details.status.edit.input").waitForEnabled();
-		$("cases.details.status.edit.input").click();
+		$("cases.closeCase.reactiveServiceType.select.button").waitForPresent();
+		$("cases.closeCase.reactiveServiceType.select.button").waitForEnabled();
+		$("cases.closeCase.reactiveServiceType.select.button").click();
 
-		$("cases.closeCase.reactiveServiceType.select").waitForEnabled();
-		$("cases.closeCase.reactiveServiceType.select").click();
+		$("cases.closeCase.reactiveServiceType.select.text").waitForEnabled();
+		$("cases.closeCase.reactiveServiceType.select.text").click();
 
-		String optionXpath = "//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//label[text()='Reactive Service Type']//following::span[text()='" + reactiveServiceType + "']//ancestor::lightning-base-combobox-item[1]";
-		QAFExtendedWebElement option = new WebDriverTestBase().getDriver().findElementByXPath(optionXpath);
-		option.waitForEnabled();
-		option.click();
+		//String optionXpath = "//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//label[text()='Reactive Service Type']//following::span[text()='" + reactiveServiceType + "']//ancestor::lightning-base-combobox-item[1]";
+		//QAFExtendedWebElement option = new WebDriverTestBase().getDriver().findElementByXPath(optionXpath);
+		//option.waitForEnabled();
+		//option.click();
 
-		Validator.assertTrue(option.isPresent() && option.isEnabled(), 
-			"Reactive Service Type " + reactiveServiceType + " not found as an option to set when closing case " + caseNumber,
-			"Reactive Service Type " + reactiveServiceType + " found as an option to set when closing case " + caseNumber);
+		//Validator.assertTrue(option.isPresent() && option.isEnabled(), 
+		//	"Reactive Service Type " + reactiveServiceType + " not found as an option to set when closing case " + caseNumber,
+		//	"Reactive Service Type " + reactiveServiceType + " found as an option to set when closing case " + caseNumber);
 
 		$("cases.closeCase.save.button").waitForEnabled();
 		$("cases.closeCase.save.button").click();

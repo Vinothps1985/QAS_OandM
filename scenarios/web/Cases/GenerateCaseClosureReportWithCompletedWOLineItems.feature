@@ -15,16 +15,7 @@ Scenario: Generate case closure report with completed WO Line Items
    And create a work order with data "${generated_caseNumber}" "${assetType1}" "${assetType2}"
    And take a screenshot
 
-   And set all service appointments of case "${generated_caseNumber}" to status "Completed"
-   And take a screenshot
-
-   And set all work orders of case "${generated_caseNumber}" to status "Completed"
-   And take a screenshot
-
-   And set all work order line items of case "${generated_caseNumber}" to status "Completed"
-   And take a screenshot
-
-   #After closing SA, WO and WO Line items, the case is now in status 'Ops Review'
+   #Before closing SA, WO and WO Line items, the case is now in status 'Scheduled'
 
    Then go to case "${generated_caseNumber}"
    And wait until "case.details.accountName" to be visible
@@ -39,6 +30,18 @@ Scenario: Generate case closure report with completed WO Line Items
 
    #Answer all the questions in the work order line items
    And answer all questions of all work order line items of case "${generated_caseNumber}" alternating pass and fail
+   And go to case "${generated_caseNumber}"
+
+   #Complete the Work Order Line Items, Work Orders and Servie Appointments
+
+   And set all work order line items of case "${generated_caseNumber}" to status "Completed"
+   And take a screenshot
+
+   And set all work orders of case "${generated_caseNumber}" to status "Completed"
+   And take a screenshot
+
+   And set all service appointments of case "${generated_caseNumber}" to status "Completed"
+   And take a screenshot
    And go to case "${generated_caseNumber}"
    
    #Create the email

@@ -15,25 +15,7 @@ Scenario: Generate case closure report with incomplete WO Line Items
    And create a work order with data "${generated_caseNumber}" "${assetType1}" "${assetType2}"
    And take a screenshot
 
-   And set all service appointments of case "${generated_caseNumber}" to status "Completed"
-   And take a screenshot
-
-   And set all work orders of case "${generated_caseNumber}" to status "Completed"
-   And take a screenshot
-
-   #Do not set the line items as completed
-   And go to case "${generated_caseNumber}"
-   Then wait until "cases.quickLinks.workOrderLineItems" to be present
-   And wait until "cases.quickLinks.workOrderLineItems" to be enable
-   And click on "cases.quickLinks.workOrderLineItems"
-
-	And wait until "woLineItems.table.firstResult.link" to be present
-   And wait until "woLineItems.table.firstResult.link" to be enable
-   And click on "woLineItems.table.firstResult.link"
-
-   Then wait until "woLineItems.details.workOrder.link" to be enable
-   And assert "woLineItems.details.status" text is not "Completed"
-   And take a screenshot
+   #Before closing SA, WO and WO Line items, the case is now in status 'Scheduled'
 
    Then go to case "${generated_caseNumber}"
    And wait until "case.details.accountName" to be visible
@@ -50,6 +32,28 @@ Scenario: Generate case closure report with incomplete WO Line Items
    And answer all questions of all work order line items of case "${generated_caseNumber}" alternating pass and fail
    And go to case "${generated_caseNumber}"
 
+   #Complete the Work Orders and Servie Appointments
+
+   And set all work orders of case "${generated_caseNumber}" to status "Completed"
+   And take a screenshot
+  
+   And set all service appointments of case "${generated_caseNumber}" to status "Completed"
+   And take a screenshot
+
+   #Do not set the line items as completed
+   And go to case "${generated_caseNumber}"
+   Then wait until "cases.quickLinks.workOrderLineItems" to be present
+   And wait until "cases.quickLinks.workOrderLineItems" to be enable
+   And click on "cases.quickLinks.workOrderLineItems"
+
+	And wait until "woLineItems.table.firstResult.link" to be present
+   And wait until "woLineItems.table.firstResult.link" to be enable
+   And click on "woLineItems.table.firstResult.link"
+
+   Then wait until "woLineItems.details.workOrder.link" to be enable
+   And assert "woLineItems.details.status" text is not "Completed"
+   And take a screenshot
+   And go to case "${generated_caseNumber}"
    
    #Create the email
    And verify "cases.sendPmCorrLsReport.button" is present

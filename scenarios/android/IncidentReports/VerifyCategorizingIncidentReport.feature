@@ -298,6 +298,12 @@ Scenario: Verify Categorizing an Incident Report
 
    And assert "serviceAppointment.related.incidentReports.first" is present
    And take a screenshot
+   And click on "serviceAppointment.incidentReports.first"
+
+   And wait until "incidentReport.details.incidentReportNumber.text" to be enable
+   And assert "incidentReport.details.incidentReportNumber.text" text is not ""
+   And store text from "incidentReport.details.incidentReportNumber.text" into "incidentReportNumber"
+   And take a screenshot
 
    #Change to web
    Then store "resource/testdata;resources/web" into "env.resources"
@@ -329,4 +335,15 @@ Scenario: Verify Categorizing an Incident Report
    #And assert "incidentReports.details.sharinPix.image.first" is present
    #And take a screenshot
    #And switch to parent frame
+
+   Then scroll until "incidentReports.details.incidentReportNumber" is visible
+   Then assert "incidentReports.details.incidentReportNumber" text is "${incidentReportNumber}"
+   #And assert "incidentReports.details.incidentType" text is "Close Call"
+
+   Then scroll until "incidentReports.details.serviceAppointment.link.text" is visible
+   #And assert "incidentReports.details.workOrder.link.text" text is "${generated_workOrder}"
+   #And assert "incidentReports.details.account.link.text" text is "${accountName}"
+   And assert "incidentReports.details.case.link.text" text is "${generated_caseNumber}"
+   And assert "incidentReports.details.serviceAppointment.link.text" text is "${generated_serviceAppointment}"
+   And take a screenshot
    

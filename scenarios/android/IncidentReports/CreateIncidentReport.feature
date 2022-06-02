@@ -316,6 +316,7 @@ Scenario: Create Incident Report
    And assert "incidentReports.details.account.link.text" text is "${accountName}"
    And assert "incidentReports.details.case.link.text" text is "${generated_caseNumber}"
    And assert "incidentReports.details.serviceAppointment.link.text" text is "${generated_serviceAppointment}"
+   And take a screenshot
 
    Then scroll until "incidentReports.details.incidentLocation" is visible
    And assert "incidentReports.details.incidentLocation" text is "${locationInfo}"

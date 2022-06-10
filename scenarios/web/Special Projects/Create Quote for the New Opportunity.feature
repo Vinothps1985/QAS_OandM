@@ -143,7 +143,7 @@ Scenario: Create a Quote for the New Opportunity
    Then click on "quotes.createQuote.popup.typeOfQuote.input"
    And select the dropdown option for "Type of Quote" with label "${quoteTypeOfQuote}"
 
-   Then click on "quotes.createQuote.popup.typeOfWork.select"
+   Then click on "quotes.createQuote.popup.typeOfWork.button"
    And select the dropdown option for "*Type of Work" with label "${quoteTypeOfWork}"
 
    Then clear "quotes.createQuote.popup.specialNotes.textarea"

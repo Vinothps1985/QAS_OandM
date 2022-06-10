@@ -1394,10 +1394,10 @@
         },
         {
             "command": "Click",
-            "element": "quotes.createQuote.popup.typeOfWork.select",
+            "element": "quotes.createQuote.popup.typeOfWork.button",
             "eArray": [
                 [
-                    "quotes.createQuote.popup.typeOfWork.select",
+                    "quotes.createQuote.popup.typeOfWork.button",
                     "key"
                 ],
                 [

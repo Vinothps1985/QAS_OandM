@@ -30,7 +30,7 @@ public class QuoteSteps extends WebDriverTestCase {
 	Log logger = LogFactory.getLog(getClass());
 
 	@QAFTestStep(description = "change status of quote {quoteNumber} to {newStatus}")
-	public void quoteChangeStatus(String quoteNumber, String newStatus) {
+	public void quoteChangeStatus(String quoteNumber, String newStatus) throws InterruptedException {
 		
 		//open quote
 		if (!inQuoteScreen(quoteNumber)) {
@@ -41,10 +41,16 @@ public class QuoteSteps extends WebDriverTestCase {
 		$("quotes.details.status.edit.button").waitForPresent();
 		$("quotes.details.status.edit.button").waitForEnabled();
 		$("quotes.details.status.edit.button").click();
-	 
+		//Take the screenshot
+		steps.common.StepsLibrary.takeAScreenshot();
+		
+		Thread.sleep(3000);
+
 		$("quotes.details.status.edit.input").waitForPresent();
 		$("quotes.details.status.edit.input").waitForEnabled();
 		$("quotes.details.status.edit.input").click();
+		//Take the screenshot
+		steps.common.StepsLibrary.takeAScreenshot();
 
 		String xpath = "//div[contains(@class, 'Mode-normal') or contains(@class, 'Mode-maximized')]//label[text() = 'Status']//following::span[text()='" + newStatus + "']";
 		QAFExtendedWebElement option = new WebDriverTestBase().getDriver().findElementByXPath(xpath);

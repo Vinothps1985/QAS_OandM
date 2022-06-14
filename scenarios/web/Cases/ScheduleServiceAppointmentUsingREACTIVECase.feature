@@ -1,10 +1,11 @@
 Feature: Cases
 
 @author:Anusha MG
-@description:Scheduling a service appointment using a Landscaping case
+@description:Schedule a service appointment using REACTIVE case
 @case @positive @regression @schedulesa
-@dataFile:resources/testdata/Cases/Scheduling a service appointment using Landscaping case.csv
-Scenario: Scheduling a service appointment using Landscaping case
+@dataFile:resources/testdata/Cases/Schedule a service appointment using REACTIVE case.csv
+
+Scenario: Schedule a service appointment using REACTIVE case
 	
    Given login to salesforce with "${username}" and "${password}"
    And change logged in user to "test_ops_center_operator"
@@ -13,19 +14,7 @@ Scenario: Scheduling a service appointment using Landscaping case
    And create a case with data "${projectName}" "${subject}" "${caseDescription}" "${summary}" "${recordType}" "${casePriority}" "${caseOrigin}" "${reportedIssue}" "${caseCause}"
    And create a work order with data "${generated_caseNumber}" "${assetType1}" "${assetType2}"
 
-   #Verify Service Appointment status
-   Then wait until "cases.quickLinks.serviceAppointments" to be enable
    And take a screenshot
-
-   And click on "cases.quickLinks.serviceAppointments"
-   And wait until "serviceAppointments.table.first.link" to be enable
-   And click on "serviceAppointments.table.first.link"
-   
-   And wait until "serviceAppointments.details.status" to be enable
-   And assert "serviceAppointments.details.status" text is "None"
-   And take a screenshot
-   And click on "serviceAppointments.details.case.link"
-   Then wait until "cases.quickLinks.workOrders" to be enable
 
    #Change the status of the case from New case to Deployment Review and click on Save
    And wait until "cases.details.status.edit.button" to be present
@@ -68,6 +57,16 @@ Scenario: Scheduling a service appointment using Landscaping case
    And assert "case.details.caseOwner.link.value" text is "${caseOwnerDeploymentReview}"
    And take a screenshot
 
+   #Update case owner, wait for few seconds and verify if it's updated
+   And update case owner "${caseOwnerUpdate}"
+   And wait for 20000 milisec
+   Then get "${caseURL}"
+   And wait until "case.details.caseOwner.link.value" to be visible
+   And wait until "case.details.caseOwner.link.value" to be enable
+   And scroll until "case.details.caseOwner.link.value" is visible
+   And assert "case.details.caseOwner.link.value" text is "${caseOwnerUpdate}"
+   And take a screenshot
+
    Then wait until "cases.quickLinks.workOrders" to be enable
    And click on "cases.quickLinks.workOrders"
 
@@ -75,18 +74,35 @@ Scenario: Scheduling a service appointment using Landscaping case
    And wait until "workOrders.table.firstResult.link" to be enable
    And click on "workOrders.table.firstResult.link"
 
+   #And wait for 2000 milisec
+   #Then wait until "workOrders.details.dueDate.edit.button" to be visible
    And scroll until "workOrders.details.dueDate" is visible
    Then wait until "workOrders.details.dueDate.edit.button" to be present
    And wait until "workOrders.details.dueDate.edit.button" to be enable
    And click on "workOrders.details.dueDate.edit.button"
 
    #And store next business day into "nextBusinessDay" in format "M/d/yyyy"
+   # Use 7 bussiness days to add if optimizations fails for 1 business day
    And add 1 business days to current date and store it into "nextBusinessDay" in format "M/d/yyyy"
 
    Then wait until "workOrders.details.dueDate.edit.input" to be enable
    And wait until "workOrders.details.dueDate.edit.input" to be visible
    Then clear "workOrders.details.dueDate.edit.input"
    And sendKeys "${nextBusinessDay}" into "workOrders.details.dueDate.edit.input"
+
+   #And scroll until "workOrders.details.startDate.edit.input" is visible
+   #And wait until "workOrders.details.startDate.edit.input" to be enable
+   #And clear "workOrders.details.startDate.edit.input"
+   #And sendKeys "${nextBusinessDay}" into "workOrders.details.startDate.edit.input"
+
+   #This would be the code to select the 'tomorrow' option
+   #Then wait until "workOrders.details.dueDate.datePicker.icon" to be visible
+   #And wait until "workOrders.details.dueDate.datePicker.icon" to be enable
+   #And click on "workOrders.details.dueDate.datePicker.icon"
+   
+   #Then wait until "common.openCalendar.tomorrow" to be visible
+   #And wait until "common.openCalendar.tomorrow" to be enable
+   #And click on "common.openCalendar.tomorrow"
 
    And wait until "workOrders.details.save.button" to be enable
    And click on "workOrders.details.save.button"
@@ -158,7 +174,7 @@ Scenario: Scheduling a service appointment using Landscaping case
    And wait until "fieldService.iframe" to be enable
    And switch to frame "fieldService.iframe"
 
-   And wait for 20000 milisec
+   And wait for 10000 milisec
    And wait until "fieldService.predefinedFilterSelector.select" to be present
    #And wait until "fieldService.searchServiceAppointments.input" to be present
    #And wait until "fieldService.searchServiceAppointments.input" to be enable
@@ -223,6 +239,7 @@ Scenario: Scheduling a service appointment using Landscaping case
    #Verify that JHA is created when SA status is 'Scheduled'
    And wait for 3000 milisec
    Then scroll until "serviceAppointment.jhas.link" is visible
+   And wait until "serviceAppointment.jhas.link" to be present
    And wait until "serviceAppointment.jhas.link" to be enable
    And assert "serviceAppointment.jhas.verifyJhaCreated" text is "(1)"
    Then scroll until "serviceAppointment.jhas.jhaNumber" is visible

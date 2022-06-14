@@ -560,4 +560,37 @@ public class CaseSteps extends WebDriverTestCase {
 		create.customShrdCreateMaintenancePlan(projectName, startDate, type, frequency,
 		generationTimeframe, dateofFirstWOinNextBatch, maintenancePlanTitle, maintenancePlanDescription);
 	}
+
+	@QAFTestStep(description = "update case owner {caseOwnerUpdate}")
+	public void updateCaseOwner(String caseOwnerUpdate) {
+
+		$("case.details.caseOwner.changeOwner.button").waitForVisible();
+		$("case.details.caseOwner.changeOwner.button").waitForEnabled();
+		$("case.details.caseOwner.changeOwner.button").click();
+
+		$("case.changeOwner.searchUsers.input").waitForVisible();
+		$("case.changeOwner.searchUsers.input").waitForEnabled();
+		$("case.changeOwner.searchUsers.input").click();
+        $("case.changeOwner.searchUsers.input").clear();
+		$("case.changeOwner.searchUsers.input").sendKeys(caseOwnerUpdate);
+		
+		$("case.changeOwner.searchUsers.selectUser").waitForVisible();
+		$("case.changeOwner.searchUsers.selectUser").waitForEnabled();
+		$("case.changeOwner.searchUsers.selectUser").click();
+
+		$("case.changeOwner.searchUsers.selectUser.userResults.link").waitForVisible();
+		$("case.changeOwner.searchUsers.selectUser.userResults.link").waitForEnabled();
+		$("case.changeOwner.searchUsers.selectUser.userResults.link").click();
+
+		$("case.changeOwner.searchUsers.selectUser.text").waitForVisible();
+		$("case.changeOwner.searchUsers.selectUser.text").waitForEnabled();
+		$("case.changeOwner.searchUsers.selectUser.text").assertText(caseOwnerUpdate);
+
+		$("case.changeOwner.searchUsers.changeOwner.button").waitForEnabled();
+		$("case.changeOwner.searchUsers.changeOwner.button").click();
+
+		$("case.details.caseOwner.changeOwner.button").waitForVisible();
+		$("case.details.caseOwner.changeOwner.button").waitForEnabled();
+		
+	}
 }

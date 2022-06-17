@@ -3,7 +3,7 @@ Feature: Cases
 @author:Anusha MG
 @description:Schedule a service appointment using a Landscaping case
 @case @positive @regression @schedulesa
-@dataFile:resources/testdata/Cases/Schedule a service appointment using Landscaping case.csv
+@dataFile:resources/testdata/Cases/Schedule a service appointment using LANDSCAPING case.csv
 Scenario: Schedule a service appointment using Landscaping case
 	
    Given login to salesforce with "${username}" and "${password}"

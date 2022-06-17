@@ -16,7 +16,63 @@ Scenario: Schedule a service appointment using REACTIVE case
 
    And take a screenshot
 
-   #Change the status of the case from New case to Deployment Review and click on Save
+   #Assert the New Case status
+   And scroll until "cases.details.status.text" is visible
+   And assert "cases.details.status.text" text is "New Case"
+   
+   #Verify Service Appointment status
+   Then wait until "cases.quickLinks.serviceAppointments" to be enable
+   And take a screenshot
+
+   And click on "cases.quickLinks.serviceAppointments"
+   And wait until "serviceAppointments.table.first.link" to be enable
+   And click on "serviceAppointments.table.first.link"
+   
+   And wait until "serviceAppointments.details.status" to be enable
+   And assert "serviceAppointments.details.status" text is "None"
+   And take a screenshot
+   And click on "serviceAppointments.details.case.link"
+   Then wait until "cases.quickLinks.workOrders" to be enable
+
+   #Change the status of the case from 'New case' to 'On Hold - Waiting for Parts' and click on Save
+   And wait until "cases.details.status.edit.button" to be present
+   When wait until "cases.details.status.edit.button" to be enable
+   And store the current url in "caseURL"
+   And click on "cases.details.status.edit.button"
+   Then wait until "cases.details.status.edit.input" to be present
+   When wait until "cases.details.status.edit.input" to be enable
+   And wait for 2000 milisec
+   And scroll until "cases.details.status.edit.input" is visible
+   And click on "cases.details.status.edit.input"
+   And wait for 2000 milisec
+   Then wait until "cases.details.status.edit.onHoldWaitingForParts.option" to be present
+   When wait until "cases.details.status.edit.onHoldWaitingForParts.option" to be enable
+   And click on "cases.details.status.edit.onHoldWaitingForParts.option"
+   And wait until "cases.details.edit.save.button" to be enable
+   And click on "cases.details.edit.save.button"
+   Then wait until "cases.details.status.edit.button" to be visible
+
+   #Refresh and verify status of service appointment
+   Then Execute Java Script with data "window.location.reload();"
+   
+   ##Go to service appointments to get the SA number and check status is None
+   And wait until "cases.quickLinks.serviceAppointments" to be present
+   And click on "cases.quickLinks.serviceAppointments"
+   And wait until "serviceAppointments.table.first.link" to be present
+   And click on "serviceAppointments.table.first.link"
+   And wait until "serviceAppointments.details.status" to be visible
+   And wait until "serviceAppointments.details.status" to be enable
+   And assert "serviceAppointments.details.status" text is "On Hold"
+   And take a screenshot
+   #Return
+   And click on "serviceAppointments.details.case.link"
+
+   #Assert case status is 'On Hold - Waiting for Parts'
+   And scroll until "cases.details.status.text" is visible
+   And assert "cases.details.status.text" text is "On Hold - Waiting for Parts"
+   And take a screenshot
+   
+   #Change the status of the case from 'On Hold - Waiting for Parts' to 'Deployment Review' and click on Save
    And wait until "cases.details.status.edit.button" to be present
    When wait until "cases.details.status.edit.button" to be enable
    And store the current url in "caseURL"
@@ -55,6 +111,11 @@ Scenario: Schedule a service appointment using REACTIVE case
    And wait until "case.details.caseOwner.link.value" to be visible
    And wait until "case.details.caseOwner.link.value" to be enable
    And assert "case.details.caseOwner.link.value" text is "${caseOwnerDeploymentReview}"
+   And take a screenshot
+
+   #Assert case status is Deployment Review
+   And scroll until "cases.details.status.text" is visible
+   And assert "cases.details.status.text" text is "Deployment Review"
    And take a screenshot
 
    #Update case owner, wait for few seconds and verify if it's updated
@@ -122,6 +183,44 @@ Scenario: Schedule a service appointment using REACTIVE case
    And take a screenshot
    And click on "serviceAppointments.details.case.link"
 
+   #Change the status of the case from 'Deployment Review' to 'On Hold - Waiting Customer Response' and click on Save
+   And wait until "cases.details.status.edit.button" to be present
+   When wait until "cases.details.status.edit.button" to be enable
+   And store the current url in "caseURL"
+   And click on "cases.details.status.edit.button"
+   Then wait until "cases.details.status.edit.input" to be present
+   When wait until "cases.details.status.edit.input" to be enable
+   And wait for 2000 milisec
+   And scroll until "cases.details.status.edit.input" is visible
+   And click on "cases.details.status.edit.input"
+   And wait for 2000 milisec
+   Then wait until "cases.details.status.edit.onHoldWaitingCustomerResponse.option" to be present
+   When wait until "cases.details.status.edit.onHoldWaitingCustomerResponse.option" to be enable
+   And click on "cases.details.status.edit.onHoldWaitingCustomerResponse.option"
+   And wait until "cases.details.edit.save.button" to be enable
+   And click on "cases.details.edit.save.button"
+   Then wait until "cases.details.status.edit.button" to be visible
+
+   #Refresh and verify status of service appointment
+   Then Execute Java Script with data "window.location.reload();"
+   
+   ##Go to service appointments to get the SA number and check status is None
+   And wait until "cases.quickLinks.serviceAppointments" to be present
+   And click on "cases.quickLinks.serviceAppointments"
+   And wait until "serviceAppointments.table.first.link" to be present
+   And click on "serviceAppointments.table.first.link"
+   And wait until "serviceAppointments.details.status" to be visible
+   And wait until "serviceAppointments.details.status" to be enable
+   And assert "serviceAppointments.details.status" text is "On Hold"
+   And take a screenshot
+   #Return
+   And click on "serviceAppointments.details.case.link"
+
+   #Assert case status is 'On Hold - Waiting Customer Response'
+   And scroll until "cases.details.status.text" is visible
+   And assert "cases.details.status.text" text is "On Hold - Waiting Customer Response"
+   And take a screenshot
+
    #Change case status to Ready to Schedule
    Then wait until "cases.details.status.edit.button" to be present
    When wait until "cases.details.status.edit.button" to be enable
@@ -146,6 +245,9 @@ Scenario: Schedule a service appointment using REACTIVE case
    And get "${serviceAppointmentURL}"
    And wait until "serviceAppointments.details.status" to be visible
    And wait until "serviceAppointments.details.status" to be enable
+   Then Execute Java Script with data "window.location.reload();"
+   And wait until "serviceAppointments.details.status" to be visible
+   And wait until "serviceAppointments.details.status" to be enable
    And assert "serviceAppointments.details.status" text is "None"
    And take a screenshot
 
@@ -165,6 +267,11 @@ Scenario: Schedule a service appointment using REACTIVE case
    And wait until "case.details.caseOwner" to be visible
    And wait until "case.details.caseOwner" to be enable
    And assert "case.details.caseOwner" text is "${caseOwnerReadyToSchedule}"
+   And take a screenshot
+
+   #Assert case status is 'Ready to Schedule'
+   And scroll until "cases.details.status.text" is visible
+   And assert "cases.details.status.text" text is "Ready to Schedule"
    And take a screenshot
 
    And close all open web tabs
@@ -241,10 +348,10 @@ Scenario: Schedule a service appointment using REACTIVE case
    Then scroll until "serviceAppointment.jhas.link" is visible
    And wait until "serviceAppointment.jhas.link" to be present
    And wait until "serviceAppointment.jhas.link" to be enable
-   And assert "serviceAppointment.jhas.verifyJhaCreated" text is "(1)"
    Then scroll until "serviceAppointment.jhas.jhaNumber" is visible
    Then wait until "serviceAppointment.jhas.jhaNumber" to be present
    And wait until "serviceAppointment.jhas.jhaNumber" to be enable
+   And assert "serviceAppointment.jhas.verifyJhaCreated" text is "(1)"
    And take a screenshot
    And store text from "serviceAppointment.jhas.jhaNumber" into "jha_number"
    And click on "serviceAppointment.jhas.jhaNumber"

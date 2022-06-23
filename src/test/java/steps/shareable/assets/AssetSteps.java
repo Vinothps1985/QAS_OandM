@@ -69,7 +69,7 @@ public class AssetSteps extends WebDriverTestCase {
 
 		$("assets.new.popup.assetType.input").click();
 
-		steps.web.StepsLibrary.selectSalesforcePicklistOption(assetType);
+		steps.web.StepsLibrary.selectSalesforcePicklistOptionforAssets(assetType);
 
 		steps.common.StepsLibrary.scrollUntilVisible("assets.new.popup.account.input");
 

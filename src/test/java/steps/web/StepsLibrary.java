@@ -1183,6 +1183,31 @@ public class StepsLibrary {
 			"Picklist option with the label " + label + " found and selected");
 	}
 
+	@QAFTestStep(description = "select the picklist option with label {label}")
+	public static void selectSalesforcePicklistOptionforAssets(String label) {
+		boolean success = false;
+		try {
+			int maxAttempts = 5;
+			for (int attempt = 0; attempt < maxAttempts; attempt++) {
+				try {
+					String xpath = "//lightning-base-combobox-item//span[@title='" + label + "']";
+					QAFExtendedWebElement element = new WebDriverTestBase().getDriver().findElementByXPath(xpath);
+					element.waitForPresent();
+					element.waitForVisible();
+					element.click();
+					element.waitForNotVisible();
+					success = true;
+					break;
+				} catch (Exception x) {}
+				Thread.sleep(2000);
+			}
+		} catch (Exception x) {}
+
+		Validator.assertTrue(success,
+			"Could not select the picklist option with label " + label,
+			"Picklist option with the label " + label + " found and selected");
+	}
+
 	/**
 	 * Step to select a salesforce-dropdown option (different from the picklist, which exists globally)
 	 * These kind of drop downs are not regular select options either, so they have to be managed differently

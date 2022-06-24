@@ -51,9 +51,27 @@ Scenario: Create Service Contract with Active Status
    And select the picklist option with label "${contractStatus1}"
    And take a screenshot
 
+   And wait until "serviceContracts.newPaid.popup.project.input" to be enable
+   And click on "serviceContracts.newPaid.popup.project.input"
+   And clear "serviceContracts.newPaid.popup.project.input"
+   And sendKeys "${projectName}" into "serviceContracts.newPaid.popup.project.input"
+   And wait until "serviceContracts.newPaid.popup.project.firstOption" to be visible
+   And wait until "serviceContracts.newPaid.popup.project.firstOption" to be enable
+   And click on "serviceContracts.newPaid.popup.project.firstOption"
+   And wait until "serviceContracts.newPaid.popup.project.firstOption" not to be visible
+
    And wait until "serviceContracts.newPaid.popup.description.textarea" to be enable
    And sendKeys "${serviceContractDescription}" into "serviceContracts.newPaid.popup.description.textarea"
 
+   And wait until "serviceContracts.newPaid.popup.type.select" to be enable
+   And click on "serviceContracts.newPaid.popup.type.select"
+   And select the picklist option with label "${type}"
+   
+   When wait until "serviceContracts.newPaid.popup.o&mPackage.select" to be enable
+   And click on "serviceContracts.newPaid.popup.o&mPackage.select"
+   And select the picklist option with label "${o&mPackage}"
+   And take a screenshot
+   
    And wait until "serviceContracts.newPaid.popup.contractAutoRenew.select" to be enable
    And click on "serviceContracts.newPaid.popup.contractAutoRenew.select"
    And select the picklist option with label "${contractAutoRenews}"
@@ -114,6 +132,11 @@ Scenario: Create Service Contract with Active Status
    And click on "serviceContracts.edit.popup.contractStatus.select"
    And select the picklist option with label "${contractStatus2}"
    And take a screenshot
+
+   And wait until "serviceContracts.edit.popup.dateofFirstEscalatortobeApplied.input" to be enable
+   And click on "serviceContracts.edit.popup.dateofFirstEscalatortobeApplied.input"
+   And add 1 business days to current date and store it into "nextBusinessDay" in format "M/d/yyyy"
+   And sendKeys "${nextBusinessDay}" into "serviceContracts.edit.popup.dateofFirstEscalatortobeApplied.input"
 
    And wait until "serviceContracts.details.edit.save.button" to be enable
    And click on "serviceContracts.details.edit.save.button"

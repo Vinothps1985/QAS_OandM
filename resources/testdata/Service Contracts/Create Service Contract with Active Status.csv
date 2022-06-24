@@ -1,2 +1,2 @@
-username,password,projectName,opportunityRecordType,solarStage,contractStatus1,branch,contractAutoRenews,serviceContractDescription,contractTermMonths,regionalManager,areaSupervisor,contractStatus2
-amg@borregosolar.com.fullcopy,SUc4MyNpbnQ=,AZ Walmart - Chandler #3360 - O&M,O&M Opportunity,Contract Signed,Pending,Nor Cal,No,Description,12,test_regional_manager,test_area_supervisor,Active
+username,password,projectName,opportunityRecordType,solarStage,contractStatus1,branch,contractAutoRenews,serviceContractDescription,contractTermMonths,regionalManager,areaSupervisor,contractStatus2,type,o&mPackage
+amg@borregosolar.com.fullcopy,SUc4MyNpbnQ=,AZ Walmart - Chandler #3360 - O&M,O&M Opportunity,Contract Signed,Pending,Nor Cal,No,Description,12,test_regional_manager,test_area_supervisor,Active,O&M,Preventative

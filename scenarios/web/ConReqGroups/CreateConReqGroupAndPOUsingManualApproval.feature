@@ -3,7 +3,7 @@ Feature: Con Req Groups
 @author:Rodrigo Montemayor
 @description:Verify that user is able to create Con Req Group and PO manually using an O&M Project
 @conreqgroup @regression @positive
-@dataFile:resources/testdata/Con Req Groups/Create Con Req Group and PO using Overhead.csv
+@dataFile:resources/testdata/Con Req Groups/Create Con Req Group and PO using Manual Approval.csv
 
 Scenario: Create Con Req Group and PO using OM Project
 
@@ -12,6 +12,8 @@ Scenario: Create Con Req Group and PO using OM Project
    And close all open web tabs
    And launch salesforce app "cases"
    And create a case with data "${projectName}" "${subject}" "${caseDescription}" "${summary}" "${recordType}" "${casePriority}" "${caseOrigin}" "${reportedIssue}" "${caseCause}"
+   #And create a work order with data "${generated_caseNumber}" "${assetType1}" "${assetType2}"
+   #Then wait until "cases.quickLinks.workOrderLineItems" to be enable
    And take a screenshot
 
    Then wait until "cases.createConReqGroup.button" to be enable
@@ -42,10 +44,14 @@ Scenario: Create Con Req Group and PO using OM Project
    And wait until "cases.createConReqGroup.popup.vendorContact.firstOption" not to be visible
 
    #Requested Delivery Date
-   And wait until "cases.createConReqGroup.popup.requestedDeliveryDate.calendar.icon" to be enable
-   And click on "cases.createConReqGroup.popup.requestedDeliveryDate.calendar.icon"
-   And wait until "common.openLightningCalendar.today" to be enable
-   And click on "common.openLightningCalendar.today"
+   #And wait until "cases.createConReqGroup.popup.requestedDeliveryDate.calendar.icon" to be enable
+   #And click on "cases.createConReqGroup.popup.requestedDeliveryDate.calendar.icon"
+   #And wait until "common.openLightningCalendar.tomorrow" to be enable
+   #And click on "common.openLightningCalendar.tomorrow"
+   And wait until "cases.createConReqGroup.popup.requestedDeliveryDate.input" to be enable
+   And click on "cases.createConReqGroup.popup.requestedDeliveryDate.input"
+   And add 1 business days to current date and store it into "nextBusinessDay" in format "M/d/yyyy"
+   And sendKeys "${nextBusinessDay}" into "cases.createConReqGroup.popup.requestedDeliveryDate.input"
 
    And wait until "cases.createConReqGroup.popup.shipToContact.input" to be enable
    And click on "cases.createConReqGroup.popup.shipToContact.input"
@@ -131,7 +137,7 @@ Scenario: Create Con Req Group and PO using OM Project
    And take a screenshot
 
    #Must check the latest emails to compare an email is received after the test
-   Then store the timestamp of the latest received email in "latestEmailTimestamp"
+   #Then store the timestamp of the latest received email in "latestEmailTimestamp"
 
    And wait until "conReqGroups.details.submitForApproval.button" to be present
    When wait until "conReqGroups.details.submitForApproval.button" to be enable
@@ -139,12 +145,12 @@ Scenario: Create Con Req Group and PO using OM Project
    Then assert "conReqGroups.details.status" text is "Pending Approval"
 
    #Ensure email reception
-   And assert an email is received after "${latestEmailTimestamp}" and the subject contains the text "A Service Construction Requisition is pending your approval"
+   #And assert an email is received after "${latestEmailTimestamp}" and the subject contains the text "A Service Construction Requisition is pending your approval"
 
    And switch to default window
 
    And wait for the page to finish loading
-   And change logged in user to "test_approver"
+   And change logged in user to "${manager}"
    And wait for the page to finish loading
    And close all open web tabs
 

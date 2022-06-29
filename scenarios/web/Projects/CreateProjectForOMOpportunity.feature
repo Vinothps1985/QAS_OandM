@@ -20,9 +20,10 @@ Scenario: Create project for OM Opportunity
 
    When wait until "projects.siteInformation.siteSubstantialDate.notEmpty" to be enable
    And scroll until "projects.siteInformation.siteSubstantialDate.notEmpty" is visible
-   Then assert "projects.details.epcSite" text is "${epcSite}"
+   And scroll until "projects.siteInformation.overallProjectSizeWatts" is visible
    And assert "projects.siteInformation.overallProjectSizeWatts" text is "${watts}"
    And take a screenshot
+   Then assert "projects.details.epcSite" text is "${epcSite}"
    And assert "projects.siteInformation.siteAddress" text is "${siteAddress}"
    And assert "projects.siteInformation.siteCity" text is "${siteCity}"
    And assert "projects.details.projectState" text is "${projectState}"

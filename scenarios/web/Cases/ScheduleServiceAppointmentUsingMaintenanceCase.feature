@@ -474,7 +474,7 @@ Scenario: Schedule a service appointment using Maintenance case
    And get "${serviceAppointmentURL_2}"
    And wait until "serviceAppointments.details.status" to be visible
    And wait until "serviceAppointments.details.status" to be enable
-   And wait for 10000 milisec
+   And wait for 20000 milisec
    Then Execute Java Script with data "window.location.reload();"
    And wait until "serviceAppointments.details.status" to be visible
    And wait until "serviceAppointments.details.status" to be enable
